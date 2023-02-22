@@ -60,11 +60,11 @@
                 <div class="item">
                     <div class="doc-3"><img alt="" src="src/17036.png"></div>
                     <div class="doc-quote">
-                        <p class="lt3">Potencialex — un remediu popular pentru o erecți puternică la bărbați între 18 și 80 de ani. Capsulele au efect benefic atât pentru bărbați cât și pentru femei.</p>
+                        <p class="lt3"><span class="productName"></span> — un remediu popular pentru o erecți puternică la bărbați între 18 și 80 de ani. Capsulele au efect benefic atât pentru bărbați cât și pentru femei.</p>
                         <p class="lt4"><b>Pentru bărbați:</b> întărește erecția, crește excitarea, prelungește actul sexual și oferă senzații incredibile de sex.</p>
                         <p class="lt5"><b>Pentru femei:</b> crește sensibilitatea vaginală, asigurând orgasme lungi și multiple.</p>
-                        <p class="lt6">Capsulele Potencialex se pot lua înainte de actul sexual. Cutia încape foarte ușor în buzunarul de la pantaloni sau blugi.</p>
-                        <p class="lt7">Potencialex acționează în mod benefic și asupra prostatei, oferind un efect de lungă durată de până la câțiva ani..</p>
+                        <p class="lt6">Capsulele <span class="productName"></span> se pot lua înainte de actul sexual. Cutia încape foarte ușor în buzunarul de la pantaloni sau blugi.</p>
+                        <p class="lt7"><span class="productName"></span> acționează în mod benefic și asupra prostatei, oferind un efect de lungă durată de până la câțiva ani..</p>
                     </div>
                     <div class="doc-2"><img alt="" src="src/17036.png"></div>
                     <div id="spinner">
@@ -173,13 +173,13 @@
                             <span class="discountс lt9">Avantajos!</span>
                             <s>
                                     <span class="js_old_price price_old price__old">
-                                        <span class="price_main_value old_price_val">318</span>
-                                        <span class="price_main_currency old_price_cur"> RON</span>
+                                        <span class="price_main_value old_price_val"><span class="priceOld"></span></span>
+                                        <span class="price_main_currency old_price_cur"> <span class="currencyMain"></span></span>
                                     </span>
                                 </s><br>
                             <b class="new_price js_new_price price_main price__new">
-                                    <span class="price_main_value new_price_val">159</span>
-                                    <span class="price_main_currency new_price_cur"> RON</span>
+                                    <span class="price_main_value new_price_val"><span class="priceMain"></span></span>
+                                    <span class="price_main_currency new_price_cur"> <span class="currencyMain"></span></span>
                                 </b>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                                 <input class="wheel_input form__input phone__mask ym-record-keys" id="phone" name="phone" placeholder="Telefon" type="tel" autocomplete="disable" required>
                             </div>
                             <div class="form__item">
-                                <button class="main-link lt16 form__btn" type="submit">Comandă Potencialex cu reducere de 50%!</button>
+                                <button class="main-link lt16 form__btn" type="submit">Comandă <span class="productName"></span> cu reducere de 50%!</button>
                             </div>
                         </div>
                     </form>
@@ -221,7 +221,7 @@
                     <a class="close link_close" href="#"></a>
                 </div>
                 <div class="popup_content">
-                    <span class="lt20">Ați câștigat o reducere de 50% la "Potencialex"!</span>
+                    <span class="lt20">Ați câștigat o reducere de 50% la "<b class="productName"></b>"!</span>
                     <center>
                         <a href="#"><img alt="ruwap.mobi" src="src/700.png" style="max-width: 160px"></a>
                     </center>
@@ -329,6 +329,41 @@
 
         </p>
     </div>
+
+    <script>
+        const offer_params = {
+            priceMain : '159',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'lei',
+            productName : 'Potencialex',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
 
     <script>
         $('[name="name"]').on('input change', function(){

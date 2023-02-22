@@ -458,7 +458,7 @@
 		<script>
             const offer_params = {
                 priceMain : '179',
-                priceOld : '358',
+                customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
                 currencyMain: 'lei',
                 productName : 'Erectil',
             };
@@ -468,16 +468,24 @@
             var priceOld = document.getElementsByClassName("priceOld");
             var currencyMain = document.getElementsByClassName("currencyMain");
 
-            for(var i = 0; i < productName.length; i++){
+            for (var i = 0; i < productName.length; i++) {
                 productName[i].innerHTML = offer_params.productName;
             }
-            for(var i = 0; i < priceMain.length; i++){
+            for (var i = 0; i < priceMain.length; i++) {
                 priceMain[i].innerHTML = offer_params.priceMain;
             }
-            for(var i = 0; i < priceOld.length; i++){
-                priceOld[i].innerHTML = offer_params.priceOld;
+
+            if(offer_params.customPriceOld){
+                for (var i = 0; i < priceOld.length; i++) {
+                    priceOld[i].innerHTML = offer_params.customPriceOld;
+                }
+            }else{
+                for (var i = 0; i < priceOld.length; i++) {
+                    priceOld[i].innerHTML = offer_params.priceMain * 2;
+                }
             }
-            for(var i = 0; i < currencyMain.length; i++){
+
+            for (var i = 0; i < currencyMain.length; i++) {
                 currencyMain[i].innerHTML = offer_params.currencyMain;
             }
 		</script>
