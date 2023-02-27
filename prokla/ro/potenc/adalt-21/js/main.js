@@ -1,0 +1,1 @@
+$(document).ready((function(){var t=$(".clock").FlipClock({autoStart:!1,callbacks:{stop:!0}});t.setTime(600),t.setCountdown(!0),t.start()}));

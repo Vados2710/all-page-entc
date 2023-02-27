@@ -1,0 +1,1 @@
+function dtime(e,t){var a=new Date;a.setDate(a.getDate()+t+0),document.write(a.getDate()+"."+lang[e].monthNames[a.getMonth()]+"."+a.getFullYear())}var lang={ru:{monthNames:["01","02","03","04","05","06","07","08","09","10","11","12"]}};
