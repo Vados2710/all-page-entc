@@ -1,0 +1,806 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="RO">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Blog pentru bărbații din România</title>
+    <link rel="icon" href="favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+    <script data-polyfil="webp">
+      !(function (e, n, A) {
+        function o(e, n) {
+          return typeof e === n;
+        }
+        function t() {
+          var e, n, A, t, a, i, l;
+          for (var f in r)
+            if (r.hasOwnProperty(f)) {
+              if (
+                ((e = []),
+                (n = r[f]),
+                n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+              )
+                for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+              for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++)
+                (i = e[a]),
+                  (l = i.split(".")),
+                  1 === l.length
+                    ? (Modernizr[l[0]] = t)
+                    : (!Modernizr[l[0]] ||
+                        Modernizr[l[0]] instanceof Boolean ||
+                        (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])),
+                      (Modernizr[l[0]][l[1]] = t)),
+                  s.push((t ? "" : "no-") + l.join("-"));
+            }
+        }
+        function a(e) {
+          var n = u.className,
+            A = Modernizr._config.classPrefix || "";
+          if ((c && (n = n.baseVal), Modernizr._config.enableJSClass)) {
+            var o = new RegExp("(^|\s)" + A + "no-js(\s|$)");
+            n = n.replace(o, "$1" + A + "js$2");
+          }
+          Modernizr._config.enableClasses &&
+            ((n += " " + A + e.join(" " + A)), c ? (u.className.baseVal = n) : (u.className = n));
+        }
+        function i(e, n) {
+          if ("object" == typeof e) for (var A in e) f(e, A) && i(A, e[A]);
+          else {
+            e = e.toLowerCase();
+            var o = e.split("."),
+              t = Modernizr[o[0]];
+            if ((2 == o.length && (t = t[o[1]]), "undefined" != typeof t)) return Modernizr;
+            (n = "function" == typeof n ? n() : n),
+              1 == o.length
+                ? (Modernizr[o[0]] = n)
+                : (!Modernizr[o[0]] ||
+                    Modernizr[o[0]] instanceof Boolean ||
+                    (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])),
+                  (Modernizr[o[0]][o[1]] = n)),
+              a([(n && 0 != n ? "" : "no-") + o.join("-")]),
+              Modernizr._trigger(e, n);
+          }
+          return Modernizr;
+        }
+        var s = [],
+          r = [],
+          l = {
+            _version: "3.6.0",
+            _config: { classPrefix: "", enableClasses: !0, enableJSClass: !0, usePrefixes: !0 },
+            _q: [],
+            on: function (e, n) {
+              var A = this;
+              setTimeout(function () {
+                n(A[e]);
+              }, 0);
+            },
+            addTest: function (e, n, A) {
+              r.push({ name: e, fn: n, options: A });
+            },
+            addAsyncTest: function (e) {
+              r.push({ name: null, fn: e });
+            },
+          },
+          Modernizr = function () {};
+        (Modernizr.prototype = l), (Modernizr = new Modernizr());
+        var f,
+          u = n.documentElement,
+          c = "svg" === u.nodeName.toLowerCase();
+        !(function () {
+          var e = {}.hasOwnProperty;
+          f =
+            o(e, "undefined") || o(e.call, "undefined")
+              ? function (e, n) {
+                  return n in e && o(e.constructor.prototype[n], "undefined");
+                }
+              : function (n, A) {
+                  return e.call(n, A);
+                };
+        })(),
+          (l._l = {}),
+          (l.on = function (e, n) {
+            this._l[e] || (this._l[e] = []),
+              this._l[e].push(n),
+              Modernizr.hasOwnProperty(e) &&
+                setTimeout(function () {
+                  Modernizr._trigger(e, Modernizr[e]);
+                }, 0);
+          }),
+          (l._trigger = function (e, n) {
+            if (this._l[e]) {
+              var A = this._l[e];
+              setTimeout(function () {
+                var e, o;
+                for (e = 0; e < A.length; e++) (o = A[e])(n);
+              }, 0),
+                delete this._l[e];
+            }
+          }),
+          Modernizr._q.push(function () {
+            l.addTest = i;
+          }),
+          Modernizr.addAsyncTest(function () {
+            function e(e, n, A) {
+              function o(n) {
+                var o = n && "load" === n.type ? 1 == t.width : !1,
+                  a = "webp" === e;
+                i(e, a && o ? new Boolean(o) : o), A && A(n);
+              }
+              var t = new Image();
+              (t.onerror = o), (t.onload = o), (t.src = n);
+            }
+            var n = [
+                {
+                  uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                  name: "webp",
+                },
+                {
+                  uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                  name: "webp.alpha",
+                },
+                {
+                  uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                  name: "webp.animation",
+                },
+                {
+                  uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                  name: "webp.lossless",
+                },
+              ],
+              A = n.shift();
+            e(A.name, A.uri, function (A) {
+              if (A && "load" === A.type) for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri);
+            });
+          }),
+          t(),
+          a(s),
+          delete l.addTest,
+          delete l.addAsyncTest;
+        for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+        e.Modernizr = Modernizr;
+      })(window, document);
+    </script>
+  </head>
+  <body class="ev-date" data-use-external-comebacker="1" data-invalid-name-text="Specificați numele corect!" data-invalid-phone-text="Vă rugăm să introduceți un număr de telefon valid, altfel nu Vă putem contacta!" style="touch-action: auto">
+    <header class="lt0"><b>Blog pentru bărbații din</b> România</header>
+    <div class="topimg">
+      <video autoplay loop muted>
+        <source src="images/1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <main>
+      <h1 class="lt1"><span class="productName"></span> = <span>6 ORE DE SEX</span></h1>
+      <div class="golova">
+        <h2 class="lt2">Soțul meu face câte 6 ore de sex cu mine și penisul lui este mereu tare!</h2>
+        <ul>
+          <li class="lt3">Mădălina Laschi</li>
+        </ul>
+      </div>
+      <div class="story">
+        <h3 class="lt4">- O, pentru ce i-am dat aceste capsule! Salvaţi-mă de la acest monstru nesăturat!!!</h3>
+        <video autoplay loop muted>
+          <source src="images/2.mp4" type="video/mp4">
+        </video>
+        <blockquote class="lt5">Un penis mai ferm îmbunătățește calitatea sexului</blockquote>
+        <p class="lt6">
+          Salut băieţi! Mai ţineţi minte postarea mea unde spuneam că nu sunt mulţumită de soţul meu Cătălin, care nu
+          era în stare să mă satisfacă? Chiar şi după un minet profund penisul lui rămânea moale!
+        </p>
+        <p class="lt7">
+          Am încercat deja de toate: şi Viagra şi alte stimulatoare de erecţie, yoga, exerciţii tantrice... Totul a fost
+          fără rost. Penisul lui tot rămânea moale sau termina aproape deodată cum intra în mine. Sexul nu dura mai mult
+          de câteva minute. 😞😥
+        </p>
+        <p class="lt8">
+          Credeam că de vină este fonul genetic sau fiziologic, şi de aceea nu are posibilitatea să facă sex mai bun şi
+          mai îndelungat. Şi că nu se poate face nimic cu aceasta. Mai că m-am conformat.
+        </p>
+        <p class="lt9">
+          Sigur că doream un sex la fel de pasional ca mai înainte. Doar sunt o femeie tânără şi frumoasă şi nu vroiam
+          să mă lipsesc de plăceri în pat. Dar totuşi să-mi înşel soţul, pe Cătălin, nu doream.
+        </p>
+        <blockquote class="lt10">Soluţia s-a găsit, aproape când mi-am pierdut speranţa...</blockquote>
+        <p class="lt11">
+          Eram deja disperată, când întâmplător am văzut la televizor emisiunea cu Hugh Hefner (fondatorul şi
+          deţinătorul revistei Playboy). Într-un interviu el a spus că fiecare bărbat poate să facă sex câte 2 ore la
+          rând, foarte uşor...Chiar şi la vârsta lui (iar el apopo avea atunci 86 de ani!). Dar cu o singură condiţie -
+          este necesar să aveţi un nivel de testosteron foarte înalt 💪💪💪 (hormonul masculin principal)!
+        </p>
+        <video autoplay loop muted>
+          <source src="images/3.mp4" type="video/mp4">
+        </video>
+        <p class="lt12">
+          Cum spune Hugh, testosteronul ridicat îi oferă bărbatului mai multă energie pentru act sexual îndelungat.
+          Testosteronul creşte apetitul sexual şi masculinitatea. Anume acest hormon ajută bărbatul să-şi satisfacă
+          femeia câteva ore la rand...
+        </p>
+        <p class="lt13">
+          Hugh a recomandat un produs pentru potenţă - capsule <span class="productName"></span> cu extract de Saw Palmetto, pe care le-a folosit
+          personal. Imediat am intrat pe
+          <a href="#toform">SITE-UL acestor capsule şi am comandat 3 cutii.</a>
+        </p>
+        <a href="#toform"><picture><source type="image/webp" srcset="images/img03.webp">
+            <img alt="img" class="img-responsive" src="images/img03.jpg" loading="lazy"></picture></a>
+        <p>
+          <span class="doc-quote lt14">"Aceste capsule îmbunătăţesc starea sistemului genito-urinar şi ridică radical nivelul de testosteron,
+            aftfel îmbunătăţind potenţa - hormonul masculin principal, respunzător de erecţie puternică. Administrarea
+            lor regulată măresc apetitul sexual, întăresc erecţia, prelungesc durata actului sexual şi mareste
+            senzaţiile în timpul orgasmului!"</span>
+        </p>
+        <blockquote class="lt15">Care este rezultatul?</blockquote>
+        <p class="lt16">
+          Coletul cu <span class="productName"></span> a venit repede și abia așteptam să mă culc cu soțul meu. Înainte de culcare, l-am rugat să
+          folosească <span class="productName"></span> - așa cum este indicat în instrucțiuni.
+        </p>
+        <p class="lt17">
+          Îmi este ruşine să povestesc ce s-a întâmplat mai târziu)) 😊😍🙈 Chiar îmi este incomod! Dar, cum nu ne
+          cunoaştem personal, vă spun toate detaliile.
+        </p>
+        <p class="lt18">
+          Desigur, aşteptam îmbunătăţiri... dar Catalin, cu care am făcut sex după utilizarea acestor capsule, este ca
+          cerul şi pământul - mai bine decât în cele mai perverse fantezii!
+        </p>
+        <a href="#toform"><picture><source type="image/webp" srcset="images/4.webp">
+            <img alt="img" class="img-responsive" src="images/4.jpg" loading="lazy"></picture></a>
+        <p class="lt19">
+          În mai puţin de o oră, după ce a folosit <span class="productName"></span>,
+          <a href="#toform">CĂTĂLIN A SĂRIT PE PAT CU O ERECŢIE DE FIER</a>! A fost foarte uimit, am atins penisul şi în
+          ochii lui s-a aprins o dorinţă sălbatică! M-a pus în genunchi şi a intrat dur în mine de la spate.
+        </p>
+        <p class="lt20">
+          Credeţi sau nu, dar m-a frecat că un sălbatic 1 oră şi 47 de minute! Şi toate astea, după 3 ani de neputinţă
+          sexuală şi faptul că practic nu aveam sex. Adânc! Înfometat! Fără pauze! În toate pozele.
+        </p>
+        <p class="lt21">Plăcere cosmică, curgeam şi strigam!</p>
+        <p class="lt22">
+          Da, cu siguranţă a fost cel mai bun sex de când suntem împreună! Senzaţiile au fost, de parcă m-au frecat 3
+          bărbaţi deodată.
+        </p>
+        <p class="lt23">
+          Până acum nu îmi vine să cred, că <span class="productName"></span> mi l-a transformat pe Cătălin într-un macho şi totul la preţul
+          biletelor la cinema!
+        </p>
+        <p class="lt24">
+          Rezultatele obținute din acesta merită cu siguranţă toţi banii! Şi la urma urmei, viaţa este scurtă şi eu,
+          sigur nu sunt genul de femeie care va face economii pe un sex fantastic! Gata, finalizez...Cătălin a venit şi
+          mă cheamă în pat din nou, să facem sex. Seară frumoasă tuturor!))))) 👌😁💓💓💓
+        </p>
+        <a href="#toform"><picture><source type="image/webp" srcset="images/5.webp">
+            <img alt="img" class="img-responsive" src="images/5.jpg" loading="lazy"></picture></a>
+        <p class="lt25">
+          Mai mult de atât soţul are acum o siluetă mai bună, acum mâinile şi pieptul sunt mai reliefaţi (datorită
+          testosteronului!). Am crezut că capsule sunt doar pentru sănătatea sexuală, din acest motiv am rămas uimită că
+          corpul lui a devenit mai sportiv!
+        </p>
+        <video autoplay loop muted>
+          <source src="images/6.mp4" type="video/mp4">
+        </video>
+        <p class="lt26">
+          Cătălin a încetat să administreze <span class="productName"></span> trei luni în urmă. Însă erecţia lui la fel durează 2 ore. Dacă aţi
+          vedea cum joacă cu muşchii - rezultatul testosteronului ridicat.
+        </p>
+        <p class="lt27">
+          Săptămâna trecută am discutat cu consultantul oficial al producătorului <span class="productName"></span>. Am vrut să ştim, dacă Cătălin
+          să bea în continuare capsule.
+          <a href="#toform">
+            El ne-a spus că au efect cumulativ şi garantează rezultate stabile pe un timp îndelungat. Aşa că, în timpul
+            apropiat nu vom avea nevoie de <span class="productName"></span>.
+          </a>
+        </p>
+        <p class="lt28">
+          Doar dacă vom dori senzaţii mai tari în sex)))) 😏 Cu siguranţă pot recomanda aceste capsule pentru întărirea
+          potenţei tuturor care doresc să-şi îmbunătăţească viaţa sexuală fără viagra şi alte stimulente dăunătoare
+          sănătăţii.
+        </p>
+        <p>
+          <a class="lt29" href="#toform">GRĂBIȚI-VĂ SĂ VIZITAȚI SITE-UL OFICIAL!</a>
+        </p>
+        <p class="lt30">
+          Consultanții sunt foarte prietenoși, competenți și cunosc toate problemele legate de sănătatea sexuală a
+          bărbaților. Și desigur, toate sfaturile de pe telefon sunt strict anonime! Nu vă faceți griji cu privire la
+          livrare - curierul vă va livra comanda într-un pachet dens opac, fără semne și indicații despre ceea ce este
+          în interior. Deci nimeni nu va ști ce aveți acolo.
+        </p>
+      </div>
+
+      <div id="toform"></div>
+      <div class="buynow" style="text-align: center">
+        <div class="buyyy">
+          <a href="#toform"><picture>
+              <img alt="img" class="order_widget-img" src="prod.png" style="max-width: 200px" loading="lazy"></picture></a>
+          <ul>
+            <li class="lt32">Erecție puternică și stabilă</li>
+            <li class="lt33">Produs 100% natural</li>
+            <li class="lt34">Act sexual prelungit</li>
+            <li class="lt35">Viață sexuală activă</li>
+            <li class="lt36">Orgasm fantastic</li>
+            <li class="lt37">Libidoul constant foarte ridicat</li>
+          </ul>
+        </div>
+
+
+      </div>
+
+      <div class="features-wrapper"></div>
+
+      <div class="commentarios lt39">Comentarii:</div>
+      <div class="comenti">
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-01.webp">
+                <img alt="img" class="img-circle" src="images/av-01.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt40" href="#toform">Maria</a>
+            </p>
+            <p class="comment lt41">
+              Am fost împreună 5 ani, cu iubitul şi sincer, cu timpul am pierdut plăcerea să fac sex cu el, pentru că
+              penisul lui a devenit moale...În final ne-am despărţit şi mai târziu am întâlnit un alt bărbat, care m-a
+              uimit plăcut în pat! Mă futea cu orele şi penis lui era mereu FERM. Curg când suntem împreună, pentru că
+              îi vreau penisul mereu. În curând, mi-a dezvăluit secretul său, şi s-a dovedit, că anume aceste capsule
+              i-au îmbunătăţit potenţa. Super! 💪👍😎
+            </p>
+            <a href="#toform"></a>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-02.webp">
+                <img alt="img" class="img-circle" src="images/av-02.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt42" href="#toform">Constantin</a>
+            </p>
+            <p class="comment lt43">
+              Mulţumesc,
+              <a href="#toform"><span class="productName"></span></a>! Dacă nu erau aceste capsule, viaţa mea sexuală rămânea la fel vagă şi
+              plictisitoare. 😉 Dar cum am început să le folosesc - deja de o lună - sunt foarte fericit, pentru că acum
+              mă fut mult mai mult şi penisul îmi este ca de piatră, chiar şi după ejaculare. Fetele mă doresc mereu şi
+              nu se mai dau jos de pe pulă. Sunt atât de obosit, nu mai pot. Glumesc!!!!! 😁
+            </p>
+            <a href="#toform"><picture><source type="image/webp" srcset="images/coment1.webp">
+                <img alt="img" class="comimg" src="images/coment1.jpg" loading="lazy"></picture></a>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-03.webp">
+                <img alt="img" class="img-circle" src="images/av-03.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt44" href="#toform">Viorel</a>
+            </p>
+            <p class="comment lt45">
+              Ieri am primit comanda <span class="productName"></span> şi l+am folosit imediat, pentru că nu aveam răbdare să văd cum lucrează! ❤️
+              Sexul cu iubita a durat o oră şi după ce am terminat, penisul meu era gata să continue mai departe...
+              Aşteptările mele s-au adeverit total şi mă simt formidabil!
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-06.webp">
+                <img alt="img" class="img-circle" src="images/av-06.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt46" href="#toform">Ioan</a>
+            </p>
+            <p class="comment lt47">
+              Fratele meu locuieşte în America şi mi-a povestit despre aceste capsule, mulţi americani le folosesc...
+              Dar eu încă nu le-am încercat 🤔🤔
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-08.webp">
+                <img alt="img" class="img-circle" src="images/av-08.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt48" href="#toform">Mihaela</a>
+            </p>
+            <p class="comment lt49">
+              Salut. Ce istorie frumoasă!
+              <a href="#toform">M-ai impresionat atât de mult cu istoria ta, încât sunt gata chiar acum să comand aceste capsule
+                soţului</a>. Chiar şi fără reducere! 👍😱
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-07.webp">
+                <img alt="img" class="img-circle" src="images/av-07.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt50" href="#toform">Andrei</a>
+            </p>
+            <p class="comment lt51">
+              Am folosit <span class="productName"></span> 2 săptămâni şi pot spune, că efectul este uau! Mai ales ţinând cont că, acum nu demult
+              doctorii mai că mi-au pus diagnoza - disfuncţie erectilă... Acum sunt complet sănătos şi penisul meu este
+              gata de sex dur! Fetele, cine mă vrea? 😎😎😎
+            </p>
+            <a href="#toform"><picture><source type="image/webp" srcset="images/coment2.webp">
+                <img alt="img" class="comimg" src="images/coment2.jpg" loading="lazy"></picture></a>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-09.webp">
+                <img alt="img" class="img-circle" src="images/av-09.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt52" href="#toform">Simion</a>
+            </p>
+            <p class="comment lt53">
+              Salutare. Am comandat 4 cutii de <span class="productName"></span>, mai repede să le primesc! Vreau să le încerc cât mai curând.
+              Câteodată am eşuări în sex şi nu mai vreau să trăiesc astfel.
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-13.webp">
+                <img alt="img" class="img-circle" src="images/av-13.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt54" href="#toform">Nicolae</a>
+            </p>
+            <p class="comment lt55">Ce istorie! Aş vrea să fiu soţul tău, aaaaa!</p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-11.webp">
+                <img alt="img" class="img-circle" src="images/av-11.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt56" href="#toform">Minodora</a>
+            </p>
+            <p class="comment lt57">Iubitul meu, foloseşte aceste capsule. Este o maşină de făcut sex!!! 😍</p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-12.webp">
+                <img alt="img" class="img-circle" src="images/av-12.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt58" href="#toform">Camelia</a>
+            </p>
+            <p class="comment lt59">
+              Băieţi, vă mulţumesc pentru istorii, am cumpărat <span class="productName"></span> pentru soţul meu... E super!!!... penisul lui a
+              devenit tare şi erecţia ţine mult mai mult ca înainte.
+            </p>
+            <a href="#toform"><picture><source type="image/webp" srcset="images/coment3.webp">
+                <img alt="img" class="comimg" src="images/coment3.jpg" loading="lazy"></picture></a>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-14.webp">
+                <img alt="img" class="img-circle" src="images/av-14.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt60" href="#toform">Gheorghe</a>
+            </p>
+            <p class="comment lt61">
+              Am cumpărat capsule aproximativ o săptămână în urmă şi nu mă pot opri de futut, ah-ahaa!!!
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-15.webp">
+                <img alt="img" class="img-circle" src="images/av-15.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt62" href="#toform">Paul</a>
+            </p>
+            <p class="comment lt63">
+              Vă pot confirma că capsule lucrează foarte bine. Înainte eram nesigur în sex şi aveam frică că îmi cade
+              penisul în orice minută. Dar acum NU! Cu <span class="productName"></span> s-a schimbat totul.
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-16.webp">
+                <img alt="img" class="img-circle" src="images/av-16.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt64" href="#toform">Ion</a>
+            </p>
+            <p class="comment lt65">
+              Ştiu aceste capsule, le-am cumpărat în Germania. Într-adevăr este o invenţie nebună.
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-17.webp">
+                <img alt="img" class="img-circle" src="images/av-17.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt66" href="#toform">Victor</a>
+            </p>
+            <p class="comment lt67">
+              Am cumpărat capsule fără să ştie soţia. Peste câteva zile m-a întrebat ce am! Ne futam atât de mult ca
+              niciodată, penisul meu mereu era tare. Chiar avea dureri uneori. Nu i-am spus adevărul, este secretul meu.
+              <a href="#toform">Am cumpărat cu reducere pe site-ul oficial, comanda a fost livrată repede.</a>
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-20.webp">
+                <img alt="img" class="img-circle" src="images/av-20.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt68" href="#toform">Adrian</a>
+            </p>
+            <p class="comment lt69">
+              Am luat şi eu <span class="productName"></span> la preţ redus şi l-am primit peste 3 zile. Totul este super, aşa cum au promis
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-21.webp">
+                <img alt="img" class="img-circle" src="images/av-21.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt70" href="#toform">Silviu</a>
+            </p>
+            <p class="comment lt71">
+              Sper că fiecare ajunge să le simtă!
+              <a href="#toform">Datorită lui <span class="productName"></span> mă frec cu orele!</a>
+              Lucrează bine. Mulţumesc pentru recomandări
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-19.webp">
+                <img alt="img" class="img-circle" src="images/av-19.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt72" href="#toform">Raluca</a>
+            </p>
+            <p class="comment lt73">
+              Sunt de asemenea cunoscută cu aceste capsule... Soțul meu le-a folosit zilnic timp de două luni. Deja nu
+              le mai foloseste de 6 luni, dar efectul s-a păstrat! Încă mai facem sex mult și de lungă durată, de 2-3
+              ori în fiecare zi cu siguranță
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-22.webp">
+                <img alt="img" class="img-circle" src="images/av-22.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt74" href="#toform">Bogdan</a>
+            </p>
+            <p class="comment lt75">
+              aceste capsule sunt ceva fantastic! Am terminat deja prima cutie şi am început a doua
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-23.webp">
+                <img alt="img" class="img-circle" src="images/av-23.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt76" href="#toform">Florin</a>
+            </p>
+            <p class="comment lt77">
+              Am încercat doar din curiozitate <span class="productName"></span>, cu atât mai mult că prețul este bun și nu aveam nimic de pierdut.
+              După ce am primit comanda, am mers imediat la prietena mea. Credeți sau nu, dar am făcut sex cu ea fără
+              pauză, două ore la rând! Anterior, nu am fost capabil de așa ceva! Sunt încântat :)
+            </p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-24.webp">
+                <img alt="img" class="img-circle" src="images/av-24.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt78" href="#toform">Petrică</a>
+            </p>
+            <p class="comment lt79">Și unde pot să cumpăr aceste capsule, că nu prea înțeleg?</p>
+          </div>
+        </div>
+        <div class="coma">
+          <div class="col-avatar">
+            <a href="#toform"><picture><source type="image/webp" srcset="images/av-27.webp">
+                <img alt="img" class="img-circle" src="images/av-27.jpg" loading="lazy"></picture></a>
+          </div>
+          <div class="col-comm-text">
+            <p class="nickname">
+              <a class="lt80" href="#toform">Oana</a>
+            </p>
+            <p class="comment lt81">
+              <a href="#toform">Mai bine pe site-ul oficial al produselor <span class="productName"></span></a>, pentru că acum sunt foarte multe
+              falsuri! Pentru a nu fi dezamăgit, eu iau doar de acolo
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="otros-commentarios">
+        <a class="lt82" href="#toform">Alte comentarii</a>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="create_rom_footer" data-color_text="" data-color_link="" data-color_logo=""></div>
+        <div class="row">
+          <div class="offset-md-2 col-md-8 offset-sm-0 col-sm-12">
+            <div class="col-md-5 col-sm-6 col-5 lt83"><b>SexoBlog</b> România</div>
+            <div class="socialicons"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  
+      <div class="footer-fixed">
+        <div>
+          <p>
+            <span style="color: #e1c231; padding: 0 2px; font-weight: 700"> Reducere -50%.</span> Oferta se încheie:
+            <b id="demo"><span id="min2">10</span><span>:</span><span id="sec2">00</span></b>
+          </p>
+          <a href="#toform">Faceți click aici</a>
+        </div>
+      </div>
+  
+
+
+    <script src="js/postDate.js"></script>
+
+
+
+    <script>
+        const offer_params = {
+            priceMain : '149',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2, тільки це не стосується барабану, барабан розрахований тільки на 50%
+            currencyMain: 'lei',
+            productName : 'Eronex',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain : offer_params.priceMain,
+            currencyMain : offer_params.currencyMain,
+            lang : 'ro', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product : offer_params.productName, // название продукта
+            genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+            form : {
+                isNeeded : 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+
+
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+
+
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+
+
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function(){
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+
+
+        $('[name="phone"]').on('input change', function(e){
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+
+  </body>
+</html>
