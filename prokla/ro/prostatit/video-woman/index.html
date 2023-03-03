@@ -1,0 +1,665 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Instrument pentru bărbați, care doresc mai mult de la scenele de pat.</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        #preloader {
+          background: #333;
+          position: fixed;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          top: 0;
+          z-index: 100;
+          transition: 1s all;
+          opacity: 1;
+          visibility: visible;
+        }
+    
+        #preloader.cansel {
+          opacity: 0;
+          visibility: hidden;
+        }
+    
+        .preloader {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+    
+        .preloader__item--1 {
+          width: 20px;
+          height: 20px;
+          background: #f583a1;
+          border-radius: 50%;
+          background-color: #217E7F;
+          margin: 7px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        @keyframes scale {
+          0% {
+            transform: scale(1);
+          }
+    
+          50%,
+          75% {
+            transform: scale(2.5);
+          }
+    
+          78%,
+          100% {
+            opacity: 0;
+          }
+        }
+    
+        .preloader__item--1:before {
+          content: '';
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: #217E7F;
+          opacity: 0.7;
+          animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+          animation-delay: 200ms;
+          transition: 0.5s all ease;
+          transform: scale(1);
+        }
+    
+        .preloader__item--2 {
+          width: 20px;
+          height: 20px;
+          background: #f583a1;
+          border-radius: 50%;
+          background-color: #96CAD6;
+          margin: 7px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        @keyframes scale {
+          0% {
+            transform: scale(1);
+          }
+    
+          50%,
+          75% {
+            transform: scale(2.5);
+          }
+    
+          78%,
+          100% {
+            opacity: 0;
+          }
+        }
+    
+        .preloader__item--2:before {
+          content: '';
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: #96CAD6;
+          opacity: 0.7;
+          animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+          animation-delay: 400ms;
+          transition: 0.5s all ease;
+          transform: scale(1);
+        }
+    
+        .preloader__item--3 {
+          width: 20px;
+          height: 20px;
+          background: #f583a1;
+          border-radius: 50%;
+          background-color: #ECEBEB;
+          margin: 7px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        @keyframes scale {
+          0% {
+            transform: scale(1);
+          }
+    
+          50%,
+          75% {
+            transform: scale(2.5);
+          }
+    
+          78%,
+          100% {
+            opacity: 0;
+          }
+        }
+    
+        .preloader__item--3:before {
+          content: '';
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background-color: #ECEBEB;
+          opacity: 0.7;
+          animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+          animation-delay: 600ms;
+          transition: 0.5s all ease;
+          transform: scale(1);
+        }
+    
+      </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="preloader">
+          <div class="preloader__item preloader__item--1"></div>
+          <div class="preloader__item preloader__item--2"></div>
+          <div class="preloader__item preloader__item--3"></div>
+        </div>
+      </div>
+
+<div id="MainContainer" class="animated fadeIn">
+    
+    <picture>
+        <source type="image/webp" media="(max-width: 639px)" srcset="img/sostav_bg.webp">
+        <source media="(max-width: 639px)" srcset="img/sostav_bg.jpg">
+        <source type="image/webp" srcset="img/final-poster.webp">
+            <img src="img/final-poster.jpg" alt="" id="MainContainerBg">
+    </picture>
+    <div id="scrollHelpBlock" class="scrollHelp messageBox messageBox-block hidden">
+        <div class="col-xs-12  messageBox-block mouse messageBox-block-mouse" style="font-size: 11px;">utilizați scrol</div>
+    </div>
+    <div class="startMsgBox messageBox gameProgress hidden" id="gameProgress">
+        <div class="gameProgress-w">
+            <div class="gameProgress-w-bar" id="progressBarBlock"></div>
+        </div>
+    </div>
+
+    <div class="content container" id="HeaderBlock">
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid no-resp">
+                    <div class="row">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="">
+                                <div class="">
+                                    <img src="img/logo_bullet.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#chtokak" class="nav-link"> Cum funcționează</a></li>
+                                <li><a href="#sostav" class="nav-link"> Compoziția</a></li>
+                                <li><a href="#pokaz" class="nav-link"> Cine ar trebui să încerce</a></li>
+                                <li><a href="#preim" class="nav-link"> Avantaje</a></li>
+                                <li><a href="#contact" class="nav-link"> Cum să comandați</a></li>
+                                <li class="nav-link nav-link-bold"><b>18+</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content container" id="GameContainer">
+
+        <div class="startMsgBox messageBox visible" id="ageSelectMB">
+            <div class="row" style="margin-top: 15px;">
+                <div class="col-xs-5 messageBox-title startGameMob">Începe jocul</div>
+                <div class="col-xs-2">
+                    <button class="messageBox-button yes" id="startGame">Start</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 messageBox-title">Porneşti sunetul?</div>
+                <div class="col-xs-1">
+                    <button class="messageBox-button no preSound" id="preStartHasSound">DA</button>
+                </div>
+                <div class="col-xs-1">
+                    <button class="messageBox-button yes preSound" id="preStartNoSound">NU</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="startMsgBox messageBox hidden" id="finBoxMB">
+            <div class="row final-message hiddenopacity">
+                
+            </div>
+            <div class="row">
+                <div class="col-xs-6 messageBox-title big w100message repeat">
+                    <p>Vrei să exciti  fetele astfel incît ele să sară pe tine și să te implore de sex?</p>
+                    <p>
+                        <a href="#contact" class="nav-link">Devino cel mai bun iubit</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="startMsgBox messageBox hidden" id="startGameMB">
+            <div class="row">
+                <div class="col-xs-4 messageBox-title">Vreai să te joci cu mine?</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-1 messageBox-title">Atinge-mă acolo ...</div>
+            </div>
+            <div class="row mouse-desktop-wrap">
+                <div class="col-xs-2 col-xs-offset-2 messageBox-block mouse"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 col-xs-offset-2 messageBox-title little">utilizați scrol</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+
+    <section class="article hidden" id="chtokak">
+        <div class="content container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-11 col-sm-offset-1">
+                    <h1>CUM ACȚIONEAZĂ <span class="productName"></span>?</h1>
+                </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-xs-12 col-sm-5 "><img class="img-responsive" src="prod.png" alt=""></div>
+                <div class="col-xs-12 col-sm-7 ">
+                    <h2 class="topL hidden-xs">Ce este <span class="productName"></span>?</h2>
+                    <h2 class="visible-xs-block">Ce este <span class="productName"></span>?</h2>
+                    <p><span class="productName"></span> este un instrument pentru bărbați, care doresc mai mult de la scenele de pat. Este folosit pentru a crește libidoul și pentru a exacerba senzațiile sexuale.</p>
+                    <p><span class="productName"></span> poate fi luat ca un curs – câte 1 stic de două ori pe zi timp de 30 de zile sau "de necesitate" cu câteva ore înainte de…</p>
+                </div>
+            </div>
+            <div class="row  article-b">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 blockBB">
+                    <h2>Este important de menționat că, datorită compoziției echilibrate unice ale <span class="productName"></span>, <br>aceasta poate fi combinat cu alcoolul.</h2>
+                </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <h2 class="topL">Efectul maxim peste 2 ore</h2>
+                    <p><span class="productName"></span> promovează la creșterea producției de testosteron și ajută organismul să tonifice. Rezultatul apare cel mai adesea peste 2-3 ore, în funcție de greutatea corporală. Instrumentul ajută la creșterea semnificativă a duratei și a calității erecțiilor, drept urmare durata orgasmului și senzațiile din proces depășesc toate așteptările.</p>
+                </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 blockBB">
+                    <h2>Bonus plăcut</h2>
+                    <p><span class="productName"></span> are capacitatea de a păstra acțiunea după orgasm, ceea ce face posibilă o nouă rundă. Sau poate nu numai una. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article hidden" id="sostav">
+        <div class="content container">
+            <div class="row">
+                <div class="col-full">
+                    <h1>Compoziția produsului</h1>
+                </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-xs-12 col-sm-12">
+
+
+                    <h2><span class="productName"></span> este bogat în componente pe care strămoșii noștri le-au folosit de secole.</h2>
+                    <p>Extractul de pin - este un adevărat depozit de fito-androgeni (inclusiv DHEA, forme biodisponibile de testosteron și androsteron). Promovează îmbunătățirea echilibrului hormonal, care are un efect benefic asupra sănătății prostatei și crește libidoul.</p>
+<p>Extract de afine - un ingredient testat împotriva infecțiilor sistemului genito-urinar. Efectul se bazează pe acțiunea proantocianurilor, care împiedică pătrunderea bacteriilor în tractul urinar.</p>
+<p>Extract de mușețel - datorită unei componente cunoscute sub numele de cumarină, ajută la curățarea sângelui, la întărirea sistemului genito-urinar cu oxigen și vitamine.</p>
+<p>Extract de urzică - stimulează sinteza principalului hormon masculin, testosteronul, datorită a 6 izoelectine conținute în extract. Acest lucru are un efect benefic asupra întregului sistem genito-urinar al bărbatului - de la potență la sănătatea prostatei.</p>
+
+                </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 blockBB">
+                    <h2>Bonus plăcut</h2>
+                    <p>O stic de <span class="productName"></span> conține, de asemenea, vitamine, antioxidanți și minerale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article hidden" id="pokaz">
+        <div class="content container">
+            <div class="row">
+                <div class="col-full">
+                    <h1>Cine ar trebui să-l încerce?</h1>
+                </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-full col-full-max center-small">
+                    <h2 class="col-full center-small">Cei care sunt obișnuiți să obțină mai mult din scenele de pat. <br> Cei care sunt obișnuiți să-și rezolve problemele aici și acum. <br> Cei care nici nu se gândesc să se oprească la cele realizate. </h2>
+                </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-full blockBB text-center">
+                    <h2>"Erorile" în pat sunt experimentate de aproape <br>fiecare al doilea bărbat în vârstă de 35-40 de ani.</h2>
+                </div>
+            </div>
+            <div class="row article-b col-full-flex">
+                <div class="col-half center-medium">
+                    <h2 class="stat">37%</h2>
+                    <h3>bărbații cu vârsta cuprinsă între 45 și 60 de ani tot mai des refuză să aibă contact sexual  </h3>
+                </div>
+                <div class="col-half center-medium">
+                    <h2 class="stat">26%</h2>
+                    <h3>barbaţii dau vina pe partenerul lor</h3>
+                </div>
+                <div class="col-full"> <span class="productName"></span> este recomandat bărbaților adulți care doresc să-și îmbunătățească sentimentele și să-și umple viața sexuală cu culori. </div>
+            </div>
+            <div class="row article-b">
+                <div class="col-full">
+                    <h2 class="center-small col-full text-center">De ce se întâmplă eșecuri în pat?</h2>
+                    <p>Există multe motive pentru care se întâmplă "eșecuri". Unele dintre ele, cum ar fi stresul sau relațiile dificile dintre parteneri, sunt ușor de păcălit cu <span class="productName"></span>. Dar dacă în cazul dumneavoastră problema se află la nivelul leziunilor fiziologice, stadiului avansat al prostatitei și a altor afecțiuni mai grave, atunci este recomandabil să consultați un specialist înainte de a utiliza <span class="productName"></span>.</p>
+                </div>
+            </div>
+            <div class="row article-b col-full-flex">
+                <div class="col-half col-half-first">
+                    <h2>Cauze psihologice:</h2>
+                    <p>
+                    </p>
+                    <ul>
+                        <li>Depresie,</li>
+                        <li>Stresul,</li>
+                        <li>Relațiile dintre partenerii sexuali,</li>
+                        <li>Leziuni psihoemoționale,</li>
+                        <li>Suprasolicitare.</li>
+                    </ul>
+                    <p>
+                </p></div>
+                <div class="col-half">
+                    <h2>Cauze fiziologice:</h2>
+                    <p>
+                    </p>
+                    <ul>
+                        <li>Boli ale sistemului cardiovascular,</li>
+                        <li>Tulburări hormonale,</li>
+                        <li>Procesele inflamatorii ale sistemului genito-urinar,</li>
+                        <li>Leziuni pelvine anterioare,</li>
+                        <li>Consecințele luării medicamentelor.</li>
+
+                    </ul>
+                    <p>
+                </p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="article hidden" id="preim">
+        <div class="content container">
+            <div class="row col-full">
+                <div class="col-full">
+                    <h1>Avantaje</h1>
+                </div>
+            </div>
+
+            <div class="row article-b preim">
+                <div class="col-full-small">
+                    <span class="preim-icon pic6"></span>
+                </div>
+                <div class="col-full-small preim-delim">
+                    <img src="img/delim.png" alt="">
+                </div>
+                <div class="col-full-small preim-text">
+                    <h2>Conține ingrediente naturale</h2>
+                    <p><span>Fructe de ienupăr, coarne de cerb Maral din Altai, jet de castor, ficat de rechin, colții babei și propolis.</span></p>
+                </div>
+            </div>
+
+            <div class="row article-b preim">
+                <div class="col-full-small">
+                    <span class="preim-icon pic7"></span>
+                </div>
+                <div class="col-full-small preim-delim">
+                    <img src="img/delim.png" alt="">
+                </div>
+                <div class="col-full-small preim-text">
+                    <h2>Nu conține substanțe nocive</h2>
+                    <p><span>Compoziția include extracte din plante, vitamine și minerale.</span></p>
+                </div>
+            </div>
+
+
+            <div class="row article-b preim">
+                <div class="col-full-small">
+                    <span class="preim-icon pic5"></span>
+                </div>
+                <div class="col-full-small preim-delim">
+                    <img src="img/delim.png" alt="">
+                </div>
+                <div class="col-full-small preim-text">
+                    <h2>Compatibil cu alcoolul</h2>
+                    <p><span>Compoziția echilibrată unică vă permite să combinați recepția remediului cu băuturi calde.</span></p>
+                </div>
+            </div>
+
+            <div class="row article-b preim">
+                <div class="col-full-small">
+                    <span class="preim-icon pic1"></span>
+                </div>
+                <div class="col-full-small preim-delim">
+                    <img src="img/delim.png" alt="">
+                </div>
+                <div class="col-full-small preim-text">
+                    <h2>Îmbunătățește orgasmul</h2>
+                    <p><span>Crește puterea senzațiilor și durata plăcerii în timpul orgasmului.</span></p>
+                </div>
+            </div>
+            <div class="row article-b preim">
+                <div class="col-full-small">
+                    <span class="preim-icon pic2"></span>
+                </div>
+                <div class="col-full-small preim-delim">
+                    <img src="img/delim.png" alt="">
+                </div>
+                <div class="col-full-small preim-text">
+                    <h2>Luarea cursului sau o singură dată</h2>
+                    <p><span>Puteți lua un curs: 1 stic la micul dejun sau "de necesitate" cu câteva ore înainte de… </span></p>
+                </div>
+            </div>
+            <div class="row article-b preim">
+                <div class="col-full-small">
+                    <span class="preim-icon pic3"></span>
+                </div>
+                <div class="col-full-small preim-delim">
+                    <img src="img/delim.png" alt="">
+                </div>
+                <div class="col-full-small preim-text">
+                    <h2>Este suficient nu doar pentru o dată</h2>
+                    <p><span>Efectul remediului continuă după orgasm, astfel încât "încărcarea" poate fi suficientă pentru mai multe abordări</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="article hidden" id="contact">
+        <div class="content container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-11 col-sm-offset-1 ">
+                    <h1>Cum să faceţi comanda <span class="productName"></span>?</h1>
+                </div>
+            </div>
+
+            <div class="row article-b">
+                <div class="col-full">
+                    <div class="features-wrapper"></div>
+                    <style>
+                        .cursor-text{
+                            color: #000;
+                        }
+                        .wheel_input{
+                            color: #000;
+                        }
+                    </style>
+                    <!--<form class="form x_order_form" method="post" action="https://tracker.everad.com/conversion/new">
+                        <div class="form__title"> Completați formularul de comandă de mai jos și faceți clic pe butonul "Comandaţi". Apoi operatorul vă va contacta. </div>
+                        <img src="prod.png" alt="" class="form__prod">
+                        <div class="form__bg">
+                          <div class="form__name">
+                            <input class="form__name__field names" name="name" required autocomplete="name" type="text" placeholder="Numele meu">
+                          </div>
+            
+            
+                          <div class="form__tel">
+                            <input class="form__tel__field phones" name="phone" required autocomplete="tel" type="tel" placeholder="Numărul meu de telefon">
+                          </div>
+                          <input class="form__btn btn" type="submit" value="Comandaţi">
+                        </div>
+                        <div class="form__title form__title--bottom"> FERIȚI-VĂ DE FALSURI! <span class="productName"></span> ORIGINAL ESTE DISPONIBIL NUMAI PE SITE-UL OFICIAL! </div>
+                      <input type="hidden" name="campaign_id" value="{CAMPAIGN_ID}"><input type="hidden" name="es_list_id" value=""><input type="hidden" name="chatbot_history" value="{}"><input type="hidden" name="sid5" value="{subid}"><input type="hidden" name="landing_id" value="14094"><input type="hidden" name="country_code" value="RO"><input type="hidden" name="redirect_url" value="/subscribe.html"></form>-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <video id="e8os" autoplay loop muted playsinline="" preload="auto" style="position: absolute; min-width: 100%; min-height: 100%; width: 100%; height: auto; z-index: -1000; overflow: hidden; top: 0px; left: 0px;">
+        <source src="video/prestart_1.mp4" type="video/mp4">
+    </video>
+    <video id="mh87" autoplay muted playsinline="" preload="auto" class="hidden" style="position: absolute; min-width: 100%; min-height: 100%; width: 100%; height: auto; z-index: -1000; overflow: hidden; top: 0px; left: 0px;">
+        <source src="video/final-mini.mp4" type="video/mp4">
+    </video>
+    <video id="3cue" autoplay loop muted playsinline="" preload="auto" class="hidden" style="position: absolute; min-width: 100%; min-height: 100%; width: 100%; height: auto; z-index: -1000; overflow: hidden; top: 0px; left: 0px;">
+        <source src="video/bad_6_v.mp4" type="video/mp4">
+    </video>
+</div>
+
+
+<script src="js/script.js"></script>
+
+    <script>
+        const offer_params = {
+            priceMain : '149',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2, тільки це не стосується барабану, барабан розрахований тільки на 50%
+            currencyMain: 'lei',
+            productName : 'Urotrin',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain : offer_params.priceMain,
+            currencyMain : offer_params.currencyMain,
+            lang : 'ro', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product : offer_params.productName, // название продукта
+            genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+            form : {
+                isNeeded : 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+
+
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+
+
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+
+
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function(){
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+
+
+        $('[name="phone"]').on('input change', function(e){
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+
+</body>
+</html>
