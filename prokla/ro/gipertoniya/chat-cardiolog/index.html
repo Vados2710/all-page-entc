@@ -1,0 +1,192 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragoș Păunescu. Sunt medic cardiolog, specialist principal al României.</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+    
+  </head>
+  <body>
+    <div class="wrap" id="screenFirst">
+      <div class="chat-header zoomIn animated">
+        <div class="chat-header-container down">
+          <div class="chat-header-container-wrapper">
+            <div class="chat-header-container-image-left">
+              <div class="chat-header-container-image">
+                <img src="images/avatar.png" class="chat-content-desc-image" alt="">
+              </div>
+              <div class="chat-header-container-image"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-container zoomIn animated">
+        <div class="container2"></div>
+      </div>
+    </div>
+    <span style="display: none" id="currentYear" class="nowdate"></span>
+
+    <template id="orderForm">
+      <div style="text-align: center">
+        <b class="main-price" style="font-size: 19px; color: #0a0a0a; display: block; margin-bottom: 10px; font-weight: 100">
+          la reducere:
+        </b>
+        <b class="main-price" style="font-size: 144%; color: red; text-align: center; margin-bottom: 0; padding-bottom: 0">
+          <b class="price_land_s1"><span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span></b> <b class="price_land_curr"></b>
+        </b>
+      </div>
+      <div id="roulette">
+        <form class="orderForm x_order_form order_all" action="getform.php" method="post" id="frm">
+          <input type="hidden" name="utm_source" value="{clickid}">
+          <input type="hidden" name="utm_campaign" value="{t2}">
+          <div class="prices"></div>
+          <div class="order_form">
+            <div class="block_form">
+              <label class="block_form_label">Nume:</label>
+              <div>
+                <input class="form_input" type="text" name="name" placeholder="Introdu numele tau" required>
+              </div>
+            </div>
+            <div class="block_form">
+              <label class="block_form_label">Telefon:</label>
+              <div>
+                <input class="form_input phone_n" name="phone" placeholder="+40768221326" type="tel" required>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <button class="button order-btn ifr_button sub" style="text-transform: uppercase" type="submit">
+              OBȚINE
+            </button>
+          </div>
+        </form>
+      </div>
+    </template>
+
+    <script defer src="js/typed.js"></script>
+
+
+    <script>
+        const offer_params = {
+            priceMain: '159',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2, тільки це не стосується барабану, барабан розрахований тільки на 50%
+            currencyMain: 'lei',
+            productName: 'Friocard',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+    <script defer src="js/smooth-scroll.js"></script>
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain: offer_params.priceMain,
+            currencyMain: offer_params.currencyMain,
+            lang: 'ro', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product: offer_params.productName, // название продукта
+            genderTargetting: 'all', // пол целевой аудитории - all, male, female
+
+
+            form: {
+                isNeeded: 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+
+
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+
+
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+
+
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+
+
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+
+
+
+  </body>
+</html>
