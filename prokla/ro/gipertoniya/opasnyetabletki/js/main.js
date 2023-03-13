@@ -1,0 +1,1 @@
+var mv_rdate=document.getElementsByClassName("mv_rdate");if(mv_rdate)for(i=0;i<mv_rdate.length;i++){let e=Date.now(),t=864e5*(i+2)*.3,a=new Date(e-t).toLocaleDateString();mv_rdate[mv_rdate.length-i-1].innerHTML=a}
