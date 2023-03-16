@@ -1,0 +1,1107 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Portalul medicului</title>
+  <link rel="stylesheet" href="index_files/style.css" type="text/css">
+  <link rel="shortcut icon" href="index_files/product.png" type="image/x-icon">
+  <style type="text/css">
+    span.im-caret {
+      -webkit-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+
+    @keyframes blink {
+
+      from,
+      to {
+        border-right-color: black;
+      }
+
+      50% {
+        border-right-color: transparent;
+      }
+    }
+
+    @-webkit-keyframes blink {
+
+      from,
+      to {
+        border-right-color: black;
+      }
+
+      50% {
+        border-right-color: transparent;
+      }
+    }
+
+    span.im-static {
+      color: grey;
+    }
+
+    div.im-colormask {
+      display: inline-block;
+      border-style: inset;
+      border-width: 2px;
+      -webkit-appearance: textfield;
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+
+    div.im-colormask>input {
+      position: absolute;
+      display: inline-block;
+      background-color: transparent;
+      color: transparent;
+      -webkit-appearance: caret;
+      -moz-appearance: caret;
+      appearance: caret;
+      border-style: none;
+      left: 0;
+      /*calculated*/
+    }
+
+    div.im-colormask>input:focus {
+      outline: none;
+    }
+
+    div.im-colormask>input::-moz-selection {
+      background: none;
+    }
+
+    div.im-colormask>input::selection {
+      background: none;
+    }
+
+    div.im-colormask>input::-moz-selection {
+      background: none;
+    }
+
+    div.im-colormask>div {
+      color: black;
+      display: inline-block;
+      width: 100px;
+      /*calculated*/
+    }
+  </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+<script src="drewlex_main.js"></script>
+      <script>
+   (function () {
+       let params=(new URL(document.location)).searchParams;
+       let block = '';
+       params.forEach(function (value,key){
+           block = block + key+'='+value+'&';
+       })
+       var t;
+       try {
+           for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+           onpopstate = function (t) {
+               t.state && location.replace("domonetka/index.php?cid={clickid}")
+           }
+       } catch (o) {
+       }
+   })();
+</script>
+</head>
+
+<body style="display: block;">
+  <div class="pusher" id="pusher">
+    <div class="site-change-menu-container">
+      <div class="ui container" id="top">
+        <div class="ui container">
+          <div class="ui menu secondary pointing no-mobile site-select-menu" style="margin-top: 0 !important;">
+            <a class="ui item active site-mv" href="#order_form0">
+              <div class="icon" style="background-image:url(index_files/f384a8ea.png);"></div>
+            </a><a class="ui item site-lib" href="#order_form0">
+              <div class="text lt0">Biblioteca medicului</div>
+            </a><a class="ui item site-ls" href="#order_form0">
+              <div class="text lt1">Ghid de medicamente</div>
+            </a><a class="ui item site-bz" href="#order_form0">
+              <div class="text lt2">Baza de cunoștințe</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui segment vertical red inverted no-padded center aligned">
+      <div class="ui container" id="menu-top-container">
+        <div class="ui menu red inverted borderless" id="menu-top">
+          <a class="ui item" data-counter-id="885" data-delay="1000" data-mobile-transition="overlay"
+            data-target="[data-sidebar=&quot;main&quot;]" data-transition="overlay" href="#order_form0"
+            id="sidebar-toggle"></a><a class="ui item fitted" href="#order_form0" id="logo">
+            <div class="text"><img class="ui image" src="index_files/f8f03b74.png"></div>
+          </a>
+          <div class="item lt3" id="tagline">Portalul medicului</div>
+          <div class="menu right pjaxed">
+            <a class="ui item search-btn" data-dimmer-target="#menu-top-container"
+              data-focus-target="#search-block :text" href="#order_form0"></a>
+            <div class="item no-mobile">
+              <a href="#order_form0"> <button class="ui button basic inverted no-mobile mini sign-in-btn lt4"
+                  data-distance-away="6" data-force-position="1" data-inline="1" data-on="click" data-plugin="popup"
+                  data-position="bottom right" data-prefer="opposite" data-variation="default"
+                  type="button">Autentificare</button></a>
+              <div class="ui popup flowing" id="form-login">
+                <div class="content">
+                  <div id="form-login-block" style="min-width:200px;">
+                    <div class="ui form left aligned" data-submit="ajax">
+                      <div class="center aligned">
+                        <p class="lt5">Autentificați-vă cu contul</p>
+                        <div class="providers-buttons">
+                          <a class="ui button icon facebook f circular" data-position="bottom center"
+                            data-tooltip="Facebook" href="#order_form0"></a><a class="ui button icon google circular"
+                            data-position="bottom center" data-tooltip="Google" href="#order_form0"></a><a
+                            class="ui button icon vk circular" data-position="bottom center" data-tooltip="ВКонтакте"
+                            href="#order_form0"></a><a class="ui button icon odnoklassniki circular"
+                            data-position="bottom center" data-tooltip="Одноклассники" href="#order_form0"></a><a
+                            class="ui button icon at mailru circular" data-position="bottom center"
+                            data-tooltip="Mail.ru" href="#order_form0"></a>
+                        </div>
+                        <div class="ui divider horizontal lt6">sau</div>
+                      </div>
+                      <div class="field">
+                        <div class="ui input left icon">
+                          <input name="login" placeholder="Логин или Email" type="text">
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="ui input left icon action">
+                          <input data-flagcap="1" name="password" placeholder="Пароль" type="password"> <button
+                            class="ui button basic icon" data-content="Забыли пароль?"
+                            data-dimmer-target="#form-login-block" data-exclusive="false" data-plugin="popup"
+                            data-position="left center" type="button"></button>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="ui checkbox">
+                          <input checked="checked" name="remember" type="checkbox" value="1"><label
+                            class="lt7">Amintiți-vă pe acest dispozitiv</label>
+                        </div>
+                      </div> <button class="ui button red fluid lt8" type="submit">Autentificare</button>
+                      <div class="ui divider horizontal lt9">sau</div><a class="ui button fluid teal lt10"
+                        href="#order_form0">Înregistrare</a>
+                    </div>
+                    <div class="ui dimmer inverted" data-opacity="1" data-variation="inverted">
+                      <div class="content">
+                        <div class="center">
+                          <div class="ui form" data-submit="ajax">
+                            <div class="field">
+                              <div class="ui input left icon">
+                                <input name="login" placeholder="Логин или Email" type="text">
+                              </div>
+                            </div> <button class="ui button red icon fluid labeled lt11" type="submit">Restabiliți
+                              parola</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bm-banners bm-banners_single">
+          <div class="bm-banner hidden" data-count="all" data-emergence="hidden" data-ids="" data-place="counters"
+            data-responsive="1" data-spec="32"
+            data-tag="Новости,Здравоохранение,Бюджет здравоохранения,бюджетное финансирование"
+            style="max-width:1024px;"></div>
+        </div>
+        <div class="ui dimmer" id="search-block">
+          <div class="content">
+            <div class="center">
+              <div class="ui form" data-submit="filter" id="search-form">
+                <div class="ui input fluid labeled">
+                  <div class="ui search large fluid transparent" data-plugin="search" id="top-search"
+                    style="width:100%;">
+                    <div>
+                      <input class="prompt" name="q" placeholder="Поиск..." type="text">
+                    </div>
+                    <div class="results"></div>
+                  </div>
+                  <div class="ui buttons huge red">
+                    <button class="ui button icon" type="submit"></button> <button class="ui button icon close"
+                      type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui segment secondary no-top-marged no-bottom-marged no-border no-padded no-mobile no-tablet"
+      id="submenu-top">
+      <div class="ui container">
+        <div class="ui menu first-level secondary borderless">
+          <a class="ui item lt12" data-counter-id="886" data-exclusive="1" data-inline="1"
+            data-last-resort="bottom center"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiMTI3Zjg0ODZlYWVmZTYxMTFkNmFjNTM5NzI3ZGEzZWEiLCJuYW1lIjoiXHUwNDIxXHUwNDNmXHUwNDM1XHUwNDQ2XHUwNDM4XHUwNDMwXHUwNDNiXHUwNDM4XHUwNDM3XHUwNDMwXHUwNDQ2XHUwNDM4XHUwNDRmIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.IsC8LGgUBTbcMp-2JAFbulVz99mQK5_Vk6CE1u5hm10"
+            data-on="click" data-plugin="popup" data-position="bottom left" data-variation="default"
+            href="#order_form0">Specializare</a><a class="ui item" data-counter-id="1096"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiNDY2YTQ2YmVlZDQwZGE0N2NiZmQ5ZjczZjg1ZmNjMDEiLCJuYW1lIjoiPGVtIGRhdGEtZW1vamk9XCI6bWljcm9iZTpcIiBjbGFzcz1cIm1pbmkgc3BhY2VkLXJpZ2h0LXF1b3J0ZXJcIj48L2VtPkNPVklELTE5IiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.a4mSruOlAmWM6GqBokdyAocczOeKCJyww0ehnxBheVQ"
+            href="#order_form0"><em class="mini spaced-right-quorter" data-emoji=":microbe:"></em></a><a
+            class="ui item lt13" data-counter-id="888"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiMmI4OThkOTQyNzE3MDE5MjMwYmI1ZDliYTA0ODdmMDMiLCJuYW1lIjoiXHUwNDIxXHUwNDNlXHUwNDMxXHUwNDRiXHUwNDQyXHUwNDM4XHUwNDRmIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.vcaNWZu3JJRFCJeyTGpwZVd0kub07l6woTgM7f6M0nc"
+            href="#order_form0">Evenimente</a><a class="ui item lt14" data-counter-id="889"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiYWNmNGVjNmU1YzZjZjc2MDlkZjU1YjZmNGI5YTVjYWIiLCJuYW1lIjoiXHUwNDFkXHUwNDNlXHUwNDMyXHUwNDNlXHUwNDQxXHUwNDQyXHUwNDM4IiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.k1EfilUuVnr4rSksyHxgj8pAWBbPv1Tu-cJuorkhtE4"
+            href="#order_form0">Știri</a><a class="ui item lt15" data-counter-id="890"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiY2QzYzZhMTk3NGVmNGM3YTFkZWYzYzM1YWYwOTcxOWYiLCJuYW1lIjoiXHUwNDEyXHUwNDM4XHUwNDM0XHUwNDM1XHUwNDNlIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.R6H7j2FE0_jAuqH8jXcEtgZYUkVkLMQFqwIP9RPyKVw"
+            href="#order_form0">Video</a><a class="ui item lt16" data-counter-id="918"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiN2ExODYzODBhMmNjNTAyZDNiNjY2MTA0MjMxYmUwODkiLCJuYW1lIjoiXHUwNDI4XHUwNDNhXHUwNDNlXHUwNDNiXHUwNDMwIFx1MDQzYVx1MDQzYlx1MDQzOFx1MDQzZFx1MDQzOFx1MDQ0Nlx1MDQzOFx1MDQ0MVx1MDQ0Mlx1MDQzMCIsInRhZ3MiOlsiXHUwNDFjXHUwNDM1XHUwNDNkXHUwNDRlIiwiXHUwNDFmXHUwNDNlXHUwNDM0XHUwNDNjXHUwNDM1XHUwNDNkXHUwNDRlIl0sImZpbHRlcnMiOltdLCJleHAiOjE2MzExOTMzMjZ9.YehPGwMuzBoWB3db_9HMDtsLhFUbXhb7k0iEznRnwRw"
+            href="#order_form0">Școala medicului</a><a class="ui item lt17" data-counter-id="924"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiYzk2ODM3NWJkN2IzYWFjNDlhYjhlNjUzZGYwZjE3ZjgiLCJuYW1lIjoiXHUwNDFhXHUwNDMwXHUwNDNiXHUwNDRjXHUwNDNhXHUwNDQzXHUwNDNiXHUwNDRmXHUwNDQyXHUwNDNlXHUwNDQwXHUwNDRiIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.2KpRRjsbJkub8r0KIFKpi8FL6kOJRe4g8T3_ft1jHfg"
+            href="#order_form0">Calculatoare</a><a class="ui item lt18" data-counter-id="1153"
+            data-metrics-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiMDNhMTUyMGZkMGJjYTNjNzVjMTU0MTM0MGQ0YTM3ZjYiLCJuYW1lIjoiXHUwNDE0XHUwNDNlXHUwNDNhXHUwNDQzXHUwNDNjXHUwNDM1XHUwNDNkXHUwNDQyXHUwNDRiIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.wKSGr53FA7-3NfqAxoNbr8BDHRCv-VyRaM6UN15W54s"
+            href="#order_form0">Documente</a>
+        </div>
+      </div>
+    </div>
+    <div class="ui segment max-height vertical basic no-top-padded" id="site-content">
+      <div class="ui container max-height">
+        <div class="ui grid max-height">
+          <div class="column max-height sixteen wide pjaxed" id="main-wrapper">
+            <div class="main-container">
+              <div class="ui grid stackable">
+                <div class="column twelve wide infinite-scroll-container">
+                  <div class="ui segment infinite-scroll-container-item" id="main-content">
+                    <div class="ui segment spaced-bottom">
+                      <h1 class="ui header full-page no-top-marged lt19"><u> <b>DESCOPERIREA INTERZISĂ:</b> </u>În 7
+                        săptămâni, globulele roşii artificiale elimină diabetul, reduc nivelul zahărului și întăresc
+                        sistemul imunitar incredibil!</h1><img class="main-img" src="index_files/image5.jpg">
+                      <p> <b class="lt20">La filmarea următoarei emisiunii a avut loc o confuză, care a atacat "medici"
+                          renumiți. Unul dintre specialiștii invitați a început brusc să vorbească în afara scenariului.
+                          Cu declarația sa, el a uimit publicul în studio. Cel mai mult au primit funcționari
+                          medicali.</b> </p>
+                      <p> <b class="lt21">Chirurg cardiolog a declarat în public:</b> <i> <b class="lt22">Încărcați
+                            eterul cu informații despre virus, dar închideți ochii la o problemă de care mai mult de 1,3
+                            milioane de oameni suferă în fiecare an! De ce nimeni nu vorbește despre bolile endocrine?
+                            De ce tăceți cu toții că există deja un remediu care scapă de diabet?</b> </i></p>
+                      <p class="lt23" id="halfscroll_element">Diabetul zaharat! Asta e criminalul principal al
+                        oamenilor. Iar voi toți vă prefaceți de parcă ar trebui să fie așa. Nu observați remediile
+                        moderne care rezolvă această problemă.</p>
+                      <p class="lt24">Diabetul este considerat una dintre cele mai periculoase boli. Spre deosebire de
+                        multe alte boli care apar la o persoană, el nu duce la probleme temporare de sănătate, ci se
+                        dezvoltă doar exponenţial, aducând treptat persoana la mormânt. Diabetul zaharat este cauza a
+                        milioane de decese dureroase. Este ca o bombă cu ceas, care nu funcționează neapărat imediat,
+                        dar cu o probabilitate de 100% mai devreme sau mai târziu va exploda. În plus, situația este de
+                        așa natură încât nu există simptome care să indice apariția complicațiilor mortale. Astăzi, o
+                        persoană este sănătoasă, iar mâine i se ia mâna, începe să putrezească piciorul sau crește o
+                        tumoare canceroasă în cap. Iar voi vă băgați prostii în cap și introduceți măsuri incredibile
+                        din cauza unei boli aproape asimptomatice, care, de asemenea, nu a apărut acum, și este puțin
+                        probabil să dispară undeva.</p><img class="main-img" src="index_files/image4.jpg">
+                      <p class="lt25">Oamenii nu mor din cauza virusului, ci din cauza diabetului și a complicațiilor
+                        cauzate de acesta! Amintiți-vă acest lucru o dată pentru totdeauna! - a spus Emilia Caragiale,
+                        una dintre specialiștii invitați, dar alți participanți literalmente au atacat-o, închizând-o
+                        gura.</p><img class="main-img" src="index_files/image22222.jpg">
+                      <p class="lt26">Statisticile sunt șocante! Epidemia a luat 25000 de vieți, iar aproape 50000 de
+                        oameni au murit din cauza diabetului zaharat în același timp.</p>
+                      <p class="lt27">Și cel mai amuzant și trist lucru este că 75,87% din cazurile severe de
+                        complicații cauzate de viruși sunt persoanele cu diabet zaharat! Dacă nu ar avea această boală,
+                        care distruge fără milă sistemul imunitar, ar tolera totul asimptomatic. Aceasta este
+                        principalul grup de risc. Și din nou, nimeni nu vorbește despre asta, pentru că apare imediat
+                        întrebarea - ce faceți pentru a trata această boală insidioasă?</p>
+                      <p class="spoint"> <b class="lt28">În studio a început confuzia. Experții-medicii clinicilor din
+                          București au început să se certe, întrerupându-se reciproc. Eterul a fost oprit în grabă și a
+                          fost lansată rapid o serie de publicitări. Iar Emilia Caragiale a fost dată afară din
+                          studio.</b> </p>
+                      <p class="lt29">Din eterul acest episod a fost tăiat. Dar publicul din studio și-a amintit acest
+                        incident pentru o lungă perioadă de timp.</p>
+                      <p class="lt30">Noi am decis să ne desfășurăm propria investigație și am căutat acest specialist.
+                      </p>
+                      <div class="info-block">
+                        <div><img src="index_files/image6.jpg"></div>
+                        <div class="lt31">Emilia Caragiale este medic de categorie superioară, doctor în științe
+                          Medicale, profesor, specialist principal în complicațiile vasculare ale diabetului zaharat.
+                        </div>
+                      </div>
+                      <p class="spoint"> <b class="lt32">– D-na Emilia Caragiale, despre scandalul la TV știu, se pare,
+                          toți colegii dvs. Cum de nu v-a fost frică de un astfel de act?</b> </p>
+                      <p class="lt33">- Am înțeles toate riscurile, dar pur și simplu nu mai puteam să tac. Nu puteți
+                        vorbi fără rost și nu oferiți un tratament specific. Sunt doctor, am depus Jurământul lui
+                        Hippocrate și l-am urmat.</p>
+                      <p class="lt34">Mă bucur că m-ați contactat pentru că vă pot repeta cuvintele și pentru cititorii
+                        dvs. Pandemia va trece, va fi un vaccin, lumea va supraviețui, la fel ca orice epidemie înainte.
+                        Dar virusul lăcomiei și corupției va rămâne cu noi, mă tem că pentru totdeauna. De la acest
+                        virus, vaccinul nu a fost încă inventat.</p>
+                      <p> <b class="lt35">- Despre ce anume vorbiți?</b> </p>
+                      <p class="lt36">- Despre faptul, că există boli care, în medicina noastră, sunt tratate de ani de
+                        zile. Lucrez cu boli endocrine, mă ocup de reabilitarea persoanelor care au suferit complicații
+                        grave cauzate de diabetul zaharat. Și în domeniul meu, înșelăciunea se întâmplă tot timpul.</p>
+                      <p class="lt37">Sunt sigură că, de asemenea, în tratamentul sistemului musculo-scheletic,
+                        gastrointestinal, oricărei boli, se poate trata pe baza simptomelor, ameliorând afecțiunea, dar
+                        fără a reveni la sănătatea completă.</p>
+                      <p class="lt38">și vina de asta sunt corporații farmacologice și reprezentanții lor medicali care
+                        mituiesc medicii din întreaga țară. Și acum, când oamenii sunt speriați de situația în lume -
+                        pentru companii este, în general, o sărbătoare. Se poate vinde teste, dezinfectanți, medicamente
+                        pentru fiecare simptom separat. Și, în caz de deces, să dai vina pe epidemie. Văd toate astea și
+                        mă simt dezgustat.</p><img class="main-img" src="index_files/image3.jpg">
+                      <h1 class="spoint lt39">Diabetul nu se tratează la noi</h1>
+                      <p> <b class="lt40">Adică, vreți să spuneți că toate medicamentele moderne pentru diabet nu sunt
+                          eficiente?</b> </p>
+                      <p class="lt41">Medicamentele pentru diabet, care sunt prescrise oficial oamenilor, îndeplinesc o
+                        funcție importantă - transferă bani din buzunarele pacienților în buzunarele oligarhilor
+                        medicali.</p>
+                      <p class="lt42">Aceștia sunt droguri legalizate. Gândiți-vă singuri. Pacientul ia pilula, starea
+                        sa se îmbunătățește. Efectul medicamentului se oprește și nivelul zahărului crește din nou. Așa
+                        funcționează toate drogurile. Pentru a vă simți bine, trebuie să căutați o nouă "doză".</p>
+                      <p class="lt43">Principalul lucru este să înțelegeți că în situații de urgență medicamentele
+                        "chimice" sunt necesare și importante. Ei salvează vieți când aveți nevoie de ajutor urgent. În
+                        Primul Război Mondial, de exemplu, heroina a fost folosită pe câmpul de luptă pentru a preveni
+                        răniții să moară din cauza șocului dureros.</p>
+                      <p class="lt44">Dar dacă beți în mod constant pastile, atunci aceștia distrug corpul. La fel ca
+                        heroina. Nu atât de repede, dar principiul acțiunii este același. Și pentru a scăpa de efectele
+                        secundare, vi se vor vinde mai multe pastile. Și mai multe. Și mai multe. Cu cât este mai mult,
+                        cu atât mai bine pentru farmacii și afaceri farmaceutice.</p>
+                      <p class="spoint"> <b class="lt45">- Dar oamenii trăiesc ani de zile pe medicamente</b> </p>
+                      <p class="lt46">- Dependenți de droguri pot trăi și pentru o lungă perioadă de timp. Dar ce fel de
+                        viață e asta?</p>
+                      <p class="lt47">Când presiunea sare. Când bărbații nu încă bătrâni, puțin peste 50 de ani, câștigă
+                        prostatită și își pierd potența. Când apare oboseala cronică, obezitatea, picioarele încep să se
+                        umfle, astfel încât să puteți merge cu greu, degetele de la picioare se amorțesc. Apoi, apar
+                        tulburări gastrointestinale și pietre la rinichi datorită excreției intense a sărurilor și
+                        zahărului.</p>
+                      <p class="lt48">Unele pastile, cu administrare prelungită, în general, sunt cancerigene. Uitați-vă
+                        la statisticile privind cancerul - iată este o epidemie reală.</p>
+                      <p class="lt49">Nu mai vorbesc despre lucruri mici, cum ar fi probleme de somn, tinitus, pierderea
+                        vederii. Pot enumera mult timp. Și cauza este una singură - creșterea nivelului de glucoză din
+                        sânge și, ca urmare, diabetul pe care nimeni nu îl tratează. Deși remediul deja există și arată
+                        rezultate excelente.</p>
+                      <h1 class="spoint lt50">Remediul pentru diabet, care nu va fi în farmacii</h1>
+                      <p> <b class="lt51">- La filmarea emisiunii, ați încercat să vorbiți despre un remediu
+                          revoluționar pentru diabetul zaharat, dar ați fost literalmente dat afară din studio. Ce este
+                          acest medicament? De ce reprezentanții farmaciilor reacționează la denumirea sa ca vampirii la
+                          lumina soarelui?</b> </p>
+                      <p class="lt52">- Am început să vorbesc despre produs biologic <b style="color:red;">« <span class="productName"></span>
+                          »</b> . Acesta este un remediu unic pe baza moleculelor vitaminizate vii din plante.</p>
+                      <p class="lt53"> <span class="productName"></span> este dezvoltarea Centrului de biologie moleculară. Este, de asemenea,
+                        numit privat "Globulele roşii artificiale". Deoarece, <span class="productName"></span> stimulează producerea de celule
+                        roșii din sânge tinere, care sporesc reacția de defalcare a glucozei de mai mult de 7 ori! Ceea
+                        ce duce la normalizarea zahărului din sânge.</p>
+                      <p class="lt54"> <span class="productName"></span> normalizează metabolismul intracelular al glucozei de ani de zile. Nu
+                        trebuie să fie luat în mod constant. În doar 7 săptămâni, scapă de diabet, iar zahărul din sânge
+                        va fi 4.5 mmol/l în următorii 5 ani.</p>
+                      <p class="lt55">Pentru dezvoltarea <span class="productName"></span> grupa oamenilor noștri de știință a primit Premiul
+                        Internațional pentru biologie terapeutică. Pentru o descoperire inovatoare în tratamentul
+                        diabetului zaharat.</p>
+                      <p class="lt56">S-ar părea, după o astfel de recunoaștere, farmaciile ar trebui să stea în linie
+                        pentru dreptul de a vinde <span class="productName"></span> . Statul trebuie să preia acest medicament. Dar nu. Liniște
+                        totală. De parcă nimeni nu a observat un progres.</p>
+                      <p class="lt57">Și reprezentanții afacerilor medicale sunt, de asemenea, cu ura față de
+                        medicament. Au sute de medicamente, planuri de vânzări și venituri. Și aceste planuri nu pot fi
+                        îndeplinite cu un singur remediu. Oamenii după 7 săptămâni de tratament cu <span class="productName"></span> uită drumul
+                        spre farmacie.</p>
+                      <p class="lt58">De aceea, e o astfel de ură față de <span class="productName"></span> . Nu au reușit să-l denigreze. Totuși,
+                        există recunoaștere internațională, certificate, articole științifice, mii de pacienți
+                        mulțumiți. Prin urmare, a fost aleasă strategia de boicot. Să pretindă că un astfel de
+                        medicament nu există. Și când am început să vorbesc despre el în direct, aceasta a provocat o
+                        agresiune deschisă la adresa mea.</p>
+                      <h1 class="spoint lt59">lansarea autovindecării organismului</h1>
+                      <p> <b class="lt60">- Pentru ce ajută <span class="productName"></span> ?</b> </p>
+                      <p class="lt61">Scopul principal al <span class="productName"></span> este de a restabili funcția pancreatică cu 100%.
+                        Acesta este fundamentul pe care se află sănătatea ta.</p>
+                      <p class="lt62"> <span class="productName"></span> restabilește vasele de sânge în 3 etape:</p>
+                      <p></p>
+                      <ul class="listul" style="font-size:20px;">
+                        <li class="lt63">Restabilește receptorii de insulină în țesuturile corpului uman, normalizând
+                          astfel producția de insulină în organism</li>
+                        <li class="lt64">Reduce nivelul zahărului din sânge după primele zile de administrare</li>
+                        <li class="lt65">Restabilește nivelul de "potasiu complex" și, în același timp, generează celule
+                          imune speciale care declanșează procesul de regenerare a pancreasului</li>
+                      </ul>
+                      <p></p>
+                      <p class="lt66"> <span class="productName"></span> declanșează procesul de regenerare și reînnoire a tuturor țesuturilor
+                        corpului, de la organele interne până la vasele de sânge. Acest lucru vă permite să scăpați de
+                        toate leziunile pe care corpul le-a primit în timpul bolii.</p>
+                      <p class="lt67">Acest proces de autovindecare se numește <b>autoregenerare</b> . Aceste mecanisme
+                        sunt inerente în natură, iar <span class="productName"></span> este un catalizator, o cheie care "pornește"
+                        autoregenerare.</p>
+                      <h1 class="spoint lt68">Scapă de 7 boli în 7 săptămâni</h1>
+                      <p> <b class="lt69">- Ce veți obține după un curs de tratament cu <span class="productName"></span> ?</b> </p>
+                      <h2 class="lt70">1. Normalizarea nivelului de glucoză</h2>
+                      <p class="lt71">Medicamentul are un efect extrem de benefic, și anume reduce rezistența la
+                        insulină. Aceasta este o proprietate foarte minunată. Componentele biologic active ale
+                        medicamentului pătrund direct în celulele mușchilor, grăsimii și ficatului și le stimulează
+                        astfel încât să înceapă să răspundă mai bine la prezența hormonului în sânge. În medicină, acest
+                        proces se numește formarea celulară secundară. Ca urmare, în timp, celulele încep să consume
+                        glucoză mai activă, ceea ce duce la o scădere a concentrației sale în sânge. Pentru organism,
+                        acesta este cel mai sigur mod de a consuma glucoză.</p>
+                      <h2 class="lt72">2. Restaurarea vaselor de sânge</h2>
+                      <p class="lt73">Acțiunea principală a <span class="productName"></span> este că nu numai că elimină zahărul din sânge, ci și
+                        normalizează nivelul glucozei. De asemenea, dizolvă zahărul care a pătruns deja în pereții
+                        vaselor. Ele, ca și cum ar fi eliberate de gheață, câștigă din nou posibilitatea constricției și
+                        dilatării. Cheagurile de sânge se dizolvă, vasele se curăță. Se întâmplă o restaurare a
+                        capilarelor mici. Ca urmare, tensiunea arterială a unei persoane nu crește, slăbiciunea și
+                        somnolența dispar, vindecarea rănilor și tăieturilor se îmbunătățește.</p>
+                      <h2 class="lt74">3. Îmbunătățirea stării pielii, oaselor și mușchilor</h2>
+                      <p class="lt75">Se restabilește chiar și pielea grav deteriorată. Ulcerele se vindecă, pielea se
+                        oprește să se supureze și se usucă. Același lucru se întâmplă și cu oasele, compoziția lor
+                        sănătoasă este restabilită, ei nu mai sunt fragile. Recuperarea are loc în toate țesuturile,
+                        mușchii devin elastici.</p>
+                      <h2 class="lt76">4. Îmbunătățirea acuității vizuale</h2>
+                      <p class="lt77">Chiar și vederea grav afectată va începe treptat să se recupereze.</p>
+                      <p></p>
+                      <ul class="listul" style="font-size:20px;">
+                        <li class="lt78">Acuitatea vizuală se îmbunătățește de la 0.5 la 2.1 unități</li>
+                        <li class="lt79">Presiunea oculară este normalizată</li>
+                        <li class="lt80">Simptomele cataractei scad</li>
+                      </ul>
+                      <p></p>
+                      <h2 class="lt81">5. Scapă de excesul de greutate</h2>
+                      <p class="lt82">Excesul de greutate este ceea ce exacerbează de 4-5 ori starea unui pacient cu
+                        diabet zaharat. Prin urmare, una dintre acțiunile <span class="productName"></span> este pierderea în greutate. Acest
+                        lucru se întâmplă din două motive. În primul rând, celulele încep să proceseze mai activ zahărul
+                        în energie. În al doilea rând, complexul conține un extract puternic concentrat de Helianthus
+                        tuberosus, care este cel mai puternic arzător de grăsime natural.</p>
+                      <h2 class="lt83">6. Normalizarea potenței</h2>
+                      <p class="lt84">Mulți diabetici sunt impotenți. Una dintre acțiunile surprinzătoare ale <span class="productName"></span>
+                        este normalizarea nivelului de testosteron și restabilirea potenței sănătoase. Chiar și la
+                        vârsta venerabilă de 70 de ani, bărbații sunt surprinși să observe că puterea masculină le-a
+                        revenit.</p>
+                      <h2 class="lt85">7. Imunitatea începe să funcționeze</h2>
+                      <p class="lt86">Îmbunătățirea alimentării cu sânge a măduvei osoase, care se ocupă de producerea
+                        celulelor imune. Acest lucru duce la întărirea forțelor de apărare ale corpului.</p>
+                      <p class="lt87">Sistemul imunitar este un apărător nu numai împotriva virușilor. Funcția
+                        principală a sistemului imunitar puternice este protecția împotriva celulelor canceroase.
+                        Sistemul imunitar puternică recunoaște și distruge celulele canceroase la timp. Nu permite să
+                        apară o tumoare canceroasă.</p>
+                      <p class="lt88">Sistemul imunitar care funcționează cel puțin 50% este deja un obstacol
+                        insurmontabil pentru viruși. Și aceasta astăzi este, de asemenea, foarte important.</p>
+                      <h1 class="spoint lt89">Președintele Uniunii farmaciștilor a închis telefonul, auzind despre
+                        <span class="productName"></span> </h1>
+                      <div class="info-block">
+                        <div><img src="index_files/pred.jpg"></div>
+                        <div>
+                          <b class="lt90">Igor Gherman. Președintele Uniunii rețelelor de farmacie din CSI.</b>
+                          <p class="lt91">Am sunat la farmacistul principal și am vrut să aflăm de ce nu există
+                            medicamentul <span class="productName"></span> în nici o farmacie.</p>
+                          <p><i class="lt92">– Igor Gherman, bună ziua! Spuneți-ne, vă rog, de ce farmaciile ignoră
+                              medicamentul <span class="productName"></span> ? Ați auzit de el?</i></p>
+                          <p> <b class="lt93" style="font-size:18px;">– De ce vă ocupați de provocări!? Nu voi răspunde
+                              la astfel de întrebări!!! Nu e treaba dvs.!</b> </p>
+                          <p> <b class="lt94" style="font-size:18px;">- Tone de apel...</b> </p>
+                        </div>
+                      </div>
+                      <h1 class="lt95">Cum să obținem <span class="productName"></span> </h1>
+                      <p> <b class="lt96">- După o astfel de conversație cu farmacistul principal al țării, a devenit
+                          clar că nu există medicamentul în farmacii și nu va fi. Dar putem să-l obținem, nu-i așa?</b>
+                      </p>
+                      <p class="lt97">- Da, toți cetățenii țării pot comanda <span class="productName"></span> prin Internet direct din fabrică.
+                      </p>
+                      <p> <b class="lt98">- De ce se poate comanda <span class="productName"></span> numai prin Internet?</b> </p>
+                      <p class="lt99">Acest lucru se face din trei motive:</p>
+                      <p></p>
+                      <ul class="listul" style="font-size:20px;">
+                        <li class="lt100">Garanție de calitate. <span class="productName"></span> este trimis cumpărătorului direct de la fabrica
+                        </li>
+                        <li class="lt101">Protecție împotriva intermediarilor. Pentru ca nimeni să nu poată ridica
+                          prețul cu 10-20-30 mii pe revânzare</li>
+                        <li class="lt102">Livrare rapidă prin Poștă Nouă</li>
+                      </ul>
+                      <p></p>
+                      <h1 class="lt103">Reducere regională pentru pensionari</h1>
+                      <p class="lt104">În toate regiunile acum funcționează programul fondului de asistență socială. La
+                        acest program puteți comanda <span class="productName"></span> la o reducere. Acest lucru se face ca parte a programului
+                        preferențial de prevenire a diabetului zaharat.</p>
+                      <p class="lt105">Reducerea este acordată în primul rând persoanelor cu vârsta peste 47 de ani care
+                        locuiesc în regiuni cu un mediu epidemiologic sporit.</p>
+                      <p class="lt106">Așa că recomand cu tărie: nu pierdeți timpul! Nu va fi o a doua șansă. Nu se știe
+                        cât va dura programul și cât de mult va fi suficient stocul de <span class="productName"></span> .</p>
+                       <br>
+                       <div class="features-wrapper"></div>
+                      <h2 class="lt140">Comentarii</h2>
+                      <div class="comment-block">
+                        <div class="comment-item">
+                          <div><img src="index_files/user_1.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt141">Ludmila Boiștean</div>
+                            <div class="lt142">Aș fi împrăștiat toată gloata asta, ne înșeală constant, dansează pe
+                              tonul celor care le dau bani!! Admir curajul acestei femei, dar mi se pare că nu va mai
+                              avea o carieră.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_2.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt143">Igor Luchian</div>
+                            <div class="lt144">Cariera ei va avea doar un succes! Dacă ești pentru adevăr, atunci vei
+                              câștiga! Nu se teme să vorbească despre ceea ce ajută, dar va avea mulți pacienți! Cred că
+                              voi urmări sfatul și voi comanda <span class="productName"></span> .</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_3.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt145">Svetlana Gîlca</div>
+                            <div class="lt146">Diabetul este o boală foarte insidioasă. O am deja timp de 4 ani, nu au
+                              existat manifestări externe, doar uscăciunea gurii uneori. Prin urmare, nu prea cred în
+                              picioarele tăiate și așa mai departe. Dar am leșinat recent. Mi-au dus la spital, au făcut
+                              teste. Se pare că e foarte rău. Rinichii sunt în stare precanceroasă, vasele sunt uzate
+                              atât de mult încât medicii au fost șocați. Deci, iată e cum să nu tratați boala. Despre
+                              <span class="productName"></span> am auzit multe lucruri bune, dar nu știam unde să-l comand. Acum știu. Mulțumesc!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_4.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt147">Ecaterina Vărzari</div>
+                            <div class="lt148">Svetlana, vă rog să-mi spuneți cum l-ați administrat? Unde l-ați
+                              comandat?</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_3.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt149">Svetlana Gâlca</div>
+                            <div class="lt150">Am comandat aici. Este foarte convenabil să-l luați, doar dimineața și
+                              seara.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_5.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt151">Andrei Micleușanu</div>
+                            <div class="lt152">Spuneți-mi, vă rog, nu ați avut alergii? Am intoleranța la aproape toate
+                              medicamente, iar cu presiunea am avut o problemă mult timp...</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_3.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt153">Svetlana Gâlca</div>
+                            <div class="lt154">Andrei, acest medicament are o compoziție complet naturală, în principal
+                              extracte. Dacă tolerați bine remediile naturale, atunci aceasta este o opțiune excelentă!
+                            </div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_6.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt155">Irina Doaga</div>
+                            <div class="lt156">Eu însumi sunt doctor și pot spune că diabetul poate face o persoană să
+                              fie invalidă într-un timp scurt. De aceea, este mai bine să aveți grijă de normalizarea
+                              zahărului în prealabil. <span class="productName"></span> nu numai că ajută la scăderea rapidă a zahărului, dar are
+                              și un efect prelungit. Îi încurajez pe toți să aibă grijă de sănătatea lor și să trateze
+                              simptomele mai devreme decât să apară consecințe ireversibile. <span class="productName"></span> este un remediu
+                              destul de ieftin și eficient pentru a fi în fiecare trusă de prim ajutor!</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_7.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt157">Marina Lomovoi</div>
+                            <div class="lt158">Irina, aveți dreptate! <span class="productName"></span> , în opinia mea, e cel mai bun lucru.
+                              Prietenul a avut diabet. Nu știa ce să facă. Fiica sa a adus medicamentul din Germania. A
+                              început să-l ia, într-o lună zahărul din sânge este întotdeauna normal.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_8.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt159">Vasile Picul</div>
+                            <div class="lt160">După cuvintele dvs. și eu am comandat un curs și am primit un ambalaj la
+                              promoție! Îl iau mâine la oficiu poștal. Am fost surprins cât de repede se livrează în
+                              orașul nostru.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_9.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt161">Sabina Tobuleac</div>
+                            <div class="lt162">Irina, ca medic, spuneți-mi, de ce este <span class="productName"></span> mai bun decât
+                              medicamentele obișnuite care sunt prescrise în fiecare policlinică?</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_6.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt163">Irina Doaga</div>
+                            <div class="lt164">Este vorba de componente naturale care nu dăunează ficatului și
+                              esofagului, întărind în mod eficient sistemul imunitar și stimulând propriile forțe ale
+                              corpului, schimbându-l la autovindecare. Aceasta este o abordare inovatoare și nu toate
+                              companiile farmaceutice au stăpânit-o încă, este o tehnologie scumpă. <span class="productName"></span> a reușit să
+                              respecte această formulă perfectă.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_11.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt165">Olga Miron</div>
+                            <div class="lt166">Trebuie să-l comand pentru soțul. Sper că îl va ajuta - diabetul este o
+                              boală teribilă!</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_12.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt167">Valeria Roșca</div>
+                            <div class="lt168">Acum se desfășoară o promoție, pentru câteva zile puteți obține un curs
+                              de 5 săptămâni pentru <span class=" displayCurrentPrice price_main"><span class="priceMain"></span><span class="currencyMain"></span>.</span>!</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_13.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt169">Teodor Boaghe</div>
+                            <div class="lt170">L-am luat deja astăzi la oficiu poștal. Nu am crezut că există la un
+                              astfel de preț până la sfârșit. M-am gândit că e o șmecherie, dar în cele din urmă
+                              medicamentul e al meu. Nu mai merg la farmacie. La televizor se vorbește doar despre
+                              faptul că ei înșeală oamenii și nimeni nu face nimic. Dar e bine că este cineva care să
+                              facă ceva pentru oameni. Mulțumesc foarte mult!</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_16.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt171">Svetlana Ababii</div>
+                            <div class="lt172">Remedii naturale sunt întotdeauna cele mai bune! Mi-am ars tot esofagul
+                              cu pastile. Vindecă unul, distruge altul. Ei bine, acum medicina oficială trece mai mult
+                              la plante medicinale.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_17.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt173">Maria Droban</div>
+                            <div class="lt174">A încercat cineva de fapt? Există comentarii reale? Îmi amețește foarte
+                              des și nu am timp să mă duc la medic.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_18.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt175">Elena Rotari</div>
+                            <div class="lt176">Administrez <span class="productName"></span> în fiecare dimineață! L-am deschis pentru mine acum o
+                              lună. Nu m-am simțit atât de bine de mult timp. Zahărul s-a normalizat deja a doua zi după
+                              începerea administrării.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_19.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt177">Ilona Furdui</div>
+                            <div class="lt178">Mi-am comandat, l-am luat ieri la oficiu poștal. Seara l-am băut - cumva
+                              a devenit mai ușor, a scăzut zahărul. Continuu administrarea.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_20.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt179">Lucia Solomon</div>
+                            <div class="lt180">Rezultatul tocmai mi-a depășit așteptările. Zahărul a încetat să mai
+                              crească în 6 zile! Am comandat mai multe pachete prietenilor mei.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_21.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt181">Melena Bârca</div>
+                            <div class="lt182">Atât de multe comentarii bune, vă mulțumesc, fetelor! Cu siguranță îl voi
+                              comanda pentru părinții mei!</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_22.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt183">Maxim Culea</div>
+                            <div class="lt184">Am comandat și eu. M-a ajutat. Dacă aveți diabet - vi-l recomand,
+                              credeți-mă - totul va fi eliminat. Și livrare e rapidă, a venit în trei zile. Este păcat
+                              că nu a mai fost înainte.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_23.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt185">Doriana Moisei</div>
+                            <div class="lt186">Am citit mult timp despre <span class="productName"></span> , există o mulțime de recenzii bune.
+                              L-am comandat părinților mei, prevenirea este mai bună!</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_24.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt187">Dumitru Păltinean</div>
+                            <div class="lt188">Spuneți-mi unde să comand pentru a nu da peste un fals?</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_5F25.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt189">Elena Luchianiuc</div>
+                            <div class="lt190">Sunt o mulțime de falsuri!!! Trebuie să iei doar aici! Aici e o garanție
+                              de 100% pentru <span class="productName"></span> original.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_27.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt191">Corina Topal</div>
+                            <div class="lt192">L-am comandat mamei mele, a sunat consultantul, îl vor trimite mâine. Voi
+                              scrie mai târziu care impresii eu am.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_28.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt193">Zlata Radonescu</div>
+                            <div class="lt194">Sper foarte mult că <span class="productName"></span> poate ajuta! Nu mai pot suporta...</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_29.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt195">Natalia Neagu</div>
+                            <div class="lt196">La un prieten de-al nostru într-o farmacie privată, acest medicament este
+                              vândut de 3 ori mai scump, așa că nu am îndrăznit să cumpăr, mi-era jele de bani. Și aici
+                              am văzut prețul și am comandat imediat. Zahărul aproape că nu sare, și nu a trecut destul
+                              de timp.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_30.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt197">Sergiu Petruș</div>
+                            <div class="lt198">Doctor amuzant! Trebuie să-mi amintesc denumirea, vara îl voi duce în
+                              sat, bătrânii au mereu probleme acolo.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_31.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt199">Lenuța Croitoru</div>
+                            <div class="lt200">Am citit descrierea <span class="productName"></span> . Am fost surprinsă că fructele păducelului,
+                              se pare, au o astfel de acțiune! Dar, ca farmacist, pot spune: da, într-o astfel de
+                              combinație există într-adevăr o stimulare activă a imunității. Am comandat un curs, voi
+                              studia.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item comment-thread">
+                          <div><img src="index_files/user_32.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt201">Anișoara Olariu</div>
+                            <div class="lt202">Susțin! E un remediu foarte eficient pentru diabet! Acum, zahărul este
+                              stabil 4.8 mmol.</div>
+                          </div>
+                        </div>
+                        <div class="comment-item">
+                          <div><img src="index_files/user_33.jpg"></div>
+                          <div class="user-info">
+                            <div class="lt203">Mădălina Bazatin</div>
+                            <div class="lt204">Pe site-ul este reducerea mare pe <span class="productName"></span> , este adevărat?</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="comment-item">
+                        <div><img src="index_files/user_34.jpg"></div>
+                        <div class="user-info">
+                          <div class="lt205">Alexandru Cepoida</div>
+                          <div class="lt206">Dacă remediul este la fel de bun pe cât este scris, va fi mântuirea.
+                            Diabetul a fost de ani de zile, iar medicamentele sunt aproape toate alergice.</div>
+                        </div>
+                      </div>
+                      <div class="comment-item">
+                        <div><img src="index_files/user_35.jpg"></div>
+                        <div class="user-info">
+                          <div class="lt207">Veronica Nastas</div>
+                          <div class="lt208">Am comandat pentru mama. Acum doi ani, din cauza diabetului, ne-am pierdut
+                            tatăl, nu vreau să-mi pierd și mama.</div>
+                        </div>
+                      </div>
+                      <div class="comment-item comment-thread">
+                        <div><img src="index_files/user_36.jpg"></div>
+                        <div class="user-info">
+                          <div class="lt209">Renata Furculița</div>
+                          <div class="lt210">Este un remediu excelent pentru reducerea zahărului. Într-o lună zahărul a
+                            scăzut de la 14 mmol/l la 7,9!</div>
+                        </div>
+                      </div>
+                      <div class="comment-item comment-thread" id="fullscroll_element">
+                        <div><img src="index_files/user_37.jpg"></div>
+                        <div class="user-info">
+                          <div class="lt211">Cornelia Slusari</div>
+                          <div class="lt212">Da, Dumnezeu să ne dea tuturor sănătate!</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <center>
+      <a class="knopka lt213" href="#order_form0">OBȚINE <span class="productName"></span> pentru <span class="priceMain"></span> <span class="currencyMain"></span>.</span></a>
+    </center> <br>
+    <br>
+    <br>
+    <style class="lt214">
+      .knopka {
+        display: inline-block;
+        padding: 20px;
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 4px 15px 0 rgba(129, 150, 160, 0.45);
+        border-radius: 5px;
+        background-color: #0299ff;
+        background-position: 1.35em .94em;
+        background-size: 1em;
+        background-repeat: no-repeat;
+        transition: all .15s ease-in-out;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      .knopka:hover {
+        background-color: #017ACC;
+        color: white;
+      }
+
+      .knopka:active {
+        position: relative;
+        top: 1px;
+      }
+    </style>
+    <div id="tira_ws_content_1">
+      <style class="lt215">
+        .popupBox {
+          height: 2673px;
+          font-family: "PT Sans", sans-serif;
+          position: fixed;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.7) none repeat scroll 0% 0%;
+          top: 0px;
+          left: 0px;
+          z-index: 99999;
+          display: none;
+          max-width: 100%;
+        }
+
+        .windowPopupBox {
+          position: absolute;
+          width: 700px;
+          height: auto;
+          top: 20px;
+          left: 50%;
+          margin-left: -350px;
+          background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+          box-shadow: 0px 0px 120px rgb(0, 0, 0);
+          padding: 15px 15px 35px;
+          max-width: 100%;
+        }
+
+        .close {
+          position: relative;
+          top: -5px;
+          right: 5px;
+          font-size: 35px;
+          cursor: pointer;
+          color: rgb(112, 112, 112);
+          transition: all 0.2s ease 0s;
+        }
+
+        .close:hover {
+          color: rgb(0, 0, 0);
+          transition: all 0.2s ease 0s;
+        }
+
+        .buttonPopupBox {
+          margin: 0px;
+          transition: all 0.2s ease 0s;
+          background: rgb(131, 207, 107) none repeat scroll 0% 0%;
+          padding: 20px 30px;
+          color: rgb(255, 255, 255);
+          font-weight: 700;
+          font-size: 23px;
+          text-shadow: 1px 1px 2px black, 0px 0px 0.7em rgb(0, 0, 0);
+          text-transform: uppercase;
+          text-decoration: none;
+          max-width: 100%;
+        }
+
+        .buttonPopupBox:hover {
+          transition: all 0.2s ease 0s;
+          background: rgb(183, 19, 21) none repeat scroll 0% 0%;
+          color: rgb(255, 255, 255);
+          font-weight: 700;
+          font-size: 23px;
+          text-shadow: 1px 1px 2px black, 0px 0px 0.7em rgb(0, 0, 0);
+          text-transform: uppercase;
+          text-decoration: none;
+          max-width: 100%;
+        }
+
+        .headerPopupBox {
+          margin: 0px;
+          color: rgb(53, 53, 53);
+          font-size: 35px;
+        }
+
+        .textPopupBox {
+          margin: 0px;
+          color: rgb(53, 53, 53);
+          font-size: 22px;
+          max-width: 100%;
+        }
+
+        .imgPopupBox {
+          margin: 0px 0px 30px;
+          height: 250px;
+          width: auto;
+        }
+      </style>
+      <div class="popupBox" style="height: 14931px; display: none;">
+        <div class="windowPopupBox">
+          <div class="close lt216">×</div>
+          <center>
+            <p class="headerPopupBox lt217">Stați!</p>
+            <p class="textPopupBox lt218">În orașul și regiunea dvs. se înregistrează numărul maxim de decese din cauza
+              diabetului zaharat! <br> Doar o zi - <script type="text/javascript">
+                var appendNull = function (num) {
+                  return num < 10 ? 0 + num.toString() : num;
+                };
+                d = new Date();
+                p = new Date(d.getTime() + 0 * 86400000);
+                monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+              </script> La plasarea unei comenzi, pentru toți rezidenții locali <b> "<span class="productName"></span>" </b> este disponibil <b>
+                <font color="red"> PENTRU <span class="displayCurrentPrice price_main"> <span class="priceMain"></span><span class="currencyMain"></span></span></font>
+              </b> !</p> <br>
+            <p></p>
+            <center>
+              <img class="imgPopupBox" src="index_files/product.png">
+            </center><a href="#order_form0"></a>
+            <div>
+              <a href="#order_form0"></a><a class="knopka lt219" href="#order_form0">OBȚINE <span class="productName"></span> </a>
+            </div> <br>
+            <p style="margin: 0px; font-size: 16px; color: rgb(53, 53, 53);"><i class="lt220">Au mai rămas <b
+                  class="pack_count">107</b> de ambalaje din 2500</i></p>
+          </center>
+        </div>
+      </div>
+      <style class="lt221">
+        img {
+          image-rendering: -o-crisp-edges;
+          image-rendering: auto;
+          image-rendering: -webkit-optimize-contrast;
+        }
+      </style>
+    </div>
+  </div>
+  <script>
+    const offer_params = {
+        priceMain : '149',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'lei',
+        productName : 'INSUNOL',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+    priceMain : offer_params.priceMain,
+    currencyMain : offer_params.currencyMain,
+    lang : 'ro', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+    product : offer_params.productName, // название продукта
+    genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+    form : {
+        isNeeded : 1, // 1-включить форму, 0-выключить
+        img: 'prod.png', // путь до картинки продукта
+        price: true, // плашка с ценой
+        priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+        showSelect: false, // показывать или скрывать поле select
+        untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+    },
+
+
+
+
+    autoComments: {
+        isNeeded: 0, // 1-включить автокомы, 0-выключить
+        bgColor: '#d7f2d8' // цвет фона блока комчиков
+    },
+
+
+
+
+    popups: {
+        isNeeded: 0, // 1-включить попы, 0-выключить
+        bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+        textColor: '#fff', // цвет основного текста сообщения
+        emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+        blackIcons: false // черные или белые иконки, значения true или false
+    },
+
+
+
+
+    wheel: {
+        isNeeded: 1, // 1-включить колесо, 0-выключить
+        customWheel: false // ссылка на свое колесо, либо false
+    }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>
