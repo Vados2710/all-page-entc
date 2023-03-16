@@ -1,0 +1,810 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Diabetul nu este din cauza dulciurilor!</title>
+  <link rel="stylesheet" href="css/new_css.css" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+</head>
+
+<body class="ev-date">
+  <header class="app-header sticky-header" id="app-header">
+    <div class="top-bar">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="top-bar__left d-flex align-items-center">
+          <a href="#toWheel" class="btn btn--sm btn--nav-link">
+            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12L13 12C13.5523 12 14 11.5523 14 11L14 4C14 3.44771 13.5523 3 13 3L3 3C2.44771 3 2 3.44771 2 4L2 11C2 11.5523 2.44771 12 3 12Z" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 14H6" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 7.5L7 5.5V9.5L10 7.5Z" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              
+            </svg>
+            <span>Program</span> </a> <a href="#toWheel" class="btn btn--sm btn--nav-link">
+            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 14H3.5C3.36739 14 3.24021 13.9473 3.14645 13.8536C3.05268 13.7598 3 13.6326 3 13.5V2.5C3 2.36739 3.05268 2.24021 3.14645 2.14645C3.24021 2.05268 3.36739 2 3.5 2H9.5L13 5.5V13.5C13 13.6326 12.9473 13.7598 12.8536 13.8536C12.7598 13.9473 12.6326 14 12.5 14Z" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 2V5.5H13" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6.25 9.25L8 7.5L9.75 9.25" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <path d="M8 11.5V7.5" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Contact</span> </a> <a href="#toWheel" class="btn btn--sm btn--nav-link">
+            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 6V12.5C2 12.6326 2.05268 12.7598 2.14645 12.8536C2.24021 12.9473 2.36739 13 2.5 13H13.5C13.6326 13 13.7598 12.9473 13.8536 12.8536C13.9473 12.7598 14 12.6326 14 12.5V6L8 2L2 6Z" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6.90625 9.5L2.15625 12.8563" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <path d="M13.8438 12.8563L9.09375 9.5" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <path d="M14 6L9.09375 9.5H6.90625L2 6" stroke="#222659" stroke-linecap="round" stroke-linejoin="round"/>
+              
+            </svg>
+            <span>Newsletter</span> </a> <a href="#toWheel" class="btn btn--sm btn--nav-link">
+            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.5 13.5V7.21876C13.4989 7.14957 13.4839 7.08129 13.456 7.01796C13.4281 6.95463 13.3878 6.89753 13.3375 6.85001L8.3375 2.30626C8.24533 2.22194 8.12493 2.17517 8 2.17517C7.87507 2.17517 7.75467 2.22194 7.6625 2.30626L2.6625 6.85001C2.61219 6.89753 2.57189 6.95463 2.54398 7.01796C2.51607 7.08129 2.50112 7.14957 2.5 7.21876V13.5" stroke="#97A2B6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13.5 13.5V7.21876C13.4989 7.14957 13.4839 7.08129 13.456 7.01796C13.4281 6.95463 13.3878 6.89753 13.3375 6.85001L8.3375 2.30626C8.24533 2.22194 8.12493 2.17517 8 2.17517C7.87507 2.17517 7.75467 2.22194 7.6625 2.30626L2.6625 6.85001C2.61219 6.89753 2.57189 6.95463 2.54398 7.01796C2.51607 7.08129 2.50112 7.14957 2.5 7.21876V13.5" stroke="black" stroke-opacity="0.46" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 13.5H15" stroke="#97A2B6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M1 13.5H15" stroke="black" stroke-opacity="0.46" stroke-linecap="round" stroke-linejoin="round"/>
+              
+              <path d="M9.5 13.5V10C9.5 9.86739 9.44732 9.74021 9.35355 9.64645C9.25979 9.55268 9.13261 9.5 9 9.5H7C6.86739 9.5 6.74021 9.55268 6.64645 9.64645C6.55268 9.74021 6.5 9.86739 6.5 10V13.5" stroke="#97A2B6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 13.5V10C9.5 9.86739 9.44732 9.74021 9.35355 9.64645C9.25979 9.55268 9.13261 9.5 9 9.5H7C6.86739 9.5 6.74021 9.55268 6.64645 9.64645C6.55268 9.74021 6.5 9.86739 6.5 10V13.5" stroke="black" stroke-opacity="0.46" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Despre LRT</span> </a></div>
+        <div class="d-flex align-items-center">
+          <div id="js-weather-widget"></div>
+          <ul class="language-selection">
+            <li class="language-selection__item"><a href="#toWheel" title="" class="language-selection__link is-active">ro</a></li>
+            <li class="language-selection__item"><a href="#toWheel" title="" class="language-selection__link ">en</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="app-header__main">
+      <div class="app-header__container container">
+        <div class="app-header__left"><a href="#toWheel" class="app-header__menu-button btn btn--reset js-menu-block-button">
+            <svg class="app-header__svg-menu" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.75 12H20.25" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.75 6H20.25" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.75 18H20.25" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="app-header__svg-close" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.75 5.25L5.25 18.75" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18.75 18.75L5.25 5.25" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a> <a class="logo" href="#toWheel">
+            <img width="16" height="16" class="logo__svg " alt="Logo" src="images/logo-lrt.jpg">
+          </a>
+          <div class="app-header__main-menu" id="main_menu_row"></div>
+        </div>
+        <div><a href="#toWheel" title="Paieška" class="app-header__search-button">
+            <svg class="app-header__svg-search" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.875 18.75C15.2242 18.75 18.75 15.2242 18.75 10.875C18.75 6.52576 15.2242 3 10.875 3C6.52576 3 3 6.52576 3 10.875C3 15.2242 6.52576 18.75 10.875 18.75Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16.4473 16.4443L21.0035 21.0006" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+              
+            </svg>
+            <span class="app-header__search-button-text">Căutare</span> </a></div>
+      </div>
+    </div>
+  </header>
+  <div class="page-wrap inL_343809">
+    <div class="main-content">
+      <div class="content">
+        <div class="content__inner content__inner_wide">
+          <div class="article">
+            <div class="article__date date-3 time"> </div>
+            <h1 class="article__title">Diabetul nu este din cauza dulciurilor! Directorul unui Centru Independent de
+              cercetare a numit principalul dușman al diabetului și a împărtășit o modalitate simplă de a controla
+              nivelul zahărului din sânge.</h1>
+            <h2><span class="red yellow">Diabeticii sunt înșelați! Farmaciile private n-au remedii capabile să
+                controleze în siguranță această boală. Cum de a reduce glicemia la 4,5 mmol/l și de a scăpa de
+                simptomele diabetului pentru totdeauna? Citiți în ediție.</span>
+            </h2>
+            <div class="article__text">
+              <div class="js-mediator-article">
+                <div class="article_content">
+                  <p>Astăzi vom vorbi despre cum să evităm consecințele periculoase ale diabetului și să controlăm
+                    nivelul zahărului din sânge cu omul de știință de frunte Florian Oprea, membru al comunității de
+                    specialiști în domeniul endocrinologiei, biolog, membru al Fundației Europene pentru studiul
+                    diabetului și al Asociației Americane a experților în Cercetarea Diabetului.</p>
+                  <figure class="Figure inL_67974">
+                    <picture>
+                      <source type="image/webp" srcset="images/content-1.webp">
+                      <img src="images/content-1.jpg" loading="lazy" alt="img"></picture>
+                    <span class="Figure-caption">Florian Oprea - Consultant în domeniul sistemului endocrin: glanda
+                      tiroidă, glandele suprarenale, glanda pituitară, organele genitale etc. tulburări și boli ale
+                      glandelor interne, tulburări ale sistemului hormonal. Sunt specializat în studiul
+                      diabetului.</span>
+                    <span class="Figure-caption">Și-a avansat calificările la diferite cursuri și instruiri în SUA,
+                      Marea Britanie, Franța, Germania, Olanda, Italia, Mexic, Israel.</span>
+                  </figure>
+                  <p class="font30"><b>Florian Oprea are un program de lucru foarte încărcat și rareori dă interviuri,
+                      așa că am avut norocul să-l întâlnim.</b></p>
+                  <p><b>Florian, sunteți considerat cel mai bun specialist în biologie nu doar din țara noastră, ci și
+                      din întreaga Europă. Spuneți-ne mai multe despre diabet. Ce este diabetul zaharat?</b></p>
+                  <p>Diabetul zaharat - un grup de boli endocrine asociate cu absorbția afectată a glucozei, care se
+                    dezvoltă din cauza insuficienței absolute sau relative a hormonului insulină și provoacă
+                    hiperglicemie, adică o creștere constantă a nivelului de glucoză din sânge.</p>
+                  <p class="font30 center"><b><i>"Nivelurile ridicate de glucoză dăunează celulelor vii."</i></b></p>
+                  <p class="backgred"><b>Diabetul se începe cu creșterile nivelului de zahăr din sânge și nu se oprește
+                      niciodată. De-a lungul anilor, simptomele cresc ca un bulgăre de zăpadă.</b></p>
+                  <p>Deoarece această boală se caracterizează printr-o încălcare a tuturor tipurilor de metabolism:
+                    metabolismul carbohidraților, grăsimilor, proteinelor, mineralelor și apei și sărurilor, persoana
+                    experimentează în mod constant setea și pofta de mâncare; apoi urinare frecventă, foame constantă și
+                    gură uscată. O persoană poate pierde în greutate sau poate câștiga în greutate. Apar oboseală,
+                    cefalee și tulburări de somn. Vederea devine neclară.</p>
+                  <p>Apoi, apare nefropatia, care este însoțită de insuficiență renală cronică, leziuni severe ale
+                    vaselor ochilor, provocând orbire, angină, dezvoltarea rapidă a aterosclerozei, impotență, infarct
+                    miocardic, demență, polineuropatie, comă diabetică, picior diabetic și amputarea extremităților
+                    inferioare. Lista poate fi continuată. Termenul "diabet" provine din limba greacă veche: "διαβαίνω
+                    (diavaíno)", care se traduce prin "permanent". O descriere perfect exactă a procesului.</p>
+                  <p><b>Diabetul este cauzat de dulciuri?</b></p>
+                  <p>Diabetul de tip 2 este mai des cauzat de vârstă decât de dulciurile. Cauza problemei este
+                    încetinirea proceselor metabolice din organism și deteriorarea biochimiei generale."</p>
+                  <p class="font35 center"> "Este un mit și o prostie că doar cei care mănâncă dulciuri fac diabet."
+                  </p>
+                  <p><b>Nu are nimic de-a face cu dulciurile. DIABETICII POT M NCA DULCIURI DACĂ NIVELUL LOR DE ZAHĂR
+                      ESTE MONITORIZAT CONSTANT.</b></p>
+                  <p><b>Renunțarea la dulciuri toată viața nu vă va proteja de diabet. Chiar și oamenii care au mâncat
+                      bine toată viața suferă de această boală, la fel ca toți ceilalți.</b></p>
+                  <figure class="Figure inL_812302">
+                    <picture>
+                      <source type="image/webp" srcset="images/content-2.webp">
+                      <img src="images/content-2.jpg" loading="lazy" alt="img">
+                    </picture>
+                    <!-- <span class="Figure-caption"> </span> -->
+                  </figure>
+                  <p><b>Florian, ești un adversar înflăcărat al utilizării metforminei în diabet. Puteți să-mi spuneți
+                      de ce?</b></p>
+                  <p>Da, sunt împotriva metforminei pentru diabet. Metformina - este o substanță agresivă din punct de
+                    vedere chimic. Distruge rinichii și ficatul. Probabil știți că persoanele cu diabet nu trăiesc mult.
+                    Utilizarea metforminei contribuie semnificativ la scurtarea vieții lor. Cu alte cuvinte, vă scutește
+                    de nivel ridicat de zahăr pentru o perioadă scurtă de timp, dar pe termen lung ucide organismul.
+                    Este ca și cum ați folosi radiații pentru gripă!</p>
+                  <p>După administrarea metforminei, nivelul zahărului revine rapid la normal, dar numai temporar (în
+                    timp ce substanța este în sânge). EFECTELE NOCIVE ASUPRA ORGANISMULUI SE MĂRESC.</p>
+                  <p>Diabetul zaharat este "renumit" pentru complicațiile sale, iar metformina nu le exclude. Dacă o
+                    persoană ia în prezent metformină și nu primește alt ajutor, mai devreme sau mai târziu TREBUIE SĂ
+                    IA INSULINĂ.
+                  </p>
+                  <p>Când luați metformină (sau orice altă pastilă care scade temporar nivelul zahărului din sânge),
+                    este important să înțelegeți următoarele:</p>
+                  <p class="font33 center"><b><i>NU FACEȚI NIMIC PENTRU A FI SĂNĂTOS.</i></b> </p>
+                  <p><b>Cum și cu ce facem față diabetului zaharat?</b></p>
+                  <p>Diabetul are astăzi un mare dușman. Ajută o persoană să controleze problema. Aceasta înseamnă că nu
+                    numai că ajută la reducerea temporară a nivelului de zahăr, cum ar fi metformina, ci și la
+                    stabilizarea nivelului de zahăr din sânge, normalizând procesele metabolice.
+                  </p>
+                  <p>Cel mai mare dușman al diabetului este o substanță numită acid oleanolic. Formula sa chimică este
+                    C30H48O3. Este un acid organic nesaturat, un extract de plante, aparține grupului de triterpenoizi.
+                    Această substanță dă rezultate foarte bune în normalizarea nivelului de zahăr din sânge, în special
+                    la diabetici la bătrânețe.</p>
+                  <p><b>Ne puteți spune mai multe despre acidul oleanoleic și cum ajută la diabet?</b></p>
+                  <p>Acidul Oleanolic este un triterpenoid cu cinci membri de origine naturală. Se găsește în cantități
+                    mari în frunzele de măslin. Studiile recente au confirmat beneficiile acidului oleanolic cu diabet.
+                    Oamenii de știință au descoperit că substanța ajută la reducerea hiperglicemiei prin suprimarea
+                    glucogenezei în ficat. Pe scurt, oferă o defalcare mai completă a glucozei cu o cantitate minimă de
+                    insulină. NU REDUCE REZISTENȚA LA INSULINĂ, CUM AR FI METFORMINA, DAR ÎMBUNĂTĂȚEȘTE REACȚIA DE
+                    GLICOLIZĂ ÎN SINE. ACEASTA ESTE PRINCIPALA DIFERENȚĂ. </p>
+                  <p>Produsul pe bază de acid oleanolic a fost dezvoltat relativ recent la Centrul European de
+                    cercetare. A fost numit <a href=""><span class="productName"></span></a>. Acesta este cel mai nou și cel mai bun produs
+                    disponibil astăzi.
+                    Conține cea mai mare cantitate de acid oleanolic. Cea mai activă și cea mai pură formă biologic a
+                    acestei substanțe este utilizată în produs. Acest lucru garantează că <span class="productName"></span> nu va dăuna
+                    rinichilor și ficatului.</p>
+                  <p><b>Administrarea <span class="productName"></span> elimină necesitatea aportului zilnic de metformină?</b></p>
+                  <p>De regulă, da. În plus, în viitor nu este nevoie de injecții cu insulină.</p>
+                  <p><b><span class="productName"></span> trebuie de luat în mod constant sau este suficient un curs?</b></p>
+                  <p><a href=""><span class="productName"></span></a> este folosit pentru a ajuta diabeticii. Mai mult, nu este nevoie să luați
+                    capsulele în mod
+                    constant.</p>
+                  <h2 class="blue center font25"> UNA DINTRE CELE MAI UIMITOARE PROPRIETĂȚI ALE ACESTUI PRODUS ESTE CĂ
+                    ACIDUL OLEANOLIC ESTE CAPABIL SĂ SE ACUMULEZE ÎN ȚESUTURILE MUSCULARE. </h2>
+                  <p>Aceasta înseamnă că, după 6 săptămâni de curs, "rezervele" acestei substanțe pot fi formate în
+                    organism pentru timp de 3-4 ani.</p>
+                  <p><b>În plus față de acidul oleanolic "pur", <a href=""><span class="productName"></span></a> conține aproximativ treizeci de
+                      alte
+                      ingrediente concepute pentru a ajuta la restabilirea organismului unui diabetic cu normalizarea
+                      nivelului de zahăr. Acestea sunt principalele vitamine, macro- și microelemente. De obicei, toate
+                      aceste substanțe sunt prescrise separat pentru diabetul zaharat, dar aici sunt deja incluse în
+                      produs în proporțiile potrivite. Iată cele mai importante: </b></p>
+                  <table class="c15">
+                    <tbody>
+                      <tr class="c3">
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">L-arginină</span></p>
+                        </td>
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">Ajută la combaterea obezității, la reducerea tensiunii
+                              arteriale, la suprimarea proceselor oxidative și la normalizarea disfuncției endoteliale,
+                              contribuind la remisia diabetului </span></p>
+                        </td>
+                      </tr>
+                      <tr class="c3">
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">Vitamina C</span></p>
+                        </td>
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">Ajută la normalizarea proceselor metabolice, are proprietăți
+                              antioxidante, are un efect pozitiv asupra stării lentilei ochilor </span></p>
+                        </td>
+                      </tr>
+                      <tr class="c3">
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">Resveratrol </span></p>
+                        </td>
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">Ajută la scăderea nivelului de glucoză din sânge, ajută la
+                              păstrarea celulelor organismului de distrugere </span></p>
+                        </td>
+                      </tr>
+                      <tr class="c3">
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">Crom </span></p>
+                        </td>
+                        <td class="c2" colspan="1" rowspan="1">
+                          <p class="c0"><span class="c1">Ajută la reducerea poftei de dulciuri, ajută la normalizarea
+                              nivelului de colesterol din sânge, ajută la îmbunătățirea metabolismului lipidic </span>
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>Și multe altele.</p>
+                  <p><b>Spuneți-mi, cât de sigur este acest remediu?</b></p>
+                  <p>Toate mijloacele antidiabetice au diverse contraindicații. <span class="productName"></span> nu le are. Este, de asemenea, o
+                    modalitate bună de a reduce în mod natural nivelul zahărului din sânge cât mai mult posibil și de a
+                    preveni complicațiile periculoase ale diabetului.</p>
+                  <p>După cum am spus deja, <a href=""><span class="productName"></span></a> a fost dezvoltat de principalul centru de cercetare
+                    al țării
+                    noastre și nu de o companie farmaceutică comercială, așa cum se întâmplă de obicei. Cu alte cuvinte,
+                    la dezvoltarea lui au participat oamenii de știință de talie mondială. Prin urmare, recomand remediu
+                    oricui care suferă de diabet."</p>
+                  <p><b>Simptomele diabetului dispar complet după un curs de administrare a acestui remediu?</b></p>
+                  <p>Absolut corect. Diabetul zaharat se dezvoltă timp de 10 ani sau mai mult. Doi sau trei ani fără
+                    salturi de zahăr - ca a doua viață pentru organism. Voi descrie mai detaliat schimbările pozitive de
+                    sănătate care apar cu <a href=""><span class="productName"></span></a>.</p>
+                  <p class="font33 center green_text"><b><i>Cursul de administrare <span class="productName"></span> este ca o renaștere.
+                        Rezultatele celor care au finalizat cursul sunt impresionante.</i></b></p>
+                  <p>Rezultatele eficacității <span class="productName"></span> au fost obținute în timpul testelor.</p>
+                  <p><b>Iată datele sondajului persoanelor care suferă de diabet, după finalizarea întregului curs de
+                      administrare a <a href=""><span class="productName"></span></a>:</b></p>
+                  <ul class="ListBlock-root ListBlock-ul">
+                    <li> În 99%, nivelul zahărului din sânge a scăzut la normal (au dispărut creșteri constante ale
+                      nivelului de zahăr). </li>
+                    <li> Îmbunătățirea stării vaselor de sânge și a organelor interne - 99%. </li>
+                    <li> Recuperarea pancreasului - 96%. </li>
+                    <li> Eliminarea tuturor simptomelor diabetului zaharat: sete, oboseală, urinare frecventă, edem,
+                      iritabilitate etc. - 96%. </li>
+                    <li> 92% dintre respondenți și-au îmbunătățit vederea și funcția sexuală. </li>
+                    <li> Starea pielii s-a îmbunătățit (ulcerele și mâncărimea au dispărut) - 98% dintre respondenți.
+                    </li>
+                    <li> Starea rinichilor s-a îmbunătățit - 93% dintre respondenți s-au îmbunătățit. </li>
+                  </ul>
+                  <p>După cum puteți vedea, <span class="productName"></span> ajută majoritatea persoanelor care suferă de diabet. Chiar și cei
+                    care au disperat deja să scape de diabet au șansa de a trăi pe deplin. <a href=""><span class="productName"></span></a>
+                    funcționează bine
+                    atât în stadiile inițiale, cât și în cele avansate ale diabetului. Chiar și în cazul diabetului
+                    sever, acesta dă rezultate semnificative.</p>
+                  <p> <b>De ce farmaciștii privați încă nu oferă <span class="productName"></span> în farmaciile sale private?</b></p>
+                  <p>Cum credeți?</p>
+                  <p><b>Este posibil ca remediul să fie produs în cantități limitate și să nu fie suficient pentru
+                      diabetici în țară?</b> </p>
+                  <p>Aveți dreptate. Produsul este atât de bun încât americanii și brazilienii îl cumpără în loturi
+                    întregi și stau la cozi timp de șase luni. Prin urmare, <a href=""><span class="productName"></span></a> nu ajunge pe piața
+                    farmaciei
+                    private din țară.
+                  </p>
+                  <p>Dar am și vești bune pentru cititorii voștri. Avem un lot de <span class="productName"></span> pe care am dori să îl
+                    prezentăm cititorilor voștri. Lotul este mic - doar 1270 de pachete. Cei care arată mai întâi o
+                    dorință vor putea să o comande. Oferim acest produs la preț de cost cu o reducere suplimentară din
+                    Fundația de caritate (care acoperă diferența de preț). Suma reducerii depinde de cât de norocoasă
+                    este persoana. Reducerea maximă la <a href=""><span class="productName"></span></a> este de 50%.</p>
+                  <p><b>Ne puteți spune mai multe despre ce este nevoie pentru a obține <span class="productName"></span> în condiții atât de
+                      atractive?</b> </p>
+                  <h2>Trebuie doar să:</h2>
+                  <ul class="ListBlock-root ListBlock-ul ft25">
+                    <li><b> Participați la loterie și obțineți o reducere. </b> </li>
+                    <li><b> Plasați o comandă pentru <span class="productName"></span>, completând formularul de comandă. <span class="date-0 red"></span> (imtinai).</b> </li>
+                    <li><b> Obțineți <span class="productName"></span> în 2-3 zile și plătiți prin curier (fără plată în avans, plata numai la
+                        primire).</b> </li>
+                  </ul>
+                  <p>E tot.</p>
+                  <p><b>Domnule Florian, mulțumesc foarte mult pentru un interviu atât de detaliat. Este ceva ce ați
+                      dori să spuneți cititorilor noștri la sfârșit?</b></p>
+                  <p>Vă doresc tuturor sănătate bună. Și nu uitați că DIABETUL - o boală foarte periculoasă! Nu dispare
+                    niciodată de la sine. <a href=""><span class="productName"></span></a> este exact ceea ce vă poate ajuta.</p>
+                  <p class="rul_2">Atenție tuturor celor care doresc să comande <span class="productName"></span>! <br>
+                    <span class="productName"></span> se apropie de sfârșit! Atenție! Inflația ridicată va face următorul
+                    lot de produse mai scump! Atenție! Din cauza inflației ridicate, următorul lot de produse va fi
+                    mai scump!
+                  </p>
+                  <div class="scroll100"></div>
+                  <div id="toWheel"></div>
+                  <div class="wheel-top"></div>
+                  <p class="rul_2">În prezent, cantitatea disponibilă a produsului:</p>
+                  <h3 class="left_count inL_480402"><b class="prod_left_val lastpack">60</b> buc. </h3>
+                  <span id="cta"></span>
+                  <span id="form"></span>
+                  <!-- рулетка-->
+
+                 <div class="features-wrapper"></div>
+
+                  <!-- рулетка-->
+                </div>
+                <p class="notes">
+                  *Nu este un medicament; <br>
+                  *Efectele depind de caracteristicile individuale ale organismului;
+                  <br>
+                  *Este posibilă intoleranță individuală la componentele produsului.
+                </p>
+
+                <div id="comments">
+                  <h2 class="spoint">COMENTARII</h2>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/1.webp">
+                          <img src="images/1.jpg" loading="lazy" alt="img">
+                        </picture>
+                      </div>
+                      <span class="name">Iuliana O.
+                        <span class="randdate date-0">29.06.2022</span></span>
+                      <div class="pg">Sunt unul dintre cei care au încercat deja <a href=""><span class="productName"></span></a>. Asta a fost
+                        anul trecut.
+                        Specialistul l-a recomandat când a apărut pentru prima dată. Acum, de asemenea, m-am eliberat de
+                        diabet și mă simt complet sănătoasă! <span class="productName"></span> m-a salvat de vârfurile de zahăr. Recomand acest
+                        instrument tuturor. Astăzi este cel mai bun.
+                        <picture>
+                          <source type="image/webp" srcset="images/rev1.webp">
+                          <img src="images/rev1.jpg" alt="img" loading="lazy">
+                        </picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item ">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/2.webp">
+                          <img src="images/2.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Cristian R. <span class="randdate date-0">29.06.2022</span></span>
+                      <div class="pg">Giganții farmaceutici promovează metformina, deoarece producția sa este
+                        ieftină!!!!! Și pur și simplu nu le pasă de sănătatea oamenilor. Pentru că logic nu le pasă cum
+                        ne simțim!!!! Cine le va da bani atunci? Dacă toată lumea va fi sănătoasă.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item ">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/3.webp">
+                          <img src="images/3.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Camil F. <span class="randdate date-0">29.06.2022</span></span>
+                      <div class="pg">De asemenea, am experiență de utilizare a <a href=""><span class="productName"></span></a>, și este
+                        pozitiv. Am avut
+                        diabet și l-am învins. Am doar 49 de ani, nu aș vrea să mor prematur!!!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/4.webp">
+                          <img src="images/4.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Tiberiu D. <span class="randdate date-0">30.06.2022</span></span>
+                      <div class="pg">Iau metformină de șapte ani. Nu au existat rezultate. Zahărul ba creștea și ba
+                        cădea. Și a devenea din ce în ce mai rău. Apoi am dat peste <a href=""><span class="productName"></span></a>. E ca cerul
+                        și pământul.
+                        Prin urmare, recomand tuturor celor care citesc aceste rânduri să comande <span class="productName"></span> cât este încă
+                        în stoc. Acest produs vă va salva.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/5.webp">
+                          <img src="images/5.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Carmen S.
+                        <span class="randdate date-0">01.07.2022</span></span>
+                      <div class="pg">Mulțumesc, am comandat. Prețul m-a surprins plăcut, voi încerca, am diabet, viața
+                        este un coșmar!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/6.webp">
+                          <img src="images/6.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Sergiu F.
+                        <span class="randdate date-0">01.07.2022</span></span>
+                      <div class="pg">Un instrument excelent pentru reducerea zahărului din sânge. Zahărul din sânge a
+                        scăzut de la 14 mmol/l la 7,9 mmol/l într-o lună! De mai mult nu mai aveam nevoie.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/7.webp">
+                          <img src="images/7.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Teodor T. <span class="randdate date-0">02.07.2022</span></span>
+                      <div class="pg">Mulțumesc omului de știință pentru povestea sa. De asemenea, nu înțeleg de ce
+                        nimeni nu folosește aceste descoperiri. Mulți oameni mor de diabet și nimănui nu-i pasă de asta.
+                        Acum se dovedește că este chiar profitabil.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/8.webp">
+                          <img src="images/8.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Cătălina M. <span class="randdate date-0">02.07.2022</span></span>
+                      <div class="pg">Aveți dreptate, nimănui nu-i pasă de oameni. Diabetul nu poate fi ignorat. Cunosc
+                        multe persoane care suferă de diabet. Niciunul dintre ei nu a trăit mai mult de 70 de ani. Cei
+                        mai mulți dintre ei au murit la vârsta de 60 de ani, unul la 68 de ani, dar în ultimii ani a
+                        suferit foarte mult de ulcere și boli de rinichi, iar un accident vascular cerebral l-a ucis.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/9.webp">
+                          <img src="images/9.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Matei S. <span class="randdate date-1">02.07.2022</span></span>
+                      <div class="pg">Da, diabetul nu este un cadou... E o pedeapsă. Aceasta este o pedeapsă, care m-a
+                        epuizat!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/10.webp">
+                          <img src="images/10.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Lucrețiu O. <span class="randdate date-1">02.07.2022</span></span>
+                      <div class="pg">Cel mai important lucru este să nu fiți dezamăgit! Zahărul poate fi redus cu
+                        <a href=""><span class="productName"></span></a>. M-a ajutat foarte mult, acum am ieșit din mizerie. L-am recomandat mai
+                        multor
+                        prieteni, din 4 persoane, doar unul nu se simte mai bine! Cu toate acestea, nivelul zahărului
+                        din sânge a început să scadă. Încercați-l singuri, poate vă va ajuta, mai ales că remediul este
+                        destul de ieftin.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/11.webp">
+                          <img src="images/11.jpeg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Sofia V. <span class="randdate date-2">02.07.2022</span></span>
+                      <div class="pg">Și nu am reușit. Ce remedii ar trebui să iau acum? Un prieten mi-a spus despre
+                        <a href=""><span class="productName"></span></a>. El a fost încântat de el și am vrut și eu să-l comand, dar nu am putut.
+                        Îmi pare rău.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/12.webp">
+                          <img src="images/12.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Gabriela B. <span class="randdate date-2">02.07.2022</span></span>
+                      <div class="pg">Bună ziua tuturor. Am 59 de ani, greutatea mea inițială a fost de 124 kg,
+                        greutatea actuală este de 80 kg, înălțimea este de 168 cm. Glucoza a variat între 18 și 12,0 și
+                        29. Acum este 5.0. Folosesc <a href=""><span class="productName"></span></a> de 3 luni. Sunt mai mult decât mulțumită de
+                        rezultat. Nu a
+                        existat niciodată un alt remediu care să mă fi ajutat la fel de mult ca acesta.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item ">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/13.webp">
+                          <img src="images/13.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Adelina D. <span class="randdate date-2">02.07.2022</span></span>
+                      <div class="pg">Atenție toată lumea, <span class="productName"></span> este din nou la vânzare! Accesați site-ul web,
+                        există mai multe informații despre cantitatea de  <span class="productName"></span>. Operatorii spun că
+                        aceasta este
+                        ultima informație pe care o pot furniza în acest moment.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/14.webp">
+                          <img src="images/14.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Florian R. <span class="randdate date-2">02.07.2022</span></span>
+                      <div class="pg">
+                        Produsul este excelent. Îl folosesc de o săptămână acum și văd deja schimbări pozitive. Îmi
+                        măsor nivelul de zahăr în sânge de mai multe ori pe zi. Nivelul zahărului a devenit mult mai
+                        scăzut. Dacă acest lucru continuă, există șanse mari că zahărul va coborî la normal.
+                        <picture>
+                          <source type="image/webp" srcset="images/rev2.webp">
+                          <img src="images/rev2.jpg" alt="img" loading="lazy"></picture>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/15.webp">
+                          <img src="images/15.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Silviu A. <span class="randdate date-3">02.07.2022</span></span>
+                      <div class="pg">Diabetul zaharat este o boală foarte complexă. Am această boală timp de patru ani
+                        fără simptome externe, doar gură uscată periodic. Așa că nu prea credeam în picioare putrezite
+                        și alte chestii. Dar recent mi-am pierdut cunoștința. Mi s-a dat ajutor urgent, s-au făcut
+                        teste. S-a dovedit că totul este destul de rău. Rinichii sunt într-o stare precanceroasă, vasele
+                        sunt atât de uzate încât toată lumea era în stare de șoc. Nu riscați atât de mult...
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/16.webp">
+                          <img src="images/16.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Liliana A. <span class="randdate date-3">02.07.2022</span></span>
+                      <div class="pg">Tatăl meu este diabetic și nu vrea să ia pastile. Știe cineva dacă <a href=""><span class="productName"></span></a> îl
+                        poate ajuta?
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/17.webp">
+                          <img src="images/17.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Victoria M. <span class="randdate date-3">02.07.2022</span></span>
+                      <div class="pg">Desigur, va ajuta! În orice caz, este mai bine să încercați, mai ales că  <span class="productName"></span>
+                        este mult mai ieftin decât metformin în sine.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/18.webp">
+                          <img src="images/18.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Ioana C. <span class="randdate date-3">02.07.2022</span></span>
+                      <div class="pg"><span class="productName"></span> este un produs excelent. Fiica noastră a fost diagnosticată cu diabet
+                        zaharat. Are doar 18 ani. Nu am vrut să o umplem cu chimie la acea vârstă. Ne-am consultat cu
+                        mulți specialiști. Am decis să alegem <span class="productName"></span>. A ajutat-o foarte mult. Zahărul din sânge
+                        aproape că a încetat să crească. Chiar și acum, când nu mai ia <a href=""><span class="productName"></span></a>.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item ">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/19.webp">
+                          <img src="images/19.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Dana M. <span class="randdate date-3">02.07.2022</span></span>
+                      <div class="pg">Vă sunt foarte mulțumită! Am comandat 10 pachete. Ar trebui să vă folosiți de
+                        șansă în timp ce remediul este încă disponibil!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/20.webp">
+                          <img src="images/20.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Sara D. <span class="randdate date-3">02.07.2022</span></span>
+                      <div class="pg">Acum ai 10 pachete și cineva nici măcar nu a primit unul...
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row-y-item row-y-item--last">
+                    <div class="info">
+                      <div class="coment_ava">
+                        <picture>
+                          <source type="image/webp" srcset="images/21.webp">
+                          <img src="images/21.jpg" loading="lazy" alt="img"></picture>
+                      </div>
+                      <span class="name">Toma P. <span class="randdate date-3">02.07.2022</span></span>
+                      <div class="pg">Mulțumesc! Am lăsat o cerere.
+                      </div>
+                    </div>
+                  </div>
+                  <a class="button" data-toggle="scroll" href="#toWheel">Comandați <span class="productName"></span> la cel
+                    mai mic preț</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="cpu">
+      <div class="create_rom_footer" data-color_text="#fff" data-color_link="#fff" data-color_logo="#fff"></div>
+      <!-- <a href="#toWheel" class="_popup-link" data-target="politics">Politica de confidențialitate</a>
+      <a href="#toWheel" class="_popup-link" data-target="agreement">Termeni de Utilizare</a> -->
+    </div>
+  </footer>
+  <div id="podlogka"></div>
+  <div id="new_window">
+    <div class="c clearfix">
+    </div>
+  </div>
+
+  
+  <script src="js/whell.js"></script>
+
+  <script>
+      const offer_params = {
+          priceMain : '159',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'lei',
+          productName : 'Diaform+',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain : offer_params.priceMain,
+          currencyMain : offer_params.currencyMain,
+          lang : 'ro', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product : offer_params.productName, // название продукта
+          genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+          form : {
+              isNeeded : 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+
+
+
+
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+
+
+
+
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+
+
+
+
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+
+</body>
+
+</html>
