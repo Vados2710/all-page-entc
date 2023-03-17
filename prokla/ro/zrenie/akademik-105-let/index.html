@@ -1,0 +1,1249 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vârsta - nu este un obstacol pentru o viață împlinită</title>
+    <link rel="icon" href="images/fav.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+    <script>
+      !(function (e, n, A) {
+        function o(e, n) {
+          return typeof e === n;
+        }
+        function t() {
+          var e, n, A, t, a, i, l;
+          for (var f in r)
+            if (r.hasOwnProperty(f)) {
+              if (
+                ((e = []),
+                (n = r[f]),
+                n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+              )
+                for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+              for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++)
+                (i = e[a]),
+                  (l = i.split(".")),
+                  1 === l.length
+                    ? (Modernizr[l[0]] = t)
+                    : (!Modernizr[l[0]] ||
+                        Modernizr[l[0]] instanceof Boolean ||
+                        (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])),
+                      (Modernizr[l[0]][l[1]] = t)),
+                  s.push((t ? "" : "no-") + l.join("-"));
+            }
+        }
+        function a(e) {
+          var n = u.className,
+            A = Modernizr._config.classPrefix || "";
+          if ((c && (n = n.baseVal), Modernizr._config.enableJSClass)) {
+            var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+            n = n.replace(o, "$1" + A + "js$2");
+          }
+          Modernizr._config.enableClasses &&
+            ((n += " " + A + e.join(" " + A)), c ? (u.className.baseVal = n) : (u.className = n));
+        }
+        function i(e, n) {
+          if ("object" == typeof e) for (var A in e) f(e, A) && i(A, e[A]);
+          else {
+            e = e.toLowerCase();
+            var o = e.split("."),
+              t = Modernizr[o[0]];
+            if ((2 == o.length && (t = t[o[1]]), "undefined" != typeof t)) return Modernizr;
+            (n = "function" == typeof n ? n() : n),
+              1 == o.length
+                ? (Modernizr[o[0]] = n)
+                : (!Modernizr[o[0]] ||
+                    Modernizr[o[0]] instanceof Boolean ||
+                    (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])),
+                  (Modernizr[o[0]][o[1]] = n)),
+              a([(n && 0 != n ? "" : "no-") + o.join("-")]),
+              Modernizr._trigger(e, n);
+          }
+          return Modernizr;
+        }
+        var s = [],
+          r = [],
+          l = {
+            _version: "3.6.0",
+            _config: { classPrefix: "", enableClasses: !0, enableJSClass: !0, usePrefixes: !0 },
+            _q: [],
+            on: function (e, n) {
+              var A = this;
+              setTimeout(function () {
+                n(A[e]);
+              }, 0);
+            },
+            addTest: function (e, n, A) {
+              r.push({ name: e, fn: n, options: A });
+            },
+            addAsyncTest: function (e) {
+              r.push({ name: null, fn: e });
+            },
+          },
+          Modernizr = function () {};
+        (Modernizr.prototype = l), (Modernizr = new Modernizr());
+        var f,
+          u = n.documentElement,
+          c = "svg" === u.nodeName.toLowerCase();
+        !(function () {
+          var e = {}.hasOwnProperty;
+          f =
+            o(e, "undefined") || o(e.call, "undefined")
+              ? function (e, n) {
+                  return n in e && o(e.constructor.prototype[n], "undefined");
+                }
+              : function (n, A) {
+                  return e.call(n, A);
+                };
+        })(),
+          (l._l = {}),
+          (l.on = function (e, n) {
+            this._l[e] || (this._l[e] = []),
+              this._l[e].push(n),
+              Modernizr.hasOwnProperty(e) &&
+                setTimeout(function () {
+                  Modernizr._trigger(e, Modernizr[e]);
+                }, 0);
+          }),
+          (l._trigger = function (e, n) {
+            if (this._l[e]) {
+              var A = this._l[e];
+              setTimeout(function () {
+                var e, o;
+                for (e = 0; e < A.length; e++) (o = A[e])(n);
+              }, 0),
+                delete this._l[e];
+            }
+          }),
+          Modernizr._q.push(function () {
+            l.addTest = i;
+          }),
+          Modernizr.addAsyncTest(function () {
+            function e(e, n, A) {
+              function o(n) {
+                var o = n && "load" === n.type ? 1 == t.width : !1,
+                  a = "webp" === e;
+                i(e, a && o ? new Boolean(o) : o), A && A(n);
+              }
+              var t = new Image();
+              (t.onerror = o), (t.onload = o), (t.src = n);
+            }
+            var n = [
+                {
+                  uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+                  name: "webp",
+                },
+                {
+                  uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+                  name: "webp.alpha",
+                },
+                {
+                  uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+                  name: "webp.animation",
+                },
+                {
+                  uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+                  name: "webp.lossless",
+                },
+              ],
+              A = n.shift();
+            e(A.name, A.uri, function (A) {
+              if (A && "load" === A.type) for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri);
+            });
+          }),
+          t(),
+          a(s),
+          delete l.addTest,
+          delete l.addAsyncTest;
+        for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+        e.Modernizr = Modernizr;
+      })(window, document);
+    </script>
+    
+  </head>
+
+  <body class="ev-date" data-use-external-comebacker="1">
+    <div id="fb-root"></div>
+    <div id="app">
+      <div class="App App--isMaterial">
+        <div class="App-header">
+          <header class="Header">
+            <div class="Header-left">
+              <div class="Header-meduzaLogo">
+                <a class="vtbadlink MeduzaLogo" href="#toform">
+                  <div class="SvgIcon SvgIcon--inherit SvgIcon--meduzaLogo">
+                    <h2 class="inL_613268">mednews</h2>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="Header-center">
+              <div class="Header-menu">
+                <nav class="Menu">
+                  <div class="Menu-item"><a class="vtbadlink Menu-link" href="#toform">Știri</a></div>
+                  <div class="Menu-item"><a class="vtbadlink Menu-link" href="#toform">Povești</a></div>
+                  <div class="Menu-item"><a class="vtbadlink Menu-link" href="#toform">Analiza</a></div>
+                  <div class="Menu-item"><a class="vtbadlink Menu-link" href="#toform">Jocuri</a></div>
+                </nav>
+              </div>
+            </div>
+            <div class="Header-right">
+              <span class="HeaderButton-link"><a class="vtbadlink Menu-link" href="#toform">Chat-uri</a></span>
+            </div>
+          </header>
+        </div>
+        <main class="App-content">
+          <div class="Material Material--feature Material--default">
+            <div class="Material-container">
+              <div class="Material-shadow Material-shadow--top"></div>
+              <div class="MediaMaterial MediaMaterial--fullWidth">
+                <div class="MediaMaterial-header">
+                  <div class="MediaMaterial-tag">
+                    <a class="MaterialTag MaterialTag--medium MaterialTag--solid" href="#toform">sănătate și frumusețe</a>
+                  </div>
+                  <div class="MediaMaterial-meta">
+                    <div class="MaterialMeta MaterialMeta--time">
+                      <span>Data publicării: <span class="date-2" data-format="dd day, month year"></span> 11: 16
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="MediaMaterial-body">
+                  <div class="MediaMaterial-materialContent">
+                    <div class="MaterialContent MaterialContent--bannerless">
+                      <div class="DangerousHTML">
+                        <div class="Body">
+                          <!-- content -->
+                          <div class="contentBox">
+                            <h1>
+                              <span class="inL_813227">Vârsta - nu este un obstacol pentru o viață împlinită! Academicianul în
+                                vârstă de 105 de ani din Japonia a spus cum de a recâștiga vederea la orice
+                                vârstă</span>
+                            </h1>
+                            <p class="tj">
+                              <strong><span class="inL_858381">Renumitul oftalmolog japonez</span></strong><strong><span class="inL_914342">, inventator, profesor, academician, laureat al Premiului Nobel, precum și multe alte
+                                  premii medicale Areta Tanaka sa retras la 90 de ani, dar nici în suflet, nici
+                                  fizic pensionar nu a devenit. De peste 10 ani, la pensionare, profesorul Tanaka
+                                  continuă să scrie lucrări în domeniul oftalmologiei. Acum, profesorul are
+                                  105 ani, și abia 3 ani în urmă a început să poarte ochelari.</span></strong>
+                            </p>
+                            <p class="inL_184994">
+                              <span class="inL_568376">
+                                <picture>
+                                  <source type="image/webp" srcset="images/416-3942e6327b3f48739ce69b0e51c3e499.webp">
+                                  <img alt="" src="images/416-3942e6327b3f48739ce69b0e51c3e499.jpg" class="inL_583525">
+                                </picture>
+                              </span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_592037">Profesorul Tanaka spune că secretul vederii acute este în vase. Dacă sunt curate
+                                și sănătoase, atunci persoana va vedea în mod clar, fără ochelari, lentile și
+                                intervenții chirurgicale. Până acum, fostul oftalmolog își confirmă
+                                declarațiile.</span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_549764">Corespondentul nostru a reușit să intervieveze laureatul Nobel. Profesorul Tanaka și-a
+                                detaliat metodologia de restabilire a vederii.</span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_341861"><strong>Corespondentul:</strong><em>
+                                  Domnule profesor Tanaka, ați afirmat în mod repetat că vasele curate stau la baza
+                                  vederii ascuțite. De ce credeţi aşa?</em></span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_323910"><strong>Profesorul Tanaka:</strong> Este simplu. Activitatea tuturor organelor și
+                                sistemelor interne depinde de calitatea alimentării cu sânge. La urma urmei, ce
+                                este alimentarea cu sânge - este livrarea de oxigen și substanțe nutritive, precum
+                                și preluarea dioxidului de carbon și a produselor metabolice către organele interne.
+                                În copilărie, adolescenţă, tinereţe avem vase noi, elastice, curate - nutriția
+                                tuturor organelor este maximă. Cu toate acestea, odată cu vârsta, ne mișcăm din ce
+                                în ce mai puțin, iar vasele noastre încep să se murdărească. Acest lucru se
+                                datorează diferiților factori - nu numai dăunători (de exemplu fumatul, alimentația
+                                slabă, ecologia, stilul de viață sedentar), ci și destul de natural (depunerea
+                                lipidelor, de exemplu, care apare la toată lumea).</span>
+                            </p>
+                            <p class="inL_581934">
+                              <picture>
+                                <source type="image/webp" srcset="images/631-97b159953d4ab87d9b976f0eea69cd0c.webp">
+                                <img src="images/631-97b159953d4ab87d9b976f0eea69cd0c.jpg" alt="" class="inL_259130"></picture>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_511497">Și ce sunt vasele contaminate? Imaginați-vă țevile umplute cu rugină. Ce se
+                                întâmplă în cele din urmă? Ca urmare, presiunea apei crește, iar apa
+                                însăși devine lipsită de gust. Același lucru se întâmplă și cu vasele.
+                                Când colesterolul sau alte substanțe se depun pe ele, presiunea intraoculară
+                                crește, lentila începe să se deformeze și să devină tulbure. Drept urmare, vederea
+                                începe să se deterioreze, devenind tot mai rea odată cu vârsta și duce la
+                                orbire.</span>
+                            </p>
+                            <p class="inL_181146">
+                              <span class="inL_688437"><img src="images/271-81044379a738d741e6660f58b1c581f0.jpg" alt="" class="inL_735976"></span>
+                            </p>
+                            <p class="inL_112213">
+                              <em><span class="inL_237184">Fotografia de la ultima interpretare a profesorului Tanaka.</span></em>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_89043"><strong>Dacă curățați periodic vasele de sânge, atunci viziunea va fi ca în
+                                  tinerețe, chiar și până la 100 de ani. Eu sunt exemplu - ochelari am început
+                                  să port numai la vârsta de 102 de ani.</strong>
+                                Adică, curățarea vaselor poate menține vederea până la vârsta înaintată.
+                                Și nu este doar o teorie. La un moment dat, le-am recomandat pacienților mei și acum
+                                îl practic eu însuţi. Toți cei care mi-au ascultat sfaturile la un moment dat nu au
+                                făcut niciodată corecția vederii, în ciuda faptului că pacienții mei au 60-80 de
+                                ani.</span>
+                            </p>
+                            <p class="inL_455689">
+                              <span class="inL_958345">
+                                <picture>
+                                  <source type="image/webp" srcset="images/511-e5d67599bbb698e0cb7ec7a0713419e2.webp">
+                                  <img src="images/511-e5d67599bbb698e0cb7ec7a0713419e2.jpg" alt="" class="inL_424714"></picture>
+                              </span>
+                            </p>
+                            <p class="rub-ramka">
+                              <span class="inL_404986">Aceasta este o deteriorare treptată a vederii. Vasele murdare provoacă deformarea
+                                lentilei, focalizarea vederii începe să se schimbe
+                              </span>
+                            </p>
+                            <p>
+                              <span class="inL_532154 tj"><strong>Corespondentul:</strong><em> La ce patologii duce poluarea vaselor ochiului?</em></span>
+                            </p>
+                            <div class="red-horizontal-box">
+                              <p>
+                                <strong><span class="inL_257641">Contaminarea vaselor oculare provoacă boli cum ar fi:</span></strong>
+                              </p>
+                              <ul class="inL_716083">
+                                <li>
+                                  <span class="inL_890624"><strong>Miopia</strong> Experții estimează că ochelarii cu dioptrii negativi pentru
+                                    corectarea miopiei sunt acum purtați de peste 1,2 miliarde de oameni din
+                                    întreaga lume.</span>
+                                </li>
+                                <li>
+                                  <span class="inL_351097"><strong>HIPERMETROPIA LEGATĂ DE VÂRSTĂ (PREZBIOPIA)</strong> De acestă
+                                    patologie suferă aproximativ un sfert din populația Pământului. Adesea,
+                                    hipermetropia apare după 45-50 de ani, din cauza deformării lentilei.</span>
+                                </li>
+                                <li>
+                                  <span class="inL_140267"><strong>CATARACTA</strong> Alimentarea slabă de nutrienți duce la opacitatea
+                                    lentilelor.</span>
+                                </li>
+                                <li>
+                                  <span class="inL_895368"><strong>GLAUCOMA </strong> În cazul vaselor murdare, presiunea intraoculară
+                                    crește, ceea ce duce la scăderea acuității vizuale, a atrofiei (decesului) nervului
+                                    optic și, în cel mai rău caz, a orbirii.</span>
+                                </li>
+                                <li>
+                                  <span class="inL_937157"><strong>SINDROMUL OCHIULUI USCAT</strong> Apare din cauza alimentării
+                                    necorespunzătoare a ochiului cu substanțe nutritive.</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <p>
+                              <span class="inL_571313 tj">Pentru a evalua toate pericolele de contaminare a vaselor de sânge ale ochiului și
+                                modul în care vasele murdare afectează vederea, vreau să arăt câteva
+                                fotografii.</span>
+                            </p>
+                            <div class="left-img-box">
+                              <p>
+                                <picture>
+                                  <source type="image/webp" srcset="images/449-588b11ad7a92d13777fe0be3adf633bf.webp">
+                                  <img alt="" src="images/449-588b11ad7a92d13777fe0be3adf633bf.jpg" class="inL_985160"></picture><strong><span class="inL_516464">Sindromul de ochi uscat - este primul semn al vaselor contaminate. Apar senzațiile
+                                    de arsură, uscăciune, roșeață.</span></strong>
+                              </p>
+                            </div>
+                            <div class="left-img-box">
+                              <p>
+                                <span class="inL_40500">
+                                  <picture>
+                                    <source type="image/webp" srcset="images/209-31c11844b92d357d823381b120455cb2.webp">
+                                    <img alt="" src="images/209-31c11844b92d357d823381b120455cb2.jpg" class="inL_903606"></picture><strong>Glaucomul secundar. Pacientul a suferit o intervenție chirurgicală, care, desigur,
+                                    nu a eliminat cauza bolii (vasele înfundate). Drept urmare, boala s-a
+                                    manifestat a doua oară și mai puternic.
+                                  </strong>
+                                </span>
+                              </p>
+                            </div>
+                            <div class="left-img-box">
+                              <p>
+                                <span class="inL_917674">
+                                  <picture>
+                                    <source type="image/webp" srcset="images/333-f4d173a63820aee562c8a68d86847676.webp">
+                                    <img alt="" src="images/333-f4d173a63820aee562c8a68d86847676.jpg" class="inL_346301"></picture><strong>Cataracta. Pierderea vederii la un ochi la pacient din cauza întunecării
+                                    lentilei și atrofierea nervului optic.</strong>
+                                </span>
+                              </p>
+                            </div>
+                            <p class="tj">
+                              <span class="inL_872164">Acest lucru se întâmplă peste tot! În </span>Europa<span class="inL_459365">, de la tratamentul prescris în mod incorect, pacienții pierd vederea în 5
+                                din 8 cazuri! Oculiștii știu despre acest lucru, știu că este necesar să curățați vasele
+                                de sânge, dar din anumite motive nu există o astfel de practică în
+                                oftalmologia </span>din Europa<span class="inL_647057">. Cel mai adesea, tot tratamentul se încheie cu corectarea vederii - fie prin
+                                operație, fie prin purtarea lentilelor și ochelarilor. Dar trebuie să curățați vasele.
+                                Apropo, în Japonia, toți oamenii fac acest lucru după 35-40 de ani de mai mult de o
+                                jumătate de secol. Adică, știu totul despre curățarea vaselor de sânge pentru a
+                                restabili vederea. De ce nu aveţi aici – pentru mine rămâne o mare
+                                întrebare.</span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_791374"><strong>Corespondentul:<em></em></strong><em>
+                                  Există simptome prin care se poate înțelege că vasele sunt contaminate?</em></span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_958163"><strong>Profesorul Tanaka:</strong> Da, desigur. </span>
+                            </p>
+                            <div class="red-horizontal-box">
+                              <p>
+                                <strong><span class="inL_535484">Principalele simptome pot fi:</span></strong>
+                              </p>
+                              <ul class="inL_963334">
+                                <li><span class="inL_386072">"Musculiţe" în fața ochilor</span></li>
+                                <li><span class="inL_870080">Roșeața ochilor</span></li>
+                                <li><span class="inL_150091">Deteriorarea vederii și a auzului</span></li>
+                                <li><span class="inL_313585">Migrene</span></li>
+                                <li><span class="inL_145791">Deteriorarea memoriei</span></li>
+                                <li><span class="inL_411083">Oboseala cronică</span></li>
+                                <li><span class="inL_384109">Insomnia</span></li>
+                              </ul>
+                            </div>
+                            <p class="tj">
+                              <span class="inL_161825">Cu toate acestea, chiar dacă nu aveți aceste simptome,<strong>
+                                  curățarea vaselor trebuie făcută cel puțin o dată la 5 ani după 30 de ani de
+                                  viață.</strong>
+                                Vederea va rămâne în acest caz până la vârsta înaintată. Pe
+                                lângă păstrarea vederii, curățarea vaselor de sânge ale ochilor tratează
+                                problemele existente, cum ar fi miopia, hiperopia și altele.
+                              </span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_18087">De fapt, vasele se murdăresc foarte repede, în special la persoanele în
+                                vârstă. Pentru a face acest lucru, nu trebuie să mâncaţi toată ziua burgeri
+                                sau cartofi prăjiți. Este suficient să mâncaţi un cârnat sau ouă prăjite pentru a
+                                depune o oarecare cantitate de colesterol pe vase. În timp, poluarea se
+                                acumulează.</span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_715526"><strong>Corespondentul:</strong><em> Puteți să ne spuneţi secretul recâștigării vederii?</em></span>
+                            </p>
+                            <p class="inL_63361">
+                              <span class="inL_453504"><em>
+                                  <picture>
+                                    <source type="image/webp" srcset="images/510-29ae8f7a41c2441065a399ac80cdf90e.webp">
+                                    <img alt="" src="images/510-29ae8f7a41c2441065a399ac80cdf90e.jpg" class="inL_884911"></picture> </em></span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_605935"><strong>Profesorul Tanaka:</strong> Până de curând, pentru a avea grijă de
+                                viziune, colectam ierburi, le căutam pe piață sau le comandam online și apoi pregăteam
+                                decocții din ele. Acum nu fac aceasta, deoarece acum există un mijloc care ajută la
+                                îngrijirea vederii, contribuie la restabilirea acesteia. Acest remediu se numește
+                                <a href="#toform"><span class="productName"></span></a>. Ajută la normalizarea presiunii oculare, ajută la
+                                asigurarea organelor de vedere cu substanțe nutritive. Prin urmare, utilizarea pe termen
+                                lung a produsului ajută la îmbunătățirea vederii.</span>
+                            </p>
+                            <div class="img-center">
+                              <picture>
+
+                                <img src="prod.png" alt="" class="inL_957850"></picture>
+                            </div>
+
+                            <p class="tj">
+                              <span class="inL_933594"><a href="#toform"><span class="productName"></span> </a>este un instrument foarte bun, ajută la îmbunătățirea
+                                vederii. De asemenea, vreau să menționez că acest instrument este creat dintr-un complex
+                                de componente naturale. Foştii mei pacienți și prietenii încă se adresează la mine
+                                și le sfătuiesc pe toți să încerce <span class="productName"></span>.
+                              </span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_493150">Mi-au trimis recent rezultatele unui sondaj anonim al cumpărătorilor acestui remediu,
+                                cred că vă vor interesa și pe voi.</span>
+                            </p>
+                            <div class="blue-horizontal-box">
+                              <p>
+                                <strong><span class="inL_359937">Rezultate sondajului cumpărătorilor <span class="productName"></span>:</span></strong>
+                              </p>
+                              <ul class="inL_282691">
+                                <li>
+                                  <span class="inL_730746">Normalizarea presiunii oculare în 1-2 zile de la primirea remediului -
+                                    <strong>99% dintre cumpărători</strong></span>
+                                </li>
+                                <li>
+                                  <span class="inL_518067">Îmbunătățirea vederii după curs -<strong>
+                                      97% dintre cumpărători</strong></span>
+                                </li>
+                                <li>
+                                  <span class="inL_62659">Îmbunătățirea stării vaselor ochilor -
+                                    <strong>99% dintre cumpărători</strong></span>
+                                </li>
+                                <li>
+                                  <span class="inL_781460">Îmbunătățirea eficacității suprimării bolilor cronice ale ochilor -
+                                    <strong>99% dintre cumpărători</strong></span>
+                                </li>
+                                <li>
+                                  <span class="inL_503614">Îmbunătățirea clarității vederii în general -
+                                    <strong>100% cumpărători</strong></span>
+                                </li>
+                              </ul>
+                            </div>
+                            <p class="rub-ramka">
+                              <span class="myh4">Important! Ca urmare a sondajului, sa constatat că
+                                <span class="date-0" data-format="month">iulie </span> este cel mai bun moment pentru a
+                                începe cursul. Datorită stabilizării temperaturii medii, procesele metabolice din
+                                organism se accelerează, efectul utilizării remediului este sporit. Recuperarea are loc
+                                cu 37% mai repede decât în alte perioade ale anului
+                              </span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_523030"><strong>Corespondentul:</strong><em>
+                                  Cât costă <a href="#toform"><span class="productName"></span></a> și unde poate fi achiziționat?</em></span>
+                            </p>
+                            <p class="tj">
+                              <span class="inL_305179"><strong>Profesorul Tanaka:</strong> Probabil știți că pentru mine acum multe mijloace
+                                costă prea mult. Prin urmare, nu aș recomanda un remediu scump.
+                                <a href="#toform"><span class="productName"></span></a> este un instrument foarte accesibil pe care oricine
+                                îşi poate permite, datorită programului de reduceri.</span>
+                            </p>
+                            <div class="pg inL_254781">
+                              <h3>Condițiile de a obține <span class="productName"></span> cu reducere:</h3>
+                              <ul class="inL_825033">
+                                <li>
+                                  <b>Numai pentru uz personal</b><br><span>
+                                    Acest lucru este necesar pentru a combate revânzătorii care încearcă să
+                                    cumpere masiv <span class="productName"></span> și să-l revândă la propria marjă</span>
+                                </li>
+                                <li>
+                                  <b>Faceţi o cerere prin intermediul site-ului oficial al programului sau prin
+                                    formularul de cerere</b><br><span>
+                                    Site-ul oficial este o garanție a prețului producătorului și a protecției de
+                                    dealeri</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <p>
+                              <span class="inL_755473">Pentru a participa la programul de reduceri și pentru a obține
+                                <a href="#toform"><span class="productName"></span></a> la un preț special este necesar înainte de
+                                <span class="date-0"></span> să lăsaţi o cerere pe site-ul oficial al remediului.
+                              </span>
+                            </p>
+                            <div id="toform"></div>
+                            <div class="features-wrapper"></div>
+                            <br>
+                            <p class="rub-ramka">
+                              <span class="myh4">Adăugat 12 ore în urmă | Nota editorului: </span><span>Vești importante!</span> În acest moment, promoția are loc în
+                              România până la <span class="date-0"></span> inclusiv. Până la
+                              sfârșitul promoției, remediul original
+                              <a class="vtbadlink" href="#toform"><span class="productName"></span></a> poate fi obținut pe
+                              <a class="vtbadlink" href="#toform">site-ul oficial</a> pentru toți cu reducere! În
+                              prezent, restul ambalajelor promoționale:
+                              <b class="red nowrap"><span class="lastpack">43</span> buc.</b>
+                            </p>
+                            <p>
+                              <span class="inL_596372"><strong>Corespondentul:</strong><em>
+                                  Vă mulțumesc foarte mult, profesorul Tanaka, pentru un interviu atât de
+                                  detaliat.</em></span>
+                            </p>
+                          </div>
+                          <!-- content end -->
+                          <div class="box box-blue-light comments-block">
+                            <h3>Comentarii</h3>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-482-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Catarina Voraru</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Sunt atât de recunoscătoare pentru informațiile despre acest instrument. Am căutat
+                                ceva de genul ăsta de mult timp. Aștept cu nerăbdare pachetul! Mulțumesc!
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_385655">Publicat <b>23 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-981-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Irina Doiniţa Balan</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                S-au început problemele de vedere, am început să iau
+                                <a href="#toform"><span class="productName"></span></a> și totul a trecut.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_321710">Publicat <b>22 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-405-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Agripina Popescu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Susţin! Un remediu foarte eficient pentru problemele de vedere! Ma salvat de operație,
+                                deși medicii au insistat că numai operația mă va ajuta!
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_699476">Publicat <b>19 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/17copy-16copy-437-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Sergiu Ştefan Lazăr</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Pentru că de la o intervenție chirurgică sau o corecției cu laser, medicii primesc
+                                beneficii! Ca și cum nu locuiți în Europa și nu știți asta.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_682735">Publicat <b>18 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/933-1167610aa17b0813233fe82d99403e41.jpg" class="ava-img" alt=""><strong>Emanuela Ciobanu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Eu sunt oftalmolog și este ofensator să citesc astfel de declarații la adresa medicilor.
+                                Da, există cei care sunt corupți, dar mai mulți își mai aduc aminte că au depus
+                                Jurământul lui Hipocrat! De exemplu, eu însumi prescriu
+                                <a href="#toform"><span class="productName"></span></a> pacienților mei, el ajută aproape la toată lumea. <br>
+                                <br>
+                                Cu respect, Emanuela
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_798213">Publicat <b>17 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/17copy-16copy-115-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Dorel Stanciu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Ajutor, oameni buni! Disconfortul și durerea în ochi nu dau viață. Nu știu ce să
+                                fac. Iau fonduri diferite periodic, dar ele nu ajută(((
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_395567">Publicat <b>16 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/17copy-16copy-117-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Ghiţă Oprea</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Deci, ia <span class="productName"></span>, nu vei regreta. Am avut şi eu probleme cu vederea. Mulțumesc mamei că a
+                                găsit <span class="productName"></span> și ma făcut să-l iau. Apropo, am cumpărat o jumătate de an în urmă,
+                                fără nici un program preferențial pe
+                                <a class="vtbadlink" href="#toform">site-ul oficial</a> (și prețul a fost decent,
+                                aproape tot salariul l-am dat pentru un curs) dar acum nu există nici o problemă, pot
+                                distinge chiar numărul de microbuze de la etajul al cincilea. Crede-mă, cumpără și vei
+                                vedea totul.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_326137">Publicat <b>15 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/813-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong> Raluca Cojocaru</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>Cum să dobândesc <span class="productName"></span>?</p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_139738">Publicat <b>15 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/689-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Constantin Mocanu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Raluca, aici este link-ul <a class="vtbadlink" href="#toform"><span class="productName"></span></a>, doar
+                                grăbește-te în timp ce există un program preferențial. M-a ajutat foarte mult!
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_255027">Publicat <b>14 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/813-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong> Raluca Cojocaru</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Constantin, da, vă mulțumesc, am comandat deja, dar puteți spune în cât timp este
+                                livrat?
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_946083">Publicat <b>12 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/689-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Constantin Mocanu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Raluca, noi doi suntem din același oraș, așa că aproximativ în trei zile va veni)
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_614905">Publicat <b>12 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-417-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Roxana Dobre</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Am comandat pentru sora mea pe
+                                <a class="vtbadlink" href="#toform">site-ul producătorului</a> două luni în urmă. I
+                                s-a prescris o intervenție chirurgicală, dar am citit că după ea există adesea
+                                complicații. Ați ști cum mi-a mulțumit mai târziu că i-am adus <span class="productName"></span>
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_13376">Publicat <b>10 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/17copy-16copy-559-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Mihai Stelian Badea</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Într-adevăr rezultatul e atât de bun? Probabil ar trebui să-mi comand și
+                                pentru sine.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_313620">Publicat <b>10 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-653-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Tiona Lungu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Și eu am auzit cu marginea urechii. Cineva cunoscut a comandat pentru el însuși.
+                                Vederea şi la mine se înrăutăţeşte cu fiecare an, am obosit de ridicarea lentilelor.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_695362">Publicat <b>9 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/17copy-16copy-689-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Constantin Mocanu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Văd că nu numai eu am astfel de probleme, dar mulțumesc lui Dumnezeu că am găsit
+                                <a class="vtbadlink" href="#toform">site-ul producătorului</a> al <span class="productName"></span> undeva o lună
+                                în urmă.
+                              </p>
+                              <p> </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_949281">Publicat <b>9 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/17copy-16copy-4-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Alexandru Dragan</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>Spuneți-mi oamenilor, va ajuta? Căci de la fonduri și medici nu este nici un folos</p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_144167">Publicat <b>8 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-412-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Sabina Costea</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Absolut. Efectul este foarte puternic și, cel mai important, că nici sănătăţii nu
+                                dăunează. Așa că grăbește-te să comanzi! <span class="productName"></span> a ajutat soțului să scape de ochelari.
+                                Acum și eu am început să-l iau, a doua zi abea.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_287704">Publicat <b>8 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-857-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Rodica Olteanu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Mulțumesc, <span class="productName"></span> a ajutat foarte repede! Am comandat exact
+                                <a class="vtbadlink" href="#toform">pe site-ul oficial al producătorului</a>! Nu
+                                amânaţi cu cursul, este mai bine să scapi de aceste probleme de vedere acum,
+                                decât să devii un invalid orb.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_286760">Publicat <b>7 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/6.jpg" class="ava-img" alt=""><strong>Sidonia Maria Filip</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Mulțumesc.. Dacă n-aţi fi fost dvs., n-aș fi crezut în eficacitatea produsului!
+                              </p>
+                              <p>P.S. parcelă a fost livrată foarte repede!</p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_479796">Publicat <b>7 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-720-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Ofelia Iacob</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Rezultatul a depășit așteptările mele. După un curs viziunea a devenit excelentă! Am
+                                comandat mai multe pachete prietenilor mei.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_913533">Publicat <b>6 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-489-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Ilona Popa</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Astăzi, literalmente tocmai mi-am comandat <a href="#toform"><span class="productName"></span></a><br>
+                                există condiții excelente de la producător, grăbește-te!  <br>
+                                Pe <a class="vtbadlink" href="#toform">site-ul oficial</a> am lăsat cererea foarte
+                                repede și am confirmat comanda.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_580321">Publicat <b>5 ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-867-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Olimpia Nistor</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Am cumpărat pentru mine, deoarece vederea a început să se înrăutățească. Am
+                                trecut cursul, acum văd bine, inflamația ochilor a trecut. Vă sfătuiesc.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_555929">Publicat <b>4 de ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-298-4abe4d52013e5afb16585bc7917c2f65.jpg" class="ava-img" alt=""><strong>Lăcrimioara Roşu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                La prietenul nostru într-o farmacie privată, <a href="#toform"><span class="productName"></span></a> este
+                                vândut de 10 ori mai scump, așa că nu am îndrăznit să-l cumpăr, de bani
+                                îmi era jale. Iar aici am comandat imediat pentru că e cu o reducere. Viziunea este
+                                aproape 1, luni am fost să verific, iar timp a trecut aproape nimic.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_122572">Publicat <b>3 de ore în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-596-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Mărioara Căstescu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>Am folosit <span class="productName"></span> timp de șase luni și vederea acum este excelentă.</p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_624862">Publicat <b>1 oră în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/17copy-16copy-992-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Victor Lapte</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                De asemenea, mi-am comandat de pe
+                                <a class="vtbadlink" href="#toform">site-ul oficial</a>. Mi-a ajutat excelent. Dacă
+                                aveți probleme cu vederea-recomand foarte mult. Și livrare rapidă, a venit în trei
+                                zile.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_353656">Publicat <b>41 de minute în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p><img src="images/11.jpg" class="ava-img" alt=""><strong>Irina Stănescu </strong></p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Am făcut corecția cu laser soțului într-o clinică cunoscută. Nu pot să-i spun
+                                numele - suntem în litigiu acum, avocații nu permit divulgarea numelui. Faptul este
+                                că soțului i-au ars retina cu laserul. A fost o persoană sănătoasă, cu mici probleme de
+                                vedere, și l-au făcut un handicap! Îmi pare rău că nu am știut despre <span class="productName"></span>.
+                                În general, NU recomand nimănui să facă operații sau corecții - fiecare al doilea
+                                are probleme mai târziu.  <br>
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_92209">Publicat <b>35 de minute în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-51-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Doina Palade</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Am primit două luni în urmă, am comandat fără program. Îmi împărtăşesc
+                                rezultatele. <a href="#toform"><span class="productName"></span></a> a venit foarte repede. După doar 10 zile, am
+                                început să văd fără ochelari. La început plutea puțin și ochii erau foarte
+                                obosiți, dar la sfârșitul cursului, vedeam deja toate cifrele de pe monitor fără
+                                ochelari (sunt contabil). Am de gând peste o jumătate de an de a comanda un alt
+                                curs pentru a consolida rezultatul
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_317461">Publicat <b>21 de minute în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/15copy-14copy-177-63267c57ef7d54caadfde58e64e9b3bc.jpg" class="ava-img" alt=""><strong>Livia Buzdugan</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                Oameni buni, spuneți-mi unde ați cumpărat? În farmacii, un astfel de instrument nu
+                                este vândut, şi pe internet de a cumpăra îmi este straşnic. Aș vrea să nu dau
+                                peste falsificat, dar nu înțeleg nimic.
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_924618">Publicat <b>17 de minute în urmă</b></small>
+                          </div>
+                          <div class="comment-box">
+                            <div class="comment-profile-box">
+                              <p>
+                                <img src="images/933-1167610aa17b0813233fe82d99403e41.jpg" class="ava-img" alt=""><strong>Emanuela Ciobanu</strong>
+                              </p>
+                            </div>
+                            <div class="comment-text-box">
+                              <p></p>
+                              <p>
+                                <span class="productName"></span> poate fi comandat NUMAI pe
+                                <a class="vtbadlink" href="#toform" target="_blank">site-ul oficial</a> pentru a nu face
+                                o greșeală, faceți clic pe link-ul de mai sus! Pacienții mei comandă acolo. <br>
+                                Cu respect, Emanuela
+                              </p>
+                              <p></p>
+                            </div>
+
+                            <small class="inL_691650">Publicat <b>9 de minute în urmă</b></small>
+                          </div>
+                          <div id="push-comments" class="inL_43375">
+                            <div id="push_mlyjekpdfdd1" class="reviews-cta">
+                              <form id="push_mlyjekpdfdd1__form" class="reviews__form reviews-form">
+                                <h3 id="push_mlyjekpdfdd1__title">Lăsaţi un comentariu</h3>
+                                <div class="reviews-form__intrenal-col">
+                                  <label class="reviews-form__file input-file" for="file">
+                                    <span class="reviews-form__file-text">Încărcați fotografia</span>
+                                  </label>
+                                  <input class="visually-hidden input-file reviews-input" id="file" type="file" accept="image/*">
+                                </div>
+                                <input type="text" placeholder="Numele dvs." class="inL_1500" required>
+                                <textarea name="message" id="push_mlyjekpdfdd1__message" placeholder="Comentariul dvs." required></textarea>
+                                <button id="push_mlyjekpdfdd1__submit">Trimiteţi</button>
+                              </form>
+                            </div>
+                          </div>
+                          <!-- rb-ads -->
+                          <div class="rb-ads" data-rb_bid="50175"></div>
+                          <!-- rb-ads /end -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+        <div class="reviews-popup">
+          <div class="reviews-popup__inner">
+            <div class="reviews-popup__text">
+              <span class="reviews-popup__big">Mulțumesc!</span><br>
+              Feedback-ul dvs. a fost acceptat și trimis la moderare.
+            </div>
+          </div>
+        </div>
+        <div class="App-footer">
+          <footer class="Footer">
+            <div class="Copyright">
+              <div class="Copyright-container">
+                <div class="Copyright-block">
+                  <span>© </span><span class="date-0" data-format="yyyy"></span><span> Mednews</span>
+                </div>
+                <div class="Copyright-block"><a class="vtbadlink" href="#toform">Despre proiect</a></div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div class="ftrsale inL_246165">
+      <div class="mainfoot">
+        <div class="cls"></div>
+        <div class="lft">
+          <p>
+            Astăzi conform unui program preferențial <br>
+            <span><span class="productName"></span></span> poate fi obținut <span class="inL_978542">la o reducere</span>
+          </p>
+        </div>
+        <div class="rght">
+          <a class="popbutton ftr-bttn vtgoodlink" href="#toform">Obţineţi CU REDUCERE!</a>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="js/script.js"></script>
+
+    <script>
+        const offer_params = {
+            priceMain : '159',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2, тільки це не стосується барабану, барабан розрахований тільки на 50%
+            currencyMain: 'lei',
+            productName : 'Oculax',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain : offer_params.priceMain,
+            currencyMain : offer_params.currencyMain,
+            lang : 'ro', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product : offer_params.productName, // название продукта
+            genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+            form : {
+                isNeeded : 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+
+
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+
+
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+
+
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function(){
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+
+
+        $('[name="phone"]').on('input change', function(e){
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+
+
+  </body>
+</html>
