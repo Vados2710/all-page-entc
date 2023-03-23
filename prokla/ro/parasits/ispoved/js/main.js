@@ -1,0 +1,1 @@
+$(document).ready((function(){$("#button").click((function(t){t.preventDefault(),t.stopPropagation(),$("#content").toggle()})),$("#content").click((function(t){t.stopPropagation()})),$("body").click((function(){$("#content").hide()}))}));
