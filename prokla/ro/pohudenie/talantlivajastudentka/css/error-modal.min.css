@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url(../fonts/GothamPro.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url(../fonts/GothamPro-Black.woff) format("woff");
+    font-weight: 900;
+    font-style: normal
+}
+
+.popup_title {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 0;
+    color: #000;
+}
+
+.popup_text {
+    font-size: 30px;
+    margin: 0;
+    padding: 37px 0 20px
+}
+
+.popup_btn {
+    font-size: 18px !important;
+    font-weight: 900 !important;
+    width: 100% !important;
+    max-width: 228px !important;
+    padding: 15px 20px !important;
+    cursor: pointer !important;
+    transition: .8s !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 5px !important;
+    outline: 0 !important;
+    background: #fc6721 !important;
+    box-shadow: 0 6px 38px 0 rgba(246, 105, 36, .31) !important;
+    cursor: pointer !important;
+    position: inherit !important;
+    margin: 0 auto !important;
+    height: inherit !important;
+    line-height: 18px !important;
+    display: inline-block !important
+}
+
+.popup_btn:before, .popup_btn:after {
+    display: none !important
+}
+
+.popup_btn:hover {
+    background: #c35004 !important;
+    -webkit-transform: scale(1) !important;
+    -ms-transform: scale(1) !important;
+    -o-transform: scale(1) !important;
+    transform: scale(1) !important;
+    color: #fff !important
+}
+
+.popup_modal {
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px
+}
+
+.popup_modal.is-visible {
+    visibility: visible
+}
+
+.modal-overlay {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0 linear 0.3s, opacity .3s;
+    border-radius: 10px
+}
+
+.popup_modal.is-visible .modal-overlay {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0
+}
+
+.modal-wrapper {
+    background: #0000008c;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    padding: 0 10px;
+    box-sizing: border-box
+}
+
+.modal-transition {
+    transition: all .3s .12s;
+    transform: translateY(-10%);
+    opacity: 0
+}
+
+.popup_modal.is-visible .modal-transition {
+    transform: translateY(0);
+    opacity: 1
+}
+
+.modal-content {
+    box-sizing: border-box;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 55px 50px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 3px 24.3px 2.7px rgba(0, 3, 5, 0.31);
+    font-family: 'Gotham Pro';
+    border-radius: 10px
+}
+
+.popup_close_icon {
+    position: absolute;
+    right: 22px;
+    top: 21px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.close_icon {
+    position: relative;
+    display: block;
+    z-index: 9999;
+    width: 40px;
+    height: 39px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+}
+
+.close_icon:focus {
+    outline: none
+}
+
+.close_icon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 9999;
+    width: 3px;
+    background-color: #ababab;
+    height: 39px;
+    transform: rotate(43deg);
+    left: 14px;
+    top: 0
+}
+
+.close_icon:before {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 9999;
+    width: 3px;
+    background-color: #ababab;
+    height: 39px;
+    transform: rotate(135deg);
+    left: 14px;
+    top: 0
+}
+
+.modal-content > :first-child {
+    margin-top: 0
+}
+
+.modal-content > :last-child {
+    margin-bottom: 0
+}
