@@ -1,0 +1,126 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>Chat Daniela Ionescu</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+
+  </head>
+  <body class="ev-date">
+    <div id="app">
+      <section data-v-13e73210="" class="chat">
+        <div data-v-13e73210="" class="header">
+          <div data-v-13e73210="" class="header-wrap">
+            <div data-v-13e73210="" class="header-avatar">
+              <img data-v-13e73210="" src="images/person-goroskop.6d9c048e.png" alt="" class="header__avatar avatar__img">
+            </div>
+            <div data-v-13e73210="" class="header-text">
+              <div data-v-13e73210="" class="header-text__name">Daniela Ionescu</div>
+              <div data-v-13e73210="" class="header-text__answers">
+                Răspunsuri: 9,342 - Exactitatea prognozei: 97%
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-v-13e73210="" class="main">
+          <div id="wrapper">
+            <div class="chat">
+              <div class="chat-container">
+                <div class="chat-listcontainer">
+                  <ul class="chat-message-list"></ul>
+                </div>
+              </div>
+            </div>
+          </div> 
+      </div></section>
+      <div class="ev-footer create_rom_footer" data-background-color="transparent" data-color_link="black" data-color_logo="orange"></div>
+    </div>
+
+
+
+
+    <script>
+        const offer_params = {
+            priceMain: '199',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'lei',
+            productName: 'Nine Eyed Dzi Bead Amulet',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+    <script src="js/script.js"></script>
+
+
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+
+
+
+  </body>
+</html>

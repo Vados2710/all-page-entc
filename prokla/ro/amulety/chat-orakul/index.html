@@ -1,0 +1,145 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width">
+    <title>
+     Chat  Anna Johnson.    </title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+  </head>
+
+  <body class="ev-date">
+    <div class="wrap" id="screenFirst">
+      <div class="chat show-chat zoomIn animated">
+        <div class="chat show-chat zoomIn animated">
+          <div class="chat-container">
+            <div class="chat-header">
+              <div class="chat-header-container down">
+                <div class="chat-header-container-wrapper">
+                  <div class="chat-header-container-image-left">
+                    <div class="chat-header-container-image">
+                      <img src="images/avatar.png" alt="">
+                    </div>
+                    <div class="chat-header-container-image">
+                      <img src="images/message-icon.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-content">
+              <div class="chat-content-container">
+                <div class="chat-content-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form action="getform.php" method="post" id="cont_form" class="form-order x_order_form">
+          <input type="hidden" name="utm_source" value="{clickid}">
+          <input type="hidden" name="utm_campaign" value="{t2}">
+
+          <div class="form_block">
+            <div class="prices_block">Kabala táska megrendelőlap</div>
+            <div class="prices">
+              <div class="oldprice"><span class="priceOld"></span> <span class="currencyMain"></span></div>
+              <div class="newprice"><span class="priceMain"></span> <span class="currencyMain"></span></div>
+            </div>
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Adja meg nevét" required class="form-control input-lg">
+            </div>
+            <div class="form-group">
+              <input type="text" name="phone" placeholder="Írja be a telefonszámot" required class="form-control input-lg">
+            </div>
+            <input type="hidden" name="comments">
+            <input type="submit" value="Kap" class="btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <span class="country_action" style="opacity: 0">всю Украину</span>
+
+    <span class="new_price_val" style="opacity: 0"></span>
+    <span class="new_price_cur" style="opacity: 0"></span>
+
+
+    <script>
+        const offer_params = {
+            priceMain: '199',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'lei',
+            productName: 'Nine Eyed Dzi Bead Amulet',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/typed.js"></script>
+
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+
+  </body>
+</html>
