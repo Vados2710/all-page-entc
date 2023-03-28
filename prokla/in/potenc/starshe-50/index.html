@@ -1,0 +1,185 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+    <script src="js/moment-with-locales-2.18.1.min.js" type="text/javascript">
+    </script>
+    <script src="js/dr-dtime.min.js" type="text/javascript">
+    </script>
+
+    <style>
+        .ac_footer {
+            position: relative;
+            top: 10px;
+            height: 0;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #A12000;
+        }
+
+        .ac_footer a {
+            color: #A12000;
+        }
+
+        .ac_footer p {
+            text-align: center;
+        }
+
+        img[height="1"], img[width="1"] {
+            display: none !important;
+        }
+    </style><!--retarget--><!--retarget-->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body><!--retarget--><!--retarget-->
+<div class="py-5 text-center opaque-overlay" style="background-image: url(&#34;images/background.png&#34;);">
+    <div class="container">
+        <div class="row">
+            <div class="text-white col-md-12"><h1 class="display-3 mb-4"></h1>
+                <p align="center" class><b><font size="10"><font face="Tahoma, Geneva, sans-serif"><font
+                        color="#00FFFF"> 50 </font> साल से ज़्यादा वाले लोग भी </font></font></b><b><font
+                        size="10"><font face="Tahoma, Geneva, sans-serif"><font color="#00FFFF">
+                    40 </font></font></font></b></p>
+                <p align="center"><b><font size="10"><font face="Tahoma, Geneva, sans-serif"> मिनट तक कैसे टिके रह पाते
+                    हैं??? </font></font></b></p>
+                <div class="py-5 pi-draggable my-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6"><img class="img-fluid d-block w-100 mb-3 rounded"
+                                                               src="images/video2.gif"></div>
+                                    <div class="col-md-6"><img class="d-block img-fluid" src="prod.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="features-wrapper"></div>
+                <style>
+                    .cursor-text{
+                        color:black;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ac_footer"><a href="http://ac-feedback.com/report_form/"> Report </a>
+    <p> The results may vary depending on your individual features <br> आपके सोर्स डाटा और निजी गुण-धर्मों के आधार पर
+        नतीजे अलग-अलग हो सकते हैं </p>
+    <script>
+        typeof adc_clearFooter !== 'undefined' && adc_clearFooter();
+    </script>
+</div>
+<script>
+    const offer_params = {
+        priceMain: '2290',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '₹',
+        productName: 'Hammer of Thor',
+    };
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+    if (offer_params.customPriceOld) {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    } else {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+
+<script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain: offer_params.priceMain,
+        currencyMain: offer_params.currencyMain,
+        lang: 'in', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product: offer_params.productName, // название продукта
+        genderTargetting: 'all', // пол целевой аудитории - all, male, female
+        form: {
+            isNeeded: 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+</html>
