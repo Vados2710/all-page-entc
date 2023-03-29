@@ -1,0 +1,549 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+    <style>
+        .ac_footer {
+            position: relative;
+            top: 10px;
+            height: 0;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #A12000;
+        }
+
+        .ac_footer a {
+            color: #A12000;
+        }
+
+        .ac_footer p {
+            text-align: center;
+        }
+
+        img[height="1"], img[width="1"] {
+            display: none !important;
+        }
+    </style><!--retarget--><!--retarget-->
+    <script src="js/9_14.js" type="text/javascript">
+    </script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Dhanush Ashok</title><!-- поменять-->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .header__bg {
+            background: url(img/header_hi.jpg) 50% 50% no-repeat;
+            background-size: cover;
+        }
+
+        .info-item-text {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body><!--retarget--><!--retarget-->
+<div class="menu-bar--top menu-bar--top--size-m">
+    <div class="menu-bar__search--top">
+        <form action method="get"><a &amp;quot; href><input class="search__input" name="search" type="search"></a>
+            <button class="search__btn" type="submit"><i aria-hidden="true" class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div class="menu-item--top"><a &amp;quot; class="menu-item" href> होम </a>
+        <p class="menu__del"> | </p><a &amp;quot; class="menu-item" href> मित्रों को ढूँढें </a></div>
+    <div class="menu-bar__icon--top"><a &amp;quot; href><img class="icon-frends" src="img/frends.png"></a><a &amp;quot;
+                                                                                                             href><img
+            class="icon-messege" src="img/messege.png"></a><a &amp;quot; href><img class="icon-notice"
+                                                                                   src="img/notice.png"></a></div>
+</div>
+<div class="menu-bar--top menu-bar--top--size-s"><a &amp;quot; class="menu-bar-top-link top-link" href><img
+        src="img/fr.png"></a><a &amp;quot; class="menu-bar-top-link" href><img src="img/frens_s.png"></a><a &amp;quot;
+                                                                                                            class="menu-bar-top-link"
+                                                                                                            href><img
+        src="img/messege_s.png"></a><a &amp;quot; class="menu-bar-top-link" href><img src="img/notice_s.png"></a><a
+        &amp;quot; class="menu-bar-top-link" href><img src="img/search.png"></a><a &amp;quot; class="menu-bar-top-link"
+                                                                                   href><img src="img/menu.png"></a>
+</div>
+<div class="container">
+    <header class="header header--size-m">
+        <div class="header__bg"><a &amp;quot; href>
+            <div class="header__caption--bottom"><h2 class="bottom__caption--top"><a &amp;quot; href> Dhanush Ashok </a>
+            </h2></div>
+            <div class="header__submit">
+                <button class="submit--left" type="submit"><img class="img-friend" src="img/friend-add.png"> मित्र बनाएँ
+                </button>
+                <button class="submit--mid" type="submit"><img class="img-mess" src="img/mess.png"> संदेश
+                    <div class="submit--right">
+                        <div class="menu-dropdown" id="menu__dropdown" onclick="dropDown(this)"> ...</div>
+                        <ul class="dropdown" id="dropdown">
+                            <li><a &amp;quot; class="item-dropdown" href> वीडियो कॉल </a></li>
+                            <li><a &amp;quot; class="item-dropdown" href> रिपोर्ट करें </a></li>
+                            <li><a &amp;quot; class="item-dropdown" href> ब्लॉक करें </a></li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+        </a></div>
+        <div class="header__menu-bar">
+            <div class="menu-bar__avatar"><a &amp;quot; href><img class="avatar" src="img/avatar_hi.jpg"></a></div>
+            <div class="header__menu">
+                <ul class="header-menu-list--bot">
+                    <li class="menu-item--bot"><a &amp;quot; class="menu-item-link item-link" href> टाइमलाइन </a></li>
+                    <li class="menu-item--bot"><a &amp;quot; class="menu-item-link" href> เपरिचय </a></li>
+                    <li class="menu-item--bot"><a &amp;quot; class="menu-item-link" href> मित्र </a></li>
+                    <li class="menu-item--bot"><a &amp;quot; class="menu-item-link" href> फ़ोटो </a></li>
+                    <li class="menu-item--bot" onclick="listDropDown(this)"><a &amp;quot; class="menu-item-link" href>
+                        अधिक <i aria-hidden="true" class="fa fa-sort-desc" id="menu-list__dropdown"></i></a></li>
+                </ul>
+                <ul class="list-dropdown" id="list-dropdown">
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> वीडियो </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> चेक-इन </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> खेल </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> संगीत </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> मूवी </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> TV शो </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> पुस्तकें </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> एप्लिकेशन और गेम </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> पसंद </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> ईवेंट </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> समीक्षाएँ </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> समूह </a></li>
+                    <li class="dropdown-item"><a &amp;quot; class="dropdown-item-link" href> नोट </a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <header class="header header--size-s"><a &amp;quot; href>
+        <div class="header__bg"></div>
+    </a>
+        <div class="header--top">
+            <div class="header__caption--top">
+                <div class="header__avatar--top"><a &amp;quot; href><img class="avatar" src="img/avatar_hi.jpg"></a>
+                </div>
+                <a &amp;quot; href><h2> Dhanush Ashok </h2></a></div>
+        </div>
+        <div class="header__menu--top"><a &amp;quot; href>
+            <div class="menu__item--top"><img class="item-img" src="img/friend-add_s.png">
+                <p> मित्र बनाएँ </p></div>
+        </a><a &amp;quot; href>
+            <div class="menu__item--top"><img class="item-img" src="img/prod.png">
+                <p class="item__text"> फ़ॉलो करें </p></div>
+        </a><a &amp;quot; href>
+            <div class="menu__item--top"><img class="item-img" src="img/mess_s.png">
+                <p> संदेश </p></div>
+        </a><a &amp;quot; href>
+            <div class="menu__item--top"><img class="item-img" src="img/etc.png">
+                <p> अधिक </p></div>
+        </a></div>
+        <div class="header_info">
+            <div class="header-info__item"><a &amp;quot; href><img class="item-img" src="img/learn.png"></a>
+                <p class="info-item-text"><a &amp;quot; class="link" href> Infant Jesus Matriculation Higher Secondary
+                    School, Chennai (Madras) </a> में पढ़े थे </p></div>
+            <div class="header-info__item"><a &amp;quot; href><img class="item-img" src="img/home.png"></a>
+                <p class="info-item-text"><a &amp;quot; class="link" href> Kolathur, India </a> में रहता है. </p></div>
+            <div class="header-info__item"><a &amp;quot; href><img class="item-img" src="img/map.png"></a>
+                <p class="info-item-text"><a &amp;quot; class="link" href> Chennai, India </a> से </p></div>
+        </div>
+        <div class="header__menu--bot"><p class="menu__item--bot"><a &amp;quot; class="item" href> परिचय </a></p>
+            <p class="menu__item--bot"><a &amp;quot; class="item" href> फ़ोटो </a></p>
+            <p class="menu__item--bot"><a &amp;quot; class="item item--last" href> मित्र </a></p></div>
+    </header>
+    <div class="container__add-friend">
+        <div class="add-friend__caption"><a &amp;quot; href><h2 class="friend-caption"> क्या आप Dhanush Ashok को जानते
+            हैं? </h2></a></div>
+        <div class="add-friend__content"><p class="friend-content__text"> वे मित्रों के साथ क्या साझा करते हैं, यह देखने
+            के लिए <a &amp;quot; class="content-a" href> उन्हें मित्रता अनुरोध भेजें </a></p>
+            <button class="content__btn" type="submit"><img class="btn-img" src="img/friend-add-w.png"> मित्र बनाएँ
+            </button>
+        </div>
+    </div>
+    <div class="container__main">
+        <div class="main--left">
+            <div class="left__info">
+                <div class="left-info__caption"><a &amp;quot; href><img class="caption-img" src="img/world.png"></a>
+                    <h2 class="info__caption"> แนะนำตัว </h2></div>
+                <div class="info__list">
+                    <div><a &amp;quot; href><img class="item-img" src="img/learn.png"></a>
+                        <p class="info-item-text"><a &amp;quot; class="link" href> Infant Jesus Matriculation Higher
+                            Secondary <br> School, Chennai (Madras) </a> में पढ़े थे </p></div>
+                    <div><a &amp;quot; href><img class="item-img" src="img/home.png"></a>
+                        <p class="info-item-text"><a &amp;quot; class="link" href> Kolathur, India </a> में रहता है.
+                        </p></div>
+                    <div><a &amp;quot; href><img class="item-img" src="img/map.png"></a>
+                        <p class="info-item-text"><a &amp;quot; class="link" href> Chennai, India </a> से </p></div>
+                </div>
+            </div>
+            <div class="left__foto">
+                <div class="left-foto__caption"><a &amp;quot; href><img class="caption-img" src="img/foto.png"></a>
+                    <h2 class="foto-caption"><a &amp;quot; href> फ़ोटो </a></h2></div>
+                <div class="left-foto__img"><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto" src="img/foto1_hi.jpg"></div>
+                </a><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto" src="img/foto2_hi.jpg"></div>
+                </a><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto foto-height" src="img/foto3_hi.jpg"></div>
+                </a><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto" src="img/foto4_hi.jpg"></div>
+                </a><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto" src="img/foto5_hi.jpg"></div>
+                </a><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto" src="img/foto6_hi.jpg"></div>
+                </a><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto" src="img/foto7_hi.jpg"></div>
+                </a><a &amp;quot; href>
+                    <div class="foto__img"><img class="foto" src="img/foto8_hi.jpg"></div>
+                </a></div>
+            </div>
+            <div class="left__friends">
+                <div class="left-friends__caption"><a &amp;quot; href><img class="friends-caption-img"
+                                                                           src="img/friends.png"></a>
+                    <h2 class="friends-caption"><a &amp;quot; class="caption-a" href> मित्र </a></h2>
+                    <h2 class="friends-caption friends-caption--bot"> · <a &amp;quot; class="friends__caption__a" href>
+                        2,823 </a></h2></div>
+                <div class="left-friends__img"><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend1_hi.jpg">
+                        <div class="friends__name"><p> Zaka Ulla </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend2_hi.jpg">
+                        <div class="friends__name"><p> Md Riyaz </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend3_hi.jpg">
+                        <div class="friends__name"><p> Zāmmū ZMř </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend4_hi.jpg">
+                        <div class="friends__name"><p> Ganesh Moni </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend5_hi.jpg">
+                        <div class="friends__name"><p> Malik Nafees </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend6_hi.jpg">
+                        <div class="friends__name"><p> Syedsadiq Syed </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend7_hi.jpg">
+                        <div class="friends__name"><p> Imran Khan </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend8_hi.jpg">
+                        <div class="friends__name"><p> Cm Khader </p></div>
+                    </div>
+                </a><a &amp;quot; href>
+                    <div class="friends__img"><img class="foto" src="img/friend9_hi.jpg">
+                        <div class="friends__name"><p> Arif Miya </p></div>
+                    </div>
+                </a></div>
+                <div class="friends--bottom">
+                    <div class="friends__content--bottom"><a &amp;quot; href><img class="content-img"
+                                                                                  src="img/friends_b.png"></a>
+                        <p class="bottom-content-text"> देखें कि आपमें और Dhanush <br> Ashok के मित्रों में क्या समानता
+                            है. </p></div>
+                    <button class="friends_btn--bottom"> देखें</button>
+                </div>
+            </div>
+        </div>
+        <div class="main--right">
+            <div class="main__post--right">
+                <div class="post__header">
+                    <div class="post-header__caption">
+                        <div class="post-caption__img"><a &amp;quot; href><img class="avatr--small"
+                                                                               src="img/avatar_hi.jpg"></a></div>
+                        <div class="post__caption"><h2><a &amp;quot; class="post-caption-link" href> Dhanush Ashok </a>
+                        </h2>
+                            <p class="post-caption__bot"><span class="data-link"><script>
+            dtime_nums(-10, true)
+           </script></span> · <img class="bot-img" src="img/world2.png"></p>
+                        </div>
+                    </div>
+                    <div class="post-caption__list">
+                        <div class="p-caption__list" onclick="postlistDropDown(this)"> ...</div>
+                        <ul class="caption-list" id="caption-list">
+                            <li class="caption-item"><a &amp;quot; class="caption-item-link" href> पोस्ट सहेजें </a>
+                            </li>
+                            <li class="hr"></li>
+                            <li class="caption-item"><a &amp;quot; class="caption-item-link" href> एम्बेड करें </a></li>
+                            <li class="caption-item"><a &amp;quot; class="caption-item-link" href> इस पोस्ट के लिए
+                                सूचनाएँ चालू करें </a></li>
+                            <li class="hr"></li>
+                            <li class="caption-item"><a &amp;quot; class="caption-item-link" href> फ़ोटो की रिपोर्ट
+                                करें </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="post__content">
+                    <div class="post-content__text"><p> हैलो! आज मैं आपको अपनी कहानी बताने जा रहा हूँ कि मैंने कैसे
+                        मात्र 13 दिन में अपना लिंग 6 सेमी लंबा कर लिया! मैं शुरुआत में ही साफ करना चाहूँगा कि <a
+                                &amp;quot; class="link" href> <span class="productName"></span> </a> आपके स्वास्थ्य के लिए पूरी तरह से
+                        सुरक्षित है जो काफी महत्वपूर्ण बात है। मुझे यह प्रोडक्ट एक संयोग से ही मिला था। असल में मेरा
+                        साइज़ 15 सेमी है जो एक सामान्य साइज़ है। इस साइज़ को विशाल तो नहीं कहेंगे लेकिन लड़कियों को कभी भी
+                        मेरे साइज़ से शिकायत नहीं रही और इसलिए मैंने इस बारे में कभी सोचा ही नहीं। लेकिन मुझे अभी भी
+                        बिस्तर में दिक्कतें आती थीं। मेरा खड़ा तो ठीक से होता था (अभी जैसी सख्ती से तो नहीं) लेकिन बड़ी
+                        जल्दी झड़ जाता था और मैं लड़कियों को पूरा मजा नहीं दे पाता था! इसलिए मैंने ट्राय करने का फैसला
+                        किया। और फिर 2-3 सेमी बड़ा हो जाए तो कोई बुरा तो नहीं है न? :) </p>
+                        <p> और इस तरह मैंने इसे खरीद डाला। कुछ दिनों बाद ही इन गोलियों का एक पैकेज आ गया। इसका रेट भी
+                            कोई ज्यादा नहीं था इसलिए मेरा बजट भी नहीं बिगड़ा। मैंने उसी दिन से इन्हें लेना चालू कर
+                            दिया </p>
+                        <p> सच कहूँ तो पहले तो मुझे <a &amp;quot; class="link" href> इनकी वेबसाइ </a> ट पर इसके बताए
+                            नतीजों पर बिल्कुल भरोसा नहीं था। लेकिन दो दिन बाद ही मुझे एहसास हो गया कि मैं गलत था। </p>
+                        <p> मैंने विशेषज्ञों की सलाह मानी और अपने शरीर में बदलाव महसूस किए। 13 दिन <a &amp;quot;
+                                                                                                      class="link" href>
+                            <span class="productName"></span> </a> लेने के बाद मैंने अपने लिंग की लंबाई मापी। मैं उम्मीद कर रहा था कि आधा
+                            सेंटीमीटर तक बड़ा हो जाएगा... लेकिन जब मैंने इंची-टेप में देखा तो सन्न रह गया... मेरा लिंग 6
+                            सेमी लंबा हो गया था!!!!! वो भी सिर्फ 13 दिनों में!!!!!! मैं तो सातवें आसमान पर पहुँच गया...
+                            मैं इतना उत्तेजित हो गया था कि कई दिनों तक दिल में हलचल मची रही। </p>
+                        <p> हाँ, मैंने गोलियाँ लेना जारी रखा है और मुझे पूरा भरोसा है कि मैं अभी तक अपनी लिमिट तक नहीं
+                            पहुँचा हूँ! <a &amp;quot; class="link" href> <span class="productName"></span> </a> ने बिस्तर में मेरा समय बढ़ा
+                            दिया है और मेरा तब तक खड़ा रहता है जब तक लड़की खुद मना न करने लग जाए :) अपने नए बड़े लंड से मैं
+                            अब एक साथ तीन-तीन लड़कियों को भी चोद लेता हूँ! और हाँ जिनको पता नहीं है उनको बताना चाहूँगा कि
+                            मैंने एक <a &amp;quot; class="link" href> यहाँ <span class="productName"></span> </a> ऑर्डर की और इसकी कीमत
+                            फिल्म की दो टिकिटों से ज़्यादा नहीं है। अब यह आप को तय करना है कि इसके पैसे वसूल हैं या नहीं।
+                            मुझे लगता है इस प्रोडक्ट की कीमत 10 गुना ज़्यादा होनी चाहिए। इसका पूरा पैसा वसूल है और 100%
+                            फायदा होता है। </p>
+                        <p> जैसा कि आप अंदाज़ लगा सकते हैं, मुझे <a &amp;quot; class="link" href> <span class="productName"></span> </a>
+                            लेकर कभी पछतावा नहीं हुआ। मुझे इसकी यह बात अच्छी लगी कि इसका असर तुरंत होने लगता है। यदि
+                            मुझे फायदा हो रहा हो और वह टिका रहे तो मैं पैसे नहीं देखता। मुझे पूरा विश्वास है कि इसका असर
+                            जोरदार ही होगा। मैं अपना पैसा पानी में नहीं बहाता और मैं पूरे विश्वास से कह सकता हूँ कि इसकी
+                            पाई-पाई वसूल हो जाएगी... मैं हर किसी को इसे लेने की सलाह देता हूँ, खासकर उन लोगों के लिए
+                            जिन्हें अपना लिंग छोटा लगता है। औसत साइज़ वाले का 2-3 सेमी बड़ा हो जाने से कोई नुक्सान नहीं
+                            होता। इससे खड़े होने का समय बढ़ जाता है और बिस्तर में दम-खम भी ज़्यादा हो जाता है। इसलिए मैं इस
+                            लेख को पढ़ रहे हर शख़्स को इसकी सलाह दूँगा! मेरे अनुभव पर भरोसा करें ;) </p>
+                        <p> नोट। यह जरूर बताना चाहूँगा कि इसके पार्सल के डिब्बे पर अंदर के प्रोडक्ट के बारे में कुछ नहीं
+                            लिखा होता, हर चीज पूरी तरह गोपनीय है। </p>
+                        <p class="post__text-center"><a &amp;quot; class="link" href> उत्पादक की वेबसाइट पर जाएँ </a>
+                        </p></div>
+                    <div class="post-content__img"><a &amp;quot; href><img class="img--left"
+                                                                           src="img/post_img1.jpg"></a><a &amp;quot;
+                                                                                                          href><img
+                            class="img--right" src="prod.png"></a></div>
+<br>
+                    <div class="features-wrapper"></div>
+                </div>
+                <div class="post--bottom">
+                    <div class="post--left"><a &amp;quot; href><img class="post-img" src="img/like.png"></a>
+                        <p class="post__text"><a &amp;quot; href> पसंद करें </a></p></div>
+                    <div class="post--center"><a &amp;quot; href><img class="post-img" src="img/comment.png"></a>
+                        <p class="post__text"><a &amp;quot; href> टिप्पणी करें </a></p></div>
+                    <div class="post--right"><a &amp;quot; href><img class="post-img" src="img/share.png"></a>
+                        <p class="post__text"><a &amp;quot; href> साझा करें </a></p></div>
+                </div>
+                <div class="post__like"><a &amp;quot; href><img class="like-img" src="img/like2.png"></a><a &amp;quot;
+                                                                                                            class="like-text"
+                                                                                                            href>
+                    1,250 </a></div>
+                <div class="post__comment">
+                    <div class="post__comments">
+                        <div class="comments"><a &amp;quot; href><img class="comments-avatar" src="img/friend1_hi.jpg"></a>
+                            <div class="comments__content"><p class="content-text--top"><span class="content-caption"><a
+                                    &amp;quot; href> जयेश </a></span> मैं 37 का हूँ और मुझे ठीक से खड़ा करने में दिक्कत
+                                होती है। मैंने <a &amp;quot; href> <span class="productName"></span> </a> आजमा कर देखी और इसके नतीजों से
+                                बड़ा खुश हुआ। मेरा ठीक से खड़ा होने लगा और मेरा लिंग भी कुछ सेंटीमीटर लंबा हो गया। </p>
+                                <p class="content-text--bot"><a &amp;quot; class="text-link--bot" href> पसंद करें </a> ·
+                                    <a &amp;quot; class="text-link--bot" href> जवाब दें </a> · <span class="data-link"><script>
+             dtime_nums(-9, true)
+            </script></span></p>
+                            </div>
+                        </div>
+                        <div class="comments"><a &amp;quot; href><img class="comments-avatar" src="img/friend3_hi.jpg"></a>
+                            <div class="comments__content"><p class="content-text--top"><span class="content-caption"><a
+                                    &amp;quot; href> चिरंजीवी </a></span> यह बड़ी बात है कि अब बिना ऑपरेशन के भी लिंग बड़ा
+                                किया जा सकता है! मैं तो डरता था कि ऑपरेशन में कहीं कुछ गड़बड़ न हो जाए और इसलिए लिंग के
+                                साइज़ को लेकर मैं ज़्यादा सोचता ही नहीं था। अब मेरे दिमाग से ऑपरेशन का विचार पूरी तरह निकल
+                                गया है और मैंने <a &amp;quot; href> <span class="productName"></span> </a> खरीद ली है और इसे लेकर नतीजों की
+                                खुशी पाना चाहता हूँ। </p>
+                                <p class="content-text--bot"><a &amp;quot; class="text-link--bot" href> पसंद करें </a> ·
+                                    <a &amp;quot; class="text-link--bot" href> जवाब दें </a> · <span class="data-link"><script>
+             dtime_nums(-7, true)
+            </script></span></p>
+                            </div>
+                        </div>
+                        <div class="comments"><a &amp;quot; href><img class="comments-avatar" src="img/friend8_hi.jpg"></a>
+                            <div class="comments__content"><p class="content-text--top"><span class="content-caption"><a
+                                    &amp;quot; href> राजीव </a></span> मैंने एक महीने तक ये गोलियाँ लीं, मेरे खड़े होने
+                                की दिक्कतें तो ठीक हो गईं लेकिन मेरा लिंग उतना बड़ा नहीं हुआ जितना मैं चाहता था :( </p><a
+                                    &amp;quot; href><img class="img-comment" src="img/comment4.jpg"></a>
+                                <p class="content-text--bot"><a &amp;quot; class="text-link--bot" href> पसंद करें </a> ·
+                                    <a &amp;quot; class="text-link--bot" href> जवाब दें </a> · <span class="data-link"><script>
+             dtime_nums(-6, true)
+            </script></span></p>
+                            </div>
+                        </div>
+                        <div class="comments"><a &amp;quot; href><img class="comments-avatar" src="img/friend9_hi.jpg"></a>
+                            <div class="comments__content"><p class="content-text--top"><span class="content-caption"><a
+                                    &amp;quot; href> शिशिर </a></span> मैंने अपना लिंग लंबा करने के लिए कई तरह के
+                                प्रोडक्ट इस्तेमाल किए हैं लेकिन किसी से कुछ फायदा नहीं हुआ! मुझे तो इस पर भी शक है </p>
+                                <p class="content-text--bot"><a &amp;quot; class="text-link--bot" href> पसंद करें </a> ·
+                                    <a &amp;quot; class="text-link--bot" href> जवाब दें </a> · <span class="data-link"><script>
+             dtime_nums(-4, true)
+            </script></span></p>
+                            </div>
+                        </div>
+                        <div class="comments"><a &amp;quot; href><img class="comments-avatar" src="img/friend7_hi.jpg"></a>
+                            <div class="comments__content"><p class="content-text--top"><span class="content-caption"><a
+                                    &amp;quot; href> प्रशांत </a></span> लंबे समय से मैं अपने लिंग को बड़ा करना चाह रहा
+                                था लेकिन बिना ऑपरेशन कोई तरीका ही समझ नहीं आ रहा था। मैंने इंटरनेट पर काफी जानकारी पढ़ी
+                                और अचानक एक दिन <a &amp;quot; href> <span class="productName"></span> </a> की वेबसाइट पर चला गया। साइट
+                                वालों ने मुझे डिस्काउंट में टेस्ट सैंपल भेजे और मैंने इसे खरीदने का फैसला कर लिया। एक
+                                माह में मेरा लिंग 4 सेमी बड़ा हो गया। मैं और मेरी गर्लफ्रेंड इसके रिजल्ट्स से एकदम खुश
+                                हैं! मैं तो हर किसी को इसे ही लेने की <br> सलाह दूँगा! </p><a &amp;quot; href><img
+                                    class="img-comment" src="img/comment5.jpg"></a>
+                                <p class="content-text--bot"><a &amp;quot; class="text-link--bot" href> पसंद करें </a> ·
+                                    <a &amp;quot; class="text-link--bot" href> जवाब दें </a> · <span class="data-link"><script>
+             dtime_nums(-3, true)
+            </script></span></p>
+                            </div>
+                        </div>
+                        <div class="comments"><a &amp;quot; href><img class="comments-avatar" src="img/friend5_hi.jpg"></a>
+                            <div class="comments__content"><p class="content-text--top"><span class="content-caption"><a
+                                    &amp;quot; href> प्रवीण </a></span> मैंने सुना है कि ब्लू फिल्मों वाले भी लंबे समय
+                                से ऐसा ही प्रोडक्ट उपयोग करते आ रहे हैं और अब आखिरकार यह मार्केट में आ गया है ताकि आम
+                                लोग भी इसे खरीद सकें। </p>
+                                <p class="content-text--bot"><a &amp;quot; class="text-link--bot" href> पसंद करें </a> ·
+                                    <a &amp;quot; class="text-link--bot" href> जवाब दें </a> · <span class="data-link"><script>
+             dtime_nums(-2, true)
+            </script></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment__add"><a &amp;quot; href><img class="comment-img" src="img/avatar_hi.jpg"></a>
+                        <div>
+                            <div class="post-comment__input"><a &amp;quot; href><input class="comment__input"
+                                                                                       name="comment"
+                                                                                       placeholder="टिप्पणी लिखें..."
+                                                                                       type="text"></a>
+                                <div class="comment-input__img"><a &amp;quot; href><img class="input-img"
+                                                                                        src="img/smile.png"></a><a
+                                        &amp;quot; href><img class="input-img" src="img/pic.png"></a><a &amp;quot; href><img
+                                        class="input-img" src="img/gif.png"></a><a &amp;quot; href><img
+                                        class="input-img" src="img/file.png"></a></div>
+                            </div>
+                            <br>
+                            <p class="comment-input__text"> पोस्ट करने के लिए Enter दबाएँ </p></div>
+                    </div>
+                </div>
+                <footer class="post__menu--bot">
+                    <div class="menu--bot"><p><a &amp;quot; href> पसंद करें </a></p>
+                        <p><a &amp;quot; href> टिप्पणी करें </a></p>
+                        <p><a &amp;quot; href> साझा करें </a></p></div>
+                </footer>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</div>
+
+<div class="ac_footer"><a href="http://ac-feedback.com/report_form/"> Report </a>
+    <p> The results may vary depending on your individual features <br> आपके सोर्स डाटा और निजी गुण-धर्मों के आधार पर
+        नतीजे अलग-अलग हो सकते हैं </p>
+    <script>
+        typeof adc_clearFooter !== 'undefined' && adc_clearFooter();
+    </script>
+</div>
+
+<script>
+    const offer_params = {
+        priceMain: '2290',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '₹',
+        productName: 'Hammer of Thor',
+    };
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+    if (offer_params.customPriceOld) {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    } else {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+
+<script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain: offer_params.priceMain,
+        currencyMain: offer_params.currencyMain,
+        lang: 'in', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product: offer_params.productName, // название продукта
+        genderTargetting: 'all', // пол целевой аудитории - all, male, female
+        form: {
+            isNeeded: 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+</html>
