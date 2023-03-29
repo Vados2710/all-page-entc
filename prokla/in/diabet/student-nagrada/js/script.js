@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".to-comments").on("click",function(){$("body,html").animate({scrollTop:$("#toform").offset().top},400)})});

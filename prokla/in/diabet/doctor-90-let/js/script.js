@@ -1,0 +1,1 @@
+$("a[href='#to_form']").on("click",function(a){$([document.documentElement,document.body]).animate({scrollTop:$("form").offset().top},500)});
