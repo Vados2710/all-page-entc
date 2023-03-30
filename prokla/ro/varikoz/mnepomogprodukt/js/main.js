@@ -1,0 +1,1 @@
+$(window).load((function(){$((function(){$b_nav=$(".b-bunner"),$b_window=$(window),$b_h=$b_nav.offset().top-43,$b_h2=$(".b-footer").offset().top-$b_nav.outerHeight(),$(window).scroll((function(){$(this).scrollTop()>$b_h?$(".b-bunner").addClass("fixed"):$(this).scrollTop()<$b_h2&&$(".b-bunner").removeClass("fixed")}))}))}));
