@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".scroll_to_form").on("click",function(a){a.preventDefault();$("html, body").stop().animate({scrollTop:$(".orderForm").offset().top-30},1500)})});
