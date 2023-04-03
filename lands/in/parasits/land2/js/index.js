@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".slider-main").slick({arrows:true,dots:true,autoplay:true})});
