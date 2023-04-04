@@ -1,0 +1,926 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html lang="RO">
+
+
+<head>
+    <base >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title class="lt1">Un produs eficient pentru hipertensiune! </title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bxslider.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+    <script src="js/bxslider.js"></script>
+    <style>
+        .hide,
+        .flag-dropdown {
+            display: none;
+        }
+
+        .error-box {
+            color: #fff;
+            background-color: #DE5042;
+            border-radius: 5px;
+            text-align: center;
+            width: 240px;
+            font-size: 13px;
+            line-height: 20px;
+            margin: 5px auto !important;
+            z-index: 100;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- begin delivery-block -->
+    <style>
+        .delivery-wrapper {
+            position: fixed;
+            display: flex;
+            z-index: 10000;
+            justify-content: center;
+            top: 0;
+            left: 0;
+        }
+
+        .delivery-info {
+            display: flex;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.87);
+            align-items: center;
+            text-align: center;
+            border: 1px solid black;
+            border-top: 0px !important;
+            border-radius: 0px 0px 10px 10px;
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        @media (max-width: 800px) {
+            .delivery-info {
+                width: 100%;
+                font-size: 12px;
+            }
+
+            .delivery-info>svg {
+                width: 200px;
+                height: 150px;
+            }
+        }
+
+        .delivery_close_btn {
+            position: absolute;
+            color: red;
+            top: -10px;
+            right: 0;
+            margin: 5px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="delivery-wrapper">
+        <div class="delivery-info" style="margin: 0; padding: 0;">
+            <span class="delivery_close_btn">&#215;</span>
+            <svg xmlns="http://www.w3.org/2000/svg" style="padding-left: 10px;" id="Capa_1" enable-background="new 0 0 484.559 484.559" height="70" viewBox="0 0 484.559 484.559" width="100">
+                <g>
+                    <g id="XMLID_107_">
+                        <g>
+                            <path d="m484.426 222.033c1.77 22.9-14.34 43.23-35.97 45.4-16.56 1.66-31.54-7.81-38.46-22.6l-19.63 1.73-14.82 7.15c-3.39 1.63-5.67 4.87-6.19 8.59-1.4 10.03-3.94 19.69-7.47 28.87-1.2 3.11-.99 6.58.64 9.48l5.28 9.44 14.68 9.85c7.74-2.96 16.75-2.25 24.16 2.72 12.56 8.43 15.57 25.78 6.23 37.99-8.04 10.52-22.99 13.41-34.37 6.65-7.25-4.3-11.63-11.44-12.7-19.07l-16.27-10.91-10.24-1.25c-3.52-.43-7.02.78-9.58 3.23-8.64 8.23-18.4 15.3-29.01 20.96-3.57 1.9-5.86 5.55-6.11 9.58l-1.3 20.74 6.44 25.55c10.96 3.06 20.02 11.75 23 23.57 4.5 17.87-6.6 36-24.7 40.03-16.33 3.64-33.08-5.88-38.27-21.79-4.04-12.42-.33-25.26 8.21-33.65l-6.47-25.7-9.99-16.06c-2.68-4.31-7.42-6.86-12.5-6.85-.03 0-.05 0-.08 0-8.75 0-17.31-.87-25.59-2.5-4.93-.98-10.02.58-13.48 4.23l-13.2 13.93-14.78 30.66c3.46 7.03 3.77 15.52.11 23.13-6.58 13.64-23.36 19.06-36.77 11.52-11.48-6.47-16.45-20.75-11.45-32.95 3.41-8.32 10.48-13.88 18.48-15.74l14.87-30.86 2.92-20.71c.53-3.82-.93-7.67-3.93-10.09-11.83-9.6-21.97-21.19-29.9-34.27-1.97-3.25-5.51-5.22-9.31-5.25l-20.68-.2-22.64 7.12c-1.59 14.08-11.23 26.59-25.61 31.11-19.32 6.08-39.9-4.54-46.17-23.74-6.27-19.19 4.32-40.18 23.49-46.52 13.42-4.44 27.52-.75 37.06 8.32l24.03-7.56 17.55-12.51c2.61-1.85 4-4.95 3.74-8.13-.29-3.53-.44-7.09-.44-10.69 0-19.56 4.3-38.13 11.98-54.83 1.12-2.45 1.09-5.27-.09-7.69l-5.2-10.63-14.11-10.65c-7.9 2.53-16.85 1.32-23.97-4.05-12.08-9.12-14.12-26.61-4.12-38.28 8.61-10.05 23.7-12.11 34.69-4.73 7 4.7 10.98 12.06 11.62 19.74l15.64 11.8 15.76 2.81c11.47-10.65 24.84-19.28 39.53-25.33l3.7-22.48-4.67-23.22c-13.82-3.56-25.04-14.15-28.06-28.27-4.26-19.95 9.45-39.38 30.63-43.39 21.17-4.01 41.79 8.9 46.05 28.85 3.19 14.93-3.68 29.56-16.22 37.66l4.41 21.9 10.83 17.28c.71 1.13 1.95 1.81 3.28 1.81h.02c24.8 0 48.02 6.9 67.85 18.88 1.09.65 2.43.74 3.58.2l16.96-7.86 19.8-21.42c-1.19-7.68 1-15.82 6.69-21.97 10.28-11.11 27.88-11.39 38.5-.28 9.31 9.75 9.67 25.3.83 35.48-5.72 6.59-13.93 9.63-21.95 9.03l-19.8 21.42-6.43 17.3c-.45 1.2-.25 2.54.5 3.58 7.81 10.72 14.04 22.66 18.34 35.48 1.19 3.52 3.99 6.26 7.57 7.27l16.1 4.51 20.92-1.85c5.13-14.79 17.94-25.98 33.67-27.56 21.63-2.17 40.6 14.64 42.36 37.54z" fill="#eb5569" />
+                        </g>
+                    </g>
+                    <g id="XMLID_8_">
+                        <g>
+                            <circle cx="238.936" cy="243.983" fill="#f58a97" r="97.52" />
+                        </g>
+                    </g>
+                    <path d="m171.14 243.983c0-48.807 35.852-89.238 82.658-96.395-4.846-.741-9.809-1.125-14.862-1.125-53.86 0-97.52 43.66-97.52 97.52s43.66 97.52 97.52 97.52c5.053 0 10.016-.384 14.862-1.125-46.805-7.158-82.658-47.589-82.658-96.395z" fill="#f07281" />
+                    <g fill="#eb5569">
+                        <circle cx="74.853" cy="38.921" r="27.771" />
+                        <circle cx="67.262" cy="404.986" r="18.343" />
+                        <circle cx="404.051" cy="435.118" r="27.018" />
+                        <circle cx="209.002" cy="217.089" r="25.189" />
+                        <circle cx="229.222" cy="295.328" r="17.145" />
+                        <circle cx="283.058" cy="243.983" r="14.397" />
+                    </g>
+                </g>
+            </svg>
+            <p style="text-align: initial; margin: 0; padding-left: 6px; padding-right: 20px;" class="delivery-text">
+                <b style="color: red;">COVID-19:   </b>
+                Dragi clienți, nu vă faceți griji! Toate produsele noastre respectă standardele de calitate europene de vârf și sunt supuse unui control amănunțit înainte de expediere. Din motive de securitate, toate coletele sunt dezinfectate și numai după aceea sunt trimise destinatarului. Toate manipulările cu produsele se efectuează în costume speciale de protecție. Respectăm toate cerințele Ministerului Sănătății.             </p>
+        </div>
+        <script>
+            "use strict";
+            const deliveryBlock = document.querySelector(".delivery-wrapper");
+            const btn_close = document.querySelector(".delivery_close_btn");
+            btn_close.addEventListener("click", () => {
+                deliveryBlock.remove();
+            });
+        </script>
+    </div>
+    <!-- end -->
+
+    <div class="">
+        <header>
+            <div class="content">
+                <div class="logo"><img src="images/lotype.png" alt="" class="logotype"></div>
+                <div class="reclama">
+                    <ul class="soft_touch">
+                        <li class="reklama_1">
+                            100%                             <br>
+                            <span class="lt2">natural</span>
+                        </li>
+                        <li class="reklama_2 lt3">3567 persoane  <br> au comandat deja astăzi</li>
+                    </ul>
+                </div>
+                <a class="call call_me button-click dis_dec lt4">Rezervați serviciul de apel  </a>
+                <a class="call call_me scroll_to dis_mob lt5">Rezervați serviciul de apel  </a>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <section>
+            <div class="block_1">
+                <div class="content">
+                    <p class="bl1_title">CardioActive  <sup class="head">©  </sup>:
+                        <span class="lt6">normalizează tensiunea  <br>arterială și bunăstarea de la prima administrare! </span>
+                    </p>
+                    <p class="bl1_title_after lt7">Protecție de încredere  <br>împotriva atacului de cord și a infarctului</p>
+                    <div class="head_form">
+                        <div class="head_form_1">
+                            <ul class="h_f_ul">
+                                <li class="h_f_li_1 lt8">Normalizează rapid și ușor  <br> tensiunea arterială și ritmul cardiac </li>
+                                <li class="h_f_li_2 lt9">Curăță vasele  <br> de sânge de colesterol, <br> le restabilește tonul și elasticitatea 
+</li>
+                                <li class="h_f_li_3 lt10"> Sigur la orice <br> vârstă, eficient în  <br>  toate etapele hipertensiunii arteriale  </li>
+                            </ul>
+                        </div>
+                        <img src="images/paced.png" alt="" class="paced_form">
+                        <div class="clear dis_mob"></div>
+                        <div class="head_form_2 new_999 new_480">
+                            <div class="form_content_head">
+                                <div class="form_title">
+                                    <p class="left_t_f lt11">Numărul de pachete <br>în cel mai apropiat depozit este limitat: </p>
+                                    <p class="right_t_f">18 <span class="sht lt12">Bucăți</span></p>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form_price">
+                                    <ul class="price price__ch">
+                                        <li class="price_1">
+                                            <span class="lt13">Preț </span>
+                                            <br>
+                                            <span class="lt14">per pachet: </span>
+                                            <br>
+                                            <span class="bold_s_28"><span class="x_price_previous price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span> </span>
+                                        </li>
+                                        <li class="price_2">
+                                            <span class="lt15">Preț </span>
+                                            <br>
+                                            <span class="lt16">cu reducere: </span>
+                                            <br>
+                                            <span class="bold_s_28"><span class="x_price_current price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <form action="getform.php" class="x_order_form order_form  form_top clearfix" method="post">
+                                    <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                    <input type="hidden" name="utm_campaign" value="{domonetka}">
+                                    <label class="form_container">
+                                        <span class="input_name lt18">Introduceţi numele dvs. </span>
+                                        <i class="icon icon_user"></i>
+                                        <input type="text" name="name" class="input__inner x_client_name" placeholder="Numele " required>
+                                    </label>
+                                    <label class="form_container">
+                                        <span class="input_name lt19">Introduceţi numărul dvs. de telefon </span>
+                                        <i class="icon icon_phone"></i>
+                                        <input type="tel" name="phone" class="input__inner x_client_phone" placeholder="" required>
+                                    </label>
+                                    <button type="submit" class="form_btn lt20">Comandă </button>
+
+                                </form>
+                                <img src="images/security.png" alt="" class="control">
+                            </div>
+                        </div>
+                        <img src="images/sale.png" alt="" class="sale_240">
+                        <div class="head_form_2 new_999 dis_bl_480">
+                            <div class="form_content_head">
+                                <div class="form_title">
+                                    <p class="left_t_f lt11">Numărul de pachete <br>în cel mai apropiat depozit este limitat: </p>
+                                    <p class="right_t_f">18 <span class="sht lt12">Bucăți</span></p>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="form_price">
+                                    <ul class="price">
+                                        <li class="price_1">
+                                            <span class="lt13">Preț </span>
+                                            <br>
+                                            <span class="lt14">per pachet: </span>
+                                            <br>
+                                            <span class="bold_s_28"><span class="x_price_previous price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span></span>
+                                        </li>
+                                        <li class="price_2">
+                                            <span class="lt15">Preț </span>
+                                            <br>
+                                            <span class="lt16">cu reducere: </span>
+                                            <br>
+                                            <span class="bold_s_28"><span class="x_price_current price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <form action="getform.php" class="x_order_form order_form  form_top clearfix" method="post">
+                                    <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                    <input type="hidden" name="utm_campaign" value="{domonetka}">
+                                    <label class="form_container">
+                                        <span class="input_name lt18">Introduceţi numele dvs. </span>
+                                        <i class="icon icon_user"></i>
+                                        <input type="text" name="name" class="input__inner x_client_name" placeholder="Numele " required>
+                                    </label>
+                                    <label class="form_container">
+                                        <span class="input_name lt19">Introduceţi numărul dvs. de telefon </span>
+                                        <i class="icon icon_phone"></i>
+                                        <input type="tel" name="phone" class="input__inner x_client_phone" placeholder="" required>
+                                    </label>
+                                    <button type="submit" class="form_btn lt20">Comandă </button>
+
+                                </form>
+                                <img src="images/security.png" alt="" class="control add_03">
+                                <img src="images/control_form.png" alt="" class="control add_04">
+                            </div>
+                            <img src="images/arrow.png" alt="" class="arrow_form">
+                            <img src="images/pac_form_480.png" alt="" class="pacet_fomr_480">
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="block_2">
+                <div class="content">
+                    <div class="bl2_content">
+                        <p class="bl_2_title lt21">Verifică-te! <br>Ai cel puțin unul dintre aceste simptome? </p>
+                        <div class="content_bl2">
+                            <ul class="bl2_content1">
+                                <li class="bl_2_li_content_left_1 pad_240 lt22">Durere  <br>de cap </li>
+                                <li class="bl_2_li_content_left_2 pad_240 lt23">Pete negre <br>în faţa ochilor </li>
+                                <li class="bl_2_li_content_left_3 lt24">Apatie, <br>nervozitate, <br>somnolenţă </li>
+                                <li class="bl_2_li_content_left_4 pad_240 lt25">Vedere <br>neclară </li>
+                                <li class="bl_2_li_content_left_5"><br><span class="lt26">Transpirație </span><br><br></li>
+                            </ul>
+                            <ul class="bl2_content2 bl2_content2_240">
+                                <li class="bl_2_li_content_right_1 pad_240 lt27">Ritm cardiac <br>crescut </li>
+                                <li class="bl_2_li_content_right_2 pad_240 lt28">Oboseală <br>cronică </li>
+                                <li class="bl_2_li_content_right_3 pad_240 lt29">Față 
+<br>umflată </li>
+                                <li class="bl_2_li_content_right_4 pad_240 lt30">Pierderea sensibilității <br>la degete </li>
+                                <li class="bl_2_li_content_right_5 pad_240 lt31">Scăderi <br>de presiune </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="after_ul_bl2">
+                            <p class="title_after_ul_bl2 lt32">ACEASTA ESTE HIPERTENSIUNE! </p>
+                            <p class="you_mast_know lt33">Este important să ştii! <br>67% dintre cei care suferă de hipertensiune arterială <br>în România <br>nici măcar <br>nu bănuiesc <br>că sunt bolnavi. </p>
+                        </div>
+                        <img src="images/men.png" alt="" class="men">
+                    </div>
+                </div>
+            </div>
+            <div class="block_3">
+                <div class="content">
+                    <p class="bl3_title lt34">De ce hipertensiunea este periculoasă?</p>
+                    <img src="images/wiki.png" alt="" class="wiki">
+                    <p class="wiki_after_title lt35">În 89% din cazuri, hipertensiunea arterială are ca rezultat un atac de cord. Din cauza creșterilor de înaltă presiune, vasele de sânge se înfundă - se formează plăci aterosclerotice care împiedică fluxul de sânge.<br> Există un mare risc de a muri de un accident vascular cerebral. </p>
+                    <p class="wiki_after_content lt36">Sunteți predispus la hipertensiune arterială dacă aveți colesterol ridicat, fumați, beți alcool, mâncați incorect, duceți un stil de viață sedentar sau suferiți de un stres sever. Persoanele supraponderale sunt mult mai susceptibile să sufere de hipertensiune arterială.</p>
+                    <p class="you_mast_know1 lt37">IMPORTANT! <br>Hipertensiunea arterială se dezvoltă rapid. Dacă nu țineți presiunea sub control, consecințele pot fi foarte triste - în fiecare an 7 milioane de oameni mor în lume. Începeți tratamentul acum pentru a fi sănătos!  </p>
+                </div>
+            </div>
+            <div class="bl_4">
+                <div class="content">
+                    <p class="bl4_title lt38">Descoperirea senzațională a oamenilor de știință</p>
+                    <p class="bl4_content lt39">Oamenii de știință italieni de la Centrul flebologic de stat au petrecut 8 ani în crearea picăturilor CardioActive. Produsul a fost numit „Descoperirea anului” și a fost nominalizat la Heidner International Medical Award. Mai multe teste la diferite niveluri au demonstrat că picăturile sunt extrem de eficiente și sigure. Datorită acestui fapt, oamenii de știință au primit toate licențele și certificatele de calitate, precum și sponsorizarea de stat pentru producerea produsului.</p>
+                </div>
+            </div>
+            <div class="bl_5 dis_dec dis_dec__ch">
+                <div class="content">
+                    <p class="bl5_title lt40">Ingredientele 100% naturale ale CardioActive  <span>pentru sănătatea inimii și vaselor de sânge: </span></p>
+                    <ul class="ul_bl5">
+                        <li class="bl5_li li_bl5_1">
+                            <span class="regular_ul lt43">Extract de fructe de păducel </span>
+                            <br>
+                            <span class="lt44"> Îndepărtează plăcile de colesterol din pereții arterelor și îmbunătățește circulația sângelui către țesuturi și inimă. Restabilește elasticitatea vaselor de sânge și capilarelor.</span>
+                        </li>
+                        <li class="bl5_li li_bl5_2">
+                            <span class="regular_ul lt41">Extract de Leonurus Cardiaca </span>
+                            <br>
+                            <span class="lt42">Ameliorează spasmele vasculare și normalizează tensiunea arterială. Elimină nervozitatea, respirația grea, durerile de cap și tinitusul. Îmbunătățește starea de spirit și normalizează somnul .</span>
+
+                        </li>
+                        <li class="bl5_li li_bl5_3">
+                            <span class="regular_ul lt83">Extract de fructe din hamei
+</span>
+                            <br>
+                            <span class="lt45"> Diluează sângele, elimină anevrismele mici, normalizează ritmul cardiac. Previne dezvoltarea bolilor cardiovasculare: atac de cord, accident vascular cerebral etc.</span>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="clear"></div>
+                    <ul class="ul_bl5_1">
+                        <li class="bl5_li li_bl5_4">
+                            <span class="regular_ul lt46">Extracte de Hypericum și flori de tei</span>
+                            <br>
+                            <span class="lt47"> Întăresc și restabilesc pereții vaselor de sânge, eliminând toate microdamajele din ele.</span>
+                        </li>
+                        <li class="bl5_li li_bl5_5">
+                            <span class="regular_ul lt48">Extract de coada-calului </span>
+                            <br>
+                            <span class="lt49"> Conține flavonoide benefice care au efecte pozitive asupra țesuturilor și celulelor. Îmbunătățește funcția inimii, normalizează echilibrul apă-sare, are un efect antisclerotic pronunțat și efect antioxidant. </span>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="bl_5 dis_mob dis_mob__ch">
+                <div class="content">
+                    <!-- <p class="bl5_title lt84">Tra gli ingredienti di CardioActive<sup class="sup_f_size">©</sup> <span class="lt40">ci sono i seguenti elementi:</span></p> -->
+                    <ul class="ul_bl5">
+                        <!-- <li class="bl5_li li_bl5_1">
+                       <span class="regular_ul lt43">Biancospino</span>
+                        <br> 
+						CardioActive<sup class="sup_f_size">©</sup> <span class="lt44"> Rimuove le placche di colesterolo dalle pareti delle arterie e migliora la circolazione del sangue ai tessuti e al cuore.  Ripristina l'elasticità dei vasi sanguigni e dei capillari.</span>
+					</li> -->
+                        <!-- <li class="bl5_li li_bl5_2">
+                    	 <span class="regular_ul lt41"></span>
+                        <br>
+						CardioActive<sup class="sup_f_size">©</sup> <span class="lt42"> Allevia gli spasmi vascolari e normalizza la pressione sanguigna.  Elimina nervosismo, mancanza di respiro, mal di testa e acufene.  Migliora l'umore e normalizza il sonno.</span>
+                        
+                    </li> -->
+                        <div class="clear"></div>
+                    </ul>
+                    <!-- <ul class="ul_bl5"> -->
+                    <!-- <li class="bl5_li li_bl5_3">
+                        <span class="regular_ul lt83">Estratto di frutta di luppolo</span>
+                        <br>
+						CardioActive<sup class="sup_f_size">©</sup> <span class="lt45"> Diluisce il sangue, elimina i piccoli aneurismi, normalizza la frequenza cardiaca.  Previene lo sviluppo di malattie cardiovascolari: infarto, ictus, ecc.</span>
+                    </li> -->
+                    <!-- <li class="bl5_li li_bl5_4">
+                        <span class="regular_ul lt46">Estratti di iperico e fiori di tiglio</span>
+                        <br>
+						CardioActive<sup class="sup_f_size">©</sup> <span class="lt47"> Rafforzare e ripristinare le pareti dei vasi sanguigni, eliminando tutti i micro-danni</span>
+                    </li> -->
+                    <div class="clear"></div>
+                    <!-- </ul> -->
+                    <div class="clear"></div>
+                    <!-- <ul class="ul_bl5_1">
+                    <li class="bl5_li li_bl5_5">
+                        <span class="regular_ul lt48">Estratto di Equiseto</span>
+                        <br> CardioActive<sup class="sup_f_size">©</sup> <span class="lt49"> Contiene flavonoidi benefici che hanno effetti benefici su tessuti e cellule.  Migliora la funzione cardiaca, normalizza l'equilibrio sale-acqua, ha un pronunciato effetto antisclerotico e antiossidante. </span>
+                    </li>
+                    <div class="clear"></div>
+                </ul> -->
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="bl_6">
+                <div class="content">
+                    <div class="bl6_content">
+                        <div class="bl_6_txt">
+                            <p class="title_bl_6 lt50">Opinia expertului </p>
+                            <p class="content_bl_6 lt51"> Hipertensiunea arterială este numită „ucigaș tăcut” deoarece de multe ori se desfășoară asimptomatic, se dezvoltă rapid și afectează toate organele vitale - creierul, inima, vasele de sânge, ochii, rinichii. Cea mai frecventă cauză de deces este infarctul miocardic și accident vascular cerebral. Principala „alarmă” este hipertensiunea arterială. Din fericire, astăzi există oportunitatea de a trata în mod eficient această boală! Cea mai recentă dezvoltare a oamenilor de știință europeni - Cardio Active picături de plante - funcționează de la prima administrare. Medicamentul elimină rapid toate simptomele neplăcute - scurtarea respirației, umflarea brațelor și picioarelor, tinitus, normalizează ritmul cardiac și presiunea. Luând picături în timpul cursului stabilizează tensiunea arterială mult timp, îmbunătățește bunăstarea și împiedică dezvoltarea bolilor cardiovasculare. Amintiți-vă: presiunea normală este o viață lungă, sănătoasă și fericită! Aveți grijă de inimă și vasele de sânge astăzi cu Cardio Active. </p>
+                            <p class="doctor_bl_6 lt52">Florin Nastase, <br> terapeut, cardiolog <br>experiență practică de 30 de ani                             <p></p>
+                            </p>
+                        </div>
+                        <img src="images/expert.png" alt="" class="doctor">
+                    </div>
+                </div>
+            </div>
+            <div class="bl_7">
+                <div class="content">
+                    <div class="bl_7_content dis_dec">
+                        <div class="head_form form_content">
+                            <div class="this_form_left">
+                                <img src="images/sale.png" alt="" class="sale_70">
+                                <div class="form_price">
+                                    <div class="form_title1">
+                                        <p class="left_t_f1 lt11">Numărul de pachete <br>în cel mai apropiat depozit este limitat: </p>
+                                        <p class="right_t_f1">18 <span class="sht lt12">Bucăți</span></p>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <ul class="price form_price form_price form_price__ch">
+                                        <li class="price_1 pr_form1">
+                                            <span class="lt13">Preț </span>
+                                            <br>
+                                            <span class="lt14">per pachet: </span>
+                                            <br>
+                                            <span class="bold_s_28 pr_form2"><span class="x_price_previous price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span> </span>
+                                        </li>
+                                        <li class="price_2 pr_form1">
+                                            <span class="lt15">Preț </span>
+                                            <br>
+                                            <span class="lt16">cu reducere: </span>
+                                            <br>
+                                            <span class="bold_s_28 pr_form2"><span class="x_price_current price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> </span>
+                                        </li>
+                                        <img src="images/control_form.png" alt="" class="control_form">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="paced_fomr_pac">
+                                <img src="images/pac_form.png" alt="" class="fomr_paced">
+                            </div>
+                            <div class="head_form_2">
+                                <div class="form_content_head form_co_head_1">
+                                    <form action="getform.php" class="x_order_form order_form  form_top1 clearfix" method="post">
+                                        <span class="input_name new_size_for_name lt82">Introduceți datele dvs. în formularul de mai jos: </span>
+
+                                        <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                        <input type="hidden" name="utm_campaign" value="{domonetka}">
+
+                                        <label class="form_container new_form_conteiner">
+                                            <span class="input_name new_size_for_name lt18">Introduceţi numele dvs. </span>
+                                            <i class="icon1 icon_user"></i>
+                                            <input type="text" name="name" class="input__inner input__inner_1 x_client_name" placeholder="Numele " required>
+                                        </label>
+                                        <label class="form_container">
+                                            <span class="input_name new_size_for_name lt19">Introduceţi numărul dvs. de telefon </span>
+                                            <i class="icon1 icon_phone"></i>
+                                            <input type="tel" name="phone" class="input__inner input__inner_1 x_client_phone" placeholder="" required>
+                                        </label>
+                                        <button type="submit" class="form_btn1 lt20">Comandă </button>
+
+                                    </form>
+                                </div>
+                                <ul class="sec_data_base sec_data_base1">
+
+                                </ul>
+                                <img src="images/arrow.png" alt="" class="arrow_form">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <img src="images/sale.png" alt="" class="sale_240">
+                    <div class="head_form_2 new_999 dis_mob">
+                        <div class="form_content_head">
+                            <div class="form_title">
+                                <p class="left_t_f lt11">Numărul de pachete <br>în cel mai apropiat depozit este limitat: </p>
+                                <p class="right_t_f">18 <span class="sht lt12">Bucăți</span></p>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="form_price">
+                                <ul class="price">
+                                    <li class="price_1">
+                                        <span class="lt13">Preț </span>
+                                        <br>
+                                        <span class="lt14">per pachet: </span>
+                                        <br>
+                                        <span class="bold_s_28"><span class="x_price_previous price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span> </span>
+                                    </li>
+                                    <li class="price_2">
+                                        <span class="lt15">Preț </span>
+                                        <br>
+                                        <span class="lt16">cu reducere: </span>
+                                        <br>
+                                        <span class="bold_s_28"><span class="x_price_current price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <form action="getform.php" class="x_order_form order_form  form_top clearfix" method="post">
+
+                                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                <input type="hidden" name="utm_campaign" value="{domonetka}">
+
+                                <label class="form_container">
+                                    <span class="input_name lt18">Introduceţi numele dvs. </span>
+                                    <i class="icon icon_user"></i>
+                                    <input type="text" name="name" class="input__inner x_client_name" placeholder="Numele " required>
+                                </label>
+                                <label class="form_container">
+                                    <span class="input_name lt19">Introduceţi numărul dvs. de telefon </span>
+                                    <i class="icon icon_phone"></i>
+                                    <input type="tel" name="phone" class="input__inner x_client_phone" placeholder="" required>
+                                </label>
+                                <button type="submit" class="form_btn lt20">Comandă </button>
+
+                            </form>
+                            <img src="images/security.png" alt="" class="control add_03">
+                            <img src="images/control_form.png" alt="" class="control add_04">
+                        </div>
+                        <ul class="sec_data_base">
+
+                        </ul> <img src="images/arrow.png" alt="" class="arrow_form">
+                        <img src="images/pac_form_480.png" alt="" class="pacet_fomr_480">
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bl_8">
+                <div class="content">
+                    <p class="bl8_title"><span class="lt53">Eficiența ridicată   </span> Cardio Active <sup class="sup_f_size">© </sup> <span class="lt54">este dovedită <br> clinic! </span></p>
+                    <div class="div_bl8">
+                        <div class="bl8_txt">
+                            <p class="bl_8_txt_content lt55">Institutul de Cardiologie a efectuat studii clinice în februarie 2020. Un grup de voluntari - 125 de bărbați și femei cu un diagnostic de „hipertensiune arterială” în diferite stadii au luat parte la testele clinice timp de 30 de zile. Primul grup de subiecți lua picături de CardioActive de două ori pe zi. Al doilea grup a băut „placebo”. Rezultatele sunt impresionante!  </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bl_9">
+                <div class="content">
+                    <p class="bl9_title lt56">Rezultatele cercetării</p>
+                    <div class="div_bl9">
+                        <div class="bl9_left">
+                            <p class="title_fl_bl9 lt57">PLACEBO </p>
+                            <img src="images/peaple_left.png" alt="" class="people">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="td_left lt58">Stabilizarea <br> tensiunii arteriale </td>
+                                        <td class="td_right td_one">1% </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_left td_2 lt59">Eliminarea cheagurilor de sânge în vene </td>
+                                        <td class="td_right td_right td_2">0% </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_left td_3 lt60">Eliminarea aritmiei </td>
+                                        <td class="td_right td_3">2% </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="bl9_right">
+                            <p class="title_fl_bl9">CardioActive <sup class="sup_f_size">© </sup></p>
+                            <img src="images/people_right.png" alt="" class="people">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="td_left lt61">Stabilizarea <br> tensiunii arteriale </td>
+                                        <td class="td_right td_one">100% </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_left td_2 lt62">Eliminarea cheagurilor de sânge în vene </td>
+                                        <td class="td_right td_right td_2">90% </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td_left td_3 lt63">Eliminarea aritmiei  </td>
+                                        <td class="td_right td_3">99% </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bl_10">
+                <div class="content">
+                    <p class="bl10_title"><span class="lt64">Recenziile persoanelor care au luat deja  </span> CardioActive <sup class="sup_f_size">© </sup></p>
+                    <ul class="bxslider" style="">
+                        <li style="">
+                            <div class="bx__inner">
+                                <div class="bx__img-container">
+                                    <img src="images/otziv_1.png" alt="">
+                                </div>
+                                <div class="bx__content">
+                                    <p class="bx__content-info lt65">Sora mea a suferit de hipertensiune arterială mult timp și nici un medicament nu a ajutat-o. Sănătatea ei s-a agravat, iar acest lucru a dus la un accident vascular cerebral ischemic (infarct cerebral). Medicii i-au salvat viața, dar a rămas invalidă. Așa că, atunci când am început să-mi fac griji de un nivel ridicat presiune, eram foarte îngrijorată. Știam că nu ar trebui să pierd timpul și am nevoie urgentă de a găsi un medicament eficient pentru vindecare. Medicul meu, o femeie foarte înțeleaptă, mi-a prescris CardioActive. Sunt foarte recunoscătoare. De 4 luni acum mă simt absolut sănătoasă, toate simptomele au dispărut. Presiunea este normală și nu îmi mai este teamă de atacuri de cord și accidente vasculare cerebrale. Vă doresc sănătate! </p>
+                                    <p class="bx__content-author lt66">Vasilica Diaconescu, 61 ani</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="">
+                            <div class="bx__inner">
+                                <div class="bx__img-container">
+                                    <img src="images/otziv_2.png" alt="">
+                                </div>
+                                <div class="bx__content">
+                                    <p class="bx__content-info lt67">Am aflat recent despre CardioActive. Am auzit despre testele de succes ale acestor picături și chiar am vrut să le încerc. Medicamentele pe care le-am luat înainte nu au dat rezultatul dorit. Așa că m-am consultat cu medicul meu și am comandat imediat acest produs. Am simțit o îmbunătățire după prima doză! Și când am măsurat presiunea, am fost plăcut surprinsă - a revenit la normal. Am băut picăturile timp de o lună și acum mă simt grozav. Salturile de presiune au dispărut, sunt veselă și energică, ca în tinerețe. Ce fericire să trăiesc fără teama pentru sanatatea mea. Multumesc! </p>
+                                    <p class="bx__content-author lt68">Daniela Ion, 45 ani</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="">
+                            <div class="bx__inner">
+                                <div class="bx__img-container">
+                                    <img src="images/otziv_3.png" alt="">
+                                </div>
+                                <div class="bx__content">
+                                    <p class="bx__content-info lt69">Am 51 de ani și acum 3 ani am fost diagnosticată cu hipertensiune arterială. Și acum șase luni am avut un micro accident vascular cerebral. Nu știam ce să fac ... Nu voiam să beau medicamente cu componente chimice. Și atunci am citit despre picăturile naturale vegetale CardioActive. Este o minune! În mai puțin de o săptămână, presiunea nu a mai deranjat, iar după cursul tratamentului, sunt complet sănătoasă. Nu pierdeți timp cu pastilele inutile, luați un produs dovedit și eficient!
+</p>
+                                    <p class="bx__content-author lt70">Claudia Stanciu, 63 ani</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bl_11">
+                <div class="content">
+                    <div class="bl_11_content">
+                        <p class="bl_11_title"><span class="lt71">Avantajele </span> CardioActive <sup class="f_s_240">© </sup></p>
+                        <ul class="ul_bl11 clearfix">
+                            <li class="li_bl11_1">
+                                <span class="bold lt72">Ajutor rapid </span>
+                                <br>
+                                <span class="lt73">Tensiunea arterială a revenit la normal în 30 de minute de la administrare!  </span>
+                            </li>
+                            <li class="li_bl11_2">
+                                <span class="bold lt74">Nu există modificări drastice </span>
+                                <br>
+                                <span class="lt75">Reduce ușor presiunea, reglează ușor munca mușchiului cardiac </span>
+                            </li>
+                            <li class="li_bl11_3">
+                                <span class="bold lt76">Îmbunătăţeşte starea generală </span>
+                                <br>
+                                <span class="lt77">Elimina angina pectorala, aritmia, nevroza. Îmbunătățește memoria, restabilește vorbirea și mobilitatea după un accident vascular cerebral. </span>
+                            </li>
+                            <li class="li_bl11_4">
+                                <span class="bold lt78">Fără reacţii adverse </span>
+                                <br>
+                                <span class="lt79">Componentele 100% naturale sunt bine absorbite de organism, fără efecte secundare și dependență </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bl_12">
+                <div class="content">
+                    <div class="bl12_frame">
+                        <p class="bl_12_frame_title lt80">Cum se folosește </p>
+                        <p class="bl_12_frame_content lt81">Agitați sticla și diluați 15-20 de picături Cardio Active în 50 ml de apă. Luați de două ori pe zi cu jumătate de oră înainte de mese. Atenție: cel mai bun rezultat este obținut atunci când luați medicamentul în timpul cursului, durata minimă este de 30 de zile. După o pauză de două săptămâni, puteți repeta cursul.  </p>
+                        <img src="images/women.png" alt="" class="women d_n_48_0 women1">
+                    </div>
+                </div>
+                <img src="images/women_2.png" alt="" class="women d_b_48_0">
+            </div>
+            <div class="bl_7 bl_16" id="yacor">
+                <div class="content">
+                    <div class="bl_7_content dis_dec">
+                        <div class="head_form form_content">
+                            <div class="this_form_left">
+                                <img src="images/sale.png" alt="" class="sale_70">
+                                <div class="form_price">
+                                    <div class="form_title1">
+                                        <p class="left_t_f1 lt11">Numărul de pachete <br>în cel mai apropiat depozit este limitat: </p>
+                                        <p class="right_t_f1">18 <span class="sht">Bucăți</span></p>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <ul class="price form_price" style="display: flex;">
+                                        <li class="price_1 pr_form1">
+                                            <span class="lt13">Preț </span>
+                                            <br>
+                                            <span class="lt14">per pachet: </span>
+                                            <br>
+                                            <span class="bold_s_28 pr_form2"><span class="x_price_previous price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span> </span>
+                                        </li>
+                                        <li class="price_2 pr_form1">
+                                            <span class="lt15">Preț </span>
+                                            <br>
+                                            <span class="lt16">cu reducere: </span>
+                                            <br>
+                                            <span class="bold_s_28 pr_form2"><span class="x_price_current price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> </span>
+                                        </li>
+                                        <img src="images/control_form.png" alt="" class="control_form">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="paced_fomr_pac">
+                                <img src="images/pac_form.png" alt="" class="fomr_paced">
+                            </div>
+                            <div class="head_form_2">
+                                <div class="form_content_head form_co_head_1">
+                                    <form action="getform.php" class="x_order_form order_form  form_top1 clearfix" method="post"> <span class="input_name new_size_for_name lt82">Introduceți datele dvs. în formularul de mai jos: </span>
+                                        <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                        <input type="hidden" name="utm_campaign" value="{domonetka}">
+
+
+                                        <label class="form_container new_form_conteiner">
+                                            <span class="input_name new_size_for_name lt18">Introduceţi numele dvs. </span>
+                                            <i class="icon1 icon_user"></i>
+                                            <input type="text" name="name" class="input__inner input__inner_1 x_client_name" placeholder="Numele " required>
+                                        </label>
+                                        <label class="form_container">
+                                            <span class="input_name new_size_for_name lt19">Introduceţi numărul dvs. de telefon </span>
+                                            <i class="icon1 icon_phone"></i>
+                                            <input type="tel" name="phone" class="input__inner input__inner_1 x_client_phone" placeholder="" required>
+                                        </label>
+                                        <button type="submit" class="form_btn1 lt20">Comandă </button>
+
+                                    </form>
+                                </div>
+                                <ul class="sec_data_base sec_data_base1">
+
+                                </ul>
+                                <img src="images/arrow.png" alt="" class="arrow_form">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <img src="images/sale.png" alt="" class="sale_240">
+                    <div class="head_form_2 new_999 dis_mob">
+                        <div class="form_content_head">
+                            <div class="form_title">
+                                <p class="left_t_f lt11">Numărul de pachete <br>în cel mai apropiat depozit este limitat: </p>
+                                <p class="right_t_f">18<span class="sht">Сon.</span></p>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="form_price">
+                                <ul class="price">
+                                    <li class="price_1">
+                                        <span class="lt13">Preț </span>
+                                        <br>
+                                        <span class="lt14">per pachet: </span>
+                                        <br>
+                                        <span class="bold_s_28"><span class="x_price_previous price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span> </span>
+                                    </li>
+                                    <li class="price_2">
+                                        <span class="lt15">Preț </span>
+                                        <br>
+                                        <span class="lt16">cu reducere: </span>
+                                        <br>
+                                        <span class="bold_s_28"><span class="x_price_current price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> </span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <form action="getform.php" class="x_order_form order_form  form_top clearfix" method="post">
+                                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                                <label class="form_container">
+                                    <span class="input_name lt18">Introduceţi numele dvs. </span>
+                                    <i class="icon icon_user"></i>
+                                    <input type="text" name="name" class="input__inner x_client_name" placeholder="Numele " required>
+                                </label>
+                                <label class="form_container">
+                                    <span class="input_name lt19">Introduceţi numărul dvs. de telefon </span>
+                                    <i class="icon icon_phone"></i>
+                                    <input type="tel" name="phone" class="input__inner x_client_phone" placeholder="" required>
+                                </label>
+                                <button type="submit" class="form_btn lt20">Comandă </button>
+
+                            </form>
+                            <img src="images/security.png" alt="" class="control add_03">
+                            <img src="images/control_form.png" alt="" class="control add_04">
+                        </div>
+                        <ul class="sec_data_base">
+
+                        </ul> <img src="images/arrow.png" alt="" class="arrow_form">
+                        <img src="images/pac_form_480.png" alt="" class="pacet_fomr_480">
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="footer_left d_n_48_0">
+
+                    </div>
+                    <div class="footer_right d_n_48_0">
+                        <p class="f_l_1"> <a href="privacy.html">Privacy Policy</a> </p>
+                    </div>
+                    <div class="clear d_n_48_0"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="popup-first">
+        <div class="modal-first" onclick="$('.popup-first').css('display','none');">
+        </div>
+        <div class="mod">
+            <div class="content">
+                <div class="bl_7_content">
+                    <div class="head_form form_content">
+                        <div class="this_form_left">
+                            <img src="images/sale.png" alt="" class="sale_70">
+                            <div class="form_price">
+                                <div class="form_title1">
+                                    <p class="left_t_f1 lt11">Numărul de pachete <br>în cel mai apropiat depozit este limitat: </p>
+                                    <p class="right_t_f1"><i>18<span class="sht">Con.</span></i></p>
+                                    <div class="clear"></div>
+                                </div>
+                                <ul class="price form_price" style="display: flex;">
+                                    <li class="price_1 pr_form1">
+                                        <span class="lt13">Preț </span>
+                                        <br>
+                                        <span class="lt14">per pachet: </span>
+                                        <br>
+                                        <span class="bold_s_28 pr_form2"><span class="x_price_previous price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span> </span>
+                                    </li>
+                                    <li class="price_2 pr_form1">
+                                        <span class="lt15">Preț </span>
+                                        <br>
+                                        <span class="lt16">cu reducere: </span>
+                                        <br>
+                                        <span class="bold_s_28 pr_form2"><span class="x_price_current price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> </span>
+                                    </li>
+                                    <img src="images/control_form.png" alt="" class="control_form">
+                                    <!-- Текст для картинки -->
+                                    <!-- Sub controlul Serviciului Antimonopol -->
+                                    <!-- Текст для картинки -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="paced_fomr_pac">
+                            <img src="images/pac_form.png" alt="" class="fomr_paced">
+                        </div>
+                        <div class="head_form_2">
+                            <div class="form_content_head form_co_head_1">
+                                <form action="getform.php" class="x_order_form order_form  form_top1 clearfix" method="post">
+                                    <span class="input_name new_size_for_name lt82">Introduceți datele dvs. în formularul de mai jos: </span>
+                                    <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                    <input type="hidden" name="utm_campaign" value="{domonetka}">
+                                    <label class="form_container new_form_conteiner">
+                                        <span class="input_name new_size_for_name lt18">Introduceţi numele dvs. </span>
+                                        <i class="icon1 icon_user"></i>
+                                        <input type="text" name="name" class="input__inner input__inner_1 x_client_name" placeholder="Numele " required>
+                                    </label>
+                                    <label class="form_container">
+                                        <span class="input_name new_size_for_name lt19">Introduceţi numărul dvs. de telefon </span>
+                                        <i class="icon1 icon_phone"></i>
+                                        <input type="tel" name="phone" class="input__inner input__inner_1 x_client_phone" placeholder="" required>
+                                    </label>
+                                    <button type="submit" class="form_btn1 lt20">Comandă </button>
+
+                                </form>
+                            </div>
+                            <ul class="sec_data_base sec_data_base1">
+
+                            </ul>
+                            <img src="images/arrow.png" alt="" class="arrow_form">
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const documentBodyWidth = document.body.clientWidth
+        console.log(document.body.clientWidth);
+        if (document.body.clientWidth < 480) {
+            document.querySelectorAll('.sale_240').forEach(item => {
+                item.src = "images/paced.png"
+                item.style.width = "220px"
+            })
+        }
+    </script>
+
+
+    <script>
+        const offer_params = {
+            priceMain: '179',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'lei',
+            productName: '', // на лендах не використовується
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+</body>
+
+</html>
