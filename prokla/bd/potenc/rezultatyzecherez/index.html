@@ -1,0 +1,1100 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>মেডিকেল গবেষণা বাংলাদেশ </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="prod.png" type="image/x-icon">
+  <style>
+    .prod {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .navbar li {
+      float: left;
+    }
+
+    .navbar li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar li a:hover:not(.active) {
+      background-color: #111;
+    }
+
+    .active {
+      background-color: #4CAF50;
+    }
+
+    @media screen and (max-width:845px) {}
+
+    a:active,
+    a:focus {
+      outline: none;
+    }
+
+    :focus {
+      outline: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    a,
+    img,
+    strong,
+    b {
+      margin: 0;
+      padding: 0;
+      border: 0 none;
+      outline: 0 none;
+      vertical-align: top;
+      background: transparent none repeat scroll 0% 0%;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: rgb(70, 108, 199);
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      display: block;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background-position: center center;
+      background-size: 100% 100%;
+      border-bottom: 1px solid #0babcd;
+      padding-bottom: 5px;
+    }
+
+    .container {
+      width: 990px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .content {
+      background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+      border-radius: 10px;
+      margin: 0 0px 15px;
+      overflow: hidden;
+      padding: 5px;
+      -webkit-box-shadow: 0 0px 10px rgb(230, 230, 230);
+      box-shadow: 0 0px 10px rgb(230, 230, 230);
+      margin-top: 5px;
+    }
+
+    .headTitle {
+      position: relative;
+      padding-top: 50px;
+    }
+
+    .text {
+      width: 100%;
+      font-size: 17px;
+      line-height: 1.2;
+      text-align: justify;
+      padding: 0 15px 0 0px;
+    }
+
+    div.center {
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    div.center img {
+      margin: 0 auto;
+    }
+
+    .content h1 {
+      font-size: 28px;
+      margin: 0 0px 25px;
+      text-align: left;
+    }
+
+    .content h1 span {
+      color: red;
+      font-size: 17px;
+    }
+
+    .content h2 {
+      font-size: 1.7em;
+      margin: 15px 0;
+    }
+
+    .content h3 {
+      font-size: 17px;
+      margin: 15px 0;
+    }
+
+    .content p {
+      margin: 0 0px 15px;
+      font-weight: 400;
+    }
+
+    .content p.desc {
+      margin: 0 0px 15px;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .content ol {
+      margin-left: 30px;
+    }
+
+    .content ol li {
+      margin: 0 0px 15px;
+      font-weight: 400;
+    }
+
+    .content p.bg {
+      background: #da4444;
+      padding: 5px;
+      color: #fff;
+    }
+
+    .content .red {
+      color: rgb(244, 11, 11);
+    }
+
+    .text3 img {
+      width: 65px;
+      margin: 5px 0 0px;
+    }
+
+
+    .blur-p {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      font-size: 24px;
+      text-transform: uppercase;
+      color: rgb(255, 255, 255);
+      text-shadow: 1px 1px 1px #000;
+    }
+
+    .kov {
+      position: relative;
+      background: #edfaff;
+      padding: 35px 105px;
+      margin-bottom: 15px;
+    }
+
+    .kov:before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 75px;
+      background: url("img/kov2.png");
+    }
+
+    .kov:after {
+      display: block;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100px;
+      height: 75px;
+      background: url("img/kov1.png");
+    }
+
+    .kov p {
+      font-style: italic;
+      font-weight: 700;
+    }
+
+    .kov p.avtor {
+      margin: 0;
+      text-align: right;
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .content ul {
+      margin-left: 30px;
+      list-style: inside circle;
+    }
+
+    .content ul li {
+      margin: 0 0px 15px;
+    }
+
+    #comments {}
+
+    #comments h1 {
+      color: rgb(204, 0, 0);
+      margin: 0 0px 5px;
+    }
+
+    .comment {
+      padding: 15px 0;
+      border-top: 1px solid rgb(232, 232, 232);
+    }
+
+    .comment .text1 {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .comment .text2 {
+      font-size: 12px;
+      float: right;
+      color: rgb(136, 136, 136);
+      font-weight: normal;
+    }
+
+    .comment .text3 {
+      font-size: 15px;
+      padding: 10px 0 0px;
+      font-weight: normal;
+      text-align: justify;
+    }
+
+    .comment .text3:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .red {
+      color: rgb(244, 11, 11);
+    }
+
+    .content h2.red {
+      padding: 10px 0 0px;
+    }
+
+    .button_page {
+      -webkit-transition: 0.2s;
+      transition: 0.2s;
+      position: relative;
+      width: 320px;
+      margin: 20px auto;
+      padding: 10px;
+      cursor: pointer;
+      background: #00aff2;
+      border: 1px solid #007eaf;
+      border-radius: 5px;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    .button_page:hover {
+      background: #0a4c8f;
+    }
+
+    .insite {
+      display: inline-block;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @media screen and (max-width: 999px) {
+      .content h1 {
+        width: auto;
+      }
+
+      .container {
+        width: 95%;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .text {
+        width: auto;
+        float: none;
+        text-align: justify;
+        padding: 0;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .button_page {
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        width: 100% !important;
+        font-size: 23px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .content h2 {
+        font-size: 1.2em;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      .content h1 {
+        width: auto;
+        font-size: 22px;
+      }
+
+      .text p {
+        text-align: justify;
+      }
+
+      .text3 {
+        text-align: left;
+      }
+
+      .comment {
+        text-align: left;
+      }
+
+      .text p.blur-p {
+        text-align: center;
+        font-size: 20px;
+      }
+
+      .kov {
+        padding: 15px 15px;
+      }
+
+      .kov:before {
+        display: none;
+      }
+
+      .kov:after {
+        display: none;
+      }
+
+      .content ul {
+        margin-left: 10px;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      .button_page {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      .navbar {
+        display: none;
+      }
+
+      .headTitle {
+        position: relative;
+      }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 480px) {
+      .button_page {
+        font-size: 23px;
+      }
+    }
+
+    .main-lnk {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+  <link href="prod.png" rel="shortcut icon" type="image/x-icon">
+
+  <meta charset="UTF-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+<script src="drewlex_main.js"></script>
+      <script>
+   (function () {
+       let params=(new URL(document.location)).searchParams;
+       let block = '';
+       params.forEach(function (value,key){
+           block = block + key+'='+value+'&';
+       })
+       var t;
+       try {
+           for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+           onpopstate = function (t) {
+               t.state && location.replace("domonetka/index.php?cid={clickid}")
+           }
+       } catch (o) {
+       }
+   })();
+</script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <a href="#"><img src="img/logo.jpg" alt="" class="logo"></a>
+      <h2 class="headTitle">মেডিকেল গবেষণা বাংলাদেশ </h2>
+    </header>
+    <div class="nav">
+      <ul class="navbar">
+        <li><a href="#" class="active">বাড়়ি </a></li>
+        <li><a href="#">মতামত</a></li>
+        <li><a href="#">বিশেষজ্ঞ</a></li>
+        <li><a href="#">ক্লিনিক্যাল রিসার্চ</a></li>
+        <li><a href="#">উদ্ভাবন</a></li>
+        <li><a href="#">যোগাযোগ</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="text" id="last">
+        <h1>প্রোষ্টাটাইটিস এবং ইডি এর উদ্ভাবনী চিকিৎসা ৭ দিনের মধ্যে ফলাফল দেয়!</h1>
+        <div class="center">
+          <a href="#"><img src="img/1.jpg" alt=""></a>
+        </div>
+        <h1>
+          <span>ভয়ানক পরিসংখ্যান এবং এই সমস্যাটিকে স্থায়ীভাবে সমাধানের জন্য একটি নতুন পদ্ধতি ব্যাপারে কিছুদিন আগে এক
+            আলোচনা হয়েছিলো।</span>
+        </h1>
+        <p>২৯ তম ওয়ার্ল্ড কংগ্রেস অফ ইউরোলজি-তে বাংলাদেশের ইউরোলজিকাল সোসাইটি দেশে ইউরোলজিকাল রোগের সংখ্যার বিষয়ে
+          ভয়াবহ পরিসংখ্যান উপস্থাপন করেছে।</p>
+        <p class="desc"> </p>
+        <p>সম্মেলনে যে মূল বিষয়গুলি নিয়ে আলোচনা করা হয়েছিল: ডায়াগনস্টিকগুলির নির্ভরযোগ্যতা উন্নত করা, নতুন পদ্ধতি
+          পরীক্ষা করা, হাসপাতালের অকার্যকর চিকিতসা পদ্ধতি।</p>
+        <p>ফলস্বরূপ, ইউরোলজিস্টরা ১৬ বছরের পরিসংখ্যান এনেছিলেন:</p>
+        <ol>
+          <li>বছরের পর বছর ধরে যৌনাঙ্গে সিস্টেমের রোগে আক্রান্ত রোগীর সংখ্যা বেড়েছে ৬০.৫%</li>
+          <li>পুরুষ এর পুরুষত্বহীনতার ক্ষেত্র 57% বৃদ্ধি পেয়েছে।</li>
+          <li>ক্যান্সারযুক্ত টিউমার 180.7% বৃদ্ধি পেয়েছে যার অর্থ বিগত বছরের তুলনায় তিনগুণ বৃদ্ধি।</li>
+        </ol>
+        <div class="center">
+          <a href="#"><img src="img/3.jpg" alt=""></a>
+        </div>
+        <h2>কেন আমাদের দেশে প্রোষ্টাটাইটিস এত ব্যপক</h2>
+        <p>ব্রিটিশ পুরুষেরা চিকিৎসা বিলম্বিত করে, দুর্বল উত্থান এবং প্রোস্টাটাইটিসের প্রথম লক্ষণগুলি উপেক্ষা করে। এই
+          রোগটি সর্বদা পর্যায়ক্রমে বিকাশ লাভ করে।</p>
+        <h3>Prostaitis এর পর্যায় এবং তাদের পরিণতি</h3>
+        <p><b>পর্যায় ১. </b> প্রোস্টাটাইটিস ছড়িয়ে ছিটিয়ে থাকে, উদাহরণস্বরূপ, অ্যালকোহল গ্রহণের পরে বা অকারণে। কখনও
+          কখনও পুরুষরা "সহবাসের সঠিক মেজাজে থাকে না"। বেশিরভাগ লোকেরা কঠোর পরিশ্রম, স্ট্রেস ইত্যাদি কে দোষ দেয়। যাইহোক,
+          এটি প্রথম ইঙ্গিত যে সময়ের সাথে সাথে অবস্থাটি আরও খারাপ হবে।</p>
+        <p><b>পর্যায় ২. </b> প্রোষ্টাটাইটিস আরও ঘন ঘন ঘটে। মূত্রনালিকা ডুবে যায় এবং সমস্যাযুক্ত হয়। </p>
+        <p><b>পর্যায় ৩.</b> ইরেকশন এর মাত্রা কমে যায়। যৌনতা তীব্রভাবে নেমে যায়। পুরুষেরা খিটখিটে হয়ে যায়, শক্তি এবং
+          কিছু করার ইচ্ছা হারিয়ে ফেলে। এটি প্রায়শই পারিবারিক সমস্যা, ঘন ঘন ঝগড়া, মহিলাদের বিশ্বাস ঘাতকতা এবং কখনও কখনও
+          বিবাহবিচ্ছেদ নিয়ে আসে। </p>
+        <p><b>পর্যায় ৪।</b> মূত্রত্যাগ খুব বেদনাদায়ক। এই অবস্থার ফলে সম্পূর্ণ পুরুষত্বহীনতা, প্রোস্টেট ক্যান্সার এবং
+          আরও অনেক সমস্যার জন্ম হতে পারে। </p>
+        <p class="bg">পুরুষদের মধ্যে ৯০% ভাগ বলেছেন যে তারা প্রোষ্টাটাইটিস এর প্রথম পর্যায়ে সম্পূর্ণ সুস্থ বোধ করেছেন।
+        </p>
+        <p>প্রথমে সমস্যা অল্প মনে হলেও আপাত দৃষ্টিতে এর মাধ্যমেই গুরুতর সমস্যার সুত্রপাত।</p>
+        <p><b>পুরুষত্বহীনতা</b></p>
+        <div style="text-align: center; margin:auto" class="cenz_wrapper">
+            <img style="display: none;" class="cenz_img 1i" src="img/impotencia.jpg" alt="">
+          
+      </div>
+        <a href="#">
+          <div class="center blur" >
+            <img src="img/impotencia.jpg">
+          </div>
+        </a>
+        <p>মূত্রথলির ক্যান্সার. পুরুষত্বহীনতায় ভুগছেন পুরুষদের মধ্যে মৃত্যুর সর্বাধিক সাধারণ কারণ (৮৮%)।</p>
+        <a href="#">
+          <div class="center blur">
+            <img src="img/rak.jpg">
+          </div>
+        </a>
+        <p><b>বিপিএইচ</b></p>
+        <a href="#">
+          <div class="center blur">
+            <img src="img/adenoma.jpg">
+          </div>
+        </a>
+        <p>কিডনিতে পাথর কিডনি রোগগুলিও পেলভিক অঙ্গগুলিতে রক্ত ​​সরবরাহের অবনতির কারণে বিকশিত হয়।</p>
+        <a href="#">
+          <div class="center blur">
+            <img src="img/kamni.jpeg">
+          </div>
+        </a>
+        <div class="kov">
+          <p>"প্রোষ্টাটাইটিস হ'ল 20-40 বছর বয়সী পুরুষদের মধ্যে অন্যতম প্রধান স্বাস্থ্য সমস্যা" "</p>
+          <p> </p>
+          <p class="avtor">ডা রহমান</p>
+        </div>
+        <h2>ভায়াগ্রা - সিন্থেটিক ড্রাগ কিলার</h2>
+        <p>যেহেতু শক্তি সম্পূর্ণরূপে অদৃশ্য হয়ে যেতে পারে, তাই অনেক পুরুষ প্রোষ্টাটাইটিস এবং ইডি সমস্যাগুলি অবতীর্ণ
+          হওয়ার সাথে সাথেই তার থেকে মুক্তি পাওয়ার চেষ্টা করেন। তবে, সাম্প্রতিক অবধি, পুরোপুরি খাড়া হওয়া পুনরুদ্ধার
+          করা অসম্ভব ছিল, উপলভ্য ওষুধগুলি (যেমন: ভায়াগ্রা) কেবলমাত্র ক্ষয়ক্ষতিতে উন্নতি করার ক্ষমতা। ঘন ঘন ভায়াগ্রা
+          ব্যবহারের ফলে - ডজন ডজন - হার্ট অ্যাটাকের ঝুঁকি বাড়ে!</p>
+        <p>কংগ্রেসের অংশগ্রহণকারীরা ভায়াগ্রা এবং সিয়ালিসের মতো সিন্থেটিক ড্রাগগুলির অপব্যবহারের কারণ এবং এর
+          দীর্ঘমেয়াদি সমস্যাগুলি নিয়েও আলোচনা করেছিলেন </p>
+        <p class="desc"> </p>
+        <p>প্রথম বিপদটি ফার্মেসীগুলিতে বিপুল পরিমাণে জাল ওষুধ বিক্রি হয় ফার্মাসিতে পাওয়া সমস্ত উদ্দীপকগুলির বাজার
+          ভাগের নকল ওষুধ 34 থেকে 73% পর্যন্ত।</p>
+        <p>দ্বিতীয় বিপদ - ভায়াগ্রা ব্যবহারের ফলে সৃষ্ট গুরুতর স্বাস্থ্য সমস্যা। কৃত্রিম উত্থানের বর্ধনকারীরা পুরুষের
+          স্বাস্থ্যের উপর নেতিবাচক প্রভাব ফেলে, পুরুষ শক্তি ছাড়াও তাদের লিভার, কিডনি এবং হার্টেও নেতিবাচক প্রভাব পড়ে।
+          ২০০২ সাল থেকে, যখন ভায়াগ্রা আমাদের দেশে গণ বাজারে উপলভ্য হয়েছিল, তখন হার্ট অ্যাটাকের সংখ্যা বেড়েছে ২৬%।</p>
+        <p class="bg">আজ অবধি, বিশ্বজুড়ে ১৫ মিলিয়ন পুরুষ ভায়াগ্রার উপর নির্ভরশীল এবং তাদের যৌনতাপুনরুদ্ধারের ফাংশনটি
+          চেষ্টা করার সময় তারা তাদের স্বাধীনতা এবং স্বাস্থ্য হারিয়ে ফেলে ।</p>
+        <h2 class="red">স্থায়ীভাবে সমস্ত প্রোষ্টেট সমস্যা নিরাময় কিভাবে? প্রতিটি মানুষের এটি জানা উচিত।</h2>
+        <p>সমস্যাগুলি নিয়ে আলোচনা এবং হতাশাজনক পরিসংখ্যান উল্লেখ করার পাশাপাশি অংশগ্রহণকারীরাও এই সমস্যার সমাধান
+          সম্পর্কে আলোচনা করেন। বাংলাদেশ ইউরোলজিকাল সোসাইটি ইরেক্টাইল ফাংশন পুনরুদ্ধার এবং প্রোষ্টাটাইটিস এর চিকিৎসার
+          পাশাপাশি পুরুষ মুত্রজনন সিস্টেমের রোগ প্রতিরোধের জন্য ডিজাইন করা একটি অনন্য ড্রাগের পরীক্ষার জন্য একটি কাগজ
+          জমা দিয়েছে।</p>
+        <p>এটি বিখ্যাত ব্র্যান্ড «<a href="#"><span class="productName"></span></a>» যা উল্লেখযোগ্য পুনর্নির্মাণের অধীনে ছিল এবং
+          সর্বশেষতম সূত্রটি বছরের বড় আকারে ক্লিনিকাল পরীক্ষার শিকার হয়েছিল।</p>
+        <div class="center">
+          <a href="#"><img src="img/4.jpg" alt=""></a>
+        </div>
+        <p class="desc">বাংলাদেশ ইউরোলজিকাল সোসাইটি "<a href="#"><span class="productName"></span></a>" সূত্র আপডেট করেছে</p>
+        <div class="kov">
+          <p>"এটি বাংলাদেশ ইউরোলজিকাল সোসাইটির সবচেয়ে চ্যালেঞ্জিং তবে সবচেয়ে প্রয়োজনীয় বিকাশ ছিল"</p>
+          <p class="avtor"> মেডিসিনের ডাক্তার জর্জ মিঞা <br> বাংলাদেশেরর একটি হাসপাতালে প্রজনন স্বাস্থ্য ও গবেষণা
+            বিভাগের প্রধান </p>
+        </div>
+        <p>প্রকৃতপক্ষে, দীর্ঘ ফ্লাইটের পরে বাংলাশ বিমানের পুরুষ শক্তি পুনরুদ্ধার করার জন্য এই এজেন্টটি বহু বছর আগে
+          প্রথমবারের জন্য প্রস্তুত করা হয়েছিল। সূত্রটি উন্নত করা হয়েছিল, পুঙ্খানুপুঙ্খভাবে পরীক্ষিত হয়েছিল (ফলাফলগুলি
+          অত্যাশ্চর্য ছিল) এবং তারপরে সাধারণ বিক্রয়ের জন্য প্রকাশ করা হয়েছিল।</p>
+        <p>«<a href="#"><span class="productName"></span></a>» কোনও অতিরিক্ত উত্তেজক ব্যবহার ছাড়াই প্রাকৃতিক পুরুষ শক্তি
+          পুনরুদ্ধারের সর্বাধিক শক্তিশালী প্রাকৃতিক সূত্র। সাধারণ উত্থাপনগুলি কেবল মেলে না এমন মানের গঠনের মাধ্যমে
+          পুনরুদ্ধার করা যায়।</p>
+        <p><b>বিপরীতে, বিভিন্ন ডায়েটরি পরিপূরক এবং সিন্থেটিক ট্যাবলেটগুলি "<a href="#"><span class="productName"></span></a>"
+            সম্পূর্ণ সুরক্ষিত অবস্থায় প্রাকৃতিক শক্তি পুনরুদ্ধার করে।</b>
+        </p>
+        <p><b>নিম্নলিখিত তথ্য গবেষণা এবং ক্লিনিকাল পরীক্ষার ফলাফল থেকে প্রাপ্ত হয়েছিল:</b></p>
+        <ul>
+          <li>মূত্রনালী ফাংশন পুনরুদ্ধার - ৯৯.৭%</li>
+          <li>যৌন সক্ষমতা বাড়়ায় - ৮৬.৪%</li>
+          <li>হার্ট অ্যাটাক এবং স্ট্রোকের ঝুঁকি ০.৪% এ চলে গেছে</li>
+          <li>গভীর শিরা থ্রোম্বোসিসের ঝুঁকি কমেছে ০.৭%</li>
+          <li>হঠাৎ কার্ডিয়াক অ্যারেস্ট হওয়ার ঝুঁকি ৩০% এ নেমেছে</li>
+          <li>লিঙ্গ দৈর্ঘ্য এবং ঘের বৃদ্ধি - স্বেচ্ছাসেবীদের ৯১%</li>
+        </ul>
+        <p><b>অনুশীলনে, "<a href="#"><span class="productName"></span></a>" যৌন ক্রিয়া বাড়ায় এবং নিম্নলিখিত পুরুষ সমস্যার সমাধানে
+            অবদান রাখে:</b>
+        </p>
+        <ul>
+          <li>ঘন মূত্রত্যাগ</li>
+          <li>সহবাসের সময় সংবেদনগুলি বাড়ায়, আরও প্রাণবন্ত এবং দীর্ঘস্থায়ী প্রচণ্ড উত্তেজনা;</li>
+          <li>পুরুষ ক্ষমতা এবং যৌন কর্মক্ষম করে;</li>
+          <li>উত্থান, বীর্য সংখ্যা এবং গুণমানের মধ্যে সংক্ষিপ্ত বিরতি;</li>
+          <li>প্রতিরোধ ব্যবস্থা এবং অ্যাড্রিনাল গ্রন্থিগুলির কাজকে সমর্থন করে;</li>
+          <li>পোষ্টেট গ্রন্থিতে হালকা ব্যথা উপশমে প্রভাব তৈরি করে;</li>
+          <li>লিঙ্গের গুচ্ছ দেহগুলির অবস্থার উপর তাৎপর্যপূর্ণ প্রভাব ফেলে, ফলে তাদের আকার বৃদ্ধি পায়। সমস্ত
+            স্বেচ্ছাসেবী পুরুষাঙ্গের দৈর্ঘ্য(দাড়ানো) এবং ঘেরের বৃদ্ধি (দৈর্ঘ্যে ২-৪সেমি এবং দৈর্ঘ্যের ১.৫ - ২.৫ সেমি)
+            বৃদ্ধি উল্লেখ করেছেন।</li>
+        </ul>
+        <p><b>প্রমাণ রয়েছে যে চিকিৎসা চলাকালীন পুরুষরা তাদের পুরুষের স্বাস্থ্য পুনরুদ্ধার করে। কেবল সামর্থ্যই উন্নত হয়
+            না, পুরুষাঙ্গের আকার এবং যৌন ক্রিয়াকলাপও বৃদ্ধি পায়।</b>
+        </p>
+        <p>সম্মেলনে বাংলাদেশের ইউরোলজিকাল সোসাইটির প্রতিনিধিরা ক্লিনিকাল ট্রায়ালের প্রোটোকল এবং ব্র্যান্ডের কার্যকারিতা
+          এবং সুরক্ষার প্রমাণিত অন্যান্য সমস্ত নথি সরবরাহ করেছিলেন</p>
+        <br><br>
+        <p class="myp">উপরোক্ত ছাড়াও, ভাল খবর আছে. এই মুহুর্তে, ডিসকাউন্টটি অফিসিয়াল ওয়েবসাইটের মাধ্যমে সবার জন্য «<a
+            href="#"><span class="productName"></span></a> পাওয়ার অভূতপূর্ব সুযোগ রয়েছে! তবে বিপুল সংখ্যক গ্রাহকের কারণে আমরা
+          চাহিদা পূরণ করতে পারি না। সুতরাং, অফারটি কেবলমাত্র (অন্তর্ভুক্ত) অবধি স্থায়ী হবে।
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 0 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+</p>
+          <div class="features-wrapper"></div>
+        <div id="comments">
+          <br>
+          <h1>মন্তব্য:</h1>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">অর্চনা</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male1.jpg" style="float: left; padding-right: 10px;"
+                  alt="img"></a>
+              <div class="txtCom">কিছু কারণে তাদের প্রবনতা মানুষের কাছ থেকে পরিসংখ্যান গোপন করার । হঠাৎ করে, তারা কথা
+                বলার সিদ্ধান্ত নিয়েছে ,এমনকি সমাধানের পরামর্শও দিয়েছে এবং তা বিনা মূল্যে। আসুন এটি কার্যকরভাবে চেষ্টা
+                করি।</div>
+              <br>
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">অনিক গওহর</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male2.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমি এক মাস আগে <a href="#"><span class="productName"></span></a> এর সাথে একটি চিকিত্সা কোর্স সম্পন্ন করেছি। আমি এটি
+              সর্বাধিক প্রতিরোধের জন্য করেছি (আমি মনে করি না আমি 38 বছর বয়সে পুরুষত্বহীন হতে পারি)। মন ছুঁয়ে যাওয়া
+              প্রভাব।আমি কয়েক মাসের জন্য বিরতি দেব এবং তারপরে ফলাফল ঠিক রাখতে কোর্সটি পুনরাবৃত্তি করব।
+              <p></p>
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#"><span class="text1" style="color: rgb(180, 4, 4);">জুয়েল</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male3.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আপনাকে হতাশ করার জন্য দুঃখিত, আপনার 30 বা এমনকি 20 এ ED থাকতে পারে। এটা সব আপনার রক্তনালীর অবস্থার উপর
+              নির্ভর করে বা অনেকটা তাই । অতএব, ধূমপায়ীরা ঝুঁকিতে রয়েছে, যা আপনার অনুভূতিকে আরো প্রগার করবে।
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">কেরামত</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male4.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমার শীতলতার কার্যকারীতা শুরু 5 বছর আগে। আমি ভায়াগ্রা নিলাম, আমি এতে কিছুটা ভাল মনে করছিলাম এবং এটির ফল
+              আরও খারাপ হল। আমি হতভম্ব হয়ে ডাক্তারের কাছে গেলাম। কিন্তু তারা শুধু তাদের মত পরামর্শ দিয়ে আমাকে তাদের
+              মতের দিকে নিচ্ছিল: কম চাপে থাকবেন, অ্যালকোহল কম পান করবেন, বেশি বিশ্রাম নিবেন এতে আপনি ভালো থাকবেন। আমি এই
+              <a href="#"><span class="productName"></span></a> জুড়ে এসেছি, আমি একটি কোর্স গ্রহণ করে ধীরে ধীরে নিজেকে পুনরুদ্ধার
+              করতে শুরু করি। সব সততার মধ্যে, এখন আমার পুরুষাঙ্গ আমার বয়স যখন 17 ছিল তার চেয়েও কঠিন।
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">জমশেদ</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male5.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমার দাদুর প্রায় সারাজীবন প্রোষ্টেট এর সমস্যা ছিল। মজার ব্যাপার এই যে আমি এই পণ্যটি ওনার জন্য কিনেছিলাম
+              ওনার সমস্যা সমাধানের জন্য। সমস্যা সমাধান! দাদু এমনকি ডেটিং ও করছে।
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">আমেনা</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/fm1.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমার মন্তব্য নারীদের জন্য, যদি আপনার পুরুষদের পুরুষত্ব নিয়ে সমস্যা থাকে, তাহলে হেলা করবেন না। অপেক্ষা
+              করবেন না, এটি নিজে নিজেই সেরে যাবে না। যদি আপনি মনে করেন যে আপনাকে যা করতে হবে তা হল সেক্সি অন্তর্বাস
+              পরিধান করা, এতে তিনি অবিলম্বে কয়েক বারের জন্য ধরে রাখতে সক্ষম হবেন, এটি আপনার মনের ধারনা ... আপনি যা
+              অর্জন করবেন তা দ্রুততর উত্তেজনা। কিন্তু আপনি যদি সত্যিই কিছু আনন্দ উপভোগের অভিজ্ঞতা অর্জন করতে চান তাহলে
+              আপনাকে সমস্যার আসল সমাধান খুঁজে বের করতে হবে! আমার ক্ষেত্রে, এটি ছিল <a href="#"><span class="productName"></span></a>।
+              আমি ভুলে গিয়েছিলাম যে তার নিম্নাঙ্গের বন্ধুকে জাগানো কতটা কঠিন ছিল এবং ঘুমিয়ে পড়ার আগে এটি 15 মিনিটের
+              জন্য স্থায়ী হয়েছিল।
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">এন্থনী</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male6.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              ভায়াগ্রার দীর্ঘ সময় গোপনীয় ক্ষতি ড্রাগ-প্ররোচিত হেপাটাইটিস, লিভার ক্যান্সার এবং অন্যান্য অবস্থার দিকে
+              পরিচালিত করে !!!
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">মীর আক্কেল</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male7.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমি এর জন্য আদেশ করেছি, চেষ্টা করেছি এবং এটি পছন্দ করেছি! আমি বিনামূল্যের প্যাকেজ চুক্তিটি পছন্দ করেছি!
+              বিছানায় আসার সময় আমার কোন শক্তি ছিল না, আমার নিম্নাঙ্গের মোরগ মিঞা নরম ছিল এবং প্রচণ্ড উত্তেজনা ছিল। এটা
+              আজ অন্য রকম ভিন্ন অনূভূতি। আমি খুশি যে আমাকে একজন ডাক্তার বন্ধু <a href="#"><span class="productName"></span></a> এর
+              সুপারিশ করেছিলেন। আমি এটা নিয়ে অনলাইনে পড়ার আশা করিনি।
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">আর,ও</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male8.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমি আমার স্ত্রীকে গোপন করে <a href="#"><span class="productName"></span></a> নেয়া শুরু করেছিলাম, আমি স্বীকার করিনি যে
+              আমার সমস্যা আছে। প্রভাবটি বেশ হতবাক করার মত ! ওটা খুব দ্রুত বেড়ে এবং শক্তিশালী হয়ে শীতলতা কাটে! সেই সাথে
+              আমার নিম্নাঙ্গের বন্ধুও আকারে উল্লেখযোগ্যভাবে বৃদ্ধি পেয়েছে । বিশেষ করে যখন আমি উত্তেজিত হই ওটাও আকারে
+              বৃদ্ধি পায় . ঐ সময় আপনি কি আমার স্ত্রীকে কল্পনা করতে পারেন? সে আমাকে বহু বছর ধরে চেনে! প্রথমে সে ভয় পেয়ে
+              গেল, সে ভেবেছিল আকার বাড়ানোর জন্য আমি অপারেশন করেছিলাম ।আমি তাকে আশ্বস্ত করলাম: আমাদের যৌন জীবন অনেক
+              উন্নত হয়েছে, আমার স্ত্রী এর আগে কখনো আসেনি! পূর্বে, আমি যখন তার ক্লিটারকে আদর করছিলাম তখনই তার প্রচণ্ড
+              উত্তেজনা দেখা দেয় , তখনই সে আমার ওটার সান্নিধ্যে আসে একান্ত কাছের হয় ! আপনি দেখছেন, দৃশ্যত আমার ওটা খুব
+              ছোট ছিল .....
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">কারিনা</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/fm2.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমি আমার স্বামী সম্পর্কে একই পরিবর্তন লক্ষ্য করেছি! আমি তাত্ক্ষণিকভাবে পার্থক্য বলতে পারতাম। আমি ভাবতাম যে
+              আকারটি আসলেই গুরুত্বপূর্ণ নয় ... এবং আমি জানি যে কিভাবে এটি করে! আমি চমত্কার প্রচণ্ড উত্তেজনা অনুভব করি,
+              যেখানে এর আগে, আমি প্রতিবারই প্রচণ্ড উত্তেজনায় পৌঁছাতে পারতাম না ... এখন, আমি আমার স্বামীর উপর শৃঙ্গাকার
+              মেয়ের মত ধাক্কা খাই, মাঝে মাঝে আমি নিজেই বিব্রত বোধ করি ....
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">নীল</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male9.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমি বিস্মিত আমার সত্যিকারের লৌহ দন্ডের জন্য ! আমি অন্যদিন সেক্স ম্যারাথন করেছি, আমরা প্রায় 3 ঘন্টা ।কিছু
+              হ্যানকি প্যানকি করেছি। মাঝে কিছু বিরতি দিয়ে))) আমি তিনবার করেছি ! অন্য কিছু আমি লক্ষ্য করেছি, আমি সঙ্গম
+              করার পরে, আমি এখন অনেক দ্রুত পুনরুদ্ধার করি, আক্ষরিক অর্থে 5-10 মিনিট, এবং আমি অাবার করার জন্য প্রস্তুত!
+              তবে মেয়েটি সুন্দর। ওহ, এর একটি সাধারণ স্মৃতি আমাকে আবার শৃঙ্গাকার মনে করাবে। আমাকে আজ রাতের আগেই চলে
+              যাওয়া ভালো।</div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">জরিনা</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male10.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              আমি এই নিবন্ধটি পড়ার পরে, এই আশ্চর্য সূত্রের প্রভাবটি দেখার সিদ্ধান্ত নিয়েছি। যেহেতু এখানে
+              দেওয়া-নেওয়ার ব্যপার না তাই আমার হারানোর কিছু নেই। আমি এটি অফিসিয়াল ওয়েবসাইটে আদেশ করেছি, আমি
+              নির্দেশাবলী অনুসারে ব্যবহার করেছি এবং ফলাফলটি সত্যিই আশ্চর্যজনক ছিল। এটি প্রথম বারেই দাড়িয়ে যায়, বিশেষ
+              কিছু করার নেই, যৌনতা কম করে এক ঘণ্টা স্থায়ী হয়, আমি ষাঁড়ের মতো অনুভব করি। আমার স্ত্রী হতবাক, সে বুঝতে
+              পারেনি কি হচ্ছে, সে আমাকে এই সমস্ত প্রশ্ন জিজ্ঞাসা করেছিল ))
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">সুফিয়া</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/fm3.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              যদিও আমার স্বামীর বয়স মাত্র 45, তিনি বয়সেই প্রথম শীতলতার সমস্যা এবংপ্রোষ্টাটাইটিস এর স্বীকার হন । এটা
+              সত্যিই শক্ত হয় না এবং কয়েক মিনিটের জন্য স্থায়ী হয়। তিনি বুঝতে পেরেছিলেন যে কিছু একটা ঠিক ঘটতে চলছে এবং
+              জটিলতায় ভুগছেন, যদিও তিনি তা দেখাননি। ছয় মাস এমন দূর্ভোগের পর, আমি একদিন সেক্স করার আশা হারিয়ে ফেলছিলাম।
+              আমি অনলাইনে তদন্ত করলাম এবং <a href="#"><span class="productName"></span></a> সম্পর্কে জানতে পারলাম। যদিও সামান্য আশা
+              ছিল, কিন্তু আমার হারানোর কিছুই ছিল না। সে তাৎক্ষণিকভাবে নিতে রাজি হয়নি। এক সপ্তাহ কেটে গেল, এবং তিনি
+              স্বীকার করলেন যে তিনি নির্দেশনা অনুযায়ী <a href="#"><span class="productName"></span></a> নেয়া শুরু করেছেন। এক সপ্তাহ
+              পরে আমি আশ্চর্য হয়ে গেলাম, আবেগ এবং যৌনতার পুরো রাত! আমি বেশ খুশি ছিলাম। এমনকি তার বয়স কম দেখাচ্ছিল।
+              আত্মবিশ্বাস অবশ্যই মানুষকে পরিবর্তন করে))
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">গোলাম নেওয়াজ</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male11.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              ওটাই ছিল প্রথম এবং শেষবার যখন আমি 50mg ভায়াগ্রা নিয়েছিলাম। সৌর প্লেক্সাসের চারপাশে আমি খারাপভাবে বাধা
+              ছিলাম ,আমি লালা ফেলছিলাম এবং সব যেন ফেটে যাচ্ছিল, আমি খুব ভিড় অনুভব করেছি। ভেবেছিলাম ঘটনাস্থলেই মারা যাব।
+              কোন ভাবেই আমি এই সব পরীক্ষা পুনরাবৃত্তি করব না ,না আর কোন রাসায়নিক!</div>
+          </div>
+          <div class="comment" id="services">
+            <a href="#" class="main-lnk"><span class="text1">রায়হান</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male12.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              ভায়াগ্রার ধারনা মোটেই ভাল নয়,আমি শুনেছি এর ফলে লোক মারা যায় <br><br><br>
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">ইষিতা</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/fm4.jpg" style="float: left; padding-right: 10px;" alt=""></a> <a
+                href="#">আমার প্রিয় স্বামীর জন্য ক্রয় করলাম</a>! সে রাতে পাঁচবার টয়লেটে যাওয়া বন্ধ করল।
+            </div>
+          </div>
+          <div class="comment">
+            <a href="#" class="main-lnk"><span class="text1">সায়মন</span></a>
+            <span class="text2">
+            </span>
+            <div class="text3">
+              <a href="#"><img src="img/male13.jpg" style="float: left; padding-right: 10px;" alt=""></a>
+              ভায়াগ্রা নেওয়ার পর গুরুতর সমস্যা হওয়ায় আমি এই সমস্ত জিনিসগুলিতে ভয় পেয়েছিলাম। কিন্তু তখন আমি বুঝতে
+              পারলাম যে, ব্র্যান্ডেড সিনথেটিক ওষুধের পরিবর্তে আমার কিছু প্রাকৃতিক ফর্মুলেশন খুঁজতে হবে, যা আসলে কাজ করে।
+              যখন তারা একটি বিশেষ চুক্তির প্রস্তাব দিচ্ছিল তখন আমি ওয়েবসাইটটি পরিদর্শন করেছি, তাই আমি আমার বিনা মূল্যে
+              পেয়েছি। আমি এটা গ্রহণ শুরু করার পরের দিন, আমি এত শক্তিমান বোধ করেছি, সাধারণভাবে বলতে গেলে অনেক ভালো, যেন
+              আমি ছোট হয়েছি! আমি এটি সবার কাছে সুপারিশ করছি। ইরেকশনের কঠোরতা এবং লিঙ্গের সময়কালের সাথে তুলনা করা যেতে
+              পারে যখন আমি আমার 20 -এর দশকে ছিলাম, এবং আপনি মনে রাখবেন, কোন রাসায়নিক ওষুধ ছাড়াই! মূল্য যাচাই করুন
+            </div>
+          </div>
+          <br>
+        </div>
+        <div style="text-align: center;">
+          <div class="insite">
+            <a href="#" class="button_page">মূল্য পরীক্ষা করুন</a>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>
+  <style>
+    /*----comeback---*/
+    .comeback_layout {
+      display: none;
+      position: fixed;
+      color: #000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 20000000;
+      background: rgba(0, 0, 0, .75);
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none
+    }
+
+    .comeback_layout::-webkit-scrollbar {
+      width: 0
+    }
+
+    .comeback_wrapper {
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto
+    }
+
+    .comeback_container {
+      background: #fff;
+      padding: 25px;
+      margin-top: 2%;
+      text-align: center
+    }
+
+    .comeback_container h1 {
+      font-size: 23px
+    }
+
+    .comeback_container .form-group {
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left
+    }
+
+    .comeback_container .btn {
+      display: block;
+      width: 240px;
+      color: #fff;
+      background: #f82a5e;
+      text-transform: uppercase;
+      padding: 10px 0;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      margin: 0 auto;
+      text-decoration: none
+    }
+
+    .comeback_img {
+      width: 80%;
+      margin: 10px auto;
+      max-width: 200px
+    }
+
+    .form-horizontal span {
+      display: block;
+      margin: 20px 0
+    }
+
+    .comeback_close {
+      float: right;
+      cursor: pointer
+    }
+
+    #comeback p {
+      font-size: 16px
+    }
+
+    @media (max-width:700px) {
+      .comeback_container h1 {
+        line-height: 18px;
+        font-size: 16px
+      }
+
+      .comeback_img {
+        margin: 5px auto
+      }
+
+      .comeback_container p {
+        line-height: 14px;
+        font-size: 15px
+      }
+
+      .comeback_container {
+        padding: 5px
+      }
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+  $('.cenz_wrapper > div').click(function () {
+    $(this).hide();
+    $(this).next().show();
+  });
+});
+  </script>
+  <div id="comeback" class="comeback_layout">
+    <div class="comeback_wrapper">
+      <div class="comeback_container center-block">
+        <span class="comeback_close" onclick="document.getElementById('comeback').style.display = 'none';"><img
+            src="img/cross.png" width="21" height="21" class="cross"></span>
+        <h1 style="margin: 0 auto; width: 300px;">រង់ចាំ!</h1>
+        <p>ជាពិសេសសម្រាប់អ្នក! ការផ្សព្វផ្សាយតែថ្ងៃនេះ, ផ្តល់ជូននូវការបញ្ចុះតម្លៃ 50%! </p>
+        <br>
+        <img class="comeback_img" src="img/product.png">
+        <br>
+        <br>
+        <a class="btn" href="#">លំដាប់ </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const offer_params = {
+        priceMain : '2199',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '৳',
+        productName : 'Herbx',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+    priceMain : offer_params.priceMain,
+    currencyMain : offer_params.currencyMain,
+    lang : 'bd', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+    product : offer_params.productName, // название продукта
+    genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+    form : {
+        isNeeded : 1, // 1-включить форму, 0-выключить
+        img: 'prod.png', // путь до картинки продукта
+        price: true, // плашка с ценой
+        priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+        showSelect: false, // показывать или скрывать поле select
+        untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+    },
+
+
+
+
+    autoComments: {
+        isNeeded: 0, // 1-включить автокомы, 0-выключить
+        bgColor: '#d7f2d8' // цвет фона блока комчиков
+    },
+
+
+
+
+    popups: {
+        isNeeded: 0, // 1-включить попы, 0-выключить
+        bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+        textColor: '#fff', // цвет основного текста сообщения
+        emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+        blackIcons: false // черные или белые иконки, значения true или false
+    },
+
+
+
+
+    wheel: {
+        isNeeded: 1, // 1-включить колесо, 0-выключить
+        customWheel: false // ссылка на свое колесо, либо false
+    }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

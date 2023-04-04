@@ -1,0 +1,1 @@
+function dtime(e){var t=new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat"),r=new Array("January","February","March","April","May","June","July","August","September","October","November","December"),a=new Date;a.setDate(a.getDate()+e+1),document.write(t[a.getDay()]+", "+a.getDate()+" "+r[a.getMonth()]+" "+a.getFullYear())}

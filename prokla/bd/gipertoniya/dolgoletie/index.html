@@ -1,0 +1,3514 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+  </script>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, user-scalable=no" name="viewport">
+  <title>সদ্যপ্রাপ্ত সংবাদ </title>
+  <style>
+    .filmpro-theatres-now__header::before {
+      background: transparent url(img/sidebar-block-headers-sprite-1.png) no-repeat scroll 0 -438px;
+      position: absolute;
+      display: block;
+      content: "";
+      left: 12px;
+      top: 50%;
+      width: 24px;
+      height: 28px;
+      margin-top: -14px
+    }
+
+    .disp-text {
+      background: #eee;
+      cursor: pointer;
+      display: block;
+      padding: 10px 15px;
+      border-radius: 2px;
+      color: #252525;
+      margin-top: -33px
+    }
+
+    .spoil {
+      background: #eee;
+      width: 100%;
+      font-size: 16px;
+      color: #000;
+      padding: 10px;
+      font-weight: 600;
+      cursor: pointer
+    }
+
+    .cenz-image {
+      display: inline-block;
+      background-image: url(img/18_plus.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 65%;
+      border: 5px solid red;
+      cursor: pointer
+    }
+
+    .cenz-image img {
+      visibility: hidden
+    }
+
+    .cenz-image.cenz-show {
+      border: none;
+      cursor: default
+    }
+
+    .cenz-image.cenz-show img {
+      visibility: visible
+    }
+
+    a,
+    abbr,
+    acronym,
+    address,
+    applet,
+    article,
+    aside,
+    audio,
+    b,
+    big,
+    blockquote,
+    body,
+    canvas,
+    caption,
+    center,
+    cite,
+    code,
+    dd,
+    del,
+    details,
+    dfn,
+    div,
+    dl,
+    dt,
+    em,
+    embed,
+    fieldset,
+    figcaption,
+    figure,
+    footer,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    hgroup,
+    html,
+    i,
+    iframe,
+    img,
+    ins,
+    kbd,
+    label,
+    legend,
+    li,
+    mark,
+    menu,
+    nav,
+    object,
+    ol,
+    output,
+    p,
+    pre,
+    q,
+    ruby,
+    s,
+    samp,
+    section,
+    small,
+    span,
+    strike,
+    strong,
+    sub,
+    summary,
+    sup,
+    table,
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    time,
+    tr,
+    tt,
+    u,
+    ul,
+    var,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0 none;
+      font-family: inherit;
+      font-style: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      font-size-adjust: inherit;
+      font-stretch: inherit;
+      font-feature-settings: inherit;
+      font-language-override: inherit;
+      font-kerning: inherit;
+      font-synthesis: inherit;
+      font-variant: inherit;
+      font-size: 100%;
+      vertical-align: baseline
+    }
+
+    html {
+      line-height: 1
+    }
+
+    ol,
+    ul {
+      list-style: outside none none
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    caption,
+    td,
+    th {
+      text-align: left;
+      font-weight: 400;
+      vertical-align: middle
+    }
+
+    blockquote::after,
+    blockquote::before,
+    q::after,
+    q::before {
+      content: none
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    menu,
+    nav,
+    section,
+    summary {
+      display: block
+    }
+
+    @media (max-width:530px) {
+
+      .b-item .b-item__title,
+      .b-item_list .b-item__title,
+      .b-item_video-nowwatch .b-item__title,
+      .b-item_video-recommend-main .b-item__title {
+        font: 14px/18px ArimoRegular, sans-serif
+      }
+    }
+
+    .air-radio .air-radio__player .air-radio__title,
+    .air-video__player,
+    .aside-menu,
+    .aside-menu__list-item,
+    .aside-menu__list-item.active,
+    .aside-menu__sublist,
+    .aside-menu__title,
+    .b-item-broadcasts__title,
+    .b-line-item_video-recommend,
+    .breadcrumbs,
+    .broadcasts-list__day,
+    .broadcasts-list__day_today,
+    .date-pagination .date-pagination__item>a,
+    .search-ext,
+    .search-ext__date,
+    .search-ext__date input,
+    .search-ext__date-select,
+    .search-ext__date-select__list,
+    .search-ext__date-select__list li,
+    .search-ext__query,
+    .search-ext__query-wrapper,
+    .search-item,
+    .theme-header,
+    .theme-pagination__inner,
+    .title,
+    .title_broadcasts,
+    .video-nowwatch__title,
+    .video-popular__title {
+      padding-left: 24px;
+      padding-right: 24px
+    }
+
+    @media (max-width:530px) {
+
+      .air-radio .air-radio__player .air-radio__title,
+      .air-video__player,
+      .aside-menu,
+      .aside-menu__list-item,
+      .aside-menu__list-item.active,
+      .aside-menu__sublist,
+      .aside-menu__title,
+      .b-item-broadcasts__title,
+      .b-line-item_video-recommend,
+      .breadcrumbs,
+      .broadcasts-list__day,
+      .broadcasts-list__day_today,
+      .date-pagination .date-pagination__item>a,
+      .search-ext,
+      .search-ext__date,
+      .search-ext__date input,
+      .search-ext__date-select,
+      .search-ext__date-select__list,
+      .search-ext__date-select__list li,
+      .search-ext__query,
+      .search-ext__query-wrapper,
+      .search-item,
+      .theme-header,
+      .theme-pagination__inner,
+      .title,
+      .title_broadcasts,
+      .video-nowwatch__title,
+      .video-popular__title {
+        padding-left: 12px;
+        padding-right: 12px
+      }
+    }
+
+    .b-item .b-item__pic-wrapper_fake::before,
+    .b-item_list .b-item__pic-wrapper_fake::before,
+    .b-item_video-nowwatch .b-item__pic-wrapper_fake::before,
+    .b-item_video-recommend-main .b-item__pic-wrapper_fake::before,
+    .theme-pagination__loading::after {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: transparent url(img/preloader.gif) repeat scroll 0 0;
+      top: 50%;
+      left: 50%;
+      margin: -9px 0 0 -9px;
+      z-index: 10
+    }
+
+    .myList {
+      padding-left: 50px;
+      margin-bottom: 30px;
+      list-style-type: decimal
+    }
+
+    .myText {
+      padding-bottom: 0 !important
+    }
+
+    .myText1 {
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.3;
+      text-align: center;
+      display: block
+    }
+
+    .article__text .myImg {
+      width: 100%;
+      max-width: 450px
+    }
+
+    .myText2 {
+      font-size: 24px;
+      background-color: #ff0;
+      padding: 5px 10px;
+      display: block;
+      margin-bottom: 20px;
+      color: red
+    }
+
+    .rub-ramka {
+      text-indent: 0 !important;
+      background: rgba(200, 0, 224, .04);
+      padding: 6px 13px 18px 13px !important;
+      border-radius: 2px;
+      border: 4px double rgba(160, 21, 21, .32);
+      font-family: open sans, arial;
+      line-height: 28px;
+      font-size: 16px;
+      max-width: 80%;
+      margin: 0 auto;
+      font-weight: 400;
+      color: #4a4a4a;
+      margin-bottom: 20px
+    }
+
+    .myh4 {
+      padding: 6px 4px 4px 5px;
+      width: 100%;
+      display: table;
+      text-indent: 0;
+      padding: 9px 0 6px 12px;
+      width: 100%;
+      display: table;
+      border: 1px dotted #e2e2e2;
+      border-right: none;
+      color: #313131;
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 23px;
+      margin-bottom: 15px;
+      border-radius: 2px;
+      border-left: none;
+      margin-left: 0;
+      font-weight: 600;
+      background-color: #f5fef5;
+      background-image: -webkit-gradient(linear, 0 50%, 100% 50%, color-stop(0, #eab4b4), color-stop(1, #f5fef5));
+      background-image: -webkit-repeating-linear-gradient(0deg, #eab4b4 0, #f5fef5 100%);
+      background-image: repeating-linear-gradient(90deg, #eab4b4 0, #f5fef5 100%);
+      background-image: -ms-repeating-linear-gradient(0deg, #eab4b4 0, rgba(3, 224, 0, .04) 100%)
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: 700
+    }
+
+    .mycity {
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: .1px;
+      background: #757575;
+      padding: 2px 3px 1px 3px;
+      margin-left: 9px;
+      color: #fff;
+      font-weight: 600;
+      line-height: 19px;
+      vertical-align: super;
+      border-radius: 1px;
+      border: 3px double #fff
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .load-page_loading::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 10px;
+      right: -28px;
+      background: transparent url(img/preloader.gif) no-repeat scroll 0 0;
+      width: 18px;
+      height: 18px
+    }
+
+    body {
+      background: transparent repeat scroll 0 0
+    }
+
+    @media (max-width:530px) {
+      body {
+        position: relative
+      }
+    }
+
+    a .content::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    @media (max-width:670px) {
+      .adv-top-mobile {
+        margin: 0
+      }
+    }
+
+    @media (max-width:670px) {
+      .adv-top-mobile .adv-centered {
+        padding: 0
+      }
+    }
+
+    @media (max-width:670px) {
+      .adv-top {
+        display: none
+      }
+    }
+
+    .page-wrap {
+      padding: 0 64px;
+      max-width: 1280px;
+      min-width: 300px;
+      margin: 0 auto;
+      position: relative;
+      cursor: auto
+    }
+
+    @media (max-width:900px) {
+      .page-wrap {
+        padding: 0 24px
+      }
+    }
+
+    @media (max-width:530px) {
+      .page-wrap {
+        padding: 0;
+        overflow: hidden
+      }
+    }
+
+    .main-content {
+      background: transparent repeat scroll 0 0;
+      z-index: 11;
+      position: relative
+    }
+
+    .main-content::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    .content {
+      min-height: 700px;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      margin: 0 auto
+    }
+
+    .content__inner {
+      float: left
+    }
+
+    .content__inner_search,
+    .content__inner_wide {
+      background-color: #fff;
+      border-bottom: 1px solid #ccc
+    }
+
+    @media (max-width:1024px) {
+
+      .content__inner_search,
+      .content__inner_wide {
+        width: 100%
+      }
+    }
+
+    @media (max-width:1280px) {
+      .content__inner_centered {
+        width: 33.3%
+      }
+    }
+
+    @media (max-width:1024px) {
+      .content__inner_centered {
+        width: 50%
+      }
+    }
+
+    @media (max-width:530px) {
+      .content__inner_centered {
+        width: 100%
+      }
+    }
+
+    @media (max-width:1280px) {
+      .sections {
+        width: 33.3%
+      }
+    }
+
+    @media (max-width:1024px) {
+      .sections {
+        width: 50%
+      }
+    }
+
+    @media (max-width:530px) {
+      .sections {
+        display: none
+      }
+    }
+
+    @media (max-width:1280px) {
+      .main-news {
+        width: 33.3%
+      }
+    }
+
+    @media (max-width:1024px) {
+      .main-news {
+        width: 50%
+      }
+    }
+
+    @media (max-width:530px) {
+      .main-news {
+        width: 100%
+      }
+    }
+
+    .news-wrapper-2::after,
+    .news-wrapper::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    @media (max-width:530px) {
+
+      .news-wrapper .b-item .b-item__pic-wrapper,
+      .news-wrapper .b-item_list .b-item__pic-wrapper,
+      .news-wrapper .b-item_video-nowwatch .b-item__pic-wrapper,
+      .news-wrapper .b-item_video-recommend-main .b-item__pic-wrapper,
+      .news-wrapper-2 .b-item .b-item__pic-wrapper,
+      .news-wrapper-2 .b-item_list .b-item__pic-wrapper,
+      .news-wrapper-2 .b-item_video-nowwatch .b-item__pic-wrapper,
+      .news-wrapper-2 .b-item_video-recommend-main .b-item__pic-wrapper {
+        display: none
+      }
+    }
+
+    @media (max-width:1280px) {
+      .adv-list {
+        width: 33.3%
+      }
+    }
+
+    @media (max-width:1024px) {
+      .adv-list {
+        display: none
+      }
+    }
+
+    .content,
+    .footer {
+      clear: both
+    }
+
+    .header {
+      width: 100%;
+      z-index: 12;
+      position: relative
+    }
+
+    .header__inner {
+      height: 64px;
+      background: #0095da none repeat scroll 0 0;
+      position: relative;
+      z-index: 7
+    }
+
+    @media (max-width:530px) {
+      .header__inner {
+        height: 48px
+      }
+    }
+
+    .header__logo a {
+      background: red;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      vertical-align: middle;
+      line-height: 64px;
+      padding: 24px 9px
+    }
+
+    .header__logo {
+      width: 185px;
+      height: 100%;
+      position: relative;
+      float: left
+    }
+
+    @media (max-width:530px) {
+      .header__logo a {
+        line-height: 50px;
+        padding: 15px 9px
+      }
+    }
+
+    .nav {
+      height: 64px;
+      max-width: 920px;
+      overflow: hidden;
+      position: relative
+    }
+
+    @media (max-width:530px) {
+      .nav {
+        display: none
+      }
+    }
+
+    .nav__inner {
+      width: 9000px
+    }
+
+    .nav li {
+      display: block;
+      float: left;
+      height: 64px;
+      margin-right: 1px;
+      position: relative
+    }
+
+    .nav li a {
+      display: block;
+      height: 100%;
+      font: 16px/64px OpenSansLight, sans-serif;
+      color: #fff;
+      padding: 0 24px;
+      text-decoration: none;
+      transition: background .3s ease 0s
+    }
+
+    .nav li a:hover {
+      background: #00a5f2 none repeat scroll 0 0
+    }
+
+    .nav li {
+      perspective: 1000px
+    }
+
+    .nav li a {
+      position: relative;
+      background: #0095da none repeat scroll 0 0;
+      transition: transform .3s ease 0s;
+      transform-origin: 50% 0 0;
+      transform-style: preserve-3d
+    }
+
+    .nav li:first-child::after,
+    .nav__item_first::after {
+      display: block;
+      content: " ";
+      position: absolute;
+      z-index: 200;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 26px
+    }
+
+    .nav li a::before {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background: #0965a0 none repeat scroll 0 0;
+      content: attr(data-hover);
+      transition: background .3s ease 0s;
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0 0
+    }
+
+    .nav li:focus a,
+    .nav li:hover a {
+      transform: rotateX(90deg) translateY(-22px)
+    }
+
+    .nav li:focus a::before,
+    .nav li:hover a::before {
+      background: #2483c5 none repeat scroll 0 0
+    }
+
+    .nav_mobile {
+      display: none
+    }
+
+    @media (max-width:530px) {
+      .nav_mobile {
+        display: block;
+        width: 270px;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        z-index: 2;
+        height: 100%;
+        background: #222 none repeat scroll 0 0
+      }
+
+      .nav_mobile::after {
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        left: -1px;
+        top: 0;
+        box-shadow: 2px 0 14px 1px #333;
+        content: " "
+      }
+
+      .nav_mobile .search_mobile {
+        height: 48px;
+        background: #0095da none repeat scroll 0 0
+      }
+
+      .nav_mobile .search_mobile .search__form {
+        width: 225px;
+        top: 9px
+      }
+
+      .nav_mobile .search_mobile .search__text {
+        width: 180px;
+        padding: 0 10px
+      }
+
+      .nav_mobile .nav__list_mobile li {
+        height: 48px;
+        line-height: 48px;
+        color: #fff;
+        border-bottom: 1px solid #000
+      }
+
+      .nav_mobile .nav__list_mobile li a {
+        font: 16px/48px OpenSansLight, sans-serif;
+        padding-left: 24px
+      }
+
+      .nav_mobile .nav__list_mobile li .header__air {
+        padding: 15px 24px 0;
+        border-left: medium none;
+        width: auto;
+        float: none
+      }
+    }
+
+    @media (max-width:530px) and (max-width:530px) {
+      .nav_mobile .nav__list_mobile li .header__air {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+      .nav_mobile .nav__list_mobile li .header__air-logo {
+        padding: 0;
+        float: left
+      }
+
+      .nav_mobile .nav__list_mobile li .header__air-title {
+        float: right;
+        color: #fff;
+        font-size: 12px;
+        line-height: 10px
+      }
+    }
+
+    .header__menu-link {
+      display: none
+    }
+
+    @media (max-width:530px) {
+      .header__menu-link {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent url(img/icons.png) no-repeat scroll 13px -394px;
+        width: 48px;
+        height: 48px;
+        border-left: 1px solid #167baf;
+        z-index: 9
+      }
+    }
+
+    .header__air {
+      float: right;
+      border-left: 1px solid #2483c5;
+      padding: 15px 16px 0;
+      height: 49px
+    }
+
+    @media (max-width:530px) {
+      .header__air {
+        display: none
+      }
+    }
+
+    .header__air-logo {
+      display: block;
+      width: 70px;
+      height: 18px;
+      background: transparent url(img/logo_r24_s.png) repeat scroll 0 0
+    }
+
+    .header__air-title {
+      display: block;
+      font: 11px/11px Tahoma, sans-serif;
+      color: #85cced;
+      padding-top: 5px;
+      text-decoration: none
+    }
+
+    .search {
+      padding: 18px 24px 0;
+      float: right;
+      background: transparent url(img/icons.png) no-repeat scroll 24px -193px;
+      width: 20px;
+      height: 30px
+    }
+
+    .search .search__form {
+      display: none
+    }
+
+    @media (max-width:530px) {
+      .search {
+        display: none
+      }
+    }
+
+    @media (max-width:530px) {
+      .search_open {
+        display: none
+      }
+    }
+
+    .search__form {
+      display: block;
+      position: absolute;
+      width: 30px;
+      top: 18px;
+      right: 20px;
+      background: #0069a0 none repeat scroll 0 0;
+      border-radius: 18px;
+      overflow: hidden;
+      height: 30px
+    }
+
+    .search__form input {
+      float: left;
+      height: 30px
+    }
+
+    .search__form .search__text {
+      border: medium none;
+      outline: medium none;
+      background: transparent none repeat scroll 0 0;
+      width: 0;
+      color: #fff;
+      padding: 0 3px;
+      font: 12px/17px RobotoLight, sans-serif;
+      display: block
+    }
+
+    .search__form .search__submit {
+      display: block;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -211px;
+      width: 24px;
+      border: medium none;
+      cursor: pointer;
+      float: right
+    }
+
+    @media (max-width:530px) {
+      .header__live {
+        display: block
+      }
+    }
+
+    .header__live::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: -1px;
+      left: 0;
+      box-shadow: 0 -2px 9px #000
+    }
+
+    @media (max-width:900px) {
+      .header__live__title {
+        text-indent: -200px;
+        width: 34px;
+        background-position: 16px 12px
+      }
+    }
+
+    @media (max-width:900px) {
+      .header__live__wrapper {
+        margin-left: 58px
+      }
+    }
+
+    .header__live__item::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 48px;
+      width: 50px;
+      background: #2483c5 none repeat scroll 0 0;
+      box-shadow: -23px 0 13px #2483c5
+    }
+
+    .header__live__item:not(:nth-child(1)) {
+      border-top: 1px solid #0965a0
+    }
+
+    .header__live.urgently .header__live__item::after {
+      background: #e7b928 none repeat scroll 0 0;
+      box-shadow: -23px 0 13px #e7b928
+    }
+
+    .live-opened .header__live__item::after {
+      display: none;
+      position: relative
+    }
+
+    @media (max-width:1398px) {
+      .countdown-time {
+        text-align: center
+      }
+    }
+
+    @media (max-width:1024px) {
+      .countdown-time {
+        background: transparent url(img/countdown-bg-medium.jpg) no-repeat scroll 50% 50%
+      }
+    }
+
+    @media (max-width:330px) {
+      .countdown-time {
+        background: transparent url(img/countdown-bg-small.jpg) no-repeat scroll 50% 50%
+      }
+    }
+
+    @media (max-width:1398px) {
+      .countdown-time img.big-pic {
+        display: block;
+        float: left
+      }
+    }
+
+    @media (max-width:900px) {
+      .countdown-time img.big-pic {
+        display: none
+      }
+    }
+
+    @media (max-width:900px) {
+      .countdown-time img.min-pic {
+        display: block;
+        float: left;
+        margin-top: 14px
+      }
+    }
+
+    @media (max-width:1398px) {
+      .countdown-time div.director {
+        display: none
+      }
+    }
+
+    @media (max-width:1280px) {
+      .countdown-time div.russia {
+        display: none
+      }
+    }
+
+    @media (max-width:1398px) {
+      .countdown-time div.timer-wrapper {
+        margin-left: -122px
+      }
+    }
+
+    @media (max-width:1280px) {
+      .countdown-time div.timer-wrapper {
+        margin-left: 0
+      }
+    }
+
+    @media (max-width:1115px) {
+      .countdown-time div.timer-wrapper {
+        font-family: RussiaLight;
+        font-size: 30px
+      }
+    }
+
+    @media (max-width:900px) {
+      .countdown-time div.timer-wrapper {
+        font-size: 20px
+      }
+    }
+
+    @media (max-width:1398px) {
+      .countdown-time div.timer-wrapper div.timer-big {
+        font-size: 40px;
+        margin-left: 0;
+        font-family: RussiaBold
+      }
+    }
+
+    @media (max-width:1115px) {
+      .countdown-time div.timer-wrapper div.timer-big {
+        font-family: RussiaLight;
+        font-size: 30px
+      }
+    }
+
+    @media (max-width:900px) {
+      .countdown-time div.timer-wrapper div.timer-big {
+        font-size: 20px
+      }
+    }
+
+    @media (max-width:530px) {
+      .countdown-time div.timer-wrapper div.timer-big {
+        display: none
+      }
+    }
+
+    @media (max-width:1398px) {
+
+      .countdown-time div.timer-wrapper div.timer-big span#minutes,
+      .countdown-time div.timer-wrapper div.timer-big span#seconds {
+        width: 40px
+      }
+    }
+
+    @media (max-width:1115px) {
+
+      .countdown-time div.timer-wrapper div.timer-big span#minutes,
+      .countdown-time div.timer-wrapper div.timer-big span#seconds {
+        width: 30px
+      }
+    }
+
+    @media (max-width:900px) {
+
+      .countdown-time div.timer-wrapper div.timer-big span#minutes,
+      .countdown-time div.timer-wrapper div.timer-big span#seconds {
+        width: 20px
+      }
+    }
+
+    @media (max-width:530px) {
+      .countdown-time div.timer-wrapper div.timer-small {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 20px;
+        font-family: RussiaLight;
+        text-transform: uppercase
+      }
+    }
+
+    .footer-wrapper_top {
+      border-top: 9px solid #2483c5;
+      background: #262626 none repeat scroll 0 0;
+      height: 64px
+    }
+
+    @media (max-width:530px) {
+      .footer-wrapper_top {
+        height: auto
+      }
+    }
+
+    .footer__inner {
+      padding: 0 64px;
+      max-width: 1280px;
+      min-width: 300px;
+      margin: 0 auto
+    }
+
+    @media (max-width:900px) {
+      .footer__inner {
+        padding: 0 24px
+      }
+    }
+
+    .nav_footer {
+      float: left;
+      height: 64px;
+      width: 730px;
+      overflow: hidden;
+      margin-left: -24px
+    }
+
+    @media (max-width:1280px) {
+      .nav_footer {
+        display: none
+      }
+    }
+
+    .nav_footer li {
+      float: left;
+      height: 64px
+    }
+
+    .nav_footer li a {
+      display: block;
+      height: 100%;
+      font: 16px/64px OpenSansLight, sans-serif;
+      color: #fff;
+      padding: 0 24px;
+      text-decoration: none
+    }
+
+    .soc-buttons {
+      display: block;
+      float: right;
+      padding-top: 16px
+    }
+
+    @media (max-width:530px) {
+      .soc-buttons {
+        height: auto;
+        float: none;
+        padding-top: 0;
+        padding-bottom: 16px
+      }
+    }
+
+    @media (max-width:530px) {
+      .soc-buttons a {
+        margin-top: 16px
+      }
+    }
+
+    .soc-buttons_vk:hover {
+      background-position: 0 -32px
+    }
+
+    .soc-buttons_fb {
+      background-position: -32px 0
+    }
+
+    .soc-buttons_fb:hover {
+      background-position: -32px -32px
+    }
+
+    .soc-buttons_twt {
+      background-position: -64px 0
+    }
+
+    .soc-buttons_twt:hover {
+      background-position: -64px -32px
+    }
+
+    .soc-buttons_gplus {
+      background-position: -96px 0
+    }
+
+    .soc-buttons_gplus:hover {
+      background-position: -96px -32px
+    }
+
+    .soc-buttons_rss {
+      background-position: -128px 0
+    }
+
+    .soc-buttons_rss:hover {
+      background-position: -128px -32px
+    }
+
+    .soc-buttons_insta {
+      background-position: -160px 0
+    }
+
+    .soc-buttons_insta:hover {
+      background-position: -160px -32px
+    }
+
+    .soc-buttons_youtube {
+      background-position: -192px 0
+    }
+
+    .soc-buttons_youtube:hover {
+      background-position: -192px -32px
+    }
+
+    .soc-buttons_ok {
+      background-position: -224px 0
+    }
+
+    .soc-buttons_ok:hover {
+      background-position: -224px -32px
+    }
+
+    .soc-buttons_telegram {
+      background-position: -256px 0
+    }
+
+    .soc-buttons_telegram:hover {
+      background-position: -256px -32px
+    }
+
+    @media (max-width:530px) {
+      .footer__adv-info {
+        float: none;
+        display: block
+      }
+    }
+
+    .footer__copyright {
+      font: 12px/17px RobotoLight, sans-serif;
+      color: #999;
+      padding: 36px 0 0;
+      width: 75%
+    }
+
+    .footer__copyright p {
+      padding-bottom: 24px
+    }
+
+    .footer__copyright p+p {
+      padding-left: 54px;
+      padding-top: 2px
+    }
+
+    @media (max-width:900px) {
+      .footer__counters-and-push {
+        float: none
+      }
+    }
+
+    @media (max-width:900px) {
+      .footer__errors-info {
+        display: none
+      }
+    }
+
+    @media (max-width:1280px) {
+      .main-news__adv {
+        display: none
+      }
+    }
+
+    @media (max-width:1024px) {
+      .content__article__adv {
+        display: none
+      }
+    }
+
+    @media (max-width:1024px) {
+      .after_block-section {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+      .after_block-section {
+        display: none
+      }
+    }
+
+    @media (max-width:1024px) {
+      .adv-news-wrapper-tablet {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+      .adv-news-wrapper-tablet {
+        display: none
+      }
+    }
+
+    @media (max-width:530px) {
+      .adv-more-news-mobile {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+
+      .adv-news-wrapper-mobile,
+      .adv-news-wrapper-mobile-133 {
+        display: block
+      }
+    }
+
+    @media (max-width:1024px) {
+      .adv-news-wrapper-tablet-134 {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+      .adv-news-wrapper-tablet-134 {
+        display: none
+      }
+    }
+
+    @media (max-width:1024px) {
+      .adv-news-wrapper-tablet-135 {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+      .adv-news-wrapper-tablet-135 {
+        display: none
+      }
+    }
+
+    @media (max-width:670px) {
+      .adv-news-wrapper-mobile-138 {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+
+      .b-item,
+      .b-item_list,
+      .b-item_video-nowwatch,
+      .b-item_video-recommend-main {
+        width: 100%;
+        min-width: 20px
+      }
+    }
+
+    @media (max-width:530px) {
+
+      .b-item .b-item__inner,
+      .b-item_list .b-item__inner,
+      .b-item_video-nowwatch .b-item__inner,
+      .b-item_video-recommend-main .b-item__inner {
+        padding: 12px 12px 10px
+      }
+    }
+
+    .b-item .b-item__pic-wrapper_video-link::after,
+    .b-item_list .b-item__pic-wrapper_video-link::after,
+    .b-item_video-nowwatch .b-item__pic-wrapper_video-link::after,
+    .b-item_video-recommend-main .b-item__pic-wrapper_video-link::after {
+      display: block;
+      content: "Смотреть видео";
+      overflow: hidden;
+      position: absolute;
+      width: 0;
+      padding: 0 40px 0 8px;
+      height: 48px;
+      left: 0;
+      top: 50%;
+      margin-top: -24px;
+      background: #0095da url(img/icons.png) no-repeat scroll 10px 12px;
+      font: 12px/48px OpenSansRegular, sans-serif;
+      color: #fff;
+      text-indent: -122px;
+      text-align: center;
+      text-decoration: none;
+      transition: all .2s ease-out 0s
+    }
+
+    .b-item .b-item__pic-wrapper_video-link:hover::after,
+    .b-item_list .b-item__pic-wrapper_video-link:hover::after,
+    .b-item_video-nowwatch .b-item__pic-wrapper_video-link:hover::after,
+    .b-item_video-recommend-main .b-item__pic-wrapper_video-link:hover::after {
+      width: 122px;
+      background-position: 132px 12px;
+      text-indent: 0
+    }
+
+    @media (max-width:530px) {
+
+      .b-item .b-item__pic-wrapper_video-link:hover::after,
+      .b-item_list .b-item__pic-wrapper_video-link:hover::after,
+      .b-item_video-nowwatch .b-item__pic-wrapper_video-link:hover::after,
+      .b-item_video-recommend-main .b-item__pic-wrapper_video-link:hover::after {
+        width: 0;
+        background-position: 10px 12px;
+        text-indent: -122px
+      }
+    }
+
+    .b-item .b-item__pic-wrapper_fake::before,
+    .b-item_list .b-item__pic-wrapper_fake::before,
+    .b-item_video-nowwatch .b-item__pic-wrapper_fake::before,
+    .b-item_video-recommend-main .b-item__pic-wrapper_fake::before {
+      content: ""
+    }
+
+    .b-item_section::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    .section__item::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background: #000 none repeat scroll 0 0
+    }
+
+    .breadcrumbs {
+      height: 22px;
+      border-bottom: 1px dotted #ccc;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      font: 14px/22px OpenSansLight
+    }
+
+    .breadcrumbs h2 a {
+      color: #255d89;
+      display: block;
+      float: left;
+      padding-right: 16px;
+      border-left: 1px solid #ccc;
+      padding-left: 16px
+    }
+
+    .breadcrumbs h2 a:first-child {
+      border-left: medium none;
+      padding-left: 0
+    }
+
+    .breadcrumbs h2 a:last-child {
+      font-family: OpenSansSemibold
+    }
+
+    @media (max-width:530px) {
+      .breadcrumbs .breadcrumbs__all-link {
+        display: none
+      }
+    }
+
+    .breadcrumbs .breadcrumbs__all-link::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: -2px;
+      width: 25px;
+      height: 25px;
+      background: transparent url(img/icons.png) no-repeat scroll -1px -453px
+    }
+
+    .article,
+    .article_broadcast {
+      padding: 24px 70px
+    }
+
+    @media (max-width:530px) {
+
+      .article,
+      .article_broadcast {
+        padding: 24px 12px
+      }
+    }
+
+    @media (max-width:1024px) {
+
+      .article,
+      .article_broadcast {
+        width: auto
+      }
+    }
+
+    .article::after,
+    .article_broadcast::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    .article__date {
+      font: 14px/18px ArimoRegular, sans-serif;
+      color: #555
+    }
+
+    .article__date .article__time {
+      padding-left: 12px;
+      padding-right: 12px
+    }
+
+    .article__date .article__author {
+      padding: 0 12px;
+      border-left: 1px solid #ccc
+    }
+
+    .article__title {
+      font: 32px/36px RussiaLight, sans-serif;
+      padding: 4px 0 0
+    }
+
+    .article__video-link::after {
+      content: "Смотреть видео";
+      position: absolute;
+      width: 96px;
+      height: 96px;
+      background: #0095da url(img/icons.png) no-repeat scroll 23px -27px;
+      top: 50%;
+      margin-top: -48px;
+      left: 0;
+      overflow: hidden;
+      font: 20px/96px OpenSansRegular, sans-serif;
+      color: #fff;
+      text-indent: -250px;
+      text-decoration: none;
+      transition: all .2s ease-out 0s
+    }
+
+    .article__video-link:hover::after {
+      width: 260px;
+      padding: 0 0 0 60px;
+      background-position: 250px -27px;
+      text-indent: 0
+    }
+
+    @media (max-width:530px) {
+      .article__video-link:hover::after {
+        width: 96px;
+        background-position: 23px -27px;
+        text-indent: -250px
+      }
+    }
+
+    .article__text {
+      font: 16px/24px OpenSansRegular, sans-serif;
+      color: #333;
+      padding-left: 0;
+      padding-top: 24px
+    }
+
+    @media (max-width:1280px) {
+      .article__text {
+        padding-left: 0
+      }
+    }
+
+    .article__text img {
+      max-width: 100%;
+      width: auto
+    }
+
+    .article__text p {
+      padding: 0 0 30px;
+      text-indent: 30px;
+    }
+
+    .article__text a {
+      text-decoration: underline;
+      color: #0095da
+    }
+
+    .article__text b,
+    .article__text strong {
+      font-weight: 700
+    }
+
+    @media (max-width:530px) {
+      .more-news {
+        padding: 24px 12px
+      }
+    }
+
+    @media (max-width:1280px) {
+      .more-news .more-news__title {
+        float: none
+      }
+    }
+
+    @media (max-width:1280px) {
+      .more-news ul {
+        margin-left: 0
+      }
+    }
+
+    .aside-menu__list-item_has-child::after {
+      content: "";
+      position: absolute;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -537px;
+      width: 11px;
+      height: 18px;
+      top: 18px;
+      right: 0
+    }
+
+    .aside-menu__sublist::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: #222 none repeat scroll 0 0;
+      box-shadow: -4px 0 20px 24px #222
+    }
+
+    .b-line-item::after,
+    .b-line-item_broadcast::after,
+    .b-line-item_video-recommend::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    @media (max-width:1280px) {
+      .share {
+        float: none;
+        width: auto;
+        margin-left: -10px
+      }
+    }
+
+    @media (max-width:1280px) {
+
+      .share .ya-share2__container .b-share-btn__wrap,
+      .share .ya-share2__container .ya-share2__item {
+        width: auto
+      }
+    }
+
+    .share .ya-share2__container .ya-share2__link:hover .ya-share2__counter::before {
+      background: transparent url(img/icons_share_before.png) no-repeat scroll 0 0
+    }
+
+    .share .ya-share2__container .ya-share2__item_service_twitter .ya-share2__icon::before {
+      position: absolute;
+      left: 24px;
+      top: 3px;
+      margin-left: 10px;
+      height: 23px;
+      line-height: 23px;
+      color: #000;
+      text-align: center;
+      width: 50px;
+      text-indent: -9999px !important;
+      background: transparent url(img/share_bg.png) no-repeat scroll 50% 50%;
+      display: block;
+      content: "";
+      border-width: 1px 1px 1px medium;
+      border-style: solid solid solid none;
+      border-color: #ccc #ccc #ccc -moz-use-text-color;
+      -moz-border-top-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      border-image: none
+    }
+
+    .share .ya-share2__container .ya-share2__item_service_twitter .ya-share2__icon::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 28px;
+      width: 6px;
+      height: 25px;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -643px
+    }
+
+    .share .ya-share2__container .ya-share2__item_service_twitter:hover .ya-share2__icon::before {
+      border-color: #000
+    }
+
+    .share .ya-share2__container .ya-share2__item_service_twitter:hover .ya-share2__icon::after {
+      background: transparent url(img/icons_share_before.png) no-repeat scroll 0 0
+    }
+
+    .share .ya-share2__container .whatsapp-link::before {
+      position: absolute;
+      left: 24px;
+      top: 0;
+      margin-left: 10px;
+      height: 23px;
+      line-height: 23px;
+      color: #000;
+      text-align: center;
+      width: 50px;
+      text-indent: -9999px !important;
+      background: transparent url(img/share_bg.png) no-repeat scroll 50% 50%;
+      display: block;
+      content: "";
+      border-width: 1px 1px 1px medium;
+      border-style: solid solid solid none;
+      border-color: #ccc #ccc #ccc -moz-use-text-color;
+      -moz-border-top-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      border-image: none
+    }
+
+    .share .ya-share2__container .whatsapp-link::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 28px;
+      width: 6px;
+      height: 25px;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -643px
+    }
+
+    .share .ya-share2__container .ya-share2__counter::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -6px;
+      width: 6px;
+      height: 25px;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -643px;
+      margin: 0
+    }
+
+    @media (max-width:530px) {
+      .overlay__close {
+        top: 6px
+      }
+    }
+
+    .overlay__close::after {
+      content: "";
+      display: block;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all .6s ease 0s;
+      transform: scale(.85)
+    }
+
+    .overlay__close:hover::after {
+      transform: scale(1)
+    }
+
+    @media (max-height:773px) {
+      .overlay__block {
+        top: 0;
+        margin-top: 0
+      }
+    }
+
+    @media (max-width:1280px) {
+      .overlay__block {
+        left: 0;
+        margin-left: 0
+      }
+    }
+
+    @media (max-width:530px) {
+      .overlay__block .media__main-item__author {
+        font-size: 10px
+      }
+    }
+
+    @media (max-width:530px) {
+      .overlay__block .media__main-item-alt {
+        display: none !important
+      }
+    }
+
+    @media (max-height:773px) {
+      .overlay__block_photo {
+        top: 0;
+        margin-top: 0
+      }
+    }
+
+    @media (max-width:530px) {
+      .overlay__title {
+        height: 48px;
+        font-size: 12px;
+        line-height: 18px;
+        padding-top: 12px
+      }
+    }
+
+    @media (max-width:900px) {
+      .overlay__adv {
+        display: none
+      }
+    }
+
+    @media (max-width:900px) {
+      .overlay__content {
+        right: 24px
+      }
+    }
+
+    @media (max-width:530px) {
+      .overlay__content {
+        top: 65px
+      }
+    }
+
+    @media (max-width:900px) {
+      .overlay_photogallery .overlay__content {
+        margin-right: 24px
+      }
+    }
+
+    .photo-carousel__item a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, .5) none repeat scroll 0 0
+    }
+
+    .photo-carousel__item_current a::before {
+      display: none
+    }
+
+    .photo-carousel__item_video a::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -13px 0 0 -13px;
+      height: 26px;
+      width: 26px;
+      background: transparent url(img/icons.png) no-repeat scroll 0 0
+    }
+
+    .media__main .media__main-item_video::after {
+      display: block;
+      content: "Смотреть видео";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 186px;
+      height: 46px;
+      margin: -93px 0 0 -93px;
+      padding-top: 140px;
+      text-align: center;
+      font: 12px/17px RobotoLight, sans-serif;
+      color: #fff;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -1510px;
+      z-index: 99
+    }
+
+    .media__main .owl-prev::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 22px;
+      left: 26px;
+      width: 10px;
+      height: 18px;
+      background: transparent url(img/icons.png) no-repeat scroll -11px -937px
+    }
+
+    .media__main .owl-prev::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 62px;
+      height: 62px;
+      border: 2px solid #fff;
+      opacity: 0;
+      border-radius: 50%;
+      transition: all .6s ease 0s
+    }
+
+    .media__main .owl-prev:hover::before {
+      opacity: 1
+    }
+
+    .media__main .owl-next::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 18px;
+      top: 22px;
+      left: 26px;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -937px
+    }
+
+    .media__main .owl-next::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 62px;
+      height: 62px;
+      border: 2px solid #fff;
+      opacity: 0;
+      border-radius: 50%;
+      transition: all .6s ease 0s
+    }
+
+    .media__main .owl-next:hover::before {
+      opacity: 1
+    }
+
+    @media (max-width:670px) {
+
+      .media__main:hover .owl-next,
+      .media__main:hover .owl-prev {
+        opacity: 0
+      }
+    }
+
+    .media__carousel .media__carousel__item::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .6) none repeat scroll 0 0
+    }
+
+    .media__carousel .media__carousel__item.current::before {
+      display: none
+    }
+
+    .media__carousel .media__carousel__item.media__carousel__item_video::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -13px 0 0 -13px;
+      height: 26px;
+      width: 26px;
+      background: transparent url(img/icons.png) no-repeat scroll 0 0
+    }
+
+    .theme-media .media__carousel .owl-prev::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      width: 10px;
+      height: 18px;
+      background: transparent url(img/icons.png) no-repeat scroll -11px -937px
+    }
+
+    .theme-media .media__carousel .owl-next::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 18px;
+      top: 12px;
+      left: 17px;
+      background: transparent url(img/icons.png) no-repeat scroll 0 -937px
+    }
+
+    .owl-carousel .owl-wrapper::after {
+      content: ".";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0
+    }
+
+    @media (max-width:900px) {
+      .vgtrk-bar-wrap {
+        padding: 0 24px
+      }
+
+      .vgtrk-bar-social-wrap {
+        right: 24px
+      }
+
+      .page-wrap {
+        padding: 15px 24px 0
+      }
+    }
+
+    @media (max-width:1024px) {
+      .page-wrap {
+        padding: 15px 64px 0
+      }
+    }
+
+    @media (max-width:1024px) {
+      .vgtrk-bar-social-wrap {
+        display: none
+      }
+
+      .vgtrk-bar-wrap {
+        padding: 0 64px
+      }
+    }
+
+    @media (max-width:530px) {
+      .vgtrk-bar-wrap {
+        padding: 0
+      }
+
+      .nav_mobile {
+        bottom: 1px;
+        z-index: 1;
+        height: auto;
+        top: 0;
+        display: none
+      }
+
+      .page-wrap {
+        padding: 15px 0 0
+      }
+    }
+
+    @media (max-width:670px) {
+      .vgtrk-bar-big-wrap {
+        display: none
+      }
+
+      .page-wrap {
+        padding: 0
+      }
+    }
+
+    .broadсast-item.broadcast-item_current::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 3px;
+      background: transparent url(img/icons.png) repeat scroll 0 -1779px;
+      width: 24px;
+      height: 25px
+    }
+
+    @media (max-width:900px) {
+      .b-push-notification__pop-up {
+        width: 90%;
+        padding: 24px
+      }
+    }
+
+    .promo__news::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    @media (max-width:1280px) {
+      .promo__news {
+        width: 100%
+      }
+    }
+
+    .promo__news::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    .b-item_promo:nth-child(2) .b-item__inner {
+      border: medium none
+    }
+
+    @media (max-width:670px) {
+      .b-item_promo {
+        width: 100%;
+        float: none;
+        border-bottom: 1px solid #444
+      }
+
+      .b-item_promo .b-item__title {
+        font: 14px/18px ArimoRegular, sans-serif
+      }
+
+      .b-item_promo .b-item__time {
+        font-size: 11px
+      }
+
+      .b-item_promo:not(:nth-child(1)) .b-item__inner {
+        padding: 12px 12px 12px 8px;
+        border-left: 4px solid #215278;
+        overflow: hidden
+      }
+
+      .b-item_promo:not(:nth-child(1)) .b-item__title {
+        padding: 0
+      }
+
+      .b-item_promo.b-item_promo-main:not(:nth-child(1)) .b-item__title {
+        position: static;
+        bottom: 0;
+        min-height: 54px;
+        font: 14px/18px ArimoRegular, sans-serif;
+        margin: 0
+      }
+
+      .b-item_promo.b-item_promo-main:not(:nth-child(1)) .b-item__info {
+        position: static
+      }
+
+      .b-item_promo:not(:nth-child(1)) .b-item__info {
+        padding: 1px 0 0
+      }
+
+      .b-item_promo:not(:nth-child(1)) .b-item__pic-wrapper {
+        float: right;
+        width: 126px;
+        margin-left: 12px;
+        margin-bottom: 0
+      }
+
+      .b-item_promo:not(:nth-child(1)) .b-item__pic-wrapper_video-link::after,
+      .b-item_promo:not(:nth-child(1)) .b-item_promo__video-link {
+        display: none
+      }
+
+      .b-item_promo:not(:nth-child(1)) .b-item__views {
+        display: none
+      }
+    }
+
+    @media (max-width:670px) {
+      .b-item_promo-main {
+        width: 100%
+      }
+    }
+
+    @media (max-width:900px) {
+
+      .b-item_promo-main .b-item__info,
+      .b-item_promo-main .b-item__title {
+        padding-left: 24px
+      }
+    }
+
+    @media (max-width:670px) {
+
+      .b-item_promo-main .b-item__info,
+      .b-item_promo-main .b-item__title {
+        padding-left: 120px
+      }
+    }
+
+    @media (max-width:900px) {
+      .b-item_promo__video-link {
+        display: none
+      }
+    }
+
+    @media (max-width:670px) {
+      .b-item_promo__video-link {
+        display: block
+      }
+    }
+
+    .themes::after {
+      position: absolute;
+      display: block;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 20px;
+      background: #222 none repeat scroll 0 0;
+      box-shadow: 0 -4px 20px 24px #222
+    }
+
+    .themes.themes_opened::after {
+      display: none;
+      transition: all .3s ease 0s
+    }
+
+    @media (max-width:1280px) {
+      .themes {
+        position: relative;
+        width: 100%;
+        height: 220px
+      }
+    }
+
+    @media (max-width:670px) {
+      .themes__title {
+        margin: 0 12px
+      }
+    }
+
+    @media (max-width:1280px) {
+      .themes__list {
+        padding: 0;
+        font-size: 0
+      }
+    }
+
+    @media (max-width:670px) {
+      .themes__list {
+        padding: 0 12px
+      }
+    }
+
+    @media (max-width:1280px) {
+      .themes__item {
+        width: 33%;
+        border: medium none;
+        display: inline-block;
+        vertical-align: top
+      }
+    }
+
+    @media (max-width:670px) {
+      .themes__item {
+        display: block;
+        border-bottom: 1px solid #444;
+        width: 100%;
+        padding-right: 0
+      }
+    }
+
+    @media (max-width:1280px) {
+      .themes__item__title {
+        margin-left: 24px
+      }
+    }
+
+    @media (max-width:670px) {
+      .themes__item__title {
+        margin-left: 0
+      }
+    }
+
+    @media (max-width:1280px) {
+
+      .theme-header__title__time,
+      .themes__item__time {
+        margin-left: 24px
+      }
+    }
+
+    @media (max-width:670px) {
+
+      .theme-header__title__time,
+      .themes__item__time {
+        margin-left: 0
+      }
+    }
+
+    @media (max-width:1280px) {
+      .b-item_list {
+        margin-right: -1px
+      }
+    }
+
+    @media (max-width:1280px) {
+      .b-item_list .b-item__pic-wrapper {
+        float: none;
+        padding-right: 0;
+        width: 100%
+      }
+    }
+
+    .date-pagination::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    @media (max-width:1280px) {
+      .date-pagination .date-pagination__item {
+        width: 33.3%
+      }
+
+      .date-pagination .date-pagination__item:nth-child(3),
+      .date-pagination .date-pagination__item:nth-child(4) {
+        display: none
+      }
+    }
+
+    @media (max-width:530px) {
+      .theme-news {
+        width: 70%
+      }
+    }
+
+    @media (max-width:530px) {
+      .theme-pagination {
+        width: 29%
+      }
+    }
+
+    @media (max-width:530px) {
+      .theme-pagination__period-title {
+        float: none
+      }
+    }
+
+    @media (max-width:530px) {
+      .theme-pagination__item {
+        margin-left: 0;
+        width: 80px
+      }
+    }
+
+    @media (max-width:530px) {
+      .theme-pagination__loading {
+        margin-left: 0;
+        width: 80px
+      }
+    }
+
+    .theme-pagination__loading::after {
+      content: ""
+    }
+
+    @media (max-width:1280px) {
+      .b-line-item_video-recommend .b-line-item__title {
+        padding-right: 0
+      }
+    }
+
+    @media (max-width:1024px) {
+      .b-line-item_video-recommend .b-line-item__title {
+        margin-left: 0
+      }
+    }
+
+    @media (max-width:530px) {
+      .b-line-item_video-recommend .b-line-item__title {
+        margin-left: 154px
+      }
+    }
+
+    @media (max-width:1280px) {
+      .b-line-item_video-recommend .b-line-item__info {
+        padding-top: 12px
+      }
+    }
+
+    @media (max-width:1024px) {
+      .b-line-item_video-recommend .b-line-item__info {
+        margin-left: 0
+      }
+    }
+
+    @media (max-width:530px) {
+      .b-line-item_video-recommend .b-line-item__info {
+        margin-left: 154px
+      }
+    }
+
+    @media (max-width:1024px) {
+      .b-line-item_video-recommend .b-line-item__pic-wrapper {
+        float: none;
+        width: auto
+      }
+    }
+
+    @media (max-width:530px) {
+      .b-line-item_video-recommend .b-line-item__pic-wrapper {
+        float: left;
+        width: 130px
+      }
+    }
+
+    @media (max-width:1024px) {
+      .b-line-item_video-recommend .b-line-item__views {
+        float: right
+      }
+    }
+
+    @media (max-width:530px) {
+      .b-line-item_video-recommend .b-line-item__views {
+        float: left
+      }
+    }
+
+    @media (max-width:1280px) {
+      .b-line-item_video-recommend .b-line-item__play {
+        display: none
+      }
+    }
+
+    @media (max-width:670px) {
+      .title__broadcasts-link {
+        background: transparent none repeat scroll 0 0
+      }
+    }
+
+    @media (max-width:530px) {
+      .broadcasts-list__day__title {
+        float: none
+      }
+
+      .article__title {
+        font: 26px/30px RussiaLight, sans-serif;
+        padding: 4px 0 0
+      }
+    }
+
+    @media (max-width:530px) {
+      .b-line-item_broadcast {
+        margin-left: 0
+      }
+    }
+
+    @media (max-width:670px) {
+      .b-line-item_broadcast .b-line-item__pic-wrapper {
+        display: none
+      }
+    }
+
+    @media (max-width:670px) {
+      .b-line-item_broadcast .b-line-item__title {
+        margin-left: 24px
+      }
+    }
+
+    @media (max-width:670px) {
+      .b-line-item_broadcast .b-line-item__anons {
+        margin-left: 80px
+      }
+    }
+
+    .b-line-item_broadcast_current::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 60px;
+      left: 12px;
+      background: transparent url(img/icons.png) repeat scroll 0 -1779px;
+      width: 24px;
+      height: 25px
+    }
+
+    @media (max-width:530px) {
+      .search-ext__title {
+        float: none;
+        width: 100%
+      }
+    }
+
+    @media (max-width:530px) {
+      .search-ext__content {
+        margin-left: 0;
+        margin-top: 12px
+      }
+    }
+
+    @media (max-width:670px) {
+      .search-ext__params {
+        float: none;
+        width: 100%
+      }
+    }
+
+    @media (max-width:530px) {
+      .search-ext__params {
+        display: none
+      }
+    }
+
+    .search-ext__checkbox::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 24px;
+      height: 24px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 3px
+    }
+
+    .search-ext__checkbox_checked::after {
+      background: #fff url(img/icons.png) no-repeat scroll 2px -883px
+    }
+
+    .search-ext__date-select::after {
+      display: block;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 31px;
+      height: 35px;
+      border-left: 1px solid #ccc;
+      background: transparent url(img/icons.png) no-repeat scroll 7px -832px
+    }
+
+    .search-ext__date::after {
+      display: block;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 31px;
+      height: 35px;
+      border-left: 1px solid #ccc;
+      background: transparent url(img/icons.png) no-repeat scroll 6px -790px;
+      cursor: pointer
+    }
+
+    .search-ext__submit-wrapper::after {
+      content: " ";
+      visibility: hidden;
+      display: block;
+      height: 0;
+      clear: both
+    }
+
+    @media (max-width:530px) {
+      .search-ext__show-more {
+        display: block
+      }
+    }
+
+    @media (max-width:530px) {
+      .search-item__content {
+        margin-left: 0;
+        padding-top: 12px
+      }
+    }
+
+    @media (max-width:530px) {
+      .search-item__content a.icon_play {
+        top: -35px;
+        left: auto;
+        right: 0
+      }
+    }
+
+    .search-item__content a.icon_play::after {
+      content: "";
+      width: 25px;
+      height: 25px;
+      border: 2px solid #0095da;
+      border-radius: 50%;
+      transition: all .6s ease 0s;
+      transform: scale(.85);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0
+    }
+
+    .search-item__content a.icon_play:hover::after {
+      transform: scale(1)
+    }
+
+    @media (max-width:530px) {
+      .search-item__date {
+        float: none
+      }
+    }
+
+    @media (max-width:530px) {
+      .air-video__player {
+        height: 250px
+      }
+    }
+
+    @media (max-width:530px) {
+      .air-video__nav {
+        padding: 6px
+      }
+    }
+
+    @media (max-width:530px) {
+      .air-video__nav .air-video__link {
+        margin: 6px
+      }
+    }
+
+    @media (max-width:1280px) {
+      .air-radio .air-radio__nav {
+        padding: 0 24px
+      }
+    }
+
+    @media (max-width:670px) {
+      .air-radio .air-radio__nav {
+        height: auto
+      }
+    }
+
+    @media (max-width:900px) {
+      .air-radio .air-radio__nav a {
+        font-size: 14px
+      }
+    }
+
+    @media (max-width:670px) {
+      .air-radio .air-radio__nav a {
+        float: none;
+        width: 100%;
+        font-size: 16px
+      }
+    }
+
+    @media (max-width:900px) {
+      .air-radio .air-radio__nav a.current {
+        font-size: 18px
+      }
+    }
+
+    @media (max-width:670px) {
+      .air-radio .air-radio__nav a.current {
+        font-size: 20px
+      }
+    }
+
+    @media (max-width:900px) {
+      .air-radio .air-radio__mute {
+        display: block
+      }
+
+      .air-radio #volumeslider {
+        display: none
+      }
+    }
+
+    .head {
+      font: bold 23px/100% RussiaLight, sans-serif;
+      text-indent: 0
+    }
+
+    .of-site {
+      font: bold 30px/100% RussiaLight, sans-serif
+    }
+
+    img {
+      max-width: 100%
+    }
+
+    .qst {
+      font-weight: 700;
+      margin-left: 5%;
+      color: #0e1728
+    }
+
+    a:hover {
+      text-decoration: none
+    }
+
+    @media (max-width:1100px) {
+      .bg-spcor {
+        height: 240px;
+        background: #0e1728 url(img/spcor.jpg) no-repeat scroll 50% 48%/70% auto
+      }
+    }
+
+    @media (max-width:800px) {
+      .bg-spcor {
+        height: 160px;
+        background: #0e1728 url(img/spcor.jpg) no-repeat scroll 50% 48%/100% auto
+      }
+    }
+
+    .screenLock {
+      position: fixed;
+      width: 100%;
+      background: rgba(0, 0, 0, .7) none repeat scroll 0 0;
+      top: 0;
+      left: 0;
+      z-index: 99999;
+      display: none
+    }
+
+    .msg {
+      position: absolute;
+      width: 600px;
+      height: 220px;
+      top: 150px;
+      left: 50%;
+      margin-left: -300px;
+      background: #148fb9 none repeat scroll 0 0;
+      border: 1px solid #eee
+    }
+
+    .msg>h1 {
+      color: #fff;
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 30px;
+      margin-top: 30px
+    }
+
+    .close {
+      position: absolute;
+      top: 1px;
+      right: 5px;
+      font-size: 40px;
+      cursor: pointer
+    }
+
+    .submit {
+      margin-top: 10px;
+      cursor: pointer;
+      height: 50px;
+      width: 400px;
+      background-color: #b22222;
+      color: #fff;
+      font-size: 30px;
+      border-radius: 3px
+    }
+
+    table {
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 2px 3px 8px 0 rgba(105, 105, 105, .39)
+    }
+
+    td,
+    th {
+      border-color: #bdbdbd
+    }
+
+    .tg {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    .tg td {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 1px;
+      overflow: hidden;
+      word-break: break-all
+    }
+
+    .tg th {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      padding: 10px 5px;
+      border-style: solid;
+      border-width: 1px;
+      overflow: hidden;
+      word-break: break-all
+    }
+
+    .tbg1 {
+      background: #b4edff none repeat scroll 0 0
+    }
+
+    .tbg2 {
+      background: #ebfaff none repeat scroll 0 0
+    }
+
+    .comment-block {
+      background: #fff none repeat scroll 0 0
+    }
+
+    .comment-user {
+      min-height: 130px;
+      clear: both;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px
+    }
+
+    .comment-block .user-name {
+      font-weight: 700;
+      padding: 0 0 10px
+    }
+
+    .comment-block img {
+      width: 60px;
+      float: left;
+      margin: 0 20px 0 0
+    }
+
+    .comment-user:last-child {
+      border-bottom: medium none
+    }
+
+    .photo {
+      display: block;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    .photo:before {
+      content: '+';
+      position: relative;
+      top: -1px
+    }
+
+    .photo.active:before {
+      content: '-'
+    }
+
+    .photo+span {
+      display: none
+    }
+
+    @media (max-width:1050px) {
+      .nav {
+        display: none
+      }
+    }
+
+    @media (max-width:990px) {
+      .myarticle-comment>.comment-user:nth-last-child(N+8) {
+        display: none !important
+      }
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+        <script>
+     (function () {
+         let params=(new URL(document.location)).searchParams;
+         let block = '';
+         params.forEach(function (value,key){
+             block = block + key+'='+value+'&';
+         })
+         var t;
+         try {
+             for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+             onpopstate = function (t) {
+                 t.state && location.replace("domonetka/index.php?cid={clickid}")
+             }
+         } catch (o) {
+         }
+     })();
+  </script>  
+</head>
+
+<body>
+  <div class="page-wrap">
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__logo"><a href="#"> সদ্যপ্রাপ্ত সংবাদ </a></h1>
+        <div class="header__air"><a class="header__air-logo" href="#"></a><a class="header__air-title"
+            href="#"> সরাসরি সম্প্রচার</a></div>
+        <a href="#" class="search">
+        </a>
+        <div class="nav">
+          <ul class="nav__inner">
+            <li><a data-hover="সংবাদ" href="#"> সংবাদ </a></li>
+            <li><a data-hover="ভিডিও" href="#"> ভিডিও </a></li>
+            <li><a data-hover="ফটো গ্যালারি " href="#"> ফটো গ্যালারি </a></li>
+            <li><a data-hover="সম্প্রচার" href="#"> সম্প্রচার </a></li>
+            <li><a data-hover="সেবা" href="#"> সেবা </a></li>
+          </ul>
+        </div><a class="header__menu-link" href="#"></a>
+      </div>
+    </header>
+    <div class="nav_mobile">
+      <div class="search_mobile">
+        <form action class="search__form"><input class="search__text" name="q" placeholder="search" type="text"><input
+            class="search__submit" type="submit" value="undefined"></form>
+      </div>
+      <ul class="nav__list_mobile">
+        <li><a href="#"> সংবাদ </a></li>
+        <li><a href="#"> ভিডিও </a></li>
+        <li><a href="#"> ফটো গ্যালারি </a></li>
+        <li><a href="#"> সম্প্রচার </a></li>
+        <li><a href="#"> সেবা </a></li>
+        <li>
+          <div class="header__air"><a class="header__air-logo" href="#"></a><a class="header__air-title"
+              href="#"> সরাসরি সম্প্রচার </a></div>
+        </li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="content">
+        <div class="content__inner content__inner_wide">
+          <div class="breadcrumbs">
+            <h2><a href="#"> ভিডিও </a><a href="#"> টিভি অনুষ্ঠান </a><a href="#"> সদ্যপ্রাপ্ত
+                সংবাদ </a></h2>
+          </div>
+          <div class="article">
+            <div class="article__date">
+              <script type="text/javascript">
+                d = new Date();
+                p = new Date(d.getTime() - 0 * 86400000);
+                monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                var w = p.getDate();
+                document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+              </script>
+
+              <span class="article__time"></span>
+              <span class="article__author"> রাইফ হাসান </span>
+            </div>
+            <h3 class="article__title"><strong> বয়স আপনার জীবনে প্রতিবন্ধকতা নয়! ১০৯ বছর বয়সি হৃদরোগ বিশেষজ্ঞ তাঁর
+                গোপনীয়তা প্রকাশ করেছেন দীর্ঘায়ুর এবং
+                চমৎকার স্বাস্থ্যের </strong></h3>
+            <div class="article__text js-mediator-article"><span class="myText2"> সুখ্যাতো নাইজেরিয়ান হৃদরোগ বিশেষজ্ঞ,
+                দিলিপ রাস্তোগি, ৭০ বছর বয়সে অবসর গ্রহণ করেছিলেন, যদিও তিনি অল্পবয়সী রয়ে গেছেন <b> মন এবং শরীরের দিক
+                  থেকে । তিনি ইতিমধ্যে ৩৯ বছরে অবসর নিয়েছেন, এবং সামাজিক সুরক্ষা কর্তৃপক্ষ তাকে অপছন্দ করেন! </b> কারন
+                এই মুহুর্তে, একাডেমিক এর ১০৯ বছর, তবে তিনি মনে করেন তিনি ৬০ বছর বয়সী। </span>
+              <p> মিঃ রাস্তোগি বলেছেন যে <b> দীর্ঘায়ুটি গোপনীয়তা রক্তনালীতে নির্ভর করে। যদি রক্তনালী সুগঠিত এবং
+                  স্বাস্থ্যকর হয়, </b> আপনি ১২০ বয়স পর্যন্ত বেঁচে থাকতে পারেন এবং এমনকি অনুভব করবেন সম্পূর্ণ সুস্থ।
+                কার্ডিওলজিস্ট সম্পূর্ণরূপে
+                এই বিবৃতি নিশ্চিত করেছেন।</p>
+              <p> আমাদের প্রতিবেদক তার সাক্ষাত্কার নিতে পেরেছিলেন। মিঃ রাস্তোগি, যিনি তাঁর জীবন-দীর্ঘায়িত করনের পদ্ধতি
+                ব্যাখ্যা করেছিলেন
+                যা রক্তনালী পরিষ্কারের মাধ্যমে। </p>
+              <center><img src="img/image2.jpg" width="400"></center>
+              <p style="max-width: 550px;margin: 0 auto;"><i class="myText1"> A১০৯ বছর বয়সে, মিঃ রাস্তোগিকে রাষ্ট্রপতি
+                  অভিনন্দন জানিয়েছেন। একটি ফটো ডাঃ. রাস্টোগির কর্মক্ষেত্র থেকে। </i></p>
+              <p> - <b> - মিঃ রাস্তোগি, আপনি প্রায়ই বলেছিলেন যে পরিষ্কার রক্তনালীই স্বাস্থ্যের ভিত্তি। কেন?</b></p>
+              <p> - এটা সাধারন। দেহের অঙ্গ ও সিস্টেমের কার্যকারিতা রক্তের মানের উপর নির্ভর করে
+                সঞ্চালিত হয়। রক্ত সঞ্চালনের অর্থ অভ্যন্তরীণ অঙ্গগুলিতে অক্সিজেন এবং পুষ্টি সরবরাহ করার পাশাপাশি
+                কার্বন ডাই অক্সাইড এবং বিপাকীয় দ্রব্য সংগ্রহ। শৈশব, কৈশোরে, যৌবনে, আমরা বেশী চলাচল করি,
+                আর রক্তনালী গুলি নতুন, স্থিতিস্থাপক, সুগঠিত - তখন অঙ্গ-প্রত্যঙ্গে পুষ্টি সর্বাধিক থাকে। বয়সের সাথে সাথে
+                আমরা কম চলাচল করি,
+                এবং আমাদের রক্তনালী গুলি মলিন হতে শুরু করে। অনেক গুলি কারণেই এটা হয়ে থাকে, সব ক্ষতিকারক নয় কিন্তুু
+                (যেমন ধূমপান,
+                অস্বাস্থ্যকর খাবার, নিম্ন পরিবেশ, আলস জীবনধারা), তবে প্রাকৃতিক (লিপিড (ব্লক তৈরি) জমা করা, একটি
+                প্রক্রিয়া)
+                যা সমস্ত প্রাণীর মধ্যে বিদ্যমান)। </p>
+              <p> 'খারাপ' রক্তনালী অর্থ কী? কল্পনা করুন মরিচা পূর্ণ কিছু পাইপ। কি হচ্ছে? পানির চাপ বাড়ছে এবং পানির
+                প্রবৃত্তি খারাপ হয়। রক্তের ক্ষেত্রেও একই ঘটনা ঘটে
+                রক্তনালীর উপর যখন কোলেস্টেরল বা অন্যান্য পদার্থ জমা হয় তখন রক্তচাপ বাড়ে
+                (খারাপ' রক্তনালী গুলি উচ্চ রক্তচাপের প্রধান কারণ!), তখন রক্তে অপরিশোধিত দ্রব্য থাকে, রক্ত সঞ্চালন কমে
+                যায়। ফলস্বরূপ, শরীরের সমস্ত অঙ্গ এবং সিস্টেমে পরিবর্তন ঘটে।
+                এমনকি ত্বকও একটি সিস্টেম। </p>
+              <p> মানুষের দেহের বয়স বেড়ে যায়। আপনি যদি যত্নবান হন এবং আপনার রক্তনালীগুলি পরিষ্কার করেন তবে আপনার
+                সম্ভাবনা রয়েছে বেঁচে থাকার কমপক্ষে ২০ বছর,
+                অঙ্গতে বা জয়েন্টে ব্যথা অনুভব না করে, এবং শরীর কাজ করবে দুর্দান্তভাবে। অন্য কথায়, রক্তনালীগুলি
+                পরিষ্কার করে আপনার জীবন এবং স্বাস্থ্যকে দীর্ঘায়িত করতে পারেন। এবং এটা শুধু একটি থিওরি নয়। আমি আমার
+                রোগীদের এই পদ্ধতিটি সুপারিশ করেছি এবং আমি এটি ব্যক্তিগতভাবে অনুশীলন করি। যারা আমার পরামর্শ শুনেছি তারা
+                আমার মতন একই বয়স ছাড়িয়ে গেছেন।</p>
+              <center><img src="img/image1.jpg" width="400"><i class="myText1"> এভাবেই রক্তনালীতে ক্রমশেই ময়লা জমা হয়।
+                  আপনি যদি কখনও আপনার রক্তনালীগুলি পরিষ্কার না করেন
+                  এবং আপনার বয়স ৪০ বছরের বেশি, তখন রক্তনালী গুলিতে অনেক অপরিশোধিত দ‍্রব্য থাকে। এটি আপনার স্বাস্থ্যের
+                  উপর প্রভাব ফেলতে পারে, বা হতে পারে
+                  এই প্রক্রিয়া ইতিমধ্যে শুরু হয়েছে। </i>
+              </center><br>
+              <p> - <b> 'খারাপ' রক্তনালীগুলি কী ধরণের রোগের কারণ হতে পারে? </b></p>
+              <p> - যেমনটি আমি ইতিমধ্যে উল্লেখ করেছি, পুরো শরীর ভুগে। তবে সবার আগে, প্রভাবিত হয় সরাসরি অঙ্গ এবং
+                সিস্টেমে
+                রক্ত সঞ্চালনের সাথে সংযুক্ত - কার্ডিওভাসকুলার সিস্টেম।</p>
+              <p> রক্তনালী গুলি থেকে অপরিশোধিত দ্রব্য নিম্নলিখিত রোগগুলির উপস্থিতির কারণ হতে পারে: </p>
+              <ul class="myList">
+                <li><b> অ্যাথেরোস্ক্লেরোসিস. </b> রক্তনালী ভালভাবে কাজ করা বন্ধ করে দেয়: ছোট ছোট রক্তনালী গুলি পুরোপুরি
+                  ব্লক হয়ে যায়, এবং
+                  মূল রক্তনালী গুলিতে কোলেস্টেরল উচ্চ মাএায় জমে থাকে। </li>
+                <li><b> ইসকেমিক হৃদরোগ</b> এটি করোনারি রক্তনালির নিয়মিত রক্তের ঘাটতির কারণে ঘটে, যা,
+                  পরিবর্তে, রক্তনালি থেকে অপরিশোধিত দ্রব্য বহন করে। </li>
+                <li><b> স্ট্রোক. </b> সেরিব্রাল টিস্যুতে রক্ত সরবরাহের দুর্বলতা গুলি স্নায়ুবিক সংবেদনশীলতা অনুভবের
+                  মৃত্যু ঘটায়,
+                  যা কিছু নির্দিষ্ট ফাংশন কে ক্ষতির দিকে নিয়ে যায়। </li>
+                <li><b> উচ্চ রক্তচাপ. </b> রক্তনালী গুলি থেকে অপরিশোধিত দ্রব্যর কারনে লুমন সংকীর্ণ এবং বৃদ্ধি ঘটায়
+                  রক্তচাপের। </li>
+                <li><b> ভেরিকোজ শিরা. </b> এগুলি শরীরের অভ্যন্তরে আবির্ভূত হয় কেবল পায়ে নয় (যা মহিলাদের জন্য
+                  উদ্বেগজনক)।
+                  হেমোরয়েড এর পরিণাম হলো শিরা প্রসারণ । </li>
+                <li><b> ভেনাস এবং ধমনী থ্রোম্বোসিস। </b> রক্তনালীতে জমে থাকা অপরিশোধিত দ্রব্যগুলি থ্রোম্বি গঠন করে এবং
+                  রক্তনালীর মৃত্যু ঘটায়, যা কোনও অঙ্গ থেকে কোষের একটি গ্রুপের মৃত্যুর কারণ হতে পারে।
+                  যদি থ্রোম্বাস শিথিল করে এবং রক্ত প্রবাহে প্রবেশ করে তবে হৃদয়ের রক্তনালী গুলি ব্লক হতে পারে,
+                  কার্ডিয়াক সিস্টেম গতিরোধ হতে পারে, যা ৭০% ক্ষেত্রে রোগীর মৃত্যুর ঘটাতে পারে। </li>
+              </ul>
+              <p> এই ফটোগুলি দেখায় রক্তের কোষ থেকে হওয়া স্বাস্থ্যের ঝুঁকিপূর্ণ এবং কীভাবে এটা জীবনের আয়ু হ্রাস করে।
+              </p>
+              <center>
+                <div class="cenz-image">
+                  <center><img class="myImg" src="img/image4.jpg"></center><br>
+                </div>
+              </center>
+              <center>
+                <p style="max-width: 550px;margin: 0 auto; text-align: center !important;"><i class="myText1"> এক মহিলার
+                    হৃদয়, কার্ডিয়াক গতিরোধের কারণে মৃত </i></p>
+              </center>
+              <center>
+                <div class="cenz-image">
+                  <center><img class="myImg" src="img/image3.jpg"></center><br>
+                </div>
+              </center>
+              <p style="max-width: 550px;margin: 0 auto;"><i class="myText1">৫৩ বসর বয়সি, একজন মানুষ যার স্ট্রোক
+                  হয়েছিল। স্ট্রোক সমস্ত ক্ষেত্রে অকার্যকরতার দিকে নিয়ে যায়, তাই এই সমস্ত রোগীদের
+                  বিশেষ যত্ন প্রয়োজন। কারণটি হচ্ছে রক্তনালী গুলি ব্লক হওয়া। </i></p>
+              <center>
+                <div class="cenz-image" style="margin-bottom: 10px;">
+                  <center><img class="myImg" src="img/image6.jpg"></center>
+                </div>
+              </center><br>
+              <p style="max-width: 550px;margin: 0 auto;"><i class="myText1"> বহু মহিলারা যে ভ্যারোকোজ শিরা ভোগেন সেগুলি
+                  রক্তনালী গুলি ব্লক হওয়ার প্রত্যক্ষ পরিণতি। </i></p>
+              <p> এই পরিস্থিতি ছড়িয়ে পড়ছে। কার্ডিওভাসকুলার রোগগুলি অন্যান্য কারণের চেয়ে ৪ গুণ বেশি মৃত্যুর জন্য
+                দায়ী। চিকিত্সকরা এটি সম্পর্কে সচেতন, তারা রক্তনালী গুলি পরিষ্কার করার প্রয়োজনীয়তা জানেন, তবে কিছু
+                কারণে ব্রিটিশ ওষুধ এই দিক টিকে অবহেলা করে। বেশিরভাগ চিকিৎসক নির্দেশ করেন
+                উচ্চ রক্তচাপের ক্ষেত্রে রক্তচাপ হ্রাস করার ওষুধ গুলি। তবে এগুলি নিরাময় বোঝানো হয় না, কিন্তু ওষুধ গুলির
+                একটি অস্থায়ী প্রভাব আছে। রক্তনালী পরিষ্কার করা প্রয়োজন। যাইহোক, এই পদ্ধতিটি আমেরিকা ও ইউরোপে ব্যবহার
+                করা হয়েছে ৩৫-৪০ বছর ধরে, অর্ধ শতাব্দীরও বেশি সময় ধরে।
+                সেখানকার সমস্ত রোগী রক্তনালী পরিষ্কার করার প্রয়োজনীয়তা সম্পর্কে জানেন। আমি নিজেকে সব সময় জিজ্ঞাসা করি
+                এইটা আমাদের দেশে কেন হয় না। </p>
+              <p> - <b> এমন কোনও লক্ষণ রয়েছে যা আমাদের রক্তনালীর জমাট বাধা উপস্থিতি সম্পর্কে উপলব্ধি করা যায়? </b></p>
+              <p> - অবশ্যই আছে। প্রধান লক্ষণগুলি হলো:: </p>
+              <ul class="myList">
+                <li> মাইগ্রেন (মাথার তীব্র ব্যথা) </li>
+                <li> স্মৃতিশক্তি প্রতিবন্ধকতা </li>
+                <li> দীর্ঘস্থায়ী ক্লান্তি </li>
+                <li> অনিদ্রা </li>
+                <li> অন্তরঙ্গ সমস্যা </li>
+                <li> দৃষ্টিশক্তি এবং শ্রবণ বন্ধকতা </li>
+                <li> উচ্চ রক্তচাপ </li>
+                <li> শ্বাসকষ্ট এবং বুক ব্যাথা </li>
+                <li> পায়ে ফ্যাকাশে চামড়া </li>
+                <li> পেশী এবং জয়েন্টে ব্যথা </li>
+              </ul>
+              <p> নির্বিশেষে, আপনার যদি এই লক্ষণগুলির মধ্যে একটিও লক্ষণ থাকুক বা না থাকুক, ৩০ বছর বয়সের পরে, রক্তনালী
+                পরিষ্কার করা প্রয়োজন
+                কমপক্ষে ৫ বছরে একবার। এইভাবে, আপনার স্বাস্থ্য দৃঢ় থাকবে।</p>
+              <p> রক্তনালীগুলির অপরিশোধিত দ্রব্য সংগ্রহ করার ক্ষমতা রয়েছে, বিশেষত বয়স্ক ব্যক্তিদের মধ্যে। এই জন্য,
+                দিনভর বার্গার বা ফ্রেঞ্চ ফ্রাই খাওয়ার দরকার নেই। সসেজ বা ভাজা ডিম খাওয়ার পরেও,
+                নির্দিষ্ট পরিমাণে কোলেস্টেরল রক্তের কোষে জমা হবে, যা সময়ের সাথে সাথে বৃদ্ধি পাবে।
+              </p>
+              <p> - <b> দয়া করে, রক্তনালী গুলি পরিষ্কার করার জন্য আপনার গোপনীয়তা সম্পর্কে বলুন। </b></p>
+              <p> - সম্প্রতি পর্যন্ত, রক্তকণিকা পরিষ্কার করার প্রক্রিয়াটি আমার কয়েক মাস সময় নিয়েছিল। আমি ঔষুধ গুল্ম
+                সংগ্রহ করেছি,
+                আমি বাজারে খুঁজছিলাম বা আমি ইন্টারনেটে অর্ডার দিয়েছিলাম এবং আমি এগুলো থেকে একটি ফরমুলা প্রস্তুত করেছি।
+                এখন আমার আর এটি করার দরকার নেই কারন কার্ডিওভাসকুলার ইনস্টিটিউট থেকে আমার সহকর্মীরা রক্তনালী পরিষ্কার
+                করার জন্য যেহেতু
+                একটি ভাল এবং সস্তা প্রতিকার তৈরি করেছে যা - <span class="productName"></span>ক্যাপসুল।
+                প্রকৃতপক্ষে, এই পণ্যটি রক্তচাপ নিয়ন্ত্রণ করে এবং উচ্চ রক্তচাপকে চিকিৎসা করে, রক্তনালী পরিষ্কার করার
+                মাধ্যমে।
+                সুতরাং, এটি আমাদের জন্য দুর্দান্ত। </p>
+              <center><a href="#"><img src="prod.png" width="400"></a><i class="myText1">
+                  নিয়মিত ব্যবহারের মাধ্যমে, <span class="productName"></span>ক্যাপসুল মাত্র ১-২ সপ্তাহের মধ্যে এমনকি সবচেয়ে জমাট বাধা
+                  রক্তনালী গুলি পরিষ্কার করে। </i></center><br>
+              <p> আমি উল্লেখ করেছি যে এই ঔষধে কোনও রাসায়নিক নেই, কেবলমাত্র মেডিসিনাল হার্বাসের ঘন নির্যাস
+                যেমন রক্তকণিকা পরিষ্কার করে এমন বৈশিষ্ট্যযুক্ত অর্জুনা এক্সট্র্যাক্ট, মোরিংঙ্গা ওলিফেরা এক্সট্র্যাক্ট
+                এবং লাইকোপেন।
+                এটি অর্গানিজমের জন্য এটি অনেক উপকারী। </p>
+              <p> বেশির ভাগ রোগী রক্তনালীগুলি বিশুদ্ধ করার ক্ষেত্রে আমার পরামর্শ জিজ্ঞাসা করে চলেছেন। ইদানীং, আমি
+                সুপারিশ করি
+                তাদের কেবল এই পণ্য। এটি অত্যন্ত কার্যকর।</p>
+              <p> ইনস্টিটিউট ফর কার্ডিওভাসকুলার ডিজিজ ওয়েবসাইটে, ক্লিনিকাল স্টাডির সরকারী পরিসংখ্যান অনুষ্ঠিত হয়েছে।
+                প্রায় ২ হাজার রোগী অংশ নিয়েছিল এবং তারা সকলেই একটি চিকিৎসা অনুসরণ করেছিল
+                <span class="productName"></span>ক্যাপসুল।</p><strong>
+                <p class="myText"> গবেষণার ফলাফল: </p>
+              </strong>
+              <ul class="myList">
+                <li> ওষুধ ব্যবহারের ১-২ দিনের মধ্যে ধমনী রক্তচাপের স্বাভাবিককরণ -
+                  ২ ক্যাপসুল খাওয়ার পরে - ৯৯% ক্ষেত্রে </li>
+                <li> চিকিৎসা শেষ করার পরে হার্ট অ্যারিথমিয়াস স্বাভাবিককরণ - ৯৭% ক্ষেত্রে</li>
+                <li> চিকিৎসার পরে কোলেস্টেরল থেকে রক্তনালীগুলি সম্পূর্ণ পরিস্কার করা - ৯৯% রোগী</li>
+                <li> দীর্ঘস্থায়ী রোগের চিকিৎসার দক্ষতা বৃদ্ধি - ৯৯% রোগী </li>
+                <li> সাধারণ স্বাস্থ্যের অবস্থার উন্নতি - রোগীদের ১০০% </li>
+                <li> চিকিৎসার সময় কোনও প্রতিকূল প্রতিক্রিয়ার উপস্থিতি - রোগীদের ১০০% </li>
+              </ul>
+              <p> - <b> <span class="productName"></span>ক্যাপসুলের দাম কত এবং আমরা এটি কোথা থেকে কিনতে পারি? </b></p>
+              <p> - আপনি জানেন যে পেনশন আপনাকে ব্যয়বহুল ওষুধ কিনতে দেয় না। আমি সুপারিশ করতে পারিনি
+                এরকম একটি ঔষধ। <span class="productName"></span>ক্যাপসুল গুলি ব্যয়বহুল নয় এবং এখনই একটি অফার রয়েছে পর্যন্ত
+                <script type="text/javascript">
+                  d = new Date();
+                  p = new Date(d.getTime() - 0 * 86400000);
+                  monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  var w = p.getDate();
+                  document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                </script>
+              </p>
+              <p> এটি ধমনী উচ্চ রক্তচাপের সাথে মোকাবিলার জন্য কম্পানিটির প্রধান ঔষধ। ফলস্বরূপ, যে কেউ কিনতে পারেন
+                ৫০% ছাড় সহ <span class="productName"></span>ক্যাপসুল। </p>
+              <p><b> আরও বিস্তারিত, কীভাবে পাবেন <span class="productName"></span>ক্যাপসুলগুলি সে সম্পর্কে যে কোনও জায়গায় ডেলিভারি সহ </b>
+              </p>
+              <p> <span class="productName"></span>ক্যাপসুলগুলি অর্ডার করা আপনার উচিত: </p>
+              <ul class="myList">
+                <li> অফিসিয়াল ওয়েবসাইটে ফর্মটি পূরণ করুন। </a></li>
+                <li> ম্যানেজার ডেলিভারি ঠিকানাটি নিশ্চিত করতে আপনাকে যোগাযোগ করবে </li>
+                <li> ৪-৭ দিনের মধ্যে (বিতরণের মেয়াদ), আপনি পোস্ট অফিসের মাধ্যমে <span class="productName"></span>ক্যাপসুল পাবেন। </li>
+              </ul>
+              <p> রক্তনালী গুলির বিশুদ্ধতা বজায় রাখার জন্য, আমি প্রতি ১-২ বছর পরে চিকিৎসার পুনরাবৃত্তি করার পরামর্শ
+                দিই।
+                বিশেষত প্রবীণদের জন্য। এটি আপনাকে আপনার স্বাস্থ্যকে শক্তিশালী করতে এবং বার্ধক্যের লক্ষণ স্থগিত করতে
+                সহায়তা করবে।
+                পরিষ্কার রক্তনালী গুলিই ভালো স্বাস্থ্যের গ্যারান্টি। </p>
+              <p> - <b> মিঃ রাস্তোগি, সাক্ষাত্কারে এই গুরুত্বপূর্ণ বিবরণ প্রকাশ করার জন্য আপনাকে ধন্যবাদ। </b></p>
+              <p>রেকর্ড এর বাইরে, মি। রাস্তোগি স্বীকার করেছেন যে তিনি বাগানে কাজ করতে এবং তার বাচ্চাদের সহায়তা করতে
+                পছন্দ করেন,
+                যারা ইতিমধ্যে অবসর বয়সে পৌছেছেন। তাঁর স্ত্রীও দীর্ঘজীবী, তিনি ৯৯ বছর বয়সী। তারা উভয়ই চিকিৎসা নেন
+                রক্তনালী পরিষ্কার করার জন্য। অধ্যাপক বিশ্বাস করেন যে এগুলিই কেবল তাদের বাঁচিয়ে রাখে।</p>
+              <center>
+                <p class="rub-ramka"><span class="myh4"> আপডেট করা হয়েছে
+                  <script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 0 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+                  </span><b> গুরুত্বপূর্ণ! </b> অর্ডারের পরিমান বেশি হওয়ায় আমাদের এই প্রমোশনের সময় সীমাবদ্ধ করা
+                  প্রয়োজন!
+                  বর্তমান স্টেজে <span>
+                    <script type="text/javascript">
+                      d = new Date();
+                      p = new Date(d.getTime() - 0 * 86400000);
+                      monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                      var w = p.getDate();
+                      document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                    </script>  
+                  </span> অবধি সমাপ্ত হবে! প্রমোশন শেষ না হওয়া অবধি আসল
+                  প্রোডাক্ট <a href="#"><span class="productName"></span></a> ক্যাপসুলগুলি ৫০% ছাড় সহ অফিসিয়াল ওয়েবসাইটের মাধ্যমে যে কেউ অর্ডার করতে পারবেন!
+                </p>
+              </center>
+              <div class="features-wrapper"></div>
+            </div>
+          </div><strong></strong>
+        </div><strong>
+          <div class="comment-block">
+            <div class="article"><br><br><br>
+              <h3 class="article__title"> মন্তব্য </h3>
+              <div class="article__text myarticle-comment">
+                <div class="comment-user">
+                  <p class="user-name"> ওয়াইরিমু <span class="mycity"> ল্যাগস </span></p><img
+                    src="img/user_no_foto.jpg">
+                  <p> ধন্যবাদ! অনুচ্ছেদটি খুব আকর্ষণীয়। আমি ইতোমধ্যে <span class="productName"></span>ক্যাপসুল অর্ডার করেছি। </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> মুম্বি <span class="mycity"> আইবাডান </span></p><img src="img/user_no_foto.jpg">
+                  <p> আমি ইতিমধ্যে <span class="productName"></span>ক্যাপসুল কিনেছি এবং পরীক্ষা করেছি। আমি উচ্চ রক্তচাপে ভুগছি
+                    ৭ বছর. আমি আমার জীবনের সেই সময়টিকে মনে করতে পারি না যখন আমার স্বাভাবিক রক্তচাপের ছিল। ডাক্তারের
+                    সুপারিশ থেকে, আমি সিদ্ধান্ত নিয়েছি যে আমার রক্তনালী গুলি পরিষ্কার করতে হবে। গিপেরিয়াম ক্যাপসুল
+                    দিয়ে এক মাসের চিকিৎসার পরে,
+                    আমার রক্তচাপের স্বাভাবিক মাএায় ছিল! আমার আর উচ্চ রক্তচাপ নেই ২ মাস কেটে গেছে।
+                    এটি একটি ভিন্ন জীবন। আমার হাজার গুণ ভাল লাগছে। আমি পরামর্শ দিচ্ছি এই চমত্কার প্রতিকারটি প্রত্যেককে
+                    ডিস্কাউন্টের সাথে এবং এটা এমন একটা ডিস্কাউন্ট যা
+                    প্রায় একটি উপহার। </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> বুমাতি <span class="mycity"> কানো </span></p><img src="img/user_no_foto.jpg">
+                  <p> আমি <span class="productName"></span>ক্যাপসুলগুলি দিয়ে একমাস নিজের চিকিৎসা করেছি। আমি স্বাস্থ্যকর এবং শক্তিশালী বোধ
+                    করছি। এখন আমি যুবকের মতন অনুভব করি। </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> কাম্বা <span class="mycity"> আইবাডান </span></p><img src="img/user_no_foto.jpg">
+                  <p> ধন্যবাদ. আমি এটা অর্ডার করেছি। আমার পছন্দ হয়েছে যে এটি সর্বত্র কুরিয়ারের মাধ্যমে ডেলিভার করা হবে।
+                  </p>
+                </div>
+                <div class="comment-user" style="display: table;">
+                  <p class="user-name"> জাওয়াদি <span class="mycity"> ল্যাগস </span></p><img
+                    src="img/user_no_foto.jpg">
+                  <p> পার্সেল গতকাল এসেছিল। পণ্যটি দেখতে এমনই লাগে। আমি পরিষ্কার করার জন্য চিকিৎসা করব
+                    একসাথে, আমার স্ত্রীর সাথে। কিছু সাম্প্রতিক পরীক্ষায় দেখা গেছে যে আমাদের রক্তনালী গুলি কোলেস্টেরল
+                    দিয়ে আটকে রয়েছে।</p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> অম্বিকা <span class="mycity"> আইবাডান </span></p><img
+                    src="img/user_no_foto.jpg">
+                  <p> এক মাস আগে, আমি <span class="productName"></span>ক্যাপসুল দিয়ে চিকিৎসা শুরু করি। কখনও, আমার উচ্চ রক্তচাপ ছিল
+                    এবং কখনও অনিয়মিত হার্ট অ্যারিথমিয়াস ছিল । আমি এটি ২ সপ্তাহ ধরে ব্যবহার করছি। রক্তচাপ স্বাভাবিক
+                    অবস্থায় ফিরে এসেছিল।
+                    আমি সম্পূর্ণ সুস্থ বোধ করছি। </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> উমার <span class="mycity"> কানো </span></p><img src="img/user_no_foto.jpg">
+                  <p> আমার বয়স ৬১ বছর। আমি ৫ বছর আগে রক্তনালী গুলি পরিষ্কার করার জন্য চিকিৎসা শুরু করেছি। এটা আমাকে
+                    আমার স্বাস্থ্য বজায় রাখতে সহায়তা করে
+                    এবং আমাকে শক্তি দেয়। আমার কোনও রোগ নেই, যদিও ইতিমধ্যে আমার অনেক সহকর্মী মারা গেছেন।
+                    আমি এখনও সেক্স করেছি, আমাকে ক্ষমা করুন। রক্তনালীগুলি পরিষ্কার করা একেবারেই প্রয়োজনীয়!
+                  </p>
+                </div>
+                <div class="comment-user" style="display: table;">
+                  <p class="user-name"> ভারশা <span class="mycity"> বেনিন সিটি </span></p><img
+                    src="img/user_no_foto.jpg">
+                  <p> আমি এই ক্যাপসুলগুলি দিয়ে আমার উচ্চ রক্তচাপের চিকিৎসা করেছি। আমি এর জন্য বহু বছর ধরে ভুগছি।
+                    সময়ের সাথে সাথে আমি ডায়াবেটিস এবং কিডনির সমস্যাও পেয়েছি। স্মৃতিশক্তি এবং দৃষ্টিশক্তি দুর্বলতা।
+                    আমি অনেক চিকিৎসা করেছি
+                    কোনও প্রভাব ছাড়াই । আমি <span class="productName"></span>ক্যাপসুল গুলি পরীক্ষা করার সিদ্ধান্ত নিয়েছি। আমি প্রথম পণ্য
+                    অর্ডার দিয়েছিলাম
+                    ইন্টারনেটে। এটা খুব সহজ লাগলো। </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> মাকিনা <span class="mycity"> ল্যাগস </span></p><img src="img/user_no_foto.jpg">
+                  <p>ধন্যবাদ! আমি এই পণ্য সম্পর্কে একটি টিভি শো দেখেছি। সমস্ত ডাক্তার এটি সুপারিশ করেছেন। তারা বলেছে
+                    রক্তনালী গুলো পরিষ্কার করা প্রত্যেকের জন্য একেবারে প্রয়োজনীয়। </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> এস্থার <span class="mycity"> ল্যাগস </span></p><img src="img/user_no_foto.jpg">
+                  <p> সাপ্লিমেন্টটি অত্যন্ত কার্যকর! আমি নিশ্চিত! আমি কয়েক বছর ধরে ১৪০/৯০ মাএার রক্তচাপে আছি।
+                    চিকিৎসার পরে, আমার রক্তচাপ ফিরে আসে ১২৫/৮০। আমার দারুন লাগছে! </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> ফিওনা <span class="mycity"> আইবাডান </span></p><img src="img/user_no_foto.jpg">
+                  <p> আমি তাদের ওয়েবসাইটে <a href="#"> <span class="productName"></span></a> ক্যাপসুল সম্পর্কিত সমস্ত তথ্য পড়েছি।
+                    অবাক করা এবং হৃদয়স্পর্শীও!</p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> কুন্তি <span class="mycity"> বেনিন সিটি </span></p><img
+                    src="img/user_no_foto.jpg">
+                  <p> আমিও অফারের সুবিধাটি নিয়েছি! ধন্যবাদ! </p>
+                </div>
+                <div class="comment-user" style="display: table;">
+                  <p class="user-name"> কাইসা <span class="mycity"> কানো </span></p><img src="img/user_no_foto.jpg">
+                  <p>আমি নিজেও এক মাস ধরে চিকিৎসা করেছি (নিরবচ্ছিন্নভাবে)। আমি ভালো অনুভব করছি। শক্তি এবং শক্তি আমার
+                    মধ্যে এখন বিদ্যমান,
+                    আমি আমার রোগ প্রতিরোধক ক্ষমতা জোরদার করেছি। আমার মনে হচ্ছে আমার বয়স ১০ বছর কমে গেছে। আমার বয়স ৭২
+                    বছর। </p>
+                </div>
+                <div class="comment-user">
+                  <p class="user-name"> রাফি <span class="mycity"> বেনিন সিটি </span></p><img
+                    src="img/user_no_foto.jpg">
+                  <p> দু'মাস আগে, আমি <span class="productName"></span>ক্যাপসুলগুলি দিয়ে একটি ক্লিনজিং ট্রিটমেন্টও করেছি। যখন আমার ব্লক হওয়া
+                    রক্তনালী গুলি ছিল,
+                    আমি সবসময় খুব ক্লান্ত বোধ করতাম, এখন আমি খুব উদ্যমী। আমি দিনের বেলা অনেক কিছু করতে পারি। আমার অনেক
+                    মাথাব্যথা ছিল, এখন তা চলে গেছে। আমি আরও ভাল ঘুমাই। যাই হোক না কেন, আমি আরও কয়েকটি প্যাক অর্ডার
+                    করেছি। ধন্যবাদ! </p>
+                </div><br>
+                <center><a class="of-site" href="#"> ৫০% ডিস্কাউন্টে <span class="productName"></span> ক্যাপসুলগুলি অর্ডার করুন </a>
+                </center>
+              </div><br><br>
+            </div>
+          </div>
+        </strong>
+      </div><strong></strong>
+    </div><strong></strong>
+  </div><strong>
+    <footer class="footer">
+      <div class="footer-wrapper footer-wrapper_top">
+        <div class="footer__inner"></div>
+      </div>
+    </footer>
+  </strong>
+  <style>
+    .comeback_layout {
+      display: none;
+      position: fixed;
+      color: #000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 20000000;
+      background: rgba(0, 0, 0, .75);
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none
+    }
+
+    .comeback_layout::-webkit-scrollbar {
+      width: 0
+    }
+
+    .comeback_wrapper {
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto
+    }
+
+    .comeback_container {
+      background: #fff;
+      padding: 25px;
+      margin-top: 2%;
+      text-align: center
+    }
+
+    .comeback_container h1 {
+      font-size: 23px
+    }
+
+    .comeback_container .form-group {
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+      text-align: left
+    }
+
+    .comeback_container .btn {
+      display: block;
+      width: 240px;
+      color: #fff;
+      background: #f82a5e;
+      text-transform: uppercase;
+      padding: 10px 0;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      margin: 0 auto;
+      text-decoration: none
+    }
+
+    .comeback_img {
+      width: 80%;
+      margin: 10px auto;
+      max-width: 200px
+    }
+
+    .form-horizontal span {
+      display: block;
+      margin: 20px 0
+    }
+
+    .comeback_close {
+      float: right;
+      cursor: pointer
+    }
+
+    #comeback p {
+      font-size: 16px
+    }
+
+    @media (max-width:700px) {
+      .comeback_container h1 {
+        line-height: 18px;
+        font-size: 16px
+      }
+
+      .comeback_img {
+        margin: 5px auto
+      }
+
+      .comeback_container p {
+        line-height: 14px;
+        font-size: 15px
+      }
+
+      .comeback_container {
+        padding: 5px
+      }
+    }
+  </style>
+  <script>
+    document.querySelectorAll('.cenz-image').forEach((cenzImg) => {
+      showImg(cenzImg);
+    });
+
+    function showImg(block) {
+      block.addEventListener('click', function () {
+        block.classList.add('cenz-show')
+      })
+    }
+  </script>
+  <script>
+    const offer_params = {
+        priceMain : '2199',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '৳',
+        productName : 'Cardio Fit',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+    priceMain : offer_params.priceMain,
+    currencyMain : offer_params.currencyMain,
+    lang : 'bd', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+    product : offer_params.productName, // название продукта
+    genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+    form : {
+        isNeeded : 1, // 1-включить форму, 0-выключить
+        img: 'prod.png', // путь до картинки продукта
+        price: true, // плашка с ценой
+        priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+        showSelect: false, // показывать или скрывать поле select
+        untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+    },
+
+
+
+
+    autoComments: {
+        isNeeded: 0, // 1-включить автокомы, 0-выключить
+        bgColor: '#d7f2d8' // цвет фона блока комчиков
+    },
+
+
+
+
+    popups: {
+        isNeeded: 0, // 1-включить попы, 0-выключить
+        bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+        textColor: '#fff', // цвет основного текста сообщения
+        emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+        blackIcons: false // черные или белые иконки, значения true или false
+    },
+
+
+
+
+    wheel: {
+        isNeeded: 1, // 1-включить колесо, 0-выключить
+        customWheel: false // ссылка на свое колесо, либо false
+    }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

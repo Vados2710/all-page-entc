@@ -1,0 +1,468 @@
+
+.lucky-chat {
+    position: fixed;
+    width: 320px;
+    height: 405px;
+    bottom: -340px;
+    right: 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 10px 35px 0 rgba(39, 40, 44, .2);
+    box-shadow: 0 10px 35px 0 rgba(39, 40, 44, .2);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    z-index: 999;
+    -webkit-transition: top .3s linear, bottom .3s linear;
+    transition: top .3s linear, bottom .3s linear
+}
+
+.lucky-chat * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif
+}
+
+.lucky-chat--on {
+    bottom: 0
+}
+
+.lucky-chat-header {
+    background-color: #242939;
+    color: #fff;
+    height: 65px;
+    padding: 10px;
+    font-size: 0;
+    position: relative;
+    cursor: pointer
+}
+
+.lucky-chat-header > * {
+    display: inline-block
+}
+
+.lucky-chat-header__logo {
+    background-image: url(//dadbab.info/content/7wOcwIAnozVO8El/img/ffe2159a6ae83ccdc0e434e610f0f22f.png);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 5px;
+    position: relative;
+    top: -5px
+}
+
+.lucky-chat-header__title {
+    font-size: 14px;
+    max-width: 215px
+}
+
+.lucky-chat-header__caret {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 20px;
+    width: 19px;
+    height: 11px;
+    margin-top: -5.5px;
+    background-image: url(//dadbab.info/content/7wOcwIAnozVO8El/img/c5789617b6bf73228fe5f84c70df3d2a.png);
+    background-repeat: no-repeat;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.lucky-chat--on .lucky-chat-header__caret {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+}
+
+.lucky-chat-status {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 15px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 10px 35px 0 rgba(39, 40, 44, .2);
+    box-shadow: 0 10px 35px 0 rgba(39, 40, 44, .2)
+}
+
+.lucky-chat-status__text {
+    font-size: 12px;
+    position: relative;
+    -webkit-transition: color .5s linear;
+    transition: color .5s linear
+}
+
+.lucky-chat-status__text--online {
+    color: #93c296
+}
+
+.lucky-chat-status__text--online:before {
+    background-color: #93c296
+}
+
+.lucky-chat-status__text--offline {
+    color: red
+}
+
+.lucky-chat-status__text--offline:before {
+    background-color: red
+}
+
+.lucky-chat-status__text:before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 3px
+}
+
+.lucky-chat-message {
+    height: 240px;
+    padding: 12px 18px;
+    overflow-x: auto;
+    font-size: 14px
+}
+
+.lucky-chat-message__text {
+    padding: 10px;
+    border-radius: 3px;
+    position: relative
+}
+
+.lucky-chat-message__text:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid
+}
+
+.lucky-chat-message__name {
+    margin-bottom: 5px;
+    font-weight: 700
+}
+
+.lucky-chat-message__item--doctor .lucky-chat-message__name {
+    color: #fff;
+    background-color: #5fc890;
+    height: 50px;
+    margin: 0 0 -2px;
+    padding: 10px;
+    position: relative
+}
+
+.lucky-chat-message__item--doctor .lucky-chat-message__name > * {
+    vertical-align: middle;
+    display: inline-block
+}
+
+.lucky-chat-message__item--doctor .lucky-chat-message__name-avatar {
+    width: 35px;
+    height: 35px;
+    background-image: url(//dadbab.info/content/7wOcwIAnozVO8El/img/2233.jpg);
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 3px;
+    position: relative;
+    top: -1px;
+        background-size: cover;
+}
+
+.lucky-chat-message__item--doctor .lucky-chat-message__name-text {
+    max-width: 100px;
+    position: relative;
+    top: -1px
+}
+
+.lucky-chat-message__item--doctor .lucky-chat-message__name:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    top: 0;
+    right: 100%;
+    margin-right: -2px;
+    border-color: transparent #5fc890 transparent transparent;
+    border-width: 0 14px 12px 0
+}
+
+.lucky-chat-message__item--doctor .lucky-chat-message__text {
+    background-color: #24b871;
+    color: #fff
+}
+
+.lucky-chat-message__item--doctor .lucky-chat-message__text:after {
+    display: none
+}
+
+.lucky-chat-message__item--guest .lucky-chat-message__name {
+    color: #24293b
+}
+
+.lucky-chat-message__item--guest .lucky-chat-message__text {
+    background-color: #c8d8e8
+}
+
+.lucky-chat-message__item--guest .lucky-chat-message__text:after {
+    top: 0;
+    left: 100%;
+    margin-left: -2px;
+    border-color: #c8d8e8 transparent transparent;
+    border-width: 14px 12px 0 0
+}
+
+.lucky-chat-message__item--system .lucky-chat-message__name {
+    color: #d47c3d
+}
+
+.lucky-chat-message__item--system .lucky-chat-message__text {
+    background-color: #d47c3c;
+    color: #fff
+}
+
+.lucky-chat-message__item--system .lucky-chat-message__text:after {
+    top: 0;
+    right: 100%;
+    margin-right: -2px;
+    border-color: transparent #d47c3c transparent transparent;
+    border-width: 0 14px 12px 0
+}
+
+.lucky-chat-message__item + .lucky-chat-message__item {
+    margin-top: 15px
+}
+
+.lucky-chat-send {
+    padding: 12px 20px;
+    background-color: #eef0f4
+}
+
+.lucky-chat-send__chat {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 52px;
+    background-color: #fff;
+    padding: 12px;
+    border: 1px solid #42b76b;
+    font-size: 14px;
+    border-radius: 3px;
+    resize: none
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn
+}
+
+.animated {
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden], template {
+    display: none
+}
+
+a {
+    background: transparent
+}
+
+a:active, a:hover {
+    outline: 0
+}
+
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+b, strong {
+    font-weight: 700
+}
+
+dfn {
+    font-style: italic
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+img {
+    border: 0
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+figure {
+    margin: 1em 40px
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+
+pre {
+    overflow: auto
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+button {
+    overflow: visible
+}
+
+button, select {
+    text-transform: none
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled], html input[disabled] {
+    cursor: default
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+input {
+    line-height: normal
+}
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    border: 0;
+    padding: 0
+}
+
+textarea {
+    overflow: auto
+}
+
+optgroup {
+    font-weight: 700
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td, th {
+    padding: 0
+}

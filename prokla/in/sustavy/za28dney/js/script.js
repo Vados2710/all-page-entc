@@ -1,0 +1,1 @@
+$("a").on("touchend, click",function(a){a.preventDefault();$("body,html").animate({scrollTop:$("#order_form").offset().top-50},400)});

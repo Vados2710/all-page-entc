@@ -1,0 +1,700 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html dir="ltr" >
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>সস্তা হার্বএক্স কিনুন। দাম</title>
+  <link rel="stylesheet" href="assets/assets/style.min.css">
+  <meta name="referrer" content="unsafe-url">
+  <style type="text/css">
+    @font-face {
+      font-weight: 400;
+      font-style: normal;
+      font-family: Circular-Loom;
+      src: url("assets/assets/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff") format("woff2");
+    }
+    
+    @font-face {
+      font-weight: 500;
+      font-style: normal;
+      font-family: Circular-Loom;
+      src: url("assets/assets/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff") format("woff2");
+    }
+    
+    @font-face {
+      font-weight: 700;
+      font-style: normal;
+      font-family: Circular-Loom;
+      src: url("assets/assets/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff") format("woff2");
+    }
+    
+    @font-face {
+      font-weight: 900;
+      font-style: normal;
+      font-family: Circular-Loom;
+      src: url("assets/assets/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff") format("woff2");
+    }
+  </style>
+  <style type="text/css">
+    .order-modal,
+    .users-online {
+      cursor: pointer;
+      position: fixed;
+      right: 20px;
+      top: 120px;
+      width: 320px;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: rgb(255, 255, 255);
+      transition: all 1s ease 0s;
+      font-size: 19px;
+      line-height: 22px;
+      border-radius: 10px;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .order-modal > div,
+    .users-online > div {
+      margin: 10px;
+    }
+    
+    .order-modal > div > span,
+    .users-online > div > span {
+      display: inline-block;
+      vertical-align: middle;
+      width: calc(100% - 75px);
+      margin-left: 10px;
+    }
+    
+    .blink {
+      animation-name: blinker;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      text-decoration: line-through;
+      color: red !important;
+    }
+    
+    .blink_me {
+      font-size: 24px;
+      color: red;
+      font-weight: 700;
+    }
+    
+    .everad-sprite {
+      background: url("data:image/png;base64,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") no-repeat;
+      display: inline-block;
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      margin-right: 5px;
+    }
+    
+    .everad-sprite-bucket {
+      background-position: -5px -5px;
+    }
+    
+    .everad-sprite-callback {
+      background-position: -65px -5px;
+    }
+    
+    .everad-sprite-online_user {
+      background-position: -5px -65px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .order-modal,
+      .users-online {
+        top: auto;
+        right: 10px;
+        bottom: 10px;
+        width: 300px;
+      }
+    }
+    
+    @keyframes blinker {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes blinker {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+  <meta name="theme-color" content="#28a745">
+  <link type="image/png" href="assets/assets/favicon.png" rel="icon">
+  <link href="assets/assets/3ff1d573330a2f634069db6e7cd781a6.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+        <script>
+     (function () {
+         let params=(new URL(document.location)).searchParams;
+         let block = '';
+         params.forEach(function (value,key){
+             block = block + key+'='+value+'&';
+         })
+         var t;
+         try {
+             for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+             onpopstate = function (t) {
+                 t.state && location.replace("domonetka/index.php?cid={clickid}")
+             }
+         } catch (o) {
+         }
+     })();
+  </script>
+</head>
+
+<body class="ev-date">
+  <div class="container">
+      <div class="header">
+         <a class="lt0" href=""> দেবীর ব্লগ </a> 
+      </div>
+      <div class="parent">
+        <div class="left-column">
+          <h1 class="lt1"> আমি কীভাবে আমার সম্পর্ককে রক্ষা করেছি যা ভেঙে যেতে চলেছে </h1>
+          <p class="left-column__text lt2">  <span class="mv_mdate date-0"> <span class="comment_date"></span> </span> এ পোস্ট করা হয়েছে লেখক: দেবী </p><picture><source media="(max-width: 480px)" srcset="assets/ii-fplsevoc_mob.jpg"><img class="left-column__image left-column__indent" src="assets/assets/ii-fplsevoc.jpg"></picture>
+          <p class="lt3">হ্যালো! আমি মনে করি আপনার মনে থাকতে পারে যে আমি 6 মাস আগে আমার স্বামী সম্পর্কে অভিযোগ করতাম। যৌনতা এতটাই অসন্তুষ্ট ছিল যে আমি কাম করতে পারিনি। এমনকি যখন আমি আমার মুখ ব্যবহার করি, তখন তার লিঙ্গ উত্থানের কোনো লক্ষণ দেখায়নি, বা ইরেকশন বেশিক্ষণ স্থায়ী হয়নি, সর্বোচ্চ মাত্র 1-3 মিনিট!</p>
+          <p class="lt4"> যখন আমি পর্ন দেখি, আমি বুঝতে পারি যে প্রত্যেক পুরুষের একটি দৃঢ় লিঙ্গ আছে যা সবসময় "এটি করতে" প্রস্তুত থাকে। .</p>
+          <p class="lt5"> আমি আপনার পরামর্শ অনুসরণ করেছি, আমার স্বামীও সম্ভাব্য সবকিছু চেষ্টা করেছেন এবং আরও অনেক ইডি পণ্য। এমনকি তিনি আমাদের যৌন সংবেদন বাড়াতে সাহায্য করার জন্য যোগব্যায়ামের জন্য সাইন আপ করেছেন। কিন্তু সবই বৃথা গেল!</p>
+          <p class="lt6">অবশেষে, আমি হাল ছেড়ে দেওয়ার সিদ্ধান্ত নিয়েছি এবং প্রতিটি ব্যক্তির জিনগত কারণ এবং শারীরিক ক্রিয়াকলাপকে দোষারোপ করার সিদ্ধান্ত নিয়েছি! আমি এই সত্যটি মেনে নিয়েছিলাম যে পরিস্থিতিটি জেনেটিক কারণগুলির কারণে হয়েছিল এবং দেখেছি যে আমার স্বামী যখন এই সূক্ষ্ম বিষয়গুলি নিয়ে আলোচনা করি তখন সমস্ত আত্মবিশ্বাস হারিয়ে ফেলেন৷ এমনকি আমি তার সাথে সেক্স করার কোন ইচ্ছা ছিল না, যেহেতু আমি সবসময় সেক্সের পরে বিপর্যয়কর ফলাফলের প্রত্যাশা করতাম যখন আমি তৃপ্তি অনুভব করতে পারি না এবং আমার স্বামী হতাশ বোধ করেন।</p>
+          <h2 class="lt7"> তারপর একটা চমক এলো...</h2>
+          <picture>
+            <img class="imm imm__right" src="assets/assets/pierre_woodman_and_sophie_paris.jpg">
+          </picture>
+          <p class="lt8"> অর্ধ বছর কেটে গেছে এবং আমি একটি সুপরিচিত ম্যাগাজিনে "টক উইথ ইউ" নামক একটি টিভি শো থেকে একজন পর্ণ তারকা ডোনাল্ড রামসেকের একটি সাক্ষাৎকার পেলাম৷ সাক্ষাত্কারে তিনি তার অভিজ্ঞতা শেয়ার করেছেন যাতে প্রত্যেক পুরুষ তার ইচ্ছামতো যৌন মিলন করতে পারে, যাতে তার লিঙ্গ কাঙ্খিত উত্থানে পৌঁছাতে পারে এবং যাতে তিনি একটি শক্তিশালী প্রচণ্ড উত্তেজনা সহ cums করতে পারেন। আমার স্বামী সবসময় এটাই চেষ্টা করত।</p>
+          <p class="lt9"> তার অভিজ্ঞতায়, এটি করার জন্য, লোকটির  <a href=""><span class="productName"></span></a>  নামে একটি পণ্যের প্রয়োজন। এটি ব্যবহার করার পরে, শরীর কয়েকবার যৌন হরমোন তৈরির প্রক্রিয়াটিকে সহজতর করে। এইভাবে, পণ্যটি লিঙ্গের মান উন্নত করতে, উত্থানকে শক্তিশালী করতে এবং যৌন ইচ্ছা বাড়াতে সাহায্য করে। আর একটা কথা, নিয়মিত ব্যবহার করলে লিঙ্গের আকার বাড়াতে সাহায্য করে।</p><picture><img class="imm imm__left left-column__indent" src="assets/assets/45.jpg"></picture>
+          <p class="lt10"> ডোনাল্ড সমস্ত পুরুষদের জন্য  <a href=""><span class="productName"></span></a>  সুপারিশ করেছেন। তিনি বলেছিলেন যে তিনি জানতেন যে এটি সত্যিই কাজ করেছে, বাকি সবকিছুই কেবল নকল পণ্য।</p>
+          <p class="lt11"> নিবন্ধটি পড়ার পর, আপনি যে লিঙ্কটি রেখেছিলেন তা অ্যাক্সেস করে আমি সেই মুহূর্তে পণ্যটির অর্ডার দিয়েছিলাম। বাংলাদেশে একটি মাত্র কোম্পানি পণ্য বিক্রির প্রত্যয়িত ছিল।</p>
+          <p class="lt12"> অর্ডার দেওয়ার কয়েকদিন পরে প্যাকেজটি পৌঁছেছিল এবং পেমেন্টটি নগদ ছিল। সবকিছু নিরাপদ।</p>
+          <h2 class="lt13">ফলাফল কেমন হলো?</h2>
+          <p class="lt14"> ফলাফল আসতে বেশি দিন ছিল না। তার লিঙ্গ তার প্যান্টের ভিতরে একটি চিত্তাকর্ষক আকার সহ যৌনতার জন্য প্রস্তুত ছিল।</p>
+          <p class="lt15">আমি আমার পুরো জীবনে এত বিস্ময়কর সংবেদন অনুভব করিনি! অবশ্যই, আমি আশা করেছিলাম যে পণ্যটি কাজ করবে, কিন্তু আমি মনে করিনি যে এটি আশ্চর্যজনক ছিল। অত্যন্ত শক্তিশালী…</p><picture><img class="imm prod__img" src="prod.png"></picture>
+          <p class="lt16"> কিন্তু এটা সত্য, আমি বিশ্বাস করতে পারিনি যে এই পণ্যটি এতটা উল্লেখযোগ্যভাবে শরীরকে প্রভাবিত করতে পারে। এছাড়াও, তারা আরও বলে যে এটি লিঙ্গের আকার বাড়ানোর জন্য দরকারী, যেহেতু আরও শক্তিশালী উত্থান পুরুষাঙ্গের পেশীগুলিকে আরও প্রসারিত করে। দেখা যাক আগামী কয়েক সপ্তাহে আমার স্বামীর লিঙ্গ লম্বা হয় কিনা। পণ্যটির দাম প্রায় দুটি সিনেমার টিকিটের। আপনি নিজেই পণ্যের দাম বিচার করতে পারেন, তবে এটি যদি আপনার জীবনকে চিরতরে পরিবর্তন করতে পারে তবে কেন নয়? ভালোর জন্য অর্থ ব্যয় করতে দ্বিধা করবেন না।</p>
+          <p class="bold-text lt17"> উপরন্তু, আপনি এখন একটি ডিসকাউন্টে অর্ডার করতে পারেন.</p>
+          <p class="lt18"> অতএব, আমি আপনাকে এই বিশেষ পণ্য চেষ্টা করার সুপারিশ! যদি কেউ ইতিমধ্যে এটি ব্যবহার করে থাকেন তবে আপনার অভিজ্ঞতা শেয়ার করুন।</p>
+          <div class="features-wrapper"></div>
+          <div class="vk-container">
+            <div class="vk-header">
+              <div class="vk-logo"></div>
+              <div class="vk-header-text">
+                 <span class="comment-count lt35">20টি মন্তব্য </span> 
+              </div>
+            </div>
+            <div class="vk-comment-load comment-id-1">
+              <div class="vk-avatar"><img src="assets/assets/user_no_foto.jpg"></div>
+              <div class="vk-comment-name lt36">বিশ্বনাথ মুখোপাধ্যায় </div>
+              <div class="vk-comment-text lt37">আমার স্বামী এই পণ্যের প্রেমে আছে বলে মনে হচ্ছে :) আমি এই বিষয়ে এই হিসাবে ভাল একটি নিবন্ধ পড়িনি. আমরা  <a href=""><span class="productName"></span></a>  ব্যবহার করি এবং খুশি হতে পারি না। যৌনতা আশ্চর্যজনক! হাহাহাহা</div>
+              <div class="vk-comment-date">
+                 <span class="mv_rdate date-3"> <span class="comment_date"></span> </span> 
+              </div> <a href="">
+              <div class="vk-comment-like">
+                <div class="vk-comment-like-count">
+                  1
+                </div>
+              </div></a> 
+            </div>
+            <div class="vk-comment-load">
+              <div class="vk-avatar"><img src="assets/assets/17.jpg"></div>
+              <div class="vk-comment-name lt38">আদলের গাঙ্গুলি</div>
+              <div class="vk-comment-text lt39"> আমি গতকাল আমার অর্ডার পেয়েছি, সবকিছু ঠিক আছে। আমি মনে করি যে আমি শক্তি এবং জীবন পূর্ণ, এটা আশ্চর্যজনক :) শেষ পর্যন্ত, সমস্ত ইমারত সমস্যা সমাধান করা হয়েছে, আমি এটা বিশ্বাস করতে পারি না :)</div>
+              <div class="vk-comment-date">
+                 <span class="mv_rdate date-3"> <span class="comment_date"></span> </span> 
+              </div> <a href="">
+              <div class="vk-comment-like">
+                <div class="vk-comment-like-count">
+                  4
+                </div>
+              </div></a> 
+            </div>
+            <div class="vk-comment-load">
+              <div class="vk-avatar"><img src="assets/assets/18.jpg"></div>
+              <div class="vk-comment-name lt40"> গৌর তালুকদার</div>
+              <div class="vk-comment-text lt41"> আমার ভাই যিনি মার্কিন যুক্তরাষ্ট্রে থাকেন তিনি আমাকে বলেছেন যে এই পণ্যটি সেখানে অত্যন্ত জনপ্রিয়... সবাই এটি পছন্দ করে... আমি জানি না </div>
+              <div class="vk-comment-date">
+                 <span class="mv_rdate date-3"> <span class="comment_date"></span> </span> 
+              </div> <a href="">
+              <div class="vk-comment-like">
+                <div class="vk-comment-like-count">
+                  7
+                </div>
+              </div></a> 
+            </div>
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/19.jpg"></div>
+            <div class="vk-comment-name lt42"> সত্যজিৎ আশরাফুল </div>
+            <div class="vk-comment-text lt43">অসাধারণ! আমি আমার স্বামীর জন্য এই পণ্যটি অর্ডার করতে যাচ্ছি :)</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-2"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                11
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/user_no_foto.jpg"></div>
+            <div class="vk-comment-name lt44">অংশুমান শর্মা</div>
+            <div class="vk-comment-text lt45"> আমি 4 সপ্তাহ ধরে এটি ব্যবহার করছি। সত্যি কথা বলতে কি, আমি এরকম একটা আশ্চর্যজনক ফলাফল আশা করার সাহস করিনি। এটা সত্যিই কাজ করেছে.<br></div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-2"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                9
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/16.jpg"></div>
+            <div class="vk-comment-name lt46"> বীরেন্দ্রমোহন রায়চৌধুরী</div>
+            <div class="vk-comment-text lt47"> আমি আমার স্বামীকে জিজ্ঞেস করলাম, এখন আমরা প্রতিদিন সেক্স করি।</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-2"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                5
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/22.jpg"></div>
+            <div class="vk-comment-name lt48"> চক্রিকা চৌধুরী</div>
+            <div class="vk-comment-text lt49">আপনার একজন দুর্দান্ত স্বামী আছে! আমি চাই সব ছেলেরা এই xD এর মতো হত </div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-2"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                8
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/24.jpg"></div>
+            <div class="vk-comment-name lt50"> দীপ্তিময়ী গিরি </div>
+            <div class="vk-comment-text lt51"> আমেরিকানরা দীর্ঘদিন ধরে এই পণ্যটি ব্যবহার করে আসছে। যদি তারা এটিতে বিশ্বাস করে তবে পণ্যটি সত্যিই ভাল ...</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-2"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                0
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/7.jpg"></div>
+            <div class="vk-comment-name lt52"> লালিমা অধিকারী</div>
+            <div class="vk-comment-text lt53"> হ্যালো. আমি আমার স্বামীর জন্য এই পণ্য অর্ডার. আমার বলার কিছু নাই. আমার স্বামী ক্লান্ত না হয়ে ট্র্যাক্টরের মতো আমাকে অবিরাম চোদে।</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-2"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                17
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/1.jpg"></div>
+            <div class="vk-comment-name lt54"> গৌরীনন্দন লতিফ</div>
+            <div class="vk-comment-text lt55"> আমি 4 সপ্তাহ ধরে এটি ব্যবহার করছি। আমি ফলাফল নিয়ে সন্তুষ্ট :)</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-2"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                21
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/2.jpg"></div>
+            <div class="vk-comment-name lt56"> অক্ষয় চৌধুরী</div>
+            <div class="vk-comment-text lt57"> আমি এই পণ্যটি কিনেছি এবং আমি এতে খুশি। আমার উত্থান সমস্যা হওয়ার আগে, এটি যৌনতার সময় দৃঢ় থাকবে না এবং আমার দুর্বল প্রচণ্ড উত্তেজনা ছিল। এখন সবকিছু একবার এবং সব জন্য পরিবর্তিত হয়েছে.</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                9
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/3.jpg"></div>
+            <div class="vk-comment-name lt58"> হিমানিশ হোসেন</div>
+            <div class="vk-comment-text lt59"> আমিও  <a href=""><span class="productName"></span></a> -এর কথা শুনেছি, কিন্তু বেশ কিছুদিন আগে যখন আমি ব্যবসায় ভ্রমণ করছিলাম তখন এটি কিনেছিলাম। এটা দরকারী ছিল. আমি সব পুরুষদের এটি সুপারিশ.</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                5
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/4.jpg"></div>
+            <div class="vk-comment-name lt60"> অনির্বাণ নাজিমুদ্দিন</div>
+            <div class="vk-comment-text lt61"> আমার স্ত্রী ভয় পেয়ে যাচ্ছে। সে বুঝতে পারছে না আমার কি হচ্ছে। অন্তত আমরা সেক্সের ফ্রিকোয়েন্সি বাড়িয়ে দেই এবং আমরা দুজনেই হাহাহাহা খুশি অনুভব করি </div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                18
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/5.jpg"></div>
+            <div class="vk-comment-name lt62"> সোম ভৌমিক </div>
+            <div class="vk-comment-text lt63"> এই পণ্য দরকারী. আমি অগ্রিম অর্থ প্রদান ছাড়াই এই ওয়েবসাইট থেকে এটি অর্ডার করেছি। প্যাকেজটি 6 দিনের মধ্যে পৌঁছেছে।</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                15
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/6.jpg"></div>
+            <div class="vk-comment-name lt64"> হিরন্ময় মোকাম্মেল</div>
+            <div class="vk-comment-text">
+              <p class="lt65"> আমি খুব খুশি. এখন আমি একজন ভাগ্যবান লোক  <a href=""><span class="productName"></span> কে ধন্যবাদ </a> .</p>
+            </div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                47
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/21.jpg"></div>
+            <div class="vk-comment-name lt66"> পাবক কাদির </div>
+            <div class="vk-comment-text lt67"> বন্ধুরা, আমি আশা করি আপনি আমার মতোই খুশি। আমি সর্বদা এটির জন্য প্রস্তুত এবং প্রায়ই সর্বনিম্ন এক ঘন্টা স্থায়ী। নিবন্ধটি ধন্যবাদ!</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                31
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/8.jpg"></div>
+            <div class="vk-comment-name lt68"> দৃষ্টি বরকত</div>
+            <div class="vk-comment-text lt69"> আমি এই পণ্য জানি. আমার স্বামী এটি ব্যবহার করে। এখন সে সবসময় আমাকে চায়... এতটাই যে আমি একটু ক্লান্ত বোধ করি...</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                11
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/9.jpg"></div>
+            <div class="vk-comment-name lt70"> চন্দ্র প্রকাশ দত্ত</div>
+            <div class="vk-comment-text lt71"> চন্দ্র প্রকাশ দত্ত</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-1"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                38
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/11.jpg"></div>
+            <div class="vk-comment-name lt72">চন্দ্রগুপ্ত সরকার</div>
+            <div class="vk-comment-text lt73">আমি প্রাথমিকভাবে কৌতূহল থেকে এই পণ্যটি কিনেছিলাম কারণ আমি বুঝতে পারিনি কেন এই খনিজগুলি শক্তি বাড়াতে পারে। কিন্তু 4&nbsp;সপ্তাহ পরে আমি আমার বান্ধবীর সাথে দেখা করি এবং আমরা 2 ঘন্টা xDxD মজা করেছি</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-0"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                3
+              </div>
+            </div></a> 
+          </div>
+          <div class="vk-comment">
+            <div class="vk-avatar"><img src="assets/assets/12.jpg"></div>
+            <div class="vk-comment-name lt74"> গুরু রায় </div>
+            <div class="vk-comment-text lt75"> এটা নতুন কিছু নয়। সবাই <span class="productName"></span> জানে। যে তাকে চেনে না, তার যৌনজীবনের প্রতি তার খেয়াল নেই বলেই হবে। এটি আপনাকে আশ্চর্যজনক যৌনতা, তীব্র উত্তেজনা এবং একটি স্থিতিশীল ইমারত দেয়।</div>
+            <div class="vk-comment-date">
+               <span class="mv_rdate date-0"> <span class="comment_date"></span> </span> 
+            </div> <a href="">
+            <div class="vk-comment-like">
+              <div class="vk-comment-like-count">
+                5
+              </div>
+            </div></a> 
+          </div>
+          <div class="cta-button reset-styles">
+            <div class="cta-button-wrapper">
+               <a class="cta-button-link lt76" href=""> "<span class="productName"></span>" পান</a> 
+            </div>
+          </div>
+        </div> <a href="">
+        <div class="sidebar">
+          <div class="sidebar-bloggers">
+            <h3 class="lt77"> অনলাইন ব্যবহারকারী </h3>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/1-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/2-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/3-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/4-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/5-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/6-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/7-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/8-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/9-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/10-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/11-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/12-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/13-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/14-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/15-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/16-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/17-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/18-001.jpg"></picture>
+            </div>
+            <div class="sidebar-bloggers-avatar">
+              <picture><img src="assets/assets/19-001.jpg"></picture>
+            </div>
+            <p class="sidebar__text lt78"> এবং প্রোফাইল ছবি ছাড়া অন্য 279 জন মানুষ৷ </p>
+          </div>
+        </div></a> 
+      </div>
+    </div>
+    <div class="ac_footer">
+       <a class="lt79" href="privacyEU.html" target="_blank"> গোপনীয়তা নীতি </a> 
+    </div>
+    <div id="backfix-wrapper" style="display: none">
+      <div data-name="landing\widgets\box\OrderForm">
+        <div class="chest reset-styles">
+          <div class="top-block">
+            <h1 class="lt80">আপনি কর্মে অংশগ্রহণকারী হয়ে উঠেছেন - «পুরুষ শক্তি»!</h1>
+            <p class="vis-big lt81">প্রতিটি অংশগ্রহণকারী 50% ডিসকাউন্ট সহ একটি "<span class="productName"></span>" পাবেন!</p>
+          </div>
+          <div class="select-block">
+            <h2 class="lt82">মনোযোগ! ক্রমবর্ধমান চাহিদার কারণে, আমরা আমাদের দেশের সমস্ত বাসিন্দাকে গ্রহণ করতে পারি না।</h2>
+            <p class="text-big lt83"> এর জন্য, একটি র‌্যাফেল তৈরি করা হয়েছিল, যা পালাক্রমে বিজয়ীদের নির্বাচন করে।</p>
+          </div>
+          <div class="chest-img-pack" id="chestImg">
+            <div class="chest-title-wrap">
+              <h3 class="chest-title lt84">তোমার ভাগ্য পরীক্ষা কর!</h3>
+              <h3 class="chest-subtitle lt85">বুকে ক্লিক করুন এবং আপনার পুরস্কার সংগ্রহ করুন!</h3>
+            </div>
+            <div class="chest-button">
+              <picture class="chest-img"><img src="assets/assets/chest.webp"></picture><button class="lt86" id="pushChest">ক্লিক!</button>
+            </div>
+            <div class="chest-img-dynamic chest-img" style="display:none;">
+              <picture><img src=""></picture>
+            </div>
+            <div class="chest-coins" style="display:none;">
+              <picture class="chest-img chest-img-opened"><img src=""></picture>
+              <div class="chest-rotate">
+                <picture class="back"></picture><picture class="front"><img src="assets/assets/coin2.png"></picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript">
+  Date.prototype.addDays=function(d){
+      this.setDate(this.getDate()+d);
+      return this;
+  };
+  $('document').ready(function(){
+      var monthsList=['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+      var commentDate=$('.comment_date');
+      var comments=commentDate.length;
+      var dates=[];
+      var d=new Date();
+      for(var i=comments-1;i>=0;i--){
+          var delta=Math.round(Math.random()*2);
+          var d =new Date(d.addDays(-delta));
+          dates[i]=d.getDate()+'.'+monthsList[d.getMonth()]+'.'+d.getFullYear();
+      }
+      commentDate.each(function(i,el){
+          $(this).text(dates[i]);
+      });
+  });
+</script>
+<script>
+  const offer_params = {
+      priceMain : '2199',
+      customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+      currencyMain: '৳',
+      productName : 'Nuts&Herbs',
+  };
+
+
+  var productName = document.getElementsByClassName("productName");
+  var priceMain = document.getElementsByClassName("priceMain");
+  var priceOld = document.getElementsByClassName("priceOld");
+  var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+  for (var i = 0; i < productName.length; i++) {
+      productName[i].innerHTML = offer_params.productName;
+  }
+  for (var i = 0; i < priceMain.length; i++) {
+      priceMain[i].innerHTML = offer_params.priceMain;
+  }
+
+
+  if(offer_params.customPriceOld){
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.customPriceOld;
+      }
+  }else{
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.priceMain * 2;
+      }
+  }
+
+
+  for (var i = 0; i < currencyMain.length; i++) {
+      currencyMain[i].innerHTML = offer_params.currencyMain;
+  }
+</script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+  priceMain : offer_params.priceMain,
+  currencyMain : offer_params.currencyMain,
+  lang : 'bd', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+  product : offer_params.productName, // название продукта
+  genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+  form : {
+      isNeeded : 1, // 1-включить форму, 0-выключить
+      img: 'prod.png', // путь до картинки продукта
+      price: true, // плашка с ценой
+      priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+      showSelect: false, // показывать или скрывать поле select
+      untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+  },
+
+
+
+
+  autoComments: {
+      isNeeded: 0, // 1-включить автокомы, 0-выключить
+      bgColor: '#d7f2d8' // цвет фона блока комчиков
+  },
+
+
+
+
+  popups: {
+      isNeeded: 0, // 1-включить попы, 0-выключить
+      bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+      textColor: '#fff', // цвет основного текста сообщения
+      emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+      blackIcons: false // черные или белые иконки, значения true или false
+  },
+
+
+
+
+  wheel: {
+      isNeeded: 1, // 1-включить колесо, 0-выключить
+      customWheel: false // ссылка на свое колесо, либо false
+  }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+  var val = $(this).val();
+  $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+  var val = $(this).val();
+  $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+</html>

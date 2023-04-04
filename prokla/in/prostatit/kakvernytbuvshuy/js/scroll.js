@@ -1,0 +1,1 @@
+$("a[href='#roulette']").on("click",function(a){$([document.documentElement,document.body]).animate({scrollTop:$("#roulette").offset().top},500)});
