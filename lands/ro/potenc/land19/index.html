@@ -1,0 +1,184 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+<!--
+  <script type="text/javascript" src="cdn/js/geo/ro1.js"></script>
+  <script type="text/javascript" src="cdn/js/countries.js"></script>
+  <script type="text/javascript" src="cdn/js/jquery.js"></script>
+  <script type="text/javascript" src="cdn/js/ld.js"></script>
+  <script type="text/javascript" src="cdn/js/footer_leadbit.js" defer></script>
+
+
+  <script src="translater.js"></script>
+  -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ALFAZONE</title>
+  <link rel="preload" href="files/style.css" as="style">
+  <link href="files/style.css" rel="stylesheet">
+  <!--  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">-->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,700,700i" rel="stylesheet"> -->
+  <style>
+    .hide,
+    .flag-dropdown {
+      display: none;
+    }
+
+    /* обязательно */
+    .error-box {
+      /* CSS ошибки */
+      color: #fff;
+      background-color: #DE5042;
+      border-radius: 5px;
+      text-align: center;
+      width: auto;
+      max-width: 410px;
+      font-size: 13px;
+      line-height: 20px;
+      margin: 0 auto 10px;
+    }
+  </style>
+
+
+
+</head>
+
+<body onload="refresh()">
+
+  <header>
+    <h1 class="lt0">ALFAZONE</h1>
+    <h2 class="lt1"><br>100% Resultat!</h2>
+    <div class="gif-container">
+      <!-- <div class="star">
+    <span class="lt2">+6cm</span><br>
+    <p class="lt3">centimetri<br>
+      într-o
+      săptămână</p>
+  </div> -->
+      <img alt="" class="gif img-responsive" src="files/new.gif" width="410"></div>
+  </header>
+  <div class="rose">
+    <p class="lt4"><span class="num">1</span> Erecție de piatră</p>
+    <p class="lt5"><span class="num">2</span> 100% efectivitate</p>
+    <p class="lt6"><span class="num">3</span> Cu 100% conținut natural</p>
+    <p class="lt7"><span class="num">4</span> Crește cantitatea de spermatozoizi</p>
+    <p class="lt8"><span class="num">5</span> Senzații de neuitat</p>
+  </div>
+  <div class="product">
+    <div class="left"><img alt="pack" class="img-responsive" src="files/700.png"></div>
+    <div class="right">
+      <div class="discount">
+        <div class="price_old" style="text-decoration: line-through; font-style: italic"><span class="priceOld"></span>
+          <span class="currencyMain"></span>
+
+
+        </div>
+      </div>
+      <div class="discount-text lt10">
+        PREȚ CU REDUCERE
+      </div>
+      <div class="price">
+        <div class="priceForLandingInfoApi price_main"><span class="priceMain"></span>
+          <span class="currencyMain"></span>
+        </div><span class="labelForLandingInfoApi"></span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="countdown-container">
+      <h3 class="lt11">PROMOȚIA SE TERMINĂ ÎN /PESTE</h3>
+      <div class="countdown">
+        <div class="countdown-item" id="hour1">00</div>
+        <div class="countdown-divider lt12">
+          :
+        </div>
+        <div class="countdown-item" id="min1">14</div>
+        <div class="countdown-divider lt13">
+          :
+        </div>
+        <div class="countdown-item" id="sec1">43</div>
+      </div>
+      <div class="countdown-text">
+        <span class="lt14">ORE</span><span class="lt15">MINUTE</span><span class="lt16">SECUNDE</span>
+      </div>
+    </div>
+    <form action="getform.php" class="order_form" id="order_form" method="post" name="order_form">
+      <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+      <input type="hidden" name="utm_campaign" value="{domonetka}">
+      <input class="name-input name" id="name" name="name" placeholder="Nume" required="required" type="text">
+      <div class="intl-tel-input">
+        <input autocomplete="off" class="phone-input phone" id="phone-input" name="phone" placeholder="+40 123456789"
+          required="required" type="tel">
+      </div>
+
+
+      <button class="button-submit" type="submit"><span class="button-submit-text lt17">CUMPĂRA</span><span
+          class="button-submit-arrow"></span></button>
+    </form>
+  </div>
+
+
+
+  <script src="files/countdown.js"></script>
+
+
+  <script>
+      const offer_params = {
+          priceMain: '169',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'lei',
+          productName: '', // на лендах не використовується
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+  <script>
+      $('[name="name"]').on('input change', function(){
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+
+      $('[name="phone"]').on('input change', function(e){
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+
+
+</body>
+
+</html>

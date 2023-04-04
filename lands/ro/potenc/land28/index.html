@@ -1,0 +1,149 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!doctype html>
+<html lang="ro">
+
+<head>
+  <base >
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Casanova</title>
+  <link rel="preload" href="css/style.css" as="style">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <style>
+        .hide , .flag-dropdown {display: none;} /* обязательно */
+        .error-box{ /* CSS ошибки */
+            color: #fff;
+            background-color: #DE5042;
+            border-radius: 5px;
+            text-align: center;
+            width: auto;
+            max-width: 410px;
+            font-size: 13px;
+            line-height: 20px;
+            margin:0 auto 10px;
+        }
+  </style>
+</head>
+
+<body onload="refresh()">
+  <header>
+    <h1>Casanova</h1>
+    <h2>6 CM ÎNTR-O SĂPTĂMÂNĂ.<br>100% REZULTAT GARANTAT!</h2>
+    <div class="gif-container">
+      <div class="star">
+        <span>+6 cm</span> <br>
+        <p>pe<br>săptămână</p>
+      </div>
+      <img src="img/new.gif" class="gif img-responsive" width="410" alt="gif">
+    </div>
+  </header>
+  <div class="rose">
+    <p><span class="num">1</span> Într-o săptămână, penisul va crește cu 6-9 cm</p>
+    <p><span class="num">2</span> Erecție uriașă</p>
+    <p><span class="num">3</span> Rezultat 100% garantat</p>
+    <p><span class="num">4</span> Remediu 100% natural</p>
+    <p><span class="num">5</span> Creșterea numărului de spermatozoizi</p>
+    <p><span class="num">6</span> Orgasm fantastic</p>
+  </div>
+  <div class="product">
+    <div class="left">
+      <img src="img/jpg1.png" class="img-responsive" alt="">
+      <img src="img/jpg2.png" alt="" class="img-responsive__mobile">
+    </div>
+    <div class="right">
+      <div class="discount">
+        <div>-50%</div>
+      </div>
+      <div class="discount-text">PREȚ CU REDUCERE</div>
+      <div class="price"><div class="priceForLandingInfoApi"><span class="priceMain"></span></div> <span class="labelForLandingInfoApi"><span class="currencyMain"></span></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="countdown-container">
+      <h3>PROMOȚIA SE VA ÎNCHEIA ÎN</h3>
+      <div class="countdown">
+        <div class="countdown-item" id="hour1">03</div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-item" id="min1">18</div>
+        <div class="countdown-divider">:</div>
+        <div class="countdown-item" id="sec1">36</div>
+      </div>
+
+      <div class="countdown-text">
+        <span>ORE</span>
+        <span>MINUTE</span>
+        <span>SECONDE</span>
+      </div>
+    </div>
+    <form action="getform.php" method="post" id="order_form">
+      <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+      <input type="hidden" name="utm_campaign" value="{domonetka}">
+        <input class="name-input" type="text" placeholder="Nume" name="name" id="name" required>
+        <input class="phone-input" id="phone-input" type="tel" placeholder="Număr de telefon" name="phone" required>
+      <button type="submit" class="button-submit">
+        <span class="button-submit-text">COMANDĂ CASANOVA</span>
+        <span class="button-submit-arrow"></span>
+      </button>
+    </form>
+  </div>
+
+  <a class="privacy-policy" href="privacy.html">Politica De Confidențialitate</a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="js/countdown.js"></script>
+
+
+  <script>
+      const offer_params = {
+          priceMain: '179',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'lei',
+          productName: '', // на лендах не використовується
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+  <script>
+      $('[name="name"]').on('input change', function(){
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+
+      $('[name="phone"]').on('input change', function(e){
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+</body>
+
+</html>

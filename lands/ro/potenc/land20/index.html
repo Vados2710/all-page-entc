@@ -1,0 +1,229 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ALFAZONE</title>
+  <link href="index_files/main.css" rel="stylesheet">
+  <link charset="UTF-8" href="index_files/translateelement.css" rel="stylesheet" type="text./css">
+  <script src="translater.js"></script>
+
+
+  <style>
+    .scrlock {
+      max-width: 100%;
+      width: 100%;
+      height: 120vh;
+      position: fixed;
+      background-color: black;
+      z-index: 1000;
+      top: -20px;
+    }
+
+    .lilpip {
+      box-sizing: border-box;
+      max-width: 420px;
+      padding: 4.5em 2em 1.5em;
+      background-color: white;
+      border-radius: 3px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      top: 30vh;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .lilpip::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-image: url(index_files/atrie-krediti-no-18-gadiem.gif);
+      background-size: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px;
+    }
+
+    .yo18_title {
+      color: black;
+      margin: 0;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2em;
+    }
+
+
+
+    .yo18_btn_holder {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .yo18_btn {
+      border: none;
+      background: none;
+      padding: .2em 1em;
+      font-size: 1.7em;
+      background-color: #59ac59;
+      border-radius: 10px;
+      color: white;
+      /* border: 3px solid #4b4b4b; */
+      box-shadow: 0 0 10px -3px black;
+      cursor: pointer;
+      /* margin-right: 30px; */
+      width: 154px;
+    }
+
+    .yo18_btn:last-child {
+      background-color: #c14343;
+    }
+
+    .denied18 {
+      display: none;
+    }
+
+
+
+    .denied h2 {
+      color: red;
+      margin-top: 21px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="main s__main">
+    <div class="block_1">
+      <div class="container">
+        <div class="top">
+          <div class="title">
+            <p><span class="logo lt4">ALFAZONE</span></p>
+          </div>
+          <h2 class="lt5">ALFAZONE<br>PRODUSUL NUMARUL UNU PENTRU
+
+            <br> INBUNATATIREA ERECTIEI</h2>
+        </div><img class="big_d" src="index_files/face.gif">
+        <h3 class="yellow"><b class="lt6"> Comandati ALFAZONE, si obtineti urmatoarele rezulttate: </b></h3>
+        <div class="sec-2">
+          <div class="rose">
+            <p class="lt7"><span class="num">1</span> Erectie de piatra in orice moment </p>
+            <p class="lt8"><span class="num">2</span> Marirea libidoului </p>
+            <p class="lt9"><span class="num">3</span> Prelungirea si controlul duratei actului sexual</p>
+            <p class="lt10"><span class="num">3</span> Marirea cantitatii de spermatozoizi activi</p>
+            <br>
+          </div>
+          <div class="product"><img class="" src="index_files/product.png"></div>
+        </div>
+        <!-- <img class="marg" src="./index_files/beforeafter-hot.jpg"> -->
+      </div>
+    </div>
+    <div class="block_1">
+      <div class="container">
+        <p></p>
+        <div style="margin-left: 2em">
+          <center>
+            <h1 class="discount lt11"><b>OFERTA</b>50%</h1>
+            <div class="price">
+              <span class="old-price js_old_price price_old"><span class="priceOld"></span> <span class="currencyMain"></span>
+
+              </span><span class="new-price js_new_price price_main"><span class="priceMain"></span> <span class="currencyMain"></span>
+              </span>
+            </div>
+            <hr>
+            <div class="form" id="form">
+              <form action="getform.php" class="cpa__order_form order_form" id="order_form" method="post" name="order_form">
+
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+
+                <input name="name" placeholder="Nume" type="text" required=""><input class="only_number"
+                  name="phone" placeholder="Numarul de telefon" type="text" required="">
+                <div>
+                  <button class="js_submit form_btn"><span class="button__text lt12"> COMANDATI ACUM </span></button>
+                </div>
+              </form>
+            </div>
+            <div class="line"></div>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    $('.yo18_yes').click(function () { $('.yo18').fadeOut(500); });
+    $('.yo18_no').click(function () { $('.yo18').hide(); $('.denied18').show(); })
+  </script>
+
+  <script>
+      const offer_params = {
+          priceMain: '169',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'lei',
+          productName: '', // на лендах не використовується
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+  <script>
+      $('[name="name"]').on('input change', function(){
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+
+      $('[name="phone"]').on('input change', function(e){
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+
+</body>
+
+</html>
