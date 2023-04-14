@@ -1,0 +1,537 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Variforce</title>
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&amp;family=Roboto:wght@400;500;700&amp;display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/jquery.ios.picker.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/jquery.countdown.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+<body>
+	<div class="out">
+		<div class="navbar">
+			<div class="navbar-contain container">
+				<a href="#order-form" class="bttn button js-to-form">COMANDAȚI</a>
+				<img class="navbar__prod" src="images/product.png" alt srcset="images/product%402x.png 2x">
+				<img class="navbar__girl" src="images/floating-girl.png" alt srcset="images/floating-girl%402x.png 2x">
+			</div>
+		</div>
+		<section class="hurryup js-button">
+			<div class="container">
+				<div class="hurryup">
+					<div class="hurryup-wrap">
+						<span class="hurryup__text">
+							Grăbește-te!<br>Promoție limitată
+						</span>
+						<div class="counter js-countdown">
+							<span class="counter__elem counter__elem1 js-count-digit">0</span>
+							<span class="counter__elem js-count-digit">7</span>
+							<span class="counter__elem js-count-digit">2</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="header">
+			<div class="container">
+				<div class="header__txt-block">
+					<div class="logo">Variforce</div>
+					<div class="logo__span">Uitați de problema cu venele</div>
+					<div class="header__slider">
+						<div>
+							<div class="logo__p">Eliminați durerea și oboseala în picioare</div>
+						</div>
+						<div>
+							<div class="logo__p">Întăriți pereții vaselor sanguine</div>
+						</div>
+						<div>
+							<div class="logo__p">Preveniți apariția trombozelor</div>
+						</div>
+					</div>
+				</div>
+				<div class="product">
+					<img src="images/product.png" alt srcset="images/product%402x.png 2x">
+				</div>
+				<div class="header-girl">
+					<img src="images/header-girl.png" alt srcset="images/header-girl%402x.png 2x">
+				</div>
+				<button href="#order-form" class="bttn js-to-form">Doresc!</button>
+			</div>
+		</section>
+		<section class="problem">
+			<div class="container">
+				<h1 class="h1">Varicoza se poate ascunde după simptome simple!</h1>
+				<ul class="js-animate">
+					<li>
+						<div class="list-img">
+							<div class="after"></div>
+							<img src="images/list-item1.jpg" alt srcset="images/list-item1%402x.jpg 2x">
+						</div>
+						<div class="list-item">
+							<p><b>Oboseală</b></p>
+							<p>Simțiți greutate în picioare</p>
+						</div>
+					</li>
+					<li>
+						<div class="list-img">
+							<div class="after"></div>
+							<img src="images/list-item2.jpg" alt srcset="images/list-item2%402x.jpg 2x">
+						</div>
+						<div class="list-item">
+							<p><b>Inflamare</b></p>
+							<p>Picioarele vizibil se umflă</p>
+						</div>
+					</li>
+					<li>
+						<div class="list-img">
+							<div class="after"></div>
+							<img src="images/list-item3.jpg" alt srcset="images/list-item3%402x.jpg 2x">
+						</div>
+						<div class="list-item">
+							<p><b>Durere</b></p>
+							<p>Simțiți durere și arsuri</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="attention">
+			<div class="container">
+				<div class="attention__block-txt">
+					<div class="attention__block-txt-num">
+						99<span class="percent">%</span>
+					</div>
+					<div class="risk">din populație este în zona de risc!</div>
+				</div>
+				<div class="take-test">
+					Treceți testul și aflați, Cum să vă păziți de varicoză!
+				</div>
+			</div>
+		</section>
+		<section class="test" data-test>
+			<div class="questions js-test-slide" data-questions>
+				<div class="container">
+					<div class="questions-item first" data-questions-item="0" data-pick-age>
+						<h1 class="h1">Câți<br> ani aveți?</h1>
+						<div class="age-picker__out">
+							<div class="age-picker__error-wrapper js-age-error">
+								<div class="age-picker__inner">
+									<div id="age-picker"></div>
+								</div>
+								<div class="age-picker__error">
+									Introduceți vârsta adevărată
+								</div>
+							</div>
+						</div>
+						<div class="button-wrap"><button type="button" class="bttn js-age-next js-button"
+								data-action="next">Mai departe</button></div>
+					</div>
+					<div class="questions-item second" data-questions-item="1">
+						<h1 class="h1">Care dintre aceste simptome sunt prezente la dvs.?</h1>
+						<ul class="js-test-list">
+							<li>
+								<label for="test_check1">
+									<div class="input-checkbox">
+										<input id="test_check1" type="checkbox">
+										<label for="test_check1"></label>
+									</div>
+									<p>senzația de greutate în picioare</p>
+								</label>
+							</li>
+							<li>
+								<label for="test_check2">
+									<div class="input-checkbox">
+										<input id="test_check2" type="checkbox">
+										<label for="test_check2"></label>
+									</div>
+									<p>durere și disconfort în urma deplasării</p>
+								</label>
+							</li>
+							<li>
+								<label for="test_check3">
+									<div class="input-checkbox">
+										<input id="test_check3" type="checkbox">
+										<label for="test_check3"></label>
+									</div>
+									<p>deformarea și umflarea picioarelor</p>
+								</label>
+							</li>
+							<li>
+								<label for="test_check4">
+									<div class="input-checkbox">
+										<input id="test_check4" type="checkbox">
+										<label for="test_check4"></label>
+									</div>
+									<p>a crescut oboseala în picioare</p>
+								</label>
+							</li>
+							<li>
+								<label for="test_check5">
+									<div class="input-checkbox">
+										<input id="test_check5" type="checkbox">
+										<label for="test_check5"></label>
+									</div>
+									<p>crampe musculare în regiunea gambelor</p>
+								</label>
+							</li>
+							<li>
+								<label for="test_check6">
+									<div class="input-checkbox">
+										<input id="test_check6" type="checkbox">
+										<label for="test_check6"></label>
+									</div>
+									<p>vizibilitatea pânzelor de vase sanguine</p>
+								</label>
+							</li>
+							<li>
+								<label for="test_check7">
+									<div class="input-checkbox">
+										<input id="test_check7" type="checkbox">
+										<label for="test_check7"></label>
+									</div>
+									<p>venele la picioare sunt vizibil aparente</p>
+								</label>
+							</li>
+						</ul>
+						<div class="button-wrap"><button href="#test-top" type="button" class="bttn"
+								data-action="pass">Aflați rezultatul</button></div>
+					</div>
+				</div>
+			</div>
+			<div class="answers js-test-slide" data-answers>
+				<div class="answer1 atop answers-item" data-answer="low">
+					<div class="container">
+						<h2>Totul nu este atât de rău, dar…</h2>
+						<div class="important">
+							<div><img class="product" src="images/product.png" srcset="images/product%402x.png 2x" alt>
+							</div>
+							<div class="important__txt">
+								<div><img class="answer1__girl" src="images/answer1-girl.png"
+										srcset="images/answer1-girl%402x.png 2x" alt></div>
+								<p><b>important să nu permiteți</b> progresarea bolii și să vă ocupați de profilaxia ei.
+								</p>
+							</div>
+						</div>
+						<button href="#order-form" class="bttn js-to-form">TRECEȚI CURSUL</button>
+						<div>
+							<p>Regulat folosiți Variforce vă va proteja împotriva apariției varicelor și a
+								complicațiilor periculoase.</p>
+						</div>
+					</div>
+				</div>
+				<div class="answer2 wrapper answers-item" data-answer="high">
+					<div class="container">
+						<h2><span class="red">Organismul</span> dvs. este în <span class="red">pericol!</span></h2>
+						<div class="important">
+							<div><img class="product" src="images/product.png" srcset="images/product%402x.png 2x" alt>
+							</div>
+							<div class="important__txt">
+								<p>Simptomele indică o deformare semnificativă a pereților vaselor de sânge.</p>
+							</div>
+						</div>
+						<p>Este necesar să treceți un curs complet cu Variforce. Acesta poate opri procesele aflate în
+							desfășurare și la salvarea frumuseții picioarelor.</p>
+						<button href="#order-form" class="bttn js-to-form">îNCEPEȚI TERAPIA</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="advantages">
+			<div class="container">
+				<div class="advantages__text-block">
+					<h1 class="h1">Variforce</h1>
+					<p class="p">ajută la orice stadie varicelor!</p>
+				</div>
+				<ul class="absent">
+					<li>Fără operație</li>
+					<li>Fără chimie</li>
+					<li>Fără rețetă</li>
+				</ul>
+				<div class="product">
+					<img src="images/product.png" alt srcset="images/product%402x.png 2x" width="92">
+				</div>
+				<div class="advantages__girl">
+					<img src="images/advantages-girl.png" alt srcset="images/advantages-girl%402x.png 2x">
+				</div>
+				<div class="advantages__anim-block">
+					<div class="h1">Cum este posibil?</div>
+					<div class="h2">Are un impact amplu și oferă un efect de durată:</div>
+					<ul class="effect js-animate">
+						<li>îmbunătățește circulația sângelui</li>
+						<li>curăță venele și capilarele</li>
+						<li>întărește sistemul circulator</li>
+						<li>înlătură durerea și inflamația</li>
+						<li>împiedică apariția trombozelor</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="expert">
+			<div class="container">
+				<h1 class="h1">Opinia expertului</h1>
+				<div class="expert__annotation">
+					”Opriți varicele, până când ele nu v-au oprit!”
+				</div>
+			</div>
+			<div class="expert__cover">
+				<div class="container">
+					<div class="exp"><img src="images/expert.png" alt srcset="images/expert%402x.png 2x"></div>
+				</div>
+				<div class="expert__comment">
+					<div class="container">
+						<div class="expert__comment-txt">
+							Varicele vă pot depăși la orice vârstă. Înafară de tipul urât de picioare, ele provoacă o
+							mulțime de complicații care pun viața în pericol. Produsul certificat Variforce vă va
+							proteja de evoluția bolii și vă va ajuta să scăpați de aceasta. Pentru un efect mai bun,
+							este important să respectați alte recomandări: purtați ciorapi anti-varicoși, monitorizați
+							hrana, mișcați-vă mai mult și purtați pantofi confortabili.
+						</div>
+						<div class="expert__about">
+							<div class="expert__about-name">Mihai Munteanu,</div>
+							<div class="expert__about-position">phlebologist cu experiență de 15 ani </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="reviews">
+			<div class="container">
+				<h1 class="h1">Opinia persoanelor însănătoșite</h1>
+				<div class="slider__reviews">
+					<div>
+						<div class="slide__item">
+							<div><img src="images/review-slide-1.jpg" alt srcset="images/review-slide-1%402x.jpg 2x">
+							</div>
+							<div class="slide__item__name">Elena Ionescu,</div>
+							<div class="slide__item__age">58 ani</div>
+							<div class="slide__item__p">Vă mulțumesc pentru Variforce!Greutatea în exces a influențat
+								foarte mult la starea vaselor de sânge. M-am salvat cu acest produs și cu ciorapii anti
+								varice. Unul fără altul nicăieri!</div>
+						</div>
+					</div>
+					<div>
+						<div class=" slide__item">
+							<div><img src="images/review-slide-2.jpg" alt srcset="images/review-slide-2%402x.jpg 2x">
+							</div>
+							<div class="slide__item__name">Alina,</div>
+							<div class="slide__item__age">33 ani</div>
+							<div class="slide__item__p">Venele mele la picioare de parcă instant s-au umflat.. Mult timp
+								n-am purtat fuste și rochii din cauza picioarelor urâte. Acum deja, datorită Variforce,
+								ies în fiecare zi – picioarele mele sunt ideale!</div>
+						</div>
+					</div>
+					<div>
+						<div class=" slide__item">
+							<div><img src="images/review-slide-3.jpg" alt srcset="images/review-slide-3%402x.jpg 2x">
+							</div>
+							<div class="slide__item__name">Gheorghe Lăcătuș,</div>
+							<div class="slide__item__age">50 ani</div>
+							<div class="slide__item__p">Eu sunt alergic. Să aleg produs potrivit pentru mine nu este
+								atât de simplu. După recomandarea medicului am cumpărat Variforce. A ajutat rapid și
+								fără consecințe.</div>
+						</div>
+					</div>
+				</div>
+				<div class="button-wrap">
+					<a href="#popup" class="bttn js-open-popup js-button">Lăsați recenziile dvs.</a>
+				</div>
+			</div>
+		</section>
+		<section class="result">
+			<div class="container">
+				<h1 class="h1">Rezultat ”înainte” și ”după” administrare</h1>
+				<div class="result__slider">
+					<div>
+						<div class="result__slider-slide">
+							<div><img src="images/result-slide-1.jpg" alt srcset="images/result-slide-1%402x.jpg 2x">
+							</div>
+							<div class="check">
+								<div class="check__red"><img src="fonts/no.svg" alt></div>
+								<div class="check__green"><img src="fonts/yes.svg" alt></div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="result__slider-slide">
+							<div><img src="images/result-slide-2.jpg" alt srcset="images/result-slide-2%402x.jpg 2x">
+							</div>
+							<div class="check">
+								<div class="check__red"><img src="fonts/no.svg" alt></div>
+								<div class="check__green"><img src="fonts/yes.svg" alt></div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="result__slider-slide">
+							<div><img src="images/result-slide-3.jpg" alt srcset="images/result-slide-3%402x.jpg 2x">
+							</div>
+							<div class="check">
+								<div class="check__red"><img src="fonts/no.svg" alt></div>
+								<div class="check__green"><img src="fonts/yes.svg" alt></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bottom">
+			<div class="bottom__flower">
+				<img src="fonts/flower.svg" alt>
+			</div>
+			<div class="container">
+				<h1 class="h1">Livrarea și achitarea</h1>
+				<div class="four__st">
+					<div class="step1">
+						<div class="four-steps-img"><img src="fonts/1.svg" alt class="step-first"></div>
+						<h2>Completați o simplă cerere</h2>
+					</div>
+					<div class="step1">
+						<div class="four-steps-img"><img src="fonts/2.svg" alt class="step-second"></div>
+						<h2>Concretizați detaliile cu operatorul</h2>
+					</div>
+					<div class="step1">
+						<div class="four-steps-img"><img src="fonts/3.svg" alt class="step-third"></div>
+						<h2>Achitați la livrare</h2>
+					</div>
+					<div class="step1">
+						<div class="four-steps-img"><img src="fonts/4.svg" alt class="step-fourth"></div>
+						<h2>Utilizați după instrucțiuni</h2>
+					</div>
+				</div>
+				<div class="order" id="order-form">
+					<div class="time__lim">Până la sfârșitul promoției au rămas:</div>
+					<div id="countdown" class="countdownHolder"></div>
+					<div class="order-head">
+						<div class="discount-wrap">
+							<div class="discount">
+								<div class="strip"></div>
+								<div class="sale">-50%</div>
+							</div>
+						</div>
+						<div class="order-wrap">
+							<div class="price">
+								<div class="price-old">
+									<div class="al-raw-currency"><span class="currencyMain"></span></div>
+									<div class="al-raw-cost-promo"><span class="priceOld"></span></div>
+								</div>
+								<div class="price-new">
+									<div class="al-raw-currency"><span class="currencyMain"></span></div>
+									<div class="al-raw-cost"><span class="priceMain"></span></div>
+								</div>
+							</div>
+							<h4 class="order__title">Completați cererea și noi vă contactăm</h4>
+						</div>
+						<div class="order-stripe"></div>
+					</div>
+					<form action="getform.php" method="post" class="al-form form">
+						<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+<input type="hidden" name="utm_campaign" value="{domonetka}">
+						<div class="input-wrapper">
+							<input type="text" name="name" required="required" class="form__input form__input-name" placeholder="Numele"
+								id="name1">
+							<label for="name1"></label>
+						</div>
+						<div class="input-wrapper">
+							<input type="tel" name="phone" required="required" class="form__input" placeholder="Nr. de telefon" id="phone1">
+							<label for="phone1"></label>
+						</div>
+						<div class="button-wrap">
+							<button type="submit" class="bttn js-button">COMANDAȚI</button>
+						</div>
+						<div class="icons-secure">
+							<i class="norton"></i>
+							<i class="mc"></i>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<section class="popup" id="popup">
+			<div class="container">
+				<div class="wrapper">
+					<div class="close js-close-popup"></div>
+					<p>Cu părere de rău, cu această adresă IP nu a fost îndeplinită nici o achiziție.</p>
+					<p>Pentru a lăsa recenzii despre produs, plasați o comandă pe site.</p>
+					<p>După ce veți utiliza Variforce, reveniți și împărtășiți-vă opinia dvs.!</p>
+					<div class="button-wrap">
+						<button href="#order-form" class="bttn js-to-form js-close-popup">Cumpărați</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.ios.picker.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery.countdown.js"></script>
+	<script src="js/script.js"></script>
+	<script>
+		const offer_params = {
+			priceMain : '149',
+			customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+			currencyMain: 'lei',
+			productName : '',
+		};
+	
+	
+		var productName = document.getElementsByClassName("productName");
+		var priceMain = document.getElementsByClassName("priceMain");
+		var priceOld = document.getElementsByClassName("priceOld");
+		var currencyMain = document.getElementsByClassName("currencyMain");
+	
+	
+		for (var i = 0; i < productName.length; i++) {
+			productName[i].innerHTML = offer_params.productName;
+		}
+		for (var i = 0; i < priceMain.length; i++) {
+			priceMain[i].innerHTML = offer_params.priceMain;
+		}
+	
+	
+		if(offer_params.customPriceOld){
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.customPriceOld;
+			}
+		}else{
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.priceMain * 2;
+			}
+		}
+	
+	
+		for (var i = 0; i < currencyMain.length; i++) {
+			currencyMain[i].innerHTML = offer_params.currencyMain;
+		}
+	 </script>
+ <script>
+	$('[name="name"]').on('input change', function () {
+		var val = $(this).val();
+		$(this).val(val.replace(/[0-9+]/g, ''));
+	});
+	$('[name="name"]').attr('autocomplete', 'name');
+	$('[name="name"]').attr('pattern', '.{2,25}');
+	$('[name="phone"]').on('input change', function (e) {
+		var val = $(this).val();
+		$(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+	});
+	$('[name="phone"]').get(0).type = 'tel';
+	$('[name="phone"]').attr('autocomplete', 'tel');
+	$('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

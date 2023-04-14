@@ -1,0 +1,1 @@
+var action='click';var speed="500";$(document).ready(function(){$('li.q').on(action,function(){$(this).next().slideToggle(speed).siblings('li.a').slideUp();var arrow=$(this).children('.fa');$('.fa').not(arrow).removeClass('rotate');arrow.toggleClass('rotate');});});

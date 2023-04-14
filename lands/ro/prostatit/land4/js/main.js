@@ -1,0 +1,1 @@
+$(document).ready((function(){$("body").mouseleave((function(){$(".ever-popup-build").fadeIn(300)})),$(".ever-popup__close, .ever-popup_wr").click((function(){$(".ever-popup-build").fadeOut(300)})),$(".ever-popup-btn").on("click touched",(function(){$("html, body").animate({scrollTop:$("form").offset().top},800)}))}));

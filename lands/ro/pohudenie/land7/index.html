@@ -1,0 +1,379 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!doctype html>
+<html class="no-js" lang="ro">
+<input type="hidden" class="country_code" value="">
+<head>
+    <base >
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Idealica</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        input:invalid {box-shadow: none;}
+        .hide , .flag-dropdown {display: none;} /* обязательно */
+        .error-box{ /* CSS ошибки */
+            color: #fff;
+            background-color: #DE5042;
+            border-radius: 5px;
+            text-align: center;
+            width: 280px;
+            font-size: 14px;
+            line-height: 20px;
+            margin: -15px auto 20px !important;
+            z-index: 100;
+            max-width: 420px;
+        }
+        @media (max-width: 767px) {
+            .error-box {
+                width: 270px;
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section class="s1">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>Transformare extraordinară în doar 4 săptămâni?</p>
+                    <h1>Picăturile Idealica - calea revoluţionară spre o figură ideală</h1>
+                    <ul>
+                        <li>Administrând Idealica zilnic, veţi pierde de la 2,5 până la 4 kg săptămânal
+                        </li>
+                        <li>Cursul de 30 de zile vă permite să reconfiguraţi complet organismul şi să scăpaţi de kilogramele în plus pentru totdeauna
+                        </li>
+                        <li>Datorită compoziţiei complet naturale, picăturile nu au reacţii adverse şi nu provoacă alergii
+                        </li>
+                    </ul>
+                    <button class="btn scroll">Comandă Idealica cu reducere de 50%</button>
+                    <img src="img/bottle.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s2">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="shadow">
+                        <div class="loader" style="display: none;">
+                            <p class="loader_p"><span>Se calculează numărul de produse</span></p>
+                        </div>
+
+                        <div class="s_item s_item-1">
+                            <div class="s2_calc">
+                                <form action="" class="calc-form">
+                                    <p>Numărul de produse Idealica pentru un curs
+                                        <span>se calculează conform greutăţii dvs.</span>
+                                        Doriţi să calculaţi numărul de produse chiar acum?</p>
+                                    <div class="s2_input flex">
+                                        <input id="weight" min="40" max="400" required type="number" name="weight"
+                                               placeholder="Introduceți adresa dvs.">
+                                        <input id="age" min="18" max="120" required type="number" name="age"
+                                               placeholder="Introduceți vârsta dvs.">
+
+                                        <input id="new" required type="number" min="39" max="400" name="newWeight"
+                                               placeholder="Introduceți greutatea dorită">
+                                    </div>
+                                    <button class="btn_form calculate">Află rezultatul</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="s_item s_item-2" style="display: none;">
+                            <div class="s2_calc2">
+                                <p>Aşteaptă,
+                                    <span>se calculează nr. de cutii Idealica pentru curs</span>
+                                    Selectăm raportul optim...</p>
+                                <img class="load" src="img/loading-gif.gif" alt="">
+                            </div>
+                        </div>
+                        <div class="s_item s_item-3" style="display: none;">
+                            <div class="s2_calc3 ">
+                                <h2>Numărul de produse Idealica pentru un curs <span>Calculat!</span><br>
+                                    Rezultate:</h2>
+                                <p>Conform datelor introduse, aveţi nevoie să administraţi <span class="under">25 picături Idealica de trei ori pe zi.</span>
+                                    Începeţi cursul cu <span id="num"></span> cutii de produs.</p>
+                                <img src="img/bottle_2.png" alt="">
+                                <button class="btn scroll">Comandă Idealica cu reducere de 50%</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s3">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Idealica - remediu absolut sigur pentru slăbit</h2>
+                    <p>Picăturile Idealica au fost elaborate pe baza extractelor de fructe cu adăugarea unui complex de vitamine. Baza formulei picăturilor - descoperirea decernată cu premiul Nobel.</p>
+                    <p>Fără aditivi artificiali şi coloranţi. <span>Produsul este certificat şi testat clinic.</span></p>
+                    <button class="btn scroll">Comandă Idealica cu reducere de 50%</button>
+                    <img src="img/bottle_2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="background">
+                        <span>Dovedit:</span>
+                        <p>Doar 4 săptămâni de administrare zilnică a picăturilor Idealica, accelerează metabolismul, contribuie la resorbţia grăsimilor în zonele problematice (mâini, abdomen, coapse), dar şi îmbunătăţeşte calitatea pielii.</p>
+                        <p>
+                            Oferiţivă fericire şi uşurinţă împreună cu un corp suplu. Uitaţi despre haine ce strâng, restricţii alimentare şi exerciţii grele la sală. Deveniţi o versiune mai bună cumpărând Idealica. Până la un corp frumos a mai rămas doar un pas!</p>
+                        <a class="scroll" href="#">Plasează comanda acum și primește reducere 50%</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s5">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Cum vă ajută picăturile Idealica?</h2>
+                    <p>Locuitorii oraşelor contemporane <span class="bold">se află în stare permanentă de stres.</span>
+                    </p>
+                    <p>Lipsa frecventă de somn, nutriţia incorectă şi insuficienţa de aer curat aduc la faptul că organismul începe să producă în exces cortizolul - aşa numitul hormon al stresului.</p>
+                    <p>Nivelul ridicat de cortizol în sânge indică că organismul necesită o pregătire pentru timpuri grele - acest mecanism este programat de natură. Anume din acest motiv atât de repede adăugăm în greutate - organismul crede că suntem în pericol şi încearcă să se protejeze cât mai bine.</p>
+                    <p class="bold">Idealica rezolvă această problemă, scăzând uşor nivelul de cortizol în organism şi reglând procesele naturale.</p>
+                    <div class="caps flex"><p>În plus, complexul de vitamine din compoziţie are proprietăţi imunomodulatoare şi face corpul mai puternic şi mai rezistent.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s6">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <h2>Schimbaţi-vă viaţa <span class="green">cu Idealica!</span></h2>
+                    <p>Urmează cursul de 30 de zile şi convinge-te singur!</p>
+                    <div class="ul_block">
+                        <p class="ul_label">Ce obţineţi :</p>
+                        <ul>
+                            <li>Reducerea masei corporale</li>
+                            <li>Îmbunătăţirea metabolismului</li>
+                            <li>Restabilirea imunităţii</li>
+                            <li>Creşte încrederea în sine şi starea de spirit</li>
+                            <li>Arderea intensivă a depunerilor de grăsimi</li>
+                            <li>Flux de puteri şi energie</li>
+                        </ul>
+                    </div>
+                    <img class="bottle" src="img/bottle_3.png" alt="">
+                </div>
+                <div class="col-2 flex">
+                    <div class="s6_form">
+                        <div class="form_group">
+                            <div class="form_title">
+                                <p class="form_title_text">Mâine preţul va fi mai mare</p>
+                            </div>
+                            <div class="form_price">
+                                <span class="priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+                                <span class="oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+                            </div>
+                            <form action="getform.php" method="post">
+                                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                                <input type="text" name="name" placeholder="Numele dvs." required>
+                                <input type="tel" name="phone" placeholder="Telefonul dvs." required>
+
+                                <button class="btn_form" type="submit">Comandă cu reducere 50%</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="img_group">
+                        <div class="img_it"><img src="img/s6_img1.png" alt="">
+                            <p>100% natural</p></div>
+                        <div class="img_it"><img src="img/s6_img2.png" alt="">
+                            <p>Achitarea la primirea produsului</p></div>
+                        <div class="img_it"><img src="img/s6_img3.png" alt="">
+                            <p>Nu provoacă reacţii alergice</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s7">
+        <div class="container">
+            <div class="row">
+                <div class="col tabel_bg">
+                    <div class="label_table">
+                        <h2>Testeazăte! Cât de des ai următoarele simptome:</h2>
+                    </div>
+                    <div class="table_ul flex">
+                        <ul class="ul_one">
+                            <li><input id="li_1" type="checkbox" name="li" value="li"><label for="li_1">Stare depresivă</label></li>
+                            <li><input id="li_2" type="checkbox" name="li" value="li"><label for="li_2">Insomnia şi alte probleme cu somnul</label></li>
+                            <li><input id="li_3" type="checkbox" name="li" value="li"><label for="li_3">Urinarea frecventă</label></li>
+                            <li><input id="li_4" type="checkbox" name="li" value="li"><label for="li_4">Dureri de cap de lungă durată şi bruscă</label></li>
+                            <li><input id="li_5" type="checkbox" name="li" value="li"><label for="li_5">Oboseală la mijlocul zilei de muncă</label></li>
+                        </ul>
+                        <ul class="ul_two">
+                            <li><input id="li_6" type="checkbox" name="li" value="li"><label for="li_6">Incapacitatea de concentrare</label></li>
+                            <li><input id="li_7" type="checkbox" name="li" value="li"><label for="li_7">Nemulţumirea de sine</label></li>
+                            <li><input id="li_8" type="checkbox" name="li" value="li"><label for="li_8">Nedorinţa de a comunica cu alte persoane</label></li>
+                            <li><input id="li_9" type="checkbox" name="li" value="li"><label for="li_9">Somnul prea lung (de la 10 ore şi mai mult)</label></li>
+                            <li><input id="li_10" type="checkbox" name="li" value="li"><label for="li_10">Sentimentul de neputinţă</label></li>
+                        </ul>
+                    </div>
+                    <p class="bottom_text">Dacă aţi notat 2 puncte şi mai mult, <span>aveţi nivelul de cortizol mărit. Începeţi administrarea produsului Idealica</span>
+                        pentru a normaliza starea dvs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s8">
+        <div class="container">
+            <div class="row">
+                <div class="col flex">
+                    <h2>Este sigur pentru
+                        <span class="green">sănătate?</span></h2>
+                    <div class="one"><p>Da! Picăturile Idealica este creat din ingrediente naturale, care nu provoacă reacţii adverse şi alergii. Administraţi-le în decurs de 30 de zile - şi sănătatea dvs. se va îmbunătăţi ,la fel şi silueta!</p></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col center">
+                    <p>Merită menţionat că mai rapid şi eficient, picăturile Idealica lucrează în ansamblu cu o alimentaţie corectă şi exerciţii fizice. Dacă activaţi în complex, veţi avea posibilitatea să slăbiţi cu 1 kg pe zi! Dar dacă aveţi un mod de viată pasiv şi nutriţia include nu cele mai săsătoase alimente - Idealica la fel vă ajută! Insă progresul v-a fi mult mai lent. Alegerea vă aparţine!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col flex">
+                    <div class="two"><p>Picăturile vor scade nivelul de cortizol - hormonul stresului din sânge. Normalizează tensiunea arterială şi scade nivelul de zahăr. Accelerează metabolismul şi schimbul de substanţe la nivel celular - grăsimea se va transforma în energie şi nu se va depune în zonele problematice. Complexul de vitamine vă va oferi un flux de energie şi puteri. Plus la aceasta, Idealica îmbunătăţeşte atenţia, are influenţă benefică asupra somnului şi reduce pofta de mâncare.</p></div>
+                    <h2>Cum <span class="green">Idealica</span>
+                        mă va ajuta?</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s9">
+        <div class="container">
+            <div class="row">
+                <div class="col flex">
+                    <div class="block_1"><h2>Obţine un corp sănătos şi suplu împreună cu Idealica în doar 30 de zile!</h2>
+                        <p class="text">O sticluţă <b>de Idealica la preţ doar de  <span
+                                class="priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span>!</b> Este costul unei cine în restaurant. Un preţ mic pentru o talie subţire şi o încredere în sine formidabilă! Numărul de produse pentru un curs se calculează individual</p>
+                        <div class="timer_block">
+                            <h3>Atenţie!</h3>
+                            <p>Doar astăzi este valabilă oferta pentru cumpărătorii noi! Plasaţi comanda până la finele ofertei şi primiţi reducerea maximă</p>
+                            <div class="timer">
+                                <div class="day">
+                                    <div class="timer_bor"><span class="t">{d10}{d1}</span></div>
+                                    <span class="t_d">Zile</span></div>
+                                <div class="day">
+                                    <div class="timer_bor"><span class="t">{h10}{h1}</span></div>
+                                    <span class="t_d">Ore</span></div>
+                                <div class="day">
+                                    <div class="timer_bor"><span class="t">{m10}{m1}</span></div>
+                                    <span class="t_d">Minute</span></div>
+                                <div class="day">
+                                    <div class="timer_bor"><span class="t">{s10}{s1}</span></div>
+                                    <span class="t_d">Secunde</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/bottle_4.png" alt="">
+                    <div class="s6_form">
+                        <div class="form_group">
+                            <div class="form_title">
+                                <p class="form_title_text">Plasează comanda</p>
+                            </div>
+                            <div class="form_price">
+                                <span class="priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+                                <span class="oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+                            </div>
+                            <form action="getform.php" id="toform" method="post">
+                                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                                <input type="text" name="name" placeholder="Numele dvs." required>
+                                <input type="tel" name="phone" placeholder="Telefonul dvs." required>
+
+                                <button class="btn_form" type="submit">Comandă cu reducere 50%</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s10">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="privacy.html" target="_blank">Politica de confidențialitate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/jqueryplugin.js"></script>
+<script src="js/jquery.countdown.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+<script src="js/main.js"></script>
+<!--Счетчики метрик для вебмастеров-->
+
+
+
+
+
+
+<script>
+    const offer_params = {
+        priceMain: '159',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'lei',
+        productName: '', // на лендах не використовується
+    };
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+    if (offer_params.customPriceOld) {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    } else {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+
+</body>
+</html>

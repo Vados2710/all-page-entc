@@ -1,0 +1,225 @@
+.face__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.face__logo {
+    font-family: 'Baskerville', serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: #4A596A;
+    margin-right: 30px;
+}
+
+.face__nav {
+    display: flex;
+    align-items: center;
+    margin-right: -15px;
+}
+
+.face__nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 10px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #463E3E;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+
+    &:hover {
+        background-color: rgba(123, 76, 73, 0.15);
+    }
+
+    &.active {
+        font-weight: 700;
+        border-bottom-color: rgba(123, 76, 73, 0.15);
+    }
+}
+
+.face__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.face__box {
+    &:first-child {
+        flex-grow: 1;
+    }
+}
+
+.face__product {
+    position: absolute;
+    z-index: -1;
+    bottom: -115px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 990px;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 140px;
+        height: 92px;
+        content: '';
+        background-image: url('../media/face/arrow.png');
+        background-repeat: no-repeat;
+        margin-left: -230px;
+        margin-top: 150px;
+    }
+}
+
+.face__title {
+    margin-bottom: 60px;
+    font-family: "Baskerville";
+    font-weight: 500;
+    font-size: 70px;
+    color: #3B6167;
+    line-height: .8;
+}
+
+.face__list {
+    max-width: 350px;
+}
+
+.face__list-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 92px;
+    min-height: 67px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #463E3E;
+
+    & b {
+        display: block;
+        font-weight: 700;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 67px;
+        height: 67px;
+        content: '';
+        background-color: #4A596A;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+    }
+
+    &:nth-child(1) {
+        &::before {
+            background-image: url("../media/face/list-item-1.png");
+        }
+    }
+
+    &:nth-child(2) {
+        &::before {
+            background-image: url("../media/face/list-item-2.png");
+        }
+    }
+
+    &:nth-child(3) {
+        &::before {
+            background-image: url("../media/face/list-item-3.png");
+        }
+    }
+    &:nth-child(4) {
+        &::before {
+            background-image: url("../media/face/list-item-4.png");
+        }
+    }
+
+    & + & {
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 1054px) {
+    .face__product {
+        bottom: 0;
+        min-width: 660px;
+
+        &::before {
+            display: none;
+        }
+    }
+    
+    .face__logo {
+        order: 2;
+    }
+
+    .face__nav {
+        order: 1;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .face__body {
+        flex-direction: column;
+    }
+
+    .face__product {
+        position: relative;
+        left: 0;
+        padding-top: 410px;
+        transform: translate(0, 0);
+        min-width: 0;
+        overflow: hidden;
+
+        & img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 640px;
+        }
+    }
+
+    .face__list {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .face__title {
+        font-size: 54px;
+        margin-bottom: 30px;
+    }
+
+    .face__list-item {
+        min-height: 50px;
+        padding-left: 65px;
+
+        &::before {
+            width: 50px;
+            height: 50px;
+            background-size: 50%;
+        }
+
+        & b {
+            display: inline-block;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .face__header {
+        margin-bottom: 10px;
+    }
+
+    .face__logo {
+        font-weight: 700;
+    }
+}

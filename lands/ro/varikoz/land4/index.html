@@ -1,0 +1,490 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Variforce</title>
+	<link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+	<div class="show-btn " id="js-red-btn">
+		<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+			<circle style="fill:#FF0404;" cx="22.5" cy="22.5" r="22.5" />
+			<polygon style="fill:#FFFFFF;" points="28,12.1 13,22 28,32 " />
+		</svg>
+	</div>
+	<!-- HurryUp block -->
+	<div class="hurryUp" id="hurryUp">
+		<span class="hurryUp__close"></span>
+		<div class="hurryUp-left hurryUp__text">
+			Profitați de oportunitatea unică de a cumpăra
+			<b>Variforce la cel mai mic preț.</b>
+		</div>
+		<div class="hurryUp-right hurryUp__text">
+			<b class="hurryUp__text-bold">Grăbiți-vă!</b>
+			<span class="hurryUp__text-desc">Oferta este limitată</span>
+			<div class="counter js-countdown">
+				<span class="counter__elem counter__elem1 js-count-digit">0</span>
+				<span class="counter__elem js-count-digit">0</span>
+				<span class="counter__elem js-count-digit">0</span>
+			</div>
+		</div>
+	</div>
+	<!-- END: HurryUp block -->
+	<div class="navbar">
+		<div class="navbar-contain container">
+			<a style="color: #c52087; font-size: 2.5rem;" href="#prime" class="navbar-logo js-link">Variforce</a>
+			<ul id="fixed-nav" class="navbar-menu">
+				<li class="navbar__item"><a class="js-link" href="#prime">Principala </a></li>
+				<li class="navbar__item"><a class="js-link" href="#telephone">Consultare </a></li>
+				<li class="navbar__item"><a class="js-link" href="#comments">Opinii</a></li>
+			</ul>
+			<a href="#order-form" class="navbar__button button-wrap button-wrap_sm js-to-form"><span
+					class="button button_sm">COMANDĂ CU DISCOUNT<i class="arrow"></i></span></a>
+		</div>
+	</div>
+	<section class="prime" id="prime">
+		<div class="prime__top">
+			<div class="container prime-wrap">
+				<div class="prime-left">
+					<div class="prime-left__top">NEW Formula</div>
+					<h2 class="prime-title">
+						Variforce<span> va întoarce ușurința picioarelor voastre</span>
+					</h2>
+					<div class="prime-list">
+						<ul>
+							<li class="prime-list__item">
+								Reduce durerea și disconfortul
+							</li>
+							<li class="prime-list__item">
+								Normalizează structura pereților venoși
+							</li>
+							<li class="prime-list__item prime-list__item-last">
+								Previne complicațiile venelor varicoase
+							</li>
+						</ul>
+						<div class="prime-icons">
+							<i class="prime-ico1 icon svg-ico1"></i>
+							<i class="prime-ico2 icon svg-ico2"></i>
+							<i class="prime-ico3 icon svg-ico3"></i>
+						</div>
+					</div>
+					<img class="prime__img" src="images/product1.png" alt="product">
+				</div>
+				<div class="prime-counter">
+					<div class="container">
+						<span class="prime-counter__text">
+							Grăbiți-vă! Oferta este limitată
+						</span>
+						<div class="counter js-countdown">
+							<span class="counter__elem counter__elem1 js-count-digit">0</span>
+							<span class="counter__elem js-count-digit">0</span>
+							<span class="counter__elem js-count-digit">0</span>
+						</div>
+					</div>
+				</div>
+				<div class="prime-right">
+					<div class="timer">
+						<span class="timer__title">
+							Până la sfârșitul promoției a rămas
+						</span>
+						<div class="timer-wrap">
+							<div class="timer__item hours"></div>
+							 : 
+							<div class="timer__item minutes"></div>
+							 : 
+							<div class="timer__item seconds"></div>
+						</div>
+					</div>
+					<div class="order-wrap">
+						<div id="order-form1" class="order">
+							<div class="order-head">
+								<div class="discount"></div>
+								<div class="price bb">
+									<div class="price__old  price__old-crossed">
+										<span class="al-raw-cost-promo price__old-cost"><span class="priceOld"></span></span>
+										<span class="al-raw-currency price__old-currency"><span class="currencyMain"></span></span>
+									</div>
+									<div class="price__new">
+										<span class="al-raw-cost price__new-cost"><span class="priceMain"></span></span>
+										<span class="al-raw-currency price__new-currency"><span class="currencyMain"></span></span>
+									</div>
+								</div>
+								<h4 class="order__title">COMPLETAȚI FORMULARUL ȘI VĂ VOM CONTACTA </h4>
+							</div>
+							<form action="getform.php" method="post" class="al-form form">
+								<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+<input type="hidden" name="utm_campaign" value="{domonetka}">
+								<div class="input-wrapper">
+									<input type="text" name="name" class="form__input form__input-name"
+										placeholder="Nume" id="name" required="required">
+									<label for="name"></label>
+								</div>
+								<div class="input-wrapper">
+									<input type="tel" name="phone" required="required" class="form__input" placeholder="Telefon" id="phone">
+									<label for="phone"></label>
+								</div>
+								<div class="button-wrap">
+									<button type="submit" class="button form__submit js-submit js-button ">COMANDĂ CU
+										DISCOUNT<i class="arrow"></i></button>
+								</div>
+								<div class="icons-secure">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="prime__bottom"></div>
+	</section>
+	<section class="tape">
+		<div class="container">
+			<ul class="tape-list">
+				<li class="tape__item1"> Simplu și eficient</li>
+				<li class="tape__item2">Fără durere și disconfort</li>
+				<li class="tape__item3">Fără intervenții chirurgicale și reabilitare</li>
+			</ul>
+		</div>
+	</section>
+	<section class="feature">
+		<div class="container feature-wrap">
+			<div class="feature-left">
+				<div class="feature__product">
+					<img src="images/product1.png" alt>
+				</div>
+			</div>
+			<div class="feature-right">
+				<h3 class="feature__title">
+					Ce este deosebit în crema Variforce?
+				</h3>
+				<ul class="feature-list">
+					<li class="feature__item">
+						<h6>Alternativă operațiilor</h6>
+						<p>Restabilește organismul în mod natural, fără intervenție chirurgicală</p>
+					</li>
+					<li class="feature__item">
+						<h6>Acțiune complexă</h6>
+						<p>Oferă efect multilateral asupra venelor și pielii picioarelor</p>
+					</li>
+					<li class="feature__item">
+						<h6>Pentru uz casnic</h6>
+						<p>Se eliberează fără prescripție medicală și nu provoacă efecte secundare</p>
+					</li>
+					<li class="feature__item">
+						<h6>Efect stabil</h6>
+						<p>Crema începe să acționeze imediat iar cursul complet întărește efectul</p>
+					</li>
+					<li class="feature__item">
+						<h6>Sigur și ecologic</h6>
+						<p>Compoziția hipoalergenică naturală nu are contraindicații</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="varicose">
+		<div class="container">
+			<div class="varicose-title">
+				<h3>
+					Oprește varicoza!
+				</h3>
+				<p>
+					Lărgirea venelor varicoase necesită ajutor la timpul potrivit, deoarece nu trece niciodată de la
+					sine și riscă să se dezvolte într-o tromboză.
+				</p>
+			</div>
+		</div>
+		<img src="images/varicose-img.png" alt>
+	</section>
+	<section class="expert">
+		<div class="container expert-wrap">
+			<div class="expert-left expert-block">
+				<div class="expert-block__name">
+					<span>
+						<strong>Violeta</strong>,<br>
+						curierul, stă în picioare <br>
+						câte 12 ore pe zi
+					</span>
+				</div>
+				<div class="expert-block__text">
+					<h4>
+						Disponibil fiecărui
+					</h4>
+					<p>“Este minunat ca Variforce poate fi comandat online! În ea, după cum s-a dovedit,este tot ceea ce
+						căutam de mult timp: umflăturile și inflamațiile venelor au trecut, oboseala picioarelor ca cu
+						mâna a fost scoasă.”</p>
+					<a href="#order-form" class="button js-to-form">COMANDĂ CU DISCOUNT<i class="arrow"></i></a>
+				</div>
+			</div>
+			<div class="expert-right">
+				<h3>
+					Alegerea profesioniștilor
+				</h3>
+				<p>
+					“De când, odată pentru totdeauna, Variforce mi-a rezolvat problema, recomand această cremă tuturor!
+					Este uimitor faptul că într-o singură soluție oamenii de știință au reușit să combine atât de multe
+					componente terapeutice. Aplic în continuare, chiar și după ce am restabilit starea sănătății
+					picioarelor mele, epuizate cu balet.De acum îmi este evident că este mai bine să nu neglijăm venele
+					varicoase decât apoi să le înlăturăm.”
+				</p>
+				<div>
+					<strong>Lia Sobolevskaia</strong>, <br>
+					prima- balerină a Teatrului Mare
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="telephone" id="telephone">
+		<div class="container telephone-wrap">
+			<div class="telephone-left">
+				<div class="telephone-title">
+					<h3>
+						Atenție!
+					</h3>
+					<p>
+						Pentru eficiență maximă a utilizării cremei,
+						<span>comandați apelul consultantulu.</span>
+					</p>
+				</div>
+			</div>
+			<div class="telephone-right">
+				<div class="phone">
+					<i class="phone__img"></i>
+					<span class="phone__circle-internal"></span>
+					<span class="phone__circle-external-1"></span>
+					<span class="phone__circle-external-2"></span>
+				</div>
+			</div>
+		</div>
+		<img src="images/telephone-img.png" alt>
+	</section>
+	<section class="comments" id="comments">
+		<div class="container">
+			<h3 class="comments__title">
+				Opinii despre crema Variforce
+			</h3>
+			<div class="comments-list">
+				<div class="comments__item1 comment">
+					<i class="comment__ico1"></i>
+					<div class="comment-block">
+						<h5>Elena</h5>
+						<p>După naștere, steluțele vasculare de pe picioare au crescut în venele dezgustătoare. Sunt
+							recunoscătoare Variforce, care mi-a întors picioarele în starea "prenatală".</p>
+					</div>
+					<span class="comment__img1"></span>
+				</div>
+				<div class="comments__item2 comment">
+					<i class="comment__ico2"></i>
+					<div class="comment-block">
+						<h5>Valera</h5>
+						<p>În timp ce ignoram problemele cu picioarele, soția mea căuta modalități de a mă ajuta. N-am
+							crezut în nimic, dar Variforce cumpărat de ea a nivelat manifestările aparente a venelor
+							varicoase!</p>
+					</div>
+					<span class="comment__img2"></span>
+				</div>
+				<div class="comments__item3 comment">
+					<i class="comment__ico3"></i>
+					<div class="comment-block">
+						<h5>Lucreția</h5>
+						<p>După plimbări lungi, picioarele mi s-au umflat și mă înghimpau ((am fost în disperare, iar
+							Variforce a ajutat!) Este incredibil. De acum, disconfortul picioarelor mele este rar.</p>
+					</div>
+					<i class="comment__img3"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="steps" class="steps">
+		<div class="container">
+			<h3 class="steps__title">
+				4 pași simpli pentru trai fără vene varicoase
+			</h3>
+			<ul class="steps-list">
+				<li class="steps-item steps-item-1">
+					<i class="icon svg-step1"></i>
+					<h5>Rapid</h5>
+					<p>Completați formularul de pe site</p>
+				</li>
+				<li class="steps-item steps-item-2">
+					<i class="icon svg-step2"></i>
+					<h5>Comod</h5>
+					<p>Operatorul nostru va apela și va reconcilia livrarea</p>
+				</li>
+				<li class="steps-item steps-item-3">
+					<i class="icon svg-step3"></i>
+					<h5>Sigur</h5>
+					<p>Plătiți pentru bunuri numai după primire, fără riscuri</p>
+				</li>
+				<li class="steps-item steps-item-4">
+					<i class="icon svg-step4"></i>
+					<h5>Efectiv</h5>
+					<p>Urmați instrucțiunile și reveniți la viață fără vene varicoase</p>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="prime" id="prime-bottom">
+		<div class="prime__top">
+			<div class="container prime-wrap">
+				<div class="prime-left">
+					<div class="prime-left__top">NEW Formula</div>
+					<h2 class="prime-title">
+						Variforce<span> va întoarce ușurința picioarelor voastre</span>
+					</h2>
+					<div class="prime-list">
+						<ul>
+							<li class="prime-list__item">
+								Reduce durerea și disconfortul
+							</li>
+							<li class="prime-list__item">
+								Normalizează structura pereților venoși
+							</li>
+							<li class="prime-list__item prime-list__item-last">
+								Previne complicațiile venelor varicoase
+							</li>
+						</ul>
+						<div class="prime-icons">
+							<i class="prime-ico1 icon svg-ico1"></i>
+							<i class="prime-ico2 icon svg-ico2"></i>
+							<i class="prime-ico3 icon svg-ico3"></i>
+						</div>
+					</div>
+					<img class="prime__img" src="images/product1.png" alt="product">
+				</div>
+				<div class="prime-counter">
+					<div class="container">
+						<span class="prime-counter__text">
+							Grăbiți-vă! Oferta este limitată
+						</span>
+						<div class="counter js-countdown">
+							<span class="counter__elem counter__elem1 js-count-digit">0</span>
+							<span class="counter__elem js-count-digit">0</span>
+							<span class="counter__elem js-count-digit">0</span>
+						</div>
+					</div>
+				</div>
+				<div class="prime-right">
+					<div class="timer">
+						<span class="timer__title">
+							Până la sfârșitul promoției a rămas
+						</span>
+						<div class="timer-wrap">
+							<div class="timer__item hours"></div>
+							 : 
+							<div class="timer__item minutes"></div>
+							 : 
+							<div class="timer__item seconds"></div>
+						</div>
+					</div>
+					<div class="order-wrap">
+						<div id="order-form2" class="order">
+							<div class="order-head">
+								<div class="discount"></div>
+								<div class="price bb">
+									<div class="price__old  price__old-crossed">
+										<span class="al-raw-cost-promo price__old-cost"><span class="priceOld"></span></span>
+										<span class="al-raw-currency price__old-currency"><span class="currencyMain"></span></span>
+									</div>
+									<div class="price__new">
+										<span class="al-raw-cost price__new-cost"><span class="priceMain"></span></span>
+										<span class="al-raw-currency price__new-currency"><span class="currencyMain"></span></span>
+									</div>
+								</div>
+								<h4 class="order__title">COMPLETAȚI FORMULARUL ȘI VĂ VOM CONTACTA!</h4>
+							</div>
+							<form action="getform.php" method="post" class="al-form form">
+								<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+<input type="hidden" name="utm_campaign" value="{domonetka}">
+								<div class="input-wrapper">
+									<input type="text" name="name" required="required" class="form__input form__input-name"
+										placeholder="Nume" id="name2">
+									<label for="name2"></label>
+								</div>
+								<div class="input-wrapper">
+									<input type="tel" name="phone" required="required" class="form__input" placeholder="Telefon"
+										id="phone2">
+									<label for="phone2"></label>
+								</div>
+								<div class="button-wrap">
+									<button type="submit" class="button form__submit js-submit js-button ">COMANDĂ CU
+										DISCOUNT<i class="arrow"></i></button>
+								</div>
+								<div class="icons-secure">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="prime__bottom"></div>
+	</section>
+	<script src="js/main.js"></script>
+	<script src="js/app.js"></script>
+	<script>
+		const offer_params = {
+			priceMain : '149',
+			customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+			currencyMain: 'lei',
+			productName : '',
+		};
+	
+	
+		var productName = document.getElementsByClassName("productName");
+		var priceMain = document.getElementsByClassName("priceMain");
+		var priceOld = document.getElementsByClassName("priceOld");
+		var currencyMain = document.getElementsByClassName("currencyMain");
+	
+	
+		for (var i = 0; i < productName.length; i++) {
+			productName[i].innerHTML = offer_params.productName;
+		}
+		for (var i = 0; i < priceMain.length; i++) {
+			priceMain[i].innerHTML = offer_params.priceMain;
+		}
+	
+	
+		if(offer_params.customPriceOld){
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.customPriceOld;
+			}
+		}else{
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.priceMain * 2;
+			}
+		}
+	
+	
+		for (var i = 0; i < currencyMain.length; i++) {
+			currencyMain[i].innerHTML = offer_params.currencyMain;
+		}
+	 </script>
+ <script>
+	$('[name="name"]').on('input change', function () {
+		var val = $(this).val();
+		$(this).val(val.replace(/[0-9+]/g, ''));
+	});
+	$('[name="name"]').attr('autocomplete', 'name');
+	$('[name="name"]').attr('pattern', '.{2,25}');
+	$('[name="phone"]').on('input change', function (e) {
+		var val = $(this).val();
+		$(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+	});
+	$('[name="phone"]').get(0).type = 'tel';
+	$('[name="phone"]').attr('autocomplete', 'tel');
+	$('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

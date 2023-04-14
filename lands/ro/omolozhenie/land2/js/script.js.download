@@ -1,0 +1,132 @@
+$(document).ready(function () {
+
+
+
+	/* Timer */
+	$('.clock').countdown('2020/10/10', function (event) {
+		$(this).html(event.strftime('%H:%M:%S'));
+	});
+	$('.j-order').click(function () {
+		var $form = $(".form").offset().top;
+		$("html, body").animate({scrollTop: $form}, 666);
+		return false;
+	});
+	var places_left = 17;
+	var myVar = setInterval(function () {
+		myTimer()
+	}, 15000);
+	function myTimer() {
+		places_left -= 1
+		$('.j-left').text(places_left);
+		if (places_left < 10) {
+			myStopFunction();
+		}
+		;
+	}
+	function myStopFunction() {
+		clearInterval(myVar);
+	}
+
+	$('.owl-carousel').owlCarousel({
+		loop: true,
+		items: 1,
+		nav: true,
+		pagination: true
+
+	})
+
+	$('.js-userAge').change(function () {
+		dynamicAge();
+		recomendations();
+	})
+
+	function dynamicAge() {
+		if (($(".js-userAge").val()) == "") {
+			$('.js-userAge-wrap').append('<span class="age-warning">Укажите ваш возраст</span>')
+			return ('Inserisci la tua età')
+		} else {
+			var userAgeVar = parseInt($(".js-userAge").val());
+		}
+		if ($('#noseCheck').is(":checked")) {
+			userAgeVar = userAgeVar + 2;
+		}
+		if ($('#skinCheck').is(":checked")) {
+			userAgeVar = userAgeVar + 4;
+
+		}
+		if ($('#mimikaCheck').is(":checked")) {
+			userAgeVar = userAgeVar + 4;
+
+		}
+		if ($('#morshinCheck').is(":checked")) {
+			userAgeVar = userAgeVar + 2;
+		}
+		return (userAgeVar);
+	}
+	$('.js-checkbox').change(function () {
+		var cur_age = dynamicAge();
+		console.log(cur_age);
+		if (cur_age == "") {
+			$('.js-userAge-wrap').append('<span class="age-warning">Indicare la tua età</span>')
+		} else {
+			$('.js-resultAge').text(cur_age);
+			$('.js-ageWord').text(wordEnding(cur_age));
+
+		}
+		;
+		recomendations();
+
+
+	});
+	$('.js-userAge-wrap').change(function () {
+		$('.age-warning').remove();
+		$('.js-resultAge').text(dynamicAge());
+		$('.js-ageWord').text(wordEnding(dynamicAge()));
+	});
+	function wordEnding(col) {
+		var x = "";
+		var str = "Сидит " + col + " ворон";
+		if (col % 100 < 11 || col % 100 > 14) {
+			switch (col % 10) {
+				case 1:
+					x = "anni";
+					break;
+				case 2:
+				case 3:
+				case 4:
+					x = "anni";
+					break;
+				case 0:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+					x = "anni";
+					break;
+			}
+		}
+		return x;
+	}
+	function recomendations() {
+		$('.js-recomendations').removeClass('js-recomendations_act');
+		if ((($('.js-checkbox').length) - ($('.js-checkbox:checked').length)) == 0 && ($(".js-userAge").val()) !== "") {
+			$('.js-recomendations4').addClass('js-recomendations_act');
+		} else if ((($('.js-checkbox').length) - ($('.js-checkbox:checked').length)) == 1 && ($(".js-userAge").val()) !== "") {
+			$('.js-recomendations3').addClass('js-recomendations_act');
+		} else if ((($('.js-checkbox').length) - ($('.js-checkbox:checked').length)) == 2 && ($(".js-userAge").val()) !== "") {
+			$('.js-recomendations2').addClass('js-recomendations_act');
+		} else if ((($('.js-checkbox').length) - ($('.js-checkbox:checked').length)) == 3 && ($(".js-userAge").val()) !== "") {
+			$('.js-recomendations1').addClass('js-recomendations_act');
+		} else {
+
+		}
+		;
+	}
+	$('.js-fifth_screen__btn').click(function () {
+		$('.js-cert').toggle("slow");
+	});
+	$('.js-cert').click(function () {
+		$('.js-cert').toggle("slow");
+	});
+});

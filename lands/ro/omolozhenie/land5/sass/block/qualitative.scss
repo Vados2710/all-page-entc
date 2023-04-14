@@ -1,0 +1,130 @@
+
+.qualitative {
+    position: relative;
+    z-index: 1;
+    padding: 45px;
+    padding-left: 410px;
+    background-color: #D9F0F3;
+    border: 22px solid #fff;
+
+    &::before {
+        position: absolute;
+        top: -22px;
+        right: -22px;
+        bottom: -22px;
+        left: -22px;
+        width: calc(100% + 44px);
+        height: calc(100% + 44px);
+        content: '';
+        border: 1px solid #ACDAE1;
+    }
+}
+
+.qualitative__title {
+    margin-bottom: 15px;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 500;
+    color: #3B6167;
+}
+
+.qualitative__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    padding-left: 64px;
+    min-height: 42px;
+    background-image: url("../media/qualitative/icon.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1B1919;
+
+    & + & {
+        margin-top: 20px;
+    }
+}
+
+.qualitative__product {
+    position: absolute;
+    z-index: 2;
+    top: -60px;
+    max-width: 560px;
+    left: -235px;
+}
+
+.qualitative__cert {
+    position: absolute;
+    z-index: 1;
+    top: -75px;
+    left: 160px;
+}
+
+@media (max-width: 1054px) {
+    .qualitative {
+        padding: 45px;
+        padding-bottom: 500px;
+    }
+
+    .qualitative__product {
+        top: auto;
+        bottom: 0;
+        max-width: 560px;
+        left: -100px;
+    }
+
+    .qualitative__cert {
+        top: auto;
+        bottom: 50px;
+        left: auto;
+        right: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .qualitative {
+        padding: 20px;
+        padding-bottom: 320px;
+    }
+
+    .qualitative__cert {
+        display: none;
+    }
+
+    .qualitative__product {
+        width: 400px;
+        left: -20px;
+        bottom: -20px;
+    }
+
+    .qualitative__title {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qualitative {
+        border: 0;
+        padding: 25px;
+        padding-bottom: 320px;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .qualitative__product {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: -25px;
+    }
+
+    .qualitative__item {
+        font-size: 18px;
+        padding-left: 35px;
+        background-size: 25px;
+    }
+}
