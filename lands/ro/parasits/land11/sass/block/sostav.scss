@@ -1,0 +1,153 @@
+
+.sostav__title {
+    margin-bottom: 30px;
+    font-size: 63px;
+    line-height: 56px;
+    color: #fff;
+    text-align: center;
+}
+
+.sostav__box {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.sostav__item {
+    width: 390px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 2px;
+
+    &_right {
+        flex-direction: row-reverse;
+        text-align: right;
+
+        & .sostav__media {
+            float: right;
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    }
+}
+
+.sostav__media {
+    flex: 0 0 auto;
+    float: left;
+    margin-right: 10px;
+}
+
+.sostav__info {
+    & span {
+        &:first-child {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 21px;
+            font-weight: 700;
+        }
+    }
+}
+
+.sostav__product {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: -160px;
+    margin-left: -25px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 1030px) {
+    .sostav__item {
+        width: 280px;
+        padding: 10px;
+
+        &_right {
+            & .sostav__media {
+                margin-right: 0;
+                margin-left: 20px;
+            }
+        }
+    }
+
+    .sostav__media {
+        max-width: 90px;
+        margin-right: 20px;
+    }
+
+    .sostav__info {
+        & span {
+            &:first-child {
+                font-size: 17px;
+            }
+        }
+    }
+
+    .sostav__product {
+        max-width: 390px;
+        margin-left: -19px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sostav__item {
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - 7.5px);
+        text-align: center;
+
+        & .sostav__media {
+            max-width: 100%;
+            margin-right: auto;
+            margin-bottom: 10px;
+            margin-left: auto;
+        }
+    }
+
+    .sostav__info {
+        & span {
+            &:last-child {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .sostav__product {
+        position: static;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        transform: translateX(-26px);
+
+        & img {
+            margin-left: 15px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .sostav__item {
+        display: block;
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+
+        & .sostav__media {
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+    }
+
+    .sostav__media {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 350px) {
+    .sostav__item .sostav__media {
+        max-width: 110px;
+    }
+}
