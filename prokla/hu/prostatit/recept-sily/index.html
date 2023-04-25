@@ -1,0 +1,699 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <title>A férfierő receptje</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script data-polyfil="webp">
+      !(function (e, n, A) {
+        function o(e, n) {
+          return typeof e === n;
+        }
+        function t() {
+          var e, n, A, t, a, i, l;
+          for (var f in r)
+            if (r.hasOwnProperty(f)) {
+              if (
+                ((e = []),
+                (n = r[f]),
+                n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length))
+              )
+                for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+              for (t = o(n.fn, 'function') ? n.fn() : n.fn, a = 0; a < e.length; a++)
+                (i = e[a]),
+                  (l = i.split('.')),
+                  1 === l.length
+                    ? (Modernizr[l[0]] = t)
+                    : (!Modernizr[l[0]] ||
+                        Modernizr[l[0]] instanceof Boolean ||
+                        (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])),
+                      (Modernizr[l[0]][l[1]] = t)),
+                  s.push((t ? '' : 'no-') + l.join('-'));
+            }
+        }
+        function a(e) {
+          var n = u.className,
+            A = Modernizr._config.classPrefix || '';
+          if ((c && (n = n.baseVal), Modernizr._config.enableJSClass)) {
+            var o = new RegExp('(^|\s)' + A + 'no-js(\s|$)');
+            n = n.replace(o, '$1' + A + 'js$2');
+          }
+          Modernizr._config.enableClasses &&
+            ((n += ' ' + A + e.join(' ' + A)), c ? (u.className.baseVal = n) : (u.className = n));
+        }
+        function i(e, n) {
+          if ('object' == typeof e) for (var A in e) f(e, A) && i(A, e[A]);
+          else {
+            e = e.toLowerCase();
+            var o = e.split('.'),
+              t = Modernizr[o[0]];
+            if ((2 == o.length && (t = t[o[1]]), 'undefined' != typeof t)) return Modernizr;
+            (n = 'function' == typeof n ? n() : n),
+              1 == o.length
+                ? (Modernizr[o[0]] = n)
+                : (!Modernizr[o[0]] ||
+                    Modernizr[o[0]] instanceof Boolean ||
+                    (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])),
+                  (Modernizr[o[0]][o[1]] = n)),
+              a([(n && 0 != n ? '' : 'no-') + o.join('-')]),
+              Modernizr._trigger(e, n);
+          }
+          return Modernizr;
+        }
+        var s = [],
+          r = [],
+          l = {
+            _version: '3.6.0',
+            _config: { classPrefix: '', enableClasses: !0, enableJSClass: !0, usePrefixes: !0 },
+            _q: [],
+            on: function (e, n) {
+              var A = this;
+              setTimeout(function () {
+                n(A[e]);
+              }, 0);
+            },
+            addTest: function (e, n, A) {
+              r.push({ name: e, fn: n, options: A });
+            },
+            addAsyncTest: function (e) {
+              r.push({ name: null, fn: e });
+            },
+          },
+          Modernizr = function () {};
+        (Modernizr.prototype = l), (Modernizr = new Modernizr());
+        var f,
+          u = n.documentElement,
+          c = 'svg' === u.nodeName.toLowerCase();
+        !(function () {
+          var e = {}.hasOwnProperty;
+          f =
+            o(e, 'undefined') || o(e.call, 'undefined')
+              ? function (e, n) {
+                  return n in e && o(e.constructor.prototype[n], 'undefined');
+                }
+              : function (n, A) {
+                  return e.call(n, A);
+                };
+        })(),
+          (l._l = {}),
+          (l.on = function (e, n) {
+            this._l[e] || (this._l[e] = []),
+              this._l[e].push(n),
+              Modernizr.hasOwnProperty(e) &&
+                setTimeout(function () {
+                  Modernizr._trigger(e, Modernizr[e]);
+                }, 0);
+          }),
+          (l._trigger = function (e, n) {
+            if (this._l[e]) {
+              var A = this._l[e];
+              setTimeout(function () {
+                var e, o;
+                for (e = 0; e < A.length; e++) (o = A[e])(n);
+              }, 0),
+                delete this._l[e];
+            }
+          }),
+          Modernizr._q.push(function () {
+            l.addTest = i;
+          }),
+          Modernizr.addAsyncTest(function () {
+            function e(e, n, A) {
+              function o(n) {
+                var o = n && 'load' === n.type ? 1 == t.width : !1,
+                  a = 'webp' === e;
+                i(e, a && o ? new Boolean(o) : o), A && A(n);
+              }
+              var t = new Image();
+              (t.onerror = o), (t.onload = o), (t.src = n);
+            }
+            var n = [
+                {
+                  uri: 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=',
+                  name: 'webp',
+                },
+                {
+                  uri:
+                    'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==',
+                  name: 'webp.alpha',
+                },
+                {
+                  uri:
+                    'data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA',
+                  name: 'webp.animation',
+                },
+                {
+                  uri: 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=',
+                  name: 'webp.lossless',
+                },
+              ],
+              A = n.shift();
+            e(A.name, A.uri, function (A) {
+              if (A && 'load' === A.type) for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri);
+            });
+          }),
+          t(),
+          a(s),
+          delete l.addTest,
+          delete l.addAsyncTest;
+        for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+        e.Modernizr = Modernizr;
+      })(window, document);
+    </script>
+  </head>
+  <body class="ev-date">
+    <header class="lt0">Sexoblog</header>
+
+    <main>
+      <h1 class="lt1"><span style="color: rgb(248, 34, 34)">A férfierő receptje </span></h1>
+      <div class="golova">
+        <h2 class="lt2">Ezen kapszulák után a férjemmel több órán keresztül szeretkezhetünk!</h2>
+        <ul>
+          <li class="lt3">
+            <i aria-hidden="true" class="fa fa-user"></i> Miért is vettem meg őket?! Már belefáradtam az ilyen intenzív
+            nemi életbe!
+          </li>
+          <div class="topimg">
+            <picture><source type="image/webp" srcset="images/1.webp">
+              <img alt="img" class="img-responsive" src="images/1.png" loading="lazy"></picture>
+          </div>
+        </ul>
+      </div>
+      <div class="story">
+        <h3 class="lt4"></h3>
+
+        <p style="text-align: center"><i>Intim élete jobbá válhat </i></p>
+        <p class="lt6">
+          Üdvözlök mindenkit! Emlékeznek a posztomra, amelyben panaszkodtam, hogy a férjem nem tud kielégíteni és
+          elfelejtettem mi is az az orgazmus? Még furulyázás után se volt erekciója!
+        </p>
+        <p class="lt7">
+          Mindent megpróbáltunk: a stimuláló szerektől a jógáig és a tantráig. Minden hiába volt! Zéró eredmény! Neki,
+          mint korábban is, problémái voltak az erekcióval — nem tartott két percnél tovább... 😞.😥
+        </p>
+        <p class="lt8">
+          Arra gondoltunk, hogy a probléma gyökere a genetikájában rejlik vagy talán ez valamilyen betegség tünete, de a
+          vizsgálatok nem mutattak semmilyen komoly eltérést a normától. Pillanatnyilag kifogytunk az ötletekből, de én
+          egyszerűen nem tudtam ebbe beletörődni...
+        </p>
+        <p class="lt9">
+          Fiatal és szép vagyok, bárki más már rég elhagyta volna… De a férjem remek ember, ideális férfi! Még gyereket
+          is szeretnék tőle! Kénytelen voltam megtalálni a módot.
+        </p>
+
+        <blockquote class="lt10">És megtaláltam!</blockquote>
+        <p class="lt11">
+          Láttam egy show műsort a televízióban, amelyben interjút készítettek Hugh Hefnerrel, a PlayBoy magazin
+          alapítójával (nyugodjon békében). Mindenki tudja, hogy bár nem volt fiatal, aktív szexuális életet élt az
+          utolsó percekig. A kérdésre “Hogy sikerül ez önnek?” — a következőt válaszolta: “Élete kezdetén minden
+          férfinak azonos mennyiségű szexuális energiája van, a legfontosabb - ne hagyd kialudni az évek során. Gyakran
+          használom a gyakorlatban, és ha kialszik, felébresztem az <a href="#toform"><b><span class="productName"></span></b></a> segítségével”!
+          💪💪💪!
+        </p>
+        <picture><source type="image/webp" srcset="images/2.webp">
+          <img class="comimg" src="images/2.png" loading="lazy" alt="img"></picture>
+        <p style="text-align: center"><i>Kora ellenére, Hugh Hefner élete végéig szexuálisan aktív maradt </i></p>
+        <p class="lt12">
+          Ott ragadtam a képernyő előtt és Hugh Hefner folytatta: “Mi az az <a href="#toform"><b><span class="productName"></span></b></a>? Ez egy növényi kivonat alapú szer, amely kiváló megoldás a potencia javítására és a férfi hormonok
+          szintjének növelésére. Már régóta ismerem...”
+        </p>
+        <p class="lt13">
+          Elővettem a telefonom a zsebemből, megtaláltam az <a href="#toform"><b><span class="productName"></span></b></a> weboldalát és
+          gondolkodás nélkül rendeltem két csomaggal.
+        </p>
+        <p>
+          A weboldalon olvastam, hogy az <a href="#toform"><b><span class="productName"></span></b></a> javíthatja az urogenitális rendszer
+          működését, növelheti a tesztoszteron, a fő férfi hormon, szintjét. A szer rendszeres szedése fokozhatja a nemi
+          vágyat, javíthatja az erekciót, meghosszabbíthatja az orgazmust és erősebbé teheti azt.
+        </p>
+
+        <p><b>Most az eredményeinkről </b></p>
+        <p class="lt16">
+          A rendelést gyorsan kiszállították. Aznap este, az utasításoknak megfelelően, adtam a férjemnek bevenni egy
+          kapszulát.
+        </p>
+        <p class="lt17">
+          Nem kellett sokáig várni az eredményre. Nem tudom, hogy mondjam, nagyon kellemetlen beszélnem erről az
+          egészről, de megteszem))
+        </p>
+        <p class="lt18">
+          Még csak nem is álmodhattam ilyen erős hatásról! Szóval nem vártam, hogy Antonio képes ilyesmire!
+        </p>
+
+        <p class="lt19">
+          Néhány napos szedés után, kiugrott az ágyból. A gatyájában kiváló erekció volt, a szemében pedig állati
+          szenvedély égett. Elkezdtünk szeretkezni.
+        </p>
+        <picture><source type="image/webp" srcset="images/3.webp">
+          <img alt="img" class="img-responsive" src="images/3.png" loading="lazy"></picture>
+        <p><i>Tisztességes kompenzációt kaptam a 2 szexmentes évért </i></p>
+        <p></p>
+        <p></p>
+        <!-- <p class="lt20">Я даже не могла мечтать о таком сильном эффекте! В общем, я не ожидала, что Антонио способен на такое!</p>
+<p class="lt21">Через полчаса он выпрыгнул из постели. В его трусиках была отличная эрекция, и в его глазах горела животная страсть. Я включила незаметно таймер, и мы начали заниматься сексом.</p> -->
+        <p class="lt22">
+          Hiszik vagy nem, de ezután szexeltünk, ami 47 percig tartott! Ez teljes 2 szex nélküli év után! Szenvedélyesen
+          szeretkeztünk és szünet nélkül! Végre éreztem, hogy élek.
+        </p>
+        <p class="lt23">
+          Hihetetlen kielégülés! Néha úgy tűnt, hogy egy pornó színésszel vagyok az ágyban vagy pedig három férfival
+          egyszerre!
+        </p>
+        <p class="lt24">
+          <a href="#toform"><b><span class="productName"></span></b></a>, amely annyiba kerül, mint egy mozijegy, felélesztette a szexuális életünket. Antonio… szex-óriássá vált, a
+          szex-óriások királyává! 👌😁💓💓💓)
+        </p>
+        <p>
+          Ez olyan eredmény, amiért kész vagyok akár 100 eurót is fizetni. Most már több órán át szeretkezhetünk
+          naponta. Néha már el is fáradok, ő pedig akarja még még.
+        </p>
+        <div style="text-align: center">
+          <picture><source type="image/webp" srcset="images/4.webp">
+            <img alt="img" class="img-respsonsive" height="350px" src="images/4.png" loading="lazy"></picture>
+        </div>
+        <!-- -->
+
+        <p style="text-align: center"><i>Intim életünk kardinálisan megváltozott </i></p>
+        <p></p>
+
+        <p class="lt26">
+          Antonio egy kapszulájával szedte reggel és este, és mi olyan boldogok voltunk, mint korábban soha. Ő már
+          régóta jár edzőterembe, még az <a href="#toform"><b><span class="productName"></span></b></a> szedése előtt kezdte, de nem lett túl
+          izmos. És most az izmai elkezdtek észrevehetően növekedni! Azt mondják, a tesztoszteron mennyiségének
+          növekedése miatt a szervezetben. Köszönöm <a href="#toform"><b><span class="productName"></span></b></a> azt is, hogy a férjemnek most
+          sportos alakja van!
+        </p>
+        <p class="lt27">
+          Antonio folytatja az <a href="#toform"><b><span class="productName"></span></b></a> szedését periodikus szünetekkel, de még a szünet
+          ideje alatt is szex-partijaink órákig tartanak, teljesen ki vagyok elégítve! A teste most olyan, mint a
+          legjobb sportolóké - a tesztoszteron csodákat tesz:)
+        </p>
+        <p class="lt28">
+          Amikor legutóbb rendeltem <a href="#toform"><b><span class="productName"></span></b></a> szert, a tanácsadó azt mondta nekem, hogy a
+          szer hatása hosszantartó és hogy nem szükséges állandóan szedni. Még 8 kúra befejezése után is működni fog.
+        </p>
+        <picture><source type="image/webp" srcset="images/5.webp">
+          <img alt="img" class="img-responsive" src="images/5.png" loading="lazy"></picture>
+        <p style="text-align: center"><i>Problémák a férfi egészséggel — nem ítélet</i></p>
+        <p>És ha valami történne, mindig van egy csomaggal a kezem alatt.</p>
+        <p>
+          Azoknak a férfiaknak ajánlom ezt a szert, akiknek potencia problémáik vannak. Ha szeretne javítani szexuális
+          életén függőség és az egészségben okozott károk nélkül, ajánlom, hogy vizsgálja meg az
+          <a href="#toform"><b><span class="productName"></span></b></a> szert! Látogasson el a hivatalos weboldalára!
+        </p>
+        <p>
+          A rendelés leadása után egy tanácsadó felveszi önnel a kapcsolatot, aki bármilyen kérdésére könnyedén
+          válaszol. A rendelés folyamata abszolút anonim, a szert időben, jelöletlen dobozban szállítjuk, hogy senki ne
+          tudja meg, mi van benne, csak ön.
+        </p>
+      </div>
+      <div class="toform buynow" style="text-align: center">
+        <div style="text-align: center">
+          <div class="toland lt31">
+            <span>50% KEDVEZMÉNY </span>Az akció tart
+            <strong>
+              <span class="date-0"></span>
+              <p style="color: #a9161a; text-decoration: line-through; margin: 0">
+                <span class="x_price_previous" style="display: inline; font-size: 18px"><span class="priceOld"></span></span><span class="x_currency" style="display: inline; font-size: 18px"><span class="currencyMain"></span></span>
+              </p>
+              <p style="color: #ff0000; font-size: 30px; margin: 0">
+                <span class="x_price_current" style="display: inline"><span class="priceMain"></span></span><span class="x_currency" style="display: inline"><span class="currencyMain"></span></span>
+              </p>
+            </strong>
+          </div>
+        </div>
+        <div id="toform"></div>
+        <br>
+      </div>
+        <div class="features-wrapper"> </div>
+
+        <style>
+          .wheel img{
+            width: 100%;
+          }
+        </style>
+
+
+        <div class="commentarios lt39">Hozzászólások</div>
+        <div class="comenti">
+          <div class="coma">
+            <div class="col-comm-text">
+              <div class="col-avatar">
+                <picture><source type="image/webp" srcset="images/av-01.webp">
+                  <img alt="img" class="img-circle" src="images/av-01.jpg" loading="lazy"></picture>
+              </div>
+              <p class="nickname">Anikó</p>
+              <p class="comment lt41">
+                МA barátommal öt évig éltünk együtt és egész idő alatt nem tetszett vele a szex a gyenge erekciója
+                miatt. Befejezésül - szakítottunk és én találkoztam életem férfijával. Meglepett az ágyban: órákig tud
+                szexelni, az erekciója pedig, mint a kő! Nemrég elmondta nekem, hogy pont az
+                <a href="#toform"><b><span class="productName"></span></b></a> ad neki ennyi erőt)💪👍😎
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-02.webp">
+                <img alt="img" class="img-circle" src="images/av-02.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Miklós</p>
+              <p class="comment lt43">
+                Ez a maga nemében mágia! Én mindössze egy hónapig szedtem az <a href="#toform"><b><span class="productName"></span></b></a> szert
+                és az eredmények felülmúltak minden várakozást. Népszerű lettem a lányok körében - az erekcióm megőrjíti
+                őket. Korábban néhány perc alatt végeztem, most pedig órákig tudom csinálni) KÖSZÖNÖM!!
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-03.webp">
+                <img alt="img" class="img-circle" src="images/av-03.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Dávid</p>
+              <p class="comment lt45">
+                Majdnem egy hónapja szedem. Őszintén szólva ez idő alatt azt hittem ,hogy az ilyen szerek arra vannak,
+                hogy kicsalják az emberek pénzét, de itt láttam a jó visszajelzéseket és az alacsony árat, és
+                eldöntöttem, kipróbálom. Az erekcióm észrevehetően erősebb lett és még ejakuláció után is erős marad. A
+                szernek segítenie kell azoknak, akiknek potencia problémáik vannak.
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-06.webp">
+                <img alt="img" class="img-circle" src="images/av-06.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Norbert</p>
+              <p class="comment lt47">
+                Az öcsém Amerikából azt mondja, hogy náluk sokan használják ezt a szert. Én személy szerint nem
+                próbáltam, de körülöttem csak pozitív visszajelzéseket látok.
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-08.webp">
+                <img alt="img" class="img-circle" src="images/av-08.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Léna</p>
+              <p class="comment lt49">
+                Milyen klassz történet) Elolvastam és úgy döntöttem, megrendelem) Különösen, hogy még akció is van.
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-07.webp">
+                <img alt="img" class="img-circle" src="images/av-07.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Krisztián</p>
+              <p class="comment lt51">
+                Nekem van tapasztalatom az <a href="#toform"><b><span class="productName"></span></b></a> szedésével, megerősíthetem, hogy a
+                szernek szuper a hatása. Merevedési zavarom volt, de az <a href="#toform"><b><span class="productName"></span></b></a> képes volt
+                helyrehozni! 😎😎😎
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-09.webp">
+                <img alt="img" class="img-circle" src="images/av-09.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">András</p>
+              <p class="comment lt53">Három csomaggal rendeltem, várom, hogy kiszállítsák… Remélem, segít nekem</p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-13.webp">
+                <img alt="img" class="img-circle" src="images/av-13.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Pál</p>
+              <p class="comment lt55">Milyen hálás történet. Ha nekem is ilyen feleségem lenne ;)</p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-11.webp">
+                <img alt="img" class="img-circle" src="images/av-11.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Lilla</p>
+              <p class="comment lt57">Van egy barátom, aki megrendelte és elégedett 😍</p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-12.webp">
+                <img alt="img" class="img-circle" src="images/av-12.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Zsófia</p>
+              <p class="comment lt59">
+                Köszönöm az információt, megrendeltem a férjemnek. Múlt héten szállították ki és már sikerült
+                meglepődnünk az eredményen. A hatás nagyon gyorsan látható!
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-14.webp">
+                <img alt="img" class="img-circle" src="images/av-14.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Árpád</p>
+              <p class="comment lt61">Ez a történet — az álmom.</p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-15.webp">
+                <img alt="img" class="img-circle" src="images/av-15.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Tamás</p>
+              <p class="comment lt63">
+                Működik) a kúra kezdetéig az erekcióm lehetett volna jobb is, most minden megváltozott)
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-16.webp">
+                <img alt="img" class="img-circle" src="images/av-16.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Imre</p>
+              <p class="comment lt65">
+                A feleségem egyáltalán nem érti mi folyik itt, de tetszik neki! Még a veszekedést is abbahagytuk) A
+                hivatalos weboldalon rendeltük, mindig időben kiszállítják
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-17.webp">
+                <img alt="img" class="img-circle" src="images/av-17.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Ferenc</p>
+              <p class="comment lt67">Kiszállították a rendelésem, most kipróbálom</p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-20.webp">
+                <img alt="img" class="img-circle" src="images/av-20.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Lajos</p>
+              <p class="comment lt69">
+                Szuper hatás alacsony áron, különösen akciósan! A szállítás gyors és problémamentes
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-21.webp">
+                <img alt="img" class="img-circle" src="images/av-21.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">László</p>
+              <p class="comment lt71">
+                Azt kívánom, hogy a szer mindenkinek segítsen, akinek problémája van, ahogy nekem már segített!
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-19.webp">
+                <img alt="img" class="img-circle" src="images/av-19.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Dóra</p>
+              <p class="comment lt73">
+                Ismerem ezt a szert... A férjem nem sokáig szedte. Most már nem szedi, de még most is 2 órán át
+                szeretkezünk)
+              </p>
+            </div>
+          </div>
+          <div class="coma">
+            <div class="col-avatar">
+              <picture><source type="image/webp" srcset="images/av-22.webp">
+                <img alt="img" class="img-circle" src="images/av-22.jpg" loading="lazy"></picture>
+            </div>
+            <div class="col-comm-text">
+              <p class="nickname">Misi</p>
+              <p class="comment lt75">
+                Úgy döntöttem, elvégzek egy kísérletet) Néhány nap szedés után elmentem a barátnőmhöz. Több órán át
+                szexeltünk! Ez sokkoló! Velem még ilyen nem fordult elő.
+              </p>
+            </div>
+          </div>
+        </div>
+        <a href="#toform"><div class="otros-commentarios pre_toform">
+            <button class="lt82">Hozzászólások</button>
+          </div></a>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="offset-md-2 col-md-8 offset-sm-0 col-sm-12">
+            <div class="col-md-5 col-sm-6 col-5 lt83"><b>Sexoblog</b></div>
+            <div class="socialicons">
+              <div><i aria-hidden="true" class="fa fa-rss"></i></div>
+              <div><i aria-hidden="true" class="fa fa-google-plus"></i></div>
+              <div><i aria-hidden="true" class="fa fa-youtube"></i></div>
+              <div><i aria-hidden="true" class="fa fa-facebook"></i></div>
+              <div><i aria-hidden="true" class="fa fa-twitter"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="ev-footer create_rom_footer" data-background-color="white" data-color_link="black" data-color_logo="orange"></div>
+    <div class="ac_footer">
+      <span>© <span class="date-0" data-format="yyyy"></span> Copyright</span><br>
+    </div>
+
+
+
+    <script src="js/postDate.js"></script>
+
+    <script>
+        const offer_params = {
+            priceMain: '8900',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'Ft',
+            productName: 'Urotrin',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain: offer_params.priceMain,
+            currencyMain: offer_params.currencyMain,
+            lang: 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product: offer_params.productName, // название продукта
+            genderTargetting: 'all', // пол целевой аудитории - all, male, female
+            form: {
+                isNeeded: 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+  </body>
+</html>

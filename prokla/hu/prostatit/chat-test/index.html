@@ -1,0 +1,779 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terápia kiválasztása a vizeletürítési folyamatok normalizálására mindössze 2 perc alatt — ingyenes konzultáció a vizeleti rendszer területének szakemberével</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/new_css.css">
+</head>
+
+<body>
+<div class="wrap" id="screenFirst">
+    <div class="chat show-chat">
+        <div class="chat show-chat">
+            <div class="chat-container">
+                <div class="chat-content">
+                    <div class="wrapper-chat">
+                        <div class="chat-header xs-only">
+                            <div class="mr10">
+                                <div class="doctor">
+                                    <h3>Michael Neuner</h3>
+                                    <p>A vizeletürítési zavarok gyakorló szakembere</p>
+                                </div>
+                                <div class="answer-vis">
+                                    <p><span id="current-question-mob">0</span>. kérdés a <span>22</span>-ből
+                                    </p>
+                                </div>
+                            </div>
+                            <img src="images/doctor.jpg" alt="">
+
+                        </div>
+                        <div class="chat-content-container">
+
+                            <div class="screen active " id="screen0" data-turn="0">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <h2>Terápia kiválasztása a vizeletürítési
+                                                folyamatok normalizálására mindössze 2 perc alatt —
+                                                ingyenes konzultáció a vizeleti rendszer területének
+                                                szakemberével</h2>
+                                            <button id="start" class="btn__start">Teszt indítása</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen1" data-turn="1">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager"><p> Üdv! A nevem Michael
+                                            Neuner. A vizeletürítési zavarok gyakorló szakembere
+                                            vagyok és online konzultációt tartok. Gyakran a húgyhólyag
+                                            patológiáitól szenvedő emberek nem tudnak megbirkózni a
+                                            problémáikkal, mert félnek szakemberekhez fordulni vagy nem
+                                            megfelelő terápiát alkalmaznak. Feladatom, hogy segítsek a
+                                            patológia okának és jeleinek kiküszöbölésében,
+                                            egyéni terápia kiválasztásával. </p></div>
+                                    </div>
+
+                                    <div class="chat-content-buttons-question">
+                                        <div class="nav">
+                                            <button class="btn__prev">Előző lépés</button>
+                                            <button class="btn__start btn__next">Tovább</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen2" data-turn="2">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager"><p> Válaszoljon néhány
+                                            kérdésre, hogy segíthessek önnek. Ez teljesen ingyenes
+                                            és névtelen. </p></div>
+                                    </div>
+                                    <div class="chat-content-buttons-question">
+                                        <div class="nav">
+                                            <button class="btn__prev">Előző lépés</button>
+                                            <button class="btn__start btn__next">Tovább</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen3" data-turn="3">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Hány
+                                            éves? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">30 éves korig</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">30-50 év között</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">50 évnél idősebb</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen4" data-turn="4">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Ön szenved-e
+                                            cukorbetegségben vagy veseproblémákban? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Igen</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Nem</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Nem tudom</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen5" data-turn="5">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Iszik ön vízhajtó
+                                            szereket vagy italokat (alkohol, kávé)? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Igen</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Nem</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen6" data-turn="6">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Az utóbbi időben különösen
+                                            nyomottnak érzi magát? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Igen</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Nem</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen7" data-turn="7">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <p class="block-1">Az emberek 30 éves korukig ritkán szembesülnek
+                                                vizeletürítési problémákkal, ezért ön
+                                                a veszély zónában van. Problémáit a cukorbetegség,
+                                                a vese patológiák vagy a vízhajtó szerek rovására
+                                                lehetett volna írni, de láthatóan nem bennük rejlik
+                                                a probléma. A rossz pszichoemocionális állapot szintén
+                                                egy a vizeletürítési problémák
+                                                közül. </p>
+
+                                            <p class="block-2"> Az ön korában urogenitális problémák
+                                                nem túl valószínűek, de teljesen nem szabad kizárni
+                                                őket. Gyakran a gyakori vizeletürítés oka a cukorbetegség,
+                                                a vese problémák, a vízhajtó szerek vagy a koffein
+                                                tartalmú italok. Az ön esetében nem lehet kizárni,
+                                                hogy épp ezek lettek a gyakori vécére járás
+                                                okai. De ez a jel úgyszintén utalhat a húgyhólyag
+                                                működésének zavarára is. Ami az érzelmi állapotot
+                                                illeti, az minél jobb, annál nagyobb a pozitív kimenetel
+                                                valószínűsége. </p>
+                                        </div>
+
+                                        <div class="chat-content-buttons-question">
+                                            <div class="nav">
+                                                <button class="btn__prev">Előző lépés</button>
+                                                <button class="btn__start btn__next">Tovább</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen8" data-turn="8">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Az elmúlt hónapban
+                                            vizelés után milyen gyakran érezte, hogy nem ürült
+                                            ki teljesen a húgyhólyaga? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer sem</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer naponta</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Körülbelül a vizeletürítések felénél</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Szinte mindig</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen9" data-turn="9">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Milyen gyakran kellett
+                                            vizelnie korábban, mint 2 órával az előző vécé látogatást
+                                            követően? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer sem</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer naponta</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Körülbelül a vizeletürítések felénél</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Szinte mindig</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen10" data-turn="10">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Milyen gyakran volt
+                                            szaggatott a vizeletürítése az elmúlt
+                                            hónapban? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer sem</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer naponta</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Körülbelül a vizeletürítések felénél</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Szinte mindig</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen11" data-turn="11">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Milyen gyakran érezte
+                                            a vizeletsugár gyengeségét az elmúlt hónapban? </p>
+                                        </div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer sem</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer naponta</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Körülbelül a vizeletürítések felénél</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Szinte mindig</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen12" data-turn="12">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <div class="block-1 div">
+
+                                                <p class="notb">A húgyhólyag működési zavarainak fő
+                                                    jelei: </p>
+                                                <ul>
+                                                    <li>erőtlen és vékony vizeletsugár;</li>
+                                                    <li> a vizeletsugár kis adagokban jön;</li>
+                                                    <li> húgyhólyag teltségérzete.</li>
+
+                                                </ul>
+
+                                                <p class="notb2 notb">Mi utal önnél a problémák
+                                                    jelenlétére. </p>
+
+                                            </div>
+
+                                            <p class="block-2"> Válaszai alapján önnek nincsenek komoly
+                                                vizeletürítési problémái. De valószínűleg
+                                                néhány jel zavarja Önt és ezek jelezhetik a patológiák
+                                                kezdeti szakaszát. </p>
+                                        </div>
+
+                                        <div class="chat-content-buttons-question">
+                                            <div class="nav">
+                                                <button class="btn__prev">Előző lépés</button>
+                                                <button class="btn__start btn__next">Tovább</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen13" data-turn="13">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Érez fájdalmat
+                                            vizeletürítéskor? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer sem</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer naponta</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Körülbelül a vizeletürítések felénél</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Szinte mindig</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen14" data-turn="14">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Vannak merevedési
+                                            problémái? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Igen</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Nem</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen15" data-turn="15">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Hányszor kellett
+                                            éjszaka alvás közben felkelnie vizelni az elmúlt hónapban? </p>
+                                        </div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer sem</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="good">Egyszer egy éjszaka</span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Kétszer egy éjszaka </span>
+                                            </div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer" data-number="bad">Három és több alkalommal</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen16" data-turn="16">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager question"><p> Készen áll
+                                            szigorúan az utasításoknak megfelelően szedni a szert a
+                                            legjobb hatás érdekében? </p></div>
+                                        <div class="chat-content-buttons-question">
+                                            <div class="chat-content-buttons-question-block"><span class="answer">Igen</span></div>
+                                            <div class="chat-content-buttons-question-block"><span class="answer">Nem</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isShow">
+                                <h2>Várjon, adatai elemzése folyamatban van</h2>
+                                <div class="lds-roller">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen17" data-turn="17">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <div class="block-1 div">
+                                                <p class="patalogia"><strong>Patológia valószínűsége:</strong>
+                                                </p>
+                                                <p class="patalogia-warning">MAGAS <span class="percent">89%</span></p>
+
+                                                <p>Eredményei arról árulkodnak, hogy húgyhólyag
+                                                    problémái már óriási kellemetlenséget
+                                                    okoznak az ön számára. Sajnos, ha nem tesz megfelelő
+                                                    lépéseket, <strong>állapota csak romlani fog és
+                                                        halálos kimenetelhez is vezethet.</strong></p>
+                                                <p>Önnek át kell értékelnie életmódját: </p>
+                                                <ul>
+                                                    <li>hagyja abba a dohányzást és az alkoholtartalmú
+                                                        italok fogyasztását;
+                                                    </li>
+                                                    <li>korlátozza a gyors- és a zsíros ételek
+                                                        fogyasztását, minél több zöldséget,
+                                                        fehérjét és erjesztett tejterméket
+                                                        fogyasszon;
+                                                    </li>
+                                                    <li>végezzen testmozgást;</li>
+                                                    <li>zárja ki a túlzott fizikai megterhelést és
+                                                        ne emeljen nehezet;
+                                                    </li>
+                                                    <li>időben kezdje el a gyulladásos és fertőző folyamatok
+                                                        terápiáját.
+                                                    </li>
+                                                </ul>
+                                                <p>Azonban a közérzet javításához a megfelelő
+                                                    életmód nem elegendő. <strong>Szüksége van egy
+                                                        olyan szerre, amely segít megszabadulni a vizelési
+                                                        rendellenességek okaitól és jeleitől.</strong>
+                                                </p>
+                                                <p>Van egy szer, amely segíthet — <strong><span class="productName"></span></strong></p>
+                                            </div>
+                                            <div class="block-2 div">
+                                                <p class="patalogia"><strong>Patológia valószínűsége:</strong>
+                                                </p>
+                                                <p class="patalogia-warning">KÖZEPES <span class="percent">51%</span></p>
+
+                                                <p>Válaszai alapján önnek egyelőre nincs különösebb
+                                                    oka az aggodalomra. Előbb vagy utóbb azonban a bolygón
+                                                    szinte minden ember szembesül a vizeletürítési
+                                                    problémákkal. Hiszen a problémák okai
+                                                    lehetnek: </p>
+                                                <ul>
+                                                    <li>gyulladásos folyamatok a húgyhólyagban és a
+                                                        prosztatában;
+                                                    </li>
+                                                    <li>cukorbetegség és egyéb patológiák;</li>
+                                                    <li>a neurológiai folyamatok zavarai;</li>
+                                                    <li>a testtömeg hirtelen megnövekedése;</li>
+                                                    <li>az urogenitális rendszer sérülései;</li>
+                                                    <li>sebészeti beavatkozás.</li>
+                                                </ul>
+                                                <p>A szövődmények megelőzéséhez végig lehet
+                                                    csinálni egy <strong><span class="productName"></span></strong> kúrát.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="chat-content-buttons-question">
+                                            <div class="nav">
+                                                <button class="btn__prev">Előző lépés</button>
+                                                <button class="btn__start btn__next">Tovább</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="screen translate hidden" id="screen18" data-turn="18">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <div class="div">
+                                                <picture>
+                                                    <img src="prod.png" alt="" class="product"></picture>
+                                                <p><strong><span class="productName"></span></strong> – elősegíti a vizeletürítési
+                                                    folyamatok normalizálását, a gyulladásos
+                                                    folyamatok enyhítését, segít megelőzni az
+                                                    urogenitális fertőzések kialakulását. Emellett képes
+                                                    a fájdalom enyhítésére és a pH egyensúly,
+                                                    valamint a vese és a húgyúti vérellátás
+                                                    helyreállítására. A hatás általában
+                                                    a terápia után is megmarad. </p>
+                                                <p><span class="productName"></span> segít: </p>
+                                                <ul>
+                                                    <li>enyhíteni az urogenitális rendszer gyulladásos
+                                                        folyamatait;
+                                                    </li>
+                                                    <li>helyreállítani a szervezet munkáját egészében;</li>
+                                                    <li>megtisztítani a vért;</li>
+                                                    <li>megszabadítani a fájdalomtól;</li>
+                                                    <li>normalizálni a vizeletürítést.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="chat-content-buttons-question">
+                                            <div class="nav">
+                                                <button class="btn__prev">Előző lépés</button>
+                                                <button class="btn__start btn__next">Tovább</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen19" data-turn="19">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <div class="div">
+                                                <p>A szer nem addiktív és általában nem fejt ki
+                                                    negatív hatást a szervezetre. Ez a jól megválogatott
+                                                    természetes komponenseken alapuló összetételnek
+                                                    köszönhető, amelyek a legnagyobb mértékben kiegészítik
+                                                    egymás hatását. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="chat-content-buttons-question">
+                                            <div class="nav">
+                                                <button class="btn__prev">Előző lépés</button>
+                                                <button class="btn__start btn__next">Tovább</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen20" data-turn="20">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <div class="div">
+                                                <p>Íme a 300 vásárló körében végzett
+                                                    felmérés eredményei, akik néhány hétig
+                                                    szedték az <span class="productName"></span> szert:</p>
+                                                <div class="custom-chart">
+                                                    <div class="custom-chart__item custom-chart__item1">
+                                                        <p class="text">Vizeletürítési ingerek csökkenése</p>
+                                                        <div class="chart-result">
+                                                            <div class="chart-blue"></div>
+                                                            <p class="chart-number">95%</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="custom-chart__item custom-chart__item2">
+                                                        <p class="text">Abbahagyták az éjszakai vécé látogatást</p>
+                                                        <div class="chart-result">
+                                                            <div class="chart-blue"></div>
+                                                            <p class="chart-number">97%</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="custom-chart__item custom-chart__item3">
+                                                        <p class="text">Megszabadultak az alhasi fájdalomtól</p>
+                                                        <div class="chart-result">
+                                                            <div class="chart-blue"></div>
+                                                            <p class="chart-number">98%</p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="custom-chart__item custom-chart__item4">
+                                                        <p class="text">A vizeletsugár erőteljesebb lett</p>
+                                                        <div class="chart-result">
+                                                            <div class="chart-blue"></div>
+                                                            <p class="chart-number">95%</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="chat-content-buttons-question">
+                                            <div class="nav">
+                                                <button class="btn__prev">Előző lépés</button>
+                                                <button class="btn__start btn__next">Tovább</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen21" data-turn="21">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                            <div class="div">
+                                                <p>Legyenek óvatosak: a forgalmazó eltávolította az
+                                                    <span class="productName"></span> szert a gyógyszertárakból, mivel egyre
+                                                    gyakoribbá váltak a hamisítási esetek. Az
+                                                    eredeti szer az alábbi űrlap kitöltésével
+                                                    rendelhető meg. Oldalam látogatói 50% kedvezményt
+                                                    kapnak. Az akció <strong class="start-date"></strong> és
+                                                    <strong class="date"></strong> között érvényes
+                                                    (bezárólag).</p>
+                                                <p>Szabaduljon meg a vizeletürítési problémák
+                                                    jeleitől és előzze meg a szövődményeket, amíg
+                                                    nem késő!</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="chat-content-buttons-question">
+                                            <div class="nav">
+                                                <button class="btn__prev">Előző lépés</button>
+                                                <button class="btn__start btn__next">Tovább</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="screen translate hidden" id="screen22" data-turn="22">
+                                <div class="chat-content-item manager">
+                                    <div class="chat-content-desc">
+                                        <div class="chat-content-desc-item manager">
+                                           <div class="features-wrapper"></div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="chat-sidebar">
+                            <div class="img">
+                                <img src="images/doctor.jpg" alt="">
+                            </div>
+                            <div class="doctor">
+                                <h3>Michael Neuner</h3>
+                                <p>A vizeletürítési zavarok gyakorló szakembere</p>
+                            </div>
+                            <div class="reward">
+                                <div>
+                                    <img src="images/experience.png" alt="">
+                                    <p>Munkatapasztalat — több mint 20 év</p>
+                                </div>
+                            </div>
+                            <div class="reward">
+                                <div>
+                                    <img src="images/scientist.png" alt="">
+                                    <p>Ismert szakértő Németországban <br>és Európában
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="reward">
+                                <div>
+                                    <img src="images/help.png" alt="">
+                                    <p>Férfiak és nők ezreinek segített</p>
+                                </div>
+                            </div>
+
+                            <div class="answer-vis">
+                                <p><span id="current-question">0</span> / <span id="question-length">22</span></p>
+                            </div>
+
+
+                            <div class="official">
+                                <p>Michael Neuner hivatalos weboldala</p>
+                                <p>© All rights reserved</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="preloader hide z-0">
+    <img src="images/messenger.svg" alt="">
+</div>
+
+<p class="hidden"><span class="x_price_previous"><span class="priceOld"></span></span>  <span class="x_currency"><span class="currencyMain"></span></span></p>
+<p class="hidden"><span class="x_price_current"><span class="priceMain"></span></span>  <span class="x_currency"><span class="currencyMain"></span></span></p>
+
+
+
+<script src="js/form.js"></script>
+
+
+
+<script>
+    const offer_params = {
+        priceMain: '8900',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'Ft',
+        productName: 'Urotrin',
+    };
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+    if (offer_params.customPriceOld) {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    } else {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+
+<script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain: offer_params.priceMain,
+        currencyMain: offer_params.currencyMain,
+        lang: 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product: offer_params.productName, // название продукта
+        genderTargetting: 'all', // пол целевой аудитории - all, male, female
+        form: {
+            isNeeded: 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+
+</body>
+
+</html>
