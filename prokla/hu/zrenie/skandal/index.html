@@ -1,0 +1,611 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nagyszabású botrány a Szemészeti Központban </title>
+  <link media="all" href="css/index.css" type="text/css" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+  <script>
+    ! function (e, n, A) {
+      function o(e, n) {
+        return typeof e === n
+      }
+
+      function t() {
+        var e, n, A, t, a, i, l;
+        for (var f in r)
+          if (r.hasOwnProperty(f)) {
+            if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options
+                .aliases.length))
+              for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+            for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l
+              .length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[
+                0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+          }
+      }
+
+      function a(e) {
+        var n = u.className,
+          A = Modernizr._config.classPrefix || "";
+        if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+          var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+          n = n.replace(o, "$1" + A + "js$2")
+        }
+        Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className =
+          n)
+      }
+
+      function i(e, n) {
+        if ("object" == typeof e)
+          for (var A in e) f(e, A) && i(A, e[A]);
+        else {
+          e = e.toLowerCase();
+          var o = e.split("."),
+            t = Modernizr[o[0]];
+          if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+          n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[
+            0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a(
+            [(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+        }
+        return Modernizr
+      }
+      var s = [],
+        r = [],
+        l = {
+          _version: "3.6.0",
+          _config: {
+            classPrefix: "",
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0
+          },
+          _q: [],
+          on: function (e, n) {
+            var A = this;
+            setTimeout(function () {
+              n(A[e])
+            }, 0)
+          },
+          addTest: function (e, n, A) {
+            r.push({
+              name: e,
+              fn: n,
+              options: A
+            })
+          },
+          addAsyncTest: function (e) {
+            r.push({
+              name: null,
+              fn: e
+            })
+          }
+        },
+        Modernizr = function () {};
+      Modernizr.prototype = l, Modernizr = new Modernizr;
+      var f, u = n.documentElement,
+        c = "svg" === u.nodeName.toLowerCase();
+      ! function () {
+        var e = {}.hasOwnProperty;
+        f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+          return n in e && o(e.constructor.prototype[n], "undefined")
+        } : function (n, A) {
+          return e.call(n, A)
+        }
+      }(), l._l = {}, l.on = function (e, n) {
+        this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+          Modernizr._trigger(e, Modernizr[e])
+        }, 0)
+      }, l._trigger = function (e, n) {
+        if (this._l[e]) {
+          var A = this._l[e];
+          setTimeout(function () {
+            var e, o;
+            for (e = 0; e < A.length; e++)(o = A[e])(n)
+          }, 0), delete this._l[e]
+        }
+      }, Modernizr._q.push(function () {
+        l.addTest = i
+      }), Modernizr.addAsyncTest(function () {
+        function e(e, n, A) {
+          function o(n) {
+            var o = n && "load" === n.type ? 1 == t.width : !1,
+              a = "webp" === e;
+            i(e, a && o ? new Boolean(o) : o), A && A(n)
+          }
+          var t = new Image;
+          t.onerror = o, t.onload = o, t.src = n
+        }
+        var n = [{
+            uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+            name: "webp"
+          }, {
+            uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+            name: "webp.alpha"
+          }, {
+            uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+            name: "webp.animation"
+          }, {
+            uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+            name: "webp.lossless"
+          }],
+          A = n.shift();
+        e(A.name, A.uri, function (A) {
+          if (A && "load" === A.type)
+            for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+        })
+      }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+      e.Modernizr = Modernizr
+    }(window, document);
+  </script>
+</head>
+
+<body style="background-color: #c5c5c5;">
+  <header class="container-fluid container mar-b">
+    <div class="row">
+      <div class="col-sm-5" style="width:100%;"> <a class="logo" href="#form">
+          <picture>
+            <source type="image/webp" srcset="images/shapka01-201.webp"> <img loading="lazy" alt="" src="images/shapka01-201.png" style="max-width:100%;"> </picture>
+        </a> </div>
+      <div class="col-sm-7">
+        <div class="login hidden-xs clearfix">
+          <div style="margin-left: 2em">
+            <div class="form-search pull-right"> <span></span>
+              <div class="input-group"> <span></span> </div>
+              <div class="clearfix"> <span></span> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container" id="main-container">
+    <div class="center">
+      <h2><b class="lt4 lt0">Nagyszabású botrány a Szemészeti Központban<br> <br> Milyen tudással rendelkezett Cornel
+          Buta, és kinek állt érdekében, hogy elrejtse a szemészet területén dolgozó tudós és szakember tudományos
+          munkáját?</b></h2>
+    </div><br>
+    <ol class="breadcrumb">
+      <li> <a class="lt5 lt1" href="#form">Anyagok</a> </li>
+      <li> <a class="lt6 lt2" href="#form"> <span class="date-7" data-format="dd month yyyy"></span> </a> </li>
+      <li class="active lt7 lt3">Interjú</li>
+    </ol>
+    <p class="timestamps"><span class="text-muted lt8 lt4">Közzétéve: <span class="date-7" data-format="dd month yyyy"></span></span><br> <span class="text-muted lt9 lt5">Frissítve: <span class="date-0" data-format="dd month yyyy"></span></span></p>
+    <div class="row">
+      <article class="col-md-9">
+        <div>
+          <p class="lt10 lt6" style="padding-top: 10px"><b><span class="date-0" data-format="dd month yyyy"></span>.</b>
+            botrány tört ki a Szemészeti Központban. A Tudományos Akadémia főigazgató-helyettese, valamint több vezető
+            szakember azzal vádolta a központ vezetőségét, hogy <b>minden lehetséges módon megpróbálja eltitkolni a
+              látás műtét nélküli helyreállításának eszközét.</b> </p>
+          <p class="lt11 lt7" style="padding-bottom: 10px">Idén tavasszal több szakember, köztük nyolc tudós nyílt
+            levélben mutatott rá a <b>"korrupció és a megvesztegetés növekedésére"</b>.</p><br>
+          <p><a href="#form">
+              <picture>
+                <source type="image/webp" srcset="images/1122-6f2.arb.webp"> <img loading="lazy" alt="" src="images/1122-6f2.arb.jpg"> </picture>
+            </a> </p><br>
+          <p class="lt12 lt8">A levelet aláírták:</p>
+          <ul>
+            <li class="lt13 lt9"><b>Krin Scherban</b>, a Tudományos Akadémia tiszteletbeli tagja, a szemészet elismert
+              szakembere;</li>
+            <li class="lt14 lt10"><b>Marin Mazilescu</b>, kutató, tudós, több tucat tudományos cikk szerzője a
+              szembetegségekről;</li>
+            <li class="lt15 lt11"><b>Ilie Gica</b>, látásrehabilitációs szakértő, a Nemzetközi Látásjavító Központ
+              előadója;</li>
+            <li class="lt16 lt12"><b>Vitalie Stefan</b>, vezető szemész specialista, szemészeti magánklinika vezetője;
+            </li>
+            <li class="lt17 lt13"><b>David Ciuboleta</b>, a Tudományos Akadémia bizottságának elnöke;</li>
+            <li class="lt18 lt14">És még sokan mások</li>
+          </ul>
+          <p class="lt19 lt15" style="padding-top: 10px">Az egész akkor kezdődött, amikor Cornel Buta kapott egy
+            jubileumi kéziratot a Szemészeti Központtól. A feljegyzésekből több utalás is előkerült Laurentiu Stefan, a
+            látás helyreállításának elismert szakértője tudományos munkásságára, aki egy donor segítségével képes volt
+            kidolgozni a szaruhártya-átültetés módszerét. Ennek alapján kezdett el dolgozni egy természetes alapú
+            készítményen, amely segít helyreállítani a látást. Sajnos nem tudta befejezni a kutatást, mert 1956-ban
+            váratlanul agyvérzést kapott.</p><br>
+          <p><a href="#form">
+              <picture>
+                <source type="image/webp" srcset="images/123-a36.arb.webp"> <img loading="lazy" alt="" src="images/123-a36.arb.jpg"> </picture>
+            </a> </p>
+          <p><i class="lt20 lt16">Laurentiu Stefan neves tudós és szemész specialista. Pályafutása során számos
+              tudományos és szakmai díjat kapott</i></p><br>
+          <p class="lt21 lt17">Cornel Buta csodálta és nagyra értékelte Stefan munkáját. A kemény munka meghozta
+            gyümölcsét - sikerült befejeznie azt a fejlesztést, amelyet Stefan egyszer már elkezdett, és egy olyan
+            természetes alapú készítményt hozott létre, amely esélyes a <b>látás helyreállítására műtét nélkül</b>. Ez
+            egy újabb <b>forradalmi áttörés</b> volt a tudományban, de az eredményt nem tudta megosztani másokkal. </p>
+          <p class="lt22 lt18">Crin Sherban, a Tudományos Akadémia tiszteletbeli tagja és neves specialista az
+            oftalmológia területén az újságíróknak elmondta: "Cornel Buta azért lépett fel a "rendszer" ellen, mert a
+            <b>mikrosebészet világszerte nagy üzlet</b>, amelyet nagyon befolyásos emberek támogatnak. Ha Cornelnek
+            mindezt 18 évvel korábban sikerült volna elérnie, akkor az emberek nem járnának szemműtétre, mindenki otthon
+            helyreállítaná a látását. De mint azt mindannyian tudjuk, sajnos nem végezte be a munkáját, és mások féltek
+            a következményektől. Itt az ideje, hogy elmondjuk az embereknek az igazságot, hogy <b>ne hozzuk szégyenbe a
+              professzorokat</b>."<br> <br></p>
+          <p><a href="#form">
+              <picture>
+                <source type="image/webp" srcset="images/image1-8ce.arb.webp"> <img loading="lazy" alt="" src="images/image1-8ce.arb.jpg"> </picture>
+            </a> </p>
+          <p><i class="lt23 lt19">(Crin Sherban, a Tudományos Akadémia tiszteletbeli tagja, neves szemész specialista
+              szerint ma az ország legtöbb magán szemklinikája inkább pénzt húz ki az emberek zsebéből, minthogy
+              segítene nekik. A szemműtéteket futószalagon végzik).</i></p><br>
+          <p class="lt24 lt20">"Hadd mondjak néhány adatot, ez minden más érvnél meggyőzőbb: számításaim szerint <span class="date-0" data-format="yyyy"></span> a legtöbb magánklinikán a műtétek költsége <b>150%-kal</b> nőtt,
+            és <b>kétszer annyi beavatkozást végeznek, mint korábban!</b> Több pénzük van az embereknek? Aligha!
+            Csakhogy mostanra megváltozott a politika: a szakértők minden áron kötelesek felírni a szemműtéteket. Az
+            emberek pedig bármit hajlandóak megtenni azért, hogy visszakapják a látásukat, ezért könnyen beleegyeznek.
+          </p>
+          <p class="lt25 lt21">Végülis, a műtét nem más, mint egy beavatkozás a testünkön, egy heg, amely életünk végéig
+            elkísér bennünket. A trauma nyomai akkor is megmaradnak, ha szabad szemmel nem láthatóak! Kevesen tudják,
+            hogy a legtöbb esetben 3-5 éven belül egy második műtétre is szükség van. Másrészt a Buta-Stefan által
+            kifejlesztett termék segít helyreállítani a látást műtét nélkül. Segít biztosítani a szem normális
+            működését... "</p>
+          <h2 class="lt26 lt22">Mi az az <a href="#form"><span class="productName"></span></a> és hogyan jött létre?</h2>
+          <p class="lt27 lt23">A készítmény eredeti megalkotója maga Laurentiu Stefan, aki számos díjat nyert a
+            szemészet és a mikrosebészet területén végzett kiváló munkájáért.</p><br>
+          <p><a href="#form">
+              <picture>
+                <source type="image/webp" srcset="images/image3-ec2.arb.webp"> <img loading="lazy" alt="" src="images/image3-ec2.arb.jpg"> </picture>
+            </a> </p>
+          <p><i class="lt28 lt24">(Cornel Buta egyszerre több területen is képes volt irányt szabni, ami nélkül a modern
+              szemészet elképzelhetetlen lenne. Stefan munkájára alapozta kutatásait, ami valódi tudományos áttöréshez
+              vezetett).</i></p><br>
+          <p class="lt29 lt25">A Cornel Buta által kifejlesztett termék neve eredetileg OKO volt. Fejlesztése 1993-ban
+            kezdődött a Szemészeti Központ kutatólaboratóriumában. A tudósoknak Stefan feljegyzései alapján csaknem 5
+            évbe telt, mire kifejlesztettek egy olyan készítményt, amely a szemizmok tónusának növelésével és a
+            szemlencse homályosságának megszüntetésével javítja a látást. A készítményt olyan szemészeti megbetegedések
+            esetén lehet használni, mint például:</p>
+          <ul>
+            <li class="lt30 lt26">rövidlátás,</li>
+            <li class="lt31 lt27">glaukóma,</li>
+            <li class="lt32 lt28">szürke hályog,</li>
+            <li class="lt33 lt29">látóideg gyulladás,</li>
+            <li class="lt34 lt30">optikai neuritisz,</li>
+            <li class="lt35 lt31">uveitis,</li>
+            <li class="lt36 lt32">chorioretinitis,</li>
+            <li class="lt37 lt33">retinaleválás,</li>
+            <li class="lt38 lt34">szaruhártya elhomályosodása,</li>
+            <li class="lt39 lt35">szemhéjgyulladás,</li>
+            <li class="lt40 lt36">kötőhártya-gyulladás,</li>
+            <li class="lt41 lt37">retinitis pigmentosa,</li>
+            <li class="lt42 lt38">szaruhártya-gyulladás</li>
+          </ul>
+          <p class="lt43 lt39">Emellett segít a látás javításában és más betegségek esetén is. A mi polgáraink azonban
+            még nem hallottak a termékről.</p>
+          <p class="lt44 lt40"><b>2000. június 2-án igazi tragédia történt:</b> Cornel Buta szemész specialista
+            repülőgép-szerencsétlenségben vesztette életét, miközben több kollégájával együtt Bukarestből Milánóba
+            utazott.</p>
+          <p class="lt45 lt41">Amikor a tudós elhunyt, senki sem mutatott hajlandóságot arra, hogy eladjon egy olyan
+            készítményt, amelynek hatékonyságát már több kísérletben is bizonyították. A híres tudós hagyatékának
+            felosztása miatt a központ laboratóriuma egy információs háború áldozatává vált.</p>
+          <p class="lt46 lt42">A receptet végül egy svájci gyógyszergyár vásárolta meg fillérekért, tekintettel a szer
+            hatékonyságára. A termék nevét megváltoztatták, és 2 év múlva új formában indították el a gyártást.</p>
+          <p class="lt47 lt43" style="padding-bottom: 5px">Csak <span class="nowyear" data-decrease="2">2017-ben</span>
+            sikerült nagy nehézségek árán visszaszerezni a termék gyártási jogát, amiben Buta felesége (a Szemészeti
+            Központ laboratóriumi kutatója), valamint a Tudományos Akadémia vezetője is részt vett. A készítmény
+            elkészítésének módszertana is megváltozott. Az összes összetevőt extrakcióval állították elő az akkor már
+            elavult technológia helyett (az 1990-es években Európában még nem létezett ilyen módszer). Ennek
+            eredményeként a termék hatékonysága 47%-kal nőtt (ha az összetevőket hidegen sajtolják, 3-5-ször több
+            bioaktív anyagot képesek megtartani). A termék legújabb változata az <span class="productName"></span> nevet viseli. A kutatók szerint
+            az <b><span class="productName"></span> a legtöbb esetben műtét nélkül</b> is képes helyreállítani a látást!</p>
+          <p class="lt48 lt44"></p>
+          <p class="lt49 lt45">"Otthon is alkalmazható, 2 kapszulát kell bevenni étkezés közben egy pohár vízzel.
+            Már
+            a szedését követő első néhány napban javulhat a látása" - állítja a nyílt levél egyik aláírója.</p>
+          <h2 class="lt50 lt46"> Az Innovációfejlesztési Alap vállalta az <a href="#form"><span class="productName"></span></a> finanszírozását
+          </h2>
+          <p class="lt51 lt47">A Buta-Stefan tanulmányról és annak eredményeiről hallva az Innovációfejlesztési Alap
+            vezetősége úgy döntött, hogy finanszírozza az <a href="#form"><span class="productName"></span></a> kutatását.</p>
+          <p><a href="#form">
+              <picture>
+                <source type="image/webp" srcset="images/113344-ac4.arb.webp"> <img loading="lazy" alt="" src="images/113344-ac4.arb.jpg"> </picture>
+            </a> </p>
+          <h2 class="lt52 lt48">A készítmény összetevői</h2>
+          <p class="lt53 lt49">Az <a href="#form"><span class="productName"></span></a> természetes összetevőket tartalmaz, amelyek együttesen
+            jótékony hatást fejtenek ki, egymást erősítve.</p>
+          <ul>
+            <li class="lt56 lt52"><b>Cink</b> - olyan enzimek alkotórésze, amelyek szabályozzák a látást a sötétben, és
+              segítenek gyorsan alkalmazkodni az erős fényhez, csökkentve az intenzív villanás hatásait.</li>
+            <li class="lt57 lt53">A <b>B-vitaminok</b> segítenek megelőzni az időseknél a vakság leggyakoribb okát, az időskori
+              makuladegenerációt. A vitaminok kombinációja csökkentheti a homocisztein szintjét, egy olyan fehérjét a
+              szervezetben, amely összefüggésbe hozható a gyulladással és a makuladegeneráció kialakulásának fokozott
+              kockázatával.</li>
+          </ul>
+          <h2 class="lt60 lt56">A termék hatékonyságát felhasználók ezrei igazolták! </h2>
+          <p><a href="#form">
+              <picture>
+                <source type="image/webp" srcset="images/image5-3c7.arb.webp"> 
+                <img loading="lazy" alt="" src="images/image5-3c7.arb.jpg"> </picture>
+            </a> </p>
+          <div class="center">
+            <h2 class="lt61 lt57" style="font-size: 33px; font-weight: bold;">Az <a href="#form"><span class="productName"></span></a> készítményt
+              bárki megvásárolhatja!</h2>
+          </div>
+          <p class="lt62 lt58">Az <a href="#form"><span class="productName"></span></a> hatékonyságának bizonyítására és a tudósok tiszteletére a
+            Tudományos Akadémia, a Szemészeti Központ és az <span style="font-weight: bold; color: #9ebe03">Innovációfejlesztési Alap</span> megfizethetővé tette a
+            terméket.</p>
+          <p style="font-size: 17px;"><b class="lt63 lt59">Mit kell tenni az <a href="#form"><span class="productName"></span></a>
+              megszerzéséhez?</b> </p>
+          <p class="lt64 lt60" style="font-size: 18px;">A promóciós időszak alatt (meghosszabbítva <span class="date-7" data-format="dd month yyyy"></span>-ről <span class="date-0" data-format="dd month yyyy"></span>, kérjük,
+            kövesse az alábbi lépéseket: </p>
+          <ol style="font-size: 19px;">
+            <li class="lt65 lt61">Töltse ki a megrendelőlapot a <a href="#form">hivatalos weboldalon</a>. </li>
+            <li class="lt66 lt62">Miután munkatársunk visszahívja önt, kérjük, adja meg a szállítási címet.</li>
+            <li class="lt67 lt63">A terméket 4-7 napon belül kézbesítjük</li>
+          </ol>
+          <p class="lt68 lt64" style="font-size: 19px;">A terméket postai úton vagy futárszolgálattal szállítják ki
+            címére, az ország bármely pontjára.</p><br>
+          <p><a href="#form">
+              <picture>
+                <source type="image/webp" srcset="images/444-196.arb.webp"> <img loading="lazy" alt="" src="images/444-196.arb.jpg"> </picture>
+            </a> </p><br>
+          <p class="lt69 lt65">Ezúton szeretnénk tisztelegni két <b>világklasszis szakértő, Cornel Buta</b> és <b>
+              Laurentiu Stefan</b> előtt. Sok év után, nekik köszönhetően végre létrehoztunk egy olyan terméket, amely
+            segít helyreállítani a látást műtét nélkül. Emlékezzünk ezekre a nagyszerű emberekre!</p><br>
+
+
+          <div class="features-wrapper"></div>
+
+
+
+          <p><strong class="lt71 lt67">Tetszett a cikk? Ossza meg ismerőseivel!</strong></p><a href="#form">
+            <picture>
+              <source type="image/webp" srcset="images/social2-044.arb.webp"> <img loading="lazy" alt="" src="images/social2-044.arb.jpg" style="margin:0"> </picture>
+          </a>
+        </div>
+        <div class="box box-blue-light comments-block">
+          <h3 class="lt72 lt68">Hozzászólások:</h3>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt73 lt69">Péter</strong> <span class="mycity lt74 lt70"> Kecskemét</span> </p>
+          <p class="lt75 lt71">Köszönöm, megrendeltem az <a href="#form"><span class="productName"></span></a>ot. Próbálkozom, de egyre rosszabbul
+            vagyok, és félek a műtéttől. A szomszédomat megműtötték, és 2 éve szenved, a szeme begyulladt, és nem akar
+            elmúlni.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt76 lt72">M. János</strong> <span class="mycity lt77"> <span class="pl_spacer_geo_detect">Budapest</span> </span> </p>
+          <p class="lt78 lt73">Teljes mértékben megerősítem. Az <a href="#form"><span class="productName"></span></a> nagyon klassz cucc. Én is
+            kipróbáltam. Mostanában nem látom a táblákat vezetés közben. Az <a href="#form"><span class="productName"></span></a>ot egy barátom
+            ajánlotta, és elkezdtem használni, sokkal jobb lett. Most már újra tisztán látok, ajánlom mindenkinek!<br>
+            <br></p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt79 lt74">Veronika</strong> <span class="mycity lt80 lt75"> Keszthely</span> </p>
+          <p class="lt81 lt76">A cikket öröm volt olvasni, nagyon érdekes. Ha ilyen olcsó, miért ne próbálnánk ki? A
+            tudósokat meg kell dicsérni. Egyébként sokat olvastam Laurentiu Stefanról, ő volt az egyik legjobb és
+            legtehetségesebb szemész a világon.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt82 lt77">Károly</strong> <span class="mycity lt83 lt78"> Miskolc</span> </p>
+          <p class="lt84 lt79">Pontosan ezt használom most. Még csak a második hete szedem, de a látásom máris
+            jelentősen javult. Korábban alig tudtam leolvasni egy buszjárat számot, de most már mindent könnyen
+            látok.<br></p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p>
+            </p><p><strong class="lt85 lt80">Viktor</strong> <span class="mycity lt86 lt81"> Szolnok</span> </p>
+            <p class="lt87 lt82">Nekem is jó tapasztalataim vannak ezekkel a kapszulákkal. A dioptriám -5 volt, most már
+              csak másfél. Pedig még csak egy hónapja szedem.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt88 lt83">TÖRÖL Helga</strong><span class="mycity lt89 lt84">Szombathely</span> </p>
+          <p class="lt90 lt85">Nem is tudtam, hogy az <a href="#form"><span class="productName"></span></a> ilyen híres emberek találmánya! Sok jót
+            hallottam erről a készítményről! Sokan mondják, hogy ezek a kapszulák segítettek visszanyerni a normális
+            látásukat, remélem, nekem is segíteni fog. Már megrendeltem kedvezményesen.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt91 lt86">Laura</strong> <span class="mycity lt92 lt87">nincs megadva</span> </p>
+          <p class="lt93 lt88">Egy ismerősömnek tavaly szemműtétje volt. Kétszer (mindkét szem). De ez nem sokat
+            segített rajta. Az egyik szem állapota pedig még romlott is. Elmondom neki ezt a készítményt, hátha
+            megmenti. </p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt94 lt89">Hajdú István</strong> <span class="mycity lt95"> <span class="pl_spacer_geo_detect">Budapest</span> </span> </p>
+          <p class="lt96 lt90">Ez a termék kellemes meglepetés volt. A cikk elolvasása után rendeltem meg, de voltak
+            kétségeim a cikk valóságtartalmával kapcsolatban. De másfél hét alatt a látásom -3,5-ről -2,5-re javult.
+            Néha nagyon élesen látok (bár csak néhány másodpercig). Továbbra is használni fogom. Ez a legjobb termék.
+            Egyébként is elég olcsó volt.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt97 lt91">Kovács Mihály</strong> <span class="mycity lt98 lt92">Veresegyház</span> </p>
+          <p class="lt99 lt93">Meg kéne becsülni ezeket a tudósokat. Ezek nélkül a kiváló emberek nélkül még mindig
+            középkori módszereket használnánk. </p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt100 lt94">Elvira</strong> <span class="mycity lt101 lt95">Budapest</span> </p>
+          <p class="lt102 lt96">Ma kaptam meg. Minden oké. Gyorsan megérkezett. Tényleg olcsó volt. Már használom is.
+          </p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt103 lt97">Mária</strong> <span class="mycity lt104 lt98">Tatabánya</span> </p>
+          <p class="lt105 lt99">Már régóta akartam látáskorrekciót csinálni, de nagyon féltem. Kb. 2 hónapja hallottam
+            az <a href="#form"><span class="productName"></span>-ról</a>. Gondoltam kipróbálom és tényleg jobb lett a látásom, nem kell műtétre
+            menni</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt106 lt100">K. Béla</strong> <span class="mycity lt107 lt101">Debrecen</span> </p>
+          <p class="lt108 lt102">Köszönöm a tanácsot. Voltam már magángyógyszertárban, de rohadt drága volt. Nagyon
+            klassz, hogy majdnem feleannyiért rendelhetünk egy beszállítótól.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt109 lt103">Miklós</strong> <span class="mycity lt110">
+              <span class="pl_spacer_geo_detect">Budapest</span>
+            </span> </p>
+          <p class="lt111 lt104">Sziasztok! Egy hónapja abbahagytam az <a href="#form"><span class="productName"></span></a> szedését és most
+            mindent úgy látok, mint 10 évvel ezelőtt!!! Elakadt a szavam. Nagyon szépen köszönöm! Ajánlom mindenkinek,
+            aki hasonló problémával küzd, különösen azért, mert most ilyen kedvezménnyel kapható.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt112 lt105">Sándor</strong> <span class="mycity lt113 lt106">Debrecen</span> </p>
+          <p class="lt114 lt107">A <a href="#form">hivatalos weboldalon</a> találtam bővebb infót a készítményről!
+            Egyszerűen lenyűgöző!</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt118 lt108">Á. Zoltán</strong> <span class="mycity lt119 lt109">nincs megadva</span> </p>
+          <p class="lt120 lt110">Az <a href="#form"><span class="productName"></span></a>ot a szemfáradtság miatt használom. Sokat ülök a
+            számítógép előtt. Ez mindig megment engem.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt121 lt111">V. Imre</strong> <span class="mycity lt122 lt112"> Ács</span> </p>
+          <p class="lt123 lt113">Köszönöm! A szemműtét nagyon drága, különösen a nyugdíjasok számára. Jó, hogy van
+            lehetőség arra, hogy a látás helyreállítása megfizethetővé váljon.</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt124 lt114">E. Zsuzsanna</strong> <span class="mycity lt125 lt115"> Szolnok</span> </p>
+          <p class="lt126 lt116">Nagyon hálás vagyok, hogy biztosítottak egy ilyen lehetőséget! 12 nap alatt a látásom
+            -2-ről 0,8 dioptriára javult! Köszönöm a megalkotóknak. Minden jót!</p>
+        </div>
+        <div style="margin: 15px 0px; border-bottom: 1px solid rgb(204, 204, 204); padding-bottom: 8px;">
+          <p><strong class="lt127 lt117">Márta</strong> <span class="mycity lt128 lt118"> Dombóvár</span> </p>
+          <p class="lt129 lt119">Köszönöm!!!</p>
+        </div>
+        <p>
+      </p></article>
+      <div class="col-md-3">
+        <p><a href="#form">
+            <picture>
+              <source type="image/webp" srcset="images/pic04-a89.arb.webp"> <img loading="lazy" alt="" src="images/pic04-a89.arb.jpg"> </picture>
+          </a> </p>
+        <p><b class="lt131 lt121">Visszaélések gyanúja miatt egészségügyi vizsgálatot kezdeményeztek.</b></p>
+      </div>
+      <div class="col-md-3">
+        <p><a href="#form">
+            <picture>
+              <source type="image/webp" srcset="images/pic03-752.arb.webp"> <img loading="lazy" alt="" src="images/pic03-752.arb.jpg"> </picture>
+          </a> </p>
+        <p><b class="lt132 lt122">Sz. Laura: "Új igazgatóként megígérem, hogy becsületesen fogjuk végezni a
+            munkánkat."</b></p>
+      </div>
+      <div class="col-md-3">
+        <p><a href="#form">
+            <picture>
+              <source type="image/webp" srcset="images/1_300-a51.arb.webp"> <img loading="lazy" alt="" src="images/1_300-a51.arb.jpg"> </picture>
+          </a> </p>
+        <p><b class="lt133 lt123">Rövidlátás korrekciója</b></p>
+      </div>
+      <div class="col-md-3">
+        <p><a href="#form">
+            <picture>
+              <source type="image/webp" srcset="images/2_300-fe5.arb.webp"> <img loading="lazy" alt="" src="images/2_300-fe5.arb.jpg"> </picture>
+          </a> </p>
+        <p><b class="lt134 lt124">102 244 ember vesztette el látását különböző szembetegségek miatt.</b></p>
+      </div>
+      <div class="col-md-3">
+        <p><a href="#form">
+            <picture>
+              <source type="image/webp" srcset="images/3_300-4a3.arb.webp"> <img loading="lazy" alt="" src="images/3_300-4a3.arb.jpg"> </picture>
+          </a> </p>
+        <p><b class="lt135 lt125">Milyen veszélyeket rejt a szemműtét?</b></p>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/postDate.js"></script>
+
+
+  <script>
+      const offer_params = {
+          priceMain: '9900',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'Ft',
+          productName: 'Oculax',
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain: offer_params.priceMain,
+          currencyMain: offer_params.currencyMain,
+          lang: 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product: offer_params.productName, // название продукта
+          genderTargetting: 'all', // пол целевой аудитории - all, male, female
+          form: {
+              isNeeded: 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+</body>
+
+</html>

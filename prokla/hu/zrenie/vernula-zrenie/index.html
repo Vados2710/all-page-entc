@@ -1,0 +1,418 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hogyan kaptam vissza a látásomat veszélyes műtétek és korrekciók nélkül!</title>
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="css/new_css.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+	<script> !function (e, n, A) { function o(e, n) { return typeof e === n } function t() { var e, n, A, t, a, i, l; for (var f in r) if (r.hasOwnProperty(f)) { if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length)) for (A = 0; A < n.options.aliases.length; A++)e.push(n.options.aliases[A].toLowerCase()); for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++)i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-")) } } function a(e) { var n = u.className, A = Modernizr._config.classPrefix || ""; if (c && (n = n.baseVal), Modernizr._config.enableJSClass) { var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)"); n = n.replace(o, "$1" + A + "js$2") } Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n) } function i(e, n) { if ("object" == typeof e) for (var A in e) f(e, A) && i(A, e[A]); else { e = e.toLowerCase(); var o = e.split("."), t = Modernizr[o[0]]; if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr; n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n) } return Modernizr } var s = [], r = [], l = { _version: "3.6.0", _config: { classPrefix: "", enableClasses: !0, enableJSClass: !0, usePrefixes: !0 }, _q: [], on: function (e, n) { var A = this; setTimeout(function () { n(A[e]) }, 0) }, addTest: function (e, n, A) { r.push({ name: e, fn: n, options: A }) }, addAsyncTest: function (e) { r.push({ name: null, fn: e }) } }, Modernizr = function () { }; Modernizr.prototype = l, Modernizr = new Modernizr; var f, u = n.documentElement, c = "svg" === u.nodeName.toLowerCase(); !function () { var e = {}.hasOwnProperty; f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) { return n in e && o(e.constructor.prototype[n], "undefined") } : function (n, A) { return e.call(n, A) } }(), l._l = {}, l.on = function (e, n) { this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () { Modernizr._trigger(e, Modernizr[e]) }, 0) }, l._trigger = function (e, n) { if (this._l[e]) { var A = this._l[e]; setTimeout(function () { var e, o; for (e = 0; e < A.length; e++)(o = A[e])(n) }, 0), delete this._l[e] } }, Modernizr._q.push(function () { l.addTest = i }), Modernizr.addAsyncTest(function () { function e(e, n, A) { function o(n) { var o = n && "load" === n.type ? 1 == t.width : !1, a = "webp" === e; i(e, a && o ? new Boolean(o) : o), A && A(n) } var t = new Image; t.onerror = o, t.onload = o, t.src = n } var n = [{ uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=", name: "webp" }, { uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==", name: "webp.alpha" }, { uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA", name: "webp.animation" }, { uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=", name: "webp.lossless" }], A = n.shift(); e(A.name, A.uri, function (A) { if (A && "load" === A.type) for (var o = 0; o < n.length; o++)e(n[o].name, n[o].uri) }) }), t(), a(s), delete l.addTest, delete l.addAsyncTest; for (var p = 0; p < Modernizr._q.length; p++)Modernizr._q[p](); e.Modernizr = Modernizr }(window, document); </script>
+</head>
+
+<body class="ev-date" data-invalid-name-text="Helyesen adja meg a pontos nevét!" data-invalid-phone-text="Adja meg a pontos telefonszámát különben nem tudjuk elérni!">
+  <div>
+   
+    <div class="container">
+      <div class="menu-bar"> <a class="is-actualitate
+                    is-active
+            " href="#toform">FŐOLDAL</a> <a class=" is-economie
+            " href="#toform">GAZDASÁG</a> <a class=" is-sport
+            " href="#toform">SPORT</a> <a class=" is-life
+            " href="#toform">ÉLET</a> <a class=" is-science
+            " href="#toform">TUDOMÁNY</a> <a class=" is-revista
+            " href="#toform">SAJTÓ ÁTTEKINTÉS</a> <a class=" is-dosare
+            " href="#toform"><span class="is-hidden-mobile">JOGI </span>ÜGYEK</a> </div>
+    </div>
+    <div class="hero is-actualitate">
+      <div class="container is-actualitate">
+        <div class="submenu-bar is-actualitate"> <a href="#toform" class="is-actualitate is-hl">Háború Ukrajnában</a> <a href="#toform">Koronavírus</a> <a href="#toform">Politika</a> <a href="#toform">Oktatás</a> <a href="#toform">Egészségügy</a> <a href="#toform">Vélemény</a> <a href="#toform">Infrastruktúra</a> <a href="#toform">Közigazgatás</a> </div>
+      </div>
+    </div>
+  </div>
+  <main class="site-content">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li>
+          <a class="lt7" href="#toform">Lóránd Török</a>
+        </li>
+        <li>
+          <a class="lt8" href="#toform">Egészség</a>
+        </li>
+      </ul>
+      <div class="row">
+        <div class="col-lg-8">
+          <article class="typography">
+            <h1 class="post__title lt9">Hogyan kaptam vissza a látásomat veszélyes műtétek és korrekciók nélkül!</h1>
+            <div class="post__details">
+              <span class="lt10">Lóránd Török</span>
+            </div>
+            <div class="post__details"> <span class="lt15">Szerkesztve</span> <a class="lt16" href="#toform">Ágnes Dobosné</a>, <a class="lt17" href="#toform">MSN</a>, <a class="lt18" href="#toform">Szakértő az oftalmológia területén</a>, <a class="lt19" href="#toform">"Egészséges Látás" Laboratórium</a> </div>
+            <div class="post__date lt20 date-5">20.07.2022</div>
+            <ul class="social-icon">
+              <li class="fb"><img alt="img" src="fonts/facebook.svg">14713</li>
+              <li class="tw"><img alt="img" src="fonts/twitter.svg">5</li>
+              <li class="pinterest"><img alt="img" src="fonts/pinterest.svg">14713</li>
+              <li><img alt="img" src="fonts/email.svg"></li>
+            </ul>
+            <div class="post__content">
+              <p class="lt21">Ha úgy gondolja, hogy a látásromlás a korral visszafordíthatatlan folyamat, én meg tudom változtatni a véleményét! Valójában a folyamat nem csak lelassítható, hanem vissza is fordítható. Tudom, miről beszélek, mert én is küzdöttem a látásomért, majdnem elvesztettem! Most már nem hordok szemüveget, és szeretném megosztani a nagyszerű látás titkát.</p>
+              <div class="row">
+                <div class="col-md-6">
+             <picture>
+ <source type="image/webp" media="(max-width: 380px)" srcset="images/ph1m.webp">
+ <source media="(max-width: 380px)" srcset="images/ph1m.jpg">
+ <source type="image/webp" srcset="images/ph1.webp">
+ <img alt="img" src="images/ph1.jpg">
+</picture>    
+                </div>
+                <div class="col-md-6">
+                  <picture>
+                    <source type="image/webp" srcset="images/ph2.webp">
+                    <img alt="img" src="images/ph2.jpg">
+                  </picture>
+                </div>
+              </div>
+              <h2 class="lt22">Hogyan kezdődött minden </h2>
+              <p class="lt23">Mindig is jól láttam, de egy nap minden megváltozott. Először egy apró, alig észrevehető villanás volt a szemem sarkában. Nem okozott semmilyen kellemetlenséget, de később kezdtem észrevenni, hogy a látásom egyre rosszabb, ezért azonnal időpontot kértem egy szakembertől.</p>
+              <p class="lt24">Elmagyarázta nekem, hogy ez a rendellenesség sok embernél előfordul, ahogy idősödnek, és általában nem jelent veszélyt. Általában, de nem mindig. Az én esetemben kiderült, hogy progresszív rövidlátásról van szó. Ez az, amikor a látás évente több mint 1 dptr-rel romlik. Még csak hat hónap telt el a kis folt megjelenése óta, és a látásom máris -4-re csökkent!</p>
+              <p class="lt25">Pánikba estem, mert napról napra rosszabbul láttam. Minden nap vitaminokat szedtem, speciális gyakorlatokat végeztem, és igyekeztem korlátozni a monitor előtt töltött időt. De semmi sem segített...</p>
+              <div class="align--center">
+                <div class="row justify-content-center">
+                  <div class="col-md-10">
+                    <picture>
+                      <source type="image/webp" srcset="images/ph3.webp">
+                      <img alt="img" src="images/ph3.jpg" loading="lazy">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <h2 class="lt26">Miért félek a műtéttől</h2>
+              <p class="lt27">Úgy tűnhet, hogy a látásomat korrigálták, és remekül vagyok! De önmagában drága és nem mindig hatékony. Sok olyan esetről tudok, amikor az emberek megvakultak a műtét után. Mert nem csak garanciát nem adnak, hanem aláíratnak olyan dokumentumokat, miszerint visszaesés vagy a látás teljes elvesztése esetén a szakember nem felelős. Szörnyű, nem igaz? Ez látás! És ha történik valami, akkor nem tudjuk visszaszerezni.</p>
+              <p class="lt28">De valamit sürgősen tenni kellett, mert a látásom -4-ről -10-re csökkent! Szemüveg nélkül alig tudtam kivenni a sziluetteket. Tehát néhány éven belül megvakulnék. Mit kellene tennem? Vakvezető kutyával élni?</p>
+              <div class="row justify-content-center">
+                <div class="col-md-10">
+                  <picture>
+                    <source type="image/webp" srcset="images/ph4.webp">
+                    <img alt="img" src="images/ph4.jpg" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+              <h2 class="lt29">Alternatív módszer</h2>
+              <p class="lt30">Minden konzultáción sírtam és segítséget kértem, nem pedig új szemüveget, ami csak rontott a helyzeten. Az összes szemész specialista széttárta a kezét, műtétről beszéltek, és retina leválással ijesztgettek. Ekkor jöttem rá, hogy senkire sem számíthatok, csak magamra.</p>
+              <div class="row justify-content-center">
+                <div class="col-md-10">
+                  <picture>
+                    <source type="image/webp" srcset="images/ph5.webp">
+                    <img alt="img" src="images/ph5.jpg" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+              <p class="lt31"><b> Amit eddig csináltam: </b> különböző szemgyakorlatok, speciális szemüveg viselése, vitaminok szedése, kenőcsök és szemcseppek kipróbálása.</p>
+              <p class="lt32"><b>Segített rajtam?</b> – Nem! Amikor tornáztam, nagyon fájt a szemem, vagy megemelkedett a szemnyomásom. Ne értsenek félre, kipróbáltam különböző módszereket és gyakorlatokat. Aztán megtudtam, hogy a híres Bates-módszer nemcsak hogy nem bizonyított, de retinaszakadást is okozhat.</p>
+              <p class="lt33">A speciális gépek nem segítettek. A perforált (kis lyukakkal ellátott) szemüvegeknek nem volt hatása, egy speciális szemmasszírozó eszköz pedig őrült fejfájást okozott.</p>
+              <div class="row justify-content-center">
+                <div class="col-md-12">
+                  <picture>
+                    <source type="image/webp" srcset="images/ph6.webp">
+                    <img alt="img" src="images/ph6.jpg" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+              <p class="lt34">A cseppek és kenőcsök csak a száraz szemet tudták nedvesíteni, és sajnos a látást nem tudták helyreállítani. De nem adtam fel a reményt, és Isten meghallgatta imáimat. Egy szaklap tudományos cikkében találkoztam egy tudóssal készült interjúval, aki a látás helyreállítására szolgáló új készítményről beszélt. Ez nem akármilyen vitamin, hanem a tudósok fontos fejlesztése - az <a href="#toform"><span class="productName"></span></a>.</p>
+              <p class="lt35">Röviden, az <a href="#toform"><span class="nowrap"><span class="productName"></span></span></a> kapszula olyan jótékony kivonatokat tartalmaz, amelyek segítenek a szemizmok erősítésében, javítják a retina vérkeringését, helyreállítják a látásélességet és a kontrasztot, megelőzik a retina sérüléseit és elősegítik a látás helyreállítását. Az <a href="#toform"><span class="productName"></span></a> pillanatok alatt segít normalizálni a szemgolyó izmait és stimulálja a látásélességért felelős idegkapcsolatokat. </p>
+              <picture>
+                <source type="image/webp" srcset="images/ph8.webp">
+                <img alt="img" src="images/ph8.jpg" loading="lazy">
+              </picture>
+              <p class="lt36">Azonnal megvettem ezeket a kapszulákat. És sikerült kedvezményesen megrendelnem őket. Mit is mondhatnék... Ez a termék semmihez sem hasonlít, amit eddig próbáltam. Hogyan értettem meg? - Egyszerű! Fokozatosan visszatért a látásom.</p>
+              <h2 class="lt37">Hogyan világosodtam meg</h2>
+              <p class="lt38">Természetesen kétségeim voltak afelől, hogy ez a készítmény segíteni fog rajtam. Más módszerek korábban nem működtek nálam, bármennyire is próbálkoztam. De meglepetésemre az első néhány alkalommal, amikor használtam, megszabadultam a száraz érzéstől a szememben. Korábban csak olyan cseppek segítettek, amelyeket szinte óránként kellett cseppentenem. Ezúttal már másnap normális volt a szemnyomásom. Ennek eredményeképpen a hajszálerek már nem pattanak el. Egy hét múlva minden ér visszatért a normális állapotba, és a szemem végre nem fájt és nem vörösödött ki.</p>
+              <div class="row justify-content-center">
+                <div class="col-md-10">
+                  <picture>
+                    <source type="image/webp" srcset="images/ph2.webp">
+                    <img alt="img" src="images/ph2.jpg" loading="lazy">
+                  </picture>
+                </div>
+              </div>
+              <p class="lt39">A szedés második és harmadik hetében minden nap javulást tapasztaltam. A távoli tárgyak nem voltak olyan homályosak, mint korábban. Folytattam a szemgyakorlatokat, és rájöttem, hogy az <a href="#toform"><span class="nowrap"><span class="productName"></span></span></a> működik.</p>
+              <p class="lt40">A kúra végén megvizsgált egy specialista. A látásom -10-ről -5-re javult! Egy hónap alatt kétszer annyit! Hát ez nem egy csoda? De nem álltam meg itt, folytattam az <a href="#toform"><span class="productName"></span></a> szedését. És mit gondolnak? Teljesen helyreállt a látásom. Már fél éve nem hordok szemüveget, és nem érzek semmilyen kellemetlenséget. Még a szemem sarkában lévő villódzás is eltűnt. Most már tisztán és élesen látok, és ami a legfontosabb, mindezt műtét nélkül!</p>
+              <p class="lt41">Végezetül azt szeretném mondani a kétségbeesetteknek: Ne adják fel, napjainkban minden lehetséges! És ha ezt a szöveget nehezen vagy szemüveggel olvassa, akkor tudja, hogy minden lehetséges. Kövesse a példámat, és az élete új, fényes és tiszta színekkel lesz tele.</p>
+            </div>
+            <div id="toform"></div>
+            <div class="features-wrapper">
+
+
+
+
+
+            </div>
+            <ul class="form-note">
+              <li> *Gyógyszernek nem minősülő termék; </li>
+              <li> *A készítmény hatása az egyéni tényezőktől függ; </li>
+              <li> *Használat előtt kérjük, figyelmesen olvassa el a tájékoztatót. </li>
+            </ul>
+            <div class="reviews">
+              <div class="reviews__title lt43">10 hozzászólás ma</div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/1.webp">
+                    <img alt="img" src="images/1.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt44">Gabi Feketené</div>
+                  <div class="review__text lt45">Nagyon pozitív történet! Jól áll a szemüveg, de sokkal jobban néz ki nélküle.</div>
+                  <div class="review__date lt46">9 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/2.webp">
+                    <img alt="img" src="images/2.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt47">Petra Szabóné</div>
+                  <div class="review__text lt48">Ugyanezzel a problémával szembesültem, de kétlem, hogy a hagyományos kapszulák segítenének((((</div>
+                  <div class="review__date lt49">8 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/3.webp">
+                    <img alt="img" src="images/3.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt50">Vince Németh</div>
+                  <div class="review__text lt51">Ki mondta, hogy ezek közönséges kapszulák? Magamon teszteltem a hatását! Először azért vettem, hogy a látásom ne romoljon még jobban, de idővel egyre jobb lett! Hamarosan én is levettem a szemüvegemet.</div>
+                  <div class="review__date lt52">8 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/4.webp">
+                    <img alt="img" src="images/4.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt53">Kinga Ballané</div>
+                  <div class="review__text lt54">Sok férfinak tetszem szemüveggel, azt mondják, nagyon szexi vagyok! </div>
+                  <div class="review__date lt55">7 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/5.webp">
+                    <img alt="img" src="images/5.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt56">Laura Halászné</div>
+                  <div class="review__text lt57">A szemüveg lehet, hogy szexis, de ha leveszed, vak és tehetetlen leszel. Ez nem nekem való.</div>
+                  <div class="review__date lt58">6 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/6.webp">
+                    <img alt="img" src="images/6.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt59">Henrik Pintér</div>
+                  <div class="review__text lt60">Köszönjük az ajánlást! Nemrég kellett szemüveget vennem, mert a látásom nagyon elkezdett romlani! Én is ki fogom próbálni az <a href="#toform"><span class="nowrap"><span class="productName"></span></span></a>ot, és remélem, hogy segít rajtam.</div>
+                  <div class="review__date lt61">5 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/7.webp">
+                    <img alt="img" src="images/7.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt62">Zsófia Vinczené</div>
+                  <div class="review__text lt63">Biztos lehet benne, hogy az <a href="#toform"><span class="nowrap"><span class="productName"></span></span></a> képes a lehetetlenre. El sem tudtam képzelni, hogy szemüveg nélkül tudjak élni. Olyan, mintha lencsét viselnék. Először teljes eufóriában vagy! Hű, mindent és mindenkit látok. És itt ugyanez a helyzet, de kontaktlencse és szemüveg nélkül. Elvégzel egy kúrát, és rájössz, hogy mindent és mindenkit látsz. Egyedül! Nincs plusz pénz! Ez sokkal menőbb, mint az orgazmus.</div>
+                  <div class="review__date lt64">4 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/8.webp">
+                    <img alt="img" src="images/8.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt65">Emília Nagyné</div>
+                  <div class="review__text lt66">Valami, amiről nem tudom elhinni, hogy valóságos. Látás helyreállítása kapszulák nyelésével? Ez valami fantasztikus...</div>
+                  <div class="review__date lt67">3 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/9.webp">
+                    <img alt="img" src="images/9.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt68">Dóra Pappné</div>
+                  <div class="review__text lt69">Egyetértek, első pillantásra fantasztikusan néz ki. De azok, akiknek valódi problémáik vannak, és legalább egyszer kipróbálták ezeket a kapszulákat, megdöbbentek a hatásuktól.</div>
+                  <div class="review__date lt70">3 ó.</div>
+                </div>
+              </div>
+              <div class="review">
+                <div class="review__picture">
+                  <picture>
+                    <source type="image/webp" srcset="images/10.webp">
+                    <img alt="img" src="images/10.jpg" loading="lazy">
+                  </picture>
+                </div>
+                <div class="review__content">
+                  <div class="review__title lt71">Júlia Szilágyiné</div>
+                  <div class="review__text lt72">Magam is szemész specialista vagyok, és bizton állíthatom, hogy jót tesznek az egészségünknek! Az <a href="#toform"><span class="nowrap"><span class="productName"></span></span></a> nem új, és más országokban igen népszerű, de nem akarják bevezetni a mi gyógyszerpiacunkon, mert valóban működik, és csökkenteni fogja a más termékekből és műveletekből származó nyereséget, ami a gyógyszertárak és klinikák közvetlen bevétele. De még mindig vannak becsületes szakemberek, akik az <a href="#toform"><span class="nowrap"><span class="productName"></span></span></a>ot írják fel ügyfeleiknek, kockáztatva, hogy kirúgják őket. Használhatják tehát mindazok, akiknek látásproblémáik vannak.</div>
+                  <div class="review__date lt73">2 ó.</div>
+                </div>
+              </div>
+            </div>
+            <div class="center">
+              <a class="main-link main-link--bottom" href=""> <span class="productName"></span> MEGRENDELÉSE </a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 sidebar">
+          <aside class="site-aside"> <div class="site-aside__title lt74">NÉPSZERŰ</div><a class="post-small" href="#toform"><span class="post-small__number">1</span><span class="post-small__text lt75">A szürkehályog 9 tünete és 3 lépés a megszüntetésükre</span></a><a class="post-small" href="#toform"><span class="post-small__number">2</span><span class="post-small__text lt76">Hogyan lehet megállítani a vakságot: okok, kockázati tényezők és otthoni készítmények</span></a><a class="post-small" href="#toform"><span class="post-small__number">3</span><span class="post-small__text lt77"> Hogyan lehet megszabadulni a száraz szem tüneteitől természetesen</span></a><a class="post-small" href="#toform"><span class="post-small__number">4</span><span class="post-small__text lt78">7 lépés a természetes hormonháztartás egyensúlyához </span></a><a class="post-small" href="#toform"><span class="post-small__number">5</span><span class="post-small__text lt79">A 12 legjobb természetes otthoni készítmény a glaukóma ellen.</span></a> </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!--
+  <footer class="bel-footer-block"> <div class="bel-container"> <div class="footer-block-left"> <h2 class="footer-left-title"> Informàciò a vàsàrlò szàmàra </h2> <div class="footer-left-seller"> A termék forgalmazója: Make Profit SRL </div><div class="footer-left-info"> A linkre kattintva és megrendelve a terméket, Ön elfogadja az erre a termékre vonatkozó adás-vételi szerződést. A weboldalunkon hagyott rendelése szolgál a megrendelési igényének a megerősítésére. Jogában áll felbontani a szerződést, lemondani a megrendelt termékről és visszaküldeni a terméket a jogszabályoknak megfelelően. Az eladó köteles minden Ön által benyújtott, a termékkel és szállításával összefüggő követelést elfogadni és figyelembe venni. A fentiekben említettel kapcsolatos részletes információkat a <a href="https://makeprofit.srl/">makeprofit.srl</a> weboldalunkon vagy tanácsadóinknál is megtalálhatja.</div></div></div></footer>
+-->
+
+    
+
+<script src="js/index.js"></script>
+
+
+
+  <script>
+      const offer_params = {
+          priceMain: '9900',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'Ft',
+          productName: 'Oculax',
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain: offer_params.priceMain,
+          currencyMain: offer_params.currencyMain,
+          lang: 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product: offer_params.productName, // название продукта
+          genderTargetting: 'all', // пол целевой аудитории - all, male, female
+          form: {
+              isNeeded: 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+
+</body></html>

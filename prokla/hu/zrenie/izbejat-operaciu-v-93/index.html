@@ -1,0 +1,636 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Éles látást szeretne? Minden a kezében van.</title>
+  <meta content="Vaš jasan pogled–u vašim rukama" name="description">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/fron.css" rel="stylesheet" type="text/css">
+  <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+  <script>
+    ! function (e, n, A) {
+      function o(e, n) {
+        return typeof e === n
+      }
+
+      function t() {
+        var e, n, A, t, a, i, l;
+        for (var f in r)
+          if (r.hasOwnProperty(f)) {
+            if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options
+                .aliases.length))
+              for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+            for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l
+              .length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[
+                0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+          }
+      }
+
+      function a(e) {
+        var n = u.className,
+          A = Modernizr._config.classPrefix || "";
+        if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+          var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+          n = n.replace(o, "$1" + A + "js$2")
+        }
+        Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className =
+          n)
+      }
+
+      function i(e, n) {
+        if ("object" == typeof e)
+          for (var A in e) f(e, A) && i(A, e[A]);
+        else {
+          e = e.toLowerCase();
+          var o = e.split("."),
+            t = Modernizr[o[0]];
+          if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+          n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[
+            0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a(
+            [(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+        }
+        return Modernizr
+      }
+      var s = [],
+        r = [],
+        l = {
+          _version: "3.6.0",
+          _config: {
+            classPrefix: "",
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0
+          },
+          _q: [],
+          on: function (e, n) {
+            var A = this;
+            setTimeout(function () {
+              n(A[e])
+            }, 0)
+          },
+          addTest: function (e, n, A) {
+            r.push({
+              name: e,
+              fn: n,
+              options: A
+            })
+          },
+          addAsyncTest: function (e) {
+            r.push({
+              name: null,
+              fn: e
+            })
+          }
+        },
+        Modernizr = function () {};
+      Modernizr.prototype = l, Modernizr = new Modernizr;
+      var f, u = n.documentElement,
+        c = "svg" === u.nodeName.toLowerCase();
+      ! function () {
+        var e = {}.hasOwnProperty;
+        f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+          return n in e && o(e.constructor.prototype[n], "undefined")
+        } : function (n, A) {
+          return e.call(n, A)
+        }
+      }(), l._l = {}, l.on = function (e, n) {
+        this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+          Modernizr._trigger(e, Modernizr[e])
+        }, 0)
+      }, l._trigger = function (e, n) {
+        if (this._l[e]) {
+          var A = this._l[e];
+          setTimeout(function () {
+            var e, o;
+            for (e = 0; e < A.length; e++)(o = A[e])(n)
+          }, 0), delete this._l[e]
+        }
+      }, Modernizr._q.push(function () {
+        l.addTest = i
+      }), Modernizr.addAsyncTest(function () {
+        function e(e, n, A) {
+          function o(n) {
+            var o = n && "load" === n.type ? 1 == t.width : !1,
+              a = "webp" === e;
+            i(e, a && o ? new Boolean(o) : o), A && A(n)
+          }
+          var t = new Image;
+          t.onerror = o, t.onload = o, t.src = n
+        }
+        var n = [{
+            uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+            name: "webp"
+          }, {
+            uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+            name: "webp.alpha"
+          }, {
+            uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+            name: "webp.animation"
+          }, {
+            uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+            name: "webp.lossless"
+          }],
+          A = n.shift();
+        e(A.name, A.uri, function (A) {
+          if (A && "load" === A.type)
+            for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+        })
+      }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+      e.Modernizr = Modernizr
+    }(window, document);
+  </script>
+</head>
+
+<body class="body" data-use-external-comebacker="1">
+  <div class="container-5 w-container">
+    <div class="div-block-11 w-clearfix">
+      <picture>
+        <source type="image/webp" srcset="images/5eb58345c897d76fac661697_eyelogo.webp">
+        <source type="image/jpeg" srcset="images/5eb58345c897d76fac661697_eyelogo.png"> <img loading="lazy" src="images/5eb58345c897d76fac661697_eyelogo.png" width="101" alt="" class="image-10"> </picture>
+      <p class="paragraph-5">EGÉSZSÉGÜGYI HÍREK</p>
+    </div>
+    <div data-collapse="medium" data-animation="default" data-duration="400" role="banner" class="navbar-2 w-nav">
+      <div class="container-4 w-container">
+        <nav class="nav-menu-2 w-nav-menu"><a href="#" class="nav-link-4 w-nav-link"><strong>Problémák<br></strong></a><a href="#" class="nav-link-4 w-nav-link"><strong>Egészség</strong></a><a href="#" class="nav-link-4 w-nav-link"><strong>Megelőzés</strong></a> <a href="#" class="nav-link-4 w-nav-link"><strong>Hírek</strong></a></nav>
+        <div class="w-nav-button">
+          <div class="w-icon-nav-menu"> <a href="#">
+              <picture>
+                <source type="image/webp" srcset="images/1.webp">
+                <source type="image/jpeg" srcset="images/1.png"> <img loading="lazy" alt="" src="images/1.png">
+              </picture>
+            </a> </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-block-19 _12">vfr b ghbht. yh jnyhbg fvdc dsx</div>
+    <div class="text-block-19 _12">vr f bht. nhtbg fr v eds cgrt htb grf</div>
+    <div class="text-block-19 _12">VFR. vgt b bg dvc d</div>
+    <div class="text-block-19 _12">vrf. b h n yj htg fv. vfedc</div>
+    <div class="div-block-10">
+      <h1 class="heading-5"><strong class="bold-text-5">Éles látást szeretne? Minden a kezében van.</strong></h1>
+    </div>
+    <div class="text-block-19 _12">vr f bh yht bgrf vdec. wx ws axe rgb htbg</div>
+    <div class="text-block-19 _12">vr f vbgt. byh n. hytgfrvcd. bh hbtgr fvec</div>
+  </div>
+  <div class="container-2 w-container">
+    <p class="paragraph-4"><span class="date-0" data-format="dd month yyyy"></span></p>
+    <div class="text-block-19 _12">v gt bth b hy n nb grfvecd d</div>
+    <div class="text-block-19 _12">vrg. bny htbgrfv. fre cds</div>
+    <h1 id="11" class="heading-6">Én majdnem megvakultam. A 93 éves Gizella Sztefanova elmondta, hogyan sikerült
+      elkerülni a szürkehályog-műtétet.</h1>
+    <div class="text-block-19 _12">v fr b tbgt bgr b hynbgfr vcdecde</div>
+    <div class="text-block-19 _12">tg b. n h nb tg frv dce</div>
+    <div class="text-block-19 _12">tg b hy nhtg br fv dcb thbg rfdev</div>
+    <div class="text-block-19 _12">v. b ht b tg frc dex</div>
+    <picture>
+      <source type="image/webp" srcset="images/5eb58345c897d76a536616a6_babulita.webp">
+      <source type="image/jpeg" srcset="images/5eb58345c897d76a536616a6_babulita.jpg"> <img loading="lazy" src="images/5eb58345c897d76a536616a6_babulita.jpg" alt="" class="image-11"> </picture>
+    <div class="text-block-19 _12">tg b n y n jyhtg rfv rfev grf ed c</div>
+    <div class="text-block-19 _12">tg b n y n jyhtg rfv rfev grf ed c</div>
+    <div class="text-block-19 _12">v tgb. hb gtrfedc. ht grfv</div>
+    <div class="text-block-19 _12">bgt. bht. bgrfv frev fedc</div>
+    <p class="paragraph-2">Gizella Sztefanova nem számított sok vendégre a 93. születésnapján. Hosszú évek óta egyedül
+      él. Gizi néni egyetlen lánya, Rita, 16 évvel ezelőtt hunyt el. Az unokák és a dédunokák messze laknak.<br></p>
+    <div class="text-block-19 _12">v fr b tbgt bgr b hynbgfr vcdecde</div>
+    <div class="text-block-19 _12">tg b n y n jyhtg rfv rfev grf ed c</div>
+    <div class="text-block-19">v fr b tbgt bgr b hynbgfr vcdecde</div>
+    <div class="text-block-13">De Gizi néni még mindig fiatalnak érzi magát 93 évesen. Néhány évvel ezelőtt sikerült
+      megszabadulnia a szürkehályogtól, amely 45 évig kínozta! De hogyan csinálta? Az idős hölgy megosztotta a titkát
+      velünk.<br><br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <h2 class="heading-7">„Ismét jól látok. Minden háztartási feladatot elvégezhetek, dolgozhatok a virágos kertben és a
+      ház körül is. Még egy kis ketrecem is van csirkékkel és nyulakkal.”</h2>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">v gr bhtbhtb t grfvec d. x. gtb. g fvde</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrf bht n jy hn btgrfv fred c ed</div>
+    <div class="text-block"><strong>Riporter: Gizi néni, a fő kérdésünk az, hogy hogyan sikerült megőriznie ezt a
+        vidámságot, ezt egészséget és frissességet, amely önben van és még a kertre is van ideje ilyen tekintélyes
+        korban? Mi a titka? <br><br></strong> - Nem mindig voltam ilyen. Egész életemben tanárként dolgoztam. Ez pedig
+      nagyon megerőltető és aktív tevékenység, amely erőfeszítéseket és türelmet igényel. 48 éves koromban kezdett
+      homályosodni a látásom, eleinte nem túlságosan, de aztán egyre rosszabb lett, mintha egy homályos üvegen keresztül
+      néznék a világra, vagy mintha mindennap köd lenne az utcán. Mint kiderült, az oka szürkehályog volt. <br><br> A
+      szakemberek szemcseppet írtak fel. Már nem is emlékszem, milyet. Kicsit segítettek, de ha véletlenül elfelejtettem
+      használni, akkor megint elmosódott minden. Ennek ellenére továbbra is használtam a cseppeket, és nem kerestem más
+      lehetőségeket. <br><br> De egy nap nagyon rosszul éreztem magam, pont az egyik tanóra alatt. Magánkórházba vittek.
+      Egy óra alatt minden annyira elhalványult, hogy a tenyeremet sem láttam, amikor kinyújtottam a kezem. Injekciót
+      adtak, és kötéssel takarták el a szemem. Egy hónapot töltöttem ebben a kórházban. Amikor eltávolították a kötést,
+      láttam, de mint korábban, csak halványan. Aztán elbocsátottak a kórházból, és egy szemész specialistához
+      irányítottak. <br><br> A már meglévő cseppek mellé még néhányat felírtak. Amennyire emlékszem, minden nap 6 vagy
+      több szemcseppet használtam. Sok pénzt kellett költenem erre. A közeli gyógyszertárba úgy jártam, mint egy
+      élelmiszerbolta. <br><br> De a kúra végén sem javult az állapotom. És ez nem is történhetett volna meg, mert a
+      szakértők szerint ez az én koromban lehetetlen. Elhangzott az is, hogy azon kívül, hogy megpróbáljuk fenntartani a
+      jelenlegi állapotot, keveset lehet tenni. Magam is tudtam, hogy lehetetlen megszabadulni a szürkehályogtól, hogy
+      még nincs ilyen készítmény. Rosszul éreztem magam. <br><br> <br></div>
+    <div class="text-block-19 _12">vfr vtb tgb t. b hyb tg grf vced</div>
+    <div class="text-block-19 _12">vfr. bht. bgrf vfed sc</div>
+    <picture>
+      <source type="image/webp" srcset="images/5eb58345c897d7416f6616a4_schemhu.webp">
+      <source type="image/jpeg" srcset="images/5eb58345c897d7416f6616a4_schemhu.jpg"> <img loading="lazy" src="images/5eb58345c897d7416f6616a4_schemhu.jpg" alt="" class="image-12"> </picture>
+    <div class="text-block-19 _12">tg. tb yhn htgb grv fr htbvfr v fre</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-15">A defocusált látású emberek 70% -a 5 éven belül teljesen elveszítheti látását.</div>
+    <div class="text-block-19 _12">tg. tb yhn htgb grv fr htbvfr v fre</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr. TBB</div>
+    <div class="text-block-19 _12">bgt. jh bgfv n htg brgfvfe v</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block">Azt hiszem, igy éltem volna le életem hátra levő részét, ha nincs egy régi barátom. Fia a
+      szembetegségekben szenvedőkkel dolgozott, kutató volt néhány híres szemészeti magánklinikán, Kázmérnak hívták.
+      Megkértem, hogy tanácsoljon valamit a szemeimmel kapcsolatban. <br><br> Amikor találkoztunk, Kázmér elmagyarázta
+      nekem, hogy a szürkehályog gyakran a fehérjék miatt keletkezik, amelyek a szemlencsében elpusztulnak, és ha ezeket
+      a fehérjéket helyreállítjuk, akkor a látás akár 100% -ig is helyreállhat bármely életkorban. <br><br> Elmondta,
+      hogy nemrégiben Izraelben további kutatásokat is végeztek, és kifejlesztettek egy módszert a lencsefehérjék
+      helyreállítására. Akkor azt javasolta, hogy próbáljam ki ezt a terápiát. <br><br> És az eredmény lenyűgöző volt.
+      Két hét múlva visszatért a látásom! El sem tudja képzelni, milyen boldogság újra látni a természetet, az állatokat
+      és az arcokat! És ami a legfontosabb: már nem kell pénzt költenem ezekre a szemcseppekre! <br></div>
+    <div class="text-block-19 _12">bg t bjyn jy. nhgt rfv d vcef c. szerk</div>
+    <div class="text-block-19 _12">v gt bht bh tgrfv. ec</div>
+    <div class="text-block-19 _12">tg. tb yhn htgb grv fr htbvfr v fre</div>
+    <div class="text-block-19 _12">b gt. bh. njyh tgb. vf r. cv ed c dce. vg bgt bgt</div>
+    <div class="text-block"><strong id="why">Riporter: Meg tudná mondani, hogy pontosan miként álltak helyre a
+        szemlencsében lévő fehérjék? <br></strong> <br> Valójában ezt most nagyon egyszerű megcsinálni. Korábban ehhez
+      speciális gyógynövények külföldről történő megvásárlására volt szükség, amelyekből speciális tinktúrát
+      készítettek. És most nincs szükség erőfeszítésekre, a megfelelő termékre való várakozás 2 hétig tart! <br><br> Van
+      egy nagyon jó termék, az <a href="#"><span class="productName"></span></a>. Kifejezetten a szemlencse fehérjéinek helyreállítására lett kifejlesztve. 2-3
+      kapszula étkezés közben és kész. <br> <br> Gizi néni története alapján úgy tűnik, hogy ez a módszer valóban
+      hatékony. De valóban így van? Mielőtt ezt az anyagot közzétettük és olvasóink rendelkezésére bocsátottuk volna,
+      úgy döntöttünk, hogy konzultálunk egy neves szakértővel az oftalmológia területén, Kucár Margaritával. <br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vr. bgt b hyn bht grf edc</div>
+    <div class="text-block-19 _12">v fr b tg bgt rfb vg tbrfvdc</div>
+    <div class="text-block-19 _12">tg. tb yhn htgb grv fr htbvfr v fre</div>
+    <picture>
+      <source type="image/webp" srcset="images/5eb58345c897d7fcf06616ad_puzyr.webp">
+      <source type="image/jpeg" srcset="images/5eb58345c897d7fcf06616ad_puzyr.jpg"> <img loading="lazy" src="images/5eb58345c897d7fcf06616ad_puzyr.jpg" alt="" class="image-13"> </picture>
+    <div class="text-block-19">bgt. jy. n yh tgbr fv. g n mku jyh b gtrf</div>
+    <div class="text-block-19">tg. tb yhn htgb grv fr htbvfr v fre</div>
+    <div class="text-block-16">Kucár Margarita, vezető magyar szakember a szemészet területén, részt vesz az új terápiás
+      módszerek kidolgozásában, egy a gyengénlátás ellen küzdő szervezetben dolgozik.</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vt gb h nhy. tgb vrf v rf vf cd</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block"><strong id="pr">Riporter: Kucár Margarita, meg tudná mondani, hogy valóban meg lehet-e
+        akadályozni a vakságot a szemlencsében található fehérje helyreállításával?</strong>Igen, így van. Az emberi
+      látás a szemben található fehérjék minőségétől és mennyiségétől függ. Gizi néni természetesen sokkal egyszerűbb,
+      hozzáférhetőbb módon fogalmazta meg a testben zajló folyamatokat, de általában minden helyes.<br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">bgt. jy nht gbf vrde cf r cd. ced</div>
+    <div class="text-block-19 _12">bgt. bh nhy njy nhtg f v fc. c ed</div>
+    <div class="text-block"><strong>Riporter: Mesélne nekünk az <span class="productName"></span>ról? Mi is ez a termék? </strong><br> <br> - Az
+      <a href="#"><span class="productName"></span></a> egy modern termék, amelyet 18 országba exportálnak, beleértve Magyarországot is. Itt a készítmény
+      terjesztését a Szemészeti intézetünk ellenőrzi. Ezen a területen az ország egyik vezető intézménye. Tudomásom
+      szerint az <a href="#"><span class="productName"></span></a> létrehozásakor olyan összetevőket kombináltak, amelyek egykor a politikai elit képviselőit
+      mentették meg a vakságtól. Igaz, magát a képletet felülvizsgálták és továbbfejlesztették, mivel a modern
+      technológiák már sokkal fejlettebbek, mint 50-60 évvel ezelőtt voltak. Ennek megfelelően maga a termék sokkal
+      hatékonyabb és komolyabb eredményeket ér el, mint azokban az időkben, amikor egyedüli hatóanyag volt. Habár már
+      akkor is azt hitték, hogy ezek a termékek külön-külön nagyon hatékonyak az emberi látás helyreállításában.
+      <br><br> Az <a href="#"><span class="productName"></span></a> fő hatóanyagai antioxidáns tulajdonságokkal rendelkező vitaminok és nyomelemek, amelyek
+      nélkülözhetetlen tápanyagok a szem védelmi rendszerének működéséhez az oxidatív károsodás, a napfény kék
+      spektrumának káros sugarai ellen. Ezek az anyagok együttesen képesek bejutni a szembe, és segítenek a
+      szemlencsében lévő fehérjék szintetizálásában. Ekkor a látása olyan lesz, mint egy 20 éves fiatalé. <br><br> Az
+      <a href="#"><span class="productName"></span></a> 1-2 hét használat után is elősegíti a szükséges fehérjék szintézisét. Meg akarom mutatni a kutatás
+      eredményeinket. Összesen 300 önkéntes vett részt a vizsgálatban.<br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <ul class="list-3">
+      <li class="list-item-3">A vizsgálatban résztvevők 96% -ának a szemlencséje teljesen helyreállt.<br></li>
+      <li class="list-item-4">A látásélesség a résztvevők 98% -nál javult.<br></li>
+      <li class="list-item-5">A homályos látás a résztvevők 97% -nál eltűnt.<br></li>
+      <li class="list-item-6">A réztvevők 88% -nál normalizálódott az intraokuláris nyomás.<br></li>
+    </ul>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">v rf b ht nh tgbvf r. ed c gt ht b th</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">VFR. bt bh tb t grfd f ed c szerk</div>
+    <div class="text-block">Az <a href="#"><span class="productName"></span></a> található cink és B-vitamin komplex jótékony hatással van a szem és az
+      érrendszer működésére. <br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="columns-2 w-row">
+      <div class="column-2 w-col w-col-4">
+        <div class="text-block-18">Cink</div>
+      </div>
+      <div class="column-3 w-col w-col-8">
+        <div class="text-block-18" style="font-size: 17px;">Része azoknak az enzimeknek, amelyek szabályozzák a látást a
+          sötétben, és segítenek gyorsan alkalmazkodni az erős fényhez, csökkentve az erős villanás hatásait. A cink
+          segít az A-vitamin szintjének fenntartásában is (ez a vitamin segít megerősíteni a szem szaruhártyáját, és
+          pozitív hatással van a látásélességre). </div>
+      </div>
+    </div>
+    <div class="columns-2 w-row">
+      <div class="column-2 w-col w-col-4">
+        <div class="text-block-18">Cianokobalamin</div>
+      </div>
+      <div class="column-3 w-col w-col-8">
+        <div class="text-block-18" style="font-size: 17px;">Segít helyreállítani a szem vérkeringését és javítja a
+          szemkészülék idegrostjainak állapotát. Segít megnyugtatni, enyhíti a szem megerőltetését. Segít megelőzni a
+          látóideg gyulladását.</div>
+      </div>
+    </div>
+    <div class="columns-2 w-row">
+      <div class="column-2 w-col w-col-4">
+        <div class="text-block-18">Riboflavin </div>
+      </div>
+      <div class="column-3 w-col w-col-8">
+        <div class="text-block-18" style="font-size: 17px;">Segít javítani a vérkeringést a szem ereiben, és pozitív
+          hatással van a színlátásra és az éjszakai látásra. Elősegíti a szemlencse normális működését, ezáltal megelőzi
+          a szürkehályog kialakulását. Elősegíti a szövetek gyógyulását, ami nagyon fontos a szaruhártya-disztrófia
+          esetében. </div>
+      </div>
+    </div>
+    <div class="columns-2 w-row">
+      <div class="column-2 w-col w-col-4">
+        <div class="text-block-18">B12-vitamin </div>
+      </div>
+      <div class="column-3 w-col w-col-8">
+        <div class="text-block-18" style="font-size: 17px;">Ez a vitamin elengedhetetlen a szem vérkeringésének
+          javításához. Segít továbbá fenntartani az idegsejtek működését és általában véve javítja a látást. Segít
+          javítani a látóideg állapotát glaukóma esetén, különösen a korai stádiumban.</div>
+      </div>
+    </div>
+    <div class="columns-2 w-row">
+      <div class="column-2 w-col w-col-4">
+        <div class="text-block-18">Tiamin </div>
+      </div>
+      <div class="column-3 w-col w-col-8">
+        <div class="text-block-18" style="font-size: 17px;">Elengedhetetlen a kolinészteráz (a szemnyomás csökkentésére
+          szolgáló enzim) termelésében, és részt vesz az idegimpulzusok továbbításában is. Segít a szemnyomás
+          normalizálásában, és felelős a látórendszer és az agy közötti idegimpulzusok zavartalan továbbításáért. </div>
+      </div>
+    </div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">v g n hy n ju ju. nbt g fv f ced</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block">Ezenkívül az <a href="#"><span class="productName"></span></a> a következő tulajdonságokkal rendelkezik:<br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vr bh th hy hy tg v rf c de cd</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <ul class="list-2">
+      <li class="list-item-7">Segít enyhíteni a szem fáradtságát, eltávolítani a homályosodást és megszüntetni a
+        szemhéj viszketését.<br></li>
+      <li class="list-item-8">Segít csökkenteni a szemirritációt.<br></li>
+      <li class="list-item-9">Segít a számítógépes aszthenopiában (segít enyhíteni a fejfájást, a hát- és nyaki
+        fájdalmat)<br></li>
+      <li class="list-item-10">Jótékonyan hat a látórendszerre a legtöbb szembetegségnél, a rövid- és távollátástól
+        kezdve a zöldhályogig és a szürkehályogig.<br></li>
+    </ul>
+    <div class="text-block-19 _12">VFR. gb hnjju yh gt bvfr. fdc ced</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgrrg. gr. fv</div>
+    <div class="text-block">Vagyis meglehetősen sokoldalú készítmény. Úgy fejlesztették ki, hogy segítsen helyreállítani
+      a látórendszert a 40 év feletti embereknél. <br>‍<br><strong>Fontos! A tudósok arra a következtetésre jutottak,
+        hogy január a legjobb alkalom az emberek számára a terápia megkezdésére. Az átlagos hőmérséklet stabilizálása
+        miatt felgyorsul az anyagcsere, javul a test vérkeringése, javul a szervek vérellátása, valamint javul a szervek
+        oxigénellátása, ami növeli a készítmény hatékonyságát. . A terápia 67% -kal hatékonyabb lehet, mint az év többi
+        szakában.</strong><br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block"><strong>Riporter: Hol vásárolhatok <a href="#"><span class="productName"></span></a> és mennyiért?<br></strong> <br> A promóció ideje
+      alatt (<span class="date-0"></span>) el kell küldeni a megrendelést a forgalmazó hivatalos honlapján. Ebben az
+      időszakban 50% kedvezmény jár.<br></div>
+    <div class="text-block-19 _12">vrg. bg bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="text-block-19 _12">vrg. b g bgr fvfr c descde. cvf vgr</div>
+    <div class="div-block-12">
+      <div class="text-block-17">Mivel az <a href="#"><span class="productName"></span></a> termék kezd kifogyni a készletből, a gyártó úgy döntött, hogy leállítja
+        a termék értékesítését <span class="date-0" data-format="dd month"></span>.<br></div>
+    </div><br>
+
+    <div class="features-wrapper"></div>
+
+
+    <div class="container-3 w-container">
+      <div class="div-block-13 w-clearfix">
+        <picture>
+          <source type="image/webp" srcset="images/5eb58345c897d78c32661689_file-Og6PGLfTD5.webp">
+          <source type="image/jpeg" srcset="images/5eb58345c897d78c32661689_file-Og6PGLfTD5.png"> <img loading="lazy" src="images/5eb58345c897d78c32661689_file-Og6PGLfTD5.png" alt="" class="image-9"> </picture>
+        <h2 id="com" class="heading-3"><strong class="bold-text-7">Hozzászólások</strong></h2>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Tarka Angéla</strong></div><img loading="lazy" src="images/5eb58345c897d7ebbd661698_1_11.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Köszönjük, hogy megírta ezt a cikket. Nagyon fontos volt számomra. Az utóbbi időben sokat
+          ültem a számítógép előtt, és a látásom csak egyre rosszabbodott. Már leadtam rendelésem az <span class="productName"></span>-ra.<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Siraki Béla<br></strong></div><img loading="lazy" src="images/5eb58345c897d70c3b66168c_2_12.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Egyetértek a szakértőkkel. A termék hihetetlenül jó! Mielőtt elkezdtem szedni, az egyik
+          szemem mínusz 2, a másik mínusz 3 volt. Most már mindkettő javult egy dioptriával, ami azt jelenti, hogy a
+          látásom szinte tökéletes. Semmi sem segített úgy, mint az <a href="#"><span class="productName"></span></a>...<br> </p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Szlávik István<br></strong></div><img loading="lazy" src="images/5eb58345c897d7202b6616a3_3_13.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Megrendeltem! Megígérték, hogy egy héten belül szállítják a falunkba. Amint megérkezik,
+          írok.<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Zalai Emese<br></strong></div><img loading="lazy" src="images/5eb58345c897d71d88661693_4_14.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Nemrég néztem egy műsort a tévében. Beszéltek <a href="#"><span class="productName"></span>ról</a> is. Sok szakértő javasolja.<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Szalkai Nóra<br></strong></div><img loading="lazy" src="images/5eb58345c897d7282766169b_5w.jpeg" width="50" alt="" class="image-4">
+        <p class="paragraph">Egyetértek mindenkivel, aki ide írt. A termék nagyon jó. Az egész családom használta,
+          szinte mindegyiküknek gyenge a látása. Jelentős javulás volt megfigyelhető mindenkinél. Összeségében az első
+          terápiás kúra után a lányom látása 3 dioptriával javult, ezt még egy szakember is megerősítette. Nagyon
+          elégedett vagyok az <span class="productName"></span>-al.<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Tolvaj Dalma<br></strong></div><img loading="lazy" src="images/5eb58345c897d7e8b46616ae_8_18.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">A megrendelése feldlgozásra került! Tényleg nagyon olcsó.<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Berec Edit<br></strong></div><img loading="lazy" src="images/5eb58345c897d76189661687_9_19.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Az <a href="#"><span class="productName"></span></a> meglehetősen jól ismert készítmény. Sokat hallottam róla. Néhány barátom is
+          megdicsérte.<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Boros Antal<br></strong></div><img loading="lazy" src="images/5eb58345c897d729cc661688_7_17.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Ahogy ígértem, most leírom a tapasztalataimat. Az <a href="#"><span class="productName"></span></a>-ot határidőre leszállították,
+          ahogy ígérték, egy hét múlva már a postán volt, onnan vettem el. Most a legérdekesebbről: a hatásáról. Csak
+          egy hete használom, de a hatása már érezhető. A látásom valóban javult. Tegnapelőtt még a busz számát is
+          messziről láttam, bár korábban nem láttam. Nagyon elégedett vagyok a termékkel. Rendelek még. Ajánlom
+          mindenkinek. Egy próbát mindenképpen megér. <br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Borcsuk András<br></strong></div><img loading="lazy" src="images/5eb58345c897d7057d66169c_5m.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Köszönöm. Direkt megrendeltem az <a href="#"><span class="productName"></span></a>. Megpróbálok küzdeni a látásproblémámmal, évről
+          évre súlyosbodik, félek a műtéttől. A szomszéd is műtéten esett át, és már két éve szenved annak
+          következményeitől. <br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Andor Beatrix<br></strong></div><img loading="lazy" src="images/5eb58345c897d72e7766168b_11_111.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Köszönöm!!!<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Gortva Elvira<br></strong></div><img loading="lazy" src="images/5eb58345c897d76e736616a8_user_no_foto.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Mindig csak haszontalan dolgokra van pénz ... Egy barátom is tavaly szemműtéten esett át.
+          Nemrég a másodikat kellett csinálnia. Ugyanakkor a látása az egyik szemére nagyon romlott.<br></p>
+      </div>
+      <div class="div-block-2 w-clearfix">
+        <div class="text-block-7"><strong>Orsos Ibolya<br></strong></div><img loading="lazy" src="images/5eb58345c897d70785661695_14_114.jpg" width="50" alt="" class="image-4">
+        <p class="paragraph">Ma vettem fel egy csomagot a postáról. Minden rendben. A megrendelést gyorsan feladták.
+          Mint kiderült, megérte. Én is elkezdtem szedni.<br></p>
+      </div>
+      <div class="form-block w-form">
+        <div class="form-block w-form">
+          <form method="post" action="getform.php" class="form x_order_form">
+            <input type="hidden" name="utm_source" value="{clickid}">
+            <input type="hidden" name="utm_campaign" value="{t2}">
+            <div class="columns _1234 w-row">
+              <div class="w-col w-col-4">
+                <div class="text-block-5 _1234"><strong class="bold-text-3"><span class="x_price_previous"><span class="priceOld"></span></span>
+                    <span class="x_currency"><span class="currencyMain"></span></span></strong><br></div>
+              </div>
+              <div class="w-col w-col-4">
+                <picture>
+                  <source type="image/webp" srcset="images/5.webp">
+                  <source type="image/jpeg" srcset="images/5.png"> <img loading="lazy" src="images/5.png" alt="" style=" margin-top: 10px; "> </picture>
+              </div>
+              <div class="w-col w-col-4">
+                <div class="text-block-6 _1"><span class="text-span-6"><strong class="_1"><span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span></strong> </span><br>
+                </div>
+              </div>
+            </div><br><label class="field-label"><strong>Adja meg nevét:<br></strong></label><input type="text" class="text-field w-input" maxlength="256" name="name" required><label class="field-label-2"><strong>Írja be a telefonszámát:<br></strong></label> <input type="tel" class="text-field-2 w-input" maxlength="256" name="phone" required><input type="submit" value="MEGVÁSÁRLÁS" class="submit-button w-button">
+         </form>
+          <div class="w-form-done">
+            <div>Köszönöm! Beküldésed beérkezett!</div>
+          </div>
+          <div class="w-form-fail">
+            <div>Hoppá! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+      </div>
+      <footer style="margin-top: 30px;height: 60px;background: #78b9eb;width: auto;max-width: 100%;"> <br>
+        <p style="text-align: center; color: white;">© <span class="date-0" data-format="yyyy"></span></p>
+      </footer>
+      
+      <script src="js/postDate.js"></script>
+    </div>
+  </div>
+
+
+
+  <script>
+      const offer_params = {
+          priceMain: '9900',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'Ft',
+          productName: 'Oculax',
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain: offer_params.priceMain,
+          currencyMain: offer_params.currencyMain,
+          lang: 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product: offer_params.productName, // название продукта
+          genderTargetting: 'all', // пол целевой аудитории - all, male, female
+          form: {
+              isNeeded: 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+
+</body>
+
+</html>

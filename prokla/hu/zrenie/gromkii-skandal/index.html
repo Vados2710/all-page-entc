@@ -1,0 +1,685 @@
+﻿<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nem csillapodik a hangos botrány </title>
+  <link href="css/style.css" media="all" rel="stylesheet" type="text/css">
+  <link href="images/favicon.ico" rel="icon">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+  <script>
+    ! function (e, n, A) {
+      function o(e, n) {
+        return typeof e === n
+      }
+
+      function t() {
+        var e, n, A, t, a, i, l;
+        for (var f in r)
+          if (r.hasOwnProperty(f)) {
+            if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options
+                .aliases.length))
+              for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+            for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l
+              .length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[
+                0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+          }
+      }
+
+      function a(e) {
+        var n = u.className,
+          A = Modernizr._config.classPrefix || "";
+        if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+          var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+          n = n.replace(o, "$1" + A + "js$2")
+        }
+        Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className =
+          n)
+      }
+
+      function i(e, n) {
+        if ("object" == typeof e)
+          for (var A in e) f(e, A) && i(A, e[A]);
+        else {
+          e = e.toLowerCase();
+          var o = e.split("."),
+            t = Modernizr[o[0]];
+          if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+          n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[
+            0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a(
+            [(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+        }
+        return Modernizr
+      }
+      var s = [],
+        r = [],
+        l = {
+          _version: "3.6.0",
+          _config: {
+            classPrefix: "",
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0
+          },
+          _q: [],
+          on: function (e, n) {
+            var A = this;
+            setTimeout(function () {
+              n(A[e])
+            }, 0)
+          },
+          addTest: function (e, n, A) {
+            r.push({
+              name: e,
+              fn: n,
+              options: A
+            })
+          },
+          addAsyncTest: function (e) {
+            r.push({
+              name: null,
+              fn: e
+            })
+          }
+        },
+        Modernizr = function () {};
+      Modernizr.prototype = l, Modernizr = new Modernizr;
+      var f, u = n.documentElement,
+        c = "svg" === u.nodeName.toLowerCase();
+      ! function () {
+        var e = {}.hasOwnProperty;
+        f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+          return n in e && o(e.constructor.prototype[n], "undefined")
+        } : function (n, A) {
+          return e.call(n, A)
+        }
+      }(), l._l = {}, l.on = function (e, n) {
+        this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+          Modernizr._trigger(e, Modernizr[e])
+        }, 0)
+      }, l._trigger = function (e, n) {
+        if (this._l[e]) {
+          var A = this._l[e];
+          setTimeout(function () {
+            var e, o;
+            for (e = 0; e < A.length; e++)(o = A[e])(n)
+          }, 0), delete this._l[e]
+        }
+      }, Modernizr._q.push(function () {
+        l.addTest = i
+      }), Modernizr.addAsyncTest(function () {
+        function e(e, n, A) {
+          function o(n) {
+            var o = n && "load" === n.type ? 1 == t.width : !1,
+              a = "webp" === e;
+            i(e, a && o ? new Boolean(o) : o), A && A(n)
+          }
+          var t = new Image;
+          t.onerror = o, t.onload = o, t.src = n
+        }
+        var n = [{
+            uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+            name: "webp"
+          }, {
+            uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+            name: "webp.alpha"
+          }, {
+            uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+            name: "webp.animation"
+          }, {
+            uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+            name: "webp.lossless"
+          }],
+          A = n.shift();
+        e(A.name, A.uri, function (A) {
+          if (A && "load" === A.type)
+            for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+        })
+      }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+      e.Modernizr = Modernizr
+    }(window, document);
+  </script>
+</head>
+
+<body data-use-external-comebacker="1">
+  <header class="container-fluid container mar-b dis-no-mob">
+    <div class="row">
+      <div class="col-sm-5"> <a class="header__preview logo" href="#">
+          <picture>
+            <source type="image/webp" srcset="images/shapka01.webp">
+            <source type="image/jpeg" srcset="images/shapka01.jpg"> <img alt="img" src="images/shapka01.jpg"> </picture>
+        </a>
+        <div class="header__hide-block">
+          <div class="header__logo">
+            <picture>
+              <source type="image/webp" srcset="images/logo.webp">
+              <source type="image/jpeg" srcset="images/logo.jpg"> <img src="images/logo.jpg" alt="logo"> </picture>
+          </div>
+          <ul class="header__list">
+            <li class="header__item"><a href="#" class="header__link">Hírek</a></li>
+            <li class="header__item"><a href="#" class="header__link">Képzés</a></li>
+            <li class="header__item"><a href="#" class="header__link">Konferenciák</a></li>
+            <li class="header__item"><a href="#" class="header__link">Pályázatok</a></li>
+            <li class="header__item"><a href="#" class="header__link">Szerkesztői rubrika</a></li>
+            <li class="header__item"><a href="#" class="header__link">Mindenféle</a></li>
+            <li class="header__item"><a href="#" class="header__link">Tesztelje magát</a></li>
+            <li class="header__item"><a href="#" class="header__link">Páciens ABC</a></li>
+          </ul> <a href="#" class="header__link"></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container" id="main-container">
+    <div class="center">
+      <h2 class="container__tittle"> <b> <span class="container__tittle-atention">Nem csillapodik a hangos
+            botrány</span> <br> <br> Mit tud a szemészet területének szakembere, Yuval Yasur? Avagy hogyan állítsuk
+          helyre a látást műtét nélkül! </b> </h2>
+    </div> <br>
+    <ol class="breadcrumb">
+      <li><a href="#">Anyagok</a></li>
+      <li> <a href="#"> <span class="date-16" data-format="yyyy"></span> </a> </li>
+      <li> <a href="#"> <span class="date-16" data-format="month"></span> </a> </li>
+      <li> <a href="#"> <span class="date-16" data-format="dd"></span> </a> </li>
+      <li class="active">Interjú</li>
+    </ol>
+    <p class="timestamps"> <span class="text-muted">Anyag megjelenése <span class="date-16" data-format="dd.mm.yyyy"></span> <span class="random-time">11:24</span>. </span> <br> <span class="text-muted">Frissítve <span class="date-0" data-format="dd.mm.yyyy"></span> <span class="random-time">11:24</span>. </span> </p>
+    <div class="row">
+      <div class="col-md-9">
+        <div>
+          <p><b> <span class="date-29" data-format="dd month yyyy"></span>-án</b> az orvosi közösségben nagy botrány
+            tört ki. Yuval Yasur, a szemészet és az onkológia vezető szakembere és munkatársai nyíltan úgy vélik, hogy a
+            világ jelenlegi valóságában az egészségügyi rendszer egésze nem a betegek, hanem a saját hasznukra dolgozik,
+            <b>különösen egy bizonyos termék használatának megakadályozásával. amely lehetővé teszi a látás 95-100%-os
+              sebészeti terápiás helyreállítását.</b></p>
+          <p>Idén szakemberek csoportja, köztük 8 akadémikus és professzor, nyílt levelet tett közzé azzal a kéréssel,
+            <b>hogy a látásproblémákkal küzdő emberek ezreinek segítsenek megszabadulni a különféle szemészeti
+              betegségektől</b>.</p>
+          <div class="image__wrapper">
+            <picture>
+              <source type="image/webp" srcset="images/1112.webp">
+              <source type="image/jpeg" srcset="images/1112.jpg"> <img class="doctors_img" alt="img" loading="lazy" src="images/1112.jpg"> </picture>
+            <div class="image__text">Sourasky (Ichilov) orvosi központ Tel-Avivban</div>
+          </div>
+          <p>A levél szövegét aláírták:</p>
+          <ul class="names-list">
+            <li><b>Eliya Levinger</b>, orvos az Sourasky (Ichilov) orvosi központban </li>
+            <li><b>Yair Morad</b>, Assuta klinika </li>
+            <li><b>Avni Yitzhak</b>, az Assaf Arofe orvosi központ professzora </li>
+            <li><b>Abraham Shaira</b>, a szemészet területének szakembere a Haim Shiba klinikán </li>
+            <li><b>Rina Leibo</b>, orvos a Rambam orvosi központban </li>
+            <li><b>Nirit Burla</b>, a Haim Shiba klinika orvosa</li>
+            <li><b>Oriel Spiere</b>, orvos a Sourasky (Ichilov) orvosi központban</li>
+            <li><b>Barak Yore</b>, orvos a Rambam orvosi központban</li>
+          </ul>
+          <p>Az egész azután kezdődött, hogy véletlenül a diák Yuval Yasur kezébe kerültek Adam Zamenhof régi
+            feljegyzései. A tudós feljegyzéseiben számos utalást talált apja, egy másik nem kevésbé híres szemész,
+            Ludwik Lazar Zamenhof műveire. A feljegyzések sokféle feltételezést és kísérletet írtak le, amelyeken
+            először az apa dolgozott, majd fia folytatta kutatásait. És közöttük Yuval nagyon érdekes fejlesztést
+            fedezett fel. Kiderült, hogy sok éven át dolgoztak egy természetes szer létrehozásán a látás
+            helyreállításához. Adamnak majdnem sikerült befejeznie a munkáját, de 1939-ben letartóztatták, majd 1940-ben
+            lelőtték, és nem fejezte be az apja által megkezdett munkát. </p>
+          <div class="image__wrapper">
+            <picture>
+              <source type="image/webp" srcset="images/123.webp">
+              <source type="image/jpeg" srcset="images/123.jpg"> <img loading="lazy" alt="img" src="images/123.jpg">
+            </picture>
+            <div class="image__text">Ludwik Lazar Zamenhof, apa.</div>
+          </div>
+          <div class="image__wrapper">
+            <picture>
+              <source type="image/webp" srcset="images/1234.webp">
+              <source type="image/jpeg" srcset="images/1234.jpg"> <img loading="lazy" alt="img" src="images/1234.jpg">
+            </picture>
+            <div class="image__text">Adam Lazarevich Zamenhof, fiú.</div>
+          </div>
+          <p>Yuval csodálta Zamenhof munkáját és eredményeit, ezért vállalta, hogy folytatja tudományos munkáját, és ezt
+            sikerült is befejeznie. Olyan természetes szert hozott létre, amely <b>97%-os eséllyel segít helyreállítani
+              a látást</b> sebészeti beavatkozás nélkül. Ez egy újabb <b>forradalmi áttörés</b> volt a világ
+            szemészetében, de Yasurnak nem engedték, hogy meséljen erről az embereknek.</p>
+          <p>A nyílt levél egyik szerzője, Abraham Shaira újságíróknak elmondta: „Yuval Yasur szembeszállt a
+            „rendszerrel”, hiszen a világ mikrosebészete egy nagy nemzetközi vállalkozás, amely mögött nagyon befolyásos
+            emberek állnak. Ha az ifjabb Zamenhof érkezte volna befejezni a formulát és bemutatni azt a múlt században,
+            az emberek már rég lemondtak volna a műtétekről és otthoni körülmények között állították volna helyre
+            látásukat".</p>
+          <div class="image__wrapper">
+            <picture>
+              <source type="image/webp" srcset="images/1235.webp">
+              <source type="image/jpeg" srcset="images/1235.jpg"> <img loading="lazy" alt="img" src="images/1235.jpg">
+            </picture>
+            <div class="image__text">Abraham Shaira, a Haima Sheba klinikán, Izrael, Ramat Gan. Szakember a szemészet
+              területén, 26 éves tapasztalattal. Profilbetegség – szürkehályog strabismus.</div>
+          </div>
+          <p>Olyan számokat szeretnék bemutatni, amelyek mindig meggyőzőbbek bármely szónál – 2019-ben és 2020-ban a
+            szemműtétek költsége csaknem <b>150%</b>-kal nőtt, és a <b>műtétek száma megduplázódott!</b> És ez annak
+            ellenére, hogy az egész világon válság van. Az embereknek több pénzük lett? Aligha! Csak most más a politika
+            – a szakembereknek nem nyíltan műtétek előírása ajánlott a szemproblémákkal küzdők számára. Az emberek
+            hajlandóak bármit megtenni, hogy visszanyerjék látásukat, ezért beleegyeznek.</p>
+          <p>Hiszen, mi a műtét – ez a szerkezetbe való beavatkozás, ez seb, amely egész életre megmarad. Igen, nem
+            látszik, de ez a hely már sérült! Ismét kevesen tudják, hogy az esetek több mint 90%-ában 3-5 éven belül
+            ismételt műtétet kell elvégezni, az új szer pedig segít a látás helyreállításában műtét nélkül. Valójában
+            hozzájárul a látószervben előforduló összes folyamat normalizálásához...."</p>
+          <p><b>Ezért úgy döntöttünk, hogy szembemegyünk a "rendszerrel" és befektetéseket találunk a
+              termékfejlesztéshez. És <span class="productName"></span> lett a neve.</b></p>
+          <h2>Egy magán jótékonysági alapítvány, amely arra kért minket, hogy ne adjuk meg a nevét, 1, 7 millió dollárt
+            fektetett be az <span class="productName"></span> fejlesztésébe!</h2>
+          <p>Mivel a szer fejlesztése már régen elkezdődött, amikor még senki sem tudott a tudományos fejlődésről,
+            Yuvalnak sok évbe telt, hogy a megőrzött feljegyzések alapján olyan terméket hozzon létre, amely műtét
+            nélkül jelentősen javította a látást a szemizmok tónusának növelésével és a lencse homályosodásának
+            tisztításával. A szer olyan szembetegségek terápiájánál használható, mint:</p>
+          <ul class="list-disease">
+            <li>rövidlátás,</li>
+            <li>glaukóma,</li>
+            <li>szürkehályog,</li>
+            <li>a látóideg gyulladása,</li>
+            <li>látóideg neuritis,</li>
+            <li>uveal,</li>
+            <li>choreoretinitis,</li>
+            <li>retina leválás,</li>
+            <li>szaruhártya opálossága,</li>
+            <li>blepharitis,</li>
+            <li>kötőhártya-gyulladás,</li>
+            <li>retinitis pigmentosa,</li>
+            <li>keratitis.</li>
+          </ul>
+          <p>Yuval Yasurnak nagy nehezen sikerült megvédeni a szabadalmat és tovább folytatni a formula kidolgozását..
+            De maga a termék előállítása némi változáson ment keresztül - az elavult technológia helyett olyan
+            tápanyagokat (vitaminokat és antioxidáns tulajdonságokkal rendelkező nyomelemeket) használtak, amelyek
+            <b>fontosak a szem védelmi rendszerének működéséhez</b> az oxidatív károsodás, a napfény kék spektrumának
+            káros sugarai ellen. Ennek köszönhetően <b>további 47%-kal</b> sikerült növelni a szer hatékonyságát (a
+            hatóanyagok optimális kombinációjának köszönhetően). A korszerűsített termék neve <span class="productName"></span>.</p>
+          <p>Tudósok és orvosok szerint a <b>látásromlásos esetek 87%-ában az "<span class="productName"></span>" lehetővé teszi a látás 100% -os
+              helyreállítását sebészeti beavatkozás nélkül!</b></p>
+          <p>"A terápia otthon is elvégezhető - csak 2 kapszulát kell bevenni étkezés előtt egy pohár vízzel" - mondja a
+            termékről szóló nyílt levél egyik aláírója.</p>
+          <div class="composition">
+            <div class="composition__product">
+              <picture> <img loading="lazy" src="prod.png" alt="product" class="composition__product-img"> </picture>
+            </div>
+            <div class="coposition__conteiner-ul">
+              <ul class="composition__list composition__list-first">
+                <li class="composition__item item item-first">
+                  <div class="composition__item-text">
+                    <h4 class="item__header"> CINK </h4> <span class="item__content"> Része azoknak az enzimeknek,
+                      amelyek szabályozzák a látást a sötétben, és segítenek gyorsan alkalmazkodni az erős fényhez,
+                      csökkentve a vakító fény hatását. </span>
+                  </div>
+                  <div class="composition__item-img"></div>
+                </li>
+                <li class="composition__item item item-second">
+                  <div class="composition__item-text">
+                    <h4 class="item__header"> CIANOKOBALAMIN </h4> <span class="item__content"> Segít helyreállítani a
+                      szem vérkeringését és javítja a szem apparátus idegrostjainak állapotát. </span>
+                  </div>
+                  <div class="composition__item-img"></div>
+                </li>
+                <li class="composition__item item item-third">
+                  <div class="composition__item-text">
+                    <h4 class="item__header"> TIAMIN </h4> <span class="item__content"> Segít a szemnyomás
+                      normalizálásában, és felelős az idegimpulzusok zökkenőmentes továbbításáért a látórendszer és az
+                      agy között.</span>
+                  </div>
+                  <div class="composition__item-img"></div>
+                </li>
+                <li class="composition__item item item-4">
+                  <div class="composition__item-text">
+                    <h4 class="item__header"> RIBOFLAVIN (B2-VITAMIN) </h4> <span class="item__content"> Segít javítani
+                      a vérkeringést a szem ereiben, pozitív hatással van a színlátásra és az éjszakai látásra.</span>
+                  </div>
+                  <div class="composition__item-img"></div>
+                </li>
+                <li class="composition__item item item-5">
+                  <div class="composition__item-text">
+                    <h4 class="item__header"> B12-VITAMIN </h4> <span class="item__content"> Ez a vitamin
+                      elengedhetetlen a szem vérkeringésének javításához. Segít továbbá fenntartani az idegsejtek
+                      működését és általában véve javítja a látást.</span>
+                  </div>
+                  <div class="composition__item-img"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h2 class="comp-title">Termék összetétele</h2>
+          <p>Az <span class="dis-ib"><span class="productName"></span></span> természetes összetevőket tartalmaz. Kiegyensúlyozott formuláját úgy
+            tervezték, hogy támogassa az egészséges látást és segítsen csökkenteni a fáradtságot és a kimerültséget.
+          </p>
+          <ul>
+            <li><b>CINK</b> </li>
+            <li><b>CIANOKOBALAMIN (B-6 VITAMIN)</b> </li>
+            <li><b>TIAMIN (B-1 VITAMIN)</b> </li>
+            <li><b>RIBOFLAVIN (B-2 VITAMIN)</b> </li>
+            <li><b>B-12 VITAMIN</b> </li>
+          </ul>
+          <h2 class="dis-no-mob">Termék működése</h2>
+          <h3 class="effect-title">Az <span class="productName"></span> komplex <b>elősegíti</b>:</h3>
+          <ul class="effect-list">
+            <li class="effect-item">Szembetegségek megelőzését, beleértve a myopiát, a glaukómát és a szürkehályogot
+            </li>
+            <li class="effect-item">A látás helyreállítását és megőrzését </li>
+            <li class="effect-item">A látás védelmét fokozott vizuális stressz esetén (számítógépen végzett munka és a
+              napfénynek való negatív kitettség esetén)</li>
+            <li class="effect-item">Az intraokuláris nyomás normalizálását</li>
+            <li class="effect-item">A lencse védelmét, beleértve a homályosságot </li>
+            <li class="effect-item">A látásélesség javítását</li>
+            <li class="effect-item">A látás kontrasztjának növelését</li>
+            <li class="effect-item">A látószerv sérült sejtjeinek helyreállítását</li>
+            <li class="effect-item">Látószerv vérkeringésének javítását</li>
+            <li class="effect-item">Száraz szem szindróma megszüntetését (szemfáradtság, viszketés, bőrpír, szárazság,
+              fájdalom).</li>
+          </ul>
+          <p>Az <span class="productName"></span> magas hatékonyságának bizonyítása és a nagy tudósok emlékének tiszteletben tartása érdekében az
+            Alapítvány 50% kedvezményt ad a szer minden egyes csomagjára! </p>
+          <p><b>Mi szükséges ehhez?</b></p>
+          <p>Az akció ideje alatt (meghosszabbítva <span class="date-14" data-format="dd month yyyy"></span>-től <span class="date-0" data-format="dd month yyyy"></span>-ig bezárólag) szükséges: </p>
+          <ol class="steps">
+            <li>Kitölteni a kérelmet a <a href="#">speciálisan létrehozott weboldalon</a>.</li>
+            <li>Megvárni az operátor hívását és megadni a kiszállítási címet.</li>
+            <li>4-7 nap múlva (a szállításhoz szükséges) átvenni a csomagot a futártól.</li>
+          </ol>
+          <div> </div>
+          <p>Végül szeretnék köszönetet mondani a szer megalkotóinak! Kemény munkájuknak köszönhetően az embereknek ma
+            lehetőségük van arra, hogy sebészeti beavatkozások nélkül helyreállítsák látásukat.</p>
+
+          <br>
+
+          <div class="features-wrapper"></div>
+
+          <style>
+            .wheel img{
+              margin: 0 !important;
+            }
+          </style>
+
+          <p class="center"><strong>Tetszett a cikk? Ossza meg barátaival!</strong></p> <a class="social-img" href="#">
+            <picture>
+              <source type="image/webp" srcset="images/social2.webp">
+              <source type="image/jpeg" srcset="images/social2.jpg"> <img loading="lazy" alt="img" src="images/social2.jpg"> </picture>
+          </a>
+        </div>
+        <div class="box box-blue-light comments-block">
+          <h3>Hozzászólások</h3>
+        </div>
+        <div class="comments">
+          <div>
+            <p><strong>Lajos</strong> <span class="mycity">Győr</span> </p>
+            <p>Köszönöm. Akciósan rendeltem meg az <span class="productName"></span> szert. Megpróbálom a terápiát, a látásom egyre romlik az évek
+              során, műtétet félek csinálni. A szomszédom megcsinálta, már 2 éve szenved. Gennyesedik és nem gyógyul be
+            </p>
+          </div>
+          <div>
+            <p><strong>József</strong> <span class="mycity">Budapest<span class="js-city"></span></span> </p>
+            <p>Teljes mértékben megerősítem. Az <span class="productName"></span> nagyon jó dolog. Megpróbáltam helyreállítani vele a látásomat. Az
+              utóbbi időben még az útjelző táblákat se látom. Az ismerősöm tanácsára kezdtem el szedni és minden
+              normális lett. A látásélesség visszatért. Mindenkinek ajánlom! </p>
+            <picture>
+              <source type="image/webp" srcset="images/photo_2.webp">
+              <source type="image/jpeg" srcset="images/photo_2.jpg"> <img loading="lazy" class="comment__photo" src="images/photo_2.jpg" alt="image"> </picture>
+          </div>
+          <div>
+            <p><strong>Károly</strong> <span class="mycity">Pécs</span> </p>
+            <p>Köszönöm a cikket. Érdekes. Ha ilyen csodálatos akció van, miért ne próbáljam ki. Nagyon köszönöm az
+              alkotóknak, nekik köszönhetően mindent tisztán és színesen látok újra!</p>
+          </div>
+          <div>
+            <p><strong>Márton</strong> <span class="mycity">Szeged</span> </p>
+            <p>Épp most állítom helyre vele a látásom! Mindössze ez a második hét, a látásom pedig észrevehetően élesebb
+              lett. Ha korábban az 5. emelet ablakából nem láttam az autó rendszámát odalent, akkor most látom. </p>
+          </div>
+          <div>
+            <p>
+              </p><p><strong>Sándor</strong> <span class="mycity">Budapest</span> </p>
+              <p>Nekem is van tapasztalatom az <span class="productName"></span> terápiával és nekem is pozitív. Helyreállítottam a látásom mínusz
+                5-ről mínusz 1,5-re. Mindössze egy hónapig szedtem.</p>
+          </div>
+          <div>
+            <p><strong>Zsófia</strong> <span class="mycity">Vác</span> </p>
+            <p>Nem tudtam, hogy a szer megalkotásának története ilyen érdekes! Sok jó dolgot hallottam róla! Nem csoda,
+              hogy azt mondják, az izraeli szemészet az egyik legerősebb a világon, bár már az is egyszerű üzletté vált.
+            </p>
+          </div>
+          <div>
+            <p><strong>Margit</strong> <span class="mycity">Miskolc</span> </p>
+            <p>Mindig sok pénz van a rossz dolgok mögött... ( Egy ismerősömnek tavaly szemműtétje volt. Kétszer
+              (megismételték). Az egyik szem látása nagyon csökkent. Úgy döntöttem, egyedül fogom helyreállítani a
+              látásomat.</p>
+          </div>
+          <div>
+            <p><strong>Attila</strong> <span class="mycity">Budapest<span class="js-city"></span></span> </p>
+            <p>Kellemesen meglepett a termék hatása. Én is az interneten keresztül rendeltem, de őszintén szólva mégse
+              igazán hittem, különösen akciósan. De kiderült, hogy igaz, 1,5 hét alatt a látásom -3,5-ről -2,5 lett. A
+              látás rövid teljes helyreállása (néhány másodperc) kezdett megjelenni. Folytatom a terápiát. Nagyon jó
+              szer.</p>
+            <picture>
+              <source type="image/webp" srcset="images/photo_1.webp">
+              <source type="image/jpeg" srcset="images/photo_1.jpg"> <img loading="lazy" class="comment__photo" src="images/photo_1.jpg" alt="image"> </picture>
+          </div>
+          <div>
+            <p><strong>Márk</strong> <span class="mycity">Békéscsaba</span></p>
+            <p>Az izraeli tudósok mindig jók voltak és lesznek, mert jó iskoláik vannak. Nélkülük valószínűleg az egész
+              világ áfonya segítségével küzdött volna a látásproblémák ellen és csodában reménykedett volna. </p>
+          </div>
+          <div>
+            <p><strong>Orsolya</strong> <span class="mycity">Kecskemét</span> </p>
+            <p>Ma vettem el a csomagot a postán. Minden rendben. Gyorsan kiszállították. Tényleg kedvezményes volt, de
+              személy szerint kész vagyok többet fizetni a látásomért! Köszönöm az akciót. Elkezdtem szedni. Egy hét
+              múlva írok.</p>
+          </div>
+          <div>
+            <p><strong>Zsuzsanna</strong> <span class="mycity">Miskolc</span> </p>
+            <p>Gondolkodtam a látás korrekción, de nagyon féltem. Körülbelül 2 hónappal ezelőtt szereztem tudomást az
+              <span class="productName"></span> szerről. Úgy döntöttem, hogy először kipróbálom – a látomásom javult, most nem fogom megcsinálni a
+              műtétet</p>
+          </div>
+          <div>
+            <p><strong>Imre</strong> <span class="mycity">Székesfehérvár</span> </p>
+            <p>Köszönöm a tanácsokat. Valószínűleg nem reális megtalálni a gyógyszertárakban??</p>
+          </div>
+          <div>
+            <p><strong>János</strong> <span class="mycity">Kaposvár<span class="js-city"></span></span> </p>
+            <p>Hello mindenkinek! Egy hónapja fejeztem be az <span class="productName"></span> kúrát és a látásom 1 lett!!! Egyszerűen nincsenek
+              szavak. Nagyon köszönöm! Rendeljék meg, amíg kedvezményes, nem fogják megbánni!</p>
+          </div>
+          <div>
+            <p><strong>Zoltán</strong> <span class="mycity">Miskolc</span> </p>
+            <p>Elolvastam a szer részleteit a hivatalos weboldalon! Lenyűgöző! És most tényleg akciós, meg vagyok
+              döbbenve!</p>
+          </div>
+          <div>
+            <p><strong>Dorottya</strong> <span class="mycity">Nyíregyháza</span> </p>
+            <p>Egy ismerős szakember ajánlotta az <span class="productName"></span> szert, azt mondta, nincs semmi jobb, még a dicsőített
+              Amerikában se. Még csak második hete szedem, de már úgy látok, mintha egy fátylat vettek volna le a
+              szememről. Olyan csodálatos érzés, szavakkal nem lehet leírni. Most mindig magamnál hordom a táskámban,
+              hogy ne felejtsem el időben bevenni.</p>
+          </div>
+          <div>
+            <p><strong>Géza</strong> <span class="mycity">Budapest</span> </p>
+            <p>A fáradtság csökkentésére és megelőzésre használom az <span class="productName"></span> szert. Sokat dolgozom a számítógépen. Nagyon
+              észrevehetően segít. </p>
+          </div>
+          <div>
+            <p><strong>Csaba</strong> <span class="mycity">Debrecen</span> </p>
+            <p>Köszönöm. Nekünk nyugdíjasoknak műtétet csinálni nagyon sokba kerül. Jó, hogy vannak jó emberek, akik
+              kedvezményesen adják a szert.</p>
+          </div>
+          <div>
+            <p><strong>Mária</strong> <span class="mycity">Szeged</span> </p>
+            <p>A falu fele már megrendelte. Szedem, dicsérik, az emberek idős korban végre képesek voltak látni a
+              világot. Valahogy először nem hittem a hatékonyságában, de ennyien nem tudnak becsapni... Nem tudtam
+              ellenállni, és én is megvettem, holnap elkezdem használni. </p>
+          </div>
+          <div>
+            <p><strong>Rebeka</strong> <span class="mycity">Győr</span> </p>
+            <p>Köszönöm!!!</p>
+          </div>
+        </div>
+        <div class="btn__cont"> <a class="rollover" href="#">
+            <div class="rollover__text-block"> <span class="rollover__product-text"><span class="productName"></span> megszerzése</span><br> <span class="rollover__product-text-red">akciósan 50% kedvezménnyel</span> </div>
+          </a> </div>
+      </div>
+      <div class="col-md-3">
+        <p> <a href="#">
+            <picture>
+              <source type="image/webp" srcset="images/pic04.webp">
+              <source type="image/jpeg" srcset="images/pic04.jpg"> <img alt="img" src="images/pic04.jpg"> </picture>
+          </a> </p> <a class="super" href="#">
+          <p><b>Vizsgálatot indítottak az egészségügyi rendszer visszaéléseivel kapcsolatban.</b></p>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <p> <a href="#">
+            <picture>
+              <source type="image/webp" srcset="images/pic03.webp">
+              <source type="image/jpeg" srcset="images/pic03.jpg"> <img alt="img" loading="lazy" src="images/pic03.jpg">
+            </picture>
+          </a> </p> <a class="super" href="#">
+          <p><b>Kovács E.: "Mint egy magán gyógyszertárlánc igazgatója, megígérem, hogy becsületesen fogunk
+              dolgozni."</b> </p>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <p> <a href="#">
+            <picture>
+              <source type="image/webp" srcset="images/1_300.webp">
+              <source type="image/jpeg" srcset="images/1_300.jpg"> <img loading="lazy" alt="img" src="images/1_300.jpg">
+            </picture>
+          </a> </p> <a class="super" href="#">
+          <p><b>Szemműtét rövidlátás esetén</b></p>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <p> <a href="#">
+            <picture>
+              <source type="image/webp" srcset="images/2_300.webp">
+              <source type="image/jpeg" srcset="images/2_300.jpg"> <img loading="lazy" alt="img" src="images/2_300.jpg">
+            </picture>
+          </a> </p> <a class="super" href="#">
+          <p><b>102 244 ember vakult meg az elhanyagolt látás problémák miatt</b></p>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <p> <a href="#">
+            <picture>
+              <source type="image/webp" srcset="images/3_300.webp">
+              <source type="image/jpeg" srcset="images/3_300.jpg"> <img loading="lazy" alt="img" src="images/3_300.jpg">
+            </picture>
+          </a> </p> <a class="super" href="#">
+          <p><b>Miben áll a szemgolyón végzett műtét nehézsége?</b></p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/postDate.js"></script>
+
+
+  <script>
+      const offer_params = {
+          priceMain: '9900',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'Ft',
+          productName: 'Oculax',
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain: offer_params.priceMain,
+          currencyMain: offer_params.currencyMain,
+          lang: 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product: offer_params.productName, // название продукта
+          genderTargetting: 'all', // пол целевой аудитории - all, male, female
+          form: {
+              isNeeded: 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+
+</body>
+
+</html>
