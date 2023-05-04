@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="hu" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>K&#246;sz&#246;nj&#252;k a megrendel&#233;s&#233;t!</title>
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.8/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="confirm/css/fonts.css">
+    <link rel="stylesheet" href="confirm/css/timeTo.css">
+    <link rel="stylesheet" href="confirm/css/slick.css">
+    <link rel="stylesheet" href="confirm/css/slick-theme.css">
+    <link rel="stylesheet" href="confirm/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let data = new Date();
+        let day = data.getDate();
+        let month = data.getMonth() + 1;
+        let monthOut = month;
+        if (month == 1) monthOut = 'Január';
+        if (month == 2) monthOut = 'Február';
+        if (month == 3) monthOut = 'Március';
+        if (month == 4) monthOut = 'Április';
+        if (month == 5) monthOut = 'Május';
+        if (month == 6) monthOut = 'Június';
+        if (month == 7) monthOut = 'Július';
+        if (month == 8) monthOut = 'Augusztus';
+        if (month == 9) monthOut = 'Szeptember';
+        if (month == 10) monthOut = 'Október';
+        if (month == 11) monthOut = 'November';
+        if (month == 12) monthOut = 'December';
+    </script>  
+    <script>
+        function $_GET(key) {
+            var s = window.location.search;
+            s = s.match(new RegExp(key + '=([^&=]+)'));
+            return s ? s[1] : '';
+        }
+
+        var site = $_GET('version')
+
+        if (site.replace(/(v\d{1,3}\w{0,2})$/, '') === 'hufull') {
+            document.write('<scr' + 'ipt src="full/counter.js"></scr' + 'ipt>');
+        }
+        if (site.replace(/(v\d{1,3}\w{0,2})$/, '') === 'hufullprelp') {
+            document.write('<scr' + 'ipt src="full/prelp/counter.js"></scr' + 'ipt>');
+        }
+        if (site.replace(/(v\d{1,3}\w{0,2})$/, '') === 'hu1') {
+            document.write('<scr' + 'ipt src="1/counter.js"></scr' + 'ipt>');
+        }
+        if (site.replace(/(v\d{1,3}\w{0,2})$/, '') === 'hu1prelp') {
+            document.write('<scr' + 'ipt src="1/prelp/counter.js"></scr' + 'ipt>');
+        }
+    </script>
+    <div class="thank__logo">
+        <img src="confirm/images/country.png" alt="">
+        <h1><span class="productName"></span></h1>
+    </div>
+    <div class="thank">
+
+        <div class="thank__body">
+            <div class="thank__content">
+                <div class="thank__info">
+                    <div class="thank__order">
+                        <p>K&#246;sz&#246;nj&#252;k a megrendel&#233;s&#233;t!</p>
+                    </div>
+                    <div class="thank__status">
+                        <p>Megrendel&#233;s&#233;t elfogadtuk &#233;s feldolgoz&#225;s alatt &#225;ll!</p>
+                    </div>
+                    <div class="thank__about">
+                        <ul>
+                            <li> Term&#233;k: <span class="tovar"><span class="productName"></span></span> </li>
+                            <li> A Neve: <span id="leadprofit-name" class="name"></span> </li>
+                            <li> A Telefonsz&#225;ma: <span id="leadprofit-phone" class="phone"></span> </li>
+                        </ul>
+                    </div>
+                    <div class="thank__call">
+                        <p> Egy szak&#233;rtő hamarosan felveszi &#214;nnel a kapcsolatot a r&#233;szletek
+                            tiszt&#225;z&#225;sa &#233;rdek&#233;ben. </p>
+                    </div>
+                </div>
+                <div class="thank__pack">
+                    <img src="confirm/images/thank-pack.png" alt="">
+                </div>
+            </div>
+            <div class="thank__atten">
+                <div class="thank__atten-desc">
+                    <p>Ha t&#233;vedett az adatok megad&#225;sakor, azt b&#225;rmikor m&#243;dos&#237;thatja</p>
+                </div>
+                <div class="thank__atten-btn">
+                    <a id="leadprofit-returnurl" href="#">
+                        <button>Szerkeszteni</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="warning">
+        <div class="warning__body">
+            <h2 class="warning__title"> Kevesebb mint 50 akci&#243;s csomag maradt. Nem terveznek &#250;j
+                kedvezm&#233;nyt </h2>
+            <div class="prod1">
+                <img src="confirm/images/prod1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question__body">
+            <div class="question__top">
+                <div class="img__question">
+                    <img src="confirm/images/question.png" class=" hidden-xs" alt="">
+                    <img src="confirm/images/question_mob.png" class=" visible-xs" alt="">
+                </div>
+                <div class="question__title">
+                    <h2>Gyakran Ism&#233;telt K&#233;rd&#233;sek</h2>
+                    <p> Tan&#225;csad&#243;nk, t&#246;bb &#233;vtizedes tapasztalattal rendelkező seb&#233;sz
+                        v&#225;laszol k&#233;rd&#233;seire. </p>
+                    <span> Dr. Oszkár Takács</span>
+                </div>
+
+            </div>
+            <div class="question__content">
+                <div class="question__info">
+                    <div class="question__item">
+                        <div class="question__ask">
+                            <p>– Hogyan műk&#246;dik az <span class="productName"></span>?</p>
+                        </div>
+                        <div class="question__answer">
+                            <p> <span> Dr. Oszkár Takács</span>: Az <span class="productName"></span> shea olajat &#233;s propolisz
+                                kivonatot tartalmaz – akt&#237;v gombaellenes komponenseket. Teljesen
+                                elpuszt&#237;tj&#225;k a gomb&#225;t, ellent&#233;tben a legt&#246;bb m&#225;s
+                                gombaellenes szerrel, amelyek csak elnyomj&#225;k a gomba n&#246;veked&#233;s&#233;t.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="question__item">
+                        <div class="question__ask">
+                            <p>— Lehets&#233;ges-e &#250;jrafertőzni a gomb&#225;val a kezel&#233;s v&#233;g&#233;n?
+                            </p>
+                        </div>
+                        <div class="question__answer">
+                            <p> <span> Dr. Oszkár Takács</span>: A kezel&#233;s befejez&#233;se ut&#225;n a
+                                hat&#243;anyagok a szervezetben maradnak. Erős gombaellenes immunit&#225;s alakul ki,
+                                amely kiz&#225;rja a visszaes&#233;seket. H&#225;rom h&#243;nappal az
+                                <span class="productName"></span>-kezel&#233;s megkezd&#233;se ut&#225;n a gomb&#225;val fertőz&#246;ttek
+                                87,5%-&#225;n&#225;l nem jelentkezett a betegs&#233;g ki&#250;jul&#225;sa. </p>
+                        </div>
+                    </div>
+                    <div class="question__item">
+                        <div class="question__ask">
+                            <p>— Mikor c&#233;lszerűbb az <span class="productName"></span> haszn&#225;lni?</p>
+                        </div>
+                        <div class="question__answer">
+                            <p> <span> Dr. Oszkár Takács</span>: Az <span class="productName"></span> a legjobb reggel vagy este
+                                haszn&#225;lni. A l&#225;baknak tiszt&#225;nak &#233;s sz&#225;raznak kell lenni&#252;k,
+                                &#237;gy az <span class="productName"></span> felvitel&#233;nek legjobb ideje k&#246;zvetlen&#252;l
+                                zuhanyoz&#225;s vagy f&#252;rd&#233;s ut&#225;n van. </p>
+                        </div>
+                    </div>
+                    <div class="question__item">
+                        <div class="question__ask">
+                            <p>– Miben k&#252;l&#246;nb&#246;zik az <span class="productName"></span> a t&#246;bbi gombaellenes szertől?</p>
+                        </div>
+                        <div class="question__answer">
+                            <p> <span> Dr. Oszkár Takács</span>: Az <span class="productName"></span> egy sz&#233;les spektrum&#250;
+                                gombaellenes term&#233;k. K&#246;r&#246;m- &#233;s l&#225;bgomb&#225;sod&#225;s gyors
+                                kezel&#233;s&#233;t &#233;s megelőz&#233;s&#233;t biztos&#237;tja, enyh&#237;ti a bőr
+                                viszket&#233;s&#233;t &#233;s h&#225;ml&#225;st, megsz&#252;nteti a kellemetlen
+                                szagokat, helyre&#225;ll&#237;tja a k&#246;r&#246;mlemezt, gy&#243;gy&#237;tja az
+                                interdigit&#225;lis redők &#233;s a sarok reped&#233;seit, előseg&#237;ti a gomb&#225;s
+                                fertőz&#233;sekkel szembeni immunit&#225;s kialakul&#225;s&#225;t. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="zakaz">
+        <div class="zakaz__body">
+            <img src="confirm/images/zakaz.png" alt="" class="zakaz__img hidden-xs">
+            <img src="confirm/images/zakaz_mob.png" alt="" class="zakaz__img visible-xs">
+            <img src="confirm/images/prod3.png" alt="" class="prod3 hidden-xs">
+            <img src="confirm/images/prod3_mob.png" alt="" class="prod3 visible-xs">
+            <div class="zakaz__title"> Am&#237;g rendel&#233;se feldolgoz&#225;s alatt &#225;ll, tekintse meg azoknak a
+                v&#233;lem&#233;ny&#233;t, akik m&#225;r kipr&#243;b&#225;lt&#225;k az <span class="productName"></span>: </div>
+        </div>
+    </div>
+
+    <div class="fotos">
+        <div class="fotos__body">
+            <div class="fotos__item">
+                <img src="confirm/images/gif1.gif" alt="">
+            </div>
+            <div class="fotos__item">
+                <img src="confirm/images/gif2.gif" alt="">
+            </div>
+            <div class="fotos__item">
+                <img src="confirm/images/gif3.gif" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="comments">
+        <div class="comments__body">
+            <div class="comments__row">
+                <div class="comments__item">
+                    <img src="confirm/images/avatar1.png" alt="" class="avatar">
+                    <div class="comments__text">
+                        <p> <span>Zsuzsanna Orsósné</span> Sok&#225;ig nem tudtam, hogy
+                            l&#225;bgomb&#225;sod&#225;som van. Nos, egy kis viszket&#233;s &#233;s izzad&#225;s fokozta
+                            a szag&#225;t. Amikor a f&#233;rjem panaszkodni kezdett a kellemetlen szag miatt,
+                            r&#225;j&#246;ttem, hogy tennem kell valamit: reggel &#233;s este felkentem az <span class="productName"></span> -
+                            &#233;s n&#233;h&#225;ny nap m&#250;lva a szag &#233;s a viszket&#233;s elm&#250;lt. A 20
+                            napos k&#250;ra alatt v&#233;gig bekentem a l&#225;bamat, hogy teljesen megszabaduljak a
+                            probl&#233;m&#225;t&#243;l. &#201;s minden elm&#250;lt. </p>
+                        <div class="comments__likes">
+                            <div class="comment__like"> <a style="text-decoration: none;">Tetszik</a> <a
+                                    style="text-decoration: none;">V&#225;lasz</a> <a style="text-decoration: none;"
+                                    class="like__count"><img src="confirm/images/like.png" alt=""><span>4</span></a>
+                                <div class="comments__likes-date">
+                                    <script>
+                                        document.write(day + ' ' + monthOut)
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments__item">
+                    <img src="confirm/images/avatar2.png" alt="" class="avatar">
+                    <div class="comments__text">
+                        <p> <span>Enikő Gálné</span> A f&#233;rjem &#233;s &#233;n m&#225;r sok &#233;ve
+                            gomb&#225;sod&#225;st&#243;l szenved&#252;nk. Sajnos a l&#225;nyunk is megkapta.
+                            Sajn&#225;lom, de most kijav&#237;tom ezt a hib&#225;t. Otthon kezeltem a gomb&#225;t
+                            mindennel, amit a gy&#243;gyszert&#225;rak tan&#225;csoltak, &#233;s rosszabbodott, nem volt
+                            l&#225;that&#243; eredm&#233;ny. Az orvos bar&#225;tunk ekkor aj&#225;nlotta nek&#252;nk az
+                            Exodemin-t. Most a f&#233;rjemmel m&#225;r eg&#233;szs&#233;ges, norm&#225;lis
+                            megjelen&#233;sű k&#246;rmeink vannak. Az Exodemin előnye, hogy nem kell h&#243;napokat
+                            v&#225;rni. &#201;s a gomba &#246;r&#246;kre eltűnt. </p>
+                        <div class="comments__likes">
+                            <div class="comment__like"> <a style="text-decoration: none;">Tetszik</a> <a
+                                    style="text-decoration: none;">V&#225;lasz</a> <a style="text-decoration: none;"
+                                    class="like__count"><img src="confirm/images/like.png" alt=""><span>6</span></a>
+                                <div class="comments__likes-date">
+                                    <script>
+                                        document.write(day + ' ' + monthOut)
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="comments__row">
+                <div class="comments__item">
+                    <img src="confirm/images/avatar3.png" alt="" class="avatar">
+                    <div class="comments__text">
+                        <p> <span>Lilla Pintérné</span> Sajnos nekem m&#225;r előrehaladott st&#225;diumban van a
+                            gomba. &#201;s sz&#233;gyenszemre nem figyeltem erre időben, azt hittem, hogy ez nem olyan
+                            sz&#246;rnyű betegs&#233;g. Ennek eredm&#233;nyek&#233;nt az egyik l&#225;bamon szinte
+                            teljesen elporladt a k&#246;r&#246;m. Sok spray-t &#233;s kenőcs&#246;t haszn&#225;ltam
+                            abban a rem&#233;nyben, hogy helyre&#225;ll&#237;thatok valamit, de sajnos semmi sem
+                            seg&#237;tett. Az orvosl&#225;togat&#225;s dr&#225;ga volt. Azt&#225;n &#250;jra
+                            sz&#246;rf&#246;lgettem az interneten egy &#250;j gy&#243;gyszer ut&#225;n kutatva, &#233;s
+                            most tal&#225;ltam inform&#225;ci&#243;kat az <span class="productName"></span>-ről. Interneten rendeltem, nem
+                            tal&#225;ltam m&#225;st, de megj&#246;tt a csomag, minden rendben. Az utas&#237;t&#225;sok
+                            szerint t&#246;rt&#233;nt a kezel&#233;s, 2 k&#250;r&#225;t v&#233;geztem, &#233;s most
+                            csatolom a fot&#243;imat. Az eredm&#233;nyt &#214;n is l&#225;thatja. A gy&#243;gym&#243;d
+                            műk&#246;dik! </p>
+                        <div class="comments__likes">
+                            <div class="comment__like"> <a style="text-decoration: none;">Tetszik</a> <a
+                                    style="text-decoration: none;">V&#225;lasz</a> <a style="text-decoration: none;"
+                                    class="like__count"><img src="confirm/images/like.png" alt=""><span>3</span></a>
+                                <div class="comments__likes-date">
+                                    <script>
+                                        document.write(day + ' ' + monthOut)
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments__item">
+                    <img src="confirm/images/avatar4.png" alt="" class="avatar">
+                    <div class="comments__text">
+                        <p> <span>Gergő Szabó </span> Sőf&#246;rk&#233;nt dolgozom, sok&#225;ig cipőben kell
+                            &#252;ln&#246;m, &#225;ltal&#225;ban borzalmas a hideg &#233;vszak, a cipő szigetelt,
+                            napokig nem veszem le. &#205;gy jelent meg a gomba, erősen izzadt a l&#225;bam, majd
+                            jelentkezett az &#225;lland&#243; viszket&#233;s, nagyon elkezdett h&#225;mlani a bőr. A
+                            feles&#233;gem hat&#225;rozottan azt mondta, hogy biztosan gomba. Az <span class="productName"></span>-re az&#233;rt
+                            esett a v&#225;laszt&#225;som, mert tetszett az &#246;sszet&#233;tele - nincs benne
+                            vegyszer, &#233;s mert elt&#252;nteti a gomb&#225;t annak minden t&#252;net&#233;vel
+                            egy&#252;tt. A viszket&#233;s m&#225;r a 3. napon bel&#252;l elm&#250;lt. Mindenkinek
+                            aj&#225;nlom ezt a gy&#243;gym&#243;dot! </p>
+                        <div class="comments__likes">
+                            <div class="comment__like"> <a style="text-decoration: none;">Tetszik</a> <a
+                                    style="text-decoration: none;">V&#225;lasz</a> <a style="text-decoration: none;"
+                                    class="like__count"><img src="confirm/images/like.png" alt=""><span>7</span></a>
+                                &#183; <div class="comments__likes-date">
+                                    <script>
+                                        document.write(day + ' ' + monthOut)
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="thank__logo">
+        <img src="confirm/images/country.png" alt="">
+        <h1><span class="productName"></span></h1>
+    </div>
+
+    <!-- new resend lead form. Place it outside main wrapper/container to make styles work properly -->
+    <style>
+        /* default styles for form */
+        #resend-lead-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resend-lead-popup--active {
+            display: flex !important;
+            z-index: 400;
+            background: rgba(0, 0, 0, .5);
+        }
+
+        #resend-lead-popup .resend-lead-popup__body {
+            width: 90%;
+            max-width: 560px;
+            min-height: 300px;
+            padding: 25px 20px 15px 20px;
+            border: 2px solid #81a30c;
+            border-radius: 20px;
+            background: #fff;
+            /* default font family */
+            font-family: 'Roboto', sans-serif;
+            z-index: 500;
+            position: relative;
+        }
+
+        #resend-lead-popup .resend-lead-popup__body .resend-lead-popup__close {
+            position: absolute;
+            border-radius: 50%;
+            top: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            border-color: #000;
+            cursor: pointer;
+        }
+
+        #resend-lead-popup .resend-lead-popup__body .resend-lead-popup__close:hover {
+            background-color: #81a30c;
+        }
+
+        #resend-lead-popup .resend-lead-form .resend-lead-form__title {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        #resend-lead-popup .resend-lead-form .notification {
+            display: none;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+        }
+
+        #resend-lead-popup .resend-lead-form .notification.success {
+            background: green;
+        }
+
+        #resend-lead-popup .resend-lead-form .notification.error {
+            background: red;
+            margin-bottom: 10px;
+        }
+
+        #resend-lead-popup .resend-lead-form .notification.active {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #resend-lead-popup .resend-lead-form input {
+            display: block;
+            width: 90%;
+            max-width: 300px;
+            height: 40px;
+            margin: 0 auto 20px auto;
+            border: 2px solid #81a30c;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #resend-lead-popup .resend-lead-form input::-webkit-outer-spin-button,
+        #resend-lead-popup .resend-lead-form input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        #resend-lead-popup .resend-lead-form input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        #resend-lead-popup .resend-lead-form .resend-lead__submit {
+            display: block;
+            width: 200px;
+            color: #fff;
+            -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+            /* background: -webkit-radial-gradient(49.45% 72.02% at 54.08% 50.77%, #E4D302 23.96%, #80A20B 100%); */
+            background: radial-gradient(89.45% 99.02% at 89.08% 99.77%, #E4D302 16.96%, #80A20B 100%);
+            border: 0;
+            height: 40px;
+            margin: 10px auto 0 auto;
+            cursor: pointer;
+            -webkit-animation: animate_gradient 5s ease infinite;
+            animation: animate_gradient 5s ease infinite;
+            -webkit-transition: .5s;
+            transition: .5s
+        }
+
+        #resend-lead-popup .resend-lead-form .resend-lead__submit:hover {
+            -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .4), inset 0 4px 4px rgba(255, 255, 255, .25);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, .4), inset 0 4px 4px rgba(255, 255, 255, .25);
+            background-size: 400% 400%;
+            -webkit-animation: animate_gradient2 5s ease infinite;
+            animation: animate_gradient2 5s ease infinite
+        }
+    </style>
+
+    <div id="resend-lead-popup">
+        <div class="resend-lead-popup__body">
+            <button type="button" class="resend-lead-popup__close">
+                <svg width="14px" height="14px" viewbox="0 0 311 311.07733" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m16.035156 311.078125c-4.097656 0-8.195312-1.558594-11.308594-4.695313-6.25-6.25-6.25-16.382812 0-22.632812l279.0625-279.0625c6.25-6.25 16.382813-6.25 22.632813 0s6.25 16.382812 0 22.636719l-279.058594 279.058593c-3.136719 3.117188-7.234375 4.695313-11.328125 4.695313zm0 0">
+                    </path>
+                    <path
+                        d="m295.117188 311.078125c-4.097657 0-8.191407-1.558594-11.308594-4.695313l-279.082032-279.058593c-6.25-6.253907-6.25-16.386719 0-22.636719s16.382813-6.25 22.636719 0l279.058594 279.0625c6.25 6.25 6.25 16.382812 0 22.632812-3.136719 3.117188-7.230469 4.695313-11.304687 4.695313zm0 0">
+                    </path>
+                </svg>
+            </button>
+            <form class="resend-lead-form">
+                <!-- Тут нужно перевести контент на язык ленда  -->
+                <h3 class="resend-lead-form__title">Rendel&#233;s m&#243;dos&#237;t&#225;sa:</h3>
+                <!-- Две ошибки, тк сервер текст ошибок не возвращает, тем более под нужный язык не переводит -->
+                <p class="notification success">Jelentkez&#233;se sikeresen friss&#237;tve!</p>
+                <p class="notification error">Hiba t&#246;rt&#233;nt az űrlap elk&#252;ld&#233;sekor. Pr&#243;b&#225;lja
+                    meg a főoldalr&#243;l beny&#250;jtani a jelentkez&#233;st </p>
+                <!-- форма -->
+                <input id="resend-lead-name" placeholder="A neve" name="name" type="text">
+                <input id="resend-lead-phone" placeholder="A telefonszáma" name="phone">
+                <script>
+                    // REMOVE number="number" fom input above to make it work
+                    // script to work with masked phone number 
+                    var re = /[^\d\+\s()]/
+                    var phoneInputPopup = document.getElementById('resend-lead-phone')
+                    phoneInputPopup.addEventListener('input', function (e) {
+                        e.target.value = e.target.value.replace(re, '')
+                    })
+                </script>
+                <button type="submit" class="resend-lead__submit"> Szerkeszteni </button>
+            </form>
+        </div>
+    </div>
+    <!-- end of new form -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+    <script src="confirm/js/slick.min.js"></script>
+    <script src="confirm/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+    <!-- leadprofit.js - скрипт подключения к пп -->
+    <script src="https://click.lucky.online/js/leadprofit.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).leadprofitConfirm();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1466 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" href="assets/hu/css/new1.css">
+    <link rel="stylesheet" href="assets/hu/css/new2.css">
+    <title>24/7 Hírek</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=380">
+    <link rel="stylesheet" type="text/css" href="assets/hu/css/style.min.css" media="all">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+    <script>
+        function fdateTwoDigits(d) {
+            let now = new Date();
+            now.setDate(now.getDate() + d);
+            let mm = now.getMonth() + 1;
+            let day = now.getDate();
+            if (now.getDate() < 10) day = '0' + now.getDate();
+            if (mm < 10) mm = '0' + mm;
+            document.write(day + "." + mm + "." + now.getFullYear());
+        }
+    </script>
+    <link href="assets/hu/css/popup.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="assets/hu/css/pluso.css">
+    <link rel="stylesheet" href="assets/hu/css/formStyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/formPrice.css">
+
+    <script src="assets/hu/js/dr-dtime.min.js"></script>
+    <script src="assets/hu/js/date.js"></script>
+    <style>
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        div {
+            font-family: 'Open Sans';
+        }
+
+        ._content h1,
+        ._content h2,
+        ._content h3,
+        ._content h4,
+        ._content h5,
+        ._content h6,
+        ._content p,
+        ._news h1,
+        ._news h2,
+        ._news h3,
+        ._news h4,
+        ._news h5,
+        ._news h6,
+        ._news p {
+            margin-bottom: 0;
+        }
+
+        .natural-img {
+            position: absolute;
+            width: 120px;
+            top: 0;
+            left: 0;
+        }
+
+        .priceс {
+            width: 176px !important;
+            height: 115px !important;
+        }
+
+        span.discountс {
+            margin-top: 5px !important;
+        }
+
+        .timer-span {
+            font-size: 30px;
+            margin-top: 20px;
+            display: block;
+            color: red;
+            font-weight: bold;
+        }
+
+        .news .section article img {
+            object-fit: cover;
+            max-height: 450px;
+        }
+
+        .jst-hours {
+            display: none;
+        }
+
+        span.discountс {
+            margin-top: 20px;
+        }
+
+        .n-underline {
+            width: 100%;
+            max-width: 350px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .greenlink {
+            text-align: center;
+            padding: 10px 30px;
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            font-size: 19px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+            }
+        }
+
+        .main-link,
+        .greenlink {
+            animation: pulse 2s infinite;
+        }
+
+        .c-post {
+            margin-bottom: 0;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body class="page_article  mode-adaptive">
+
+    <div class="b-top-bar" id="anchor_0">
+        <div class="l-page-width">
+            <a class="b-top-bar__login" data-modal-open="authorization">
+                <span></span>
+            </a>
+            <ul class="b-top-bar__projects_list">
+                <li>
+                    <a class="to_form" href="#toform">
+                        <span>Élő</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="to_form" href="#toform">
+                        <span>Ajánlott</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="to_form" href="#toform">
+                        <span>Autó</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="to_form" href="#toform">
+                        <span>Ingatlan</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="to_form" href="#toform">
+                        <span>Ranglista</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="b-header">
+        <div class="l-page-width">
+            <div class="l-page-width__ledge">
+                <img loading="lazy" class="b-header__bg-img" src="assets/hu/img/header_bg.jpg">
+                <a class="b-header__logo-link to_form" href="#toform">
+                    <img loading="lazy" src="assets/hu/img/mia_logo.png"></a>
+                <a class="b-header__menu-button">
+                    <span></span>
+                </a>
+                <div class="b-header__layer">
+                    <div class="b-header__social">
+                        <a class="b-header__social-expand"></a>
+                        <ul>
+                            <li class="b-header__social-fb">
+                                <a class="to_form" href="#toform"></a>
+                            </li>
+                            <li class="b-header__social-vk">
+                                <a class="to_form" href="#toform"></a>
+                            </li>
+                            <li class="b-header__social-tw">
+                                <a class="to_form" href="#toform"></a>
+                            </li>
+                            <li class="b-header__social-ok">
+                                <a class="to_form" href="#toform" rel="nofollow"></a>
+                            </li>
+                            <li class="b-header__social-yt">
+                                <a class="to_form" href="#toform"></a>
+                            </li>
+                            <li class="b-header__social-gp">
+                                <a class="to_form" href="#toform" rel="publisher"></a>
+                            </li>
+                            <li class="b-header__social-tg">
+                                <a class="to_form" href="#toform" rel="nofollow"></a>
+                            </li>
+                            <li class="b-header__social-ig">
+                                <a class="to_form" href="#toform" rel="nofollow"></a>
+                            </li>
+                            <li class="b-header__social-bn">
+                                <a class="to_form" href="#toform"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-wr-main">
+        <div class="b-slide">
+            <div class="b-slide-menu">
+                <div class="b-main-nav">
+                    <div class="l-page-width">
+                        <div class="l-page-width__ledge">
+                            <ul class="b-main-nav__main" data-url="syria">
+                                <li class="b-main-nav__main-item m-active" data-point="0">
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="0">
+                                        <span>ÚJDONSÁGOK</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="1">
+                                    <div class="b-main-nav__main-drop">
+                                        <span>&nbsp;</span>
+                                    </div>
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="1">
+                                        <span>POLITIKA</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="2">
+                                    <div class="b-main-nav__main-drop">
+                                        <span>&nbsp;</span>
+                                    </div>
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="2">
+                                        <span>TÁRSADALOM</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="3">
+                                    <div class="b-main-nav__main-drop">
+                                        <span>&nbsp;</span>
+                                    </div>
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="3">
+                                        <span>GAZDASÁG</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="4">
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="4">
+                                        <span>A VILÁGBAN</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="5">
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="5">
+                                        <span>ESEMÉNYEK</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="6">
+                                    <div class="b-main-nav__main-drop">
+                                        <span>&nbsp;</span>
+                                    </div>
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="6">
+                                        <span>SPORT</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="7">
+                                    <div class="b-main-nav__main-drop">
+                                        <span>&nbsp;</span>
+                                    </div>
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="7">
+                                        <span>TUDOMÁNY</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="8">
+                                    <div class="b-main-nav__main-drop">
+                                        <span>&nbsp;</span>
+                                    </div>
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="8">
+                                        <span>KULTÚRA</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item" data-point="9">
+                                    <a href="#toform" class="b-main-nav__main-link to_form" data-point="9">
+                                        <span>VALLÁS</span>
+                                    </a>
+                                </li>
+                                <li class="b-main-nav__main-item sputnik-radio">
+                                    <a href="#toform" class="b-main-nav__main-link to_form">
+                                        <span>
+                                            RÁDIÓ <i></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="b-content-body">
+            <div class="l-content-page">
+                <div class="l-banner-place m-mobile"></div>
+                <div class="l-page-width"></div>
+                <div class="l-page-width">
+                    <div class="l-page-width__ledge">
+                        <div class="">
+                            <div class="b-article" itemscope="">
+                                <div class="col-120" id="center">
+                                    <div class="_content">
+                                        <div class="news current add_overlay">
+                                            <h1 class="listHeader"><b>
+                                                    <font color="red">
+                                                        Németországból származó tapasztalt orvos mondta: Egy tapasztalt
+                                                        német orvos azt mondta: A körömgomba vérfertőzést és nekrózist
+                                                        okoz.Van út a megváltáshoz, de nem mindenkinek.</font>
+                                                </b>
+                                                <span style="font-size: 15px; display: block;">
+                                                    <script>
+                                                        getDate(8)
+                                                    </script>
+                                                </span>
+                                            </h1>
+
+                                            <div class="section fullWidth" data-id="news_5c18cb8f5509a">
+                                                <article class="ho"
+                                                    data-id="a4aCYSXG7aG41FdyuJ9PcL1yR0vTcUlHYvJ3X/VcHWsL4y0=">
+                                                    <div class="gallery">
+                                                        <div class="img"><img loading="lazy"
+                                                                alt="Кинотеатр в поселке Борисоглебский открыли после реконструкции"
+                                                                src="assets/hu/img/gipert.jpg"></div>
+                                                        <p class="caption"><b>Kovács Máriával: "Garantálom hogy minden
+                                                                <span class="user-city">Belgorod</span> lakos aki
+                                                                körömgombától szenved 50%-os leárazással megkaphatja ezt
+                                                                a gyógyszert. Meggyógyítja a gombát és megelőzi a
+                                                                vérmérgezést"</b> </p>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                        </div>
+                                        <div class="news current news_content add_overlay">
+                                            <div class="section fullWidth" data-id="news_5c18cb8f55352">
+                                                <article class="ho"
+                                                    data-id="SXNHqo+oO7V72mLC5/LgYJwKvF73VIntNtuc5tNO3S2zpNk=">
+                                                    <div class="beforeContent">
+                                                        <div class="categories"> <a class="to_form"
+                                                                href="#toform">Gyógyszer</a></div>
+                                                        <div class="ya-share2__container ya-share2__container_size_s">
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                            <p style="font-style: italic;"> </p>
+                                            <h3>Részlet egy sajtótájékoztatóból Kovács Máriával: A körömgomba bejut a
+                                                vérrendszerbe és a belsőszervekbe, szepszist okoz és elpusztítja a
+                                                testet. A körömgomba halálozási rátája Magyarországban az egyik
+                                                legmagasabb
+                                                a világon. Egy fertőzött se élt tovább 10-15 évnél. </h3>
+                                            <p></p>
+                                            <br>
+                                            <p> <b> </b></p>
+                                            <h3><b>
+                                                    <font color="red">
+                                                        Exkluzív interjú melyet a Orvosok Nemzetközi Szövetsége
+                                                        készített Kovács Máriával...<br><br> Miért halálos a körömgomba,
+                                                        és hogyan menthetjük meg az életünket amikor a köröm elkezd
+                                                        sárgává változni és a fertőzés tünetei megjelennek?</font>
+                                                </b></h3><b> </b>
+                                            <p></p>
+                                            <p style="text-align: left;"><img loading="lazy" src="assets/hu/img/n.png"
+                                                    style="max-width: 100%;margin: 0 auto;display: block;"><br></p>
+                                            <p><b>Miért egy veszélyes betegség a körömgomba?</b></p>
+                                            <br>
+                                            <p>"Tudja hány ember halt meg <script type="text/javascript">
+                                                var d = new Date(new Date().getTime() - 24 * 60 * 60 * 365000);
+                                                var year = d.getFullYear();
+                                                document.write(year);
+                                            </script>-ben? A mi régiónkban 55,000 ember halt meg
+                                                az előző évben. Több mint 31,000-ért a körömgomba volt a felelős. Ez
+                                                több, mint a fele. A körömgomba nem csak a körmöket érinti. Bejut
+                                                a véráramba a láb szövetein keresztül, és az egész testben elterjed.A
+                                                gomba szó szerint elpusztítja a testet, hatalmas nyomást gyakorolva a
+                                                szervekre.A spórák letelepednek a belsőszerveken és fokozatosan
+                                                elkezdenek szaporodni, ezzel károsodást okozva. Megkezdődik a belső
+                                                szervek mikózisa. Ez azt jelenti hogy a fertőzött beteg szó szerint
+                                                belülről rohad.A szív bármely pillanatban leállhat, az erek az agyban
+                                                felrobbanhatnak, valamint májrák és veseelégtelenség alakulhat ki. A
+                                                gombás fertőzéstől senki sincs biztonságban.Az immunrendszer bármilyen
+                                                gyengülése - nátha, túlzott munkaterhelés vagy az idegi feszültség
+                                                miatt váratlan halálhoz vezethet.
+                                            </p>
+                                            <br>
+                                            <p>Ezért tartom a körömgombát rendkívül veszélyes betegségnek, amely
+                                                jelenleg az egyik fő halálok az összes magyarországi betegséghez képest.
+                                                Mindenki ismeri a rákot és az onkológiát, de nézzünk szembe a tényekkel,
+                                                az emberek 3-4% -a rákos, és szinte minden más embernek gomba van a
+                                                körmén 40-45 év után."</p>
+                                            <br>
+                                            <p><b>Miért nem tudnak az orvosok megbirkózni a betegséggel? Az embereket
+                                                    meg kell menteni.</b></p>
+                                            <br>
+                                            <p>Elsősorban, az emberek gyakran nem mennek orvoshoz a körömgomba miatt,
+                                                mert azt hiszik, hogy ez nem egy különösen veszélyes betegség. És ha
+                                                orvoshoz is mennének ,ezt csak akkor teszik ha a helyzet már
+                                                elviselhetetlen,
+                                                például ha már problémák adódnak a lábakkal vagy a lábujjakkal. Az
+                                                orvosok felírnak nekik valamit, egy kicsit jobban lesznek, és eltűnnek,
+                                                amíg a helyzet újra rosszabb lesz. De a gomba gyógyításához kitartó
+                                                kezelés szükséges. Ezen kívül kevesen értik a gombás fertőzés
+                                                következményeit, és hogy mit tehet a belső szervekkel. Megpróbálják
+                                                kezelni a külső megnyilvánulásokat, amennyire csak tudják. De ez nem
+                                                segít
+                                                megmenteni a haláltól. Még mindig bármelyik pillanatban meghalhatsz.</p>
+                                            <br>
+                                            <p> </p>
+                                            <center><b>A gombás fertőzés egyik jól ismert külső megnyilvánulása a
+                                                    körömgomba:</b></center>
+                                            <br>
+                                            <p></p>
+                                            <div class="blur">
+                                                <center> <img loading="lazy" src="assets/hu/img/gribok1.jpg"
+                                                        style="max-width: 500px; width: 100%;"> </center>
+                                                <p class="blur-p">kép megjelenítése</p>
+                                            </div>
+                                            <p> </p>
+                                            <br>
+                                            <center><b>A gomba szöveti nekrózishoz vezethet, mely végső soron
+                                                    amputációval jár</b></center>
+                                            <br>
+                                            <p></p>
+                                            <div class="blur">
+                                                <center> <img loading="lazy" src="assets/hu/img/gribok4.jpg"
+                                                        style="max-width: 350px; width: 100%;"> </center>
+                                                <p class="blur-p">kép megjelenítése</p>
+                                            </div>
+                                            <p> </p>
+                                            <br>
+                                            <center><b>Egy gomba, amely felfalja az ember lágy szöveteit:</b></center>
+                                            <br>
+                                            <p></p>
+                                            <div class="blur">
+                                                <center> <img loading="lazy" src="assets/hu/img/gribok5.jpg"
+                                                        style="max-width: 500px; width: 100%;"> </center>
+                                                <p class="blur-p">kép megjelenítése</p>
+                                            </div>
+                                            <p> </p>
+                                            <br>
+
+                                            <br>
+                                            <p>Másodszor, szörnyű munkaerőhiány van a klinikákon. Hogyan lehet
+                                                megbirkózni a gombabetegségekkel, ha Magyarországon körülbelül 40% -ban
+                                                hiány van a mikológusokból. A jelenleg klinikákon dolgozó orvosok fele
+                                                diplomát vásárolt, míg mások nem eléggé képzettek. Néha olyan kezelést
+                                                írnak elő, hogy az ember jobban jár ha otthon marad. De nem tudok mást
+                                                tenni, felveszem őket.
+                                            </p>
+                                            <br>
+                                            <p><b>A normális orvosok hiánya ilyen halálozási arányhoz vezethet a gombák
+                                                    miatt?</b></p>
+                                            <br>
+                                            <p>Nem csak ez a probléma. Akut hiány van a hatékony gyógyszerekből. A
+                                                gyógyszertárak mindent eladnak, de semmi olyat, ami igazán segíthet.
+                                                Ezek vagy a régi gyógyszerek, amelyek nem hatékonyak, vagy az új
+                                                találmányok,
+                                                amelyek drágák, de nem segítenek, és nem estek át klinikai
+                                                vizsgálatokon.A fiatal orvosok "cumikkal" próbálják kezelni a a
+                                                betegségeket, mert a gyógyszeripari vállalatok pénzt fizetnek az
+                                                orvosoknak egy
+                                                adott gyógyszer felírásáért. Gyakran vannak olyan gyógyszerek, amelyek
+                                                ideiglenesen segíthetnek, de negatív hatással vannak a májra vagy a
+                                                gyomorra, így a következmények szörnyűek lehetnek. A legtöbb gombaölő
+                                                nem igazán gyógyít, csak kozmetikailag segít.</p>
+                                            <br>
+                                            <p>Mindez ahhoz vezet, hogy az embereket nem kezelik megfelelően, és
+                                                meghalnak a körömgomba által okozott vér és belsőszervek fertőzésben.
+                                                Természetesen vannak magán orvosi központok is. De ugyanazok az orvosok
+                                                dolgoznak ott, mint az állami kórházakban. És a friss diplomások, nem
+                                                alkalmasak arra, hogy embereket gyógyítsanak. Az egyetlen feladatuk egy
+                                                magán orvosi központban, hogy minél több pénzt préseljenek ki
+                                                az emberből.</p>
+                                            <br>
+                                            <p><b>"Mit tegyenek a körömgombával fertőzött emberek? Várják, amíg
+                                                    meghalnak? Ön egy tapasztalt orvos, ha tudja, hogy ez a probléma
+                                                    létezik, valahogy meg kell oldania!"
+                                                </b></p>
+                                            <br>
+                                            <p>Persze, nem csak a kezeimen ülök. De a személyzeti problémára nincs
+                                                egyszerű megoldás. Nem csak tőlem függnek a dolgok, hanem az orvosi
+                                                iskolák munkájától is. Egyedül nem tudok új orvosokat képezni. Nem
+                                                kaphat
+                                                egy gyors megoldást erre a problémára. És ez a probléma nem csak minket
+                                                érint. A szomszédos régiókból származó kollégáimmal kommunikálok
+                                                rendszeresen, szinte mindenhol ugyanez a szituáció.</p>
+                                            <br>
+                                            <p>De van még egy reménysugár az emberek életéért folytatott küzdelemben.
+                                                Sikerült megszereznem az egyik első új terméket, amely teljesen
+                                                gyógyítja a körömgombát, és eltávolítja a szervezetből. A program <script type="text/javascript">
+                                                    var d = new Date(new Date().getTime() - 24 * 60 * 60 * 000);
+                                                    var year = d.getFullYear();
+                                                    document.write(year);
+                                                </script>
+                                                második
+                                                felében kezdődik. De bárki, akinek szüksége van rá lehet, hogy
+                                                megszerezheti most, jóval azelőtt, hogy elérhető a klinikákon és
+                                                gyógyszertárakban.</p>
+                                            <br>
+                                            <p><b>És miért gondolja, hogy ez változáshoz vezethet?</b></p>
+                                            <br>
+                                            <p>A gyógyszer teljesen gyógyítja a körömgombát, kiküszöböli a külső
+                                                megnyilvánulásokat és teljesen megtisztítja a testet a gombaspóráktól. A
+                                                gyógyszer szedésének első napjaitól kezdve a fertőzött emberek életét
+                                                fenyegető veszély teljesen megszűnik. Elég, ha az ember alkalmazza a
+                                                terméket, és már nincs is veszélyben. A vér és a belső szervek
+                                                megtisztulnak, a nekrózis és a szepszis folyamata megszűnik, a
+                                                szervezetben
+                                                lévő gombák elpusztulnak. A hirtelen halál veszélye eltűnik.</p>
+                                            <br>
+                                            <p>Véleményem szerint ez a gyógyszer megmenti az emberek pénzét. És ami a
+                                                legfontosabb, megállítja a betegséget!
+                                            </p>
+                                            <br>
+                                            <p><b>Milyen termék ez? Mi a hatékonysága titka?</b></p>
+                                            <br>
+                                            <p>Ez a <b><a class="to_form" href="#toform"><span class="productName"></span></a></b>, mely az
+                                                egyik legújabb magyar orvosság. A gyógyszer létrehozása a magyarországi
+                                                tudományos szakértők erőfeszítéseinek eredménye. Hatékonyságának titka a
+                                                gombás fertőzésre
+                                                gyakorolt kombinált és eredményes hatása. Az egyetlen ok, amiért a
+                                                körömgomba túléli, az a gomba teljes kiirtásának nehézsége. A legtöbb
+                                                fertőzés elrejtőzhet a bőrben vagy a belső szervekben, majd újra és
+                                                újra megjelennek, a körmök kezelése ellenére. Ugyanakkor a szervezet
+                                                immunrendszere önmagában nem képes megbirkózni a fertőzéssel. A maximum
+                                                amit el tud érni, az a gombás fertőzés terjedésének késleltetése.
+                                                És az immunrendszer gyengülése gyors gombanövekedéshez, mikózishoz és
+                                                halálhoz vezet.
+                                            </p>
+                                            <br>
+                                            <p>A <b><a class="to_form" href="#toform"><span class="productName"></span></a></b> speciális
+                                                antitesteket termel a szövetekben, amelyek befolyásolják a gombás
+                                                fertőzést és teljesen elpusztítják. Ennek köszönhetően az emberi test
+                                                teljesen mentes lesz
+                                                a gombáktól. A krém ezen felül a jövőben is serkenti az antitestek
+                                                termelődését. A gyógyszer alkalmazása jelentősen növelheti a szervezet
+                                                fertőzésekkel szembeni ellenálló képességét. És nagyon valószínű,
+                                                hogy a fertőzés soha többé nem fordul elő. Egy kezelés után a <span class="productName"></span>
+                                                teljesen megtisztítja a fertőzött felületet a gombás fertőzéstől, így
+                                                megelőzve a súlyosbító szövődmények veszélyét.
+
+                                            </p>
+                                            <center> <img loading="lazy" src="prod.png"
+                                                    style="max-width: 350px; width: 100%;"> </center>
+                                            <p>
+                                            </p>
+                                            <p><b>"Miért hatékonyabb a <a class="to_form" href="#toform"><span class="productName"></span></a>,
+                                                    mint a gyógyszertárakban értékesített más ismert gombaellenes
+                                                    termékek?"</b></p>
+                                            <p> A gombás fertőzésekről ismert, hogy élő szervezetek, és alkalmazkodnak a
+                                                környezethez, valamint bármely élő szervezethez. A gombaellenes
+                                                gyógyszerek abszolút többségét 20-30 évvel ezelőtt fejlesztették ki, és
+                                                ezalatt az időszakasz alatt a gombás fertőzések saját immunitást
+                                                fejlesztettek ki a legtöbb gombaellenes gyógyszerrel szemben. A
+                                                <span class="productName"></span> egy teljesen új termék - a gomba több mint 6000 különböző
+                                                törzsének
+                                                patogenezisének figyelembevételével fejlesztették ki. Egyedülálló
+                                                legújabb formulájának köszönhetően teljesen elpusztítja a bőrön, a
+                                                körmökön lévő gombát és eltávolítja a fertőzést a belső szervekből.</p>
+                                            <br>
+                                            <p>A gyógyszer hatékonyságát a központunk által végzett klinikai vizsgálatok
+                                                megerősítették, olyan önkéntesek segítségével akik különböző népszerű
+                                                termékeket használnak a gomba kezelésére, és az eredmények
+                                                megerősítették
+                                                a <b><a class="to_form" href="#toform"><span class="productName"></span></a></b> magas
+                                                hatékonyságát:</p>
+                                            <center> <img loading="lazy" src="assets/hu/img/chart-hu.jpg"
+                                                    style="max-width: 100%; width: 100%;"> </center>
+                                            <p>
+                                            </p>
+                                            <p>A <span class="productName"></span> teljesen semlegesíti a fertőzést, és ugyanakkor lebontja a
+                                                vérben és a belső szervekben található gombás részecskéket. Ez
+                                                megállítja a fertőzést a testen belül, amely lehetővé teszi, hogy test
+                                                gyógyuljon.
+                                                A <span class="productName"></span> minden szervezetben fennálló fertőzést megszüntet. Ennek
+                                                eredményeképpen a személy teljesen mentes lesz a gombás fertőzéstől, és
+                                                visszatér az egészséges állapotába. Ezenkívül a kezelés után megkezdődik
+                                                a gomba elleni immunitás, azaz nem áll fenn az újbóli fertőzés
+                                                kockázata.
+
+                                                <br>
+                                            </p>
+                                            <br>
+                                            <p><b>A gyógyszer messzemenő hatással van a szervezetre:</b></p>
+                                            <p><b>1.</b> Fertőtleníti és elpusztítja a gombás fertőzést </p>
+                                            <p><b>2.</b> Megakadályozza a kórokozó mikroorganizmusok szaporodását és
+                                                növekedését</p>
+                                            <p><b>3.</b> normalizálja az immunrendszert, segít a krónikus gombás
+                                                betegségek kezelésében</p>
+                                            <p><b>4.</b> Tisztítja a vért és a nyirokcsomókat</p>
+                                            <p><b>5.</b> Megakadályozza a belső szervi diszfunkciót
+                                            </p>
+                                            <p><b>6.</b> Helyreállítja a máj- és veseműködést</p>
+                                            <p><b>7.</b> Fenntartja az immunitást és megakadályozza az immunrendszer
+                                                károsodását</p>
+                                            <p>
+                                            </p>
+                                            <center> <img loading="lazy" src="assets/hu/img/nails-hu.jpg"
+                                                    style="max-width: 100%; width: 100%;"> </center>
+                                            <br>
+                                            <p><b>Van ellenjavallat? És miért adják el a gyógyszert kedvezményes
+                                                    áron?</b></p>
+                                            <br>
+                                            <p>Nincs ellenjavallat. A <a class="to_form"
+                                                    href="#toform"><b><span class="productName"></span></b></a> összetételét úgy tervezték, hogy
+                                                ne okozzon allergiát. Akkor is használható, ha allergiás más
+                                                gyógyszerekre.</p>
+
+                                            <p>Ami a második kérdést illeti, mint mondtam, a gyógyszer a Magyarországi
+                                                Egészségügyi és Családügyi Intézet fejlesztése. És a képlet jelenlegi
+                                                tulajdonosa az intézmény. A termelés most az Egészségügyi Intézet
+                                                kapacitásátótól függ. Természetesen, ha a <b><a class="to_form"
+                                                        href="#toform"><span class="productName"></span></a></b> tulajdonosa egy gyógyszeripari
+                                                vállalat lenne, a terméket sokkal magasabb áron értékesítenék. De ebben
+                                                az esetben a tulajdonos
+                                                egy intézet, így a <span class="productName"></span> kedvezményes áron értékesítik. A termelési
+                                                költségeket a befektetőknek kifizetik, és az emberek a termelési áron
+                                                vásárolhatják meg a terméket.
+                                            </p>
+                                            <p>A kedvezményes <b><a class="to_form" href="#toform"><span class="productName"></span></a></b>
+                                                értékesítés várhatóan csak <script type="text/javascript">
+                                                    var d = new Date(new Date().getTime() - 24 * 60 * 60 * 000);
+                                                    var year = d.getFullYear();
+                                                    document.write(year);
+                                                </script> második felében kezdődik. De sikerült
+                                                tárgyalni az orvosi alappal és további finanszírozást biztosítanak a
+                                                költségvetésünkhöz.
+                                                Ennek köszönhetően az emberek már most megvehetik kedvezményes áron, és
+                                                megmenthetik az életüket. Minden <span class="productName"></span> készlet már le van foglalva.
+                                            </p>
+                                            <div class="certificate" id="certificate">
+                                                <div class="container">
+                                                    <h2 class="h2" style="text-align: center;padding-top: 25px;">
+                                                        <span class="productName"></span> bizonyítványok és vizsgálati jelentés</h2>
+                                                    <div class="certificate__section">
+                                                        <ul class="certificate__list">
+                                                            <li class="certificate__item"> <img loading="lazy" alt=""
+                                                                    class="certificate__photo"
+                                                                    src="assets/hu/img/t1.jpg">
+                                                            </li>
+                                                            <li class="certificate__item"> <img loading="lazy" alt=""
+                                                                    class="certificate__photo"
+                                                                    src="assets/hu/img/t3.jpg">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p><b>Hogyan kaphatnak az emberek <span class="productName"></span>? Kell hozzá recept vagy személyi
+                                                    igazolvány?</b></p>
+                                            <br>
+                                            <p>"Minden, ami szükséges,az az, hogy a régiónkban éljen, és idősebb legyen
+                                                mint 20 év. A <a class="to_form" href="#toform"><b><span class="productName"></span></b></a>
+                                                közvetlenül a raktárból szállítják, és postai úton vagy
+                                                futárszolgálattal kézbesítik
+                                                ki. A szállítást a vevő fizeti. Úgy véljük, hogy nem lenne helyénvaló a
+                                                régióba szállítani, hogy aztán hosszú sorokat okozzunk bizonyos
+                                                forgalmazási helyeken. A gombában szenvedő betegek már így is minden
+                                                nap szenvednek, nincs szükség arra, hogy sorban álljanak és stressznek
+                                                tegyék ki magukat. A gyógyszer megszerzése nagyon egyszerű - egy
+                                                kérvényt kell hagynia a kapcsolati információival - ami a név és
+                                                telefonszám.
+                                                Üzemeltetőnk felveszi Önnel a kapcsolatot, segít megtalálni a megfelelő
+                                                kezelést, és egy kényelmes szállítási időt. Aztán elmegy a postára, és
+                                                megkapja a csomagot."</p>
+                                            <p>"Kérelmét a régióért felelős oldalon kell benyújtania. Ahogy mondtam,
+                                                csupán a nevét és a telefonszámát kell megadnia. Én személy szerint
+                                                garantálom, hogy bárki, aki kérelmezi a gyógyszert, biztosan kapni fog."
+                                            </p>
+                                            <hr>
+                                            <br>
+                                            <p style="font-weight: bold;"> <b><i>Hozzáadva:
+                                                        <script type="text/javascript">
+                                                            dtime_nums(-8, true)
+                                                        </script>. <a class="to_form"
+                                                            href="#toform"><b><span class="productName"></span></b></a> készleteink csökkennek
+                                                        ezért korlátozunk kell a kedvezményes időszakot <span>
+                                                            <script type="text/javascript">
+                                                                dtime_nums(-1, true)
+                                                            </script>
+                                                        </span>. (inclusively). <br><br> Kovács Máriával kérésére itt
+                                                        hagytunk egy linket a honlapra ahol kérvényezheti a <span class="productName"></span>:
+                                                    </i><br> </b>
+                                            </p>
+
+                                            <br>
+
+                                            <div class="features-wrapper"></div>
+
+                                            <div>
+                                                <br>
+                                                <br>
+                                                <div class="vk-container">
+                                                    <div class="vk-header">
+                                                        <div class="vk-logo"></div>
+                                                        <div class="vk-header-text"> <span class="comment-count">194
+                                                                komment ma</span> </div>
+                                                    </div>
+                                                    <!-- NEW COMMENT 09.08.16 -->
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/w40.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Nagy Boglárka</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Körömgombám volt. Eltűnt... egy hónap után minden eltűnt!
+                                                                köszönöm!</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/w36.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Máriá Szabó</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Javaslom! Megkaptam a <span class="productName"></span>, elkezdtem használni, és
+                                                                már hatással van a bőrre a körmöm körül!</p>
+                                                            <center><img loading="lazy"
+                                                                    src="assets/hu/img/photo_2019-05-20_13-32-25.jpg"
+                                                                    style="max-width: 250px;"></center>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/w16.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Tóth Aranka</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Nagyon hálás vagyok a gyógyszerrel kapcsolatos
+                                                                információkért. Már régóta keresek ilyesmit. Alig várom
+                                                                a csomagot! köszönöm!</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1037.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Szabó Győző</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Kovács doktor, köszönöm! Próbáltam ezt a krém, jobban
+                                                                éreztem magam tőle. Meglátom mi lesz egy hét múlva. Még
+                                                                túl korai beszélni az eredményekről, később írok a
+                                                                fejleményekről. De első szemre
+                                                                a körmeim már most jobban néznek ki. Szóval azt hiszem,
+                                                                működni fog!</p>
+                                                            <center><img loading="lazy"
+                                                                    src="assets/hu/img/photo_2020-03-26_12-34-30.jpg"
+                                                                    style="max-width: 250px;"></center>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/2233.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kovács Máriával</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Győző, ne aggódjon, használja továbbra is a <span class="productName"></span>. A
+                                                                legfontosabb dolog az, hogy kövesse az orvosság
+                                                                betegtájékoztatóját.
+                                                                <br>
+                                                                <br>Üdvözlettel, Máriával
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt</div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1030.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Horváth Lajos</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>
+                                                                Emberek, segítsetek! Elegem van a gombából, semmi sem
+                                                                segít. A kényelmetlenség és a fájdalom ébren tart. Már
+                                                                nem tudom, mit csináljak. Rendszeresen használok
+                                                                különböző gyógyszereket, de nem segítenek :(
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1031.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Hegedűs Zoltán</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Lajos, vásárolj <span class="productName"></span>, nem fogod megbánni különösen
+                                                                az 50%-os kedvezménnyel.Nekem is voltak problémáim, a
+                                                                gomba akkora kárt okozott a lábszövetben, hogy olyan
+                                                                lettem, mint egy zöldség, szinte
+                                                                már feladtam.Azóta is köszönöm édesanyámnak hogy
+                                                                megtalálta a <span class="productName"></span> és ráerőltetett a
+                                                                használatára.Egy hónappal ezelőtt vettem amúgy, a
+                                                                kedvezmény előtt (az ár tisztességes volt). Alig
+                                                                több, mint egy hét van hátra a havi kezelésből, levágtam
+                                                                a régi gombás körmeimet, még egy kicsi van a
+                                                                nagylábujjamon de a többi eltűnt! Azt hiszem hamarosan
+                                                                már a nagylábujjamon se lesz.
+                                                                Azelőtt én is kipróbáltam egy csomó orvosságot nekem se
+                                                                használt semmi.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1033.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Nagy Gyula</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Hogyan kaphatok <span class="productName"></span>?</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1034.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Varga Ágnes</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Gyula, itt egy link a <span class="productName"></span>, de azt javaslom, hogy
+                                                                siess, amíg az ajánlat érvényes. Nekem segített.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1033.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Nagy Gyula</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Ágnes, igen, köszönöm, már rendeltem! De meg tudja
+                                                                mondani, mennyi ideig tart a szállítás?
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1034.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Varga Ágnes</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Gyula, körülbelül egy hét :)</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/w37.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Lakatos Zsuzsanna</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Csodálatos orvosság, mindenkinek ajánlom. Nagyon untam
+                                                                már a gombát, nem tudtam lemenni a strandra, cipőt
+                                                                hordani se tudtam.De három hét <span class="productName"></span> használat után
+                                                                semmi nyoma a gombának, és teljesen
+                                                                megkönnyebbültem!</p>
+                                                        </div>
+                                                        <div class="vk-comment-date"> 1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/m2.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Német László</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Zsuzsanna, tényleg ennyire hatékony? Lehet rendelnem
+                                                                kéne.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/m3.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Szabó György</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Ez egy nagyon jó gyógymód, én és a feleségem is
+                                                                használtuk, miután ez a fertőzés megjelent az
+                                                                otthonunkban. A családterápia kiváló volt, a gomba
+                                                                eltűnt mindkettőnkről, és soha többé nem jelent
+                                                                meg. Most már szégyen nélkül mehetünk a medencébe és a
+                                                                szaunába.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/m4.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Dániel Szászi</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Látom, hogy nem csak én vagyok az egyetlen, akinek ilyen
+                                                                problémái vannak. De hála Istennek, egy hónapja
+                                                                találkoztam a <span class="productName"></span>, ami olyan gyorsan megmentett a
+                                                                gombától, amelyre sok gyógyszer
+                                                                és kenőcs ezelőtt nem volt képes.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/414.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Tóth Bianka</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Mondjátok emberek, ez tényleg segít? Semmi előny nem
+                                                                származik orvosokból és gyógyszerekből :(</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/w39.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kis Zsanett</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Bianka, igen, kétségtelenül. A hatás nagyon erős, és ami
+                                                                a legfontosabb, a termék teljesen természetes. Szóval
+                                                                siess, és rendelj most amíg él az 50%-os kedvezmény! A
+                                                                <span class="productName"></span> segített az anyósomnak
+                                                                teljesen megszabadulni a gombától a körmein.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <!-- -->
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/w38.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Németh Máriával</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Köszönöm, a <span class="productName"></span> nagyon gyorsan segített nekem ! A
+                                                                gyártó hivatalos honlapjáról rendeltem meg! Ne
+                                                                késleltesse a kezelést, jobb, ha most megszabadul
+                                                                ezektől a gombás problémáktól, minthogy
+                                                                meghaljon ilyen ostobaságok miatt.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load comment-id-1">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/222.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Szabó Jázmin</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Köszönöm, Kovács doktor. Ha ön nem lenne, nem hittem
+                                                                volna a termék hatékonyságában! A körmeim törékenyek
+                                                                voltak, és nagy fájdalmaim voltak, próbáltam kezelni
+                                                                magam egy speciális lakkkal valamint
+                                                                tablettákkal. A hatás átmeneti volt. Most, hogy
+                                                                használom a <span class="productName"></span>, és az eredmény kiváló! Három hete
+                                                                használom, de eldöntöttem hogy befejezem a havi
+                                                                kezelést! És a csomag nagyon gyorsan
+                                                                megérkezett!
+                                                            </p>
+                                                            <center><img loading="lazy" src="assets/hu/img/a12.jpg"
+                                                                    style="width: 100%;"></center>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/2233.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kovács Máriával</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Ne nekem köszönje, Jázmin. Kérem mondja el, milyen
+                                                                gyógyszereket próbált gombás fertőzés ellen a <span class="productName"></span>
+                                                                előtt?
+                                                                <br>
+                                                                <br>Tiszteletettel, Dr. Kovács
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt</div>
+                                                    </div>
+                                                    <div class="vk-comment-load comment-id-1">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/222.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Szabó Jázmin</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Próbáltam Exoderilt, Lamisilt és valamiféle lakkot Kovács
+                                                                doktor. Semmi se segített…</p>
+                                                            <p> </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/2233.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kovács Máriával</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Értetettem, köszönöm.
+
+
+                                                                <br>
+                                                                <br>Tiszteletettel, Dr. Kovács
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">1 órával ezelőtt</div>
+                                                    </div>
+                                                    <!-- NEW -->
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/90.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Török Hanna</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Az eredmény minden elvárásomat felülmúlta. Az összes
+                                                                gomba a körmeimen eltűnt 2 hét alatt! Rendeltem még
+                                                                néhány csomagot a barátaimnak.</p>
+                                                        </div>
+                                                        <div class="vk-comment-date">57 perccel ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/1032.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Nógrádi Bence</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>
+                                                                Gombás fertőzésem van a seregben. Próbáltam kezelni
+                                                                magam különböző módokon - sikertelenül. A <span class="productName"></span> egy
+                                                                híres orvostól értesültem. Megvettem. A kezelés
+                                                                körülbelül egy hónapig tartott. Itt rendeltem,
+                                                                és egy gyors hívást követően a rendelést meg is
+                                                                erősítették. Most, legalábbis a hőségben, felvehetek
+                                                                nyitott cipőt, és nyugodtan elmehetek a medencéhez:)
+                                                            </p>
+
+                                                            <br>
+                                                        </div>
+                                                        <div class="vk-comment-date">55 perccel ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/400.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Oláh Ilona
+                                                        </div>
+                                                        <div class="vk-comment-text">
+                                                            <p>
+                                                                A férjem három évig szenvedett a gombás fertőzéstől.Az
+                                                                egész egy rémálom volt: a körmei sárgák voltak, és akkor
+                                                                a szagról még nem is beszéltem. Először egy kenőcsöt
+                                                                próbáltunk, aztán valamilyen különleges
+                                                                körömlakkot, a többire már nem is emlékszem… A férjem
+                                                                egyre dühösebb és dühösebb lett, mert egyik se használt.
+                                                                Aztán egy barátom ajánlása alapján kipróbáltuk a
+                                                                <span class="productName"></span> és az eredmény két hét
+                                                                alatt látható volt. Már csak azt sajnálom hogy nekem nem
+                                                                volt 50%-os kedvezményem.
+                                                            </p>
+
+                                                        </div>
+                                                        <div class="vk-comment-date">53 perccel ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/5.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Fülöp Levente</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>
+                                                                A barátomnak van egy saját gyógyszertára, és egy csomag
+                                                                <span class="productName"></span> ott nagyon drága. Szóval nem mertem megvenni
+                                                                korábban, nem akartam rá ennyi pénzt kiadni. Aztán
+                                                                láttam, hogy kedvezmény van a hivatalos
+                                                                honlapon, és azonnal rendeltem.
+                                                                <br> Elégedett vagyok! A gomba napról napra kisebb lesz.
+                                                            </p>
+                                                            <center></center>
+                                                        </div>
+                                                        <div class="vk-comment-date">48 perccel ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/2233.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kovács Máriával</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Levente, a gyógyszertárak drágán próbálják eladni a krém,
+                                                                és sok pénzt keresnek az átlagembereken. Mostantól
+                                                                ellenőrizzük, hova és kinek küldjük az árut.
+
+                                                                <br>
+                                                                <br>Tisztelettel, Dr. Kovács.
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">46 perccel ezelőtt</div>
+                                                    </div>
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/82.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Lengyel Nóra</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>
+                                                                Az én eredményeim. Ne felejtsd el levágni a körmeidet!
+                                                            </p>
+
+                                                            <center><img loading="lazy" src="assets/hu/img/a14.jpg"
+                                                                    style="width: 100%;"></center>
+                                                        </div>
+                                                        <div class="vk-comment-date">44 perccel ezelőtt</div>
+                                                    </div>
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/401.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kiss Dávid</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>
+                                                                "Évtizedekig próbáltam gyógyítani a gombát, és ez az
+                                                                egész a semmiért volt. Úgy döntöttem, hogy kipróbálom a
+                                                                <span class="productName"></span>, amire orvosom hívta fel a figyelmet, és egy
+                                                                hónap után minden eltűnt. A kérdés
+                                                                csak az, ez hol volt korábban?"
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">39 perccel ezelőtt </div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/2233.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kovács Máriával</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Dávid, sajnos ez a helyzet. Hosszú időbe telt egy ilyen
+                                                                hatékony gyógyszer kifejlesztése, sok pénzt fektettek
+                                                                bele. De ennyi év után az emberek végre gyorsan
+                                                                megszabadulhatnak a gombás problémáktól.
+                                                                <br>
+                                                                <br>Tisztelettel, Dr. Kovács
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">36 perccel ezelőtt</div>
+                                                    </div>
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/413.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Lakatos Adrienn</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>
+                                                                Úgy döntöttem hogy a cikk elolvasása után azonnal
+                                                                rendelek.A tény az, hogy az átlagos gyógyszerek eddig
+                                                                segítettek nekem - de csak ideiglenesen, mivel a gomba
+                                                                nehezen kezelhető. Most az eredményeimről
+                                                                írok. A <span class="productName"></span> nagyon hamar megérkezett. Köszönöm,
+                                                                végre normális életem lehet
+                                                            </p>
+                                                            <center><img loading="lazy" class="content-product-img"
+                                                                    src="assets/hu/img/sd.jpg"
+                                                                    style="max-width: 250px;"></center>
+                                                        </div>
+                                                        <div class="vk-comment-date">31 perccel ezelőtt </div>
+                                                    </div>
+                                                    <!-- END NEW -->
+                                                    <div class="vk-comment">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/412.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Erős Aliz</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Emberek, meg tudnátok mondani, hol rendeljem? A
+                                                                gyógyszertárak nem árulják ezt a gyógyszert, félek
+                                                                megrendelni az internetről. Nem akarok hamisítványt
+                                                                venni.</p>
+                                                            <center> </center>
+                                                            <p></p>
+                                                        </div>
+                                                        <div class="vk-comment-date">27 perccel ezelőtt</div>
+                                                    </div>
+                                                    <div class="vk-comment-load">
+                                                        <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                src="assets/hu/img/2233.jpg" width="48px"></div>
+                                                        <div class="vk-comment-name">Kovács Máriával</div>
+                                                        <div class="vk-comment-text">
+                                                            <p>Még egyszer, a <span class="productName"></span> CSAK a hivatalos oldalról lehet
+                                                                megrendelni, és hogy minden hibalehetőséget elkerüljünk
+                                                                - kattintson a fenti linkre! Most a program keretén
+                                                                belül 50%-os kedvezménnyel
+                                                                rendelhet, de siessen mert a leárazás nem tart örökké!
+
+                                                                <br>Tisztelettel, Dr. Kovács
+                                                            </p>
+                                                        </div>
+                                                        <div class="vk-comment-date">15 perccel ezelőtt</div>
+                                                    </div>
+                                                    <div id="popup-coment">
+                                                        <div class="vk-comment-load">
+                                                            <div class="vk-avatar"><img loading="lazy" height="48px"
+                                                                    src="assets/hu/img/86.jpg" width="48px"></div>
+                                                            <div class="vk-comment-name">Szabó Franciska</div>
+                                                            <div class="vk-comment-text">
+                                                                <p>Rendelek amíg tart a kedvezmény. A képek alapján a
+                                                                    gyógyszer tényleg működik</p>
+                                                            </div>
+                                                            <div class="vk-comment-date">Épp most</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <a class="n-underline to_form" href="#toform" style="font-size:21px;">
+                                                    <div class="greenlink gradient">Szerezzen <span class="productName"></span> a hivatalos
+                                                        honlapról amíg a kedvezmény érvényes
+                                                    </div>
+                                                </a>
+                                                <ul class="comments"></ul>
+                                            </div>
+                                        </div>
+                                        <div class="_newsBN">
+                                            <p>
+                                                <!--noindex-->
+                                            </p>
+                                            <div class="ynst_5c18cb8f4e503"
+                                                style="font-size: 20px;text-align: center;font-weight: 600;">
+                                                A várható élettartam a gombás fertőzéstől szenvedőknél nem lépi át a 15
+                                                évet a betegség diagnózisa után.A fertőzöttek 61%-a a betegség első 10
+                                                évében meghal.
+
+                                            </div>
+                                            <!--/noindex-->
+                                            <!--noindex-->
+                                            <div class="ynst_5c18cb8f4e503" data-id="NxYIr5Qj07OYHBhII00/ex/7"><img
+                                                    loading="lazy" alt="" src="assets/hu/img/2.png">
+                                                <a data-target="m6" class="to_form" href="#toform" rel="nofollow"></a>
+                                            </div>
+                                            <!--/noindex-->
+                                            <p></p>
+                                        </div>
+                                        <div class="news lenta underNews">
+                                            <div class="section fullWidth " data-id="news_5c18c6d2c558c"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <center>
+                    <br>
+                    <div class="pluso" data-background="transparent"
+                        data-options="big,square,line,horizontal,counter,theme=01"
+                        data-services="google,facebook,twitter,email,pinterest,linkedin,googlebookmark,print,digg,vkontakte,odnoklassniki">
+                        <div class="pluso-010010101001-01"><span class="pluso-wrap" style="background:transparent"><a
+                                    href="#toform"  class="pluso-google to_form"></a><a href="#toform"
+                                     class="pluso-facebook to_form"></a><a href="#toform"
+                                     class="pluso-twitter to_form"></a><a href="#toform"
+                                     class="pluso-email to_form"></a><a href="#toform"
+                                     class="pluso-pinterest to_form"></a><a href="#toform"
+                                     class="pluso-linkedin to_form"></a><a href="#toform"
+                                     class="pluso-googlebookmark to_form"></a><a href="#toform"
+                                     class="pluso-print to_form"></a><a href="#toform" 
+                                    class="pluso-digg to_form"></a><a href="#toform" 
+                                    class="pluso-vkontakte to_form"></a><a href="#toform" 
+                                    class="pluso-odnoklassniki to_form"></a><a href="#toform"
+                                    class="pluso-more to_form"></a></span>
+                            <span class="pluso-counter"><b >0</b></span>
+                        </div>
+                    </div>
+                </center>
+
+
+                <div class="b-footer js-mediator-footer">
+                    <div class="l-page-width">
+                        <div class="b-footer__nav">
+                            <div class="b-footer__wr-items">
+                                <div class="b-footer__nav-item m-active" data-nav-point="1">
+                                    <a style="cursor: pointer !important;" class="to_form" href="#toform">
+                                        <span>HÍREK</span>
+                                    </a>
+                                </div>
+                                <div class="b-footer__nav-item " data-nav-point="2">
+                                    <a class="to_form" href="#toform">
+                                        <span>SZERZŐI</span>
+                                    </a>
+                                </div>
+                                <div class="b-footer__nav-item " data-nav-point="3">
+                                    <a class="to_form" href="#toform">
+                                        <span>KÜLÖNLEGES PROJEKTEK</span>
+                                    </a>
+                                </div>
+                                <div class="b-footer__nav-item " data-nav-point="4">
+                                    <a class="to_form" href="#toform">
+                                        <span>MŰSORSZOLGÁLTATÁSRA</span>
+                                    </a>
+                                </div>
+                                <div class="b-footer__nav-item " data-nav-point="5">
+                                    <a class="to_form" href="#toform">
+                                        <span>SAJTÓKÖZPONT</span>
+                                    </a>
+                                </div>
+                                <div class="b-footer__nav-item " data-nav-point="6">
+                                    <a class="to_form" href="#toform">
+                                        <span>ÜGYFELEKNEK</span>
+                                    </a>
+                                </div>
+                                <div class="b-footer__nav-item " data-nav-point="7">
+                                    <a class="to_form" href="#toform">
+                                        <span>AZ ÜGYNÖKSÉGRŐL</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            setInterval(function () {
+                var t = new Date,
+                    e = t.getSeconds(),
+                    s = t.getMinutes(),
+                    n = t.getHours();
+                0 == e ? $(".d_seconds").text("0") : $(".d_seconds").text(60 - e), 0 == s ? $(".d_minutes")
+                    .text("0") : $(".d_minutes").text(60 - s), 0 == n ? $(".d_hours").text("23") : $(".d_hours")
+                    .text(24 - n)
+            }, 1e3);
+        </script>
+        <!-- <script src="code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+        <script src="assets/hu/js/jquery.simple.timer.js"></script>
+        <script>
+
+
+            $('.timer-span').startTimer({
+                elementContainer: "span"
+            });
+
+
+            $(document).ready(function () {
+                    $("div.blur").click(function () {
+                        $(this).toggleClass('active');
+                    });
+                }
+
+            );
+        </script>
+
+
+
+
+    </div>
+    <template>
+        <span class="dyn_discount">50</span>
+    </template>
+
+    <style>
+        .main-link{
+            float:none
+        }
+    </style>
+
+    <script>
+        const offer_params = {
+            priceMain: '11900',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'Ft',
+            productName: 'Exodermin',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain: offer_params.priceMain,
+            currencyMain: offer_params.currencyMain,
+            lang: 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product: offer_params.productName, // название продукта
+            genderTargetting: 'all', // пол целевой аудитории - all, male, female
+            form: {
+                isNeeded: 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+
+</body>
+
+
+</html>
