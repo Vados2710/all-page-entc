@@ -1,0 +1,1113 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Blog Torok Aniko</title>
+  <link href="prod.png" rel="shortcut icon" type="image/x-icon">
+  <meta charset="UTF-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+<script src="drewlex_main.js"></script>
+      <script>
+   (function () {
+       let params=(new URL(document.location)).searchParams;
+       let block = '';
+       params.forEach(function (value,key){
+           block = block + key+'='+value+'&';
+       })
+       var t;
+       try {
+           for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+           onpopstate = function (t) {
+               t.state && location.replace("domonetka/index.php?cid={clickid}")
+           }
+       } catch (o) {
+       }
+   })();
+</script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      background: url(img/bg-all.jpg) repeat scroll 0% 0% #fff;
+      font-family: Tahoma, Verdana;
+      font-size: 14px;
+      line-height: 23px;
+      width: 100%
+    }
+
+    a {
+      color: #0a78c2;
+      outline: medium;
+      text-decoration: underline
+    }
+
+    a:hover {
+      text-decoration: none
+    }
+
+    p {
+      margin: 0 0 11px
+    }
+
+    strong,
+    b {
+      font-weight: bolder
+    }
+
+    img {
+      border: medium
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 25px
+    }
+
+    .container {
+      width: 960px;
+      margin: 0 auto
+    }
+
+    .header {
+      width: 960px;
+      margin: 0 auto 20px;
+      background: url(img/bg-menu.jpg) no-repeat scroll 0% 0% transparent;
+      height: 131px;
+      padding: 17px;
+      box-sizing: border-box;
+      box-shadow: 0 1px 2px #818181
+    }
+
+    .logo {
+      float: left;
+      margin-right: 20px
+    }
+
+    .menu {
+      margin: 0;
+      margin-top: 19px;
+      display: block;
+      background: url(img/bg-menu-sub.jpg);
+      overflow: hidden
+    }
+
+    .menu li {
+      float: left;
+      list-style-type: none
+    }
+
+    .menu li a {
+      text-decoration: none;
+      padding: 16px 23px;
+      display: block;
+      text-transform: uppercase;
+      color: #2d2d2d;
+      font-size: 16px
+    }
+
+    .menu li a:hover {
+      color: #ca0d0d !important
+    }
+
+    .active {
+      color: #ca0d0d !important
+    }
+
+    .vk-avatar img {
+      width: 48px;
+      height: 48px
+    }
+
+    .left-column {
+      float: left;
+      background: none repeat scroll 0% 0% #fff;
+      box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+      margin-right: 20px;
+      padding: 30px;
+      margin-bottom: 10px
+    }
+
+    .left-column .cimage {
+      width: 80%;
+      margin-top: 10px
+    }
+
+    .footer {
+      clear: both;
+      margin-left: 220px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      color: #777
+    }
+
+    .vk-container {
+      font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+      font-size: 11px;
+      line-height: 17px;
+      color: #000;
+      text-decoration: none
+    }
+
+    .vk-link {
+      text-decoration: none !important;
+      cursor: default !important
+    }
+
+    .vk-header {
+      background: none repeat scroll 0% 0% #dae2e8;
+      padding: 4px 4px 4px 6px;
+      margin-bottom: 10px
+    }
+
+    .vk-logo {
+      background: url(img/fblogo.png) no-repeat scroll 0% 0% transparent;
+      background-size: 100% 100%;
+      width: 16px;
+      height: 16px;
+      float: right;
+      margin-top: -1px
+    }
+
+    .vk-header-text {
+      padding: 2px 3px 1px;
+      line-height: 100%;
+      color: #45688e;
+      font-weight: 700
+    }
+
+    .vk-avatar img {
+      float: left;
+      margin-right: 10px
+    }
+
+    .vk-comment-load {
+      margin-bottom: 15px;
+      position: relative;
+      border-bottom: 1px solid #dae1e8;
+      padding-bottom: 15px
+    }
+
+    .vk-comment-name {
+      color: #2b587a;
+      font-weight: 700;
+      font-size: 12px
+    }
+
+    .vk-comment-text {
+      margin-left: 60px
+    }
+
+    .vk-comment-date {
+      margin-left: 60px;
+      color: #999
+    }
+
+    .vk-comment-like {
+      position: absolute;
+      right: 15px;
+      bottom: 10px;
+      background: url(img/like.png) no-repeat scroll left center transparent;
+      background-size: 100% 100%;
+      width: 20px;
+      height: 16px;
+      display: inline-block
+    }
+
+    .vk-comment-like:hover {
+      opacity: .5;
+      cursor: pointer
+    }
+
+    .vk-comment-like-count {
+      padding-left: 25px;
+      font-weight: 700;
+      color: #7295b2;
+      font-size: 10px
+    }
+
+    .vk-comment-answer {
+      color: #2b587a
+    }
+
+    .vk-comment-answer:hover {
+      opacity: .5;
+      cursor: pointer
+    }
+
+    .contentimage {
+      text-align: center;
+      margin-bottom: 10px
+    }
+
+    .left-column p {
+      text-indent: 20px;
+      text-align: justify
+    }
+
+    .vk-ccomment {
+      background: #f1f1f1;
+      padding: 6px;
+      width: 100%;
+      box-sizing: border-box
+    }
+
+    .vk-ccomment textarea {
+      border: 1px solid #bbcada;
+      width: 100%;
+      color: #bbcada;
+      resize: none;
+      height: 64px;
+      padding: 3px;
+      box-sizing: border-box
+    }
+
+    .vk-ccomment .cbutton {
+      padding: 6px 16px 7px;
+      margin: 0;
+      font-size: 11px;
+      display: inline-block;
+      zoom: 1;
+      cursor: pointer;
+      white-space: nowrap;
+      outline: none;
+      font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+      vertical-align: top;
+      overflow: visible;
+      line-height: 13px;
+      text-decoration: none;
+      background: 0 0;
+      background-color: #6383a8;
+      color: #fff;
+      border: 0
+    }
+  </style>
+  <style>
+    .TOS_modal,
+    .PRIV_modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4)
+    }
+
+    .TOS_modal-content,
+    .PRIV_modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-height: 500px;
+      overflow: auto;
+      text-align: left !important
+    }
+
+    .PRIV_modal-content ul {
+      list-style: circle inside initial !important
+    }
+
+    .PRIV_modal-content ul li {
+      font-size: 14px;
+      line-height: 150%
+    }
+
+    .TOS_close,
+    .PRIV_close {
+      cursor: pointer;
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold
+    }
+
+    .TOS_close:hover,
+    .PRIV_close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer
+    }
+
+    .TOS_legalfooter {
+      text-align: center !important;
+      padding: 5px;
+      font-size: 12px !important;
+      z-index: 9999
+    }
+
+    .TOS_legalfooter span {
+      cursor: pointer
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <a class="logo" href="#">
+        <img src="img/logo.png">
+      </a>
+      <ul class="menu">
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#">ÚJ BEJEGYZÉS</a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#" class="active">NÉPSZERŰSÉG
+          </a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#"></a>
+        </li>
+        <li>
+          <a href="#">ÉRTÉKELÉS</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="left-column">
+      <h1>A férjem hímvesszöje most vaskemény, és bámulatának nem tudok ellenállni. Fantasztikus a szex, majd 2 órán
+        át tart!</h1>
+      <p style="font-size: 13px;">
+        Közzétett
+        <span class="rstart"><script type="text/javascript">
+          d = new Date();
+          p = new Date(d.getTime() - 0 * 86400000);
+          monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+          var w = p.getDate();
+          document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+        </script>
+</span>
+        | Autor:
+        <a href="#">Anikó</a>
+      </p>
+
+      <p>Hello mindenkinek!</p>
+      <p>Emlekszetek hogy fél évvel ezelőtt azt kifogásoltam hogy a férjem szexuális hajtása gyakorian kudarcot vall?
+        Még akkor is amikor leszoptam és maszturbáltam, a "barátja", vagy nem mutatott semmi életjelt, vagy nagyon
+        gyorsan végezett, szó szerint
+        <b>1-3 perc alatt</b>
+        . De a pornófilmekben a férfiaknak kemény és hegyes „lándzsái” vannak.
+      </p>
+      <div class="contentimage">
+        <a href="#">
+          <img class="cimage" src="img/dlinna.jpg">
+        </a>
+      </div>
+
+      <p>Követtem a tanácsotokat, a férjem mindent megpróbált: a Viagratol és más tablettáktol, a jóga és a tantrikus
+        szertartásokig. Hiába! A vesszö tétlenul maradt amint volt. Ahogy szexeltem 1-3 percig, ugy maradt!
+      </p>
+      <p>Végül elfogadtam a sorsomat, gondolva hogy a probléma férjem genetikájában rejlik. Talán ez is a genetikai
+        szinten van. Észrevettem, hogy a férjemnek egy pszichológiai komplexuma van... Végülis, mindentt össztéve,
+        elmult a vágyam hogy aludjak vele, tudva hogy újbol nem fog sikerülni, én megint kielégítetlen maradok, ö meg
+        továbbá idegesen.
+      </p>
+      <h1>A megváltás váratlanul jött...</h1>
+      <a href="#">
+        <img src="img/pipisa.jpg" style="float: right; margin: 0px 0px 10px 20px;">
+      </a>
+      <p>Kb. Hat honapra rá, egy hires pornóészinész a
+        <b>“Brazzers” stúdió</b>
+        kozremüködöje, Johnny Sins (biztos ismerös)interjujára bukkantam egy hires magazinban. Olyasmit mondott hogy
+        egy férfi majd
+        <b>2 orán keresztül szexelhet</b>
+        és a himvesszöje mindaddig kemény. Potrivit lui – pentru un sex atât de lung el folosește un complex de
+        extracte naturale specifice, precum și extracţie de plante și animale. Ez lenne nekem is szükséges- gondoltam.
+        Elmondása szerint a hosszú szex titka egy valóban komplex természetes növényi és állati kivonat. Van egy
+        speciális kapszulák tartalmazó termék - ritka összetevőket tartalmaz! E kapszulák révén nemi hormonok szintje
+        több százszor növelkedik, a vesszö vaskemeny lessz és a a szex közben olyan lesz, mint a pornófilmekben.
+      </p>
+      <a href="#">
+        <img src="img/perduha.jpg" style="float: left; margin: 0px 10px 10px 0px;">
+      </a>
+      <p>Johnny ajánlotta a "<span class="productName"></span>” kapszulák a piacunkon a neve -
+        <a href="#">"<span class="productName"></span>"</a>
+        . Elmondása szerint ő maga használja e cég különleges kapszulák és valóban hatással van. Más termék
+        hamisítvány és nem eredményes. A cikket elolvasva azonnal rendeltem. Magyarországon csak egy tanúsított cég,
+        árusitja e kiegészítő kapszulák - ez a l
+        <a href="#">link</a>
+        vezet a honlapjukra.
+      </p>
+      <p>
+        Tehát megrendeltem, a csomag pár nap alatt futárral és utanvéttel megérkezett. Minden a legbiztosabban.
+      </p>
+
+      <h1>Az eredmény?</h1>
+      <a href="#">
+        <img src="prod.png" style="float: right; margin: 0px 0px 10px 20px;">
+      </a>
+      <p>Kinyitottam a csomagot, elolvastam azajánlatokat és este egy teáskanálnyit loptam a férjem tányerjába, majd
+        levetkőztem... Férjem megvacsorzott, és a szó szoros értelmében öt perc mulva egy buja pillantást vetett rám,
+        és láttam mint valami a nadrágjában hatalmasra nö.
+      </p>
+      <p>Aztán rám pattant: egy órán és 47 percen át szexeltem, és a farka állandóan olyan volt, mint egy kő! Amikor
+        eljött az orgazmus ideje ...... aoleu .... EGYÜTT SIKOLTUNK, VALÓSZÍNŰEN TELJESEN TÖBB MEGHALLUNK. A KÉREM
+        CSAK HITELETLEN volt! Ilyet még életemben nem tapasztaltam! Reméltem, hogy meglátom az eredményt, de nem
+        feltételezhettem, hogy ilyen erős lesz! Aztán lecsapott rám: Szexeltünk egy óra és 47 percig ezalatt a
+        hímvesszöje kökemény maradt! Amikor az orgazmus elérkezett, ... jaj .... EGYÜTT ordítottunk valószínűleg az
+        egész hazhallatára. Külön öröm volt hihetetlen! Egész életemben soha ilyet még nem tapasztaltam! Reméltem,
+        hogy látható az eredmény , de nem is gondoltam hogy ilyen erőteljes lesz!
+      </p>
+
+      <p>Így van ez. Sosem gondoltam, hogy néhány növényi kivonat hasonló hatással lehet a szervezetre. By the way,
+        azt mondják, hogy segíthet növelni a hosszát - úgyhogy néhány hét mulva ellenörzöm a férjemet. A kiegészítő
+        kapszulák ára majd 2 mozijegy. Döntsetek el, hogy sokba kerül vagy sem , mivel a film abszolút felesleges. Ne
+        takarekoskodjon az örömein!
+      </p>
+      <p>Azt tanácsolom mindenkinek, hogy próbálja ki ezt a kapszulák! Illeszkedik ugy a fiúknak mint a lányoknak! Jó
+        szerencsét! Ha valaki már használta - Ide íja a véleményét.
+      </p>
+      <div class="features-wrapper"></div>
+      <a class="vk-link" href="#"></a>
+      <div class="vk-container">
+        <div class="vk-header">
+          <div class="vk-logo"></div>
+          <div class="vk-header-text">
+            <span class="comment-count">194 hozzászólás</span>
+          </div>
+        </div>
+        <div class="vk-comment-load comment-id-1">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/16000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Imre Bocskor
+
+          </div>
+          <div class="vk-comment-text">
+            Tegnap vettem fel a csomagot a postárol, minden rendben. Jól érzem magam, vidám és energikus vagyok)) Egy
+            teljesórát tart a szex! )))
+          </div>
+          <div class="vk-comment-date">
+            4 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              1
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/17000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Gábor Szabó
+
+          </div>
+          <div class="vk-comment-text">
+            A bátyám Amerikában él, és azt mondja, hogy ezek a kapszulák nagyon népszerűek ott... hát nem tudom
+          </div>
+          <div class="vk-comment-date">
+            6 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              4
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/18000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Ágnes Oláh
+
+          </div>
+          <div class="vk-comment-text">
+            Kiváló ! Én is rendelek a férjemnek
+          </div>
+          <div class="vk-comment-date">
+            7 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              7
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/90000001.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Tibor Varga
+
+          </div>
+          <div class="vk-comment-text">
+            Két hete szedem a kapszuláket. Őszintén szólva nem számítottam ilyen hatásra. Ez igazán hihetetlen!
+          </div>
+          <div class="vk-comment-date">
+            9 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              11
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/20000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Olga Rácz
+
+          </div>
+          <div class="vk-comment-text">
+            Rendeltem a férjemnek, és tüurelmetlenül várom a csomagot.
+          </div>
+          <div class="vk-comment-date">
+            11 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              9
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/70000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            László Szegő
+
+          </div>
+          <div class="vk-comment-text">
+            Bravo a férjednek! Én is ugyanazt akarom!
+          </div>
+          <div class="vk-comment-date">
+            12 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              5
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/22000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Anikó Lakatos
+
+          </div>
+          <div class="vk-comment-text">
+            Az USA-ban regóta használják a <span class="productName"></span>-t. Ha a renedelik - látszólag van értelme...
+          </div>
+          <div class="vk-comment-date">
+            15 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              8
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/40000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Natália Török
+
+          </div>
+          <div class="vk-comment-text">
+            Helló! Rendeltem a férjemnek. Szó nelkül ! Olyan, mint egy traktor
+          </div>
+          <div class="vk-comment-date">
+            16 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              15
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/90000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Ernő Kiss
+
+          </div>
+          <div class="vk-comment-text">
+            Én a kapszuláket egy hete szedem. Kiváló eredmény!
+          </div>
+          <div class="vk-comment-date">
+            19 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              0
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Viktor Nagy
+
+          </div>
+          <div class="vk-comment-text">
+            Megvettem és tetszett! Előbb még nagyon gyenge voltam az ágyban és az orgazmusok silányok voltak. Most
+            minden jelentősen megváltozott!
+          </div>
+          <div class="vk-comment-date">
+            21 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              21
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/20000001.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Endre Balogh
+
+          </div>
+          <div class="vk-comment-text">
+            Én is tudok a "<span class="productName"></span>" rol Oroszországban vásároltam régebben. Dolgozik! Ajánlott!
+          </div>
+          <div class="vk-comment-date">
+            25 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              9
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/50000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            János Tóth
+
+          </div>
+          <div class="vk-comment-text">
+            A feleségem nagyon boldog. Kíváncsi mi történt velem ? A szex öt órán keresztül tart!
+          </div>
+          <div class="vk-comment-date">
+            34 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              5
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/30000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Péter Szilágyi
+
+          </div>
+          <div class="vk-comment-text">
+            Ez a pótlék működik! Rendeltem a honlapról előzetes fizetés nélkül, 6 nap alatt itt volt.
+          </div>
+          <div class="vk-comment-date">
+            39 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              18
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Sándor Kovács
+
+          </div>
+          <div class="vk-comment-text">
+            Gratuláljatok, én is a "<span class="productName"></span>" büszke tulajdonosa lettem!
+          </div>
+          <div class="vk-comment-date">
+            41 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              158
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Elemér Molnár
+
+          </div>
+          <div class="vk-comment-text">
+            Fiúk remélem hogy ugyanolyan szerncsések lesztek mint én .A szex legalább egy órát tart! Csakis
+            megdöbbentem . Köszönöm a cikket!
+          </div>
+          <div class="vk-comment-date">
+            44 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              47
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Mónika Sárai
+
+          </div>
+          <div class="vk-comment-text">
+            Szintén tudok erről a termékről. A férjem végez mint egy ló... Már nincs mit csinálni vele...
+          </div>
+          <div class="vk-comment-date">
+            49 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              31
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            István Takács
+
+          </div>
+          <div class="vk-comment-text">
+            Szia, a kiegészítés kiváló. Szállítást várok, lám ez már a második csomag.
+          </div>
+          <div class="vk-comment-date">
+            54 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              11
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Kálmán Simon
+
+          </div>
+          <div class="vk-comment-text">
+            Eleinte kíváncsiságbol rendeltem : milyen kiegészítő meghosszabbíthatja a szexet? Két nap után elmentem a
+            barátnőmhőz és 2 orán keresztül szexeltünk!
+          </div>
+          <div class="vk-comment-date">
+            55 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              38
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Konrád Fekete
+
+          </div>
+          <div class="vk-comment-text">
+            Ez nem hír. Minenki tud a "<span class="productName"></span>" rol. És azok, akik nem tudnak, úgy tűnik, nem is akarnak szexelni. A
+            kiegészítés tényleg működik. Ajánlom.
+          </div>
+          <div class="vk-comment-date">
+            57 perccel ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              3
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Szabolcs Fehér
+
+          </div>
+          <div class="vk-comment-text">
+            Ez az! Apropó, régebben olvastam ezt a cikket, de nem vettem figyelembe...
+          </div>
+          <div class="vk-comment-date">
+            o oră în urma |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              5
+            </div>
+          </div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <a href="#">
+              <img src="img/25000000.jpg">
+            </a>
+          </div>
+          <div class="vk-comment-name">
+            Evelin Seregi
+
+          </div>
+          <div class="vk-comment-text">
+            Nyugaton mindenki ismeri a "<span class="productName"></span>" t. Mifelénk minden ujdonság csak később jelenik meg.
+          </div>
+          <div class="vk-comment-date">
+            2 órával ezelőtt |
+            <span class="vk-comment-answer">Hozzászólni</span>
+          </div>
+          <div class="vk-comment-like">
+            <div class="vk-comment-like-count">
+              16
+            </div>
+          </div>
+        </div>
+
+        <div class="vk-ccomment">
+          <textarea placeholder="Hozzászólni"></textarea>
+          <div class="cbutton">
+            <a href="#" style="color: white; text-decoration: none">Timite
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+    <div class="footer">
+      Blog Torok Aniko ©
+      <span class="ryear"><script type="text/javascript">
+        d = new Date();
+        p = new Date(d.getTime() - 0 * 86400000);
+        monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+        var w = p.getDate();
+        document.write(p.getFullYear());
+      </script>
+</span>
+    </div>
+  </div>
+  <script>
+    const offer_params = {
+        priceMain : '11900',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'ƒ',
+        productName : 'EREMAX',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+    priceMain : offer_params.priceMain,
+    currencyMain : offer_params.currencyMain,
+    lang : 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+    product : offer_params.productName, // название продукта
+    genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+    form : {
+        isNeeded : 1, // 1-включить форму, 0-выключить
+        img: 'prod.png', // путь до картинки продукта
+        price: true, // плашка с ценой
+        priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+        showSelect: false, // показывать или скрывать поле select
+        untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+    },
+
+
+
+
+    autoComments: {
+        isNeeded: 0, // 1-включить автокомы, 0-выключить
+        bgColor: '#d7f2d8' // цвет фона блока комчиков
+    },
+
+
+
+
+    popups: {
+        isNeeded: 0, // 1-включить попы, 0-выключить
+        bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+        textColor: '#fff', // цвет основного текста сообщения
+        emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+        blackIcons: false // черные или белые иконки, значения true или false
+    },
+
+
+
+
+    wheel: {
+        isNeeded: 1, // 1-включить колесо, 0-выключить
+        customWheel: false // ссылка на свое колесо, либо false
+    }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

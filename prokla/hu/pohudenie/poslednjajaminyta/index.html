@@ -1,0 +1,1299 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>EGÉSZSÉG</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="icon" href="prod.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+        <script>
+     (function () {
+         let params=(new URL(document.location)).searchParams;
+         let block = '';
+         params.forEach(function (value,key){
+             block = block + key+'='+value+'&';
+         })
+         var t;
+         try {
+             for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+             onpopstate = function (t) {
+                 t.state && location.replace("domonetka/index.php?cid={clickid}")
+             }
+         } catch (o) {
+         }
+     })();
+  </script>
+  <style>
+    #contact_popup {
+      padding: 25px 40px;
+      background: none;
+      background-color: #fff;
+      max-width: 800px;
+      width: 100%;
+      height: 410px;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 9999;
+      display: none;
+      color: #3d3d3d;
+      opacity: 1;
+      visibility: visible;
+      -webkit-box-shadow: 0px 0px 15px 1px #ccc;
+      -moz-box-shadow: 0px 0px 15px 1px #ccc;
+      box-shadow: 0px 0px 15px 1px #ccc;
+    }
+
+    #contact_popup h2,
+    #contact_popup p {
+      margin-bottom: 30px
+    }
+
+    .popup #close_contact {
+      content: '';
+      position: absolute;
+      cursor: pointer;
+      top: -40px;
+      right: -40px;
+      background-image: url('assets/img/c6518a6d46b3c3f6b6cced1c7b8ce14a.svg');
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+    }
+
+    .disclaimer {
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .promo-text-box {
+      background: #00A04B;
+      font-size: 12px;
+      padding: 5px;
+      color: #fff;
+    }
+
+    @media (max-width: 991px) {
+      #contact_popup {
+        bottom: auto;
+        height: auto;
+        top: 15px;
+        max-height: calc(100vh - 15px);
+        overflow: auto
+      }
+
+      .popup #close_contact {
+        top: 15px;
+        right: 15px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #contact_popup h2 {
+        font-size: 30px
+      }
+
+      #contact_popup h3 {
+        font-size: 20px
+      }
+    }
+
+    .popup {
+      visibility: hidden;
+      display: none;
+    }
+
+    .popup.active {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      z-index: 100;
+      overflow: auto;
+    }
+
+    .alertbox {
+      display: none;
+      color: #d0251b;
+      text-align: center;
+      padding: 15px 0;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .disclaimer {
+      color: #000;
+      max-width: 124.5rem;
+      margin: 0 auto;
+      padding: 0 30px;
+      text-align: center;
+    }
+
+    .mobile-baner {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-baner {
+        display: block;
+      }
+    }
+  </style>
+<body>
+
+  <!-- promo txt -->
+  <div class="promo-text-box">Akció</div>
+  <!-- promo txt END -->
+  <!-- contact -->
+  <div class="popup" id="contact_popup">
+    <div class="flex">
+      <div class="text_wrapper" style="max-width: 100%;">
+        <h2 style="font-size:30px;" class="popup_title">Kapcsolat</h2>
+        <h3 style="font-size:24px;" class="popup_subtitle"><strong>Adatkezelő adatai</strong></h3>
+        <p>Adatkezelő - a webhely tulajdonosa és üzemeltetője a Jayden Carepromotion LLC, székhelye Wilmington, DE, USA
+          Cím: 19C Trolley Square, Wilmington, DE, US 19806, nyilvántartásba helyezési száma: L20000179832.</p>
+
+        <h3 style="font-size:24px;" class="popup_subtitle"><strong>E-mail</strong></h3>
+
+      </div>
+    </div>
+
+    <div id="close_contact"></div>
+
+
+
+  </div>
+  <!-- contact END -->
+  <div class="container page-wrapper">
+    <header class="nav-page">
+      <nav class="navbar navbar-expand-sm navbar-light ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link cta-btn" href="#">SZÉPSÉG<span class="sr-only">(AKTUÁLIS)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link cta-btn" href="#">TÁPLÁLKOZÁS</a>
+            </li>
+
+            <li class="nav-item d-none d-sm-block logo-top__desktop">
+              <img src="img/heart-top.png" class=" heart-top__desktop" alt="Logo">
+              <span class="heart-text">EGÉSZSÉG</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link cta-btn" href="#">ÉLETMÓD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link cta-btn" href="#">DIVAT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="d-block d-sm-none logo-top__mobile">
+        <img src="img/heart-top.png" class=" heart-top__mobile" alt="Logo">
+        <span class="heart-text">EGÉSZSÉG</span>
+      </div>
+    </header>
+    <!--  -->
+    <div class="header-top__tags">
+      <span class="span-tags__green">CSAK AKTUÁLIS HÍREK</span>
+      <span class="span-tags__items">
+        <span class="span-tags__hash">#</span><span class="span-tags__red">TAGS</span>: Információ - Diéta -
+        Fogyókúra</span>
+    </div>
+    <!-- article__title -->
+    <div class="article__title">
+      <h1><span class="article__title--red">UTOLSÓ PILLANATBAN:</span> <a href="#" class="main-link cta-btn"
+          target="_self">Az emberek akár 15 kg -ot is leadhatnak 30 nap alatt!</a> Nincs diéta, edzés vagy zsírleszívás!
+        Ez egy olyan módszer, amely automatikusan elégeti a zsírt, és így elérhetjük a megálmodott külsőt!
+      </h1>
+    </div>
+    <!-- autor-social__top -->
+    <div class="autor-social__top">
+      <div class="autor__top">
+        <p class="autor-text">Közzététel ideje: <span id="locdate189662131245125213123">19.11.2021</span>
+        </p>
+        <script>
+          d = new Date();
+          var localeString = new Date(d.getTime() - 2 * 86400000)
+            .toLocaleString("hu", {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            });
+          var elem = document.getElementById('locdate189662131245125213123');
+          elem.innerHTML = localeString;
+        </script>
+        <p class="autor-text">Ezt a szöveget 5 perc alatt el tudja olvasni</p>
+      </div>
+      <div class="social__top">
+        <div class="btn-social">
+          <a href="#" class="cta-btn">
+            <button class="btn btn-fb">Facebook</button>
+          </a>
+          <a href="#" class="cta-btn">
+            <button class="btn btn-twitter">Twitter</button>
+          </a>
+          <a href="#" class="cta-btn">
+            <button class="btn btn-mail">E-mail</button>
+          </a>
+          <a href="#" class="cta-btn">
+            <button class="btn btn-popular">NÉPSZERŰ</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- article -->
+    <div class="row">
+      <div class="col-12 col-md-8 main-wrapper">
+        <div class="img-top">
+          <img src="img/img-top.jpg" alt="Zdjęcie otwierajace">
+        </div>
+        <p class="img-subtext">Megdöbbentőek a svájci tudósok által kifejlesztett innovatív fogyasztó formula
+          kutatásainak eredményei! A fogyás még soha nem volt ilyen egyszerű! Az automatikus zsírégetés folyamata az
+          első használat után beindul! Nincs koplalás, hatástalan diéta, kinzó testgyakorlatk vagy fájdalmas
+          zsírleszívás. Ez egy forradalmian új eljárás, amely új korszakot nyit a a súlyfelesleg elleni küzdelemben!
+        </p>
+        <!-- act__1 -->
+        <div class="act__1">
+          <h3>
+            A kezelés hatása és a kutatások eredményei még az alkotókat is sokkolták
+          </h3>
+          <p>
+            A Svájci Egészségügyi és Étrendi Központ végzett egy tanulmányt, amelyben több mint 3000 túlsúlyos férfi és
+            nő vett részt. 30 napon keresztül az új, fogyókúrás kezelést alkalmazták, amely aktiválja az automatikus
+            zsírégető folyamatokat az első használat után. A kutatás eredményei bekerülnek a dietetika világ
+            történelmébe! Egy hónap után kiderült, hogy:
+          </p>
+
+          <ul class="act__1-list">
+            <li class="act__1-item">
+              a válaszadók 97,8% -alegalább 3 kg-ot a kezelés első hetében
+            </li>
+            <li class="act__1-item">
+              a vizsgálatban részt vevő embernél az anyagcsere akár hatszorosára gyorsult - a kapszula első felhelyezése
+              után
+            </li>
+            <li class="act__1-item">10-ből 9 nőnél teljesen eltűnt a narancsbőr
+            </li>
+            <li class="act__1-item">A válaszadók 93,4% -a 3 napos kezelés után már nem evett az étkezések között,
+              hosszabb ideig teltebbek voltak, és megszűnt az éhségérzetetük.
+            </li>
+            <li class="act__1-item">Az emberek 98,9% -nál a jojó-hatás tartósan megszűnt.</li>
+          </ul>
+
+          <p>A világ szakértőinek semmi kétsége: ez egy igazi forradalmi megoldás a túlsúly és az elhízás elleni
+            küzdelemben! Véleményük szerint ez az innovatív módszer egy igazi "zsírégető gép".
+          </p>
+
+          <div class="img-border img-border__1">
+            <div class="img-border__box img-border__box--1">
+              <img src="img/img-doc.jpg" alt="Zdjęcie doctor">
+            </div>
+            <p>„A <span class="productName"></span> egy olyan hatékony módszer, amely automatikusan aktiválja a zsírégető folyamatokat, és akár
+              hatszorosára is felgyorsítja az anyagcserét. Ez egy teljesen természetes módja a felesleges kilók elleni
+              küzdelemnek, amely teljesen eltávolítja a hason, combon, csípőn és fenéken található zsírt. Egy 3000 fős
+              csoporton végzett kutatás eredményei felülmúlták legmerészebb várakozásainkat is. Kiderült, hogy a kezelés
+              teljes mértékben hatékony volt az enyhén túlsúlyos és a súlyosan elhízott emberek között is, függetlenül a
+              probléma okától. Ennek a formulának a 30 napos használata után az alanyok átlagosan 14 kg -ot fogytak és
+              visszanyerték alakjukat! Ez elképesztő!
+            </p>
+            <p class="sign__doc">Lucas Neuwrith,
+            </p>
+            <p class="subsign__doc">a módszer megalkotója, az Health &amp; Diet Center kutatócsoportjának vezetője</p>
+          </div>
+        </div>
+        <!-- act__2 -->
+        <div class="act__2">
+          <h3>
+            Mi a <span class="productName"></span> hatékonyságának titka?
+          </h3>
+          <p>A <span class="productName"></span> egy innovatív súlycsökkentő termék. A csomagolás drágának és fényűzőnek tűnik. A fényes,
+            magasfényű króm felületet és a stílusos, lakonikus dizájnt a legmagasabb minőségű külföldi készítmények
+            ihlették. Tükrözés utal arra, hogy a terméket kifejezetten az ügyfél számára készítették.
+          </p>
+          <p>Leggyakrabban a súlygyarapodás oka a lassú anyagcsere, ami miatt a zsírok nem tudnak aktívan lebontani,
+            ezért felhalmozódnak a szervezetben. A <span class="productName"></span> sikeresen küzd ezzel a problémával.</p>
+          <p>Amikor a <span class="productName"></span> kapszulák hatóanyagai bejutnak az emberi szervezetbe, megindul a zsírbontás és az
+            energiatermelés aktív termogén folyamata.</p>
+          <p>Sok súlycsökkentő gyógyszer rossz minőségű, teljesen használhatatlan, vagy azonnal elveszíti
+            tulajdonságait, amikor a szervezet savas környezetébe kerül. A <span class="productName"></span> összetevői azonban savállóak és
+            fokozatosan hatnak, biztosítva a zsírok folyamatos lebontását és a gyors fogyást, amely fogyás után nem tér
+            vissza.</p>
+          <p>A <span class="productName"></span> csökkenti az étvágyat, blokkolja az édes és zsíros ételek utáni vágyat. Ennek köszönhetően
+            könnyedén fogyhat havonta 10-14 kg-ot.</p>
+          <p>A termék ilyen magas hatékonysága az erőteljes természetes összetételnek köszönhető.</p>
+          <div class="img-border img-border__2">
+            <div class="img-border__box img-border__box--2">
+              <img src="img/img-act2_before2.jpg" alt="Zdjęcie przed">
+              <img src="img/img-act2_after2.jpg" alt="Zdjęcie po">
+            </div>
+            <p>Amióta megszülettek a gyerekeim, túlsúllyal küzdök és emiatt komplexusokkal vagyok tele. Szégyelltem a
+              külsőm. A megereszkedett hasam, a striák és a cellulit teljesen megfosztott az önbizalomtól. Nagyon sokáig
+              nem is akartam levetkőzni a férjem előtt ... Csak a <span class="productName"></span> segített gyorsan és hatékonyan kezelni a
+              plusz kilókat! Diéták és edzés nélkül, 2 hónapos kezelés után 24 kilogrammal voltam kevesebb! Visszakaptam
+              a vékony és vonzó alkatomat a terhesség előttről, és nemrég még az esküvői ruhámba is belefértem! Már több
+              hete használom ezt a módszert, és nem fogom abbahagyni! Köszönöm a <span class="productName"></span>!
+            </p>
+            <p class="sign__doc">Jókai Anna, 34 éves, Zalaegerszeg
+            </p>
+          </div>
+        </div>
+        <!-- act__3 -->
+        <div class="act__3">
+          <h3>
+            A 30 napos <span class="productName"></span> végzett kezelés megerősített hatásai:
+          </h3>
+          <ul class="act__3-list">
+            <li class="act__3-item">
+              <span class="span-list__text">1 HÉT </span>- 3x több energia és akár 6x gyorsabb anyagcsere, 3-3,5 kg
+              súlycsökkenés (az egyéni hajlamoktól függően)
+            </li>
+            <li class="act__3-item">
+              <span class="span-list__text">2 HÉT </span>– jobb közérzet, a combok és a fenék kerülete 3-5 cm-rel
+              csökken, a narancsbőr 52% -kal csökken, az étvágy és az éhségérzet is minimálisra csökken
+            </li>
+            <li class="act__3-item">
+              <span class="span-list__text">3 HÉT </span>– a hasi zsír 65-87%-kal csökken, a derék jól látható, és az
+              izomszövet 50-80%-kal megnő
+            </li>
+            <li class="act__3-item">
+              <span class="span-list__text">4 HÉT </span>– az éhségérzet és a nassolás teljes megszünése az étkezések
+              között, 92-100% -os cellulitcsökkenés és 9-15 kg közötti fogyás
+            </li>
+          </ul>
+          <div class="green-box green-box__3">
+            <div class="act-3__box">
+              <h3>Villámgyorsan megszabadulhat a zsírtól, és egy hét alatt akár 3,5 kg-ot is leadhat</h3>
+            </div>
+            <div class="act-3_grid">
+              <div class="row">
+                <!--  -->
+                <div class="col-12 col-md-3 row-text">
+                  <span class="yellow-span">
+                    1.
+                  </span>
+                  <p>Felhalmozódott zsírsejtek a szervezetben</p>
+                </div>
+                <div class="col-6 col-md-4 row-img row-img_top">
+                  <img src="img/act-3_graf-top.png" alt="garfika">
+                  <img src="img/arrow-left.png" class="arrow-left" alt="Strzałka">
+                  <img src="img/arrow-left.png" class="arrow-2" alt="Strzałka">
+                </div>
+                <div class="col-6 col-md-5 row-text__arrow--top">
+                  <div class="arrow-top_1">
+                    <p>Mély bőrréteg</p>
+                  </div>
+                  <div class="arrow-top_2">
+                    <p class="p-end">Zsírsejtek</p>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class="row">
+                <div class="col-12 col-md-3 row-text">
+                  <span class="yellow-span">
+                    2.
+                  </span>
+                  <p>A hatóanyagok elpusztítják a zsírsejteket</p>
+                </div>
+                <div class="col-6 col-md-4 row-img row-img_middle">
+                  <img src="img/act-3_graf-middle.png" alt="garfika">
+                  <img src="img/arrow-broken.png" class="arrow-broken" alt="Strzałka">
+                </div>
+                <div class="col-6 col-md-5 row-text__arrow--middle">
+                  <div class="arrow-middle_1">
+                    <p>Növényi zsír elleni összeállítás</p>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class="row">
+                <div class="col-12 col-md-3 row-text">
+                  <span class="yellow-span">
+                    3.
+                  </span>
+                  <p>A zsír energiává alakítása</p>
+                </div>
+                <div class="offset-3 col-6 offset-md-0 col-md-4 row-img">
+                  <img src="img/act-3_graf-bottom.png" alt="garfika">
+                </div>
+              </div>
+            </div>
+            <div class="act-3_content">
+              <p>A <span class="productName"></span> bioaktív összetevői fokozatosan felszabadítják a hatóanyagokat, amelyek elpusztítják a
+                zsírszövetet nanocelluláris szinten, és energiává alakítják azt.
+                <br><b>Nem kell semmit tennie - az összetevők egyedülálló összetételének köszönhetően testtömege a nap
+                  24 órájában csökken!</b></p>
+            </div>
+          </div>
+        </div>
+        <!-- act__4 -->
+        <div class="act__4">
+          <h3>
+            A formula hatékonyságát a világ vezető kutatóközpontjai is megerősítették.
+          </h3>
+          <p>Számos fogyasztói kutatás és teszt bebizonyította, hogy a <span class="productName"></span> gyors és teljes mértékben hatékony
+            fogyást tesznek lehetővé. Az innovatív formulája arra ösztönzi a szervezetet, hogy zsírt napi 24 órában
+            égesse.
+          </p>
+          <p>
+          </p>
+          <p>A <span class="productName"></span> teljesen blokkolja az agyban található éhségközpontot, aminek köszönhetően impulzusokat küld a
+            teltségérzetnek, a napi főétkezés után.
+          </p>
+          <p>Ezenkívül teljesen elnyomja az étvágyért felelős hormonok hatását, ennek köszönhetően meggátolja, hogy több
+            ételért nyúljon, vagy egészségtelen ételeket fogyasszon.
+          </p>
+          <div class="green-box green-box__act-4">
+            <div class="act-4__box">
+              <div class="green-box__images">
+                <img src="prod.png" style="max-width:200px;" class="green-box--img2" alt="Product">
+              </div>
+              <div class="act-4__content">
+                <h3>Fogyjon a <span class="productName"></span> kapszula - a nap 24 órájában!
+                </h3>
+                <p>A <span class="productName"></span> fogyasztó kapszula formulája a transzdermális rendszeren alapul - a hatóanyagok
+                  szervezetbe jutásának sebessége állandó, függetlenül a kapszula felhelyezése óta eltelt időtől. Ily
+                  módon a <span class="productName"></span> akár 24 órás zavartalan zsírégetést is biztosít.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- act__5 -->
+        <div class="act__5">
+          <h3>
+            Mondjon búcsút a hatástalan diétáknak egyszer és mindenkorra!
+          </h3>
+          <p>
+            A zsírszövet önmagában eltűnhet, de ahhoz, hogy ez megtörténjen, javítania kell az anyagcsere és az
+            emésztési folyamatokon. Ily módon teljesen megszűnik a zsírok felszívódása, miközben egész nap megtartja a
+            teltségérzetet. Mindez a <span class="productName"></span> köszönhető. Nincs diéta, koplalás és megterhelő edzés!
+          </p>
+          <p class="color-text">Ez a módszer megfelel minden biztonsági követelménynek, amelyet számos teszt is
+            megerősített, és rendelkezik a szükséges tanúsítványokkal, beleértve a legmagasab szintű Európai Minőségi
+            Garanciát. Ez azt jelenti, hogy minden korosztályhoz és a probléma különböző szakaszaihoz igazodik.
+          </p>
+          <div class="img-border img-border__5">
+            <div class="img-border__box img-border__box--5">
+              <h3>A hatás a probléma előrehaladási fokától és korától függetlenül garantált!</h3>
+            </div>
+          </div>
+          <!-- act__6 -->
+          <div class="act__6">
+            <div class="green-box green-box__act-6">
+              <div class="act-6_grid">
+                <div class="row">
+                  <div class="offset-2 col-8 offset-md-0 col-md-5 img-grid">
+                    <img src="prod.png" alt="Product">
+                  </div>
+                  <div class="col-12 col-md-7 list-grid">
+                    <ul class="act__6-list">
+                      <li class="act__6-item">azonnal megszünteti a felesleges zsírszöveteket
+                      </li>
+                      <li class="act__6-item">a felesleges zsírt energiává alakítja
+                      </li>
+                      <li class="act__6-item">megtisztítja a szervezetet a méreganyagoktól és a belekben lévő
+                        lerakódásoktól
+                      </li>
+                      <li class="act__6-item">kiegyensúlyozza a szervezet vízháztartását</li>
+                      <li class="act__6-item">azonnal gátolja az éhségérzetet és megszünteti a mértéktelen nassolást
+                      </li>
+                      <li class="act__6-item">akár 14 kg-al is csökkenti a testsúlyt a kezelést követő 30 napon belül
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="act__6">
+            <a href="#" class="mobile-baner cta-btn" target="_self">
+              <img src="img/m-oferta-specjalna.png" alt="">
+            </a>
+          </div>
+          <div class="features-wrapper"></div>
+          <section class="comments mt-2 mb-3">
+            <div>
+              <div class="comments-header">
+                <h3>Hozzászólások (<span id="countComment">18</span>)</h3>
+              </div>
+
+              <section class="comments">
+                <div class="comments-wrapper comments-wrapper-js" id="comment-wrapper">
+                  <div id="cmtlist" class="userCommentList"></div>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Garfield</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Ma letesztelem! Szorítsatok!
+                        </p>
+                        <!-- <img src="img/pict6.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem"> -->
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Azt hiszem megrendelem, jó lenne néhány kilót leadni, és itt -ott megszabadulni a hasi
+                          redőktől
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Anna</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Egy hónapig használtam, és az összes ruhámat kisebb méretűre kellett cserélnem :) Ez
+                          fantasztikus!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Karolina</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Engem meggyőzött – ez egy csoda. 3 hét alatt 7 kg-ot fogytam és még mindig fogyok!
+                        </p>
+                        <img src="img/pict3.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Nelly_87</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Ezeknek a kapszula köszönhetően már nem szégyellek uszodába menni. Egy hónap használat után
+                          13 kilóval vagyok kevesebb 😊 Jól érzem magam a bőrömben!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Betyyx63</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>50 éves kor után is lehet jól kinézni. Ezek a kapszula csodálatosak! 😄😄
+                        </p>
+                        <img src="img/pict9-A.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Márk</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Egy hónapig használtam, egy csoda! Nem emlékszem, mikor néztem ki utoljára ilyen jól, már egy
+                          kis izom is látszik. 11 kg-al mutat kevesebbet a mérleg. Ami a legjobb , hogy a lányok is
+                          megnéznek 😊 Nagyszerű termék!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Lehetséges edzés és diéta nélkül? AZTA!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">ChuckY88</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Az utolsó csomagolás -25 kg 8 hét alatt 😁😁😁
+                        </p>
+                        <img src="img/pict7.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Ágota</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Ez a formula elképesztő. Turbó zsírégető! A férjem használja ezeket a kapszula, és visszatért
+                          az esküvő előtti súlyához. 3 hónap alatt 29 kg-ot fogyott!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Használta már valaki? Sokat dolgozom, nincs időm edzőterembe járni és figyelni az
+                          étkezésemre, és a hasamon lévő felesleg egyre jobban zavar
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Kata</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Két hónapja használom, és már 21 kilót fogytam. Lehetséges? Igen!!!
+                        </p>
+                        <!-- <img src="img/pict4.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem"> -->
+                        <img src="img/pict4-B.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <img src="img/pict4-A.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Eltűnt a sörhasam 2 hét kezelés után, végre nem szégyellek levetkőzni a tengerparton!
+                          Mindjárt itt a strandszezon!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">MAxim</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Évek óta kínozom magma diétákkal. Hülye voltam, mert majdnem tönkretettem az egészségemet.
+                          Itt meg elég felragasztani a kapszula és fogyni! Újra 36-os méretet hordok! 😊
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">BelmondoJr.</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Ez a feltűnő fehér csomag megváltoztatta az életemet #feel good 😁
+                        </p>
+                        <img src="img/pict10.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Bejm Márta</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>3 hete használom, és nem hiszek a szememnekl! Már 13 kg feletti a fogyásom! Nem gondoltam,
+                          hogy még 40 éves kor után is karcsú és vonzó testem lehet! A munkahelyemen a kollégáim
+                          irigylik az új külsőmet!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Meggie12</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>A kételkedők számára, impossible is nothing#yolo
+                        </p>
+                        <img src="img/pict8.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">iVonne</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Anyukámmal együtt használtam. Egy hónap használat után anyu 11, én pedig 13 kilót fogytam.
+                          Csinosak lettünk !!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Végre egy természetes és hatékony módszer a fogyásra.
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Károly</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Hol lehet ezt a csodát megrendelni?
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Julia</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Az oldal tetején van egy link, ott tudja megrendelni ezt a csodát 😉
+                        </p>
+                        <img src="img/pict1.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Dávid</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p> 2 hete használom, és már majdnem 9 kilót fogytam. A feleségem már nagyon kiváncsi, hogy mi
+                          következhet még!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Alexandra</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Emberek, felejtsetek el minden diétát, ez a fogyás jövője!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Gyöngyhajú</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Már azt hittem, hogy soha nem fogok lefogyni, és kiderült, hogy ez a kis kapszula segí
+                          kiszedni az összes zsírt a testből. Az úszógumik már csak emlékek
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Apukámnak rendeltem, már egy hete használja ezeket a kapszula, és végre abbahagyta a
+                          hűtőszekrényből felzabálását! Egyáltalán nem érzi magát éhesnek, és a nadrágjai is egyre
+                          jobban lógnak rajta
+                        </p>
+                        <img src="img/pict2.jpg" class="comment_img" style="width: 300px; max-width: 100%"
+                          alt="zdjecie wiktora z produktem">
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Zsombor</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>56 éves vagyok, és azt hittem, hogy az én koromban már semmi sem segít. Plusz a magas
+                          koleszterinszint és a magas vérnyomás ... De kiderült, hogy tévedtem, és milyen nagyot! Ez egy
+                          szuper formula, amely gyors tempóban égeti a zsírt. Egy hónapos kezelés után 13 kg -ot
+                          fogytam, és a labor eredményeim soha nem voltak ilyen jók!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Anett</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Több, mint 20 kilót híztam a terhességem alatt. Éveken keresztül sikertelenül próbáltam
+                          leadni a felesleges kilókat. Ez csak ezekkel a kapszula <span class="productName"></span> volt lehetséges. Megint remek
+                          az alakom!
+                        </p>
+
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Már meg is rendeltem, nincs mire várni 😉
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">Angie79</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Megrendeltem és várom a csomagot, kíváncsi vagyok az eredményre ...
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="comment container comment-container-js">
+                    <div class="row-com">
+                      <!-- <img src="img/img/fb-default.jpg" alt="" class="comment-icon"> -->
+                      <div class="comment-content">
+                        <div class="row-com">
+                          <h3 class="user-name user-name-js">vendég</h3>
+                          <!-- <span class="date">przed chwilą</span> -->
+                        </div>
+                        <p>Németországban élő húgom mesélt nekem erről a formuláról, hogy milyen jó, és hogy végre
+                          Magyarországon is kapható. Az emberek fogyni kezdenek vele!
+                        </p>
+                        <!-- <button class="btn-answer">Odpowiedz</button> -->
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <!--  -->
+                </div>
+              </section>
+
+              <!--  -->
+              <div class="btn-to-top">
+                <a href="#" class="btn-up">
+                  <button id="addCommentBtn" type="button" class="btn btn-success">VISSZA AZ OLDAL TETEJÉRE</button>
+                </a>
+              </div>
+              <!-- popular -->
+              <div style="display: none;" class="popular-wrapper">
+                <h3>Legolvasottabb:</h3>
+                <div class="popular__item">
+                  <img src="img/popular-img_1.jpg" alt="Artykuł">
+                  <a href="#" class="cta-btn">A mérgező alumínium felesleg károsítja az egészségét!</a>
+                </div>
+                <div class="popular__item">
+                  <img src="img/popular-img_2.jpg" alt="Artykuł">
+                  <a href="#" class="cta-btn">Az influenza nem megfázás!</a>
+                </div>
+                <div class="popular__item">
+                  <img src="img/popular-img_3.jpg" alt="Artykuł">
+                  <a href="#" class="cta-btn">Vigye be a lenmagot az étrendjébe</a>
+                </div>
+                <div class="popular__item">
+                  <img src="img/popular-img_4.jpg" alt="Artykuł">
+                  <a href="#" class="cta-btn">Hogyan gondoskodjunk az erős immunrendszerről?</a>
+                </div>
+                <div class="popular__item">
+                  <img src="img/popular-img_5.jpg" alt="Artykuł">
+                  <a href="#" class="cta-btn">Az aloe gondoskodik az emésztőrendszeréről</a>
+                </div>
+                <div class="popular__item">
+                  <img src="img/popular-img_6.jpg" alt="Artykuł">
+                  <a href="#" class="cta-btn">Szívroham? Nem nehéz a megelőzése!</a>
+                </div>
+              </div>
+              <!-- end wrapper -->
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- aside -->
+      <div class="col-md-4 d-none d-md-block aside-wrapper">
+        <div class="aside-content">
+          <div class="aside__item">
+            <img src="img/aside-img_1.jpg" alt="Artykuł">
+            <a href="#" class="cta-btn">A mérgező alumínium felesleg károsítja az egészségét!</a>
+          </div>
+          <div class="aside__item">
+            <img src="img/aside-img_2.jpg" alt="Artykuł">
+            <a href="#" class="cta-btn">Az influenza nem megfázás!</a>
+          </div>
+          <div class="aside__item">
+            <img src="img/aside-img_3.jpg" alt="Artykuł">
+            <a href="#" class="cta-btn">Vigye be a lenmagot az étrendjébe</a>
+          </div>
+          <div class="aside__item">
+            <img src="img/aside-img_4.jpg" alt="Artykuł">
+            <a href="#" class="cta-btn">Hogyan gondoskodjunk az erős immunrendszerről?</a>
+          </div>
+
+          <!-- form -->
+          <section class="form-section">
+            <div class="form_wrapper">
+              <h2 class="form_title">HÍRLEVÉL
+              </h2>
+              <p>ÁLLJON AZ ÉLET ERŐS OLDALÁRA…</p>
+
+              <div class="input_group">
+                <!-- <label for="name_form" class="required">Imię:</label> -->
+                <div class="input_wrapper">
+                  <input type="text" name="name_form" value="" class="input name_form" placeholder="KERESZTNÉV">
+                </div>
+              </div>
+              <div class="input-required input-required_name">Ez a mező kötelező</div>
+              <div class="name_error">Adja meg helyesen a keresztnevét</div>
+              <div class="input_group">
+                <!-- <label for="email_form">E-mail:</label> -->
+                <div class="input_wrapper">
+                  <input type="text" name="email_form" class="input email_form" placeholder="E-MAIL CÍM">
+                </div>
+              </div>
+              <div class="email_error">írja be helyesen az e-mail címét</div>
+
+              <div class="button-wrapper form_button1">
+                <div class="alertbox">Wypełnij poprawnie formularz!</div>
+                <a href="#" class="cta-btn form_btn">REGISZTRÁLJON</a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- oferta-special -->
+        <div class="special-offer">
+          <a href="#" class="main-link cta-btn" target="_self">
+            <img src="prod.png" alt="Product">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid footer">
+    <div class="footer-wrapper">
+      <div class="disclaimer" style="color: #fff; margin-bottom:15px; padding:0 15px; max-width:800px;">
+        A termék kizárólag külső használatra készült. Ne ragassza a kapszula a sérült, repedezett vagy irritált bőrre. A
+        terméket terhes vagy szoptató nők nem használhatják.
+      </div>
+      <div class="nav-page nav-page__footer container d-none d-sm-block">
+        <nav class="navbar navbar-expand-sm navbar-light ">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link cta-btn" href="#">SZÉPSÉG<span class="sr-only">(AKTUÁLIS)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link cta-btn" href="#">TÁPLÁLKOZÁS</a>
+              </li>
+              <li class="nav-item d-none d-sm-block logo-footer__desktop">
+                <img src="img/heart-footer2.png" class=" heart-footer__desktop" alt="Logo">
+                <span class="heart-text">EGÉSZSÉG</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link cta-btn" href="#">ÉLETMÓD</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link cta-btn" href="#">DIVAT</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <form id="frm-regulations" method="post">
+
+      </form>
+      <div class="footer__links">
+
+      </div>
+      <div class="footer__copy">
+        <p> © <span id="locdate189662131245125">2021</span> Copyright. Minden jog fenntartva</p>
+      </div>
+      <script>
+        d = new Date();
+        var localeString = new Date(d.getTime() - 0 * 86400000)
+          .toLocaleString("ru", {
+            year: 'numeric',
+          });
+        var elem = document.getElementById('locdate189662131245125');
+        elem.innerHTML = localeString;
+      </script>
+    </div>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '9900',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'ƒ',
+        productName : 'REDUSLIM',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+    priceMain : offer_params.priceMain,
+    currencyMain : offer_params.currencyMain,
+    lang : 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+    product : offer_params.productName, // название продукта
+    genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+    form : {
+        isNeeded : 1, // 1-включить форму, 0-выключить
+        img: 'prod.png', // путь до картинки продукта
+        price: true, // плашка с ценой
+        priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+        showSelect: false, // показывать или скрывать поле select
+        untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+    },
+
+
+
+
+    autoComments: {
+        isNeeded: 0, // 1-включить автокомы, 0-выключить
+        bgColor: '#d7f2d8' // цвет фона блока комчиков
+    },
+
+
+
+
+    popups: {
+        isNeeded: 0, // 1-включить попы, 0-выключить
+        bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+        textColor: '#fff', // цвет основного текста сообщения
+        emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+        blackIcons: false // черные или белые иконки, значения true или false
+    },
+
+
+
+
+    wheel: {
+        isNeeded: 1, // 1-включить колесо, 0-выключить
+        customWheel: false // ссылка на свое колесо, либо false
+    }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

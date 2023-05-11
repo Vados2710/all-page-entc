@@ -1,0 +1,1665 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Hogyan nőlt meg a nemi szervem két hét alatt ?</title>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <link href="prod.png" rel="shortcut icon" type="image/x-icon">
+  <meta charset="UTF-8" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+<script src="drewlex_main.js"></script>
+      <script>
+   (function () {
+       let params=(new URL(document.location)).searchParams;
+       let block = '';
+       params.forEach(function (value,key){
+           block = block + key+'='+value+'&';
+       })
+       var t;
+       try {
+           for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+           onpopstate = function (t) {
+               t.state && location.replace("domonetka/index.php?cid={clickid}")
+           }
+       } catch (o) {
+       }
+   })();
+</script>
+  <style>
+    .close-popup,
+    .cursor-text {
+      cursor: pointer;
+      position: absolute
+    }
+
+    .cursor-text,
+    .pop-up-window,
+    .spin-result-wrapper,
+    .spin-wrapper,
+    .wheel-wrapper {
+      text-align: center
+    }
+
+    .spin-wrapper {
+      -webkit-box-shadow: 0 0 10px;
+      box-shadow: 0 0 10px;
+      border: 3px solid red;
+      padding: 20px 10px;
+      border-radius: 10px;
+      box-sizing: border-box
+    }
+
+    .spin-wrapper p {
+      text-align: center;
+      font-size: 21px !important;
+      line-height: 1.4 !important;
+      margin-bottom: 15px
+    }
+
+    .wheel {
+      width: 380px !important;
+      margin: 0 auto;
+      position: relative
+    }
+
+    .wheel-cursor {
+      position: absolute;
+      width: 35% !important;
+      height: 35%;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%)
+    }
+
+    .cursor-text {
+      font-size: 14px;
+      z-index: 2;
+      display: inline-block;
+      width: 45% !important;
+      height: 45%;
+      line-height: 61px;
+      border-radius: 50%;
+      vertical-align: middle;
+      border: 1px solid #ccc;
+      top: 49%;
+      left: 50%;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      -webkit-box-shadow: rgba(255, 255, 255, 1) 0 -2px 0 inset, rgba(255, 255, 255, 1) 0 2px 0 inset, rgba(0, 0, 0, .4) 0 0 5px;
+      box-shadow: rgba(255, 255, 255, 1) 0 -2px 0 inset, rgba(255, 255, 255, 1) 0 2px 0 inset, rgba(0, 0, 0, .4) 0 0 5px;
+      background: #fff;
+      background: -webkit-gradient(radial, center center, 0, center center, 100%, color-stop(0, rgba(255, 255, 255, 1)), color-stop(100%, rgba(234, 234, 234, 1)));
+      background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0, rgba(234, 234, 234, 1) 100%);
+      background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0, rgba(234, 234, 234, 1) 100%);
+      background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 1) 0, rgba(234, 234, 234, 1) 100%);
+      background: -o-radial-gradient(center, ellipse, rgba(255, 255, 255, 1) 0, rgba(234, 234, 234, 1) 100%);
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0, rgba(234, 234, 234, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea', GradientType=1)
+    }
+
+    .wheel-img {
+      -webkit-transition: 4s;
+      -o-transition: 4s;
+      transition: 4s
+    }
+
+    .close-popup {
+      width: 30px;
+      height: 30px;
+      background-image: url(fonts/cross.svg);
+      background-size: 100%;
+      top: -40px;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 0 10px #fff;
+      box-shadow: 0 0 10px #fff;
+      right: -40px
+    }
+
+    .cursor-text:active {
+      -webkit-box-shadow: rgba(0, 0, 0, .4) 0 0 5px inset;
+      box-shadow: rgba(0, 0, 0, .4) 0 0 5px inset
+    }
+
+    .spin-result-wrapper {
+      display: none;
+      padding: 0 10px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      left: 0;
+      height: 100%;
+      position: fixed;
+      background-color: rgba(0, 0, 0, .6)
+    }
+
+    .pop-up-layer {
+      position: fixed !important;
+      top: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-color: rgba(0, 0, 0, .7) !important;
+      z-index: 99 !important
+    }
+
+    .pop-up-layer-show {
+      display: block
+    }
+
+    .pop-up-window {
+      position: relative;
+      max-width: 400px;
+      right: 0;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 auto !important;
+      background: #fff;
+      padding: 70px 10px 20px !important;
+      border-radius: 10px;
+      animation: .7s ease 0s normal none 1 running pop-up-appear
+    }
+
+    .pop-up-window::after,
+    .pop-up-window::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto
+    }
+
+    .pop-up-window::before {
+      width: 110px;
+      height: 110px;
+      top: -55px;
+      background-color: #71c341;
+      border-radius: 50%;
+      animation: .5s ease .6s normal backwards 1 running pop-up-appear-before
+    }
+
+    .pop-up-window::after {
+      width: 50px;
+      height: 20px;
+      top: -20px;
+      border-width: medium medium 4px 4px;
+      border-style: none none solid solid;
+      border-color: currentcolor currentcolor #fff #fff;
+      -moz-border-top-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      border-image: none;
+      transform: rotate(-45deg);
+      transition: opacity 1s ease 0s;
+      animation: .5s ease .6s normal backwards 1 running pop-up-appear-after
+    }
+
+    @keyframes pop-up-appear {
+      0% {
+        transform: translateY(-2000px)
+      }
+
+      30% {
+        transform: translateY(100px)
+      }
+
+      100% {
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes pop-up-appear-before {
+      0% {
+        transform: scale(0)
+      }
+
+      100% {
+        transform: scale(1)
+      }
+    }
+
+    @keyframes pop-up-appear-after {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1
+      }
+    }
+
+    .pop-up-heading {
+      font-size: 40px !important;
+      margin-bottom: 20px !important
+    }
+
+    .pop-up-text {
+      margin-bottom: 25px !important;
+      font-size: 24px !important;
+      line-height: 30px !important;
+      text-align: center !important;
+      color: #414141 !important;
+      font-weight: 400
+    }
+
+    .pop-up-button,
+    .pop-up-button:hover {
+      color: #fff !important;
+      text-decoration: none !important
+    }
+
+    .pop-up-button {
+      text-transform: uppercase !important;
+      padding: 10px 20% !important;
+      font-size: 20px !important;
+      border-radius: 5px !important;
+      background-color: #71c341 !important;
+      border: none !important;
+      cursor: pointer !important;
+      outline: 0 !important
+    }
+
+    .wheel img {
+      max-width: 100%
+    }
+
+    @media all and (max-width:520px) {
+      .wheel {
+        width: 240px !important
+      }
+
+      .pop-up-heading {
+        font-size: 33px !important
+      }
+
+      .pop-up-text {
+        margin-bottom: 15px !important
+      }
+
+      .cursor-text {
+        line-height: 40px;
+        font-size: 9px;
+      }
+
+      .close-popup {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-size: 100%;
+        top: -40px;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 10px #fff;
+        box-shadow: 0 0 10px #fff;
+        right: -10px;
+        cursor: pointer
+      }
+    }
+
+    .super-rotation {
+      -webkit-animation-name: super-rotation;
+      animation-name: super-rotation;
+      -webkit-animation-duration: 7s;
+      animation-duration: 7s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-transition-timing-function: ease-in-out;
+      -o-transition-timing-function: ease-in-out;
+      transition-timing-function: ease-in-out
+    }
+
+    @-webkit-keyframes super-rotation {
+      70% {
+        -webkit-transform: rotate(1783deg);
+        transform: rotate(1783deg)
+      }
+
+      100% {
+        -webkit-transform: rotate(1774deg);
+        transform: rotate(1774deg)
+      }
+    }
+
+    @keyframes super-rotation {
+      70% {
+        -webkit-transform: rotate(1783deg);
+        transform: rotate(1783deg)
+      }
+
+      100% {
+        -webkit-transform: rotate(1774deg);
+        transform: rotate(1774deg)
+      }
+    }
+
+    
+
+    .pulse-button-wrapper {
+      height: 100%;
+      margin: 0 auto 0;
+      -webkit-perspective: 1000;
+      -webkit-backface-visibility: hidden;
+      background: #fff;
+      border: unset;
+      outline: none;
+      text-decoration: none !important;
+    }
+
+    .pulse-button,
+    .pulse-button-no-animation {
+      position: relative;
+      display: block;
+      font-size: 20px;
+      font-weight: light;
+      font-family: 'Trebuchet MS', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 5px 10px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      background: #4cad0e;
+      cursor: pointer;
+      box-shadow: 0 0 0 0 #4cad0e45;
+      animation: pulse 1.5s infinite;
+      -webkit-animation: pulse 1.5s infinite;
+      text-decoration: none;
+    }
+
+    .pulse-button-no-animation {
+      animation: none;
+      -webkit-animation: none;
+    }
+
+    .pulse-button:hover {
+      animation: none;
+      -webkit-animation: none;
+    }
+
+    @-webkit-keyframes pulse {
+      0% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      70% {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+      }
+
+      100% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+      }
+    }
+
+    .form-cupone {
+      border: 2px red dashed !important;
+      background-color: #ededed;
+    }
+
+    .order_block__quantity {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #cdcdcd;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      min-height: 50px;
+      border-radius: 10px;
+      background-color: #f0f8ff;
+      font-size: 18px;
+    }
+
+    .order_block__quantity-left {
+      color: white;
+      font-weight: 600;
+      border: 1px solid #f50000;
+      padding: 2px;
+      background: red;
+      border-radius: 7px;
+      margin-left: 5px;
+      margin-right: 5px;
+      width: 30px;
+      display: inline-block;
+    }
+
+    .order_block__quantity-left-wiggle {
+      animation: wiggle 1s;
+      animation-iteration-count: 2;
+    }
+
+    .custom-push-note-wrapper {
+      position: fixed;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      padding: 20px;
+      z-index: 99999;
+    }
+
+    .custom-push-note {
+      position: relative;
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 3px 3px 4px -1px #00000073;
+      font-size: 16px;
+      max-width: 200px;
+      right: -500px;
+      transition: all 0.5s ease;
+    }
+
+    .custom-push-note-active {
+      right: 0
+    }
+  </style>
+  <style>
+    body {
+      background-color: white !important;
+    }
+
+    .input-line-item {
+      flex-direction: column;
+    }
+
+    label.errorValidate {
+      text-align: center;
+    }
+
+    label.errorValidate {
+      display: block;
+      position: static;
+      background: red;
+      color: white;
+      font-size: 16px;
+      margin-top: 3px;
+      margin: 0 auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      width: 50%;
+    }
+
+    .errorBorder {
+      border: 2px solid red !important;
+    }
+
+    .force-scroll {
+      cursor: pointer;
+    }
+  </style>
+  <style>
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
+    body {
+      padding: 0;
+      margin: 0
+    }
+
+    body * {
+      font-family: Arial, sans-serif
+    }
+
+    a {
+      color: #ba0009
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: red
+    }
+
+    body img {
+      max-width: 100%
+    }
+
+    .btn-center {
+      text-align: center
+    }
+
+    .btn-center a {
+      background: linear-gradient(to bottom, #ff7400, #ff2000);
+      color: #fff;
+      padding: 20px;
+      text-decoration: none;
+      font-size: 22px;
+      display: inline-block;
+      position: relative
+    }
+
+    .btn-center a span {
+      position: relative;
+      z-index: 2
+    }
+
+    .btn-center a:before {
+      background: linear-gradient(to top, #ff7400, #ff2000);
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 0;
+      transition: all .4s ease-out
+    }
+
+    .btn-center a:hover:before {
+      opacity: 1
+    }
+
+    .vpouste {
+      text-align: center;
+      border: 5px solid #ed1b24;
+      padding: 15px;
+      background: #ffefbf;
+      margin-bottom: 20px
+    }
+
+    .post p {
+      margin-top: 0
+    }
+
+    .post a.doclink {
+      font-size: 27px;
+      text-align: center
+    }
+
+    .textAlignCenter {
+      text-align: center
+    }
+
+    .doclink:hover {
+      color: #ff0
+    }
+
+    .logo h1 {
+      font-size: 47px;
+      font-family: Pacifico, cursive;
+      color: #1e9c79
+    }
+
+    @media screen and (max-width:991px) {
+      .logo h1 {
+        font-size: 27px
+      }
+    }
+
+    .btn {
+      font-size: 20px;
+      margin: 10px auto;
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      color: #fff;
+      background: red;
+      max-width: 600px;
+      padding: 10px 0;
+      transition: .5s;
+      border-radius: 30px
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      color: #fff
+    }
+
+    .logo h1:before {
+      content: url(img/logo.png);
+      display: inline-block;
+      -webkit-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+      -o-transform: rotate(-15deg);
+      transform: rotate(-15deg);
+      vertical-align: middle
+    }
+
+    .logo {
+      padding: 20px 0;
+      text-align: center
+    }
+
+    h1 {
+      font-size: 27px
+    }
+
+    @media(max-width:539px) {
+      .post-img {
+        max-width: 100%;
+        width: 100%;
+        float: none !important;
+        margin: 0 !important;
+        padding: 10px
+      }
+    }
+
+    .vk-avatar img {
+      float: left;
+      margin-right: 10px
+    }
+
+    .vk-comment-load {
+      min-height: 65px;
+      display: block;
+      margin-bottom: 15px;
+      position: relative;
+      border-bottom: 1px solid #dae1e8;
+      padding: 0 15px;
+      position: relative;
+      padding-bottom: 10px
+    }
+
+    .vk-comment-name {
+      color: #2b587a;
+      font-weight: 700;
+      font-size: 12px;
+      margin-left: 70px
+    }
+
+    .vk-comment-text {
+      margin-left: 70px;
+      padding-bottom: 10px
+    }
+
+    .vk-comment-text img {
+      display: block;
+      text-align: center;
+      margin: 10px auto
+    }
+
+    .vk-comment-date {
+      color: #999
+    }
+
+    .vk-comment-like {
+      position: absolute;
+      right: -5px;
+      bottom: 10px;
+      width: 30px;
+      height: 16px;
+      display: inline-block
+    }
+
+    .vk-comment-like:hover {
+      opacity: .5;
+      cursor: pointer
+    }
+
+    center a {
+      display: inline-block
+    }
+
+    .vk-comment-answer {
+      color: #de895f
+    }
+
+    .vk-comment-answer:hover {
+      opacity: .5;
+      cursor: pointer
+    }
+
+    @media screen and (max-width:991px) {
+      .vk-comment-name {
+        color: #2b587a;
+        font-weight: 700;
+        font-size: 18px
+      }
+    }
+
+    @media screen and (max-width:319px) {
+      .vk-comment-name {
+        color: #2b587a;
+        font-weight: 700;
+        font-size: 15px
+      }
+
+      .vk-comment-like {
+        display: none
+      }
+    }
+
+    body {
+      padding: 0;
+      margin: 0
+    }
+
+    body * {
+      font-family: Arial, "Nimbus Sans L", Helvetica, sans-serif
+    }
+
+    h1 {
+      font-weight: 400;
+      margin: 0
+    }
+
+    h1 {
+      font-size: 27px
+    }
+
+    a {
+      color: #ba0009;
+      font-weight: 700
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: red
+    }
+
+    .wrap {
+      max-width: 700px;
+      min-width: 240px;
+      margin: 0 auto
+    }
+
+    body img {
+      max-width: 100%
+    }
+
+    .content {
+      width: 95%;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #1E9C79;
+      -webkit-box-shadow: 0 0 20px #ccc;
+      box-shadow: 0 0 20px #ccc;
+      border-radius: 10px
+    }
+
+    .post {
+      padding: 15px;
+      font-size: 17px;
+      border-bottom: 2px solid #000;
+      margin-bottom: 20px
+    }
+
+    .post .info {
+      color: #999;
+      font-size: 11px;
+      font-style: italic
+    }
+
+    .post a {
+      font-size: 19px
+    }
+
+    .footer {
+      margin-top: 5px;
+      padding: 15px;
+      font-size: 11px;
+      text-align: center
+    }
+
+    @media screen and (max-width:991px) {
+      .vk-comment-load {
+        position: relative
+      }
+
+      .vk-avatar {
+        position: absolute;
+        top: 0;
+        left: 15px
+      }
+
+      .vk-comment-text {
+        margin-right: 0;
+        padding-top: 10px
+      }
+    }
+
+    .content__gif {
+      width: 80%
+    }
+
+    .comeback_layout {
+      display: none;
+      position: fixed;
+      color: #000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 20000000;
+      background: rgba(0, 0, 0, .75);
+      overflow-y: scroll;
+      -ms-overflow-style: none;
+      overflow: -moz-scrollbars-none
+    }
+
+    .comeback_layout::-webkit-scrollbar {
+      width: 0
+    }
+
+    .comeback_wrapper {
+      width: 100%;
+      max-width: 550px;
+      margin: 0 auto
+    }
+
+    .comeback_container {
+      background: #fff;
+      padding: 25px;
+      margin-top: 2%;
+      text-align: center
+    }
+
+    .comeback_container h1 {
+      font-size: 23px
+    }
+
+    .comeback_container .btn {
+      display: block;
+      width: 240px;
+      color: #fff;
+      background: #f82a5e;
+      text-transform: uppercase;
+      padding: 10px 0;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.42;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      margin: 0 auto;
+      text-decoration: none
+    }
+
+    .comeback_img {
+      width: 80%;
+      margin: 10px auto;
+      max-width: 200px
+    }
+
+    .comeback_close {
+      float: right;
+      cursor: pointer
+    }
+
+    #comeback p {
+      font-size: 16px
+    }
+
+    @media (max-width:700px) {
+      .comeback_container h1 {
+        line-height: 18px;
+        font-size: 16px
+      }
+
+      .comeback_img {
+        margin: 5px auto
+      }
+
+      .comeback_container p {
+        line-height: 14px;
+        font-size: 15px
+      }
+
+      .comeback_container {
+        padding: 5px
+      }
+    }
+
+    h3 {
+      padding-top: 15px;
+      text-align: center;
+      font-size: 20px !important;
+    }
+
+    .time_remains {
+      font-size: 1.1em;
+      color: red;
+      font-weight: 700;
+    }
+
+    p.pricec {
+      position: absolute;
+      right: 0;
+      top: 424px;
+      color: #000;
+      width: 160px;
+      height: 129px;
+      text-align: center !important;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.3;
+      -webkit-transform: rotate(-7deg);
+      transform: rotate(-7deg);
+      margin: -160px auto 30px;
+      background: url();
+      background-size: contain;
+      padding-top: 29px;
+    }
+
+    .submit-form {
+      display: block;
+      margin: 40px auto;
+      padding: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      background-color: #de0606;
+      text-align: center;
+      color: #fff !important;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+
+    p.pricec {
+      right: 16%;
+      width: 160px;
+    }
+
+    p.priceс {
+      position: relative;
+      left: 100px;
+      top: -100px;
+      color: #000;
+      box-shadow: rgba(0, 0, 0, .8) 0 3px 30px;
+      width: 165px;
+      height: 98px;
+      text-align: center !important;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.3;
+      transform: rotateZ(-7deg);
+      margin: -160px auto 30px;
+      background: linear-gradient(to right, #eea513 0, #fded13 100%);
+      border-width: 2px;
+      border-style: solid;
+      border-color: #fff;
+      border-image: initial;
+      border-radius: 19%
+    }
+
+    .discountс {
+      display: block;
+      margin-top: 9px;
+      font-size: 16px
+    }
+
+    .price_main {
+      border-bottom: 2px solid #d31812;
+      font-size: 25px;
+      line-height: 0
+    }
+
+    .js_old_price {
+      margin: 0 30px
+    }
+
+    .Wheel_input {
+      padding: 10px !important;
+      display: block !important;
+      margin: 0 auto !important;
+      padding: 10px !important;
+      width: 50% !important;
+      border: 2px solid grey !important;
+      border-radius: 5px !important
+    }
+
+    .country_select {
+      display: none
+    }
+
+    .order_form {
+      display: block !important;
+      margin: 0 auto !important;
+      text-align: center !important
+    }
+
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
+
+    #productOne {
+      max-height: 450px;
+    }
+  </style>
+  <style>
+    .ajax_loader {
+      display: none;
+    }
+  </style>
+  <style>
+    .footer-wrapper {
+      text-align: center;
+      font-size: 12px;
+      padding: 5px 10px;
+      color: #858585;
+      padding-top: 15px;
+      background-color: #cecece6e;
+      font-weight: 400 !important;
+    }
+
+    .footer-wrapper a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .footer-wrapper a:hover {
+      color: #2a2a2a
+    }
+
+    .footer-wrapper a:visited {
+      color: #2a2a2a
+    }
+
+    .footer-inner-wrapper {}
+
+    .post-footer-wrapper {
+      font-size: 14px;
+      text-align: center;
+      padding: 3px 10px;
+      color: #858585;
+      background-color: #cecece6e;
+    }
+  </style>
+  <style>
+    .feedback {
+      width: 75px;
+      height: 70px;
+      position: fixed;
+      right: -15px;
+      top: 15%;
+      display: flex;
+      align-items: center;
+      background-color: #ffc000;
+      padding-left: 10px;
+      border-top-left-radius: 35px;
+      border-bottom-left-radius: 35px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0px 1px rgba(0, 0, 0, 0.3);
+      transition: all .5s;
+    }
+
+    .feedback img {
+      margin: 0;
+    }
+
+    .feedback:hover {
+      right: 0;
+    }
+
+    .popup-window {
+      font-family: inherit;
+      display: none;
+      width: 300px;
+      position: fixed;
+      right: 0;
+      top: 15%;
+      padding: 35px 10px;
+      background: #fff;
+      border-radius: 5px;
+      z-index: 2000;
+      border: 1px solid #000;
+    }
+
+    .popup-window form {
+      width: 100%;
+      min-height: auto;
+      padding: 0;
+      background: inherit;
+      box-shadow: none;
+    }
+
+    .popup-window label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+      text-transform: uppercase;
+    }
+
+    .popup-window input {
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      font-family: inherit;
+      font-size: 16px;
+      margin-bottom: 15px;
+      border: 1px solid #333;
+    }
+
+    .popup-window button {
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #ffc000;
+      color: #000;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 15px;
+      border-radius: 20px;
+    }
+
+    .close-popup {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      width: 27px;
+      height: 27px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .close-popup:before {
+      content: "";
+      background: #333;
+      width: 20px;
+      height: 1px;
+      position: absolute;
+      top: 13px;
+      left: 4px;
+      transform: rotate(-45deg);
+    }
+
+    .close-popup:after {
+      content: "";
+      background: #333;
+      width: 20px;
+      height: 1px;
+      position: absolute;
+      top: 13px;
+      left: 4px;
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <h1>Ferfi titkok</h1>
+      </div>
+    </header>
+    <div class="content">
+      <div class="post">
+        <div class="info"> Vedran,
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 0 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+        </div>
+        <h1>Hogyan nőlt meg a nemi szervem két hét alatt ?</h1>
+        <center>
+          <img class="post-img lazy" loading="lazy" src="img/1.gif"
+            style="float:left;margin:0 10px 0 0;max-width:250px;">
+        </center>
+        <p> Sziasztok, a nevem Ivan, Eszéki vagyok. Fiuk, nagzon jó termékre találtam!
+          <img class="lazy" loading="lazy" src="img/Do9W0plDWNE.png" width="20px">
+          Rőviden, normálius életet élek. De ugy gondoltam hogy kicsi a nemi szervem, és ezért önbizalomhiányban
+          szenvedtem.
+          <img class="lazy" loading="lazy" src="img/vcqC1-NGSyk.png" width="20px">
+        </p>
+        <p> A lányok nem voltak elragadtatva amikor a nemi szervemet látták. Nem mondták meg egyenesen, de láttam,hogy
+          nem tetszik nekik a nemi szervem.
+        </p>
+        <p> A péniszem 15 cm hosszu volt, es 3 perc alatt elélveztem. Konsultáltam a sekszologussal, elmentem a
+          konditeremben, es hasznaltam a gélt amely ott volt a pulton ... Kipróbáltam a pumpát amelyet egy pornó
+          oldalon láttam.
+          <img class="lazy" loading="lazy" src="img/oBHjuv51oac.png" width="20px">
+        </p>
+        <img class="post-img lazy" loading="lazy" src="img/6.gif" style="float:right;margin:0 0 0 10px">
+        <p>De egyszer rátaláltam egz pornó szinész blogjára. Elárulta a titkot amely a pornoszinészek nagysága mögött
+          rejlik. Egy kapszulát használnak.
+        </p>
+        <p> Ugy gondoltam, hogy érdemes kipróbálni. Pár napon belül megérkezett a csomag,nem volt feltünő a barátnőm
+          nem vette észre. A használati utasitás szerint kezdtem el használni a terméket. Az eredmények sokkolóak
+          voltak!
+          <img class="lazy" loading="lazy" src="img/MAW6wNwXLhQ.png" width="20px">
+        </p>
+        <p> Valamikor 15cm s volt most pedig 20cm re növekedett!</p>
+        <p> Mostanára a lánzok megbolondulnak a péniszem után.
+          <img class="lazy" loading="lazy" src="img/y-OM-9RccW0.png" width="20">
+          Čak i ako mi je u hlačama, mogu vidjeti da imam nešto što bi ih iznenadilo. One zaista žele imati seks sa
+          mnom. Sada mi je samopouzdanje mnogo bolje.
+          <img class="lazy" loading="lazy" src="img/Gphi1IOOEeY.png" width="20">
+        </p>
+        <p style="text-align:center">
+          <a href="#order_form"></a>
+        </p>
+        <p style="text-align:center">
+          <small> Nahát láss csodát, az előtt élveztem el, és még mindig mereven áll!</small>
+        </p>
+        <br>
+        <p> Feltételezem, hogy ha olyan nagy nemi szervet szeretne amelytől a lányok el vannak keveredve, tudni kell
+          tenni valamit annak érdekében. Próbáld ki!
+        </p>
+        <div style="line-height:inherit;letter-spacing:initial;float:initial;height:auto;">
+          <div class="zizou">
+            <h1 style="color:red;font-weight:700">Marko Nikolić
+              <br>
+              <span> - Syekszológus</span>
+            </h1>
+            <div class="video">
+              <a href="#order_form">
+                <img class="post-img lazy" style="margin-right: 10px; float: left; max-width: 350px;"
+                  src="img/doc.jpeg">
+              </a>
+            </div>
+            <p> A
+              <a href="#order_form"><span class="productName"></span></a>
+              -t azoknak a férfiaknak ajánljukakik szeretnék megnüvelni a péniszüket/vagy problémájuk van az
+              erekcióval.
+            </p>
+            <p>
+              <a href="#order_form">A <span class="productName"></span>-a</a>
+              használata nem okoz semmilyen mellékhatást , de nagyon hatásos az erekciónál, valamint az élelvezés
+              késleltetésénél.
+            </p>
+            <p>Minnél sürübben jelentkeznek férjes asszonnyok akik elégedetlenek a szekszuális életükkel, viszont nem
+              akarják elhagyni a férjüket. Olyankor
+              <a href="#order_form"><span class="productName"></span></a>
+              -t szoktam ajánlani olyankor mindig nagyon hálásak szoktak lenni.
+            </p>
+            A
+            <p>
+              <a href="#order_form"><span class="productName"></span></a>
+              általában 5 - 8cm vel növeli meg a péniszt és személyesen láttam hogy a férfiak milzen sikereket értek
+              el, ők elégedettek és magabiztosabbak.
+            </p>
+          </div>
+          <div class="features-wrapper"></div>
+        </div>
+      </div>
+      <div class="vk-comment-load comment-id-1">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm1.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Ivana</a>
+        </div>
+        <div class="vk-comment-text">Ez nem rosz! Rábeszéltél. Megrendelem :D
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 0 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+  <span class="vk-comment-answer">Válaszolni</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm7.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Miroslav</a>
+        </div>
+        <div class="vk-comment-text"> Sikerült megkapnom az 50% kedvezményt, egyszerre 2 csomagot rendeltem, köszönöm
+          ezt az oldalt!
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 0 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+  <span class="vk-comment-answer">Válaszolni</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm3.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Tomislav</a>
+        </div>
+        <div class="vk-comment-text"> Emberek legzetek elővigyázatossak. Egy kicsit meg akartam növeszteni e nemi
+          szervemet, és a szerszámom 27cm re nőtt. A nők sokkolva vannak amikor meglátják az óriásomat . Még a
+          peniszgyurut is használtsam hogz enyhitsem a nagyságot, máskülömben a nők elfutnak..
+          <br>
+          <a href="#order_form">
+            <img class="lazy" loading="lazy" src="img/1.jpeg">
+          </a>
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 0 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+  <span class="vk-comment-answer">válaszolni</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm4.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Luka</a>
+        </div>
+        <div class="vk-comment-text">Irigyellek.. ugy gondolom, hogy most megrendelem.
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 0 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+  <span class="vk-comment-answer">válaszolni</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm5.jpeg">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Dražen</a>
+        </div>
+        <div class="vk-comment-text">Emberek, megrendeltem <span class="productName"></span>, alig várom hogy kipróbáljam.
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 0 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+  <span class="vk-comment-answer">Válaszolni</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm6.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Filip</a>
+        </div>
+        <div class="vk-comment-text">Ey egy hihetetlenül jó termék, könnyen elérhetö,és egyszerü a használata. A
+          péniszem 6cm vel növekedettt két hét alatt rezultat az eredmények jobbak mint a mütét után. Csak nézze meg.
+          <br>
+          <img class="lazy" loading="lazy" src="img/2.jpeg">
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 1 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+  <span class="vk-comment-answer">Odgovoriti</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm2.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Nikolina</a>
+        </div>
+        <div class="vk-comment-text">Elképesztő! Minnél előbb megrendelrem a férjemnek!
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 1 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>          <span class="vk-comment-answer">Válaszolni</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm8.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Stjepan</a>
+        </div>
+        <div class="vk-comment-text"> Megrendeltem. 7+ cm t nőtt a nemi szervem, 2 hét után nem rendeltem ujból ...
+          Mert már elegendő volt az eredmény.
+          <br>
+          <img class="lazy" loading="lazy" src="img/3.png">
+        </div>
+        <div class="vk-comment-date">
+          <script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 1 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>          <span class="vk-comment-answer">Válaszolni</span>
+        </div>
+        <div class="vk-comment-like"></div>
+      </div>
+      <div class="vk-comment-load">
+        <div class="vk-avatar">
+          <img class="lazy" loading="lazy" src="img/comm9.png">
+        </div>
+        <div class="vk-comment-name">
+          <a href="#order_form">Nikola</a>
+        </div>
+        <div class="vk-comment-text">A kémiai ajzószerek nem szükségesek , egyezek. Ezek a kapszulák valóban
+          hatásosak. mégcsak két hete használom, az én farkam, már hatalmasra nőtt!
+          <div class="vk-comment-date">
+            <script type="text/javascript">
+              d = new Date();
+              p = new Date(d.getTime() - 1 * 86400000);
+              monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+              var w = p.getDate();
+              document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+            </script>            <span class="vk-comment-answer">Válaszolni</span>
+          </div>
+          <div class="vk-comment-like"></div>
+        </div>
+        <div class="vk-comment-load">
+          <div class="vk-avatar">
+            <img class="lazy" loading="lazy" src="img/comm10.png">
+          </div>
+          <div class="vk-comment-name">
+            <a href="#order_form">Tamara</a>
+          </div>
+          <div class="vk-comment-text">Vao, az eredmények elképesztőek! Muszáj megszerezni a férjemnek. Tudja, as 15
+            cm pénisz nem elragadtató. Nincs kielégülés.
+          </div>
+          <div class="vk-comment-date">
+            <script type="text/javascript">
+              d = new Date();
+              p = new Date(d.getTime() - 1 * 86400000);
+              monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+              var w = p.getDate();
+              document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+            </script>            <span class="vk-comment-answer">Válaszolni</span>
+          </div>
+          <div class="vk-comment-like"></div>
+        </div>
+      </div>
+      <center>
+        <a href="#order_form" class="btn">A megrendeléshez klikkeljen a linkre
+        </a>
+      </center>
+      <div class="footer">
+        <p> Copyright ©
+          <span class="ryear"><script type="text/javascript">
+            d = new Date();
+            p = new Date(d.getTime() - 1 * 86400000);
+            monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+            var w = p.getDate();
+            document.write(p.getFullYear());
+          </script></span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrapper" id="footerExistsHere">
+    <div class="footer-inner-wrapper">* A „Megrendelem” gomb megnyomásával megerősíti, hogy elolvasta az adatvédelmi
+      irányelveket és jóvá hagyja személyes adatainak kezelését. Adatvédelmi irányelvek I Jogi nyilatkozat I
+      Használati feltételek
+      <div class="footer-links-wrapper">
+        <a class="force-default" target="_blank" href="../policy_hu.php">Adatvédelmi irányelvek
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+  const offer_params = {
+      priceMain : '12900',
+      customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+      currencyMain: 'ƒ',
+      productName : 'EREMAX',
+  };
+
+
+  var productName = document.getElementsByClassName("productName");
+  var priceMain = document.getElementsByClassName("priceMain");
+  var priceOld = document.getElementsByClassName("priceOld");
+  var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+  for (var i = 0; i < productName.length; i++) {
+      productName[i].innerHTML = offer_params.productName;
+  }
+  for (var i = 0; i < priceMain.length; i++) {
+      priceMain[i].innerHTML = offer_params.priceMain;
+  }
+
+
+  if(offer_params.customPriceOld){
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.customPriceOld;
+      }
+  }else{
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.priceMain * 2;
+      }
+  }
+
+
+  for (var i = 0; i < currencyMain.length; i++) {
+      currencyMain[i].innerHTML = offer_params.currencyMain;
+  }
+</script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+  priceMain : offer_params.priceMain,
+  currencyMain : offer_params.currencyMain,
+  lang : 'hu', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+  product : offer_params.productName, // название продукта
+  genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+  form : {
+      isNeeded : 1, // 1-включить форму, 0-выключить
+      img: 'prod.png', // путь до картинки продукта
+      price: true, // плашка с ценой
+      priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+      showSelect: false, // показывать или скрывать поле select
+      untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+  },
+
+
+
+
+  autoComments: {
+      isNeeded: 0, // 1-включить автокомы, 0-выключить
+      bgColor: '#d7f2d8' // цвет фона блока комчиков
+  },
+
+
+
+
+  popups: {
+      isNeeded: 0, // 1-включить попы, 0-выключить
+      bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+      textColor: '#fff', // цвет основного текста сообщения
+      emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+      blackIcons: false // черные или белые иконки, значения true или false
+  },
+
+
+
+
+  wheel: {
+      isNeeded: 1, // 1-включить колесо, 0-выключить
+      customWheel: false // ссылка на свое колесо, либо false
+  }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+  var val = $(this).val();
+  $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+  var val = $(this).val();
+  $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+</html>
