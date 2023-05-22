@@ -1,0 +1,26 @@
+var URL_PATH = ''; // katalog startowy strony
+var promo_page_url = location.protocol + '//' + location.host + URL_PATH + '/zaczekaj.php';
+
+var clicked = 0;
+
+if (typeof history.pushState === 'function') {
+    history.pushState("goback", null, null);
+    
+    window.onpopstate = function() {
+        if (clicked === 0){
+            history.pushState('newgoback', null, null);
+            window.location.href = promo_page_url;
+            clicked++;
+        }
+        else if (clicked === 1) {
+            history.pushState('newgoback', null, null);
+            window.history.go(-1);
+        }
+    };
+}
+
+function promotion() {
+    setTimeout(function() {
+        window.open(promo_page_url, '_self', 'false');
+    }, 50);
+}

@@ -1,0 +1,1475 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Medportal</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+	<script src="drewlex_main.js"></script>
+	<script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+	</script>
+
+
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="assets/index.min.css" media="all">
+	<link href="assets/css.css" rel="stylesheet">
+	<script src="assets/dtime.js"></script>
+	<!-- <link rel="shortcut icon" href="https://t.yawninfprl.ru/files/img/<span class="productName"></span>-2.png" type="image/x-icon"> -->
+	<style type="text/css">
+		body {
+			font-family: 'PT Sans', sans-serif;
+		}
+
+		.contentBox {
+			line-height: 1.5;
+		}
+
+		.contentBox p {
+			padding-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		.contentBox h1 {
+			line-height: 1.2;
+			margin-top: 20px;
+			margin-bottom: 10px;
+			font-weight: bold;
+			font-size: 27px;
+		}
+
+		.contentBox h2 {
+			line-height: 1.4;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.right-vertical-box {
+			float: right;
+			padding: 10px;
+			width: 270px;
+			background: #f1f1f1;
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+
+		.right-vertical-box img {
+			float: right;
+			margin-bottom: 10px;
+			width: 100%;
+			height: auto;
+		}
+
+		.blue-horizontal-box {
+			width: 96%;
+			padding: 2%;
+			color: #165391;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background: #e5f2ff;
+		}
+
+		.green-horizontal-box {
+			width: 96%;
+			padding: 2%;
+			color: #397b0d;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background: #f1ffe7;
+		}
+
+		.red-horizontal-box {
+			width: 96%;
+			padding: 2%;
+			color: #9f0d0d;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background: #ffeeee;
+		}
+
+		.grey-horizontal-box {
+			width: 96%;
+			padding: 2%;
+			color: #000;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background: #eee;
+			border: 1px solid #ccc;
+		}
+
+		.red-border-horizontal-box {
+			width: 96%;
+			padding: 2%;
+			color: #000;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background: #fff;
+			border: 3px solid red;
+		}
+
+		.grey-shadow-horizontal-box {
+			width: 96%;
+			padding: 2%;
+			color: #000;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background: rgb(204, 204, 204);
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+		}
+
+		.grey-shadow-horizontal-box ul {
+			margin-left: 30px;
+		}
+
+		.left-img-box {
+			float: left;
+			padding: 2%;
+			width: 96%;
+			background: #dadada;
+			color: #000;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.left-img-box p {
+			margin: 0;
+			padding: 0;
+		}
+
+		.left-img-box img {
+			float: left;
+			margin-right: 20px;
+			width: 100%;
+			height: auto;
+			max-width: 350px !important;
+		}
+
+		.censor-box {
+			margin: auto;
+			width: auto;
+			max-width: 400px;
+			background-image: url("https://blogs-info.info/fungostop-blogs/censor.png");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: auto 80%;
+			border: 5px solid red;
+			cursor: pointer;
+		}
+
+		.censor-box img {
+			width: 100%;
+			max-width: 400px;
+			opacity: 0;
+			transition: 0.3s;
+		}
+
+		.censor-box.censor-show {
+			border: 5px solid white;
+		}
+
+		.censor-box.censor-show img {
+			opacity: 1;
+			transition: 0.3s;
+		}
+
+		.block-1 {
+			color: #fff !important;
+			padding: 14px !important;
+			background: rgb(0, 95, 158) none repeat scroll 0% 0% !important;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75) !important;
+			width: 100% !important;
+			box-sizing: border-box !important;
+		}
+
+		.block-7 {
+			box-sizing: border-box !important;
+			border: 3px dashed #eaeaea !important;
+			background: transparent !important;
+			padding: 14px !important;
+			width: 100% !important;
+		}
+
+		.block-2 {
+			background: rgba(3, 224, 0, 0.04) !important;
+			padding: 14px !important;
+			border-radius: 2px !important;
+			border: 4px double rgba(21, 160, 37, 0.32) !important;
+			color: #4a4a4a !important;
+			box-sizing: border-box !important;
+			width: 100% !important;
+		}
+
+		.block-4 {
+			border-left: 5px solid #39b4ff !important;
+			padding: 10px 25px 10px 25px !important;
+			margin: 0 35px !important;
+			color: #39b4ff !important;
+			box-sizing: border-box !important;
+		}
+
+		.block-5 {
+			border-left: 5px solid red !important;
+			padding: 10px !important;
+			width: 100% !important;
+			box-sizing: border-box !important;
+		}
+
+		.block-6 {
+			background: #FFECA6 !important;
+			width: 100% !important;
+			padding: 20px !important;
+			box-sizing: border-box !important;
+		}
+
+		.block-3 {
+			padding: 14px !important;
+			width: 100% !important;
+			border: 1px dotted #e2e2e2 !important;
+			border-right: none !important;
+			color: #3a753a !important;
+			box-sizing: border-box !important;
+			border-radius: 2px !important;
+			background-color: rgb(245, 254, 245) !important;
+			background-image: -webkit-repeating-linear-gradient(0deg, rgb(191, 230, 191) 0%, rgb(245, 254, 245) 100%) !important;
+			background-image: repeating-linear-gradient(90deg, rgb(191, 230, 191) 0%, rgb(245, 254, 245) 100%) !important;
+			background-image: -ms-repeating-linear-gradient(0deg, rgb(191, 230, 191) 0%, rgba(3, 224, 0, 0.04) 100%) !important;
+		}
+
+		.block-8 {
+			box-sizing: border-box !important;
+			box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25) !important;
+			background: linear-gradient(#88bf7a, #5c994c) !important;
+			padding: 20px !important;
+			color: #fff !important;
+			text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+			border-radius: 5px !important;
+		}
+
+		.block-9 {
+			border: 5px double #d09959 !important;
+			padding: 10px !important;
+			background: #fef3d9 !important;
+		}
+
+		.block-10 {
+			box-sizing: border-box !important;
+			background: linear-gradient(#e55151, #bd3838) !important;
+			box-shadow: 0 14px 14px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22) !important;
+			padding: 20px !important;
+			width: 100% !important;
+			color: #fff !important;
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2), -1px 0 0 rgba(0, 0, 0, 0.2), 1px 0 0 rgba(0, 0, 0, 0.2), -1px 0 0 rgba(0, 0, 0, 0.2), 1px 0 0 rgba(0, 0, 0, 0.2), -1px -1px 0 rgba(0, 0, 0, 0.2), 1px -1px 0 rgba(0, 0, 0, 0.2), -1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.2), -1px -1px 0 rgba(0, 0, 0, 0.2), 1px -1px 0 rgba(0, 0, 0, 0.2), -1px 1px 0 rgba(0, 0, 0, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.2);
+			border-radius: 5px !important;
+		}
+
+		.block-12 {
+			background: rgba(189, 61, 77, .04) !important;
+			padding: 20px !important;
+			box-sizing: border-box !important;
+			color: #080808 !important;
+			border: 2px solid !important;
+			border-radius: 5px !important;
+			border-color: #bd3d4d !important;
+			text-shadow: 0 0 0 #616161 !important;
+			text-indent: 0 !important;
+			text-align: left !important;
+		}
+
+		.block-13 {
+			background: rgba(189, 61, 77, 0.07) none repeat scroll 0% 0% !important;
+			width: 100% !important;
+			box-sizing: border-box !important;
+			padding: 20px !important;
+		}
+
+		.block-11 {
+			width: 100% !important;
+			color: #fff !important;
+			text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.35) !important;
+			box-sizing: border-box !important;
+			padding: 20px !important;
+			background: rgba(60, 114, 181, 1) !important;
+			background: -moz-linear-gradient(-45deg, rgba(60, 114, 181, 1) 0%, rgba(123, 159, 204, 1) 100%) !important;
+			background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(60, 114, 181, 1)), color-stop(100%, rgba(123, 159, 204, 1))) !important;
+			background: -webkit-linear-gradient(-45deg, rgba(60, 114, 181, 1) 0%, rgba(123, 159, 204, 1) 100%) !important;
+			background: -o-linear-gradient(-45deg, rgba(60, 114, 181, 1) 0%, rgba(123, 159, 204, 1) 100%) !important;
+			background: -ms-linear-gradient(-45deg, rgba(60, 114, 181, 1) 0%, rgba(123, 159, 204, 1) 100%) !important;
+			background: linear-gradient(135deg, rgba(60, 114, 181, 1) 0%, rgba(123, 159, 204, 1) 100%) !important;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c72b5', endColorstr='#7b9fcc', GradientType=1) !important;
+			font-family: Roboto !important;
+			position: relative !important;
+			border-radius: 5px !important;
+		}
+
+		.block-14 {
+			width: 100% !important;
+			margin: auto !important;
+			max-width: 600px !important;
+			text-align: center !important;
+			background: #f7f7f7 !important;
+			padding-bottom: 10px !important;
+		}
+
+		.block-14 img {
+			width: 100% !important;
+			height: auto !important;
+			margin: 0 !important;
+			margin-bottom: 10px !important;
+		}
+
+		.block-14 p {
+			margin: 0 !important;
+			padding: 0 !important;
+			font-style: italic !important;
+			padding-bottom: 0 !important;
+		}
+
+		#bottom-ads-block {
+			display: flex;
+			flex-direction: column;
+			font-family: open sans, arial;
+			width: 100%;
+			box-sizing: border-box;
+			margin: 10px 0 10px 0;
+			text-align: left;
+		}
+
+		#bottom-ads-block h3 {
+			margin: 0 0 10px 0;
+			padding: 0;
+		}
+
+		#bottom-ads-block .teaser-box {
+			display: inline-flex;
+			width: 100%;
+			height: 100px;
+			margin-bottom: 10px;
+		}
+
+		#bottom-ads-block .teaser-box img {
+			width: auto;
+			height: 100%;
+			margin: 0 !important;
+			margin-right: 7px !important;
+		}
+
+		#bottom-ads-block .teaser-box p {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		p {
+			margin: 0 !important;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4 {
+			border: none !important;
+		}
+
+		.hrefki {
+			color: #0299ff;
+			font-weight: 700;
+		}
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<!-- INTH_SNIPPET_TOP -->
+</head>
+
+<body style="cursor: default;">
+	<div class="all">
+		<div class="b_top"></div>
+		<div class="top"><a href="#" title="На главную" class="vtbadlink logo"> Informacje o Twoim lekarzu </a>
+			<div class="top_icons">
+				<div class="top_ico2"><a href="#" style="text-decoration: none;" class="vtbadlink" title="youtube"><img
+							src="assets/000092_92995e0bcf2381dcab49835471978db7_work.png" alt="youtube" title="youtube"></a><a
+						href="#" style="text-decoration: none;" class="vtbadlink" title="facebook"><img
+							src="assets/000092_c3d9d51928ee50fe525fc10f6c1a6346_work.png" alt="facebook" title="facebook"></a><a
+						href="#" style="text-decoration: none;" class="vtbadlink" title="в контакте"><img
+							src="assets/000092_193fc6d88359f96b0ac78ac9671d6158_work.png" alt="в контакте" title="в контакте"></a><a
+						href="#" style="text-decoration: none;" class="vtbadlink" title="twitter"><img
+							src="assets/000092_b99d256fa544d18f0fdefe289dae32d5_work.png" alt="twitter" title="twitter"></a></div>
+				<div class="top_ico"><a href="#" style="text-decoration: none;" class="vtbadlink" title="Обращения граждан"><img
+							src="assets/000027_54d0fc2860afd425b5fbaf6af02823a1_work.png" alt="Обращения граждан"
+							title="Обращения граждан"></a><a href="#" style="text-decoration: none;" class="vtbadlink"
+						title="Карта сайта"><img src="assets/000027_84c275c97466a32a0328bccb02f8dddb_work.png" alt="Карта сайта"
+							title="Карта сайта"></a><a href="#" style="text-decoration: none;" class="vtbadlink" title="Поиск"><img
+							src="assets/000027_933b76d58fc078f58128fac49a89f36a_work.png" alt="Поиск" title="Поиск"></a></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="menu_line"><span class="menu_line_item"><a class="vtbadlink" href="#">INSTRUKCJE</a></span><span
+				class="menu_line_item"><a class="vtbadlink" href="#">Promocje</a></span><span class="menu_line_item"><a
+					class="vtbadlink" href="#">Wywiad</a></span><span class="menu_line_item"><a class="vtbadlink" href="#">Zdrowy
+					tryb życia</a></span><span class="menu_line_item"><a class="vtbadlink" href="#">Informacje
+					dodatkowe</a></span><span class="menu_line_item"><a class="vtbadlink" href="#">Blogi
+					specjalistyczne</a></span><span class="menu_line_item"><a class="vtbadlink" href="#">Archiwum</a></span></div>
+		<div class="main" id="main">
+			<div class="contentBox">
+				<div>
+					<h1><span style="font-family:Arial,Helvetica,sans-serif">GŁÓWNY LEKARZ: „GRZYBY na paznokciach
+							rozpoczynają proces martwicy paznokcia oraz jego nieprzyjemny zapach . ISTNIEJE SPOSÓB NA
+							ZAPOBIEGANIE TYCH SKUTKÓW, ALE NIE JEST ON DLA WSZYSTKICH.”</span></h1>
+					<div>
+						<div>
+							<div style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><img
+										alt="Кинотеатр в поселке Борисоглебский открыли после реконструкции"
+										src="assets/439-03cc0a8d7c1e82dfd8de04bff3fe2536.jpg" style="max-width:800px; width:100%"></span>
+							</div>
+							<p><strong>Kazimiera Marek: „Gwarantuję, że każda osoba z grzybicą paznokci otrzyma spray,
+									który zapobiega zakażeniom grzybiczym”.</strong></p>
+						</div>
+					</div>
+				</div>
+				<div>
+					<p>Z konferencji prasowej naczelnego lekarza Kazimiery Marek: „Grzyby paznokci dostają się do
+						krwiobiegu i do narządów wewnętrznych, rozpoczynając proces sepsy oraz wyniszcząc nasz
+						organizm”.</p>
+					<h3>Ekskluzywny wywiad z Mariuszem Polakiem, głównym lekarzem: „Dlaczego grzybica paznokci zabija i
+						jak zapobiegać jej rozprzestrzenianiu się, jeśli paznokcie zaczynają już żółknąć?”</h3>
+					<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><img
+								src="assets/352-39aedfe8bc9f5028681776fb44a25ee8.jpg" style="max-width:800px; width:100%"></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Redaktor: Dlaczego uważasz grzybicę
+								paznokci za niebezpieczną chorobę?</strong></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera Marek:</strong> Czy wiesz,
+							ile osób zachorowało w 2020 roku na te przypadłość? W ciągu ostatniego roku ponad 15 000
+							osób zostało zarażonych sepsą. Z tego ponad 7000 przypadków jest spowodowane grzybicą
+							paznokci. To więcej niż połowa. Grzyb na paznokciach dotyka nie tylko paznokci. Wnika do
+							naszego krwiobiegu przez tkanki stopy i jest przenoszona przez ciało. Grzyb dosłownie
+							niszczy ciało od środka, wywierając ogromny nacisk na wszystkie narządy. Jego zarodniki
+							osadzają się w narządach wewnętrznych i zaczynają się tam stopniowo namnażać, powodując ich
+							uszkodzenie. Rozpoczyna się wtedy proces grzybicy narządów wewnętrznych. </span></p>
+					<p>Oznacza to, że każda zarażona osoba jest w zasadzie zarażona od wewnątrz. W każdej chwili może
+						zachorować na sepsę lub niewydolność nerek. Żadna osoba z grzybicą paznokci nie jest bezpieczna.
+						Każde osłabienie układu odpornościowego spowodowane przeziębieniem, nadmiernym wysiłkiem w pracy
+						lub stresem nerwowym może skutkować nieoczekiwanymi konsekwencjami.</p>
+					<div class="block-4"><strong><span style="font-family:Arial,Helvetica,sans-serif">Grzyb na
+								paznokciach jest jedną z głównych przyczyn sepsy.</span></strong></div>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Dlatego uważam grzybicę paznokci za
+							niezwykle niebezpieczną chorobę, która obecnie jest jednym z liderów wśród wszystkich chorób
+							w Polsce. Wszyscy słyszeli o raku i onkologii, ale spójrzmy prawdzie w oczy, 3-4% ludzi ma
+							raka, a prawie każda osoba ma grzybicę paznokci po 40-45 roku życia.</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Redaktor: Dlaczego lekarze nie radzą
+								sobie z chorobą? Musisz ratować ludzi.</strong></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera Marek:&nbsp;</strong>Po
+							pierwsze, ludzie często po prostu nie chodzą do lekarza z grzybicą paznokci, żyjąc w
+							przekonaniu, że nie jest to jakaś niebezpieczna choroba. A jeśli już, to dopiero wtedy, gdy
+							poczują ból...na przykład, zaczynają się zewnętrzne problemy ze stopą lub palcami. Dadzą
+							jakiś preparat, aby zmniejszyć ból i to wszystko. Ale aby usunąć grzyba, konieczne jest
+							ciągłe zajmowanie się leczeniem. Ponadto niewiele osób rozumie konsekwencje infekcji
+							grzybiczej i jej wpływu na narządy wewnętrzne. </span></p>
+					<p style="text-align:center"><span style="font-family:Arial,Helvetica,sans-serif"><img alt=""
+								src="assets/prod-1.png" style="max-width:750px; width:100%"></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Po drugie, w klinikach brakuje personelu. Ci
+							młodzi ludzie nie mają wystarczającego doświadczenia na takie choroby.</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>"Redaktor: Okazuje się, że w kadrze
+								pracowniczej jest duży problem.
+								"</strong></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera Marek:&nbsp;</strong>Nie tylko
+							to jest problemem. Takie produkty są drogie, a nie wszyscy emeryci mogą sobie na nie
+							pozwolić.</span></p>
+					<div class="block-4"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Ludzie nie
+								zwracają uwagi na ten problem i źle o siebie dbają.</strong></span></div>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Wszystkie te czynniki dają następujący
+							wynik. Ludzie nie są leczeni, przez co pogarsza się stan grzybicy paznokcia oraz zatrucia
+							krwi narządów wewnętrznych. Oczywiście istnieją też prywatne przychodnie, ale wiadomo, że to
+							kosztuje, wiele osób nie ma możliwości skorzystania z takich usług.</span>
+					</p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Redaktor: Co w takim razie powinny
+								zrobić osoby, które mają grzybicę paznokci? </strong></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera
+								Marek:&nbsp;</strong>Oczywiście, to też nie jest tak, że my siedzimy bezczynnie. Ale problem
+							z personelem nie zostanie natychmiast rozwiązany. Wszystko zależy od pracy uczelni
+							medycznych. Nie jestem w stanie sam wyszkolić nowych lekarzy. Dlatego nie należy oczekiwać
+							szybkiego rozwiązania co do tego problemu. Co więcej, taka sytuacja występuje nie tylko w
+							naszym kraju. Komunikuję się z kolegami z innych regionów i prawie wszędzie jest taka sama
+							sytuacja.</span></p>
+					<div class="block-4"><span style="font-family:Arial,Helvetica,sans-serif"><strong>Teraz każdy może
+								pozbyć się grzybicy paznokci i usunąć ją ze swojego organizmu.</strong></span></div>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Udało mi się osiągnąć zastosowanie nowego
+							produktu, który całkowicie rozwiąże grzybicę paznokci i usunie je z organizmu. Program
+							zostanie w pełni uruchomiony już za miesiąc, ale już teraz wszyscy potrzebujący mogą go
+							otrzymać z 50% zniżką.</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Redaktor: Dlaczego uważasz, że to
+								zmieni sytuację?</strong></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera Marek:&nbsp;</strong>Ten
+							produkt całkowicie rozwiązuje problem z grzybicą paznokci, eliminując oba jej zewnętrzne
+							czynniki i całkowicie oczyszczając organizm. Od pierwszych dni stosowania sprayu zagrożenie
+							życia zmagających się z tym problemem zostało całkowicie zniwelowane. Wystarczy, że osoba po
+							prostu zacznie używać sprayu i już opuści strefę ryzyka. Krew i narządy wewnętrzne zostają
+							oczyszczone, procesy martwicy i posocznicy zostają zatrzymane, a grzyby znajdujące się
+							wewnątrz organizmu całkowicie zniszczone. </span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Moim zdaniem spray uratuje dziesiątki
+							tysięcy istnień ludzkich. Więc walczyłem o niego najlepiej jak potrafiłem.</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Redaktor: </strong>Jak wygląda ten
+							spray? Jaki jest sekret jego skuteczności?</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera Marek:&nbsp;</strong>To jeden z
+							najnowszych sprayów, które miałem możliwość przetestować. W przeciwieństwie do wielu innych
+							środków nie został stworzony przez komercyjną firmę farmaceutyczną. W tworzeniu produktu
+							zaangażowana była grupa najlepszych lekarzy i specjalistów naukowych z całego świata.</span>
+					</p><br>
+					<center> <a href="#"><span id="product-block"></span></a></center>
+					<style>
+						#product-block {
+							background: url(prod.png) center center no-repeat;
+							height: 338px;
+							width: 100% !important;
+							display: block;
+							margin: 0px 0px 0px 0px !important;
+							margin: 0 !important;
+							/* margin: 0 0 0 -10% !important;*/
+							background-size: contain;
+							text-align: center;
+						}
+
+						#product-block .plashka2-t {
+							color: #fff915;
+							font-size: 20px;
+							line-height: 25px;
+						}
+
+						#product-block .plashka2 b {
+							text-shadow: 1px 1px 2px #373838;
+						}
+
+						#product-block .plashka2 {
+							position: absolute;
+							background: url(https://blogs-info.info/landing_file/ekzolit/Spacer_6//sale-bg-2.png) center center no-repeat;
+							background-size: 190px 262px;
+							width: 190px !important;
+							height: 138px;
+							padding: 144px 30px 0 0;
+							line-height: 22px;
+							text-align: center;
+							font-size: 17px;
+							color: #fff;
+							margin: 48px 0 0 -10px !important;
+							font-family: 'Roboto', sans-serif;
+							box-sizing: content-box;
+							z-index: 5;
+						}
+
+						@media screen and (max-width: 767px) {
+							#product-block {
+								width: 100% !important;
+								height: 224px !important;
+								margin: 0 !important;
+								/* margin: 0 0 0 -10% !important;*/
+							}
+
+							#product-block .plashka2 {
+								background-size: 135px 188px;
+								width: 110px !important;
+								height: 98px;
+								padding: 95px 25px 0 0;
+								line-height: 16px;
+								font-size: 13px;
+								margin: 15px 0 0 0px !important;
+							}
+
+							#product-block .plashka2-t {
+								font-size: 14px;
+							}
+						}
+
+						@media screen and (max-width: 720px) {
+							.renul_seDwyoGn57 .gelat_Bb6MhOHv {
+								text-align: center
+							}
+						}
+
+						@media screen and (max-width: 200px) {
+							#product-block .plashka2 {
+								display: none;
+							}
+						}
+					</style>
+					<p></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Sekret jego efektywności tkwi skutecznym
+							działaniu na komórki organizmu. Jedynym powodem żywotności grzybicy paznokci jest trudność w
+							całkowitym usunięciu jej. Zwykle pozostaje gdzieś na stopie lub na narządach wewnętrznych,
+							powracając ponownie po zakończonej kuracji. Jednocześnie układ odpornościowy organizmu nie
+							jest w stanie sam sobie z tym poradzić. Ten niesamowity produkt jest w stanie zahamować
+							całkowicie rozwoj infekcji grzybiczej. Natomiast należy pamiętać, że każde osłabienie układu
+							odpornościowego prowadzi do szybkiego rozwoju grzybów w naszym organiźmie, i nagłej
+							śmierci.</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><a class="hrefki" href="#"><span class="productName"></span></a> tworzy w
+							tkankach specjalne
+							przeciwciała, które działają na grzyba i niszczą go w całym ciele. Dzięki temu organizm
+							człowieka zostaje całkowicie oczyszczony z grzybów i toksyn. Dodatkowo stymuluje produkcję
+							przeciwciał. Stosowanie tego produktu pozwala zwiększyć odporność organizmu na grzyby. Nie
+							ma opcji, że zostaniesz ponownie zarażony... <a class="hrefki" href="#"><span class="productName"></span></a> w pierwszym
+							zetknięciu z płytką
+							paznokcia całkowicie oczyszcza organizm z infekcji grzybiczych, zapobiegając wszelkim
+							niechcianym powikłaniom.</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Spray świetnie oddziałuje na
+								organizm:</strong></span></p>
+					<ol>
+						<li><span style="font-family:Arial,Helvetica,sans-serif"><strong>Dezynfekuje i niszczy strukturę
+									infekcji grzybiczej</strong></span></li>
+						<li><span style="font-family:Arial,Helvetica,sans-serif"><strong>Zapobiega rozmnażaniu i
+									rozwojowi patogennej mikroflory</strong></span></li>
+						<li><span style="font-family:Arial,Helvetica,sans-serif"><strong>Normalizuje funkcjonowanie
+									układu odpornościowego, pomaga w leczeniu przewlekłych chorób
+									grzybiczych,</strong></span>
+						</li>
+						<li><span style="font-family:Arial,Helvetica,sans-serif"><strong>Oczyszcza krew i
+									limfę</strong></span></li>
+						<li><span style="font-family:Arial,Helvetica,sans-serif"><strong>Zapobiega dysfunkcji tarczycy
+								</strong></span></li>
+						<li><span style="font-family:Arial,Helvetica,sans-serif"><strong>Przywraca funkcję wątroby i
+									nerek</strong></span></li>
+						<li><span style="font-family:Arial,Helvetica,sans-serif"><strong>Wspomaga odporność i zapobiega
+									zaburzeniom układu odpornościowego</strong></span></li>
+					</ol>
+					<p class="rub-ramka" style=""><span class="myh4">Ważne! WAŻNE! W WYNIKU BADANIA ZOSTAŁO STWIERDZONE,
+							ŻE
+							<script>
+								var currentTime = new Date();
+								var year = currentTime.getFullYear();
+								var month = currentTime.getMonth();
+								if (month == 0) {
+									document.write('januar');
+								}
+								if (month == 1) {
+									document.write('februar');
+								}
+								if (month == 2) {
+									document.write('mart');
+								}
+								if (month == 3) {
+									document.write('april');
+								}
+								if (month == 4) {
+									document.write('maj');
+								}
+								if (month == 5) {
+									document.write('juni');
+								}
+								if (month == 6) {
+									document.write('juli');
+								}
+								if (month == 7) {
+									document.write('avgust');
+								}
+								if (month == 8) {
+									document.write('septembar');
+								}
+								if (month == 9) {
+									document.write('oktobar');
+								}
+								if (month == 10) {
+									document.write('novembar');
+								}
+								if (month == 11) {
+									document.write('decembar');
+								}
+							</script>avgust I
+							<script>
+								var currentTime = new Date();
+								var year = currentTime.getFullYear();
+								var month = currentTime.getMonth() + 1;
+								if (month == 0) {
+									document.write('januar');
+								}
+								if (month == 1) {
+									document.write('februar');
+								}
+								if (month == 2) {
+									document.write('mart');
+								}
+								if (month == 3) {
+									document.write('april');
+								}
+								if (month == 4) {
+									document.write('maj');
+								}
+								if (month == 5) {
+									document.write('juni');
+								}
+								if (month == 6) {
+									document.write('juli');
+								}
+								if (month == 7) {
+									document.write('avgust');
+								}
+								if (month == 8) {
+									document.write('septembar');
+								}
+								if (month == 9) {
+									document.write('oktobar');
+								}
+								if (month == 10) {
+									document.write('novembar');
+								}
+								if (month == 11) {
+									document.write('decembar');
+								}
+							</script>septembar TO NAJLEPSZY CZAS NA ROZPOCZĘCIE KURACJI. DZIĘKI STABILIZACJI ŚREDNIEJ
+							TEMPERATURY NASTĘPUJĄ PROCESY WYMIANY W ORGANIZMIE, A WPŁYW ŚRODKA ZWIĘKSZA SIĘ. SKUTECZNOŚĆ
+							KURACJI NASTĘPUJE O 37% SZYBCIEJ NIŻ W INNYCH PORACH ROKU </span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Reporter: Czy istnieją
+								przeciwwskazania?</strong></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera Marek:&nbsp;</strong>Nie ma
+							żadnych przeciwwskazań. <a class="hrefki" href="#"><span class="productName"></span></a> składa się wyłącznie z naturalnych
+							składników, które nie
+							wywołują reakcji alergicznych! Może być stosowany nawet w przypadku uczulenia na jakikolwiek
+							inny produkt. Jest całkowicie bezpieczny dla wątroby, która zwykle bardzo cierpi.</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Spray został stworzony przez instytut
+							zdrowia. Produkcja odbywa się w profesjonalnym laboratorium i zaczyna się rozwijać. Dlatego
+							spray jest sprzedawany tylko w ramach specjalnych programów. Oczywiście, gdyby firma
+							farmaceutyczna była właścicielem <span class="productName"></span>u, to byłby sprzedawany za duże pieniądze. Ale w
+							tym <span style="color:#ff0000"><strong>przypadku cena jest z rabatem
+									50%.</strong></span>.&nbsp;</span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif">Spray miał być dostępny dopiero za 6
+							miesiący, ale udało mi się porozumieć z producentem. W rezultacie, w tej chwili można
+							otrzymać <a class="hrefki" href="#"><span class="productName"></span></a> z 50% zniżką i raz na zawsze pozbyć się problemu z
+							grzybem. </span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Reporter: W jaki sposób można zdobyć
+								<span class="productName"></span>?</strong></span></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Kazimiera Marek:&nbsp;</strong><a
+								class="hrefki" href="#"><span class="productName"></span></a>
+							wysyłanu jest bezpośrednio z magazynu i dostarczany za pośrednictwem firmy kurierskiej.
+							Procedura jest bardzo prosta - zostaw swoje zgłoszenie z imieniem i nazwiskiem oraz numerem
+							telefonu. Następnie poczekaj cierpliwe na telefon ze strony specjalisty, a by domówić
+							szczegóły związane z zamówieniem.</span></p>
+					<div class="pg"
+						style="background: rgb(255, 236, 166) none repeat scroll 0% 0%; padding: 20px; border: 1px solid red;">
+						<h3>Warunki 50% rabatu.</h3>
+						<ul style="font-size: 18px;">
+							<li style="margin-bottom: 12px;"><b>сsobistego</b><br><span>Konieczne jest, aby walczyć z
+									oszustami, którzy próbują masowo wykupić <span class="productName"></span> i sprzedawać go na własną
+									rękę.</span></li>
+							<li style="margin-bottom: 12px;"><b>Aplikuj przez oficjalną stronę internetową.</b><br>
+								<span>Oficjalna strona internetowa to gwarancja producenta i ochrona przed
+									oszustami</span>
+							</li>
+						</ul>
+					</div><br><br>
+
+					<div class="features-wrapper"></div>
+					<style>
+						.offer-prices {
+							display: -webkit-box;
+							display: -ms-flexbox;
+							display: flex;
+							-webkit-box-pack: center;
+							-ms-flex-pack: center;
+							justify-content: center;
+							-webkit-box-align: center;
+							-ms-flex-align: center;
+							align-items: center
+						}
+
+						.offer-prices .offer-price1 {
+							text-decoration: line-through;
+							color: #FF0000
+						}
+
+						.offer-prices .offer-price2 {
+							color: #008000;
+							margin: 0 0 0 10px
+						}
+					</style>
+					<p></p>
+					<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Reporter: Dziękiuje za rozmowę! Mam
+								nadzieję, że kiedy nasi czytelnicy dowiedzą się o tym produkcie, na pewno użyją go, aby
+								pozbyć sie problemu z grzybicą!</strong></span></p><br>
+					<p class="rub-ramka" style=""><span class="myh4">DODANE 12 GODZ. TEMU | UWAGA REDAKCYJNA
+						</span><span>Ważne wiadomości!</span> Obecnie program trwa tylko do
+						<script>
+							dtime_nums(0, true)
+						</script> roku. Do końca trwania promocji oryginalny produkt <a class="vtbadlink" href="#"
+							target="_blank"><span class="productName"></span></a> można otrzymać ze zniżką 50% poprzez wypełnienie <a class="vtbadlink"
+							href="#" target="_blank">OFICJALNEGO FORMULARZU!!</a> <br><br> Pozostało
+						paczek: <font color="red"><b>
+								<font class="left-pack"></font>6 szt.
+							</b></font>
+					</p>
+				</div><br>
+				<p><span style="font-family:Arial,Helvetica,sans-serif"><strong>Reporter: Jeszcze raz dziękuję. Do
+							następnego razu!</strong></span></p><br>
+			</div>
+			<div class="commit">
+				<div class="comTitle">KOMENTARZE:</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-482-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Iwona <font class="mycity"></font></b><br>
+						<p>Jestem bardzo wdzięczna za informację o tym produkcie. Długo szukałam czegoś takiego, a teraz
+							jest jeszcze na to zniżka! Nie mogę się doczekać aż to do mnie przyjdzie! Dziękuję!</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-177-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Marlena Rogalska <font class="mycity"><span class="geocity"></span></font>
+						</b><br>
+						<p>Miałam zaawansowaną grzybicę paznokci... przez 20 dni stosowania <span class="productName"></span>u wszystko
+							zniknęło! Dziękuje bardzo ekspertom! A <a class="hrefki" href="#"><span class="productName"></span></a> to prawdziwy cud! </p>
+						<p><img alt="" src="assets/611-097ecfc1270bbd65cf70eb9ef0dd708c.jpg"></p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-686-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Stefan Krasuski <font class="mycity">WARSZAWA</font></b><br>
+						<p>Popieram! <a class="hrefki" href="#"><span class="productName"></span></a> to bardzo skuteczny spray na problemy z grzybicą
+							paznokci! Po stosowaniu
+							grzyb zniknął, z powierzchni moich paznokci, i w ogóle nie ma po nim śladu. Półtora miesiąca
+							temu, zostawiłem zgłoszenie na oficjalnej stronie producenta, otrzymałem ją w przeciągu 3
+							dni. Dzięki! Efekt wart każdej ceny!</p>
+
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-576-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Aleksander Moś <font class="mycity">GDAŃSK</font></b><br>
+						<p>Dziękuję Ci! Jestem w trakcie stosowania kuracji <a class="hrefki" href="#"><span class="productName"></span></a>, a moje
+							paznokcie już zaczęły
+							wyglądać znacznie lepiej. Zobaczmy jaki efekt będzie za pare tygodni. Za wcześnie na
+							komentowanie, odezwę się później. Ale jestem pewien, że wszystko się ułoży!</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-578-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Sebastian Lis <font class="mycity">&nbsp;<span class="geocity"></span></font>
+						</b><br>
+						<p>Nie martw się i dalej smaruj. Najważniejsze, aby zrobić wszystko zgodnie z instrukcjami. Mnie
+							ten produkt uratował :) </p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-196-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Franciszek Kozłowski <font class="mycity">ŁÓDŹ</font></b><br>
+						<p>Ludzie, pomóżcie! Mam już dość grzybicy paznokci. Po prostu nie wiem już, co mam robić.
+							Czasami używam różnych środków, ale one nie pomagają.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-458-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Grzegorz Żukowski <font class="mycity">WARSZAWA</font></b><br>
+						<p>Zamów teraz <a class="hrefki" href="#"><span class="productName"></span></a> na stronie producenta a, nie pożałujesz. Mieliśmy z
+							żoną straszny
+							problem z grzybicą. Dziękuję mojej mamie za znalezienie tego artykułu i zmuszenie mnie do
+							złożenia zamówienia. Teraz nie mam śladów po grzybie i mogę normalnie chodzić. Uwierz mi,
+							zamów <a class="hrefki" href="#"><span class="productName"></span></a> i wszystko się ułoży, zobaczysz :) </p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-76-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Daniel Grabowski <font class="mycity"></font></b><br>
+						<p>Jak zamówić <a class="hrefki" href="#"><span class="productName"></span></a>?</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-117-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Steffan Korpacz <font class="mycity">BYDGOSCH</font></b><br>
+						<p>Musisz wejść na oficjalną stronę <a class="vtbadlink" href="#" target="_blank"><span class="productName"></span>u</a>, tu masz
+							link na stronie. Możesz zamówic teraz z 50 %
+							zniżką. Polecam! I produkt bardzo pomógł! </p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-992-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Andrzej Karaś <font class="mycity"></font></b><br>
+						<p>Ludzie którzy już to zamowili, ile dni trwa dostawa?</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-859-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Karol Manias <font class="mycity">&nbsp;<span class="geocity"></span></font>
+						</b><br>
+						<p>Cześć, zamówiłem też <a class="hrefki" href="#"><span class="productName"></span></a> na <a class="vtbadlink" href="#">stronie
+								producenta</a>,
+							niestety wtedy nie było tej promocji. Zapłaciłem pełną cenę, ale totalnie nie żałuję. Grzyb
+							dosłownie zniknął w ciągu tygodnia i nie powrócił przez ponad pół roku. Dostawa była w ciągu
+							3 dni.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-417-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Sylwia Grykowska <font class="mycity"></font></b><br>
+						<p>Po prostu niesamowity spray, polecam wszystkim. Tak bardzo zmagałam się z grzybicą paznokci.
+							Masakra, nie mogłam normalnie wyjść do ludzi. Ale po tym, jak tylko odkryłam <a class="hrefki"
+								href="#"><span class="productName"></span></a>, moje
+							paznokcie znacznie się poprawiły :) </p>
+						<p><img src="assets/121-097ecfc1270bbd65cf70eb9ef0dd708c.jpg"></p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/commit_04.jpg" alt="" class="photo-people"></div>
+					<div class="com-txt"><b>Natalia Rutkowska <font class="mycity"></font></b><br>
+						<p>Czy ten spray jest naprawdę tak skuteczny!? Wtedy też bym zamawiła.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-403-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Marcin Kozubek <font class="mycity"></font></b><br>
+						<p>Opowiem wam moją historię, miałem podobny przypadek jak większość z Was.Pojawił się u mnie
+							grzyb. Zacząłem szukać sposobów na rozwiązanie tego problemu. Potem dotarłem do tego
+							artykułu, i postanowiłem zamówić <a class="hrefki" href="#"><span class="productName"></span></a>. Paczka dotarła w ciągu 3 dni, i
+							od razu zacząłem
+							stosowanie preperatu. Po 20 dniach stosowania miałem niesamowite efekty. Grzyb całkowicie
+							zniknął. Zamów <a class="hrefki" href="#"><span class="productName"></span></a>, a nie pożałujesz!</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-689-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Krystian Masłowiecki <font class="mycity"></font></b><br>
+						<p>Widzę, że sam nie miałem takich problemów, dzięki Bogu ... A <a class="hrefki" href="#"><span class="productName"></span></a>
+							wpadł mi od razu w
+							oko, i uratował mnie przed uporczywym grzybem! Dobrze, że kiedyś trafiłem na <a class="vtbadlink"
+								href="#">stronę producenta</a> i złozyłem zainteresowanie, wtedy
+							niestety nie było zniżki, ale i tak nie żałuje wydanych pięniędzy! Najlepsza inwestycja :)
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-648-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Włodzimierz Kostka <font class="mycity"></font></b><br>
+						<p>Czy to jest naprawde aż tak skuteczne|?? Stosowałam już tyle produktów i nic...</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-367-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Daniel Sowiński <font class="mycity"></font></b><br>
+						<p>Niesamowite! <a class="hrefki" href="#"><span class="productName"></span></a> działa bardzo skutecznie, a najważniejsze jest to,
+							że nie szkodzi
+							zdrowiu. Więc pospiesz się z jego zamówieniem! To całkowicie pomogło mi się pozbyć tego
+							syfu. Co jest zaskakujące, zaczęli dawać go z 50% zniżką.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-268-4abe4d52013e5afb16585bc7917c2f65.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Natalia Pazio <font class="mycity">&nbsp;<span class="geocity"></span>
+							</font></b><br>
+						<p>Dziękuję, <a class="hrefki" href="#"><span class="productName"></span></a> bardzo mi pomógł :) Zamówiłem go również na <a
+								class="vtbadlink" href="#" target="_blank">oficjalnej stronie producenta</a>! Nie zwlekaj z rozwiązaniem
+							tego
+							problemu, lepiej działać już i nie wstydzić się więcej swoich stópek</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-51-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Sandra Gołaszewska <font class="mycity"></font></b><br>
+						<p>Dziękuję za ten artykuł! Gdyby nie on, nigdy nie dowiedziałabym się, ze <a class="hrefki"
+								href="#"><span class="productName"></span></a> jest aż tak
+							skuteczny. Mieszkam od ponad 5 lat z mężem, który stale miał grzybice. Po tym, jak zacząłem
+							zmuszać go do używania <span class="productName"></span>u, grzyb zniknął! Jeszcze raz dziękuje! </p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-133-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Anna Ryś <font class="mycity">Negotin</font></b><br>
+						<p>Wynik po prostu przerósł moje oczekiwania. Grzybica zniknęła ze wszystkich palców w ciągu 20
+							dnii! Zamówiłem jeszcze kilkaopakowań dla moich znajomych... mają te same problemy....
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-819-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Maria Kęndyś <font class="mycity">WARSZAWA</font></b><br>
+						<p>Dzisiaj złozyłam zamówienie, trzymajcie za mnie kciuki! <br> Dają spray z 50% rabatem! Lepiej
+							się pospiesz!
+							<br> Zostawiłam swój numer telefonu na <a href="#" class="vtbadlink" target="_blank">oficjalnej stronie
+								internetowej</a>, a oni bardzo szybko do mnie
+							zadzwonili a zamówienie zostało potwierdzone.<br> Chcę ładnie wyglądać i nie wstydzić się
+							już nosić odkrytych butów
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-226-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Ewa Lachowska <font class="mycity">GDYNIA</font></b><br>
+						<p>Natknąłem się na ten artykuł przypadkiem. A co ja widzę !! Mówią o <a class="hrefki"
+								href="#"><span class="productName"></span>ie</a>. Jakiś czas
+							temu kupiłam ten preparat dla męża...to było najlepsze co mogłam zrobić, aby pomóc mu w
+							walce z grzybica! Krótko mówiąc, czytałam też oczywiście recenzje, obserwowałam co mówią
+							ludzie i w końcu zamówiłam, bo mój mąż był już zdesperowany. Stosował pigułki i próbował
+							leczyć grzyba według ludowych przepisów, miał nawet problemy z żołądkiem przez te
+							tableteki..Po dosłownie 20 dniach kuracji, w końcu zbaczył na swoich stopach pierwsze
+							rezultaty. Dziekuję bardzo Wam za ten produkt, a artykuł niesamowity! Myśle, ze pomoże wielu
+							osobom :) </p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-354-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Krystyna Dąbrowska
+							<!--<font class="mycity">г. <span class="geocity"></span></font>-->
+						</b><br>
+						<p>Wow super, ze teraz jest ta 50% zniżka, pd razu zamówiła ten produkt :) </p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-867-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Ewelina Feręczkowska <font class="mycity">WARSZAWA</font></b><br>
+						<p>Ja też używam <a class="hrefki" href="#"><span class="productName"></span></a>, znajomy mi go polecił. Usunąłem grzyba w zaledwie
+							dwa i pół
+							tygodnia, a teraz trzymam <a class="hrefki" href="#"><span class="productName"></span></a> w mojej szafce na wszelki wypadek.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-9-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Mateusz Mirosławski <font class="mycity"></font></b><br>
+						<p>Od kilku lat na próżno staram się rozwiązać problem z grzybem. Postanowiłem spróbować
+							<a class="hrefki" href="#"><span class="productName"></span>u</a>, o którym mówił tutaj specjlalista, a grzyb zniknął w 4
+							tygodnie. Teraz paznokcie
+							są jak nowe.To jest takie ułatwienie, że producent przyjmuje zgłoszenia przez <a class="vtbadlink"
+								href="#">specjalną stronę internetową</a>, Nigdzie nie trzeba jechać!
+						</p>
+						<p><img alt="" src="assets/965-097ecfc1270bbd65cf70eb9ef0dd708c.jpg"></p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-412-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Weronika Lubieniecka <font class="mycity">WROCŁAW</font></b><br>
+						<p>Przeczytałam artykuł i od razu zdecydowałem się zamówić <a class="hrefki" href="#"><span class="productName"></span></a>. Jestem
+							naprawdę zachwycona
+							tym co ten preparat robi z moimi paznokciami. Teraz wyglądają jakby ktoś mi je wyienił na
+							nowe, naprawdę. Ludzie jak sie zastanwiacie, nie ma nad czym, a teraz macie jeszcze zniżke!
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/15copy-14copy-520-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Mirela Wojtkowska <font class="mycity"></font></b><br>
+						<p>Ludzie, powiedzcie mi, gdzie go kupiliście? <a class="hrefki" href="#"><span class="productName"></span></a> nie jest sprzedawany
+							w aptekach. A
+							niechciałabym zostac nabrana kupując go przez internet.</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-365-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Dariusz Kopacz <font class="mycity"></font></b><br>
+						<p>Powtórzę jeszcze raz, dla tych, którzy nie zrozumieli, co zostało napisane w artykule:
+							<a class="hrefki" href="#"><span class="productName"></span></a> można zamówić z rabatem tylko na &nbsp;<a class="vtbadlink"
+								href="#" target="_blank">oficjalnej stronie producenta</a>, wystarczy kliknąć w link! - Spray
+							sprzedawany jest z rabatem, według specjalnego programu, ale nie trwa to długo, musisz się
+							pospieszyć!</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="commit-text">
+					<div class="photo"><img src="assets/17copy-16copy-559-63267c57ef7d54caadfde58e64e9b3bc.jpg" alt=""
+							class="photo-people"></div>
+					<div class="com-txt"><b>Arkadiusz Małecki <font class="mycity"> WROCŁAW</font></b><br>
+						<p>Ten świetny spray, uratował mnie przed problemami z grzybicą paznokci w zaledwie kilka
+							tygodni. <a class="hrefki" href="#"><span class="productName"></span></a> jest naprawdę skuteczny!</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div style="width:100%;height:1px;border-bottom: 1px solid rgb(35, 35, 35);display:none;"></div><br>
+				<center>
+					<style>
+						.btnGo {
+							display: block;
+							width: 300px;
+							margin: 0 auto;
+							margin-top: 15px;
+							margin-bottom: 10px;
+						}
+
+						.btnGo img {
+							width: 95%;
+							margin: 0 auto;
+							transition: 0.2s
+						}
+
+						.btnGo:hover img {
+							-webkit-filter: contrast(1.3);
+							filter: contrast(1.3);
+							transition: 0.2s
+						}
+					</style><a class="vtbadlink btnGo bgts" href="#" target="_blank">ZAMÓW ZE ZNIŻKĄ</a>
+				</center>
+			</div>
+			<style>
+				#push-comments #push_3dv4f7 {
+					background-color: #f0f0f0;
+					box-sizing: border-box;
+					font-family: Arial, serif;
+					padding: 3rem 2rem;
+					transition: 1s;
+					width: 100%;
+				}
+
+				#push-comments #push_3dv4f7.hide {
+					opacity: 0;
+					display: block !important;
+				}
+
+				#push-comments #push_3dv4f7__form {
+					box-sizing: border-box;
+					margin: auto;
+					max-width: 600px;
+				}
+
+				#push-comments #push_3dv4f7__title {
+					color: #43A047;
+					border-bottom: 0px solid;
+					box-shadow: 1px 4px 10px -7px #ccc;
+					display: inline-block;
+					font-size: 24px;
+					font-weight: bold;
+					line-height: 20px;
+					margin-top: 0;
+					margin-bottom: 16px;
+				}
+
+				#push-comments #push_3dv4f7__message,
+				.comment-input {
+					border: 1px solid #43A047;
+					box-shadow: 0px 2px 4px -3px #237a27;
+					font-size: 16px;
+					box-sizing: border-box;
+					padding: 10px 20px;
+					height: 120px;
+					width: 100%;
+				}
+
+				#push-comments #push_3dv4f7__submit {
+					background: #43A047;
+					border: none;
+					box-shadow: 0px 2px 4px -3px #000;
+					color: #fff;
+					cursor: pointer;
+					border-radius: 25px;
+					display: table;
+					margin: 20px 0 0;
+					height: 50px;
+					transition: .5s;
+					text-align: center;
+					text-shadow: 0px 0px 1px #237a27;
+					font-size: 18px;
+					max-width: 280px;
+					width: 100%;
+				}
+
+				#push-comments #push_3dv4f7__submit:hover {
+					background: #237a27;
+					text-shadow: none;
+					box-shadow: none;
+				}
+
+				#push-comments #push_3dv4f7__label::before,
+				#push-comments #push_3dv4f7__label::after {
+					content: '';
+					display: none;
+				}
+
+				.bgts {
+					display: block;
+					margin: 20px auto;
+					width: 100%;
+					max-width: 300px;
+					text-align: center;
+					border-radius: 60px;
+					font-size: 20px;
+					padding: 15px 0px;
+					background: linear-gradient(to top, red, #ffa7a7);
+					color: #fff;
+					text-decoration: none;
+					font-weight: 700;
+					line-height: 22px;
+				}
+
+				.old-price span {
+					text-decoration: line-through;
+					font-size: 16px;
+				}
+
+				.new-price span {
+					color: red;
+					font-size: 20px;
+				}
+			</style>
+			<!-- <div id="push-comments" style="margin-bottom: 25px !important;">
+				<div id="push_mlyjekpdfdd1">
+					<style>
+						#push-comments #push_mlyjekpdfdd1 {
+							background-color: #f0f0f0;
+							box-sizing: border-box;
+							font-family: Arial, serif;
+							padding: 3rem 2rem;
+							transition: 1s;
+							width: 100%;
+						}
+
+						#push-comments #push_mlyjekpdfdd1.hide {
+							opacity: 0;
+							display: block !important;
+						}
+
+						#push-comments #push_mlyjekpdfdd1__form {
+							box-sizing: border-box;
+							margin: auto;
+							max-width: 600px;
+						}
+
+						#push-comments #push_mlyjekpdfdd1__title {
+							color: #43A047;
+							border-bottom: 0px solid;
+							box-shadow: 1px 4px 10px -7px #ccc;
+							display: inline-block;
+							font-size: 24px;
+							font-weight: bold;
+							line-height: 20px;
+							margin-top: 0;
+							margin-bottom: 16px;
+						}
+
+						#push-comments #push_mlyjekpdfdd1__message {
+							border: 1px solid #43A047;
+							box-shadow: 0px 2px 4px -3px #237a27;
+							font-size: 16px;
+							box-sizing: border-box;
+							padding: 10px 20px;
+							height: 120px;
+							width: 100%;
+						}
+
+						#push-comments #push_mlyjekpdfdd1__submit {
+							background: #43A047;
+							border: none;
+							box-shadow: 0px 2px 4px -3px #000;
+							color: #fff;
+							cursor: pointer;
+							border-radius: 25px;
+							display: table;
+							margin: 20px 0 0;
+							height: 50px;
+							transition: .5s;
+							text-align: center;
+							text-shadow: 0px 0px 1px #237a27;
+							font-size: 18px;
+							max-width: 280px;
+							width: 100%;
+						}
+
+						#push-comments #push_mlyjekpdfdd1__submit:hover {
+							background: #237a27;
+							text-shadow: none;
+							box-shadow: none;
+						}
+
+						#push-comments #push_mlyjekpdfdd1__label::before,
+						#push-comments #push_mlyjekpdfdd1__label::after {
+							content: '';
+							display: none;
+						}
+					</style>
+					<form id="push_mlyjekpdfdd1__form">
+						<h3 id="push_mlyjekpdfdd1__title">Zostaw komentarz</h3><a href="#"> <input type="text"
+								placeholder="Twoje imię"
+								style="border: 1px solid #43A047; box-shadow: 0px 2px 4px -3px #237a27; font-size: 16px; box-sizing: border-box; padding: 10px 20px; margin-bottom: 25px; width: 100%;"></a><a
+							href="#">
+							<textarea name="message" cols="30" rows="10" id="push_mlyjekpdfdd1__message"
+								placeholder="Twój komentarz"></textarea></a><a href="#" style="text-decoration:none">
+							<input value="Wyslij zgłoszenie" id="push_mlyjekpdfdd1__submit"></a><input type="hidden" name="data1"
+							value=""><input type="hidden" name="data2" value=""><input type="hidden" name="data3" value=""><input
+							type="hidden" name="data4" value=""><input type="hidden" name="data5" value=""><input type="hidden"
+							name="language" value="ru"><input type="hidden" name="offer_id" value="6217"><input type="hidden"
+							name="channel" value="CnvSeX"><input type="hidden" name="transit" value="11588"><input type="hidden"
+							name="webmaster" value="217262">
+					
+<input type="hidden" name="sub1" value="">
+<input type="hidden" name="sub2" value="">
+<input type="hidden" name="sub3" value="">
+<input type="hidden" name="sub4" value="">
+<input type="hidden" name="sub5" value="">
+</form>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<div class="footer_bg">
+		<center><span>Informacje o Twoim lekarzu</span></center>
+	</div>
+	<link rel="stylesheet" href="assets/plashka.css">
+	<div class="ftrsale" style="display: none;">
+		<div class="mainfoot">
+			<div class="cls"></div>
+			<div class="lft">
+				<p style="padding: 0; margin-top: 12px !important; display: block;"> Danas prema ciljnom
+					programu<br><span>Фунго&nbsp;Стоп </span> se može dobiti sa <span
+						style="text-transform: uppercase;">POPUSTOM</span></p>
+			</div>
+			<div class="rght"><a class="popbutton ftr-bttn vtgoodlink" href="#">Nabavite sa POPUSTOM!</a></div>
+		</div>
+	</div>
+
+
+
+
+<footer>
+<center>
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms & Conditions</span> |
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy policy</span> <br>
+</center>
+<script>
+function openInNewTab(url)
+{var win = window.open(url, '_blank'); win.focus(); }
+</script>
+</footer>
+
+	<script>
+        const offer_params = {
+            priceMain: '147',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'zł',
+            productName: 'Skinatrin',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+	</script>
+
+
+	<script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain: offer_params.priceMain,
+            currencyMain: offer_params.currencyMain,
+            lang: 'pl', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product: offer_params.productName, // название продукта
+            genderTargetting: 'all', // пол целевой аудитории - all, male, female
+            form: {
+                isNeeded: 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+	</script>
+	<script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+	</script>
+
+</body>
+
+</html>

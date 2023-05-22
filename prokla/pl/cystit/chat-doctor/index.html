@@ -1,0 +1,236 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<html lang="pl">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9">
+  <link rel="stylesheet" href="css/form.css">
+  <meta name="viewport" content="width=device-width">
+  <title>Bezpłatna konsultacja lekarska</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+
+
+
+  <style>
+    .cont {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      border: 10px outset #dd1616;
+      background-color: rgba(216, 216, 216, 0.671);
+      border-radius: 25px;
+      margin: 20px 0px;
+    }
+
+    .left {
+      width: 50%;
+    }
+
+    .left img {
+      width: 100%;
+    }
+
+    .right {
+      width: 50%;
+    }
+
+    .hidden {
+      opacity: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      .left {
+        width: 100%;
+      }
+
+      .right {
+        width: 100%;
+      }
+    }
+  </style>
+  <!--[HEADER]-->
+</head>
+
+<body>
+  <div class="wrap" id="screenFirst">
+
+    <div class="chat show-chat zoomIn animated">
+
+      <div class="chat show-chat zoomIn animated">
+        <div class="chat-container">
+          <div class="chat-header">
+            <div class="chat-header-container down">
+              <div class="chat-header-container-wrapper">
+                <div class="chat-header-container-image-left">
+                  <div class="chat-header-container-image">
+                    <img src="img/avatar.png" alt="">
+                  </div>
+                  <div class="chat-header-container-image">
+                    <img src="img/message-icon.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-content">
+            <div class="chat-content-container" id="page_chat">
+              <div class="chat-content-list">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form method="post" action="getform.php" id="cont_form" class="form-order cont_form order_form">
+        <input type="hidden" name="utm_source" value="{clickid}">
+        <input type="hidden" name="utm_campaign" value="{t2}">
+        <div class="form_block">
+          <div class="prices_block">Formularz zamówienia "<span class="productName"></span>" za <span class="new_price_val" id="val"><span class="priceMain"></span></span><span
+              class="new_price_cur" id="cur"><span class="currencyMain"></span></span>*:</div>
+          <div class="form-group">
+            <input class="input-name" type="text" name="name"
+              style="margin: 5px 0; border: none; border-bottom: 1px solid lightgray; text-align: center; padding: 10px 20px; width: 85%; border-radius: 25px; font-size: 25px; box-shadow: 0px 3px 0px 0px #808080;"
+              required placeholder="Imię i nazwisko">
+
+          </div>
+          <div class="form-group">
+            <input class="phone-country" type="tel" id="phone" name="phone"
+              style="margin: 5px 0; border: none; border-bottom: 1px solid lightgray; text-align: center; padding: 10px 20px; width: 85%; border-radius: 25px; font-size: 25px; box-shadow: 0px 3px 0px 0px #808080;"
+              required placeholder=" Numer telefonu">
+          </div>
+
+          <input type="submit" value="ZAMAWIAM" class="btn-primary">
+          <span style="display: block; text-align: center;">*Cena promocyjna obowiązuje przy zakupie pełnego
+            zestawu</span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <span class="country_name12" style="display: none;"></span>
+  <span class="country_action" style="opacity: 0"></span>
+  <span class="new_price_val" style="opacity: 0"></span>
+  <span class="new_price_sig" style="opacity: 0"></span>
+  <!-- <select name="country" id="" style="display: none"></select> -->
+  <div style="display:none;" id="sig"></div>
+
+
+
+
+
+
+
+
+  <script>
+      const offer_params = {
+          priceMain: '159',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'zł',
+          productName: 'Proulgan',
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+  <script src="js/all-min.js"></script>
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain: offer_params.priceMain,
+          currencyMain: offer_params.currencyMain,
+          lang: 'pl', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product: offer_params.productName, // название продукта
+          genderTargetting: 'all', // пол целевой аудитории - all, male, female
+          form: {
+              isNeeded: 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+
+
+</body>
+
+</html>

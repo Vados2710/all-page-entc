@@ -1,0 +1,512 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gardener</title>
+	<link href="https://fonts.googleapis.com/css2?family=Bad+Script&amp;family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="css/terradrew.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+	<script src="drewlex_main.js"></script>
+	<script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+	</script>
+
+</head>
+<body>
+	<header class="site-header">
+		<div class="site-header__logo-wrapper d-none d-lg-block">
+			<div class="container d-flex align-items-center">
+				<a href="{landing_url}">
+				<img class="site-header__logo img-fluid" src="img/logo.png" alt=""></a>
+				<p class="lh-1 ms-3 mb-0 pt-3">
+					<span class="site-header__title">Nasze ogrody</span>
+					<span class="d-block text-white">I nie tylko...</span>
+				</p>
+			</div>
+		</div>
+		<nav class="main-nav navbar navbar-expand-lg">
+			<div class="container">
+				<div class="d-flex flex-row flex-nowrap">
+					<button class="col-2 hamburger hamburger--squeeze collapsed d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Menu">
+						<a href="{landing_url}">
+							<span class="hamburger-box">
+								<span class="hamburger-inner"></span>
+							</span></a>
+					</button>
+					<div class="col-10 site-header__logo-wrapper d-flex align-items-center navbar-brand d-lg-none">
+						<a href="{landing_url}">
+							<img class="site-header__logo img-fluid" src="img/logo.png" alt=""></a>
+							<p class="lh-1 ms-3 mb-0 pt-3">
+								<span class="site-header__title">Nasze ogrody</span>
+								<span class="mt-2 mt-md-0 d-block text-white">I nie tylko...</span>
+							</p>
+					</div>
+				</div>
+				<div id="navbar-collapse" class="navbar-collapse collapse">
+					<ul class="navbar-nav justify-content-center flex-wrap">
+						<li class="nav-item current-box"> <a class="landing-url current nav-link" href="{landing_url}">Ogrody przydomowe</a> </li>
+						<li class="nav-item"> <a class="landing-url nav-link" href="{landing_url}">Zdjęcia Waszych Ogrodów</a> </li>
+						<li class="nav-item"> <a class="landing-url nav-link" href="{landing_url}">Nasze sprawy</a> </li>
+						<li class="nav-item"> <a class="landing-url nav-link" href="{landing_url}">Wymieńmy się roślinami</a> </li>
+						<li class="nav-item">
+							<a class="landing-url nav-link nav-link--last" href="{landing_url}">
+								<svg width="66" height="28" viewBox="0 0 66 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_56_37)">
+										<path d="M14 0C6.26864 0 0 6.3009 0 14.072C0 21.1272 5.16992 26.9519 11.9078 27.9696V17.8017H8.44368V14.1024H11.9078V11.6415C11.9078 7.56626 13.8835 5.77742 17.2525 5.77742C18.8664 5.77742 19.7198 5.89788 20.1242 5.95304V9.18173H17.8259C16.3957 9.18173 15.8962 10.545 15.8962 12.0817V14.1036H20.0883L19.5194 17.8028H15.8962V28.0011C22.7293 27.069 28.0011 21.197 28.0011 14.0732C28 6.3009 21.7314 0 14 0Z" fill="#3B5998"></path>
+									</g>
+									<g clip-path="url(#clip1_56_37)">
+										<path d="M55.2816 7.3248H48.7296C46.8592 7.3248 45.3472 8.8368 45.3472 10.7072V17.2592C45.3472 19.1296 46.8592 20.6416 48.7296 20.6416H55.2816C57.152 20.6416 58.664 19.1296 58.664 17.2592V10.7072C58.664 8.8368 57.152 7.3248 55.2816 7.3248ZM56.1104 13.9888C56.1104 16.2176 54.296 18.032 52.056 18.0208C49.8272 18.0208 48.0128 16.2064 48.024 13.9664C48.024 11.7376 49.8384 9.9232 52.0784 9.9344C54.3072 9.9456 56.1104 11.76 56.1104 13.9888ZM57.3088 9.6656C57.3088 10.2032 56.872 10.6288 56.3456 10.6288C55.808 10.6288 55.3824 10.192 55.3824 9.6656C55.3824 9.128 55.8192 8.7024 56.3456 8.7024H56.3568C56.8832 8.7024 57.3088 9.1392 57.3088 9.6656ZM52.056 11.3792C50.6224 11.3792 49.4576 12.5552 49.4688 13.9776C49.4688 15.4112 50.6448 16.576 52.0672 16.5648C53.5008 16.5648 54.6544 15.4 54.6544 13.9776V13.9664C54.6544 12.5328 53.4896 11.3792 52.056 11.3792Z" fill="url(#paint0_linear_56_37)"></path>
+										<path d="M52 0C44.272 0 38 6.272 38 14C38 21.728 44.272 28 52 28C59.728 28 66 21.728 66 14C66 6.272 59.728 0 52 0ZM60.2096 17.2592C60.1872 19.9696 57.992 22.1536 55.2816 22.1536H48.7184C45.9968 22.1536 43.7904 19.9472 43.7904 17.2256V10.7072C43.7904 7.9856 45.9968 5.7792 48.7184 5.768H55.2704C57.992 5.768 60.1984 7.9856 60.1984 10.7072V17.2592H60.2096Z" fill="url(#paint1_linear_56_37)"></path>
+									</g>
+									<defs>
+										<linearGradient id="paint0_linear_56_37" x1="41" y1="28" x2="70" y2="1.61252e-07" gradientUnits="userSpaceOnUse">
+											<stop stop-color="#FEDA77"></stop>
+											<stop offset="0.244792" stop-color="#F58529"></stop>
+											<stop offset="0.489583" stop-color="#DD2A7B"></stop>
+											<stop offset="0.744792" stop-color="#8134AF"></stop>
+											<stop offset="1" stop-color="#515BD4"></stop>
+										</linearGradient>
+										<linearGradient id="paint1_linear_56_37" x1="41" y1="28" x2="70" y2="1.61252e-07" gradientUnits="userSpaceOnUse">
+											<stop stop-color="#FEDA77"></stop>
+											<stop offset="0.244792" stop-color="#F58529"></stop>
+											<stop offset="0.489583" stop-color="#DD2A7B"></stop>
+											<stop offset="0.744792" stop-color="#8134AF"></stop>
+											<stop offset="1" stop-color="#515BD4"></stop>
+										</linearGradient>
+										<clipPath id="clip0_56_37">
+											<rect width="28" height="28" fill="white"></rect>
+										</clipPath>
+										<clipPath id="clip1_56_37">
+											<rect width="28" height="28" fill="white" transform="translate(38)"></rect>
+										</clipPath>
+									</defs>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="container section-main">
+			<div class="row">
+				<article class="col-lg-8 main-article">
+					<h1 class="mb-3">Ból stawów przykuł go do fotela. Nie mógł się ruszać. Teraz jeździ na rowerze i biega w półmaratonach – <span class="text-green">WYSTARCZYŁ 1 DZIEŃ KURACJI TYM…</span></h1>
+					<h2 class="bg-yellow text-center mb-3">Przełomowy wynalazek, stworzony nie w bogatej korporacji farmaceutycznej, ale w zwykłym ogródku ziołowym!</h2>
+					<a href="{landing_url}">
+						<img class="img-fluid mb-3" src="img/img__img-1.png" alt="">
+					</a>
+					<p class="text-big">Bolą Cię stawy? A może ktoś z Twoich bliskich cierpi z tego powodu? Masz problemy z kręgosłupem? Reumatyzm lub artretyzm nie dają Ci żyć? Wypróbowałeś już dziesiątki kuracji, a poprawa była żadna albo niewielka? Po prostu straciłeś nadzieję…</p>
+					<p class="text-big">Teraz masz <span class="text-green">100% GWARANCJI SUKCESU!</span> Ten genialny w swojej prostocie wynalazek zamieni Cię z nieruchomego i stękającego z bólu wraka w SUPERBOHATERA. A najlepsze, że Twój portfel w ogóle na tym nie ucierpi, bo to kosztuje tyle co bułeczki.</p>
+					<p class="text-big">Jak działa kuracja i jak ją otrzymać, dowiesz się czytając wywiad z wynalazcą tej przełomowej formuły.</p>
+					<div class="d-flex justify-content-between mb-3 mb-lg-5">
+						<div class="bg-blue d-lg-flex align-items-center">
+							<svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8 0C8.53125 0 9 0.46875 9 1C9 1.5625 8.53125 2 8 2H7.5V3.09375C8.65625 3.28125 9.71875 3.75 10.5938 4.46875L11.2812 3.8125C11.6562 3.40625 12.3125 3.40625 12.6875 3.8125C13.0938 4.1875 13.0938 4.84375 12.6875 5.21875L11.9375 5.96875C12.5938 7 13 8.21875 13 9.5C13 13.0938 10.0625 16 6.5 16C2.90625 16 0 13.0938 0 9.5C0 6.25 2.375 3.5625 5.5 3.09375V2H5C4.4375 2 4 1.5625 4 1C4 0.46875 4.4375 0 5 0H8ZM7.25 6C7.25 5.59375 6.90625 5.25 6.5 5.25C6.0625 5.25 5.75 5.59375 5.75 6V10C5.75 10.4375 6.0625 10.75 6.5 10.75C6.90625 10.75 7.25 10.4375 7.25 10V6Z" fill="#ffffff"></path>
+							</svg>
+							Ten artykuł przeczytasz w 3 minuty
+						</div>
+					</div>
+					<div class="d-flex align-items-center mb-3 author-box">
+						<div class="author-box__img">
+							<a href="{landing_url}">
+								<img alt="" src="img/img_autor.png">
+							</a>
+						</div>
+						<span> redaktor <strong>Agata Bieniek</strong></span>
+					</div>
+					<p>Naszym rozmówcą jest dzisiaj pan Antoni Kleniewicz, emerytowany profesor biochemii. A do tego zapalony ogrodnik. Ale przede <strong>wszystkim wynalazca przełomowej Bioregenerującej Kuracji Stawowej</strong>, która skutecznie radzi sobie z wszelkimi dolegliwościami stawów, w tym reumatyzmem i artretyzmem.</p>
+					<p><strong>- Dzień dobry panie profesorze. Nie rozmawiamy dzisiaj o ogrodach przydomowych, ale o pańskim wynalazku na ekstremalnie szybką regenerację stawów.</strong></p>
+					<p>- Poniekąd to rozmowa o ogrodzie, bo pomysł zrodził się w moim ogródku ziołowym (profesor śmieje się szczerze). To była potrzeba chwili.</p>
+					<p><strong>- No właśnie, opowie nam pan profesor jak doszło do wynalezienia tej kuracji, która w 1 dzień likwiduje ból i odbudowuje stawy?</strong></p>
+					<p>- Mój sąsiad coś robił na swojej działce. Silny, duży facet, ale od lat zmagający się z artretyzmem. Mimo to nigdy nie umiał sobie odmówić przyjemności pracy w ogródku. Tego dnia bodajże wykopywał jakiś duży pień po ściętym drzewie. To jest naprawdę harówka dla trzech, a on to robił sam, choć zdecydowanie nie powinien. W pewnym momencie zaniemógł. Chociaż „zaniemógł” to za delikatne określenie.</p>
+					<p>Człowieka rosłego i silnego ból kolan i bioder dosłownie powalił na ziemię. Ten ból był tak okrutny, że padł, jak długi i rozdzierająco wzywał pomocy.</p>
+					<p>Błyskawicznie rzuciłem się na ratunek. Niestety nie mogłem wezwać karetki, bo mój telefon padł, a jego komórki nie mogłem znaleźć.</p>
+					<p><strong>- Czyli zastosował pan środki przeciwbólowe, żeby uśmierzyć ból sąsiada?</strong></p>
+					<p>- A gdzież tam. Nie mam takich rzeczy, sąsiad zresztą też nie miał.</p>
+					<p>Na szczęście jestem profesorem biochemii, choć już nie działam czynnie, ale przecież wiedza nie ma emerytury i zostaje w głowie. Rozejrzałem się więc szybko po ogródku ziołowym. Zacząłem zrywać rośliny, które wiem, że działają na stawy. Wiedziałem, że muszę działać szybko, bo tam cierpiał człowiek i to tak, że wręcz błagał o… śmierć!</p>
+					<p>Swoją drogą pewnie to musiało dziwnie wyglądać – człowiek leży i skręca się z bólu, a ja zbieram kwiatki i listki. Ale to wszystko miało sens, bo dobrze wiedziałem, co robię.</p>
+					<p>Wrzuciłem te zebrane zioła do moździerza, dodałem wrzątek i szybko roztarłem na papkę. Przyłożyłem taki kompres wciąż wyjącemu z bólu sąsiadowi do biodra i obu kolan. Minęło może 5 minut, a człowiek mówi, że ból przeszedł jak ręką odjął. W końcu mogłem nawiązać z nim normalny kontakt i dowiedzieć się, czy w ogóle ma przy sobie telefon, żeby wezwać pogotowie.</p>
+					<p>Powiem tylko, że jak dojechała karetka i opowiadaliśmy sanitariuszom, co się zdarzyło, to nie dowierzali, że sąsiad naprawdę tak cierpiał i że ten zielony okład na jego stawach uśmierzył ból.</p>
+					<p><strong>- Czyli każdy może przygotować takie antidotum na bolące stawy w swoim ogrodzie?</strong></p>
+					<p>- (profesor śmieje się) Byłoby idealnie. Ale mój ziołowy kompres zadziałał, bo znam się na tym i wiedziałem, co robię. Jednak muszę przyznać, że sam byłem zaskoczony jego skutecznością, choć przecież wiedziałem, że te zioła są świetne na stawy.</p>
+					<p>Jak już ochłonąłem po tej niemiłej przygodzie, choć z dobrym zakończeniem, to zacząłem rozmyślać. Skoro natura jest taka potężna, to po co faszerować się tą całą chemią? Tutaj jednak chodziło nie tylko o działanie przeciwbólowe, ale również kurację, która potrafi regenerować stawy.</p>
+					<p>Dlatego, aby stworzyć prawdziwą formułę na stawy przeprowadziłem w laboratorium szereg badań i najważniejsze – dodałem składnik, który sprawia, że dochodzi do szybkiej bioregeneracji stawów. I to jest najważniejsze, bo dzięki temu stawy, kręgosłup i mięśnie odbudowują się. Co sprawia, że po kilkudniowej kuracji <strong>ból nie wraca już nigdy.</strong> Tak właśnie powstała <strong>Bioregenerująca Kuracja Stawowa.</strong></p>
+					<p><strong>- To oznacza, że pana Bioregenerująca Kuracja Stawowa jest droga i zwykły człowiek, emeryt, nie może sobie na nią pozwolić?</strong></p>
+					<p>- Absolutnie nie. <strong>Dzienny koszt jej stosowania to równowartość dwóch najzwyklejszych bułeczek.</strong> Przecież wiadomo, że i tak większość emerytury przeznaczamy na leki. Ja sam biorę tabletki na serce, nadciśnienie, regulację cukru, wątrobę. Trochę tego jest. To absurd, żebym jeszcze do tego łykał coś na stawy. Szczególnie, że gdzie żołądek, a gdzie stawy (profesor lekko puka się w czoło). Poza tym, co wezmę na żołądek i wątrobę, jak mi padną?</p>
+					<p><strong>- Pan również używa swojej Bioregenerującej Kuracji Stawowej?</strong></p>
+					<p>- A myśli pani, że profesora biochemii nie bolą stawy? Żartuję sobie oczywiście. Tak, używam formuły. Dla wygody nadałem jej formę maści, więc można ją zastosować w dowolnym momencie, kiedy jest taka potrzeba. No i od razu na bolące miejsce. A nie czekać, aż to się rozpuści w żołądku i rozejdzie po ciele.</p>
+					<p><strong>- To naprawdę przełomowy wynalazek. A co z pana sąsiadem, którego uratował pan swoim kompresem ziołowym na ból stawów wtedy na działce?</strong></p>
+					<p>- Na szczęście wszystko dobrze. W szpitalu okazało się, że to był silny atak bólu artretycznego wywołany przez przeciążenie. Teraz sąsiad stosuje moją Bioregenerującą Kurację Stawową w formie maści i sam mówi, że już żadne bóle się go nie imają. Nadal nie odpuszcza pracy na działce, ale ma pewność, że nic go nie będzie bolało w trakcie oraz po takim olbrzymim wysiłku.</p>
+					<p><strong>- W takim razie na co działa pańska Bioregenerująca Kuracja Stawowa w formie maści?</strong></p>
+					<p>- Ta maść działa na wszystkie bóle stawów pochodzenia reumatycznego i artretycznego.</p>
+					<p>Poza tym jest idealna na rekonwalescencję po kontuzjach i ogólne przemęczenie mięśni związane z dużym wysiłkiem fizycznym.</p>
+					<p><strong>- Czyli w takim razie nawet osoby młode i bardzo aktywne fizycznie również mogą stosować Bioregenerującą Kurację Stawową?</strong></p>
+					<p>- Jak najbardziej! Na przykład mój wnuk, który bardzo dużo jeździ na rowerze i ćwiczy triathlon, często używa mojej formuły na zakwasy po treningu.</p>
+					<p><strong>- Czy pana przełomowa maść na stawy jest dostępna w aptece?</strong></p>
+					<p>- Nie, można ją zakupić przez Internet. Apteki narzucają taką marżę, że ta maść byłaby dwa razy droższa. A mnie nie zależy na zysku, tylko na pomocy ludziom. Uznałem więc, że lepiej sprzedawać ją w ten sposób.</p>
+					<p><strong>- Bardzo dziękuję za rozmowę i życzę dużo zdrowia.</strong></p>
+					<p><i>Prof. Antoniego Kleniewicza wysłuchała Agata Bieniek.</i></p>
+					<p>Drodzy Czytelnicy naszego portalu „Nasze Ogrody” Bioregenerującą Kurację Stawową dostaniecie na stronie poniżej. Wystarczy nacisnąć na niebieski link. <strong>Profesor Kleniewicz specjalnie dla Was ma rabat.</strong></p>
+					<p>Uzyskaliśmy go dzięki profesorowi, który sam jest fanem ogrodnictwa i chciałby wesprzeć wszystkie osoby, które podzielają tę pasję.</p>
+
+					<div class="features-wrapper"></div>
+
+					<div class="comments mt-3">
+						<h3 class="comments__title text-bold d-flex align-items-center">KOMENTARZE DO ARTYKUŁU <span class="comments__count">(149 komentarzy)</span></h3>
+
+						<div class="comments-list mt-5">
+							<h4>Najnowsze:</h4>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Jola <span class="comment__date">dzisaj</span></a>
+									<p class="comment__content">Ja zawsze wiedziałam, że to całe wciskanie tabletek przeciwbólowych, to tylko nabijanie kieszeni lekarzy. Brawo Profesor!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Marian D. <span class="comment__date">dzisaj</span></a>
+									<p class="comment__content">Panie profesorze, a czy to, aby na pewno działa? Ja już na różne maści, pigułki i czopki wydałem kilka moich emerytur!</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__autor.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Adam <span class="comment__date"> dzisaj</span></a>
+									<p class="comment__content"><span class="comment__mentioned">@Marian D.</span> no przecież masz napisane, że już po 1 dniu czujesz ulgę. Zresztą ja wiem, bo to stosuję i tak faktycznie było, że po pierwszym razie nareszcie bez bólu poszłem do sklepu.</p>
+								</div>
+							</div>
+							<div class="comment response-2 d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Lucek <span class="comment__date">dzisiaj</span></a>
+									<p class="comment__content"><span class="comment__mentioned">@Adam</span> pisze się „poszedłem”!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Zbyszko74 <span class="comment__date">dzisiaj</span></a>
+									<p class="comment__content">Ja to już stosuję. U mnie to był wieczny problem z kolanami. Od rana do wieczora ból… z domu prawie żem nie wychodzil. A teraz paczcie państwo chodze sobie na wycieczki po lesie, grzyby zbieram albo jagody. Nowe zycie staruszka!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Sylwerka <span class="comment__date">dzisiaj</span></a>
+									<p class="comment__content">Bardzo bym chciała wypróbować, ale nie wiem czy łapię się na to dofinansowanie</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user-2.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Judyta <span class="comment__date"> dzisaj</span></a>
+									<p class="comment__content"><span class="comment__mentioned">@Sylwerka</span> no przecież jak klikniesz w link to dostaniesz, tam jest pod artykułem.</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Gustawa <span class="comment__date">dzisiaj</span></a>
+									<p class="comment__content">Ja mam duzy prob;lem, bo jestm wysoka – mam 178 cm wzrostu. Dla kobiety to strasznie dużo. Na starość porzez to stawy mnie wysiadły. Tak specjalista mnie powiedziała. Ja cierpie okropnie. Ta kuracja to dla mnie wybawienie</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Marek Kloc <span class="comment__date">dzisiaj</span></a>
+									<p class="comment__content">Wszystko fajnie ale że niby z ogrudka tak po prostu? Pewnie znowu ściema</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Lilianna <span class="comment__date"> dzisaj</span></a>
+									<p class="comment__content"><span class="comment__mentioned">@Marek Kloc</span> A co jest złego w ogródkach i ziołach? Już nasi przodkowie je stosowali u byli zdrowsi niż my. Też mi problem…</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Staśka <span class="comment__date">dzisiaj</span></a>
+									<p class="comment__content">Mnie to córka kupiła bo u mnie wszystko się w rekach usadowilo. Szklanki utrzymać nie mogłam, chleba pokroić. Mowie jej „corcia, a gdzie mnie to tam pomoze? To by mnie lekarz już dawno dal”, a ona się uparla i mama stosuj i stosuj. No to zem uzywala tej kuracji, po 1 tygodniu już zaczelam szydełkiem dziergać. A teraz to mam tyle pary w rekach, ze robie rozne szydełkowe cuda na zarobek. Niezle mi to idzie i sobie do emerytury dorabiam. Bardzo panu profesorowi dziekje za te kuracje. Niech Bóg pana pobłogosławi!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Regina Głódź <span class="comment__date">dzisiaj</span></a>
+									<p class="comment__content">Szukam czegoś dla mojego ojca. Ma 85 lat i stawy w rozsycpe. Czy ta kuracja mu pomoże?</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Hubert <span class="comment__date"> dzisaj</span></a>
+									<p class="comment__content"><span class="comment__mentioned">@Regina Głódź</span> pomoże. Ja też kupiłem mojemu ojcu, a on nawet starszy niż twój bo 91 lat. Z łożka nie wstawal jeczal z bolu. A teraz powolutku tupta po domu. Sam sobie cos w kuchni przygotuje. Sam się oporzadzi. Niebo a ziemia. Polecam dla rodzicow!</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Natalia <span class="comment__date"> dzisaj</span></a>
+									<p class="comment__content"><span class="comment__mentioned">@Regina Głódź</span> u mojej mamy rewelka. Ona 39 rocznik. Tez już stawy nie te, kręgosłup siadł. UżywaŻa kuracji profesora Kleniewicza i kobieta jakby druga młodość przeżywa. Na rowerze znowu jeździ po wsi.</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Robert <span class="comment__date">wczoraj</span></a>
+									<p class="comment__content">Przesyłka jest bezpłatna?</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Maliniak <span class="comment__date"> wczoraj</span></a>
+									<p class="comment__content"><span class="comment__mentioned">@Robert</span> a kliknij na ten niebieski napis tam wszystko jest napisane.</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<a href="{landing_url}">
+										<img src="img/icon__user.png" alt="">
+									</a>
+								</div>
+								<div class="comment__box">
+									<a href="{landing_url}" class="comment__author">Kazimiera <span class="comment__date">wczoraj</span></a>
+									<p class="comment__content">Już stosuję, dam znać, jakie będą efekty!</p>
+								</div>
+							</div>
+						</div>
+						<div class="btn-wrapper">
+							<a href="{landing_url}" class="terra-btn">Zamawiam</a>
+						</div>
+					</div>
+				</article>
+				<aside class="col-lg-4 sidebar mb-5 mb-md-0 pb-4 pb-md-0">
+					<div class="articles">
+						<h3 class="title-with-bg mb-3">To Cię zainteresuje:</h3>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1.png" alt="">
+							<h4 class="articles__title">KALENDARZ UPRAWY KWIATÓW</h4>
+						</a>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1(1).png" alt="">
+							<h4 class="articles__title">JAKIE KRZAKI OZDOBNE WYBRAĆ DO OGRODU?</h4>
+						</a>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1(2).png" alt="">
+							<h4 class="articles__title">CZY MOŻNA NATURALNIE POZBYĆ SIĘ KRETÓW Z OGRODU?</h4>
+						</a>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1(3).png" alt="">
+							<h4 class="articles__title">ŁĄKI KWIETNE, CZYLI KOSIĆ CZY NIE TRAWNIKI?</h4>
+						</a>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1(4).png" alt="">
+							<h4 class="articles__title">UPRAWA ZIÓŁ W DOMU I OGRODZIE</h4>
+						</a>
+						<h3 class="title-with-bg mb-3 mt-3">Najpopularniejsze artykuły:</h3>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1(5).png" alt="">
+							<h4 class="articles__title">OGRÓD PANI ZOFII ZDOBYŁ 1 MIEJSCE W WASZYM GŁOSOWANIU</h4>
+						</a>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1(6).png" alt="">
+							<h4 class="articles__title">POŁĄCZYŁA ICH PASJA OGRODNICZA</h4>
+						</a>
+						<a class="landing-url articles__item" href="{landing_url}">
+							<img class="img-fluid" src="img/img_article_1(7).png" alt="">
+							<h4 class="articles__title">ŚLIMAKI ATAKUJĄ! 5 SKUTECZNYCH SPOSOBÓW NA NIE</h4>
+						</a>
+						<div class="promo-box">
+							<h2 class="promo-box__title text-uppercase text-center">OFERTA SPECJALNA</h2>
+							<a class="landing-url" style="cursor:pointer;">
+							<img src="prod.png" class="img-fluid" alt=""></a>
+							<div class="promo-box__btn">
+								<a class="btn btn-primary text-uppercase w-100 text-center promo-box__btn-item landing-url" href="{landing_url}">
+									Sprawdź
+								</a>
+							</div>
+						</div>
+					</div>
+				</aside>
+	
+			</div>
+		</div>
+	</main>
+
+
+	<script>
+        const offer_params = {
+            priceMain: '179',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'zł',
+            productName: 'Hondrostrong',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+	</script>
+
+
+	<script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain: offer_params.priceMain,
+            currencyMain: offer_params.currencyMain,
+            lang: 'pl', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product: offer_params.productName, // название продукта
+            genderTargetting: 'all', // пол целевой аудитории - all, male, female
+            form: {
+                isNeeded: 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+	</script>
+	<script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+	</script>
+</body>
+</html>
