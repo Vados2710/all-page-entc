@@ -1,0 +1,824 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!doctype html>
+<html lang="pl">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <title>Earth's Science</title>
+   <link rel="icon" href="prod.png">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+   <script src="drewlex_main.js"></script>
+   <script>
+      (function () {
+         let params = (new URL(document.location)).searchParams;
+         let block = '';
+         params.forEach(function (value, key) {
+            block = block + key + '=' + value + '&';
+         })
+         var t;
+         try {
+            for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+            onpopstate = function (t) {
+               t.state && location.replace("domonetka/index.php?cid={clickid}")
+            }
+         } catch (o) {}
+      })();
+   </script>
+   <link href="main.047d5446104c8bdb98e0.css?ver=2" rel="stylesheet">
+   <style>
+      .footer__link-list span {
+         font-size: 16px;
+         color: #fff;
+         margin: 0 10px;
+      }
+
+      .btn--comment {
+         width: 30%;
+         height: 70px;
+         border: none;
+         background-color: #E61739;
+         color: white;
+         font-size: 26px;
+         font-weight: 600;
+         text-transform: uppercase;
+         cursor: pointer;
+      }
+
+
+      .btn--comment:hover {
+         width: 30%;
+         height: 70px;
+         border: none;
+         background-color: #ba0722;
+         color: white;
+         font-size: 26px;
+         font-weight: 600;
+         text-transform: uppercase;
+         cursor: pointer;
+      }
+
+      .hidden {
+         display: none;
+      }
+   </style>
+   <style>
+      #contact_popup {
+         padding: 50px 40px;
+         background: #fff;
+         max-width: 800px;
+         width: 100%;
+         height: 410px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 0;
+         margin: auto;
+         z-index: 9999;
+         display: none;
+         color: #3d3d3d;
+         opacity: 1;
+         visibility: visible;
+         text-align: center;
+         box-sizing: border-box;
+      }
+
+      #contact_popup h2,
+      #contact_popup p {
+         margin-bottom: 30px;
+         color: #000;
+         margin-top: 0;
+      }
+
+      #contact_popup h3 strong {
+         color: #38c2f9;
+      }
+
+      #contact_popup h2 {
+         font-size: 50px;
+         color: #1047ad;
+         line-height: 1;
+      }
+
+      #contact_popup h3 strong {
+         font-size: 24px;
+         margin-bottom: 10px;
+         display: block
+      }
+
+      #contact_popup #close_contact {
+         content: '';
+         position: absolute;
+         cursor: pointer;
+         top: -40px;
+         right: -40px;
+         background-image: url('images/close.png');
+         background-size: cover;
+         width: 30px;
+         height: 30px;
+      }
+
+      @media (max-width: 1440px) {
+         #contact_popup #close_contact {
+            top: 15px;
+            right: 15px;
+         }
+      }
+
+      @media (max-height: 875px) {
+         #contact_popup #close_contact {
+            top: 15px;
+            right: 15px;
+         }
+      }
+
+      .disclaimer {
+         text-align: center;
+         font-size: 12px;
+         margin-bottom: 30px;
+      }
+
+      .promo-text-box {
+         background: #f19aa0;
+         font-size: 12px;
+         padding: 5px;
+         color: #fff;
+      }
+
+      @media (max-width: 991px) {
+         #contact_popup {
+            bottom: auto;
+            height: auto;
+            top: 15px;
+            max-height: calc(100vh - 15px);
+            overflow: auto
+         }
+
+         .popup #close_contact {
+            top: 15px;
+            right: 15px;
+         }
+      }
+
+      @media (max-width: 600px) {
+         #contact_popup h2 {
+            font-size: 30px
+         }
+
+         #contact_popup h3 {
+            font-size: 20px
+         }
+
+      }
+
+
+      .overlay {
+         width: 100%;
+         height: 100%;
+         position: fixed;
+         z-index: 50;
+         background-color: rgba(0, 0, 0, 0.6);
+         top: 0;
+         right: 0;
+         display: none;
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="overlay"></div>
+
+   <!-- contact -->
+
+   <header class="header">
+      <div class="container">
+         <img class="logo" src="images/22d5a4bdd6e94b6c6332.svg" alt="Earth's Science logo" />
+         <button class="hamburger-btn" id="hamburger-btn">
+            <div></div>
+            <div></div>
+            <div></div>
+         </button>
+         <div class="mobile-menu" id="mobile-menu">
+            <nav>
+               <ul class="mobile-menu__list">
+                  <li class="mobile-menu__list__item"><a data-text="Nauka" href="" class="cta-btn">Nauka</a></li>
+                  <li class="mobile-menu__list__item"><a data-text="Technologia" href="" class="cta-btn">Technologia</a>
+                  </li>
+                  <li class="mobile-menu__list__item"><a data-text="Historia" href="" class="cta-btn">Historia</a></li>
+                  <li class="mobile-menu__list__item"><a data-text="Odkrycia" href="" class="cta-btn">Odkrycia</a></li>
+               </ul>
+            </nav>
+         </div>
+         <nav class="main-nav">
+            <ul class="main-nav__list">
+               <li class="main-nav__list__item"><a data-text="Nauka" href="" class="cta-btn">Nauka</a></li>
+               <li class="main-nav__list__item"><a data-text="Technologia" href="" class="cta-btn">Technologia</a></li>
+               <li class="main-nav__list__item"><a data-text="Historia" href="" class="cta-btn">Historia</a></li>
+               <li class="main-nav__list__item"><a data-text="Odkrycia" href="" class="cta-btn">Odkrycia</a></li>
+            </ul>
+         </nav>
+         <div class="social-media">
+            <a href="" class="cta-btn">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23.9" viewBox="0 0 24 23.9">
+                  <path id="Path_1101" data-name="Path 1101"
+                     d="M24,12A12,12,0,1,0,10.1,23.9V15.5h-3V12h3V9.4c0-3,1.8-4.7,4.5-4.7a22.184,22.184,0,0,1,2.7.2v3H15.8a1.762,1.762,0,0,0-2,1.9V12h3.3l-.5,3.5H13.8v8.4A12.051,12.051,0,0,0,24,12Z"
+                     fill="#073440" />
+               </svg>
+            </a>
+            <a href="" class="cta-btn">
+               <svg id="twitter-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="19.5" viewBox="0 0 24 19.5">
+                  <path id="Path_43" data-name="Path 43"
+                     d="M24,2.3a9.006,9.006,0,0,1-2.8.8A5.324,5.324,0,0,0,23.4.4a9.078,9.078,0,0,1-3.1,1.2A5.233,5.233,0,0,0,16.6,0a4.908,4.908,0,0,0-4.9,4.9A3.75,3.75,0,0,0,11.8,6,13.676,13.676,0,0,1,1.7.9,4.3,4.3,0,0,0,1,3.4,5.021,5.021,0,0,0,3.2,7.5,7.089,7.089,0,0,1,1,6.9V7a4.85,4.85,0,0,0,3.9,4.8,5.067,5.067,0,0,1-1.3.2,2.769,2.769,0,0,1-.9-.1,4.741,4.741,0,0,0,4.6,3.4,10,10,0,0,1-6.1,2.1A4.869,4.869,0,0,1,0,17.3a14,14,0,0,0,7.5,2.2,13.874,13.874,0,0,0,14-14V4.9A10.3,10.3,0,0,0,24,2.3"
+                     fill="#073440" />
+               </svg>
+            </a>
+            <a href="" class="cta-btn">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="19.2" viewBox="0 0 24 19.2">
+                  <path id="Path_1102" data-name="Path 1102"
+                     d="M23.6,4H4.4A2.4,2.4,0,0,0,2.012,6.4L2,20.8a2.407,2.407,0,0,0,2.4,2.4H23.6A2.407,2.407,0,0,0,26,20.8V6.4A2.407,2.407,0,0,0,23.6,4Zm0,4.8-9.6,6-9.6-6V6.4l9.6,6,9.6-6Z"
+                     transform="translate(-2 -4)" fill="#073440" />
+               </svg>
+            </a>
+         </div>
+      </div>
+   </header>
+   <div class="container">
+      <div class="page__wrapper">
+         <main>
+            <article class="article">
+               <div class="article__links">
+                  <p><a href="" class="cta-btn">Odkrycia</a> > <span>Fenomenalne odkrycie naukowca sprzed 400 lat
+                        umożliwiło...</span></p>
+               </div>
+               <p class="article__report article__report-mobile">Raport redakcji:</p>
+               <h1 class="article__main-title-mobile">
+                  <a href="" class="cta-btn" style="color: #000; text-decoration: underline;">
+                     Fenomenalne odkrycie naukowca sprzed 400 lat umożliwiło domową korekcję wady wzroku w 21 dni!
+                  </a>
+               </h1>
+               <div class="article__main-title-desktop">
+                  <p class="article__report">Raport redakcji:</p>
+                  <h1>
+                     <a href="" class="cta-btn" style="color: #000; text-decoration: underline;">
+                        Fenomenalne odkrycie naukowca sprzed 400 lat umożliwiło domową korekcję wady wzroku w 21 dni!
+                     </a>
+                  </h1>
+               </div>
+               <div class="article__info">
+                  <p>Data publikacji: <span class="article__info__date" id="article-date"><script type="text/javascript">
+                     d = new Date();
+                     p = new Date(d.getTime() - 0 * 86400000);
+                     monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                     var w = p.getDate();
+                     document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+ </script>
+ </span></p>
+                  <p>Autor: <span class="article__info__date">dr hab. Krystian Szulc</span></p>
+               </div>
+               <img class="article__main-img" src="images/f25cb804684bc2fab067.png" alt="Okulary korekcyjne" />
+               <section>
+                  <p class="article__text bold-text lead-text">W XVII wieku włoski geniusz, Salvatore Garau, odkrył
+                     połączenie naturalnych składników działających zbawiennie na wzrok. 400 lat później to odkrycie
+                     okazało się kamieniem milowym, który posłużył za podstawę do stworzenia nowoczesnej 14-dniowej
+                     formuły trwałego pozbycia się wszelkich wad wzroku bez wychodzenia z domu. Ta rewolucyjna metoda
+                     pozwala w zadziwiająco ekspresowym tempie zmniejszyć wadę wzroku o nawet 3,5 dioptrii.</p>
+                  <p class="article__text">Według najnowszych statystyk już około <span class="bold-text">70% dorosłych
+                        Polaków</span> dotyczą problemy ze wzrokiem i wyraźnym widzeniem. Wszystkie te osoby mają teraz
+                     szansę uniknąć bezowocnych, kosztownych i skomplikowanych metod naprawy jakości widzenia
+                     (zaczynając od okularów oraz soczewek, a kończąc na operacji laserowej oczu) dzięki innowacyjnej
+                     metodzie naturalnej korekcji wzroku w domowym zaciszu. Teraz absolutnie każdy może dołączyć do
+                     grona ponad 175 500 osób cieszących się znakomitym, zdrowym wzrokiem bez konieczności wychodzenia z
+                     domu.</p>
+                  <p class="article__text">Ty też, niezależnie od wieku, stanu zaawansowania problemu i ilości
+                     nieprzyjemnych doświadczeń z optykami, już za 2 tygodnie będziesz widział wszystko i wszystkich,
+                     nawet z dużej odległości i od razu po przebudzeniu. Ponadto wywołasz zdziwienie na twarzach
+                     rodziny, przyjaciół i kolegów z pracy, kiedy wreszcie pojawisz się bez okularów korekcyjnych lub
+                     soczewek. Nawet jeśli lekarze wmawiają Ci, że nie masz predyspozycji do poprawy wzroku, <span
+                        class="bold-text">trwale zmniejszysz wadę wzroku nawet o 3,5 dioptrii w zaledwie 21 dni.
+                        Dodatkowo wyeliminujesz ryzyko powstawania zaćmy, jaskry bądź stanów zapalnych plamki
+                        żółtej.</span></p>
+               </section>
+               <section>
+                  <h2>To dopiero pierwsze efekty działania</h2>
+                  <p class="article__text">Pani Beata jest jedną z osób, które już wypróbowały metodę naturalnej
+                     korekcji wzroku w domowym zaciszu. Na początku nie wierzyła, że po pięćdziesiątce może jeszcze
+                     marzyć o zdrowym, sokolim wzroku. Jednak dzięki kapsułkom <span class="productName"></span> po niecałych 30 dniach
+                     widzi na tyle dobrze, że bez żadnego skupiania się i mrużenia oczu czyta książki, ogląda telewizję
+                     i rozwiązuje krzyżówki. Ułatwia jej to pracę w banku, nie musi używać okularów do pracy przy
+                     komputerze. „Nawet mąż nie wierzył, że to zadziała” - mówi Pani Beata. - „Jednak musiał przyznać,
+                     że efekt jest zdumiewający!”.</p>
+               </section>
+               <section>
+                  <h2>Dlaczego korekcja wzroku z <span class="productName"></span> jest aż tak prosta i skuteczna?</h2>
+                  <p class="article__text">Sekret tej wyprzedzającej swoją epokę metody polega na wzmocnieniu całej
+                     gałki ocznej, chroniąc siatkówkę, rogówkę, oraz soczewkę oka. Dzięki temu błyskawicznie po
+                     stosowaniu kapsułek widzimy nawet o 250% lepiej niż w okularach korekcyjnych. Wzrok ulega znacznej
+                     regeneracji, a dzięki działaniu przeciwzapalnemu, łagodzone są podrażnienia i przyspieszone procesy
+                     naprawcze oczu. Dodatkowo wady wzroku są skutecznie zmniejszane. Kapsułki <span class="productName"></span>
+                     poprawiają mikrokrążenie w gałce ocznej i regenerują soczewkę, skutecznie zapobiegając zaćmie. Nie
+                     myśl, że jest za późno, aby zacząć naprawę swojego zmęczonego latami funkcjonowania narządu wzroku.
+                     Możesz się o tym przekonać w zaledwie 21 dni, nie wydając kroci na nowe okulary korekcyjne,
+                     soczewki czy wizyty u specjalistów.</p>
+                  <div class="article__effect-box">
+                     <h2 class="article__effect-box__title">Zobacz, jakie efekty przyniesie stosowanie <span class="productName"></span>
+                     </h2>
+                     <ul class="article__effect-box__list">
+                        <li class="article__effect-box__list__item">
+                           <img class="article__effect-box__list__item__icon" src="images/06b01f18fb50714425de.svg"
+                              alt="" />
+                           <p class="article__effect-box__list__item__text"><span class="bold-text">zaczniesz swobodnie
+                                 czytać</span> każdy (nawet drobny i oddalony!) tekst niemal natychmiast po stosowaniu
+                              <span class="productName"></span>,</p>
+                        </li>
+                        <li class="article__effect-box__list__item">
+                           <img class="article__effect-box__list__item__icon" src="images/06b01f18fb50714425de.svg"
+                              alt="" />
+                           <p class="article__effect-box__list__item__text">odczujesz poprawę jakości widzenia po <span
+                                 class="bold-text">zaledwie kilku dniach</span> stosowania kapsułek,</p>
+                        </li>
+                        <li class="article__effect-box__list__item">
+                           <img class="article__effect-box__list__item__icon" src="images/06b01f18fb50714425de.svg"
+                              alt="" />
+                           <p class="article__effect-box__list__item__text"><span class="bold-text">oszczędzisz mnóstwo
+                                 pieniędzy</span>, ponieważ <span class="productName"></span> kosztuje znacznie mniej niż wizyta u
+                              okulisty czy nowe okulary i oprawki,</p>
+                        </li>
+                        <li class="article__effect-box__list__item">
+                           <img class="article__effect-box__list__item__icon" src="images/06b01f18fb50714425de.svg"
+                              alt="" />
+                           <p class="article__effect-box__list__item__text"><span class="bold-text">będziesz widział
+                                 wszystko</span> z niesamowitą ostrością tak, że przy sprzątaniu czy zmywaniu żaden
+                              szczegół Ci nie umknie,</p>
+                        </li>
+                        <li class="article__effect-box__list__item">
+                           <img class="article__effect-box__list__item__icon" src="images/06b01f18fb50714425de.svg"
+                              alt="" />
+                           <p class="article__effect-box__list__item__text"><span class="bold-text">pomożesz
+                                 innym</span>, którzy również borykają się z problemem niedowidzenia – wystarczy, że
+                              opowiesz im o tej nowatorskiej metodzie!</p>
+                        </li>
+                     </ul>
+                  </div>
+               </section>
+               <section style="overflow: hidden;">
+                  <h2>Na czym polega sekret regeneracji oczu, dzięki tej pionierskiej metodzie?</h2>
+                  <p class="article__text"><span class="bold-text">Kapsułki <span class="productName"></span></span> działają od razu po
+                     wchłonięciu - nieważne jaką wadę posiadasz, będziesz widział wyraźny i czysty obraz. Wzmocni się
+                     siatkówka oraz rogówka oka, co zapobiegnie jaskrze. Soczewka oka zostanie stopniowo regenerowana,
+                     eliminując zaćmę. Zastosowanie pełnej kuracji <span class="bold-text">poprawi Twój wzrok raz na
+                        zawsze, sprawiając, że okulary staną się tylko mglistym wspomnieniem.</span></p>
+                  <div class="article__product-effect">
+                     <figure class="article__product-effect__figure">
+                        <img src="images/ce506143c5a27e6d6a70.png" alt="Sposób ułożenia dłoni" />
+                        <figcaption>Sposób działania kapsułek <span class="productName"></span></figcaption>
+                     </figure>
+                     <p class="article__text article__product-effect__text">Stosowanie soczewek kontaktowych i okularów,
+                        może nieść ze sobą wiele skutków ubocznych. Rozluźniają one mięśnie gałki ocznej, co powoduje
+                        ich deformację i pogłębienie wady. Substancje czynne zawarte w kapsułkach wspierają mięśnie
+                        wewnątrz gałki ocznej, dzięki temu są uelastycznione i wzmocnione. <b>Poprawie ulega stan
+                           soczewki, rogówki oraz siatkówki. To konieczne warunki do odzyskania dobrego widzenia.</b>
+                        <span class="productName"></span> został stworzony ze skrupulatnie wyselekcjonowanych składników, dlatego
+                        wchłanianie się substancji aktywnych jest niesamowicie wysokie.</span></p>
+                  </div>
+                  <p class="article__text">Według badań z Instytutu Okulistyki i Optyki w Nowym Jorku, metoda ta <span
+                        class="bold-text">pomogła 98,7% osób,</span> które na co dzień borykały się z problemami ze
+                     wzrokiem. Co więcej, ankietowani uczestnicy uzupełnili specjalną ankietę, według której:</p>
+                  <ul class="article__effects-list">
+                     <li class="article__effects-list__item">
+                        <div class="article__effects-list__item__wrapper">
+                           <p>90%</p>
+                           <span></span>
+                        </div>
+                        <p>Twierdzi, że jakość ich życia znacznie wzrosła.</p>
+                     </li>
+                     <li class="article__effects-list__item">
+                        <div class="article__effects-list__item__wrapper">
+                           <p>93,8%</p>
+                           <span></span>
+                        </div>
+                        <p>Potwierdziło, że bóle głowy wynikające z wytężania oczu ustały.</p>
+                     </li>
+                     <li class="article__effects-list__item">
+                        <div class="article__effects-list__item__wrapper">
+                           <p>95,4%</p>
+                           <span></span>
+                        </div>
+                        <p>Uważa, że już nie potrzebuje ani okularów, ani soczewek.</p>
+                     </li>
+                     <li class="article__effects-list__item">
+                        <div class="article__effects-list__item__wrapper">
+                           <p>98,7%</p>
+                           <span></span>
+                        </div>
+                        <p>Zadeklarowało polepszenie się wzroku.</p>
+                     </li>
+                  </ul>
+                  <p class="article__text bold-text lead-text">Co sprawia, że aż 88% użytkowników porzuciło inne metody
+                     walki z wadami wzroku na rzecz <span class="productName"></span>? Poznaj ich opinie!</p>
+                  <div class="swiper-container">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <div class="slide">
+                              <img class="slide__img" src="images/a587fb1445f9e78b4f4d.png" alt="Jan Z." />
+                              <div class="slide__content">
+                                 <p class="slide__content__client-opinion">„Od kiedy pamiętam, wołali na mnie
+                                    „czterooki”. Szukając rozwiązania na problemy ze wzrokiem, które miałem od zawsze,
+                                    mogłem wybierać między drogimi ofertami klinik operacji laserowych lub sięgnąć po
+                                    domowy sposób z <span class="productName"></span>, który kosztuje ułamek kwoty korekcji laserowej.
+                                    Wszyscy byli zszokowani, jak po urlopie wróciłem do pracy już bez swoich okularów!”.
+                                 </p>
+                                 <p class="slide__content__client-name">Jan Z., 42 l.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="slide">
+                              <img class="slide__img" src="images/b128da0c93cf88813b0d.png" alt="Genowefa B." />
+                              <div class="slide__content">
+                                 <p class="slide__content__client-opinion">„Pogarszający się wzrok utrudniał mi życie.
+                                    Nie mogłam gotować rodzinie obiadów, bo wciąż się kaleczyłam albo parzyłam w kuchni!
+                                    Poddanie się laserowej operacji nie wchodziło w rachubę ze względu na wiek. Na
+                                    szczęście synowa dała mi kapsułki <span class="productName"></span> – to dzięki nim dziś gotuję bez
+                                    przeszkód i znów mogę rozwiązywać krzyżówki!”.</p>
+                                 <p class="slide__content__client-name">Genowefa B., 65 l.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="slide">
+                              <img class="slide__img" src="images/a1bcd972d23cb4280267.png" alt="Beata L." />
+                              <div class="slide__content">
+                                 <p class="slide__content__client-opinion">„Od lat śledzę najnowsze osiągnięcia
+                                    medyczne, zwłaszcza jeśli chodzi o poprawę wzroku. Kiedy dowiedziałam się o <span class="productName"></span>, nie wahałam się nawet chwili – chciałam spełnić swoje marzenie o dobrym
+                                    wzroku. Stosowałam kapsułki codziennie przez 21 dni, choć efekty pojawiły się dużo
+                                    wcześniej. W końcu mogłam zrezygnować z wydawania pieniędzy na soczewki! Teraz widzę
+                                    znakomicie!”.</p>
+                                 <p class="slide__content__client-name">Beata L., 34 l.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="slide">
+                              <img class="slide__img" src="images/e7a154c929bf30c8b944.png" alt="Marian" />
+                              <div class="slide__content">
+                                 <p class="slide__content__client-opinion">„Myślałem, że będę niewidomy jak mój ojciec,
+                                    nawet się z tym już pogodziłem. Ale mój syn nie! To on zamówił 2 opakowania tych
+                                    kapsułek. Kurację zaczęliśmy razem. W związku z tym, że miałem znacznie gorszy wzrok
+                                    zdecydowałem się na dłuższą kurację. Zrezygnowałem oczy praktycznie całkowicie w dwa
+                                    miesiące. To cud!”.</p>
+                                 <p class="slide__content__client-name">Marian, 76 l.</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="slide">
+                              <img class="slide__img" src="images/2f2cb113eb3bd295c06f.png" alt="Marzena" />
+                              <div class="slide__content">
+                                 <p class="slide__content__client-opinion">„Wzrok mi siadł wraz z menopauzą. Nawet
+                                    nakładanie makijażu trwało znacznie dłużej niż przedtem. Kilka razy mąż zwrócił
+                                    uwagę, że nierówno sobie zrobiłam kreski – to bolało. Natrafiłam na <span class="productName"></span>
+                                    w samą porę! Początkowy sceptycyzm przegrał z faktami – coraz rzadziej czułam
+                                    potrzebę sięgnięcia po okulary korekcyjne. To tak, jakby zły czar prysł!”.</p>
+                                 <p class="slide__content__client-name">Marzena, 53 l.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+               <section>
+                  <h2>Dla kogo jest ta metoda?</h2>
+                  <p class="article__text">Z kuracji <span class="productName"></span> może skorzystać <span class="bold-text">absolutnie
+                        każdy,</span> bez względu na wiek i wadę wzroku. Będziesz mógł spędzać czas z najbliższymi,
+                     jednocześnie wykonując przyjemne codzienne czynności, takie jak: oglądanie telewizji, czytanie
+                     książek i gazet czy też rozrywki na świeżym powietrzu - poprawiając przy tym swój wzrok.</p>
+                  <div class="article__product-target">
+                     <p class="bold-text lead-text"><span class="productName"></span> pomoże osobom cierpiącym na:</p>
+                     <ul class="article__product-target__list">
+                        <div class="article__product-target__column">
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">krótkowzroczność,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">dalekowzroczność,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">astygmatyzm,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">starczowzroczność*,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">ból głowy spowodowany zmęczeniem oczu,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">pogarszający się wzrok,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">zaćmę,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">jaskrę,</p>
+                           </li>
+                           <li class="article__product-target__list__item">
+                              <img src="images/06b01f18fb50714425de.svg" alt="" />
+                              <p class="lead-text">zwyrodnienie plamki żółtej.</p>
+                           </li>
+                        </div>
+                     </ul>
+                     <p class="article__product-target__small-text">* - gorszy wzrok z powodu zaawansowanego wieku,
+                        prezbiopia</p>
+                  </div>
+                  <p class="article__text">Bez wady wzroku <span class="bold-text">nabierzesz pewności siebie i swobody
+                        w życiu.</span> Masz małą wadę? Lepiej zniwelować ją teraz, niż czekać na jej pogorszenie -
+                     zobaczysz różnicę po stosowaniu <span class="productName"></span>. <span class="bold-text">Po 7 dniach zaczniesz
+                        zauważać różnicę,</span> będziesz widział wyraźniej już bez okularów. Po 21 dniach efekt będzie
+                     jeszcze lepszy, a Ty dodatkowo zaoszczędzisz <span class="bold-text">5000 złotych</span>, które
+                     normalnie wydałbyś na inwazyjne i nieskuteczne operacje laserowe, kolejne szkła korekcyjne, które
+                     po pół roku trzeba będzie wymienić wraz z oprawkami lub soczewki, które prowadzą do częstego
+                     zapalenia spojówek i pochłaniają mnóstwo pieniędzy.</p>
+                  <div class="article__product-action">
+                     <img class="article__product-action__image" src="images/98dfff8b863d7b3fec7f.png"
+                        alt="Schemat oka" />
+                     <p>Substancje czynne zawarte w kapsułkach wspierają mięśnie wewnątrz gałki ocznej, dzięki temu są
+                        uelastycznione i wzmocnione. Kapsułki <span class="productName"></span> dzięki specjalnie wyselekcjonowanym
+                        naturalnym substancjom czynnym działają kierunkowo całkowicie wzmacniając gałkę oczną i
+                        eliminując schorzenia oczu. </p>
+
+                     <p>Kapsułki <span class="productName"></span> wzmacniają bezpośrednio soczewkę oka, dzięki czemu <span
+                           class="bold-text">poprawiają ostrość widzenia. Innowacyjna kombinacja starożytnej
+                           wiedzy</span> i idealnie dobranym składnikom, substancje aktywne działają jak
+                        wielopłaszczyznowa tarcza ochronna przed pogłębianiem się wad wzroku.
+                     </p>
+                  </div>
+               </section>
+               <section class="article__promotion">
+                  <p class="article__promotion__text">Klikając w baner poniżej, możesz zamówić <span class="productName"></span>. Zamów
+                     już teraz i <span class="bold-text gradient">skorzystaj z -55%&nbsp;zniżki!</span> Oferta specjalna
+                     jest ważna do końca <span id="promotion-date-1"></span>.</p>
+                     <div class="features-wrapper"></div>
+                  <p class="article__promotion__text"><span class="bold-text gradient">Pierwsze 120 osób,</span> które
+                     zamówi preparat do <span id="promotion-date-2"></span>,<span class="bold-text gradient"> otrzyma
+                        specjalną zniżkę&nbsp;-55%.</span> Pośpiesz się! Liczba opakowań jest ograniczona.</p>
+               </section>
+               <section class="article__author__info">
+                  <div class="article__author__info__wrapper">
+                     <img class="article__author__info__image" src="images/29abc451eacb9753d50b.png"
+                        alt="dr hab. Krystian Szulc" />
+                     <div class="article__author__info__content">
+                        <p><span class="bold-text">Autor publikacji:</span> dr&nbsp;hab. Krystian Szulc</p>
+                        <p><span class="bold-text">Data publikacji:</span> <span id="publication-date"><script type="text/javascript">
+                           d = new Date();
+                           p = new Date(d.getTime() - 0 * 86400000);
+                           monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                           var w = p.getDate();
+                           document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+       </script>
+       </span></p>
+                        <p class="article__author__info__text-desktop">Absolwent prestiżowego kierunku „chirurgia
+                           optyczna” na University of Metropolitan we Włoszech, wieloletni pracownik Institut d’Optique
+                           w Turynie. Autor tekstów naukowych dla zagranicznych portali medycznych, jak również na
+                           Earth's Science.</p>
+                     </div>
+                  </div>
+                  <p class="article__author__info__text-mobile">Absolwent prestiżowego kierunku „chirurgia optyczna” na
+                     University of Metropolitan we Włoszech, wieloletni pracownik Institut d’Optique w Turynie. Autor
+                     tekstów naukowych dla zagranicznych portali medycznych, jak również na Earth's Science.</p>
+               </section>
+            </article>
+            <section id="comments">
+               <p class="bold-text lead-text comments__title">Czytaj komentarze do artykułu: „Fenomenalne odkrycie
+                  naukowca sprzed 400 lat umożliwiło domową korekcję wady wzroku w 21 dni!”</p>
+               <p class="bold-text hidden message--comment"
+                  style="color: rgb(38, 118, 38); text-align: center; padding: 1rem 2rem;">
+                  Dodanie komentarza zakończone sukcesem. Po przejściu weryfikacji, zostanie dodany na stronę.
+               </p>
+               <div style="width: 100%; display: flex;">
+                  <input class="input--comment" type="text" placeholder="Wpisz komentarz"
+                     style="width: 70%; height: 70px;border: 2px solid #79D4F2; padding: 1rem 2rem">
+                  <button class="btn--comment">Dodaj</button>
+               </div>
+               <ul class="comments__list" id="comments-list"></ul>
+            </section>
+         </main>
+         <aside class="aside">
+            <div class="aside__search-input-wrapper">
+               <input class="aside__search-input" placeholder="Szukaj..." />
+               <a href="" class="cta-btn button" id="search-button"></a>
+            </div>
+            <div class="aside__box aside__articles">
+               <h2 class="aside__box__title">Popularne artykuły</h2>
+               <ul class="aside__articles__list">
+                  <li class="aside__articles__list__item">
+                     <a class="aside__articles__list__item__link cta-btn" href="">
+                        <img src="images/af074acd78341f495369.png" alt="Czarna dziura" />
+                        <div class="aside__articles__list__item__content">
+                           <h2 class="aside__articles__list__item__content__title">Czarne dziury<br />– cisi zabójcy?
+                           </h2>
+                           <p class="aside__articles__list__item__content__date bold-text">Data publikacji: <span
+                                 class="regular-text" id="aside-article-1-date"><script type="text/javascript">
+                                    d = new Date();
+                                    p = new Date(d.getTime() - 0 * 86400000);
+                                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                                    var w = p.getDate();
+                                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                </script>
+                </span></p>
+                        </div>
+                     </a>
+                  </li>
+                  <li class="aside__articles__list__item">
+                     <a class="aside__articles__list__item__link cta-btn" href="">
+                        <img src="images/9d5d9b3039e95f8c47a1.png" alt="Tachykardia serca" />
+                        <div class="aside__articles__list__item__content">
+                           <h2 class="aside__articles__list__item__content__title">Skąd się bierze tachykardia serca?
+                           </h2>
+                           <p class="aside__articles__list__item__content__date bold-text">Data publikacji: <span
+                                 class="regular-text" id="aside-article-2-date"><script type="text/javascript">
+                                    d = new Date();
+                                    p = new Date(d.getTime() - 0 * 86400000);
+                                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                                    var w = p.getDate();
+                                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                </script>
+                </span></p>
+                        </div>
+                     </a>
+                  </li>
+                  <li class="aside__articles__list__item">
+                     <a class="aside__articles__list__item__link cta-btn" href="">
+                        <img src="images/2f97a9a52a044cce07e1.png" alt="Najstarsze pismo na świecie" />
+                        <div class="aside__articles__list__item__content">
+                           <h2 class="aside__articles__list__item__content__title">Najstarsze pismo na świecie w nowej
+                              odsłonie</h2>
+                           <p class="aside__articles__list__item__content__date bold-text">Data publikacji: <span
+                                 class="regular-text" id="aside-article-3-date"><script type="text/javascript">
+                                    d = new Date();
+                                    p = new Date(d.getTime() - 0 * 86400000);
+                                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                                    var w = p.getDate();
+                                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                </script>
+                </span></p>
+                        </div>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <div class="aside__box aside__newsletter">
+               <div class="aside__newsletter__title-wrapper">
+                  <h2 class="aside__newsletter__title-wrapper__title">Newsletter</h2>
+                  <img class="aside__newsletter__title-wrapper__icon" src="images/724610b5e213778f524b.svg" alt="" />
+               </div>
+               <form class="aside__newsletter-form" id="newsletter-form">
+
+               </form>
+               <p class="newsletter-error">Wpisz poprawnie e-mail</p>
+            </div>
+            <div class="aside__box aside__encyclopedia">
+               <h2 class="aside__box__title">Z encyklopedii</h2>
+               <p class="aside__box__content"><span class="bold-text">Prawo Snelliusa,</span> czyli prawo załamania
+                  światła (znane również jako prawo Snell-Kartezjusza i prawo refrakcji) stanowi wzór stosowany do
+                  opisania relacji między kątami padania i załamania. Prawo fizyki opisujące zmianę kierunku biegu
+                  promienia światła przy przejściu przez granicę między dwoma ośrodkami przezroczystymi o różnych
+                  współczynnikach załamania. Bazuje na założeniach optyki geometrycznej.</p>
+            </div>
+            <div class="aside__special-offer"><a class="aside__special-offer__link cta-btn" href=""><img
+                     src="prod.png" alt="Oferta specjalna" /></a></div>
+         </aside>
+      </div>
+   </div>
+   <footer class="footer">
+      <div class="container">
+         <p class="footer__copyright">Copyright © 2023</p>
+
+         <div class="footer__link-list">
+
+            <a href="" class="cta-btn footer--text footer--nav-item">Polityka
+               prywatności</a>
+            <span> | </span>
+            <a id="btn" href="" class="cta-btn footer--text footer--nav-item">Regulamin</a>
+            <span> | </span>
+            <a id="btn" href="" class="cta-btn footer--text footer--nav-item">Kontakt</a>
+         </div>
+      </div>
+   </footer>
+   <script>
+      const offer_params = {
+          priceMain : '129',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'zł',
+          productName : 'VISULAN COMPLEX',
+      };
+  
+  
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+  
+  
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+  
+  
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+  
+  
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+   </script>
+
+
+<script>
+  var usr = '{t2}';
+  var sabss = '{clickid}';
+  initFeatures({
+      priceMain : offer_params.priceMain,
+      currencyMain : offer_params.currencyMain,
+      lang : 'pl', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+      product : offer_params.productName, // название продукта
+      genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+      form : {
+          isNeeded : 1, // 1-включить форму, 0-выключить
+          img: 'prod.png', // путь до картинки продукта
+          price: true, // плашка с ценой
+          priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+          showSelect: false, // показывать или скрывать поле select
+          untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+      },
+
+
+
+
+      autoComments: {
+          isNeeded: 0, // 1-включить автокомы, 0-выключить
+          bgColor: '#d7f2d8' // цвет фона блока комчиков
+      },
+
+
+
+
+      popups: {
+          isNeeded: 0, // 1-включить попы, 0-выключить
+          bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+          textColor: '#fff', // цвет основного текста сообщения
+          emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+          blackIcons: false // черные или белые иконки, значения true или false
+      },
+
+
+
+
+      wheel: {
+          isNeeded: 1, // 1-включить колесо, 0-выключить
+          customWheel: false // ссылка на свое колесо, либо false
+      }
+  });
+</script>
+<script>
+  $('[name="name"]').on('input change', function () {
+      var val = $(this).val();
+      $(this).val(val.replace(/[0-9+]/g, ''));
+  });
+  $('[name="name"]').attr('autocomplete', 'name');
+  $('[name="name"]').attr('pattern', '.{2,25}');
+  $('[name="phone"]').on('input change', function (e) {
+      var val = $(this).val();
+      $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+  });
+  $('[name="phone"]').get(0).type = 'tel';
+  $('[name="phone"]').attr('autocomplete', 'tel');
+  $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

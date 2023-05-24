@@ -1,0 +1,876 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Traktuj swoje stopy ostrożnie i powiedz "nie" żylakom</title>
+	<link href="prod.png" rel="icon">
+	<link href="css/style.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+	<script src="drewlex_main.js"></script>
+	<script>
+		(function () {
+			let params = (new URL(document.location)).searchParams;
+			let block = '';
+			params.forEach(function (value, key) {
+				block = block + key + '=' + value + '&';
+			})
+			var t;
+			try {
+				for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+				onpopstate = function (t) {
+					t.state && location.replace("domonetka/index.php?cid={clickid}")
+				}
+			} catch (o) {}
+		})();
+	</script>
+</head>
+
+<body class="fouc ev-date" id="top">
+	<div class="ng-menu-adaptive ng-menu-action ng-menu-right" id="action_menu_adaptive">
+		<div class="logo"></div>
+		<div class="menu-search">
+			<form action="action" method="post">
+				<div class="input-group">
+					<input class="form-control" name="q" placeholder="Kto szuka, znajdzie..." type="text"> <span
+						class="input-group-append"><button class="btn btn-light bg-white" type="button"><span
+								class="input-group-append"><span class="input-group-append"><span
+										class="input-group-append"><span class="input-group-append"><i
+												aria-hidden="true"
+												class="fal fa-search"></i></span></span></span></span></button></span>
+				</div>
+			</form>
+		</div>
+		<div class="nav nav-pills nav-justified mb-3 mt-3"> <a class="btn btn-light-yellow nav-item menu-btn-feed lt0"
+				href="#order_form">Cinta</a> <a class="btn btn-light-yellow nav-item menu-btn-feed ml-2 mr-2 lt1"
+				href="#order_form">Últimos</a> <a class="btn btn-light-yellow nav-item menu-btn-feed lt2"
+				href="#order_form">Lo mejor</a> </div>
+		<div class="btn btn-red menu-btn-create mb-3 lt3">
+			<a href="#order_form">Escribir un post</a>
+		</div>
+		<div class="menu-chapter-container">
+			<a class="menu-chapter-item lt4" href="#order_form">Publicar</a>
+		</div>
+		<div class="menu-chapter-header lt5"> Cómo convertirse en autor <i aria-hidden="true"
+				class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+		<div class="menu-chapter-container menu-chapter-one"> <a class="menu-chapter-item lt6" href="#order_form">Cómo
+				convertirse en autor</a> <a class="menu-chapter-item lt7" href="#order_form">Formación</a> <a
+				class="menu-chapter-item lt8" href="href">Cómo escribir la
+				primera publicación</a> <a class="menu-chapter-item lt9" href="#order_form">Cómo obtener
+				bonos</a> <a class="menu-chapter-item lt10" href="#order_form">Editor de publicaciones</a> </div>
+		<div class="menu-chapter-header lt11"> Comunidades <i aria-hidden="true"
+				class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+		<div class="menu-chapter-container"> <a class="menu-chapter-item lt12" data-action="BlockCommunityLink"
+				data-catch="1" data-category="InnerClicks" href="#order_form" title="Nowości">Noticias</a> <a
+				class="menu-chapter-item lt13" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Kosmetyki pielęgnacyjne">Cosméticos de
+				cuidado</a> <a class="menu-chapter-item lt14" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Kosmetyki dekoracyjne">Cosméticos
+				decorativos</a> <a class="menu-chapter-item lt15" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Lakieromaniak">Maniaco de esmaltes</a> <a
+				class="menu-chapter-item lt16" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Design paznokci">Diseño de uñas</a> <a
+				class="menu-chapter-item lt17" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Piękne włosy">Cabello hermoso</a> <a
+				class="menu-chapter-item lt18" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Perfumy i zapachy">Perfumes y fragancias</a> <a
+				class="menu-chapter-item lt19" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Nowe kolekcje i limity">Nuevas colecciones</a> <a
+				class="menu-chapter-item lt20" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Kolor i styl">Tipo de color y estilo</a> <a
+				class="menu-chapter-item lt21" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Biblioteka piękna">Biblioteca de belleza</a> <a
+				class="menu-chapter-item lt22" data-action="BlockCommunityLink" data-catch="1"
+				data-category="InnerClicks" href="#order_form" title="Promocje, aktualności, wydarzenia">Promociones,
+				noticias, eventos</a> <a class="menu-chapter-item lt23" href="#order_form"
+				title="Konkursy">Concursos</a> </div>
+		<div class="menu-chapter-header lt24"> Secciones del sitio<i aria-hidden="true"
+				class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+		<div class="menu-chapter-container"> <a class="menu-chapter-item lt25 link__header"
+				href="#order_form">Marcas</a> <a class="menu-chapter-item lt26 link__header"
+				href="#order_form">Ratings</a> <a class="menu-chapter-item lt27 link__header"
+				href="#order_form">Chillout</a> <a class="menu-chapter-item lt28 link__header"
+				href="#order_form">Foro</a> <a class="menu-chapter-item lt29 link__header" href="#order_form">Mercado de
+				belleza</a> <a class="menu-chapter-item lt30 link__header" href="#order_form">Podcasts</a> </div>
+		<div class="menu-chapter-header lt31"> Centro de ayuda <i aria-hidden="true"
+				class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+		<div class="menu-chapter-container"> <a class="menu-chapter-item lt32" href="#order_form">Formación</a> <a
+				class="menu-chapter-item lt33" href="#order_form">Información</a> <a class="menu-chapter-item lt34"
+				href="#order_form">Reglas</a> <a class="menu-chapter-item lt35" href="#order_form">Acuerdo de
+				usuario</a> </div>
+		<div class="menu-footer">
+			<a class="lt36" href="#order_form">Comunicación con la administración</a>
+		</div><a class="menu-close" href="#order_form"><i aria-hidden="true" class="fal fa-times"></i></a>
+	</div>
+	<div class="pt-0 pb-0 flex-start navbar-lvl-1-container">
+		<div class="scrollbox navbar-lvl-1">
+			<div class="arrow arrow-left rounded-circle bg-white shadow-sm">
+				<i aria-hidden="true" class="fas fa-chevron-left"></i>
+			</div><span class="btn btn-link item item-first lt37 link__header" data-action="Brands" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">MARKA</a></span> <span
+				class="btn btn-link item lt38 link__header" data-action="Rating" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">RANKING</a></span> <span
+				class="btn btn-link item lt39 link__header" data-action="Blogs" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">SPOŁECZNOŚĆ</a></span> <span
+				class="btn btn-link item lt40 link__header dn430" data-action="Beautybazar" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">RYNEK KOSMETYCZNY</a></span> <span
+				class="btn btn-link item lt41 link__header" data-action="Chillout" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">PSYCHOLOGIA</a></span> <span
+				class="btn btn-link item lt42 link__header dn600" data-action="Sandbox" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">FORUM</a></span> <span
+				class="btn btn-link item lt43 link__header dn600" data-action="Podcasts" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">PODCASTY</a></span> <span
+				class="btn btn-link item lt44 link__header dn600" data-action="Help" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">WSPARCIE</a></span> <span
+				class="btn btn-link item lt45 link__header dn767" data-action="Help Bonus Program" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">SPORT</a></span> <span
+				class="btn btn-link item lt46 link__header dn767" data-action="Manuals" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">ODŻYWIANIE</a></span> <span
+				class="btn btn-link item lt47 link__header dn767" data-action="Rules" data-catch="1"
+				data-category="Navbar-lvl-1"><a href="#order_form">O NAS</a></span>
+			<div class="arrow arrow-right rounded-circle bg-white shadow-sm">
+				<i aria-hidden="true" class="fas fa-chevron-right"></i>
+			</div>
+		</div>
+	</div>
+	<div class="shadow-sm navbars">
+		<div class="d-flex justify-content-between align-items-center navbar-lvl-2">
+			<div class="logo">
+				<a href="#order_form" title="Kosmetyczka - opinie o kosmetykach"><img
+						alt="Kosmetyczka - opinie o kosmetykach" src="fonts/logo-red-circle.svg"></a>
+			</div>
+			<div class="feed-menu scrollbox mr-auto"> <span class="btn btn-link item lt48 dn430" data-action="Fresh"
+					data-catch="1" data-category="Navbar-lvl-2"><a href="#order_form">NAJNOWSZE
+						ARTYKUŁY</a></span> <span class="btn btn-link item lt49" data-action="Top" data-catch="1"
+					data-category="Navbar-lvl-2"><a href="#order_form">NAJLEPSZE</a></span> <span
+					class="btn btn-link item menu-btn-create lt50 s__link" data-action="Create" data-catch="1"
+					data-category="Navbar-lvl-2"><a href="#order_form">NAPISZ WIADOMOŚĆ</a></span> <span
+					class="btn btn-link item menu-btn-award lt51 s__link"><a href="#order_form">TEMAT
+						TYGODNIA</a></span> </div>
+			<div class="d-flex position-relative">
+				<div class="class">
+					<span class="btn btn-link p-fal pl-0" data-toggle="dropdown"><a href="#order_form">
+							<span><img class="b-user" src="images/b-user.PNG" alt=""></span>
+						</a></span>
+					<div class="dropdown-menu dropdown-menu-right" id="user_menu_dropdown"> <a
+							class="dropdown-item lt52" href="#order_form">Entrar</a> <a class="dropdown-item lt53"
+							href="#order_form">Regístrate</a> </div>
+				</div>
+				<div class="d-flex">
+					<div class="position-relative">
+						<a class="btn btn-link p-fal pl-0 bars" href="#order_form"><span><img class="burger"
+									src="images/burger.PNG" alt=""></span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ng-search-overlay">
+		<div class="ng-search-container">
+			<input class="form-control ng-search-input shadow-sm" placeholder="Czego szukać?" type="text"> <a
+				class="btn btn-search-close"><i aria-hidden="true" class="fal fa-times"></i></a>
+		</div>
+		<div class="ng-search-result-scroller">
+			<div class="ng-search-result-container"></div>
+		</div>
+	</div>
+	<div class="container-fluid ng-layout">
+		<div class="d-flex flex-nowrap d-flex-centered">
+			<div class="ng-content pl-global pr-global">
+				<div>
+					<div class="topic topic-page ql-postview" id="topic_div" itemscope="itemscope">
+
+						<div class="post-title">
+							<div class="d-flex align-items-top post-author-details">
+								<div class="post-author-avatar mr-2">
+									<picture>
+										<source srcset="images/avatar.webp" type="image/webp">
+										<img alt="#" class="img-avatar" src="images/avatar.jpg">
+									</picture>
+								</div>
+								<div class="text-truncate d-inline-block post-author-name">
+									<a class="text-dark lt54" href="#order_form" rel="nofollow"
+										title="wonderwall">Paulina Róża</a>
+									<p class="text-lgray p-0 m-0 rating"><i aria-hidden="true"
+											class="fal fa-gem mr-1"></i><span class="main__count"><img
+												src="images/dia.PNG" alt=""><span>516</span></span> <span
+											class="main__count"><img src="images/users.PNG"
+												alt=""><span>39</span></span></p>
+								</div>
+								<div class="btn-sub"> <span class="btn btn-light btn-sm ml-3 kf-friend-a lt55 sb"
+										data-action="PostAuthorSubscribe" data-catch="1"
+										data-category="InternalClicksDesktop"
+										id="profile_user_updates_subscribe_button"><a
+											href="#order_form">Subskrybuj</a></span> </div>
+							</div>
+							<div class="d-flex post-details">
+								<div class="d-flex"></div>
+								<div class="mr-3 text-sm post-community-desktop">
+									<a class="text-lgray community lt57" href="#order_form"
+										title="Kosmetyki pielęgnacyjne">Kosmetyki Do Pielęgnacji Stóp</a>
+								</div>
+								<div class="mr-3 text-lgray text-truncate d-inline-block text-sm text-nowrap lt58">
+									<span class="date-3"></span>
+								</div>
+								<div class="mr-3 text-lgray text-sm text-nowrap">
+									<a href="#order_form">
+										<div class="block-wrap">
+											<div class="eyes"><img src="images/eyes.PNG" alt=""> <span>1150</span></div>
+										</div>
+									</a>
+								</div>
+								<div class="text-lgray text-sm text-nowrap cursor-pointer">
+									<a href="#order_form">
+										<div class="message"><img src="images/messege.PNG" alt="">
+											<div>10</div>
+										</div>
+									</a>
+								</div>
+
+							</div>
+							<div class="mb-1 text-sm post-community-mobile">
+								<a class="text-lgray community lt60" title="Kosmetyki pielęgnacyjne">Kosmetyki Do
+									Pielęgnacji Stóp</a>
+							</div>
+							<div class="mb-2">
+								<h1 class="kf-post-title lt61" itemprop="headline">Traktuj swoje stopy ostrożnie i
+									powiedz "nie" żylakom</h1>
+							</div>
+						</div>
+						<div class="markers-topic">
+							<span rel="nofollow"></span>
+							<div class="btn marker-topic marker-test" title="Dostarczone do badania">
+								<span rel="nofollow"><span class="che"><img src="images/che.PNG" alt=""></span></span>
+							</div><span rel="nofollow"><span class="text-test lt62">NIEZALEŻNE BADANIA</span></span><br>
+						</div>
+						<div class="content">
+							<div class="article-text-container">
+								<p class="lt63">Cześć wszystkim! Dziewczyny, czy kiedykolwiek przyłapałyście się na
+									myśleniu, że współczujecie kobietom po czterdziestce, które ledwo chodzą
+									po chodniku i straszą wszystkich swoimi niebieskimi nogami? Podwójnie boję się
+									na nie patrzeć, ponieważ wiem z pierwszej ręki, że życie z żylakami jest bolesne!
+									Dlatego chcę podzielić się tym, jak raz na zawsze pozbyć się żylaków.</p>
+								<figure>
+									<div class="zoom" itemprop="image" itemscope="itemscope">
+										<picture>
+											<source media="(max-width:479px)" srcset="images/img1_mob.jpg">
+											<source type="image/webp" srcset="images/img1.webp">
+											<img alt="" class="pic" src="images/img1.jpg">
+										</picture>
+
+
+									</div>
+								</figure>
+								<p class="lt65">Na początek złe wiadomości: żylaki są najczęściej dziedziczne, a
+									jeśli ma je ktoś z rodziny, jesteś w niebezpieczeństwie. Teraz dobra wiadomość:
+									wiem, jak się ich pozbyć.</p>
+								<figure>
+									<div class="zoom" data-hyb-ssp-in-image-overlay="5da9697a4d506ef4d812c205"
+										itemprop="image" itemscope="itemscope">
+										<picture>
+											<source media="(max-width:479px)" srcset="images/img2_mob.jpg">
+											<source type="image/webp" srcset="images/img2.webp">
+											<img alt="" class="pic" src="images/img2.jpg">
+										</picture>
+
+
+									</div>
+								</figure>
+								<p class="lt66">Tak wyglądały moje biodra w wieku 14 lat. Tak, kiedy byłam
+									nastolatkiem, zaczęłam zauważać, że moje nogi szybko "zmieniają kolor na
+									niebieski". Te okropne siateczki naczyniowe i niebieskie krzywe
+									rozszerzonych żył. Wstydziłam się swoich smukłych, wysportowanych nóg,
+									chowając je w dżinsach. Mama powiedziała, że to hormonalne i wkrótce minie.
+									Ale z każdym rokiem siatka naczyniowa stawała się coraz większa, aż objęła
+									wszystkie biodra.</p>
+								<figure>
+									<div class="zoom" itemprop="image" itemscope="itemscope">
+										<picture>
+											<source media="(max-width:479px)" type="image/webp"
+												srcset="images/img3_mob.webp">
+											<source media="(max-width:479px)" srcset="images/img3_mob.jpg">
+											<source type="image/webp" srcset="images/img3.webp">
+											<img alt="" class="pic" src="images/img3.jpg">
+										</picture>
+
+
+									</div>
+								</figure><!-- 1 block -->
+								<div class="block2">
+									<div class="cell block2__rightcell">
+										<div class="block2__info"> Wiele osób uważa, że żylaki są tylko
+											problemem estetycznym i dlatego nie robią nic, aby powstrzymać postęp
+											choroby, zamiast tego ukrywają dotknięte obszary ciała pod ubraniem.
+										</div>
+										<ul class="block2__list">
+											<li class="block2__list__li"><span class="block2__img"></span> <span
+													class="redText">Zakrzepica</span><br> Naczynia krwionośne są
+												rozszerzone i wyraźnie wystają pod skórę</li>
+											<li class="block2__list__li"><span
+													class="block2__img block2__img--2"></span> Uszkodzenie
+												powierzchni skóry <span class="redText">powoduje ciężkie
+													krwawienie</span></li>
+											<li class="block2__list__li"><span
+													class="block2__img block2__img--3"></span> <span
+													class="redText">Wrzód troficzny występuje z powodu
+													problemów</span> związanych z krążeniem i zaburzeniami
+												odżywiania tkanek.</li>
+										</ul>
+									</div>
+								</div>
+								<p class="lt67">Ale gdyby tylko to! W nocy bolały mnie nogi, drętwiały, były
+									opuchnięte i gorące. I tak dzień po dniu... Starałam się złagodzić sytuację jak
+									tylko mogłam. Codziennie robiłam kąpiele stóp, brałam środki wenotoniczne,
+									używałam specjalnych kremów, nosiłam pończochy uciskowe. Ale nic nie
+									pomogło. Nie mogłam patrzeć na swoje nogi. Moje żyły rosły z każdym dniem.</p>
+								<p class="lt68">Po wielu nieudanych próbach radzenia sobie z żylakami
+									całkowicie straciłam nadzieję. Ale rozwiązanie przyszło stamtąd, skąd się go
+									najmniej spodziewano.</p><!-- block2 -->
+								<div class="block5">
+									<div class="centering">
+										<div class="table">
+											<div class="cell cell--50 cell--middle m-hide">
+												<div class="prod block5__prod">
+													<picture>
+														
+														<img class="prod" src="prod.png">
+													</picture>
+
+												</div>
+											</div>
+											<div class="cell cell--50 cell--middle">
+												<h2 class="block5__cap ttu"><span class="productName"></span></a></span>
+													- NOWOCZESNE
+													ROZWIĄZANIE</h2>
+												<p>Większość dotychczasowych produktów może jedynie
+													wyeliminować objawy żylaków, obrzęk i złagodzić ból.
+												</p>
+												<div class="ttu m-centText"> <span class="greenText bold"><strong>W
+															PRZECIWIEŃSTWIE DO NICH,</strong></span>
+													<strong><span class="productName"></span></strong> <span
+														class="greenText bold"><b>POSIADA SZEROKI ZAKRES
+															DZIAŁANIA</b></span> </div>
+												<div class="block5__set"> <span class="numb numb5">1.</span> Pomaga
+													usunąć zapalenie naczyń i wyeliminować objawy towarzyszące.
+												</div>
+												<div class="block5__set"> <span class="numb numb5">2.</span>
+													Wspomaga stymulację krążenia krwi i wzmacnia ściany naczyń
+													krwionośnych. </div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<p class="lt69">Byłam na wakacjach i poprosiłam nowego menedżera, aby przyniósł
+									raport z biura do mojego domu. Przypadkowo zauważyła moje nogi pod szlafrokiem i
+									powiedziała, że miesiąc temu kupiła mamie żel <a class="link__prod"
+										href="#order_form"><span class="productName"></span></a> na żylaki, który
+									pomogły jej w zaledwie
+									2 tygodnie. Postanowiłam też wypróbować ten żel i zamówiłam go przez
+									Internet. Zamówienie dotarło dość szybko, w ciągu zaledwie 2 dni.</p>
+								<picture>
+									<img alt="" class="prod" src="prod.png">
+								</picture>
+
+								<p class="lt70">Ze względu na swoją konsystencję żel jest bardzo delikatny i ma
+									przyjemny zapach. Jest dość lekki, dobrze nakłada się na skórę. W końcu żel
+									wchłania się w 5 minut, nie pozostawiając lepkości i nie tworząc nieprzyjemnego
+									filmu.</p>
+								
+								<p class="lt71">Stosowałam <a class="link__prod" href="#order_form"><span
+											class="productName"></span></a>
+									rano i wieczorem. Zużywa się oszczędnie, wystarczy cienka warstwa, aby uzyskać
+									efekt.</p>
+								<p class="lt72">A efekt jest. Pierwsze uczucie-prawie natychmiast znika zmęczenie i
+									ciężkość nóg, taki efekt daje ekstrakt z wąkroty azjatyckiej (Centella
+									asiatica). Dosłownie na oczach znika obrzęk. Pojawia się uczucie świeżości, nogi
+									stają się jaśniejsze dzięki obecności kasztanowca.</p>
+								
+								<p class="lt73">Nie uwierzycie mi, ale następnego dnia poczułam przyjemną lekkość,
+									nogi nie puchły aż do wieczora. Wcześniej w pracy kostki natychmiast puchły, a
+									teraz nawet żyły nie są tak spuchnięte. Codziennie używałam żelu. I wiecie co?
+									Po kilku tygodniach zapomniałam o bólach nóg, a siatka naczyniowa się
+									rozjaśniła. Miesiąc później nie rozpoznałam swoich nóg. Z opuchniętych
+									żył praktycznie nic nie zostało. A czerwono-niebieska siatka na biodrach jakby
+									nie istniała. Nie spodziewałam się takiego wyniku. Okazał się, że <a
+										class="link__prod" href="#order_form"><span class="productName"></span></a> jest
+									naprawdę dobrym, a
+									co najważniejsze niedrogim rozwiązaniem.</p><!-- block6 -->
+								<div class="block6">
+									<div class="centering">
+										<h2 class="block6__cap ttu"><span class="greenText">OCZYWISTY EFEKT</span>
+											<span class="productName"></span></h2>
+										<div class="block6__content">
+											<ul class="block6__list">
+												<li class="block6__list__li"> <span class="numb">1.</span> <span
+														class="m-ttu"><span class="greenText">Pomaga poprawić stan
+															naczyń krwionośnych</span> i przepływ krwi.</span> <a
+														class="link__prod" href="#order_form"><span
+															class="productName"></span></a> wpływa na
+													mikrokrążenie w ciele, pomaga wzmocnić naczynia włosowate i
+													zmniejszyć ich przepuszczalność. </li>
+												<li class="block6__list__li"><span class="numb">2.</span> <span
+														class="m-ttu"><span class="greenText">Pomaga usunąć
+															zapalenie ścian naczyń krwionośnych,</span> naczynia
+														stają się znacznie mniej widoczne.</span> Dzięki temu
+													przywracane jest krążenie krwi, a tym samym stymulowana jest
+													praca serca, mózgu i jelit.</li>
+												<li class="block6__list__li expert">
+													<picture>
+														<source media="(max-width:479px)" type="image/webp"
+															srcset="images/block6__doc--s_mob.webp">
+														<source media="(max-width:479px)"
+															srcset="images/block6__doc--s_mob.jpg">
+														<source type="image/webp" srcset="images/block6__doc--s.webp">
+														<img alt="" class="pic" src="images/block6__doc--s.jpg">
+													</picture>
+
+													<div class="expert__desc"> <span class="before">Przed</span>
+														<span class="after">Po</span> </div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<figure></figure>
+								<p class="lt74">Naturalne ekstrakty zawarte w żelu pomagają poprawić krążenie krwi.
+									W ten sposób żel nie tylko pomaga wyeliminować niebieskawe żyły, ale także
+									zapobiegać pojawianiu się problemu w przyszłości. Przez miesiąc stosowania żelu
+									pozbyłam się wszystkich objawów żylaków. Nie potrafię wyrazić słowami,
+									jak bardzo cieszę się, że mogę podziwiać moje szczupłe i piękne nogi. To uczucie
+									jest nie do opisania! Po prostu oceńcie różnicę:</p>
+								<figure>
+									<div class="zoom" itemprop="image" itemscope="itemscope">
+										<picture>
+											<source media="(max-width:479px)" type="image/webp"
+												srcset="images/img11_mob.webp">
+											<source media="(max-width:479px)" srcset="images/img11_mob.jpg">
+											<source type="image/webp" srcset="images/img11.webp">
+											<img class="pic" src="images/img11.jpg" alt="">
+										</picture>
+									</div>
+								</figure>
+								<p class="lt75">W końcu przestałam chować nogi pod długimi spódnicami oraz
+									spodniami i chętnie zakładam mini. A jeśli znasz uczucie ciężkości w nogach,
+									obrzęk, okropne wybrzuszone żyły i nie wiesz, jak się ich pozbyć, spróbuj
+									<a class="link__prod" href="#order_form"><span class="productName"></span></a>. To
+									jak pończochy
+									uciskowe, tylko lepsze. Traktuj swoje nogi ostrożnie, a na pewno Ci podziękują.
+								</p><!-- block10 -->
+								<div class="block10">
+									<h5 class="block10__cap ttu"><span class="redText">Efekt <span
+												class="productName"></span>,</span><br>
+										KROK PO KROKU:</h5>
+									<ul class="block10-list">
+										<!-- 1 -->
+										<li class="block10-item">
+											<div class="block10-text">
+												<div class="block10__smallcap">
+													<span class="greenText"><span class="block10__numb">1.</span>
+														POPRAWA KRĄŻENIA KRWI</span>
+												</div>
+												<p class="block10-item__desc">Rozwojowi żylaków towarzyszy
+													zaburzenie krążenia krwi, które prowadzi do powstawania
+													zakrzepów. Zasadniczo krążenie krwi porusza się od dołu do
+													góry, od stóp do klatki piersiowej. W stagnacji
+													większość krwi pozostaje w kończynach dolnych. <span
+														class="productName"></span> pomaga
+													normalizować krążenie krwi, zapobiegać tworzeniu się
+													skrzepów i zapewniać odżywienie naczyń.</p>
+											</div>
+											<div class="block10__img">
+												<picture>
+													<source type="image/webp" srcset="images/b10_1.webp">
+													<img alt="" src="images/b10_1.jpg">
+												</picture>
+
+											</div>
+										</li><!-- 2 -->
+										<li class="block10-item">
+											<div class="block10-text middle">
+												<div class="block10__smallcap"> <span class="block10__numb">2.</span>
+													<span class="greenText">WZMOCNIENIE STRUKTURY ŚCIAN ŻYLNYCH</span>
+												</div>
+												<p class="block10-item__desc">W chorobach naczyniowych komórki
+													wewnętrznej warstwy naczyń osłabiają się, ściany stają się
+													cieńsze.</p><i class="block10-item__note">Składniki żelu
+													pomagają wzmocnić warstwę śródbłonka i uczynić naczynia
+													bardziej stabilnymi oraz elastycznymi. Żel ma pozytywny wpływ na
+													ściany żył.</i>
+											</div>
+											<div class="block10__img">
+												<picture>
+													<source type="image/webp" srcset="images/b10_2.webp">
+													<img alt="" src="images/b10_2.jpg">
+												</picture>
+
+											</div>
+										</li><!-- 3 -->
+										<li class="block10-item">
+											<div class="block10-text">
+												<div class="block10__smallcap">
+													<span class="greenText"><span class="block10__numb">3.</span>
+														ELIMINACJA BÓLU I DYSKOMFORTU</span>
+												</div>
+												<p class="block10-item__desc">Obrzęk i zapalenie żył, w których
+													zastój krwi i zakrzepowe skrzepy są niewątpliwie niewygodne
+													i zakłócają jakość życia. </p><i class="block10-item__note">Żel nie
+													tylko wpływa na przyczyny
+													bólu, co ma pozytywny długotrwały efekt, ale także przynosi
+													ulgę dzięki zawartości ekstraktów z kasztanowca, centelli,
+													myszopłochu.</i>
+											</div>
+											<div class="block10__img">
+												<picture>
+													<source type="image/webp" srcset="images/b10_3.webp">
+													<img alt="" src="images/b10_3.jpg">
+												</picture>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="features-wrapper"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a id="comments"></a> <!-- Comments -->
+				<div class="comments ml-4">
+					<!-- Comments Header -->
+					<h4 class="mb-3 lt120">Komentarze <span class="text-secondary" id="count-comments">10</span></h4>
+					<div class="comment-wrap">
+						<div class="bio">
+							<picture>
+								<source srcset="images/img13.webp" type="image/webp">
+								<img alt="" class="comment__avatar" src="images/img13.jpg">
+							</picture>
+							<div class="comment__name"> Maria </div>
+							<div class="comment__date date-3"></div>
+						</div>
+						<div class="comment__text"> To jest wynik! Nigdy bym nie pomyślała, że tylko jeden żel jest w
+							stanie tak zmienić nogi. 😊 </div>
+					</div>
+					<div class="comment-wrap">
+						<div class="bio">
+							<picture>
+								<source type="image/webp" srcset="images/img14.webp">
+								<img alt="" class="comment__avatar" src="images/img14.png">
+							</picture>
+
+							<div class="comment__name"> Iwona </div>
+							<div class="comment__date date-3"></div>
+						</div>
+						<div class="comment__text"> Ja też mam okropne żylaki, też zamówię ten żel, mam nadzieję,
+							że pomoże! </div>
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<picture>
+								<source type="image/webp" srcset="images/img15.webp">
+								<img alt="" class="comment__avatar" src="images/img15.jpg">
+							</picture>
+
+							<div class="comment__name"> Krystyna </div>
+							<div class="comment__date date-3"></div>
+						</div>
+						<div class="comment__text"> Pracuję jako kelnerka w kawiarni. Cały dzień spędzam na nogach, w
+							przeciwnym razie natychmiast zostanę ukarana grzywną. Po zmianie nogi puchną i bolą. A potem
+							pojawiają się węzły... Na początku, jak wszyscy, kupowałam w aptece różne kremy,
+							tabletki i zioła do kąpieli. Jednak nic nie pomogło. Wkrótce dowiedziałam się o <a
+								class="link__prod" href="#order_form"><span class="productName"></span></a>. Jest
+							niedrogi i znacznie bardziej
+							wydajny niż wszystko, czego próbowałam. Nie sądzę, żebym mogła długo wytrzymać w tej
+							pracy, gdyby nie ten żel. Kiedyś nogi strasznie piekły, ale teraz wcale się nie męczę.
+							Różnica jest więcej niż namacalna! </div>
+						<!-- <div class="comment__rev">
+							<picture>
+								<source type="image/webp" srcset="images/img16.webp">
+								<img alt="" src="images/img16.jpg">
+							</picture>
+
+						</div> -->
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<picture>
+								<source type="image/webp" srcset="images/img17.webp">
+								<img alt="" class="comment__avatar" src="images/img17.jpg">
+							</picture>
+
+							<div class="comment__name"> Dorota </div>
+							<div class="comment__date date-2"></div>
+						</div>
+						<div class="comment__text"> Czyżby tak skuteczny żel? Po prostu nie mogę w to uwierzyć... </div>
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<picture>
+								<source srcset="images/img18.webp" type="image/webp">
+								<img alt="" class="comment__avatar" src="images/img18.jpg">
+							</picture>
+							<div class="comment__name"> Zuzanna </div>
+							<div class="comment__date date-2"></div>
+						</div>
+						<div class="comment__text"> Ja też nie wierzyłam, dopóki nie spróbowałam. 3 lata temu
+							miałam problemy z nogami: obrzęk, obrzęk żył, pieczenie i ciężkość. Próbowałam
+							różnych rzeczy, myślałam, że nic nie pomoże. Ale ostatnio specjalista doradził mi nowy
+							środek, powiedział, że powinien pomóc. I po miesiącu <a class="link__prod"
+								href="#order_form"><span class="productName"></span></a> uratował mnie od wszystkich
+							problemów. Zniknęła
+							ciężkość, obrzęk i wystające niebieskie żyły. Polecam! </div>
+						<!-- <div class="comment__rev">
+							<picture>
+								<source type="image/webp" srcset="images/img19.webp">
+								<img alt="" src="images/img19.jpg">
+							</picture>
+						</div> -->
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<img alt="" class="comment__avatar" src="images/img20.jpg">
+							<div class="comment__name"> Kamila </div>
+							<div class="comment__date date-2"></div>
+						</div>
+						<div class="comment__text"> Co za wynik! też trzeba spróbować </div>
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<img alt="" class="comment__avatar" src="images/img21.jpg">
+							<div class="comment__name"> Magda </div>
+							<div class="comment__date date-2"></div>
+						</div>
+						<div class="comment__text"> Dowiedziałam się o tym żelu od przyjaciółki, ale jej nie
+							pomógł. Zamawiała w sklepie internetowym. </div>
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<img alt="" class="comment__avatar" src="images/img22.jpg">
+							<div class="comment__name"> Aneta </div>
+							<div class="comment__date date-1"></div>
+						</div>
+						<div class="comment__text"> Prawdopodobnie zamówiła podróbkę żelu. Sama cierpię na
+							żylaki od dawna i poważnie, z guzkami, spuchniętymi żyłami, a kiedy zaczęłam cierpieć na
+							obrzęk nóg, wypróbowałam ten żel! Od tego czasu jest moim stałym towarzyszem. W
+							drodze i w domu. Naprawdę pomaga bardzo szybko. Więc polecam, oryginalny <a
+								class="link__prod" href="#order_form"><span class="productName"></span></a> wygląda tak.
+						</div>
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<img alt="" class="comment__avatar" src="images/img24.jpg">
+							<div class="comment__name"> Ewelina </div>
+							<div class="comment__date date-1"></div>
+						</div>
+						<div class="comment__text"> Dziękuję bardzo za komentarze. Żyły przeszkadzały mi od lat, na
+							pewno spróbuję tego żelu. </div>
+					</div><!-- =============== -->
+					<div class="comment-wrap">
+						<div class="bio">
+							<img alt="" class="comment__avatar" src="images/img25.jpg">
+							<div class="comment__name"> Katarzyna </div>
+							<div class="comment__date date-0"> 20.12.2022 </div>
+						</div>
+						<div class="comment__text"> Używam <a class="link__prod" href="#order_form"><span
+									class="productName"></span></a> tylko
+							tydzień, a nogi mniej puchną w ciągu dnia i przestały boleć podczas chodzenia. Nawet siatka
+							naczyń stała się mniej zauważalna. Mam nadzieję, że wkrótce zapomnę o żylakach, jak o
+							strasznym śnie. </div>
+					</div>
+					<div class="block14" id="order">
+						<div class="centering">
+							<h1 class="block14__cap ttu">PIĘKNE NOGI SĄ TERAZ RZECZYWISTOŚCIĄ</h1>
+							<div class="block14-content">
+								<div class="block14__prod">
+									<picture>
+										<img alt="" class="prod" src="prod.png">
+									</picture>
+
+									<div class="prod-sale">
+										<span class="text">Zniżka</span>
+										<div class="sale__numb"> 50% </div>
+									</div>
+								</div>
+								<form action="getform.php"
+									class="oldform al-form order_form x_order_form" id="order_form" method="post">
+									<input type="hidden" name="utm_source" value="{clickid}">
+									<input type="hidden" name="utm_campaign" value="{t2}">
+									<div class="form__cap"> Zamów </div>
+									<div class="oldPricesText"> Stara cena: <span
+											class="js_old_price_curs al-cost-promo price_old"><span
+												class="price_main_value x_price_previous"><span class="priceOld"></span></span> <span
+												class="price_main_currency x_currency"><span class="currencyMain"></span></span></span> </div>
+									<div class="js_new_price_curs"> Nowa cena: <span class="al-cost price_main"><span
+												class="price_main_value x_price_current"><span class="priceMain"></span></span> <span
+												class="price_main_currency x_currency"><span class="currencyMain"></span></span></span> </div>
+									<div class="terms">
+										<p class="terms__text">Promocja wygasa: <span class="date-0">10.01.2023</span>
+										</p>
+									</div>
+									<input class="inpu" name="name" placeholder="Imię i nazwisko" required="required" type="text">
+									<input class="inpu only_number" name="phone" placeholder="Numer telefonu" required="required"
+										type="tel"> <!-- -->
+									<button class="button js_pre_toform" type="submit"><span
+											class="button__text">Zamów</span></button>
+									<div class="toform"></div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<span id="children-0"></span> <a id="t-r"></a>
+				</div>
+
+			</div>
+			<div class="ng-sidebar sidebar d-none ng-right-sidebar">
+				<div class="block block-list p-0 block-list_mt">
+					<div class="block-title lt179"> Dyskusja </div>
+					<a class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments"
+						data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt180">Co pomaga w
+							przypadku żylaków?</span> <span class="block-stream-details mr-1 nowrap"><span
+								class="s-message"> <img src="images/s-message.PNG" alt=""> 40 </span></span><span
+							class="block-stream-user lt181">tutsi_roll</span></a> <a
+						class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments"
+						data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt182">Nogi bardzo
+							puchną, co robić?</span> <span class="block-stream-details mr-1 nowrap"><span
+								class="s-message"> <img src="images/s-message.PNG" alt=""> </span>18</span><span
+							class="block-stream-user lt183">Dani19732</span></a> <a
+						class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments"
+						data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt184">Najlepsze
+							produkty wzmacniające naczynia krwionośne</span> <span
+							class="block-stream-details mr-1 nowrap"><span class="s-message"> <img
+									src="images/s-message.PNG" alt=""> </span>19</span><span
+							class="block-stream-user lt185">Kasia</span></a> <a
+						class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments"
+						data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt186">Jak
+							zamaskować siatkę naczyniową na nogach?</span> <span
+							class="block-stream-details mr-1 nowrap"><span class="s-message"> <img
+									src="images/s-message.PNG" alt=""> </span>2</span><span
+							class="block-stream-user lt187">Piękna_ważka</span></a> <a
+						class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments"
+						data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt188">Jeśli mama ma
+							żylaki, ja też będę miała - twoja opinia</span> <span
+							class="block-stream-details mr-1 nowrap"><span class="s-message"> <img
+									src="images/s-message.PNG" alt=""> </span>17</span><span
+							class="block-stream-user lt189">KmariaK</span></a>
+				</div>
+			</div>
+		</div>
+	</div><!-- Footer -->
+	<footer class="bg-light footer">
+		<div class="footer-content">
+			<span class="copyright">©</span> <span class="date-0" data-format="yyyy"></span>
+		</div>
+	</footer>
+
+	<div></div>
+
+
+	<script src="js/main.js"></script>
+	<script>
+		const offer_params = {
+			priceMain : '129',
+			customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+			currencyMain: 'zł',
+			productName : 'NeoVeris',
+		};
+	
+	
+		var productName = document.getElementsByClassName("productName");
+		var priceMain = document.getElementsByClassName("priceMain");
+		var priceOld = document.getElementsByClassName("priceOld");
+		var currencyMain = document.getElementsByClassName("currencyMain");
+	
+	
+		for (var i = 0; i < productName.length; i++) {
+			productName[i].innerHTML = offer_params.productName;
+		}
+		for (var i = 0; i < priceMain.length; i++) {
+			priceMain[i].innerHTML = offer_params.priceMain;
+		}
+	
+	
+		if(offer_params.customPriceOld){
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.customPriceOld;
+			}
+		}else{
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.priceMain * 2;
+			}
+		}
+	
+	
+		for (var i = 0; i < currencyMain.length; i++) {
+			currencyMain[i].innerHTML = offer_params.currencyMain;
+		}
+	 </script>
+ 
+ 
+ <script>
+	var usr = '{t2}';
+	var sabss = '{clickid}';
+	initFeatures({
+		priceMain : offer_params.priceMain,
+		currencyMain : offer_params.currencyMain,
+		lang : 'pl', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+		product : offer_params.productName, // название продукта
+		genderTargetting : 'all', // пол целевой аудитории - all, male, female
+ 
+ 
+ 
+ 
+		form : {
+			isNeeded : 1, // 1-включить форму, 0-выключить
+			img: 'prod.png', // путь до картинки продукта
+			price: true, // плашка с ценой
+			priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+			showSelect: false, // показывать или скрывать поле select
+			untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+		},
+ 
+ 
+ 
+ 
+		autoComments: {
+			isNeeded: 0, // 1-включить автокомы, 0-выключить
+			bgColor: '#d7f2d8' // цвет фона блока комчиков
+		},
+ 
+ 
+ 
+ 
+		popups: {
+			isNeeded: 0, // 1-включить попы, 0-выключить
+			bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+			textColor: '#fff', // цвет основного текста сообщения
+			emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+			blackIcons: false // черные или белые иконки, значения true или false
+		},
+ 
+ 
+ 
+ 
+		wheel: {
+			isNeeded: 1, // 1-включить колесо, 0-выключить
+			customWheel: false // ссылка на свое колесо, либо false
+		}
+	});
+ </script>
+ <script>
+	$('[name="name"]').on('input change', function () {
+		var val = $(this).val();
+		$(this).val(val.replace(/[0-9+]/g, ''));
+	});
+	$('[name="name"]').attr('autocomplete', 'name');
+	$('[name="name"]').attr('pattern', '.{2,25}');
+	$('[name="phone"]').on('input change', function (e) {
+		var val = $(this).val();
+		$(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+	});
+	$('[name="phone"]').get(0).type = 'tel';
+	$('[name="phone"]').attr('autocomplete', 'tel');
+	$('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

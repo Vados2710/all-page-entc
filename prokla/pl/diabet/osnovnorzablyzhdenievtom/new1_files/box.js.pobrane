@@ -1,0 +1,119 @@
+$(document).ready(function() {
+
+    $('[name="country"]').on('change', function() {
+        var geoKey = $(this).find('option:selected').val();
+        var data = $jsonData.prices[geoKey];
+        var price = data.price;
+        var oldPrice = data.old_price;
+        var currency = data.currency
+        $("[value = "+geoKey+"]").attr("selected", true).siblings().attr('selected', false);
+
+        $('.price_land_s1').text(price);
+        $('.price_land_s2').text(oldPrice);
+        $('.price_land_curr').text(currency);
+    });
+
+    $("a[href^='#']").click(function() {
+        var _href = $(this).attr("href");
+        $("html, body").animate({
+            scrollTop: $(_href).offset().top + "px"
+        });
+        return false;
+    });
+
+    $('.boxes > div').click(function () {
+        if ($(this).parent().hasClass('boxesfirsttry')) {
+            $('.boxes').removeClass('boxesfirsttry');
+            $(this).addClass('openbox');
+            $(this).find('.try').hide();
+            $(this).find('.opentry').show();
+            setTimeout(function () {
+                $('.sweet-overlay').show();
+                $('.sweet-alert').show();
+            },500);
+        } else if ($(this).parent().hasClass('boxeslasttry')) {
+            if (!$(this).hasClass('openbox')) {
+                $(this).find('.try').hide();
+                $(this).find('.opentry').show();
+                $(this).find('.boxtext').css('display','block');
+                setTimeout(function () {
+                    $('.spin-result-wrapper').show();
+                    setTimeout(function () {
+                        $('#boxesContainer').slideUp(250);
+                        setTimeout(function () {
+                            $('.order_block').slideDown(250);
+                        },500)
+                    },500)
+                },500);
+            }
+        }
+
+    });
+
+    $('#update').click(function () {
+        $('.sweet-overlay').hide();
+        $('.sweet-alert').hide();
+        $('.boxes').addClass('boxeslasttry');
+    });
+
+    $('.pop-up-button').click(function () {
+        $('.spin-result-wrapper').hide();
+        $('#countdown').timeTo(600);
+    })
+});
+
+// Расчет лишнего веса
+$(document).ready(function() {
+
+    $('.calc-form input').change(function() {
+        calc();
+    });
+
+    $('.calc-form input').keyup(function() {
+        calc();
+    });
+});
+
+function calc() {
+    var age = $('.calc-form .inp1').val();
+    var height2 = $('.calc-form .inp2').val();
+    var weight2 = $('.calc-form .inp3').val();
+
+    var summs= height2 - weight2;
+
+    age = parseInt(age.replace(/\D+/g, ""));
+    height2 = parseInt(height2.replace(/\D+/g, ""));
+    weight2 = parseInt(weight2.replace(/\D+/g, ""));
+
+    console.log(summs);
+
+    if (age > 0 && height2 > 0 && weight2 > 0) {
+        if (summs >= 115) {
+            $('.calc-form .line1').attr('style', 'visibility: display;');
+            $('.calc-form .line2').attr('style', 'visibility: display;');
+            $('.calc-form .line1').html('<span class="green">Вы в прекрасной форме.</span>');
+            $('.calc-form .line2').html('Для её поддержания достаточно принимать Keto Organic один раз в неделю.');
+        } else {
+            if (summs >= 104 && summs <= 114) {
+                $('.calc-form .line1').attr('style', 'visibility: display;');
+                $('.calc-form .line2').attr('style', 'visibility: display;');
+                $('.calc-form .line1').html('У вас не более 10 кг лишнего веса.');
+                $('.calc-form .line2').html('Достаточно пройти 2-недельный курс добавки Keto Organic.');
+            } else {
+                if (summs >= 90 && summs <= 103) {
+                    $('.calc-form .line1').attr('style', 'visibility: display;');
+                    $('.calc-form .line2').attr('style', 'visibility: display;');
+                    $('.calc-form .line1').html('У вас более 18 кг лишнего веса.');
+                    $('.calc-form .line2').html('Чтобы от него избавиться – рекомендуем пройти полный курс добавки Keto Organic. Ожидаемая потеря веса в первый месяц – от 8 до 17 кг.');
+                } else {
+                    if (summs <= 89) {
+                        $('.calc-form .line1').attr('style', 'visibility: display;');
+                        $('.calc-form .line2').attr('style', 'visibility: display;');
+                        $('.calc-form .line1').html('У вас крайняя стадия ожирения.');
+                        $('.calc-form .line2').html('Срочно пройдите расширенный курс Keto Organic (от 10 до 14 недель), а также добавьте физические нагрузки. За это время можно сбросить от 25 кг до 40 кг.');
+                    }
+                }
+            }
+        }
+    }
+}

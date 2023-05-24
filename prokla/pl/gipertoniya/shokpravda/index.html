@@ -1,0 +1,1245 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name=theme-color content="#ffffff">
+    <title>Portal polskiego lekarza (1)</title>
+    <link rel="shortcut icon" href="prod.png" type="image/icon">
+    <link rel=stylesheet href='css/3685551c.css' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {}
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel=stylesheet href='css/A.fb838c80.css.pagespeed.cf.e1pyI6etNK.css' type='text/css'>
+    <link rel=stylesheet href='css/A.e231a4b5.css.pagespeed.cf.C9w2CbWuRJ.css' type='text/css'>
+    <link rel=stylesheet href='css/A.53cfd996.css.pagespeed.cf.77bdl9f5eC.css' type='text/css'>
+    <link rel=stylesheet href='css/A.46ecfada.css.pagespeed.cf.hw9gjoXP52.css' type='text/css'>
+    <link rel=stylesheet href='css/a1ff876e.css' type='text/css'>
+    <link rel=stylesheet href='css/A.7e8cc241.css.pagespeed.cf.4SS4ua_l7G.css' type='text/css'>
+    <link rel=stylesheet href='css/A.f6ab49c2.css.pagespeed.cf.7yBwGndQ3k.css' type='text/css'>
+    <link rel=stylesheet href='css/A.colorbox.css.pagespeed.cf.atX7NJkx-a.css' type='text/css'>
+    <link rel=stylesheet href='css/A.c577fe16.css.pagespeed.cf.9LnBmTJb1x.css' type='text/css'>
+    <link rel=stylesheet href='css/A.c54c6944.css.pagespeed.cf.YrhXexK0y4.css' type='text/css'>
+    <link rel=stylesheet href='css/A.c203fa8a.css.pagespeed.cf.z2FdJl_GrV.css' type='text/css'>
+    <style>
+        .formularz-walidacja {
+            max-width: 400px;
+            background-color: #c01e14;
+            padding: 25px;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 25px;
+            margin: 20px auto
+        }
+
+        @media (max-width:1366px) {
+            .formularz-walidacja {
+                margin: 6px auto
+            }
+        }
+
+        .formularz-walidacja__form input,
+        .formularz-walidacja__form--input {
+            width: 100%;
+            padding: 10px 6px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        select,
+        input {
+            border: none;
+        }
+
+        .formularz-walidacja__form .tel_container {
+            max-width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between
+        }
+
+        .formularz-walidacja__form .tel_container__prefix {
+            width: 20%
+        }
+
+        .formularz-walidacja__form .tel_container__prefix--input {
+            width: 126%;
+            opacity: 1;
+            text-align: right;
+        }
+
+        .formularz-walidacja__form .tel_container__tel {
+            width: 100%
+        }
+
+        .formularz-walidacja__form .tel_container__tel--input {
+            width: 100%
+        }
+
+        .formularz-walidacja__form--select {
+            width: 100%;
+            padding: 10px 20px
+        }
+
+        .formularz-walidacja__form .submit-container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-top: 20px
+        }
+
+        .formularz-walidacja__form .submit-container--btn {
+            padding: 10px 80px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #c01e14;
+            border: 5px solid #fff;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 15px 5px -4px rgba(192, 30, 20, .75);
+            box-shadow: 0 15px 5px -4px rgba(192, 30, 20, .75)
+        }
+
+        .formularz-walidacja__form .submit-container--btn:hover {
+            cursor: pointer;
+            background-color: #7d7;
+            color: #fff
+        }
+
+        /*# sourceMappingURL=form.min.css.map */
+        .bm-banner-image {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto
+        }
+
+        .main-img {
+            max-width: 100%;
+            display: block;
+            margin: 20px auto
+        }
+
+        b {
+            font-weight: 700
+        }
+
+        .info-block {
+            padding: 15px;
+            margin: 0 0 20px;
+            border: 1px solid #eee
+        }
+
+        .info-block img {
+            display: block;
+            margin: 20px auto;
+            max-width: 240px
+        }
+
+        p span {
+            font-weight: inherit
+        }
+
+        .comment-item {
+            display: flex;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0
+        }
+
+        .comment-item>div:first-child {
+            width: 50px
+        }
+
+        .comment-thread {
+            padding-left: 50px
+        }
+
+        .user-info {
+            padding-left: 15px
+        }
+
+        .user-info>div:first-child {
+            padding-bottom: 10px;
+            font-weight: 700
+        }
+
+        .comment-item>div:first-child img {
+            width: 50px
+        }
+
+        a {
+            color: #00f
+        }
+
+        b span,
+        strong font span {
+            font-weight: 700 !important
+        }
+
+        .user-info img {
+            display: block;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 300px
+        }
+
+        @media screen and (min-width:768px) {
+            .info-block {
+                display: flex
+            }
+
+            .info-block>div:first-child {
+                flex: 300px 0 0
+            }
+
+            .info-block>div:last-child {
+                padding: 20px
+            }
+
+            .info-block img {
+                margin: 0;
+                max-width: 300px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id=pusher class=pusher>
+        <div class=site-change-menu-container>
+            <div class="ui container" id=top>
+                <div class="ui container">
+                    <div class="ui menu secondary pointing no-mobile site-select-menu"
+                        style="margin-top: 0 !important;"><a class="ui item active site-mv noclick" href="#order_form0"
+                            data-counter-id=884>
+                            <div class=icon style="background-image:url(img/shortcut.png);background-size: contain;">
+                            </div>
+                        </a><a class="ui item site-lib noclick" href="#order_form0" data-counter-id=883>
+                            <div class=text>
+                                Biblioteka</div>
+                        </a><a class="ui item site-ls noclick" href="#order_form0" data-counter-id=1200>
+                            <div class=text>Podręcznik leków</div>
+                        </a><a class="ui item site-bz noclick" href="#order_form0" data-counter-id=892>
+                            <div class=text>Baza wiedzy
+                            </div>
+                        </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="ui segment vertical red inverted no-padded center aligned" id=menu-top-container-wrapper>
+            <div class="ui container" id=menu-top-container>
+                <div class="ui menu red inverted borderless" id=menu-top><a class="ui item noclick" data-
+                        data-transition=overlay data-mobile-transition=overlay
+                        data-target="[data-sidebar=&quot;main&quot;]" data-counter-id=885 data-delay=1000
+                        id=sidebar-toggle href="#order_form0"><i class="fas fa-bars"></i></a><a
+                        class="ui item fitted noclick" href="#order_form0" id=logo>
+                        <div class=text><img class="ui image" src="img/xf8f03b74.png,q1.pagespeed.ic.zV52lZp1z8.png">
+                        </div>
+                    </a>
+                    <div id=tagline class=item>Portal polskiego lekarza
+                    </div>
+                    <div class="menu right pjaxed"><a class="ui item search-btn noclick" data-
+                            data-focus-target="#search-block :text" data-dimmer-target="#menu-top-container"
+                            href="#order_form0"><i class="fas fa-bars"></i></a>
+                        <div class="item no-mobile">
+                            <a class=noclick href="#order_form0">
+                                <button type=button class="ui button basic inverted no-mobile mini sign-in-btn"
+                                    data-plugin=popup data-on=click data-inline=1 data-position="bottom right"
+                                    data-variation=default data-prefer=opposite data-distance-away=6
+                                    data-force-position=1>Wejdź
+                                </button>
+                            </a>
+                            <div class="ui popup flowing" id=form-login>
+                                <div class=content>
+                                    <div id=form-login-block style="min-width:200px;">
+                                        <div class="ui form left aligned" data-submit=ajax
+                                            method="post">
+                                            <div class="center aligned">
+                                                <p>Zaloguj się
+                                                </p>
+                                                <div class=providers-buttons><a
+                                                        class="ui button icon facebook f circular noclick"
+                                                        href="#order_form0" data-tooltip=Facebook
+                                                        data-position="bottom center"><i
+                                                            class="icon facebook f"></i></a><a
+                                                        class="ui button icon google circular noclick"
+                                                        href="#order_form0" data-tooltip=Google
+                                                        data-position="bottom center"><i class="icon google"></i></a><a
+                                                        class="ui button icon vk circular noclick" href="#order_form0"
+                                                        data-tooltip="ВКонтакте" data-position="bottom center"><i
+                                                            class="icon vk"></i></a><a
+                                                        class="ui button icon odnoklassniki circular noclick"
+                                                        href="#order_form0" data-tooltip="Одноклассники"
+                                                        data-position="bottom center"><i
+                                                            class="icon odnoklassniki"></i></a><a
+                                                        class="ui button icon at mailru circular noclick"
+                                                        href="#order_form0" data-tooltip=Mail.ru
+                                                        data-position="bottom center"><i class="icon at mailru"></i></a>
+                                                </div>
+                                                <data data-module=users.auth
+                                                    data-action="api.php?<?=http_build_query($_GET);?>"></data>
+                                                <div class="ui divider horizontal horizontal">или</div>
+                                            </div>
+                                            <div class=field>
+                                                <div class="ui input left icon"><i class="icon user"></i><input
+                                                        type=text name=login value="" placeholder="Логин или Email">
+                                                </div>
+                                            </div>
+                                            <div class=field>
+                                                <div class="ui input left icon action"><i class="icon lock"></i><input
+                                                        type=password name=password placeholder="Пароль">
+                                                    <button type=button class="ui button basic icon" data-plugin=popup
+                                                        data-content="Забыли пароль?" data-position="left center"
+                                                        data-exclusive=false data-
+                                                        data-dimmer-target="#form-login-block"><i
+                                                            class="icon help circle"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class=field>
+                                                <div class="ui checkbox"><input type=checkbox value=1 name=remember
+                                                        checked><label>Pamiętaj moje dane</label></div>
+                                            </div>
+                                            <button type=submit class="ui button red fluid">Wejdź</button>
+                                            <div class="ui divider horizontal horizontal">lub</div>
+                                            <a class="ui button fluid teal noclick" href="#order_form0">Zarejestruj
+                                                się teraz
+                                            </a>
+                                        </div>
+                                        <div class="ui dimmer inverted" data-opacity=1 data-variation=inverted>
+                                            <div class=content>
+                                                <div class=center>
+                                                    <div class="ui form" data-submit=ajax
+                                                        method="post">
+                                                        <div class=field>
+                                                            <div class="ui input left icon"><i
+                                                                    class="icon user"></i><input type=text name=login
+                                                                    placeholder="Логин или Email"></div>
+                                                        </div>
+                                                        <button type=submit class="ui button red icon fluid labeled"><i
+                                                                class="icon idea"></i>Zresetuj hasło
+
+                                                        </button>
+                                                    </div>
+                                                    <data data-module=users.password
+                                                        data-action="api.php?<?=http_build_query($_GET);?>"></data>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <data data-module=users data-action="api.php?<?=http_build_query($_GET);?>"></data>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bm-banners bm-banners_single">
+                    <div class="bm-banner hidden" data-emergence=hidden data-place=counters data-responsive=1
+                        data-count=all data-spec=32
+                        data-tag="Новости,Здравоохранение,Бюджет здравоохранения,бюджетное финансирование" data-ids=""
+                        style="max-width:1024px;"></div>
+                </div>
+                <div class="ui dimmer" id=search-block>
+                    <div class=content>
+                        <div class=center>
+                            <div class="ui form" data-submit=filter  method="post" id=search-form>
+                                <div class="ui input fluid labeled">
+                                    <div class="ui search large fluid transparent" style="width:100%;" id=top-search
+                                        data-plugin=search <div class="ui input icon fluid icon"><i
+                                            class=icon></i><input type=text name=q class=prompt placeholder="Поиск...">
+                                    </div>
+                                    <div class=results></div>
+                                </div>
+                                <div class="ui buttons huge red">
+                                    <button type=submit class="ui button icon"><i class="icon search"></i></button>
+                                    <button type=button class="ui button icon close" data-><i class="icon remove"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui segment secondary no-top-marged no-bottom-marged no-border no-padded no-mobile no-tablet"
+            id=submenu-top>
+            <div class="ui container">
+                <div class="ui menu first-level secondary borderless"><a class="ui item noclick" data-counter-id=886
+                        href="#order_form0"
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiMTI3Zjg0ODZlYWVmZTYxMTFkNmFjNTM5NzI3ZGEzZWEiLCJuYW1lIjoiXHUwNDIxXHUwNDNmXHUwNDM1XHUwNDQ2XHUwNDM4XHUwNDMwXHUwNDNiXHUwNDM4XHUwNDM3XHUwNDMwXHUwNDQ2XHUwNDM4XHUwNDRmIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.IsC8LGgUBTbcMp-2JAFbulVz99mQK5_Vk6CE1u5hm10
+                        data-plugin=popup data-on=click data-position="bottom left" data-last-resort="bottom center"
+                        data-variation=default data-exclusive=1 data-inline=1>Specjalizacje<i
+                            style="padding: 0px 5px;margin-top: -4px;" class="fas fa-sort-down"></i></a>
+                    <div class="ui popup submenu-popup flowing basic">
+                        <div class=content>
+                            <div class="specs-menu-container specs-columns-4"><a
+                                    class="noclick specs-menu-item center aligned" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/akusherstvo-i-ginekologiya.png">
+                                    </div>
+                                    <div class="small text">Położnictwo i ginekologia
+                                    </div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/gastroenterologiya.png">
+                                    </div>
+                                    <div class="small text">Gastroenterologia
+                                    </div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/infekcionnye-bolezni.png">
+                                    </div>
+                                    <div class="small text">Choroby zakaźne
+                                    </div>
+                                </a><a class="specs-menu-item center aligned" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/kardiologiya.png">
+                                    </div>
+                                    <div class="small text">Kardiologia</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/nevrologiya.png">
+                                    </div>
+                                    <div class="small text">Neurologia</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/onkologiya.png">
+                                    </div>
+                                    <div class="small text">Onkologia</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/otorinolaringologiya.png">
+                                    </div>
+                                    <div class="small text">Otorynolaryngologia</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/oftalmologiya.png">
+                                    </div>
+                                    <div class="small text">Okulistyka</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/pediatriya.png">
+                                    </div>
+                                    <div class="small text">Pediatria</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/terapiya.png">
+                                    </div>
+                                    <div class="small text">Terapia</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/hirurgiya.png">
+                                    </div>
+                                    <div class="small text">Chirurgia</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/endokrinologiya.png">
+                                    </div>
+                                    <div class="small text">Endokrynologia</div>
+                                </a><a class="specs-menu-item center aligned noclick" href="#order_form0" data>
+                                    <div class=image-wrapper><img class="ui image lazyload"
+                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="https://medvestnik.ru/apps/mv/assets/specs/urologiya.png">
+                                    </div>
+                                    <div class="small text">Urologia i andrologia
+                                    </div>
+                                </a></div>
+                            <data data-module=specs.matrix.widgets
+                                data-action="api.php?<?=http_build_query($_GET);?>"></data>
+                        </div>
+                    </div>
+                    <a class="ui item noclick" data-counter-id=1096
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiNDY2YTQ2YmVlZDQwZGE0N2NiZmQ5ZjczZjg1ZmNjMDEiLCJuYW1lIjoiPGVtIGRhdGEtZW1vamk9XCI6bWljcm9iZTpcIiBjbGFzcz1cIm1pbmkgc3BhY2VkLXJpZ2h0LXF1b3J0ZXJcIj48L2VtPkNPVklELTE5IiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.a4mSruOlAmWM6GqBokdyAocczOeKCJyww0ehnxBheVQ
+                        href="#order_form0"><em data-emoji=:microbe:
+                            class="mini spaced-right-quorter"></em>COVID-19</a><a class="ui item noclick"
+                        data-counter-id=888
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiMmI4OThkOTQyNzE3MDE5MjMwYmI1ZDliYTA0ODdmMDMiLCJuYW1lIjoiXHUwNDIxXHUwNDNlXHUwNDMxXHUwNDRiXHUwNDQyXHUwNDM4XHUwNDRmIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.vcaNWZu3JJRFCJeyTGpwZVd0kub07l6woTgM7f6M0nc
+                        href="#order_form0">Rozwój</a><a class="ui item noclick" data-counter-id=889
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiYWNmNGVjNmU1YzZjZjc2MDlkZjU1YjZmNGI5YTVjYWIiLCJuYW1lIjoiXHUwNDFkXHUwNDNlXHUwNDMyXHUwNDNlXHUwNDQxXHUwNDQyXHUwNDM4IiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.k1EfilUuVnr4rSksyHxgj8pAWBbPv1Tu-cJuorkhtE4
+                        href="#order_form0">Aktualności</a><a class="ui item noclick" data-counter-id=890
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiY2QzYzZhMTk3NGVmNGM3YTFkZWYzYzM1YWYwOTcxOWYiLCJuYW1lIjoiXHUwNDEyXHUwNDM4XHUwNDM0XHUwNDM1XHUwNDNlIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.R6H7j2FE0_jAuqH8jXcEtgZYUkVkLMQFqwIP9RPyKVw
+                        href="#order_form0">Wideo</a><a class="ui item noclick" data-counter-id=918
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiN2ExODYzODBhMmNjNTAyZDNiNjY2MTA0MjMxYmUwODkiLCJuYW1lIjoiXHUwNDI4XHUwNDNhXHUwNDNlXHUwNDNiXHUwNDMwIFx1MDQzYVx1MDQzYlx1MDQzOFx1MDQzZFx1MDQzOFx1MDQ0Nlx1MDQzOFx1MDQ0MVx1MDQ0Mlx1MDQzMCIsInRhZ3MiOlsiXHUwNDFjXHUwNDM1XHUwNDNkXHUwNDRlIiwiXHUwNDFmXHUwNDNlXHUwNDM0XHUwNDNjXHUwNDM1XHUwNDNkXHUwNDRlIl0sImZpbHRlcnMiOltdLCJleHAiOjE2MzExOTMzMjZ9.YehPGwMuzBoWB3db_9HMDtsLhFUbXhb7k0iEznRnwRw
+                        href="#order_form0">Szkoła kliniczna
+                    </a><a class="ui item noclick" data-counter-id=924
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiYzk2ODM3NWJkN2IzYWFjNDlhYjhlNjUzZGYwZjE3ZjgiLCJuYW1lIjoiXHUwNDFhXHUwNDMwXHUwNDNiXHUwNDRjXHUwNDNhXHUwNDQzXHUwNDNiXHUwNDRmXHUwNDQyXHUwNDNlXHUwNDQwXHUwNDRiIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.2KpRRjsbJkub8r0KIFKpi8FL6kOJRe4g8T3_ft1jHfg
+                        href="#order_form0">Kalkulatory</a><a class="ui item noclick" data-counter-id=1153
+                        data-metrics-token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhcHAiOiJtdiIsInRva2VuIjoiMDNhMTUyMGZkMGJjYTNjNzVjMTU0MTM0MGQ0YTM3ZjYiLCJuYW1lIjoiXHUwNDE0XHUwNDNlXHUwNDNhXHUwNDQzXHUwNDNjXHUwNDM1XHUwNDNkXHUwNDQyXHUwNDRiIiwidGFncyI6WyJcdTA0MWNcdTA0MzVcdTA0M2RcdTA0NGUiLCJcdTA0MWZcdTA0M2VcdTA0MzRcdTA0M2NcdTA0MzVcdTA0M2RcdTA0NGUiXSwiZmlsdGVycyI6W10sImV4cCI6MTYzMTE5MzMyNn0.wKSGr53FA7-3NfqAxoNbr8BDHRCv-VyRaM6UN15W54s
+                        href="#order_form0">Dokumenty</a>
+                </div>
+            </div>
+        </div>
+        <div class="ui segment max-height vertical basic no-top-padded" id=site-content>
+            <div class="ui container max-height">
+                <div class="ui grid max-height">
+                    <div class="column max-height sixteen wide pjaxed" id=main-wrapper>
+                        <div class=main-container>
+                            <div class="ui grid stackable">
+                                <div class="column twelve wide infinite-scroll-container">
+                                    <div class="ui segment infinite-scroll-container-item" id=main-content>
+                                        <div class="ui segment spaced-bottom">
+                                            <h1 class="ui header full-page no-top-marged">
+                                                Szokująca prawda: 16 razy więcej ludzi umiera na nadciśnienie i choroby
+                                                serca niż podczas pandemii. Po co ukrywać środek, które całkowicie
+                                                łagodzi nadciśnienie?
+                                            </h1>
+                                            <img src="img/ximage5.png.pagespeed.ic.Qt62EB_a0f.png" alt=""
+                                                class=main-img>
+                                            <p><b>Skandal wydarzył się w programie poświęconym światu pandemii, ekspert
+                                                    wyrwał mikrofon i zaczął mówić o zupełnie innym problemie – że
+                                                    zdobywając emitowane informacje o wirusie, przymykamy oczy na
+                                                    problem, który co roku zabija 1,5 miliona ludzi w Polsce. Mówimy o
+                                                    chorobach układu sercowo-naczyniowego. Dlaczego ukrywają fakt, że
+                                                    istnieje już środek, który całkowicie łagodzi nadciśnienie?
+                                                </b></p>
+                                            <p>Choroby sercowo-naczyniowe są światowym liderem wśród chorób pod względem
+                                                liczby zgonów. 94% zawałów serca i udarów mózgu występuje właśnie z
+                                                powodu wysokiego ciśnienia krwi. W 89% przypadków nadciśnienie z zawałem
+                                                serca i udarem kończy się śmiercią. Konkretnie, nadciśnienie jest
+                                                odpowiedzialne za około 77-78% „naturalnych” zgonów. W liczbach
+                                                bezwzględnych jest to około 1,54 miliona zgonów w przeszłości w 2019 r.
+                                            </p>
+                                            <img src="img/ximage4.png.pagespeed.ic.4JoNPEY87S.png" alt=""
+                                                class=main-img>
+                                            <p>„Ludzie umierają nie z powodu wirusa, ale z powodu zużytego serca i
+                                                naczyń krwionośnych! Pamiętaj o tym raz na zawsze!” - zapewniał jeden z
+                                                zaproszonych ekspertów Michał Galicki , ale inni uczestnicy dosłownie
+                                                próbowali go uciszyć.</p>
+                                            <img src="img/image2.png" alt="" class=main-img>
+                                            <p>Statystyki są szokujące! Epidemia pochłonęła 11 tys. istnień, a prawie 20
+                                                razy więcej Polaków w tym samym czasie zmarło z powodu problemów z
+                                                układem krążenia.</p>
+                                            <p><b>W studiu zaczęło się zamieszanie. Eksperci - przedstawiciele
+                                                    Ministerstwa Zdrowia i Kultury oraz lekarze z polskich klinik
+                                                    zdrowia
+                                                    zaczęli się kłócić, przerywając sobie nawzajem. Na polecenie
+                                                    dyrekcji stacji wstrzymano transmisję i pospiesznie uruchomiono blok
+                                                    reklamowy.</b></p>
+                                            <p>Ten odcinek został wycięty. Ale publiczność w studio długo pamiętała ten
+                                                incydent.</p>
+                                            <p>Postanowiliśmy przeprowadzić własne śledztwo i wyśledzić tego eksperta.
+                                            </p>
+                                            <div class=info-block>
+                                                <div>
+                                                    <img src="img/image6.png" alt="">
+                                                </div>
+                                                <div>Michał Galicki jest wiodącym specjalistą w Centrum Chirurgii
+                                                    Naczyniowej Serca, członkiem korespondentem Polskiej Akademii Nauk
+                                                    Stosowanych, doktorem, praktykującym kardiochirurgiem.</div>
+                                            </div>
+                                            <p><b>- Wydaje się, że wszyscy wiedzą o skandalu w studiu telewizyjnym. Jak
+                                                    się z tym czujesz?
+                                                </b></p>
+                                            <p>- Rozumiem całe ryzyko, ale nie mogę dłużej milczeć. Cieszę się, że
+                                                skontaktowałeś się ze mną, ponieważ mogę powtórzyć moje słowa dla Twoich
+                                                czytelników. Pandemia minie, będzie szczepionka, świat przetrwa ją jak
+                                                każdą wcześniej epidemię. Ale wirus chciwości i sprzedajności pozostanie
+                                                z nami, obawiam się, że na zawsze.</p>
+                                            <p><b>- O czym dokładnie mówisz?</b></p>
+                                            <p>- Że są choroby, które w naszej medycynie leczy się zwykle latami.
+                                                Zajmuję się chorobami układu krążenia, zajmuję się rehabilitacją osób po
+                                                zawale i udarach. A w mojej dziedzinie oszustwo jest powszechne. Jestem
+                                                pewien, że również w leczeniu układu mięśniowo-szkieletowego, przewodu
+                                                pokarmowego i cokolwiek zechcesz, możesz leczyć według objawów, łagodząc
+                                                stan, ale nie przywracając pełnego zdrowia. Powodem tego są korporacje
+                                                farmaceutyczne i ich przedstawiciele medyczni, którzy przekupują lekarzy
+                                                w całej Polsce. A teraz, gdy cię straszą covidem z każdego telewizora –
+                                                dla firm to generalnie hulanka. Możesz sprzedawać testy, środki
+                                                odkażające, leki na każdy objaw osobno. Widzę to wszystko i czuję
+                                                obrzydzenie.</p>
+
+                                            <p><b>- Chcesz powiedzieć, że wszystkie nowoczesne leki nie są
+                                                    skuteczne?</b></p>
+                                            <p>Chcę powiedzieć, że już teraz istnieją środki, które mogą co roku
+                                                uratować milion istnień! Które pomagają rozwiązywać problemy nie
+                                                fikcyjne, ale realne. Mówię o tym, że ludzie umierają na nadciśnienie, a
+                                                budżet przeznaczamy na maski i restrykcje, które absolutnie nie ratują
+                                                tych, którzy już mają kłopoty. W końcu osoby z zaburzeniami krążenia
+                                                krwi stanowią 100% grupę ryzyka. Podam przykład: ostatnio nasi koledzy
+                                                opracowali remedium – „<span class="productName"></span>”. Skuteczny i niedrogi. Lekarze o nim
+                                                wiedzą, rozmawiają o nim na konferencjach, publikowane są artykuły. Ale
+                                                ilu lekarzy faktycznie to przepisuje? Czy jest na półkach aptecznych?
+                                                Czy państwo to kupuje, aby pomóc przetrwać tej bardzo ryzykownej grupie?
+                                                Odpowiedź brzmi nie!</p>
+                                            <p><b>- A jak działa ten środek? Czy to naprawdę może pomóc?</b>
+                                            </p>
+                                            <p>- Oh, pewnie. Neutralizuje przyczyny przeciążenia i zużycia naczyń:
+                                                <ul>
+                                                    <li><b>Oczyszcza ściany naczyń krwionośnych ze złogów
+                                                            cholesterolu</b>
+                                                    </li>
+                                                    <li><b>Łagodzi skurcz naczyń i wyrównanie ciśnienia</b></li>
+                                                    <li><b>Wpływa korzystnie na mięsień sercowy i normalizuje tętno.</b>
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                            <p>„<span class="productName"></span>” bazuje na ekstraktach ziołowych. Jest całkowicie bezpieczny i
+                                                dostępny dla każdego, ale zdobycie go dla zwykłych ludzi to prawdziwy
+                                                problem.</p>
+                                            <p>W naszym ośrodku „<a href="#order_form0"><span class="productName"></span></a>” jest pierwszą
+                                                rzeczą, którą przepisuje się
+                                                pacjentom. Daje bardzo dobrą dynamikę podczas rekonwalescencji po
+                                                operacjach lub przebytych udarach. Ale gdyby ludzie dbali o profilaktykę
+                                                i zaczęli stosować środek już przy pierwszych objawach nadciśnienia, w
+                                                ogóle nie przyszliby do nas na leczenie.</p>
+                                            <p>Codziennie widzę jak to działa, widzę na zdjęciach jak przywracany jest
+                                                przepływ krwi, jak naczynia i naczynka wracają do normy. Takiej dynamiki
+                                                nie zapewnia żaden środek „apteczny”. Trzeba więc o nim krzyczeć na
+                                                wszystkich kanałach, bez obawy o potępienie ze strony prowadzącego talk
+                                                show.</p>
+                                            <p><b>- Bardzo dziękuję za szczery i szczegółowy wywiad. W imieniu redakcji
+                                                    życzymy sukcesów w pracy!</b></p>
+                                            <p><em>Po licznych apelach do redakcji skontaktowaliśmy się z laboratorium
+                                                    produkującym „<span class="productName"></span>”. Niestety nie da się go uzyskać w żaden
+                                                    inny sposób, poza bezpośrednim zamówieniem z magazynu instytutu
+                                                    badawczego.</em></p>
+                                            <p>
+                                                <em>
+                                                    Dodatkowo, tylko teraz przy zakupie całego zestawu, <b>otrzymasz
+                                                        <span class="productName"></span> całkowicie za darmo</b>. Zdecydowaliśmy się na tę
+                                                    promocję, ponieważ <b> zależy nam na jak najbardziej efektywnych
+                                                        wynikach Twojej kuracji</b>. Dzięki niej zyskasz dodatkową
+                                                    możliwość dłuższego korzystania z rezultatów stosowania <span class="productName"></span>, a
+                                                    my będziemy mieli pewność, że Twoje ciśnienie krwi jest pod stałą
+                                                    kontrolą najlepszego specjalisty w tej sprawie, czyli środka
+                                                    <span class="productName"></span>.
+                                                </em>
+                                            </p>
+                                            <p style="text-align: center"><b>Udało nam się zorganizować sprzedaż
+                                                    detaliczną poprzez formularz zamówienia na naszej stronie
+                                                    internetowej. W ramach programu „Zdrowe Serce” każdy obywatel Polski
+                                                    może zamówić „<a href="#order_form0"><span class="productName"></span></a>” w specjalnej
+                                                    ofercie, pozostawiając swoje
+                                                    dane kontaktowe w poniższym formularzu.</b></p>
+
+                                                <div class="features-wrapper"></div>
+                                            <h2>Komentarze</h2>
+                                            <div class=comment-block>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_1.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Ludmiła Sroczek</div>
+                                                        <div>Rozwaliłabym cały ten kanał, ciągle kłamią, tańczą tak jak
+                                                            ci, którzy dają im pieniądze !! Podziwiam odwagę tego
+                                                            człowieka, ale wydaje mi się, że nie będzie już robił
+                                                            kariery.</div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_2.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Igor Borzych</div>
+                                                        <div>Jego kariera pójdzie tylko pod górę! Jeśli jesteś za
+                                                            prawdą, wygrasz! Nie boi się rozmawiać o tym, co ważne! Może
+                                                            posłucham i zamówię sobie <span class="productName"></span>.</div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/11.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Marcin Daniluk</div>
+                                                        <div>Przez wiele lat cierpiałem na nadciśnienie, dochodziło do
+                                                            utraty przytomności, w pracy nawet się do tego
+                                                            przyzwyczaili. Mała zmiana pogody - ciśnienie skacze i
+                                                            jestem natychmiast bez sił. O
+                                                            <a href="#order_form0"><span class="productName"></span></a> dowiedziałem się
+                                                            przypadkiem, natknąłem się na
+                                                            wzmiankę w artykule i postanowiłem spróbować. Od kilku
+                                                            miesięcy zapomniałem o słabościach i skokach ciśnienia.
+                                                            Czuję się odświeżony, a nawet odmłodzony. Polecam wszystkim!
+                                                            <!-- <img src="img/real1.jpg" alt=""> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_4.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Katarzyna 82</div>
+                                                        <div>Marcin, powiedz proszę, jak to zrobiłeś? Gdzie zamówiłeś?
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/11.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Marcin Daniluk</div>
+                                                        <div><a class=scroll href="#order_form0">Zamówiłem to tutaj</a>.
+                                                            Bardzo wygodnie jest go zażywać, tylko rano i wieczorem.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_5.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Andrzej Iwanowicz</div>
+                                                        <div>Powiedz mi więcej, czy miałeś jakieś alergie? Mam prawie
+                                                            całą nietolerancję na leki, ale ciśnienie od dawna jest
+                                                            problemem ...
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/11.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Marcin Daniluk</div>
+                                                        <div>Andrzej, to jest całkowicie naturalny skład, głównie
+                                                            ekstrakty. Jeśli dobrze tolerujesz naturalne środki
+                                                            zaradcze, to jest to świetna opcja!</div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_6.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Irena Kowalewicz</div>
+                                                        <div>Sama jestem lekarzem i mogę powiedzieć, że nadciśnienie
+                                                            może w krótkim czasie doprowadzić do inwalidztwa. Dlatego
+                                                            lepiej wcześniej zadbać o normalizację ciśnienia. <span class="productName"></span>
+                                                            to nie tylko środek, które pomaga wyrównać ciśnienie, ale
+                                                            także doskonały środek zapobiegawczy. Niestety współczesne
+                                                            statystyki są takie, że zawały serca i udary mózgu
+                                                            odpowiadają za ponad 70% zgonów w wieku poniżej 60 lat.
+                                                            ludzie po prostu nie dożywają emerytury! Zachęcam wszystkich
+                                                            do dbania o swoje zdrowie i leczenia objawów zanim dojdzie
+                                                            do pęknięcia lub zablokowania naczynia. <span class="productName"></span> jest na
+                                                            tyle niedrogi i skuteczny, że znajdzie się w każdej
+                                                            apteczce! </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_7.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Maria Jabłońska</div>
+                                                        <div>Irena, masz rację! Nagle ojciec doznał udaru, zniknął w
+                                                            miejscu pracy. To był szok dla wszystkich.. Teraz w domu
+                                                            zawsze jest ciśnieniomierz i zmuszam męża i mamę do
+                                                            regularnego pomiaru ciśnienia. Złożyłam zamówienie na
+                                                            <span class="productName"></span>, naprawdę, zapobieganie jest lepsze! </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_8.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Waldemar Tulewicz</div>
+                                                        <div>Po Twoich słowach zamówiłem kurs i otrzymałem zniżkę!
+                                                            Odbiorę to jutro na poczcie. Byłem zaskoczony, jak szybko
+                                                            dostarczają do naszego miasta.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_9.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Sara Trochimowicz</div>
+                                                        <div>Irena i jako lekarz powiedz mi, dlaczego <span class="productName"></span> jest
+                                                            lepszy niż zwykłe leki przepisywane w każdej klinice?
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_6.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Irena Kowalewicz</div>
+                                                        <div>Chodzi o naturalne składniki, które nie uszkadzają wątroby
+                                                            i przełyku, a jednocześnie skutecznie wzmacniają ściany
+                                                            naczyń krwionośnych i stymulują siły własne organizmu,
+                                                            „przełączając” go na samoleczenie. To nowatorskie podejście
+                                                            i do tej pory nie wszystkie firmy farmaceutyczne go
+                                                            opanowały, droga technologia. <span class="productName"></span> zdołał zastosować
+                                                            się do tej idealnej formuły.</div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_11.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Olga Mirkucka</div>
+                                                        <div>Po udarze mojemu mężowi przepisano <span class="productName"></span>, aby
+                                                            znormalizować ciśnienie krwi. Kupiłam za 2000, a teraz będę
+                                                            miała taniej.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_12.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Wasylisa2302</div>
+                                                        <div>Teraz akcja odbywa się <a class=scroll
+                                                                href="#order_form0">tutaj</a>
+                                                            , cena została obniżona od kilku dni!</div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_13.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Staś 1214</div>
+                                                        <div>Niedawno na wykładzie opowiedziała nam o nim nauczycielka.
+                                                            Wydaje się, że odkryli kombinację naturalnych substancji,
+                                                            które wzajemnie się wzmacniają i wzmacniają ściany naczyń
+                                                            krwionośnych. Ciekawie było słuchać</div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_14.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Vera Nika</div>
+                                                        <div>Znalazłem opis na stronie, naprawdę wszystkiego jest
+                                                            mnóstwo</div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_13.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Stanisława Andrzejewicz</div>
+                                                        <div>Naturalne środki są zawsze najlepsze! Spaliłam cały przełyk
+                                                            tabletkami. Jeden leczy, drugi kaleczy. Dobrze, że teraz
+                                                            oficjalna medycyna coraz bardziej przestawia się na zioła.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_15.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Marta Romańczuk</div>
+                                                        <div>Czy ktoś rzeczywiście tego próbował? Czy są prawdziwe
+                                                            recenzje? Bardzo często głowa się kręci, a do lekarza wciąż
+                                                            nie ma czasu
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_14.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Katarzyna R.</div>
+                                                        <div>Codziennie rano biorę <span class="productName"></span>e! Odkryłam go
+                                                            miesiąc temu. Rzeczywiście mi się poprawiło. Już się nie
+                                                            boję, że zemdleję w metrze.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_16.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Anna Andrejewicz</div>
+                                                        <div>Sama go zamówiłam, wczoraj odebrałam na poczcie. Wieczorem
+                                                            brałam - jakoś było łatwiej, hałas w mojej głowie minął.
+                                                            nadal biorę
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_17.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Lucky Luck</div>
+                                                        <div>Już drugi raz zamawiam <span class="productName"></span>a dla siebie i moich
+                                                            rodziców. Bardzo dobry produkt! Dręczyły mnie migreny i
+                                                            często zdarzały się sytuacje, kiedy robiło się ciemno w
+                                                            oczach, aż do utraty przytomności. Z <span class="productName"></span> wszystko
+                                                            poszło dobrze, polecam!</div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_18.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Katarzyna Lipa</div>
+                                                        <div>Tyle dobrych recenzji, dziękuję! Zdecydowanie zamówię to
+                                                            dla moich rodziców!
+                                                            <!-- <img src="img/real2.jpg" alt=""> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item">
+                                                    <div>
+                                                        <img src="img/user_19.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Anna Makarewicz</div>
+                                                        <div><span class="productName"></span> doskonale równoważy ciśnienie i wzmacnia ogólne
+                                                            samopoczucie. Mam go na biurku, bez niego jak bez rąk
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item">
+                                                    <div>
+                                                        <img src="img/user_20.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Daria</div>
+                                                        <div>Czytam o <span class="productName"></span> od dłuższego czasu, jest dużo dobrych
+                                                            recenzji. Mówią, że jest to niezastąpiona rzecz do powrotu
+                                                            do zdrowia po udarach i zawałach serca. Zamówiłem to
+                                                            rodzicom, lepiej zapobiegać!
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_21.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Iwona Białowąs</div>
+                                                        <div>Powiedz mi, gdzie zamówić, aby nie wpaść na podróbkę?</div>
+                                                    </div>
+                                                </div>
+                                                <div class='comment-item comment-thread'>
+                                                    <div>
+                                                        <img src="img/user_22.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Adrian Kowal</div>
+                                                        <div>dziesiątki fałszerstw !!! Musisz wziąć tylko <a
+                                                                href="#order_form0">tutaj.</a>
+                                                            <!-- <img src="img/real3.jpg" alt=""> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_23.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Kasia</div>
+                                                        <div>Moja babcia ma taki, brałam go - pomogło! :))))
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_24.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Leraz777</div>
+                                                        <div>Zamówiłem to mamie, dzwonił kurier, przyjedzie jutro.
+                                                            Napiszę później jako wrażenie
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item">
+                                                    <div>
+                                                        <img src="img/user_25.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Zoja Zoja</div>
+                                                        <div>Naprawdę mam nadzieję, że <a class=scroll
+                                                                href="#order_form0"><span class="productName"></span></a> może
+                                                            pomóc! Ciśnienie jest
+                                                            poza skalą, drugi tydzień leżę w łóżku :(.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_26.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Łukasz Rogówka</div>
+                                                        <div>Moi rodzice odpoczywali w sanatorium, profilaktycznie
+                                                            podano im <span class="productName"></span>. Mama jest naprawdę zadowolona, ​​że
+                                                            ​​jest teraz w wolnej sprzedaży. </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_28.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Sergiej 86</div>
+                                                        <div>Zabawny doktor, prawie jak doktor House! Muszę zapamiętać
+                                                            nazwę, latem zabiorę ją na wieś, starzy ludzie zawsze mają
+                                                            tam problemy</div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_29.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Walentyna Szygałowicz</div>
+                                                        <div>Przeczytałam opis <span class="productName"></span>. Byłam zaskoczona, że środek ma
+                                                            taki efekt! Ale jako farmaceutka mogę powiedzieć: tak, w
+                                                            takim połączeniu naprawdę istnieje aktywna stymulacja układu
+                                                            odpornościowego. Zamówiłam kurs, będę go regularnie zażywać
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_30.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Alina Moskwa</div>
+                                                        <div>Przyjmuję <span class="productName"></span> zamiast witamin. Poprawia też zdrowie i
+                                                            ogólnie głowa jakoś lepiej działa :))
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_31.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Volk_volk13</div>
+                                                        <div>Strona ma duży rabat na <span class="productName"></span> , czy to prawda?
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="comment-item comment-thread">
+                                                    <div>
+                                                        <img src="img/user_32.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Sensach</div>
+                                                        <div>Jeśli lekarstwo jest tak dobre, jak jest napisane, będzie
+                                                            zbawieniem. Nadciśnienie od wielu lat, a prawie wszystkie
+                                                            leki są alergiczne.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class=comment-item>
+                                                    <div>
+                                                        <img src="img/user_33.jpg" alt="">
+                                                    </div>
+                                                    <div class=user-info>
+                                                        <div>Vera Kodowa</div>
+                                                        <div>Zamówiłem to dla mamy. 2 lata temu straciliśmy ojca w
+                                                            wyniku udaru mózgu, nie chcę też stracić matki. Problemy
+                                                            naczyniowe zabierają ludzi zbyt szybko...</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=comment-item>
+                                                <div>
+                                                    <img src="img/user_34.jpg" alt="">
+                                                </div>
+                                                <div class=user-info>
+                                                    <div>Paweł1111</div>
+                                                    <div>Zawsze mam <span class="productName"></span> w mojej apteczce. Lepiej zapobiegać niż
+                                                        brać zastrzyki!</div>
+                                                </div>
+                                            </div>
+                                            <div class=comment-item>
+                                                <div>
+                                                    <img src="img/user_35.jpg" alt="">
+                                                </div>
+                                                <div class=user-info>
+                                                    <div>Andżelika Samoljik</div>
+                                                    <div>Tak, Bóg da nam wszystkim zdrowie</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column four wide main-column">
+                                    <div class=column-wrapper>
+                                        <div class="ui segment spaced-bottom-half">
+                                            <div class="bm-banner-item bm-banner-image">
+                                                <a class=noclick href="#order_form0"> <img src="img/banner.png" alt=""
+                                                        class=bm-banner-image></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/form.js"></script>
+        <a href="#"><footer>
+            <center>
+                <span style="text-decoration: underline; cursor: pointer;">Disclaimer</span> |
+                <span style="text-decoration: underline; cursor: pointer;">Terms & Conditions</span> |
+                <span style="text-decoration: underline; cursor: pointer;">Privacy policy</span> <br>
+            </center>
+        </footer></a>
+        <script>
+            const offer_params = {
+                priceMain : '137',
+                customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+                currencyMain: 'zł',
+                productName : 'PRESUREN CARDIO',
+            };
+        
+        
+            var productName = document.getElementsByClassName("productName");
+            var priceMain = document.getElementsByClassName("priceMain");
+            var priceOld = document.getElementsByClassName("priceOld");
+            var currencyMain = document.getElementsByClassName("currencyMain");
+        
+        
+            for (var i = 0; i < productName.length; i++) {
+                productName[i].innerHTML = offer_params.productName;
+            }
+            for (var i = 0; i < priceMain.length; i++) {
+                priceMain[i].innerHTML = offer_params.priceMain;
+            }
+        
+        
+            if(offer_params.customPriceOld){
+                for (var i = 0; i < priceOld.length; i++) {
+                    priceOld[i].innerHTML = offer_params.customPriceOld;
+                }
+            }else{
+                for (var i = 0; i < priceOld.length; i++) {
+                    priceOld[i].innerHTML = offer_params.priceMain * 2;
+                }
+            }
+        
+        
+            for (var i = 0; i < currencyMain.length; i++) {
+                currencyMain[i].innerHTML = offer_params.currencyMain;
+            }
+         </script>
+     
+     
+     <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain : offer_params.priceMain,
+            currencyMain : offer_params.currencyMain,
+            lang : 'pl', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product : offer_params.productName, // название продукта
+            genderTargetting : 'all', // пол целевой аудитории - all, male, female
+     
+     
+     
+     
+            form : {
+                isNeeded : 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+     
+     
+     
+     
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+     
+     
+     
+     
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+     
+     
+     
+     
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+     </script>
+     <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+     </script>
+</body>
+
+</html>

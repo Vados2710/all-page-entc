@@ -1,0 +1,288 @@
+
+.gif-container {
+    animation: 0.7s ease 0s normal none 1 running boxContentHide;
+
+}
+
+.giftBoxes {
+    margin-bottom: 40px;
+}
+
+.box0,
+.box55 {
+    width: 70%;
+}
+
+@media (min-width: 1100px) {
+    .gif-container {
+        margin-left: 50px;
+    }
+}
+
+
+.modalAgain {
+    position: relative;
+    /* left: 35vh; */
+    /* width: 40vw; */
+    height: 40vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 0vh;
+    margin-top: -30vh;
+    z-index: 3;
+    padding: 0 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    /*transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);*/
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+
+}
+
+@media (min-width: 700px) {
+    .modalAgain {
+        top: -15vh;
+    }
+}
+
+.modalAgain button {
+    width: 200px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modalAgain.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modalAgain.visible {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 1s;
+}
+
+.modalAgain h1{
+    margin-bottom: 20px !important;
+}
+
+.modalDiscount {
+    opacity: 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 14%;
+    text-align: center;
+}
+
+.giftBoxes button {
+    border: 0px;
+    background-color: red;
+    border-radius: 10px;
+    width: 180px;
+    height: 65px;
+    color: white;
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.giftBoxes .spanTime {
+    color: red !important;
+    font-size: inherit !important;
+}
+
+.modalDiscount.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modalDiscount.visible {
+    animation: modalDiscount 1s ease-out 2s forwards;
+}
+
+.gif-container.noblur {
+    filter: blur(0);
+}
+
+.gif-container.blur {
+    filter: blur(0.1rem);
+    transition-delay: 1s;
+}
+
+.gif-container.transitionHide {
+    max-height: 0%;
+    overflow: hidden;
+    /*transform: translateY(-200px);*/
+    animation: hideGifDiv 1s ease-out 2s forwards;
+}
+
+.gif-container.transitionShow {
+    max-height: 100%;
+    overflow: hidden;
+    /*transform: translateY(0px);*/
+}
+
+.giftBoxes h1 {
+    color: black;
+}
+
+@keyframes hideGifDiv {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(-9000px);
+    }
+}
+
+@keyframes modalDiscount {
+    0% {
+        top: 700px;
+        opacity: 0;
+    }
+
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes Progress {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#myProgress {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+#myProgress h3 {
+  text-align: center;
+    margin-top: 30px;
+}
+
+#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    border-radius: 30px;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+
+.myProgress.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.myProgress.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.photoForm {
+    display: flex;
+    flex-direction: row;
+}
+
+.photoForm img {
+    height: 352px;
+    width: 280px;
+    margin-top: 24%;
+    margin-left: -152px;
+}
+
+.photoForm .formularz-walidacja {
+    width: 80%
+}
+
+
+.photoForm p span:first-child {
+    background-color: #c01e14;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.photoForm p span:last-child {
+    color: #c01e14;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.modalDiscount p {
+    text-align: center;
+    width: 120%;
+    margin-left: -45px;
+    line-height: 30px;
+    font-size: 20px;
+    color: #c01e14;
+}
+
+.modalDiscount p:first-child {
+   padding: 15px 0;
+}
+
+.modalDiscount p span{
+    font-weight: bold;
+    font-size: 23px;
+}
+
+@media (max-width: 992px) {
+    .photoForm img {
+        height: 240px;
+        width: 200px;
+        margin-top: 52%;
+        margin-left: -70px;
+    }
+
+    .photoForm .formularz-walidacja {
+        width: 80%
+    }
+
+    .modalDiscount h1 {
+        font-size: 25px;
+    }
+}
+@media (max-width: 600px) {
+    .photoForm {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photoForm img {
+        margin-top: 0;
+        margin-left: 0;
+        height: 240px;
+        width: 200px;
+    }
+
+    .txtImg{
+        width: 100%;
+    }
+    .modalDiscount p {
+        margin-left: -20px;
+    }
+}
