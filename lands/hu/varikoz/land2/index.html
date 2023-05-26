@@ -1,0 +1,864 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="hu">
+
+    
+<head>
+
+    <base >
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <title> Ultraven </title>
+    <link rel="icon" href="static/c709f515/img/favicon.ico" type="image/x-icon">
+    <link href='css/normalize.css' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=cyrillic-ext" rel="stylesheet">
+    <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <link href='css/plyr.css' rel='stylesheet' type='text/css'>
+ 
+    <style>
+        .hide,
+        .flag-dropdown {
+           display: none;
+        }
+  
+        .error-box {
+           color: #fff;
+           background-color: #DE5042 !important;
+           border-radius: 5px;
+           text-align: center;
+           width: 240px;
+           font-size: 13px;
+           line-height: 20px;
+           margin: 5px auto !important;
+           z-index: 100;
+        }
+  
+        input:invalid {
+           box-shadow: none;
+        }
+     </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="block1">
+            <div class="top-line">
+                <div class="wrapper">
+                    <div class="item item1">
+                        <div class="iimage"><img src="img/icon1.png" alt=""></div>
+                        <div class="itext"> 100%-ban növényi<br><span class="bold">összetevőket</span> tartalmaz</div>
+                    </div>
+                    <div class="item item2">
+                        <div class="iimage"><img src="img/icon2.png" alt=""></div>
+                        <div class="itext">1542 ember<br>
+                            <span class="bold">megrendelte</span> MA
+                        </div>
+                    </div>
+                    <div class="button-block">
+                        <button onclick="$('#apply').arcticmodal(); return false;">Kérjen ingyenes konzultációt</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="title"><span class="small uppercase">MEDDIG FOGJA MÉG NÉZNI A VARIKÓZIST? </span>
+                    <br>ÁLLÍTSA VISSZA <span class="red">LÁBAI EGÉSZSÉGÉT <br>ÉS SZÉPSÉGÉT </span>ULTRAVENNEL!
+                </div>
+                <div class="left-block">
+                    <div class="item item1">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Megszünteti </span>a kitágult vénákat</div>
+                    </div>
+                    <div class="item item2">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Növeli</span> a vénák tónusát</div>
+                    </div>
+                    <div class="item item3">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Javítja</span><br> a vérkeringést</div>
+                    </div>
+                    <div class="item item4">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Enyhíti</span><br> a fájdalmat és a duzzanatot</div>
+                    </div>
+                    <div class="textline">MEGSZÜNTETI A VARIKÓZIS OKAIT ÉS KÖVETKEZMÉNYEIT</div>
+                </div>
+                <div class="central-block">
+                    <div class="product-block"><img class="img__product-1" src="img/product.png" alt=""></div>
+                </div>
+                <div class="right-block">
+                    <div class="right-label">
+                        <div class="rleft"><span class="white"><span class="dyn_discount">AZ </span>ÁR 50%-A -
+                            </span>AJÁNDÉKBA!</div>
+                        <div class="rright">
+                            <s><span class="dyn_old_price oldPriceAndLabelForLandingInfoApi"> <span class="priceOld"></span><span class="currencyMain"></span> </span> <span
+                                    class="dyn_currency"></span></s>
+                            <br><span class="new"><span class="dyn_price priceAndLabelForLandingInfoApi"><span class="priceMain"></span><span class="currencyMain"></span></span>
+                                <span class="dyn_currency"></span></span>
+                        </div>
+                    </div>
+                    <div class="form-block">
+                        <div class="timer">
+                            <div class="timer-text">Az akció végéig:</div>
+
+                            <div class="timer">
+                                <span class="hour">
+                                    <span class="num hour0">-</span>
+                                    <span class="num hour1">-</span>
+                                </span>
+                                <span class="points__left">:</span>
+                                <span class="minute">
+                                    <span class="num min0">-</span>
+                                    <span class="num min1">-</span>
+                                </span>
+                                <span class="points__right">:</span>
+                                <span class="second">
+                                    <span class="num sec0">-</span>
+                                    <span class="num sec1">-</span>
+                                </span>
+                            </div>
+
+                        </div>
+                        <form action="getform.php" method="post">
+
+                            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                            <input type="hidden" name="utm_campaign" value="{domonetka}">
+
+                            <div class="inp-line inp-name">
+                                <input type="text" name="name" required="required" placeholder="Név">
+                            </div>
+                            <div class="inp-line inp-phone">
+                                <input type="tel" name="phone" required="required" placeholder="+36 20 123 4567">
+
+                            </div>
+
+                            <div class="button-line">
+                                <button type="submit">MEGRENDELEM</button>
+                                <div class="callbackme">
+                                    Az operátor 5 percen belül visszahívja </div>
+                            </div>
+                            <div class="text"><img src="img/icon3.png" alt="">Az Ön adatai védve vannak</div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block2">
+            <div class="wrapper">
+                <div class="title"><span class="red">A VISSZÉR KELLEMETLEN ÉRZÉST KELT,</span><br>ÉS SZÉGYELLI A LÁBAIT
+                </div>
+                <div class="item-block">
+                    <div class="item item1">
+                        <div class="iimage"><img src="img/pic1.png" alt=""></div>
+                        <div class="iline"></div>
+                        <div class="itext">Nyáron nadrágot kell viselni. <span class="red">MELEG!</span></div>
+                    </div>
+                    <div class="item item2">
+                        <div class="iimage"><img src="img/pic2.png" alt=""></div>
+                        <div class="iline"></div>
+                        <div class="itext">Száraz bőr kitágult erekkel és vénás hálózattal.<span class="red">
+                                CSÚNYA!</span></div>
+                    </div>
+                    <div class="item item3">
+                        <div class="iimage"><img src="img/pic3.png" alt=""></div>
+                        <div class="iline"></div>
+                        <div class="itext">A láb és a boka duzzanata, a lábak fájnak.<span class="red">FÁRASZTÓ! </span>
+                        </div>
+                    </div>
+                    <div class="item item4">
+                        <div class="iimage"><img src="img/pic4.png" alt=""></div>
+                        <div class="iline"></div>
+                        <div class="itext">Nem hordhat magassarkút.<span class="red">NEM NŐIES!</span></div>
+                    </div>
+                    <div class="item item5">
+                        <div class="iimage"><img src="img/pic5.png" alt=""></div>
+                        <div class="iline"></div>
+                        <div class="itext">El kell rejteni a karcsú lábakat a hosszú ruhák alá. <span
+                                class="red">KÁR!</span></div>
+                    </div>
+                    <div class="item item6">
+                        <div class="iimage"><img src="img/pic6.png" alt=""></div>
+                        <div class="iline"></div>
+                        <div class="itext">A görcsök egyre gyakoribbak, és ez ijesztő. <span
+                                class="red">VESZÉLYES!</span></div>
+                    </div>
+                </div>
+                <div class="textline">Az egyik nyári szezonban a visszér gyorsabban fejlődik, mint az év másik 9
+                    hónapjában. <span class="red">NE KÉSLELTESSE A KEZELÉST!</span></div>
+            </div>
+        </div>
+        <div class="block3">
+            <div class="wrapper">
+                <div class="title"><span class="small"><span class="red">A VISSZÉR NEM CSAK CSÚNYA, </span> HANEM
+                        HALÁLOS IS!</span>
+                </div>
+                <div class="image-block">
+                    <div class="image image1">
+                        <div class="itext">ELSŐ FÁZIS</div>
+                    </div>
+                    <div class="image image2">
+                        <div class="itext">MÁSODIK SZAKASZ</div>
+                    </div>
+                    <div class="image image3">
+                        <div class="itext">HARMADIK SZAKASZ<br>
+                            <span class="small">műtétet igényel!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="textline">MAGYARORSZÁGON MÁR 1.3 MILLIÓ NŐ SZENVED KRÓNIKUS 1-ES, 2-ES VAGY 3-AS FOKÚ VÉNÁS
+                    ELÉGTELENSÉGBEN.</div>
+                <div class="item item1">
+                    <div class="ititle">HIRTELEN HALÁLOS FENYEGETÉS</div>
+                    <div class="iline"></div>
+                    <div class="itext">A vérerek belsejében trombusok képződnek.<br>
+                        <br>A vérrög hirtelen szétválása és az agyi artériákban való beszorulása stroke-ot, bénulást és
+                        azonnali halált okozhat.
+                    </div>
+                    <div class="ibottom">MÉLYVÉNÁS <br> ELVISELHETETLEN FÁJDALOM</div>
+                </div>
+                <div class="middle-block"><img src="img/legs.png" alt=""></div>
+                <div class="item item2">
+                    <div class="ititle">ELVISELHETETLEN FÁJDALOM</div>
+                    <div class="iline"></div>
+                    <div class="itext">A vénák fala begyullad, a véráramlás lelassul. A lábakon a bőr kék színűvé válik.
+                        Fekélyek alakulnak ki a lábakon. Mindez elviselhetetlen fájdalmat okoz.</div>
+                    <div class="ibottom">THROMBOPHLEBITIS</div>
+                </div>
+                <div class="arrow left"><img src="img/arrow.png" alt=""></div>
+                <div class="arrow right"><img src="img/arrow.png" alt=""></div>
+            </div>
+        </div>
+        <div class="block4">
+            <div class="wrapper">
+                <div class="title">A VÉNÁK BELSŐ TÁGULÁSA (VARIKÓZUS VÉNÁK)</div>
+                <div class="left-image"><img src="img/image1.png" alt=""></div>
+                <div class="right-block">
+                    <div class="ritem ritem1">
+                        <div class="ititle">KISMEDENCEI VISSZÉR</div>
+                        <div class="iline"></div>
+                        <div class="itext"><span class="bold">Érinti a petefészek vénáit,</span> a comb vénáit, <span
+                                class="bold">az epehólyag vénáit és a méh vénáit. <span class="red">A kismedencei
+                                    varikózis krónikus aranyérhez vezethet.</span></span>
+                        </div>
+                    </div>
+                    <div class="ritem ritem2">
+                        <div class="ititle">A MÉH VISSZEREI</div>
+                        <div class="iline"></div>
+                        <div class="itext"><span class="bold">A méh vénákat érinti.</span> Tünetek: tompa hasi fájdalom,
+                            elhúzódó fájdalmas időszakok, kellemetlen érzés közösülés közben. <span class="bold"><span
+                                    class="red">A petefészkekben a vérkeringés megsértése veszélyes, és a nőknél
+                                    meddőséget okozhat.</span></span>
+                        </div>
+                    </div>
+                    <div class="ritem ritem3">
+                        <div class="ititle">A NYELŐCSŐ VISZREK</div>
+                        <div class="iline"></div>
+                        <div class="itext"><span class="bold">A gyomorban vagy a nyelőcsőben lévő vékony vénák bármikor
+                                megrepedhetnek,</span> ami belső vérzéshez <span class="bold"><span class="red">vezethet
+                                    vérköhögéssel és fekete, kátrányos széklettel. </span></span>Ez közvetlen
+                            életveszélyt jelent.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block5">
+            <div class="wrapper">
+                <div class="title">NE KOCKÁZTASSON! VIGYÁZZON AZ EGÉSZSÉGÉRE,<br>HOGY BOLDOGAN ÉLJEN, AMÍG MEG NEM HAL.
+                    <br><span class="small">Szabaduljon meg a varikózisoktól most.</span></div>
+                <div class="item-block">
+                    <div class="item item1">
+                        <div class="iimage"><img src="img/pic10.png" alt=""></div>
+                        <div class="itext">ANTIBIOTIKUM NÉLKÜL</div>
+                    </div>
+                    <div class="item item2">
+                        <div class="iimage"><img src="img/pic11.png" alt=""></div>
+                        <div class="itext">SZIKE NÉLKÜL</div>
+                    </div>
+                    <div class="item item3">
+                        <div class="iimage"><img src="img/pic12.png" alt=""></div>
+                        <div class="itext">TÚLFIZETÉS NÉLKÜL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block6">
+            <div class="wrapper">
+                <div class="title">HASZNÁLJA A TERMÉKET,<br>MELYNEK HATÉKONYSÁGÁT EZER NŐ IGAZOLJA!</div>
+                <div class="left-block">
+
+
+                    <div class="ltext"><span class="green">Nyugodtan kijelenthetjük, </span>hogy az Ultraven gél
+                        használata a legjobb megelőzés és kezelés a visszérbetegségek ellen!<br>
+                        <br><span class="green">Tanulmányok igazolják, </span>hogy a gél rendszeres, mindössze 1,5 hetes
+                        használata megszünteti az összes kellemetlen tünetet (fájdalom, gyulladás, görcsök, égés,
+                        duzzanat), valamint növeli a vénák tónusát és csökkenti a kapillárisok törékenységét. Eltűnnek a
+                        mikrosérülések és a száraz lábak. <br>
+                        <span class="green">A termék kúra (4-6 hét) alatti használata</span> belülről gyógyítja az
+                        ereket, eltünteti a visszér külső jeleit és könnyedséget ad a lábaknak!
+                    </div>
+                    <div class="lgraph">
+                        <div class="lgraph_percent">
+                            <div class="lgraph_percent_1">60%</div>
+                            <div class="lgraph_percent_2">40%</div>
+                            <div class="lgraph_percent_3">20%</div>
+                            <div class="lgraph_percent_4">0%</div>
+                        </div>
+                        <div class="lgraph_year">
+                            <span class="lgraph_year_1">2019</span>
+                            <span class="lgraph_year_2">2020</span>
+                            <span class="lgraph_year_3">2021</span>
+                        </div>
+                        <div class="gtitle"></span>
+                            <div class="gtitle"> Az elvégzett kutatások </div>
+                            <div class="gtitle__bold">BEMUTATJÁK AZ ULTRAVEN HATÉKONYSÁGÁT</div>
+                            <div class="gtext gleft">Ultraven</div>
+                            <div class="gtext gright">Más termékek</div>
+                            <div class="gtext gbottom">Klinikai vizsgálatok megerősítették az Ultraven nagy
+                                hatékonyságát a krónikus vénás elégtelenség kezelésében és megelőzésében.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-block">
+                    <div class="rimage rimage1"><img src="img/image5.png" alt=""></div>
+                    <div class="rimage rimage2"><img src="img/image42.png" alt=""></div>
+                    <div class="rimage rimage3"><img src="img/image2.png" alt=""></div>
+                    <div class="rimage rimage4"><img src="img/image3.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="block7">
+            <div class="wrapper">
+                <div class="item-block">
+                    <div class="item item1">AZ ULTRAVEN SEGÍTSÉGÉVEL<span class="green"> A NŐK KÖNNYEDÉN MEGŐRZIK</span>
+                        <br><span class="green" style="font-size: 1.3rem; line-height: 1.3">LÁBUK SZÉPSÉGÉT ÉS
+                            EGÉSZSÉGÉT</span>
+                    </div>
+                    <div class="item item2">AZ ULTRAVEN AZ ELSŐ RITKA <span class="red">
+                            <span class="bold">NÖVÉNYI KIVONATOKON ÉS MÁS TERMÉSZETES </span>
+                        </span>
+                        <span class="green">ÖSSZETEVŐKÖN ALAPULÓ GÉL, AMELY ELPUSZTÍTJA A VARIKÓZIS OKAIT ÉS KÖVETKEZMÉNYEIT.</span>
+                    </div>
+                    <div class="item item3">100%-ban természetes összetevőket tartalmaz. Az alapban - vadgesztenye mag
+                        kivonat, mészáros seprű gyökér, árnika virág kivonat és troxerutin. <span class="green">A gél
+                            egyedülálló formulája azonnal javítja a vénák és kapillárisok állapotát.</span></div>
+                </div>
+                <div class="bottom-block">
+                    <div class="item item1">
+                        <div class="iimage"><img src="img/image6.png" alt=""></div>
+                        <div class="itext tleft">Árnika virág kivonat</div>
+                        <div class="itext tright">Mészárseprű gyökér</div>
+                        <div class="itextline">JAVÍTJA A VÉRKERINGÉST, NORMALIZÁLJA A NYIROKKIÁRAMLÁST ÉS OLDJA A
+                            VÉRRÖGÖKET</div>
+                    </div>
+
+                    <div class="product-block">
+                        <img class="img__product-2" src="img/product2.png" alt="">
+                    </div>
+
+                    <div class="item item2">
+                        <div class="iimage"><img src="img/image7.png" alt=""></div>
+                        <div class="itext tleft">Vadgesztenye mag kivonat</div>
+                        <div class="itext tright">Tölgy kéreg kivonat</div>
+                        <div class="itextline"> MEGSZÜNTETI A GYULLADÁST, NÖVELI AZ EREK TÓNUSÁT ÉS ERŐSÍTI A VÉNÁK
+                            FALÁT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block8">
+            <div class="wrapper">
+                <div class="left-block"><span class="green"><span class="bold">AZ ULTRAVEN MINDÖSSZE 4-6 HÉT ALATT
+                            MEGSZÜNTETI A VARIKÓZIST. EZ A LEGGYORSABB ÉS LEGHATÉKONYABB KEZELÉS!</span></span>
+                    <br>
+                    <br><span class="red"><span class="bold">AZ ULTRAVEN A LEGERŐSEBB GYÓGYNÖVÉNYEK
+                            KONCENTRÁTUMA.</span></span> A visszérnek egyszerűen nincs esélye!
+                </div>
+
+
+                <div class="item">
+                    <div class="itext ttop">Ginkgo biloba levél kivonat</div>
+                    <div class="iimage"><img src="img/image8.png" alt=""></div>
+                    <div class="itext tleft">Ginzeng kivonat</div>
+                    <div class="itext tright">Mentol</div>
+                    <div class="itextline"> NORMALIZÁLJA A VÉNÁS SZELEPEK MUNKÁJÁT, ENYHÍTI AZ IZMOK DUZZADÁSÁT ÉS
+                        FESZÜLTSÉGÉT</div>
+                </div>
+
+
+                <div class="right-block cs">
+                    <div class="rtitle">ULTRAVEN FORMULA MINDÖSSZE 1 KÚRÁBAN: </div>
+                    <p><span class="green"><span class="bold">Helyreállítja a</span></span> véráramlást</p>
+                    <p><span class="green"><span class="bold">Erősíti az </span></span> erek falá</p>
+                    <p><span class="green"><span class="bold">Enyhíti a </span></span> fájdalmat a lábakban</p>
+                    <p><span class="green"><span class="bold">Megakadályozza a </span></span> vérrögképződést a vénákban
+                    </p>
+                    <p><span class="green"><span class="bold">Megszünteti a görcsöket</span></span>
+                    </p>
+                    <p><span class="green"><span class="bold">Enyhíti a duzzanatot</span></span>
+                    </p>
+                </div>
+                <div class="button-line">
+                    <div class="arrow left"></div>
+                    <a href="#orderForm" class="btn">MEGRENDELEM</a>
+                    <div class="arrow right arrow__bot"></div>
+                </div>
+            </div>
+        </div>
+        <div class="block9">
+            <div class="wrapper">
+                <div class="title">AZ ULTRAVEN <span class="red">A MŰTÉT EGYETLEN</span><br> ALTERNATÍVÁJA</div>
+                <div class="item-block">
+                    <div class="item item1">
+                        <div class="ititle">EREDMÉNY 23 NAP ALATT</div>
+                        <div class="iimage"><img src="img/pic13.png" alt=""></div>
+                        <div class="itext">ULTRAVEN ELŐTT ÉS UTÁN </div>
+                    </div>
+                    <div class="item item2">
+                        <div class="ititle">EREDMÉNY 4,5 HÉT ALATT</div>
+                        <div class="iimage"><img src="img/pic14.png" alt=""></div>
+                        <div class="itext">ULTRAVEN ELŐTT ÉS UTÁN</div>
+                    </div>
+                    <div class="item item3">
+                        <div class="ititle">EREDMÉNY 6 HÉT ALATT</div>
+                        <div class="iimage"><img src="img/pic15.png" alt=""></div>
+                        <div class="itext">ULTRAVEN ELŐTT ÉS UTÁN</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block10">
+            <div class="wrapper">
+                <div class="title">SVÁJCI TUDÓSOK ÁLTAL <br> TESZTELT ULTRAVEN</div>
+                <div class="text">A termék hatékonyságát a zürichi Kutatóintézet igazolta 1436 önkéntes részvételével.
+                    Az ULTRAVEN gélt naponta kétszer alkalmazták négy héten keresztül.<br>
+                    <br>A hatékonyságot a vénás plexus alakjának és a központi ér szélességének elemzésével értékelték.
+                    A méréseket a Vogel Switzerland Co.KG DIN 941 szabvány szerinti digitális differenciálmérővel, RS
+                    186 C interfésszel végeztük.
+                </div>
+                <div class="left-block"><img src="img/doc.png" alt=""></div>
+                <div class="right-block">
+                    <div class="rtext">Az ULTRAVEN gél vizsgálat eredményei alapján a következő adatokat kaptuk: </div>
+                    <p><span class="green"><span class="bold">A centrális véna szélessége 87,8%-kal csökkent.
+                            </span></span></p>
+                    <p><span class="green"><span class="bold">Az erek tágulása 90%-kal csökkent.</span></span></p>
+                </div>
+            </div>
+        </div>
+        <div class="block11">
+            <div class="wrapper">
+                <div class="title">ÉRRENDSZERI SZAKEMBEREK - PHLEBOLÓGUSOK VÉLEMÉNYE</div>
+                <div class="text-block">
+                    <div class="tleft"><img src="img/image9-w.png" alt=""></div>
+                    <div class="tright">
+                        <div class="rtext">Svájcból jöttem, és első kézből ismerem a természetes <span
+                                class="green"><span class="bold">összetevők hihetetlen gyógyító erejét az érrendszer
+                                    egészségére.</span></span> Az ULTRAVEN vizsgálat nagyon fontos számomra és az egész
+                            Flebológusok Egyesülete számára.<br>
+                            <br><span class="green"><span class="bold">Svájci tudósokkal közösen kifejlesztettük a
+                                    leghatékonyabb visszerek elleni készítmény formuláját. </span></span>Az ULTRAVEN már
+                            több ezer nőnek segített abban, hogy könnyebben érezzék magukat, és elfelejtsék a duzzadt
+                            lábvénákat.<br>
+                            <br>Biztos vagyok benne, <span class="green"><span class="bold">hogy ez a gél segít a
+                                    lábadon is, és elkerüli a műtétet és a kapcsolódó kockázatokat.</span></span> Sebész
+                            vagyok, és tudom, miről beszélek. Többé nincs szüksége a segítségemre, mert most megvan a
+                            legjobb gyógyszer a visszér kezelésére - ULTRAVEN.
+                        </div>
+                        <div class="rauthor"><span class="bold">Ellen Kaufmann</span> szív- és érsebész, flebológus, az
+                            Európai Érsebészeti Társaság tagja.</div>
+                        <div class="rsign"><img src="img/sign.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="pen"><img src="img/pen.png" alt=""></div>
+            </div>
+        </div>
+        <div class="block12">
+            <div class="wrapper">
+                <div class="title">NŐK EZREI ÉRTÉKELTÉK <span class="green">MÁR MAGASRA</span> AZ ULTRAVENET</div>
+                <div class="left-block">
+                    <div class="ltop">
+                        <img src="img/star.png" alt="">
+                        <img src="img/star.png" alt="">
+                        <img src="img/star.png" alt="">
+                        <img src="img/star.png" alt="">
+                        <img src="img/star.png" alt="">
+                    </div>
+                    <div class="lline line1">
+                        <div class="number">5</div>
+                        <div class="percent">
+                            <div class="ptext">87%</div>
+                        </div>
+                    </div>
+                    <div class="lline line2">
+                        <div class="number">4</div>
+                        <div class="percent">
+                            <div class="ptext">12%</div>
+                        </div>
+                    </div>
+                    <div class="lline line3">
+                        <div class="number">3</div>
+                        <div class="percent">
+                            <div class="ptext">0%</div>
+                        </div>
+                    </div>
+                    <div class="lline line4">
+                        <div class="number">2</div>
+                        <div class="percent">
+                            <div class="ptext">0%</div>
+                        </div>
+                    </div>
+                    <div class="lline line5">
+                        <div class="number">1</div>
+                        <div class="percent">
+                            <div class="ptext">0%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-block rew1 rew">
+                    <div class="rtop">
+                        <div class="timage"><img src="img/rew1.jpg" alt=""></div>
+                        <div class="tauthor">
+                            <div class="name">Saaghy Dora, 29 éves</div>
+                            <div class="rate">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rtext">A szülés után elkezdődtek problémáim az ereimmel. A kompressziós harisnya nem
+                        mentett meg. Rettenetesen aggódtam az erek miatt. Szörnyen nézett ki, mert a lábam nagyon
+                        bedagadt és nagyon fájt. Azt hittem, hogy ez a terhesség nehéz volt, de a lányom születése után
+                        nem lett jobb. Szerencsére a hosszan tartó gyötrelem terepe talált egy jó orvost, aki az
+                        Ultraven gélt ajánlotta nekem. Azt mondta, hogy 1-1,5 hónapig használd naponta
+                        kétszer-háromszor. Az ötödik napon elmúlt a lábfájás, csökkent a vénák gyulladása. A kúra végére
+                        pedig újra szépek és teljesen egészségesek lettek a lábaim! Boldog vagyok!</div>
+                </div>
+                <div class="right-block rew2 rew" style="display: none;">
+                    <div class="rtop">
+                        <div class="timage"><img src="img/rew2.jpg" alt=""></div>
+                        <div class="tauthor">
+                            <div class="name">Boglarka Ferenc, 45 éves</div>
+                            <div class="rate">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rtext">A visszér az elmúlt 7 évben az átok volt. Minden nap bekentem a lábamat különböző
+                        krémekkel, kenőcsökkel stb. De az eredmény minimális volt. Az Ultraven a legjobb, amit a tudósok
+                        feltaláltak. A gél gyorsan felszívódik, és az első használattól kezdve csökkenti a duzzanatot és
+                        a fájdalmat. A termék összetétele természetes és nincs mellékhatása. Már ötödik hete használom a
+                        gélt és a lábaim ismét világosak, mint fiatalkoromban. És ami a legfontosabb, hogy a vénák
+                        normalizálódjanak - a visszér eltűnt!</div>
+                </div>
+                <div class="right-block rew3 rew" style="display: none;">
+                    <div class="rtop">
+                        <div class="timage"><img src="img/rew3.jpg" alt=""></div>
+                        <div class="tauthor">
+                            <div class="name">Thury Emese, 58 éves</div>
+                            <div class="rate">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                                <img src="img/star2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rtext">2-es stádiumú varikózisom volt. A karokon nagyon látszottak az erek, a bőr
+                        hámlott. Az ödéma és a lábak fájdalma elviselhetetlenül elviselhetetlen volt. A lányom vette
+                        nekem ezt a gélt, bár már elvesztettem a reményt. 6 hétig használtam az Ultraven-t, ahogy az
+                        utasításban is javasolták - és a betegség visszahúzódott. A bőr sokkal puhább lett, a fájdalom
+                        és a duzzanat szinte azonnal megszűnt. Fokozatosan eltűntek az érrendszeri csillagok és hálók,
+                        láttam, ahogy napról napra beszűkültek a vénák és eltűntek a duzzanatok. Nagyon elégedett voltam
+                        az eredménnyel, legyőztem a varikózist! Ezt jelentik a modern tudományos eredmények.
+                        Általánosságban elmondható, hogy mindig ügyeljen egészségére – használja az Ultravent
+                        megelőzésre, a visszerek megelőzésére, hogy később ne kezelje.</div>
+                </div>
+                <div class="arrow"></div>
+
+            </div>
+        </div>
+        <div class="block13">
+            <div class="wrapper">
+                <div class="title">HOGYAN DOLGOZUNK?</div>
+                <div class="item-block">
+                    <div class="item item1">
+                        <div class="iimage"><img src="img/pic16_cs.png" alt=""></div>
+                        <div class="itext"><span class="ititle">1. LÉPÉS</span>
+                            <br>Rendelje meg az Ultraven-t most, <span class="red"><span class="bold">és 50% kedvezményt
+                                    kap</span></span>
+                        </div>
+                    </div>
+                    <div class="arrow"></div>
+                    <div class="item item2">
+                        <div class="iimage"><img src="img/pic17.png" alt=""></div>
+                        <div class="itext"><span class="ititle">2. LÉPÉS</span>
+                            <br>Várja meg szakember hívását,
+                            <b>hogy megbeszéljék a megrendelés részleteit*</b>
+                        </div>
+                    </div>
+                    <div class="arrow"></div>
+                    <div class="item item3">
+                        <div class="iimage"><img src="img/pic18.png" alt=""></div>
+                        <div class="itext"><span class="ititle">3. LÉPÉS</span>
+                            <br>Fizesse ki a rendelést <b>kézhezvételkor</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block14">
+            <div class="wrapper">
+                <div class="left-block">
+                    <div class="ltitle">FIGYELEM!</div>
+                    <div class="ltext">Rendelje meg az eredeti ULTRAVEN gélt csak a gyártó hivatalos honlapján.<br>
+                        <br>Ez a biztonság, a magas minőség és a termék legjobb árának garanciája.
+                    </div>
+                </div>
+                <div class="product-block">
+                    <div class="arrow"><img src="img/arrow4.png" alt=""></div>
+                    <div class="product"><img class="img__product-3" src="img/product3.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="block15">
+            <div class="wrapper">
+                <div class="title">Nők százezrei szabadultak <span class="red">már meg
+                        visszértől</span> l otthon
+                    mindössze<br>1 kúrában Ultravennel.<br>
+                    <span class="big">
+                        <span class="red"> TE IS MEG TUDOD CSINÁLNI!</span>
+                    </span>
+                </div>
+                <div class="left-block">
+                    <div class="item item1">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Megszünteti </span>a kitágult vénákat</div>
+                    </div>
+                    <div class="item item2">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Növeli</span> a vénák tónusát</div>
+                    </div>
+                    <div class="item item3">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Javítja</span><br> a vérkeringést</div>
+                    </div>
+                    <div class="item item4">
+                        <div class="iimage"><img src="img/check.png" alt=""></div>
+                        <div class="itext"><span class="green">Enyhíti</span><br> a fájdalmat és a duzzanatot</div>
+                    </div>
+                    <div class="textline">MEGSZÜNTETI A VARIKÓZIS OKAIT ÉS KÖVETKEZMÉNYEIT</div>
+                </div>
+                <div class="central-block">
+                    <div class="product-block"><img class="img__product-1" src="img/product.png" alt=""></div>
+                </div>
+                <div class="right-block">
+                    <div class="right-label">
+                        <div class="rleft">
+                            <span class="white"><span class="dyn_discount">AZ </span>ÁR 50%-A - </span>AJÁNDÉKBA!
+                        </div>
+                        <div class="rright">
+                            <s><span class="dyn_old_price oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span><span class="currencyMain"></span> </span> <span
+                                    class="dyn_currency"></span></s>
+                            <br><span class="new"><span class="dyn_price priceAndLabelForLandingInfoApi"><span class="priceMain"></span><span class="currencyMain"></span></span>
+                                <span class="dyn_currency"></span></span>
+                        </div>
+                    </div>
+                    <div class="form-block" id="orderForm">
+                        <div class="timer">
+                            <div class="timer-text">Az akció végéig:</div>
+
+                            <div class="timer">
+                                <span class="hour">
+                                    <span class="num hour0">-</span>
+                                    <span class="num hour1">-</span>
+                                </span>
+                                <span class="points__left">:</span>
+                                <span class="minute">
+                                    <span class="num min0">-</span>
+                                    <span class="num min1">-</span>
+                                </span>
+                                <span class="points__right">:</span>
+                                <span class="second">
+                                    <span class="num sec0">-</span>
+                                    <span class="num sec1">-</span>
+                                </span>
+                            </div>
+
+                        </div>
+                        <form action="getform.php" method="post">
+                            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                            <input type="hidden" name="utm_campaign" value="{domonetka}">
+
+                            <div class="inp-line inp-name">
+                                <input type="text" name="name" required="required" placeholder="Név">
+                            </div>
+                            <div class="inp-line inp-phone">
+                                <input type="tel" name="phone" required="required" placeholder="+36 20 123 4567">
+
+                            </div>
+
+                            <div class="button-line">
+
+                                <button type="submit">MEGRENDELEM</button>
+                                <div class="callbackme">
+                                    Az operátor 5 percen belül visszahívja </div>
+                            </div>
+                            <div class="text"><img src="img/icon3.png" alt="">Az Ön adatai védve vannak</div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="wrapper">
+                <div class="conflink" style="text-align: center; width: 100%;">
+                    <a href="privacy.html" target="blank" class="privacy">
+                        Adatvédelmi szabályzat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hide">
+        <div class="box-modal" id="apply">
+            <div class="close arcticmodal-close">
+                <img src="img/close.png" alt="">
+            </div>
+            <div class="left-block">
+                <div class="ltitle"><span class="small">MEDDIG FOGJA MÉG NÉZNI A VARIKÓZIST? </span>
+                    <br>ÁLLÍTSA VISSZA<span class="red">LÁBAI EGÉSZSÉGÉT <br>ÉS SZÉPSÉGÉT </span> ULTRAVENNEL!
+                </div>
+                <div class="timer">
+                    <div class="timer-text">Az akció végéig:</div>
+                    <div class="timer-block">
+                        <span class="hours item">00</span>
+                        <div class="delimiter">:</div>
+                        <span class="mins item">27</span>
+                        <div class="delimiter">:</div>
+                        <span class="secs item">00</span>
+                    </div>
+
+                </div>
+                <div class="info">MARADT<span class="red"><span class="count"> KÉSZLETEN: 15
+                </div>
+            </div>
+            <div class="central-block">
+                <div class="product-block"><img class="img__product-1" src="img/product.png" alt=""></div>
+            </div>
+            <div class="right-block">
+                <div class="right-label">
+                    <div class="rleft"><span class="white"><span class="dyn_discount">AZ</span> ÁR 50%-A - </span>
+                        AJÁNDÉKBA!</div>
+                    <div class="rright">
+                        <s><span class="dyn_old_price oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span><span class="currencyMain"></span></span> <span
+                                class="dyn_currency"></span></s>
+                        <br><span class="new"><span class="dyn_price priceAndLabelForLandingInfoApi"><span class="priceMain"></span><span class="currencyMain"></span></span>
+                            <span class="dyn_currency"></span></span>
+                    </div>
+                </div>
+                <div class="form-block">
+                    <form action="getform.php" method="post">
+                        <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                        <input type="hidden" name="utm_campaign" value="{domonetka}">
+                        <div class="inp-line inp-name">
+                            <input type="text" name="name" required="required" placeholder="Név">
+                        </div>
+                        <div class="inp-line inp-phone">
+                            <input type="tel" name="phone" required="required" placeholder="+36 20 123 4567">
+
+                        </div>
+
+                        <div class="button-line">
+
+                            <button type="submit">MEGRENDELEM</button>
+                            <div class="callbackme">
+                                Az operátor 5 percen belül visszahívja </div>
+                        </div>
+                        <div class="text"><img src="img/icon3.png" alt="">Az Ön adatai védve vannak</div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/jquery.arcticmodal-0.3.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/timer.js"></script>
+
+
+
+    <script>
+        const offer_params = {
+            priceMain : '14900',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'Ft',
+            productName : '',
+        };
+
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+        </body>
+
+</html>

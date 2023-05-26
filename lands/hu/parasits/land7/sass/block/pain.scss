@@ -1,0 +1,439 @@
+
+.pain__box {
+    margin-top: -41px;
+}
+
+.pain__row {
+    display: flex;
+    justify-content: space-between;
+
+    &:nth-child(1) {
+        & .pain__item {
+            max-width: 340px;
+
+            &:first-child {
+                margin-top: 35px;
+
+                & .pain__pulse {
+                    width: 150px;
+                }
+
+                & .pain__pulse-media {
+                    width: 30px;
+                    animation: radial-pulse 2s infinite;
+                }
+
+                & .pain__head {
+                    opacity: 1;
+                }
+            }
+
+            &:last-child {
+                & .pain__pulse {
+                    width: 160px;
+                }
+
+                & .pain__pulse-media {
+                    width: 53px;
+                    animation: radial-pulse 1s infinite;
+                }
+            }
+        }
+    }
+
+    &:nth-child(2) {
+        & .pain__item {
+            &:first-child {
+                & .pain__pulse {
+                    width: 82px;
+                }
+
+                & .pain__pulse-media {
+                    width: 50px;
+                    animation: radial-pulse 3s infinite;
+                }
+            }
+
+            &:last-child {
+                margin-top: 135px;
+
+                & .pain__pulse {
+                    width: 353px;
+                }
+
+                & .pain__pulse-media {
+                    width: 80px;
+                    animation: radial-pulse 2s infinite;
+                }
+            }
+        }
+    }
+
+    &:nth-child(3) {
+        & .pain__item {
+            &:first-child {
+                margin-top: -67px;
+
+                & .pain__pulse {
+                    width: 235px;
+                }
+
+                & .pain__pulse-media {
+                    width: 50px;
+                    animation: radial-pulse 1s infinite;
+                }
+            }
+
+            &:last-child {
+                & .pain__pulse {
+                    width: 340px;
+                }
+
+                & .pain__pulse-media {
+                    width: 50px;
+                    animation: radial-pulse 4s infinite;
+                }
+            }
+        }
+    }
+}
+
+.pain__item {
+    position: relative;
+    max-width: 210px;
+
+    &:last-child {
+        & .pain__pulse {
+            right: 100%;
+            left: auto;
+            margin-right: -17px;
+        }
+
+        & .pain__pulse-line {
+            &::before {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+
+    &:first-child {
+        & .pain__pulse {
+            justify-content: flex-end;
+        }
+    }
+}
+
+.pain__pulse {
+    position: absolute;
+    top: 130px;
+    left: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: -17px;
+}
+
+.pain__pulse-media {
+    flex: 0 0 auto;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.pain__pulse-line {
+    width: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: .3s;
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        content: '';
+        background-color: transparent;
+        border-radius: 50%;
+        transition: .3s;
+        transform: translateY(-50%);
+    }
+
+    &_active {
+        width: 100%;
+        background-color: #f51015;
+
+        &::before {
+            background-color: #f51015;
+        }
+    }
+}
+
+@keyframes radial-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(251, 243, 1, .5);
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        background-color: #3ca3e5;
+        box-shadow: 0 0 0 40px rgba(251, 243, 1, 0);
+        transform: scale(1);
+    }
+}
+
+.pain__head {
+    opacity: 0;
+    transition: 1s;
+}
+
+.pain__item-media {
+    transform: translateY(50%);
+
+    & img {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.pain__info {
+    padding: 60px 20px 15px;
+    background-color: #fff;
+    box-shadow: 20px 20px 20px -12px rgba(0, 0, 0, .18);
+}
+
+.pain__item-title {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.pain__item-description {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+@media (max-width: 1030px) {
+    .pain__info {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .pain__item {
+        max-width: 185px;
+
+        &:last-child {
+            & .pain__pulse {
+                margin-right: -10px;
+            }
+        }
+    }
+
+    .pain__pulse {
+        margin-left: -10px;
+    }
+
+    .pain__row {
+        &:nth-child(1) {
+            & .pain__item {
+                max-width: 275px;
+
+                &:first-child {
+                    & .pain__pulse {
+                        top: 175px;
+                        width: 85px;
+                    }
+                }
+
+                &:last-child {
+                    & .pain__pulse {
+                        top: 160px;
+                        width: 90px;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            & .pain__item {
+                &:first-child {
+                    & .pain__pulse {
+                        top: 70px;
+                        width: 70px;
+                    }
+                }
+
+                &:last-child {
+                    & .pain__pulse {
+                        top: 100px;
+                        width: 235px;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            & .pain__item {
+                &:first-child {
+                    & .pain__pulse {
+                        top: 70px;
+                        width: 140px;
+                    }
+                }
+
+                &:last-child {
+                    & .pain__pulse {
+                        top: 70px;
+                        width: 215px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .pain__head {
+        opacity: 1 !important;
+    }
+
+    .pain__pulse-line {
+        width: 100%;
+        background-color: #f51015;
+
+        &::before {
+            background-color: #f51015;
+        }
+    }
+
+    .pain__item {
+        width: calc(50% - 7.5px);
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .pain__row {
+        &:nth-child(1) {
+            & .pain__item {
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            & .pain__item {
+                &:last-child {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            & .pain__item {
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .pain__pulse {
+        display: none;
+    }
+
+    .pain__item-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pain__head {
+        padding: 10px 10px 5px;
+    }
+
+    .pain__box {
+        margin-top: 0;
+    }
+
+    .pain__item {
+        width: 100%;
+        overflow: hidden;
+        background-color: #fff;
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    .pain__item-media {
+        position: relative;
+        float: left;
+        width: 121px;
+        height: 82px;
+        padding: 0;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        transform: translateY(0);
+
+        & img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: auto;
+            max-width: none;
+            height: 100%;
+            margin-left: 0;
+        }
+    }
+
+    .pain__row {
+        flex-wrap: wrap;
+
+        & + & {
+            margin-top: 15px;
+        }
+
+        &:nth-child(1) {
+            & .pain__item {
+                max-width: 100%;
+
+                & .pain__item-media {
+                    & img {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            & .pain__item {
+                &:last-child {
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            & .pain__item {
+                &:last-child {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .pain__info {
+        padding: 0;
+        box-shadow: none;
+    }
+}

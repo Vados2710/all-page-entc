@@ -1,0 +1,154 @@
+
+.face {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.face__logo {
+    display: inline-block;
+    padding: 5px 7px;
+    margin-bottom: 60px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-transform: uppercase;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.face__title {
+    max-width: 380px;
+    margin-bottom: 40px;
+    font-size: 52px;
+    line-height: 48px;
+
+    & mark {
+        color: #779a28;
+    }
+}
+
+.face__check {
+    position: relative;
+    z-index: 1;
+    max-width: 280px;
+    min-height: 59px;
+    padding: 12px 12px 12px 55px;
+    font-weight: 600;
+    color: #779a28;
+    text-transform: uppercase;
+    background-color: #fff;
+    border-radius: 3px;
+
+    & mark {
+        color: #000;
+    }
+
+    & + & {
+        margin-top: 15px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 32px;
+        height: 32px;
+        content: '';
+        background-repeat: no-repeat;
+    }
+
+    &:nth-child(1) {
+        &::before {
+            background-image: url("../media/face/check-1.png");
+        }
+    }
+
+    &:nth-child(2) {
+        &::before {
+            background-image: url("../media/face/check-2.png");
+        }
+    }
+
+    &:nth-child(3) {
+        &::before {
+            background-image: url("../media/face/check-3.png");
+        }
+    }
+
+    &:nth-child(4) {
+        &::before {
+            background-image: url("../media/face/check-4.png");
+        }
+    }
+}
+
+.face__product {
+    position: absolute;
+    bottom: -160px;
+    left: 50%;
+    z-index: 1;
+    margin-left: -25px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 1030px) {
+    .face__title {
+        margin-bottom: 30px;
+    }
+
+    .face__product {
+        max-width: 400px;
+        margin-left: -50px;
+    }
+
+    .face__check {
+        max-width: 250px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .face {
+        flex-direction: column;
+    }
+
+    .face__title {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .face__check {
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .face__product {
+        position: relative;
+        bottom: auto;
+        margin-left: -25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .face__logo {
+        margin-bottom: 20px;
+    }
+
+    .face__check {
+        font-size: 18px;
+    }
+
+    .face__product {
+        max-width: 320px;
+        margin-top: -20px;
+        margin-left: -6px;
+
+        &::before {
+            width: 250px;
+            height: 82px;
+        }
+    }
+}

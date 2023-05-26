@@ -1,0 +1,740 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="HU">
+	<head>
+		<base >
+	<meta name="robots" content="noindex">
+	<meta charset="UTF-8">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=410, initial-scale=1.0">
+	<title>Urolesin</title>
+	<link rel="shortcut icon" type="image/png" href="img/prod.png" sizes="16x16">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/fonts.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style-from-index.css">
+
+
+	<style>
+		 .hide,
+		 .flag-dropdown {
+				display: none;
+		 }
+
+		 .error-box {
+				color: #fff;
+				background-color: #DE5042 !important;
+				border-radius: 5px;
+				text-align: center;
+				width: 240px;
+				font-size: 13px;
+				line-height: 20px;
+				margin: 5px auto !important;
+				z-index: 100;
+		 }
+
+		 input:invalid {
+				box-shadow: none;
+		 }
+	</style>
+<!--[HEADER]-->
+</head>
+
+<body>
+	<div class="blockRedLine3103"
+		style="color: rgb(255, 255, 255); background: red none repeat scroll 0% 0%; box-sizing: border-box; font: 400 16px / 1.15 Arial, sans-serif; position: relative; z-index: 1000000; padding: 0px; margin: 0px; direction: ltr; text-transform: none;">
+		<div
+			style="font: inherit; margin: 0px auto; padding: 10px; max-width: 1200px; width: 100%; display: flex; justify-content: center; align-items: center; box-sizing: border-box;">
+			<div class="blockRedLine__image">
+				<div
+					style="width: 65px; height: 5px; border-radius: 2px; background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%; margin: 0px 0px 10px; box-sizing: border-box;">
+				</div>
+				<div
+					style="width: 65px; height: 5px; border-radius: 2px; background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%; margin: 0px 0px 10px 20px; box-sizing: border-box;">
+				</div>
+				<div
+					style="width: 65px; height: 5px; border-radius: 2px; background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%; margin: 0px 0px 0px 10px; box-sizing: border-box;">
+				</div>
+			</div>
+			<img class="blockRedLine3103__image"
+				style="flex-shrink: 0; box-sizing: border-box; width: 60px; height: auto; margin: 0px; padding: 0px;"
+				src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0NS40IDM3LjgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1LjQgMzcuODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiNGRkZGRkY7fQoJLnN0MXtmaWxsOiMwMEE2NTE7fQo8L3N0eWxlPgo8Zz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNS45LDI5LjNjLTIuNCwwLTQuMywxLjktNC4zLDQuM3MxLjksNC4zLDQuMyw0LjNjMi40LDAsNC4zLTEuOSw0LjMtNC4zUzE4LjMsMjkuMywxNS45LDI5LjN6IE0xNS45LDM1LjIKCQkJYy0wLjksMC0xLjctMC43LTEuNy0xLjdzMC43LTEuNywxLjctMS43YzAuOSwwLDEuNywwLjcsMS43LDEuN1MxNi44LDM1LjIsMTUuOSwzNS4yeiIvPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zNS40LDI5LjNjLTIuNCwwLTQuMywxLjktNC4zLDQuM3MxLjksNC4zLDQuMyw0LjNjMi40LDAsNC4zLTEuOSw0LjMtNC4zUzM3LjgsMjkuMywzNS40LDI5LjN6IE0zNS40LDM1LjIKCQkJYy0wLjksMC0xLjctMC43LTEuNy0xLjdzMC43LTEuNywxLjctMS43YzAuOSwwLDEuNywwLjcsMS43LDEuN1MzNi40LDM1LjIsMzUuNCwzNS4yeiIvPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0zLjQsMzIuNGg3LjNjMC4yLTEsMC43LTEuOCwxLjMtMi41SDMuNFYzMi40eiIvPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00My44LDI5Ljl2LTguN2wtNi05LjdoLTkuN3YxOC4zaC04LjNjMC43LDAuNywxLjEsMS41LDEuMywyLjVoOS4yYzAuNS0yLjQsMi42LTQuMiw1LjItNC4yczQuNywxLjgsNS4yLDQuMgoJCQloNC44di0yLjVINDMuOHogTTMxLDIwLjF2LTUuN2g0LjVsNCw1LjdIMzF6Ii8+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTE3LjMsOGMwLDEuMSwwLDIuMiwwLDMuNGMwLDcuNC05LjMsMTAuMi05LjMsMTAuMnMtMS41LDAtMywwdjYuNGgyMS40VjhIMTcuM3oiLz4KCTwvZz4KCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNS43LDMuNEMxMi40LDMuNCw5LjYsMiw4LjYsMEg3LjFDNi4xLDIsMy4zLDMuNCwwLDMuNGMwLDIuMSwwLDUsMCw3LjdjMCw1LjQsOCw4LjUsOCw4LjVzNy43LTIuMyw3LjctOC41CgkJQzE1LjgsOC4xLDE1LjgsNS40LDE1LjcsMy40QzE1LjcsMy40LDE1LjcsMy40LDE1LjcsMy40eiIvPgoJPHBhdGggY2xhc3M9InN0MSIgZD0iTTE0LjUsNC40Yy0yLjgsMC01LjEtMS4yLTYtMi45SDcuM0M2LjQsMy4yLDQsNC40LDEuMyw0LjRjMCwxLjgsMCw0LjIsMCw2LjZjMCw0LjYsNi43LDcuMiw2LjcsNy4yCgkJczYuNS0yLDYuNS03LjJDMTQuNSw4LjQsMTQuNSw2LjEsMTQuNSw0LjRDMTQuNSw0LjQsMTQuNSw0LjQsMTQuNSw0LjR6Ii8+Cgk8Zz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNy4zLDEyLjJDNy4zLDEyLjIsNy4yLDEyLjIsNy4zLDEyLjJjLTAuMiwwLTAuNC0wLjEtMC42LTAuMkw0LjgsOS44Yy0wLjMtMC4zLTAuMy0wLjgsMC0xLjEKCQkJYzAuMy0wLjMsMC44LTAuMywxLjEsMGwxLjQsMS41bDIuNi0yLjdjMC4zLTAuMywwLjgtMC4zLDEuMSwwYzAuMywwLjMsMC4zLDAuOCwwLDEuMWwtMy4yLDMuM0M3LjcsMTIuMSw3LjUsMTIuMiw3LjMsMTIuMnoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K">
+			<div style="font: inherit; text-align: center; box-sizing: border-box; padding: 0px 5px; margin: 0px;">
+				<div
+					style="font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-optical-sizing: inherit; font-language-override: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-weight: 700; color: inherit; padding: 0px; margin: 0px 0px 5px; box-sizing: border-box;">
+					BIZTONSÁGOS SZÁLLÍTÁS! Ne aggódjon! Felelősséget vállalunk vásárlóink ​​biztonságáért!</div>
+				<div
+					style="font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-optical-sizing: inherit; font-language-override: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 15px; color: inherit; padding: 0px; margin: 0px; box-sizing: border-box;">
+					Futáraink kétóránként maszkot és kesztyűt cserélnek. A szállítási és fizetési folyamat közvetlen kapcsolattartás nélkül történik.</div>
+			</div>
+			<div class="blockRedLine__image">
+				<div
+					style="width: 65px; height: 5px; border-radius: 2px; background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%; margin: 0px 0px 10px; box-sizing: border-box;">
+				</div>
+				<div
+					style="width: 65px; height: 5px; border-radius: 2px; background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%; margin: 0px 0px 10px 20px; box-sizing: border-box;">
+				</div>
+				<div
+					style="width: 65px; height: 5px; border-radius: 2px; background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%; margin: 0px 0px 0px 10px; box-sizing: border-box;">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="block1">
+			<div class="top-line">
+				<div class="wrapper">
+					<div class="tleft" style="display: block;">
+						<div class="limage"><img src="img/icon-doctor.png" alt=""></div>
+						<div class="ltext">
+							<div class="text">"Az hólyaggyulladás nagyon gyakori betegség"</div>
+							<div class="author">Urológus PhD Hajdu Csenger</div>
+						</div>
+					</div>
+					<div class="tleft" style="display: none;">
+						<div class="limage"><img src="img/icon-doctor2.png" alt=""></div>
+						<div class="ltext">
+							<div class="text">"A nők a test sajátosságai miatt sokkal gyakrabban szenvednek hólyaggyulladásban, mint a férfiak"</div>
+							<div class="author">Urológus, PhD Kovách Regõ</div>
+						</div>
+					</div>
+					<div class="tleft" style="display: none;">
+						<div class="limage"><img src="img/icon-doctor3.png" alt=""></div>
+						<div class="ltext">
+							<div class="text">"Kezelés nélkül a hólyaggyulladás krónikussá válhat"</div>
+							<div class="author">Urológus, Dr. Boriska Zsinka</div>
+						</div>
+					</div>
+					<div class="tmiddle">
+						<div class="line">43 675 vélemény
+							<br>az Urolesinről
+						</div>
+						<div class="image"><img src="img/icon-rate.png" alt=""></div>
+						<div class="line">Átlagos értékelés 4,8</div>
+					</div>
+					<div class="tright">
+						<div class="line">Rendeljen hívást!</div>
+						<div class="button-block">
+							<a href="#form-block"><button>INGYENES KONZULTÁCIÓ</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wrapper">
+				<div class="title-block">
+					<div class="title-content">
+						<div class="title">Urolesin</div>
+						<div class="subtitle">EGY NAP ALATT ELFELEJTI A HÓLYAGGYULLADÁST!</div>
+					</div>
+				</div>
+				<div class="left-block">
+					<div class="textline"> A növényi összetevők klinikailag 
+						<div class="pink block1__pink">bizonyított hatékonysága
+						</div>
+					</div>
+					<div class="item-block">
+						<div class="line"><span class="bold">Csillapítja</span> a fájdalmat</div>
+						<div class="line"><span class="bold">Normalizálja</span> a vizeletürítést</div>
+						<div class="line"><span class="bold">Megszünteti</span> a gyulladást</div>
+						<div class="line"><span class="bold">Örökre legyőzi</span> a hólyaggyulladást</div>
+					</div>
+					<div class="bottom-block">
+						<div class="price-line"><span class="price al-raw-cost price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> <span
+								class="price x_currency al-raw-currency"></span>
+								akciósan</div>
+						<div class="button-block">
+							<a href="#form-block">
+								<button>RENDELÉS</button>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="right-block">
+					<div class="product"><img src="img/prod.png" alt=""></div>
+					<div class="note">A természet és 
+						<br>a tudomány szinergiája!
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block2">
+			<div class="wrapper">
+				<div class="right-block">
+					<div class="title">ISMERŐS EZT?</div>
+					<div class="item-block">
+						<div class="item">
+							<div class="iicon"><img src="img/icon-5.png" alt=""></div>
+							<div class="itext">Gyakori vizelési
+								<br><span class="bold">inger</span>
+							</div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-6.png" alt=""></div>
+							<div class="itext">Általános gyengeség, <span class="bold">rossz közérzet</span></div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-7.png" alt=""></div>
+							<div class="itext">Fájdalom vagy <span class="bold">égő érzés</span> vizelés közben</div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-8.png" alt=""></div>
+							<div class="itext onelinetext"><span class="bold">Görcsös rohamok</span></div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-9.png" alt=""></div>
+							<div class="itext">Kényelmetlenség <span class="bold">szex közben</span></div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-10.png" alt=""></div>
+							<div class="itext onelinetext"><span class="bold">Hátfájás "rajzolása"</span></div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-11.png" alt=""></div>
+							<div class="itext">Enyhén megfázott <span class="bold"> – és megint hólyaghurut!</span></div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-12.png" alt=""></div>
+							<div class="itext"><span class="bold">Az egészségügyi betét gyakori cseréjének</span> szükségessége</div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-13.png" alt=""></div>
+							<div class="itext">Aggódalom<br> <span class="bold">a kellemetlen szag miatt</span></div>
+						</div>
+						<div class="item">
+							<div class="iicon"><img src="img/icon-14.png" alt=""></div>
+							<div class="itext">A vizelet kis <span class="bold">mennyiségben távozik</span></div>
+						</div>
+					</div>
+					<div class="bottom-line">
+						Ha legalább 1 tünet jelentkezik <span class="red">SÜRGŐSEN</span> cselekedjen! Kezdje meg a hólyaggyulladás elleni küzdelmet
+						<span class="red">MOST</span>, anélkül, hogy megvárná a szövődményeket!
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block3">
+			<div class="wrapper">
+				<div class="text-block">
+					<div class="title">MILYEN KÖVETKEZMÉNYEKRE SZÁMÍTHAT HA IGNORÁLNI FOGJA A HÓLYAGGYULLADÁST</div>
+					<div class="item-block">
+						<div class="item">
+							<div class="iimage"><img src="img/image-1.png" alt=""></div>
+							<div class="itext"><span class="red">VÉR</span> a vizeletben</div>
+						</div>
+						<div class="item">
+							<div class="iimage"><img src="img/image-2.png" alt=""></div>
+							<div class="itext"><span class="red">INKONTINENCIA</span></div>
+						</div>
+						<div class="item">
+							<div class="iimage"><img src="img/image-3.png" alt=""></div>
+							<div class="itext">Hólyag <span class="red">NEKRÓZIS</span></div>
+						</div>
+						<div class="item">
+							<div class="iimage"><img src="img/image-4.png" alt=""></div>
+							<div class="itext"><span class="red">CISZTA</span> és polipok</div>
+						</div>
+						<div class="item">
+							<div class="iimage"><img src="img/image-5.png" alt=""></div>
+							<div class="itext"><span class="red">HÚGYHÓLYAGRÁK</span></div>
+						</div>
+						<div class="item">
+							<div class="iimage"><img src="img/image-6.png" alt=""></div>
+							<div class="itext"><span class="red">MEDDŐSÉG</span> és méhen kívüli terhesség</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block4">
+			<div class="wrapper">
+				<div class="title">AVICENNA PERZSA TUDÓS <br>ÉS ORVOS AZT MONDTA:
+				</div>
+				<div class="left-block">
+					<div class="limage"><img src="img/image-7.png" alt=""></div>
+					<div class="ltext">Avicenna
+						<br>Orvos, tudós, filozófus
+						<br>980–1037
+					</div>
+				</div>
+				<div class="right-block">
+					<div class="rtext"><span class="pink">Az orvosnak három eszköze van</span> a betegség elleni küzdelemben:
+						<br>szó, <span class="pink">növény,</span> kés.
+						<br>
+						<br>Ki akar <span class="pink">közülünk kés alá menni</span>?
+						Senki! Ezért itt az ideje, hogy egészségét rábízza az embereket évezredek óta segítő növények gyógyító erejére.
+						<br>
+						<br><span class="pink upper">AVICENNA IS MONDTA</span>
+					</div>
+					<div class="red-block">„Ha velem vagy, együtt leszünk a betegséged ellen
+						és nyerni fogunk. Ha te és a betegség együtt vagy ellenem, nyerhetsz."
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block5">
+			<div class="wrapper">
+				<div class="left-block">
+					<div class="title">LEGYŐZNI A HÓLYAGGYULLADÁST
+						<br><span class="small">EGYSZER S MINDENKORRA</span> <span class="pink">LEHETSÉGESI!</span>
+					</div>
+					<div class="textline">
+						<div class="text">Több mint 10 000 nő elégedett az életével a hólyaghurut felett aratott győzelem után! A hólyag gyulladásának egyetlen hatékony gyógyszere az <span class="green">Urolesin</span> természetes gyógymód.</div>
+					</div>
+
+					<div class="video-block">
+						<div class="note">Az aktív komponensek már a gyógyszer szedésének első napjaiban enyhítik a fájdalmat és megkönnyítik a vizelést!</div>
+
+					</div>
+					<div class="product"><img src="img/prod.png" alt=""></div>
+				</div>
+				<div class="right-block">
+					<div class="girl"><img src="img/girl.png" alt=""></div>
+				</div>
+			</div>
+		</div>
+		<div class="block6">
+			<div class="wrapper">
+				<div class="left-text"><span class="green">UROLESIN</span> SZEDÉSE
+					<br>- EZ A HÓLYAGGYULLADÁS FŐ OKÁNAK MEGSZÜNTETÉSE ÉS A GYULLADÁS BLOKKOLÁSA!
+				</div>
+				<div class="middle-line"><img src="img/line-2.png" alt=""></div>
+				<div class="button-block">
+					<a href="#form-block">
+						<button>MEGRENDELEM</button>
+					</a>
+				</div>
+				<div class="berry"><img src="img/berry-1.png" alt=""></div>
+			</div>
+		</div>
+		<div class="block8">
+			<div class="wrapper">
+				<div class="product"><img src="img/prod.png" alt=""></div>
+				<div class="left-image"><img src="img/capsule.png" alt=""></div>
+				<div class="right-block">
+					<div class="rtitle"><span class="pink">25</span> CSEPP NAPONTA KÉTSZER <span class="pink">30</span> PERCCEL ÉTKEZÉS ELŐTT.</div>
+					<div class="rtext">Nincs mellékhatása, nem terheli túl a májat és a vesét. A legjobb eredmények <b>30 vagy több napos kezelés</b> után érhetők el.</div>
+					<div class="button-block">
+						<a href="#form-block">
+							<button>MEGRENDELEM</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block9">
+			<div class="wrapper">
+				<div class="title">KLINIKAILAG IGAZOLT EREDMÉNYEK:</div>
+				<div class="left-block">
+					<div class="text">
+						<div class="line">Láttam dokumentumokat, amelyek azt mutatják, hogy az Urolesin valóban hatékony gyógyszer. Különféle gyógyszereket adtam a betegeknek, akik közül választhatnak. A jó vélemények miatt a legtöbben az Urolesint választják. A termék segítségével mindannyian gyorsan helyreállították a húgyúti rendszer egészségét. A fájdalom, és az égés elmúlt. Sokkal ritkábban jártak WC-re, és a szex ismét örömet okozott nekik.</div>
+						<div class="line">A kényelmetlenség megszűnik, a betegek jobban összpontosítanak a munkára és egyéb dolgokra. A komplexumok már nem zavarják az embereket. Urolesint előrelépésnek tartom a tudományban.</div>
+						<div class="line">Orvosként az a dolgom, hogy teljesen meggyógyítsam a beteget, és ami a legfontosabb, hogy ne károsítsam a szervezetét. Tehát minél kevesebb mellékhatása van egy gyógyszernek, annál jobb. Ezért azt javaslom, hogy hagyja abba a kémia használatát, és gyengéd, de hatékony eszközökkel küzdjön a hólyaghurut ellen!</div>
+					</div>
+					<div class="bottom-line">
+						<div class="author">Fenyvessy Gergő
+							<br>Urológus, Budapest
+							<br>Orvosi tapasztalat 25 év.
+						</div>
+						<div class="sign"><img src="img/sign.png" alt=""></div>
+						<div class="product"><img src="img/prod.png" alt=""></div>
+					</div>
+				</div>
+				<div class="right-block">
+					<div class="doctor"><img src="img/doctor.png" alt=""></div>
+				</div>
+			</div>
+		</div>
+		<div class="block11">
+			<div class="wrapper">
+				<div class="title-pink">Urolesin</div>
+				<div class="title">VÉLEMÉNYEK</div>
+				<div class="item-block">
+					<div class="item">
+						<div class="itop">
+							<div class="rate">
+								<div class="rtext">Az értékelésem 5</div>
+								<div class="rstar"><img src="img/icon-rate.png" alt="">
+									<div class="orangebg" style="width: 94px;"></div>
+									<div
+										style="position: absolute;background: #000;width: 94px;height: 16px;z-index: 0;margin-top: -20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="iimage"><img src="img/review-1.png" alt=""></div>
+						<div class="itext"><span class="name">Paliki</span>
+							Télen vettem ezt a szert, kár volt orvoshoz menni, az interneten találtam. Az Urolesin segített, ittam áfonyalevet is, és vettem fagyasztott áfonyát. Minden kellemetlen tünet és maga a betegség gyorsan elmúlt, felépültem! Tiszta szívemből tanácsolom mindenkinek, főleg azoknak, akik a betegség állandó visszaesésétől szenvednek!
+						</div>
+					</div>
+					<div class="item">
+						<div class="itop">
+							<div class="rate">
+								<div class="rtext">Az értékelésem 4,5</div>
+								<div class="rstar"><img src="img/icon-rate.png" alt="">
+									<div class="orangebg" style="width: 84px;"></div>
+									<div
+										style="position: absolute;background: #000;width: 94px;height: 16px;z-index: 0;margin-top: -20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="iimage"><img src="img/review-2.png" alt=""></div>
+						<div class="itext"><span class="name">Nicoletta</span>
+							Elmentem az orvoshoz kezelésre - elvégre a szakorvos írja fel a tablettákat. Sajnos a felírt gyógyszereknek gyakran vannak sajátos mellékhatásai, és néha függőségük is van. A hólyaggyulladást antibiotikumokkal kezelte, az összes flórát és vesét elpusztította velük, de a hólyaghurut így is visszatért. Nem volt menekvés! Tavaly áttértem az egészséges táplálkozásra, és maximálisan lemondtam a tablettákról. Kevesebb vegyszer, több egészség. Szóval az Urolesinről szóló vélemények meggyőztek!!! SOHA NEM BÁNTAM MEG! A probléma megszűnt! Gyorsan és sokáig, fél éve nem emlékszem hólyaggyulladásra!
+						</div>
+					</div>
+					<div class="item">
+						<div class="itop">
+							<div class="rate">
+								<div class="rtext">Az értékelésem 4,5</div>
+								<div class="rstar"><img src="img/icon-rate.png" alt="">
+									<div class="orangebg" style="width: 84px;"></div>
+									<div
+										style="position: absolute;background: #000;width: 94px;height: 16px;z-index: 0;margin-top: -20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="iimage"><img src="img/review-3.png" alt=""></div>
+						<div class="itext"><span class="name">Veronika</span>
+							A cystitisem nem krónikus, évente kb. Gyógyszereket szedett a fájdalom és a fájdalom csökkentésére. Ez a fő dolog, ami mindenkit aggaszt. Aztán hallottam az Urolesinről, rengeteg hasznos növényi kivonatot tartalmaz, aztán rájöttem, hogy a termék segíteni fog nekem. Elkezdtem szedni ezeket a cseppeket. Jelenleg 7 hónap telt el az Urolesin tanfolyam befejezése óta. Nagyon jól érzem magam. Talán nem fogom többé átélni a hólyaghurut borzalmait!
+						</div>
+					</div>
+					<div class="item">
+						<div class="itop">
+							<div class="rate">
+								<div class="rtext">Az értékelésem 5</div>
+								<div class="rstar"><img src="img/icon-rate.png" alt="">
+									<div class="orangebg"></div>
+									<div
+										style="position: absolute;background: #000;width: 94px;height: 16px;z-index: 0;margin-top: -20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="iimage"><img src="img/review-4.png" alt=""></div>
+						<div class="itext"><span class="name">Evacska</span>
+							Nemrég volt egy újabb hólyaggyulladásom, 16 éve szenvedek tőle. Orvosi tanácsra kezelték: sok vizet ittam (úgy, hogy a fertőzés kijutott a szervezetből), teljes szexuális pihenést figyeltem meg. De ezúttal antibiotikum helyett Urolesint írtak fel. Az orvos figyelmeztetett, hogy ennek a gyógyszernek nem lesz azonnali hatása, tovább tart inni, mint egy antibiotikumot. De másrészt a szer biztonságosabb és nem okoz mellékhatásokat (a tabletták után mindig volt rigóm). A fájdalom 3 nap után elmúlt. A hólyaggyulladás már nem aggaszt. Szóval ezt a szert vegyétek tudomásul!
+						</div>
+					</div>
+					<div class="item">
+						<div class="itop">
+							<div class="rate">
+								<div class="rtext">Az értékelésem 4</div>
+								<div class="rstar"><img src="img/icon-rate.png" alt="">
+									<div class="orangebg" style="width: 74px;"></div>
+									<div
+										style="position: absolute;background: #000;width: 94px;height: 16px;z-index: 0;margin-top: -20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="iimage"><img src="img/review-5.png" alt=""></div>
+						<div class="itext"><span class="name">Katalin</span>
+							Véletlenül fedeztem fel az Urolesint. A szex utáni napon vagy bármilyen, még a legkisebb adag alkoholfogyasztása után is súlyosbodásom volt. Az érzések egyszerűen undorítóak voltak: égett a húgycső, néha fájdalom a hasban. Lehetetlen volt minden alkalommal antibiotikumot inni, ezért úgy döntöttem, hogy kipróbálom a gyógynövényes megfelelőjüket. Az eredmény jó. A problémám fokozatosan megszűnt. Most a támadások, ha előfordulnak, nagyon ritkák, és a kellemetlen érzések nem jelentkeznek annyira. Másnap minden visszaállt a normális kerékvágásba.
+						</div>
+					</div>
+					<div class="item">
+						<div class="itop">
+							<div class="rate">
+								<div class="rtext">Az értékelésem 5</div>
+								<div class="rstar"><img src="img/icon-rate.png" alt="">
+									<div class="orangebg"></div>
+									<div style="position: absolute;background: #000;width: 94px;height: 16px;z-index: 0;margin-top: -20px;">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="iimage"><img src="img/review-6.png" alt=""></div>
+						<div class="itext"><span class="name">Fanny</span>
+							Minden orvos csak antibiotikumot javasol, semmi más nincs a tarsolyában. A barátnőm szó szerint rajtuk élt! Amikor befejezi a szedést, egy hét múlva ismét hólyaghurut támad, és minden egy körben forog. Elmegy az orvoshoz - ismét felír egy antibiotikumot, már egy másikat, erősebbet. És így a végtelenségig. Ennek eredményeként hallgatott rám, és elkezdett inni Urolesint. 3 nap múlva felhívott, és azt mondta, hogy a fájdalom elmúlt, szinte azonnal megkönnyebbült. És ami a legfontosabb, az ilyen kezelés biztonságos a szervezet számára.
+						</div>
+					</div>
+					<div class="more " style="display: none;"><a class="morerew"></a><a class="morerew2"
+							style="display: none;"></a></div>
+					<div class="spinner-more" style="display: none; text-align: center;"><img src="img/spinner.gif" alt=""
+							style="width: 100px; margin-top: 20px"></div>
+				</div>
+			</div>
+		</div>
+		<div class="block12">
+			<div class="wrapper">
+				<div class="left-image">
+					<div class="product"><img src="img/prod.png" alt=""></div>
+				</div>
+				<div class="berries">
+					<div class="image"><img src="img/berry-2.png" alt=""></div>
+					<div class="image"><img src="img/berry-3.png" alt=""></div>
+					<div class="image"><img src="img/berry-4.png" alt=""></div>
+				</div>
+				<div class="right-block">
+					<div class="title"><span class="pink">AZ UROLESIN</span> SEGÍTETT ÖNNEK?</div>
+					<div class="quote-block">
+						<div class="answer answer-yes">
+							<div class="option">IGEN</div>
+						</div>
+						<div class="answer answer-no">
+							<div class="option">NEM</div>
+						</div>
+						<div class="answer answer-show">
+							<div class="option">MÉG NEM PRÓBÁLTAM, SZERETNÉM TUDNI AZ EREDMÉNYT</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="block13">
+			<div class="wrapper">
+				<div class="top-block">
+					<div class="left-image"><img src="img/quality.png" alt=""></div>
+					<div class="right-block">
+						<div class="title">ÓVAKODJON A HAMISÍTVÁNYOKTÓL!!</div>
+						<div class="text">AZ UROLESIN NÖVEKVŐ NÉPSZERŰSÉGE MIATT EGYRE GYAKORIBBÁ VÁLTAK A HAMISÍTÁSOK.
+							<br>
+							<br><span class="bold">CSAK NÁLUNK VÁSÁROLHAT</span> EREDETI TERMÉKET A LEGJOBB ÁRON A GYÁRTÓTÓL!
+						</div>
+						<div class="button-block">
+							<a href="#form-block">
+								<button>MEGRENDELEM</button>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-block">
+					<div class="title">HOGYAN DOLGOZUNK:</div>
+					<div class="item-block">
+						<div class="item">
+							<div class="iimage"><img src="img/prod.png" alt=""></div>
+							<div class="itext">Adjon le rendelést és kapjon kedvezményt</div>
+						</div>
+						<div class="item">
+							<div class="iimage"><img src="img/step-2.png" alt=""></div>
+							<div class="itext">Várja meg az üzemeltető hívását, hogy tisztázza a címet és a szállítási időt</div>
+						</div>
+						<div class="item">
+							<div class="iimage"><img src="img/step-3.png" alt=""></div>
+							<div class="itext">Nincs kockázat! Fizetés kézbesítéskor a futárnak</div>
+						</div>
+					</div>
+					<div class="textline">MEGRENDELÉSEKET MAGYARORSZÁG EGÉSZ TERÜLETÉN VÁLLALUNK!</div>
+				</div>
+			</div>
+		</div>
+		<div class="block14">
+			<div class="wrapper">
+				<div class="title-block">
+					<div class="title-content">
+						<div class="title">Urolesin</div>
+						<div class="subtitle">EGY NAP ALATT ELFELEJTI A HÓLYAGGYULLADÁST!</div>
+					</div>
+				</div>
+				<div class="left-block">
+					<div class="product"><img src="img/prod.png" alt=""></div>
+					<div class="note">A természet és <br>a tudomány szinergiája!
+					</div>
+				</div>
+				<div class="right-block" id="form-block">
+
+
+
+					<li class="forma" id="form">
+						<div class="formbox">
+							<div class="arrow nopoint"><img src="img/arrow.png" alt=""></div>
+							<p class="upp px24 center bold red akcia">CSAK MA!</p>
+							<ul class="flex flex-around flex-column cost">
+								<li class="px18 upp bold white center">UROLESIN RENDELÉS <span class="dred">НPROMÓCIÓ SORÁN:</span></li>
+								<li class="white px22 bold upp center">
+									<span class="rel">
+										<span class="price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+									</span>
+								</li>
+								<li class="px44 bold dred upp center price_main">
+									<span class="wv_new-price al-raw-cost priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span> 
+								</li>
+							</ul>
+							<p class="px14 center clock">Az akció végéig hátra van:</p>
+							<div id="countbox" class="timerbox timer">
+
+
+								<div class="countbox-num ]">
+									<div class="hour" id="countbox-hours1">00</div>
+									<div class="countbox-text ubl">óra</div>
+								</div>
+								<div class="countbox-space">:</div>
+								<div class="countbox-num">
+									<div class="minutes min" id="countbox-mins1">00</div>
+									<div class="countbox-text ubl">perc</div>
+								</div>
+								<div class="countbox-space">:</div>
+								<div class="countbox-num">
+									<div class="seconds sec" id="countbox-secs1">00</div>
+									<div class="countbox-text ubl">másodperc</div>
+								</div>
+							</div>
+							<br>
+							<form action="getform.php" method="post" class="wv_order-form orderForm al-form order_form"
+								style="position: relative;">
+								<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+								<input type="hidden" name="utm_campaign" value="{domonetka}">
+								<div>
+									<input placeholder="Név" type="text" name="name" class="name wv_name" required>
+								</div>
+								<div>
+									<input placeholder="+359 48 123 456" type="tel" name="phone" required
+										class="phone wv_phone">
+								</div>
+								<p class="red center px16 upp bold box-left">RAKTÁRON MARADT: <span class="js-countdown">5</span>
+									<span class="packaging"></span> DB.
+								</p>
+
+								<button type="submit" class="button upp bold white">MEGRENDELEM</button>
+							</form>
+						</div>
+					</li>
+				</div>
+				<!-- <div class="berry"><img src="img/berry-1.png" alt=""></div> -->
+			</div>
+		</div>
+	</div>
+
+
+	<style>
+		.validator__tooltip {
+			position: absolute;
+			z-index: 700;
+			display: block;
+			font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			font-style: normal;
+			font-weight: 400;
+			letter-spacing: normal;
+			line-break: auto;
+			line-height: 1.5;
+			text-align: left;
+			text-align: start;
+			text-decoration: none;
+			text-shadow: none;
+			text-transform: none;
+			white-space: normal;
+			word-break: normal;
+			word-spacing: normal;
+			font-size: 14px;
+			word-wrap: break-word;
+			opacity: 1;
+			padding-bottom: 5px;
+			pointer-events: none
+		}
+
+		.input-wrapper .error+label {
+			pointer-events: none;
+		}
+
+		.validator__tooltip-inner {
+			max-width: 290px;
+			padding: 3px 8px;
+			color: #fff;
+			text-align: center;
+			background-color: #cd5b20;
+			border-radius: 4px;
+		}
+
+		.validator__tooltip-inner::before {
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-color: transparent;
+			border-style: solid;
+			bottom: 1px;
+			left: 50%;
+			margin-left: -5px;
+			content: "";
+			border-width: 5px 5px 0;
+			border-top-color: #cd5b20;
+		}
+	</style>
+	<div id="al-modal"
+		style="vartical-align: middle;font-family: Helvetica,Arial, sans-serif;font-weight: 400;text-align:center;background: #FFFFFF;border-radius: 10px;box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16);display: none;left: 50%;margin-left: -200px;margin-top: -100px;opacity: 1;padding: 45px 40px 40px;position: fixed;top: 50%;width: 400px;z-index: 1000;">
+		<span class="al-modal-close"
+			style="width: 21px;height: 21px;position: absolute;top: 10px;right: 10px;cursor: pointer;display: block;">×</span>
+		<div id="al-modal-content" style="padding: 10px 0 15px 0;"></div>
+		<div class="al-modal-close"
+			style="color: #000;background: linear-gradient(to bottom, #35870d 4%, #297b00 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);border: medium none;border-radius: 5px;box-shadow: 0 -1px 0 0 rgba(13, 69, 9, 1) inset, 0 1px 1px 0 rgba(0, 0, 0, 0.22);color: #fff;cursor: pointer;display: block;text-align: center;text-decoration: none;font-size: 18px;height: 53px;line-height: 53px;margin: 0 auto;width: 235px;">
+			OK</div>
+	</div>
+	<div id="al-modal-overlay"
+		style="z-index: 999; position: fixed; background-color: #efeee9; opacity: 0.8; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;display: none;">
+	</div>
+	<div class="footer"
+		style="font: 400 16px / 1 Helvetica, Arial, sans-serif; max-width: 100%; width: 100%; text-align: center; color: rgb(71, 71, 71); padding: 40px 0px; margin: 0px auto; background: rgb(255, 255, 255) none repeat scroll 0% 0%; direction: ltr; text-transform: none; height: auto; text-indent: initial;">
+		<div class="footer__in">
+			<div>
+				<div class="" style="color:black;padding: 15px 0;font-size: 18px; text-align: center; ">
+					Global Partners LTD <br><a href="privacy.html" target="_blank"
+						style="color: inherit; text-decoration: none;">Adatvédelmi szabályzat</a>
+					|
+					<a href="#form" style="color: inherit; text-decoration: none;">Jelentés</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+	<script src="script.js"></script>
+	<script src="js/index.js"></script>
+
+
+
+	<script>
+        const offer_params = {
+            priceMain : '14900',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'Ft',
+            productName : '',
+        };
+
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+	</script>
+	<script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+	</script>
+        </body>
+</html>
