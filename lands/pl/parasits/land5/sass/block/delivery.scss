@@ -1,0 +1,112 @@
+
+.delivery__title {
+    margin-bottom: 30px;
+    font-size: 58px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.delivery__body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delivery__item {
+    position: relative;
+    flex: 0 0 calc(33.333% - 29px);
+    padding: 280px 40px 40px 40px;
+    text-align: center;
+    background-position: center top;
+    border: 2px solid #000;
+
+    &:nth-child(1) {
+        background-image: url("../media/delivery/img-1.jpg");
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: -33px;
+            width: 20px;
+            height: 35px;
+            content: '';
+            background-image: url("../media/delivery/arrow.png");
+            transform: translateY(-50%);
+        }
+    }
+
+    &:nth-child(2) {
+        background-image: url("../media/delivery/img-2.jpg");
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: -33px;
+            width: 20px;
+            height: 35px;
+            content: '';
+            background-image: url("../media/delivery/arrow.png");
+            transform: translateY(-50%);
+        }
+    }
+
+    &:nth-child(3) {
+        background-image: url("../media/delivery/img-3.jpg");
+    }
+}
+
+.delivery__count {
+    margin-bottom: 20px;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.delivery__description {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .delivery__item {
+        flex: 0 0 calc(33.333% - 5px);
+        padding-right: 15px;
+        padding-left: 15px;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .delivery__description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .delivery__body {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .delivery__item {
+        flex: 0 0 100%;
+        max-width: 320px;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        &::before {
+            display: none;
+        }
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    .delivery__description {
+        font-size: 20px;
+    }
+
+    .delivery__count {
+        margin-bottom: 10px;
+    }
+}

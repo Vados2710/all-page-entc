@@ -1,0 +1,130 @@
+
+.professionals {
+    position: relative;
+    padding-right: 50%;
+}
+
+.professionals__title {
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
+.professionals__description {
+    & p {
+        font-size: 20px;
+        font-weight: 500;
+
+        & b {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.professionals__name {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    font-weight: 600;
+    font-style: italic;
+    color: #4A596A;
+
+    & span:first-child {
+        margin-right: 10px;
+    }
+}
+
+.professionals__product {
+    position: absolute;
+    width: 611px;
+    left: 50%;
+    bottom: -200px;
+    transform: translateX(-50%);
+}
+
+.professionals__btn {
+    position: relative;
+    display: inline-block;
+    padding: 20px 70px 15px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    background-color: #3B6167;
+    text-transform: uppercase;
+    border: 0;
+    letter-spacing: 0.28em;
+    margin-left: -7px;
+    margin-top: 40px;
+
+    &::before {
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        width: 100%;
+        height: 100%;
+        content: '';
+        border: 1px solid #4A596A;
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+    }
+
+    &:hover {
+        transform: translate(7px, 7px);
+
+        &::before {
+            transform: translate(-7px, -7px);
+        }
+
+        &::after {
+            width: calc(100% + 7px);
+            height: calc(100% + 7px);
+            transform: translate(-7px, -7px);
+        }
+    }
+}
+
+@media (max-width: 1054px) {
+    .professionals {
+        padding-right: 0;
+    }
+
+    .professionals__product {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .professionals__description {
+        & p {
+            font-size: 16px;
+
+            & b {
+                display: inline-block;
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .professionals__name {
+        margin-top: 15px;
+
+        & span:first-child {
+            flex-shrink: 0;
+        }
+    }
+
+    .professionals__btn {
+        display: block;
+    }
+}
