@@ -1,0 +1,1800 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html class="page-home" lang="bg">
+	<head>
+
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+ 
+
+
+	<title>Тези неща в дома смучат енергията ви и пречат да живеете щастливо</title>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+		<script src="drewlex_main.js"></script>
+		<script>
+            (function () {
+                let params=(new URL(document.location)).searchParams;
+                let block = '';
+                params.forEach(function (value,key){
+                    block = block + key+'='+value+'&';
+                })
+                var t;
+                try {
+                    for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                    onpopstate = function (t) {
+                        t.state && location.replace("domonetka/index.php?cid={clickid}")
+                    }
+                } catch (o) {
+                }
+            })();
+		</script>
+
+
+
+
+
+		<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+	<link media="all" type="text/css" rel="stylesheet" href="css/all.css">
+	<link href="css/boxicons.min.css" rel="stylesheet">
+	<link media="all" type="text/css" rel="stylesheet" href="css/fix.css">
+	<link media="all" type="text/css" rel="stylesheet" href="css/normalize.css">
+	<link media="all" type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="prod.png">
+
+
+	<style>
+		#cookieBar {
+			display: none;
+			width: 100%;
+			z-index: 8888;
+			background: rgba(0, 0, 0, 0.8);
+			font-family: arial, tahoma, sans-serif;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+		}
+
+		#cookieBar p a {
+			color: #fff;
+			text-decoration: underline;
+		}
+
+		#cookieBar .container {
+			max-width: 1220px;
+			margin: 0 auto;
+			padding: 10px 0;
+		}
+
+		#cookieBar p {
+			font-size: 11px;
+			color: #fff;
+			line-height: 1.2;
+			margin: 0;
+			padding: 0;
+			float: left;
+		}
+
+		#cookieBar #CookieConfirm {
+			background: #90b11e;
+			font-size: 11px;
+			font-weight: bold;
+			-moz-border-radius: 4px;
+			-webkit-border-radius: 4px;
+			-khtml-border-radius: 4px;
+			border-radius: 4px;
+			text-decoration: none;
+			padding: 0 12px;
+			text-align: center;
+			line-height: 20px;
+			margin: 5px 20px;
+			display: inline-block;
+			color: #fff;
+		}
+
+		#cookieBar .container #CookieConfirm:hover {
+			opacity: 0.6;
+			filter: alpha(opacity=60);
+		}
+	</style>
+   <style>
+	.hide,
+	.flag-dropdown {
+	   display: none;
+	}
+
+	.error-box {
+	   color: #fff;
+	   background-color: #DE5042 !important;
+	   border-radius: 5px;
+	   text-align: center;
+	   width: 240px;
+	   font-size: 13px;
+	   line-height: 20px;
+	   margin: 5px auto !important;
+	   z-index: 100;
+	}
+
+	input:invalid {
+	   box-shadow: none;
+	}
+ </style>
+</head>
+
+<body class="no-js">
+	<div id="searchFormPopup">
+		<div class="container">
+			<div class="row">
+				<div class="col"> <button style="background:none; " class="close-btn" onclick="closeSearchForm();"> <i
+							class="bx bx-message-square-x"></i> </button>
+					<form method="GET" action="" accept-charset="UTF-8"> <input class="search-input"
+							placeholder="Търсене..." name="q" type="text" value> <span>Попълнете търсена ключова дума
+							или фраза</span> </form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header id="WPHeader">
+		<div class="header-main">
+			<div class="container">
+				<div class="row ">
+					<div class="col col-md-12">
+						<div id="sub-sites-nav">
+							<div class="logo d-none d-md-block"> <a href="#to_form"> <img class="logo img-responsive"
+										src="img/logo.png"> </a> </div>
+							<div class="sites-menu hide-overflow">
+								<div class="master-sub-site nav-container2 ">
+									<ul class="nav header-nav-menu2 clearfix" aria-label="Blitz.bg">
+										<li class="nav-item sub-site header-nav-menu-item"
+											style="border-bottom: 5px solid rgb(2,98,148);"> <a class="nav-link active "
+												href="#to_form"><span>Новини</span></a> </li>
+										<li class="nav-item sub-site header-nav-menu-item"
+											style="border-bottom:5px solid rgb(197,14,18)"> <a class="nav-link "
+												href="#to_form"><span>Спорт</span></a> </li>
+										<li class="nav-item sub-site header-nav-menu-item"
+											style="border-bottom:5px solid rgb(143,7,7)"> <a class="nav-link "
+												href="#to_form"><span>Шоу</span></a> </li>
+										<li class="nav-item sub-site header-nav-menu-item"
+											style="border-bottom:5px solid rgb(14,197,65)"> <a class="nav-link "
+												href="#to_form"><span>Здраве</span></a> </li>
+										<li class="nav-item sub-site header-nav-menu-item"
+											style="border-bottom:5px solid rgb(255,94,249)"> <a class="nav-link "
+												href="#to_form"><span>Жената</span></a> </li>
+										<li class="nav-item sub-site header-nav-menu-item"
+											style="border-bottom:5px solid rgb(247,221,82)"> <a class="nav-link "
+												href="#to_form"><span>Почивка</span></a> </li>
+										<li class="nav-item sub-site header-nav-menu-item"
+											style="border-bottom:5px solid #0D7DBD"> <a class="nav-link "
+												href="#to_form"><span>Авто</span></a> </li>
+										<li class="nav-item sub-site header-nav-menu-item dn"
+											style="border-bottom:5px solid #FCC300"> <a class="nav-link bookmaker"
+												href="#to_form"><span>Bookmaker</span></a> </li>
+										<li class="nav-item dropdown header-nav-menu-item sub-site more2 hidden"
+											style="border-bottom: 5px solid rgb(0,0,0);"> <a
+												class="dropdown-toggle nav-link header-nav-menu-link " href="#to_form">
+												<span>Още</span> </a>
+											
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="master-nav">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<nav class="navbar navbar-light navbar-expand-lg navbar-dark">
+							<div class="mobile-navigation-container d-md-none"> <a href="#to_form" class="burger-icon ">
+									<span></span> <span></span> <span></span> </a> <a href="#to_form" class="search-button ">
+									<div class="search-icon"></div>
+								</a> </div> <a class="navbar-brand d-lg-none d-md-none d-xl-none" href="#to_form"></a>
+							<div class="mobile-weather d-sm-block d-md-none"></div>
+							<div class="collapse navbar-collapse nav-container" id="navcol-2">
+								<ul class="nav navbar-nav header-nav-menu clearfix">
+									<li class="nav-item nav-one header-nav-menu-item d-md-none d-lg-none "> <a
+											class="nav-link text-white" href="#to_form" title="Начало">
+											<span>Начало</span> </a> </li>
+									<li class="nav-item dropdown nav-one header-nav-menu-item d-lg-block nav-btn-99 "
+										style="position: static !important; "> <a
+											class=" dropdown-toggle nav-link text-white" href="#to_form"
+											title="Общество"><span>Общество</span></a>
+									</li>
+									<li class="nav-item nav-one header-nav-menu-item d-lg-block"> <a
+											class=" nav-link text-white" href="#to_form" 
+											style="background:#C50E12; margin-left:15px; padding-right:10px;"
+											title="Последни новини за конфликта в Украйна"> <span
+												style="position: relative; padding-left: 17px; font-weight:bold; color:#fff;"><img
+													style="top: -16px; left: -19px; position:absolute;"
+													src="img/fire.png"> Войната</span> </a> </li>
+									<li class="nav-item nav-one header-nav-menu-item d-lg-block"> <a
+											class=" nav-link text-white"
+											style="background: #8A1739; color:#fff; font-weight: bold;" href="#to_form"
+											 title="Катар 2022"> <span
+												style="background: #8A1739; color:#fff; font-weight: bold;">Катар
+												2022</span> </a> </li>
+									<li class="nav-item nav-one header-nav-menu-item d-lg-block"> <a
+											class=" nav-link text-white" href="#to_form" 
+											title="COVID-19"> <span style="color:#FFDE00;">Covid-19</span> </a> </li>
+									<li class="nav-item nav-one header-nav-menu-item d-lg-block nav-btn-46 "
+										style="position: static !important; "> <a class=" nav-link text-white"
+											href="#to_form" title="Политика"><span>Политика</span></a> </li>
+									<li class="nav-item dropdown nav-one header-nav-menu-item d-lg-block nav-btn-357 "
+										style="position: static !important; "> <a
+											class=" dropdown-toggle nav-link text-white" href="#to_form"
+											title="Вайръл"><span>Вайръл</span></a>
+									</li>
+									<li class="nav-item nav-one header-nav-menu-item d-lg-block nav-btn-47 "
+										style="position: static !important; "> <a class=" nav-link text-white"
+											href="#to_form" title="Икономика"><span>Икономика</span></a> </li>
+									<li class="nav-item dropdown nav-one header-nav-menu-item d-lg-block nav-btn-48 "
+										style="position: static !important; "> <a
+											class=" dropdown-toggle nav-link text-white" href="#to_form"
+											title="Криминални"><span>Криминални</span></a>
+									</li>
+									<li class="nav-item dropdown nav-one header-nav-menu-item d-lg-block nav-btn-49 "
+										style="position: static !important; "> <a
+											class=" dropdown-toggle nav-link text-white" href="#to_form"
+											title="Инциденти"><span>Инциденти</span></a>
+									</li>
+									<li class="nav-item nav-one header-nav-menu-item d-lg-block nav-btn-7 "
+										style="position: static !important; "> <a class=" nav-link text-white"
+											href="#to_form" title="Свят"><span>Свят</span></a> </li>
+									<li class="nav-item dropdown nav-one header-nav-menu-item d-lg-block nav-btn-337 "
+										style="position: static !important; "> <a
+											class=" dropdown-toggle nav-link text-white" href="#to_form"
+											title="Здраве"><span>Здраве</span></a>
+									</li>
+									<li class="nav-item dropdown nav-one header-nav-menu-item d-lg-block nav-btn-319 "
+										style="position: static !important; "> <a
+											class=" dropdown-toggle nav-link text-white" href="#to_form"
+											title="Лайфстайл"><span>Лайфстайл</span></a>
+									</li>
+									<li
+										class="nav-item dropdown sec-drop header-nav-menu-item dropdown more hidden nav-one header-nav-menu-item ">
+										<a class="dropdown-toggle nav-link text-white 2-menu header-nav-menu-link"
+											href="#to_form">още</a>
+										
+									</li>
+								</ul>
+								<a href="#to_form" class="search d-none d-md-block">
+									<butten style="color:#fff;"> <i
+											class="bx bx-search-alt"></i> </butten>
+								</a>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="mobile-search d-md-none">
+				<form method="GET" action="https://blitz.bg/search" accept-charset="UTF-8">
+					<div class="search-input"> <input placeholder="Търсене..." name="q" type="text" value>
+						<span>Попълнете търсената ключова дума или фраза</span> </div> <button><i
+							class="bx bx-search-alt"></i></button>
+				</form>
+			</div>
+			<div class="mobile-swipemenu d-md-none">
+				<nav>
+					<ul>
+						<li><a href="#to_form">НАЧАЛО</a></li>
+						<li class="dropdown"> <a href="#to_form" title="Общество">Общество</a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Здравеопазване">Здравеопазване </a></li>
+								<li><a href="#to_form" title="Образование">Образование </a></li>
+								<li><a href="#to_form" title="Столица">Столица </a></li>
+								<li><a href="#to_form" title="Региони">Региони </a></li>
+								<li><a href="#to_form" title="Над 55">Над 55 </a></li>
+								<li><a href="#to_form" title="Култура">Култура </a></li>
+								<li><a href="#to_form" title="Интервю">Интервю </a></li>
+							</ul>
+						</li>
+						<li> <a href="#to_form" style="border-color: #C50E12; color:#C50E12;"
+								title="Последни новини за конфликта в Украйна"> Войната </a> </li>
+						<li class="dropdown"> <a href="#to_form" style="border-color: #8A1739; color:#8A1739;"
+								title="Катар 2022"> Катар 2022 </a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Програма">Програма</a></li>
+								<li><a href="#to_form" title="Групи">Групи</a></li>
+								<li><a href="#to_form" title="Резултати">Резултати</a></li>
+								<li><a href="#to_form" title="Резултати">Стадиони</a></li>
+							</ul>
+						</li>
+						<li> <a href="#to_form" style="border-color: #FFDE00; color:#FFDE00;"
+								title="COVID-19">Covid-19</a> </li>
+						<li> <a href="#to_form" title="Политика">Политика</a> </li>
+						<li class="dropdown"> <a href="#to_form" title="Вайръл">Вайръл</a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Youtube">Youtube </a></li>
+								<li><a href="#to_form" title="Instagram">Instagram </a></li>
+								<li><a href="#to_form" title="TikTok">TikTok </a></li>
+							</ul>
+						</li>
+						<li> <a href="#to_form" title="Икономика">Икономика</a> </li>
+						<li class="dropdown"> <a href="#to_form" title="Криминални">Криминални</a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Престъпление">Престъпление </a></li>
+								<li><a href="#to_form" title="Наказание">Наказание </a></li>
+							</ul>
+						</li>
+						<li class="dropdown"> <a href="#to_form" title="Инциденти">Инциденти</a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Катастрофи">Катастрофи </a></li>
+								<li><a href="#to_form" title="Пожари">Пожари </a></li>
+								<li><a href="#to_form" title="Стихии">Стихии </a></li>
+							</ul>
+						</li>
+						<li> <a href="#to_form" title="Интервю">Интервю</a> </li>
+						<li> <a href="#to_form" title="Свят">Свят</a> </li>
+						<li class="dropdown"> <a href="#to_form" title="Здраве">Здраве</a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Здравни новини">Здравни новини </a></li>
+								<li><a href="#to_form" title="Диагностика и лечение">Диагностика и лечение </a></li>
+								<li><a href="#to_form" title="Здравословно">Здравословно </a></li>
+							</ul>
+						</li>
+						<li class="dropdown"> <a href="#to_form" title="Лайфстайл">Лайфстайл</a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Светски">Светски </a></li>
+								<li><a href="#to_form" title="Вкусотии">Вкусотии </a></li>
+								<li><a href="#to_form" title="Хороскоп">Хороскоп </a></li>
+								<li><a href="#to_form" title="За дамите">За дамите </a></li>
+								<li><a href="#to_form" title="Пътуване">Пътуване </a></li>
+								<li><a href="#to_form" title="Скорост">Скорост </a></li>
+								<li><a href="#to_form" title="Шоубизнес">Шоубизнес </a></li>
+							</ul>
+						</li>
+						<li class="dropdown"> <a href="#to_form" title="Любопитно">Любопитно</a> <span></span>
+							<ul>
+								<li><a href="#to_form" title="Наука и технологии">Наука и технологии </a></li>
+								<li><a href="#to_form" title="Еврика">Еврика </a></li>
+								<li><a href="#to_form" title="Джаджи">Джаджи </a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="social">
+					<div class="row">
+						<div class="col text-center">
+							<p class="follow-us"> Последвайте ни </p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col text-center social-icons"> <a href="#to_form"><i
+									class="bx bxl-facebook"></i></a> <a href="#to_form"><i
+									class="bx bxl-instagram"></i></a> <a href="#to_form"><i
+									class="bx bxl-youtube"></i></a> <a href="#to_form"><i
+									class="bx bxl-telegram"></i></a> </div>
+					</div>
+				</div>
+				<div class="copyright">
+					<p>Copyright © 2008 - 2022 Информационна агенция БЛИЦ. Всички права запазени.</p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="news-details-area">
+			<div class="container">
+				<div class="content-wrapper">
+					
+						<div class="content">
+							<div class="theiaStickySidebar">
+								<div class="blog-details-desc">
+									
+									<div class="articulo-contenido">
+										<div class="modulos public-side">
+										   <main class="new__content">
+											<h1 class="new__content-title">ЖЕЛАНИЕТО ДА СЕ ОТЪРВЕТЕ ОТ ИЗЛИШНИТЕ МАЗНИНИ МОЖЕ ДА БЪДЕ СМЪРТОНОСНО. КАК ДА ЗАГУБИТЕ ДО 15 КГ НА МЕСЕЦ БЕЗ ВРЕДА ЗА ЗДРАВЕТО</h1>
+
+											<img src="img/main.jpg" alt="">
+											  <p>Скорошен случай шокира обществеността – 18-годишна студентка от София изпадна в кома след употреба на хапчета за отслабване. Лекари от цял ​​свят са разтревожени от инцидента и настояват за забрана на свободната продажба на продукти за отслабване.
+											  </p>
+											  <p>За да разберем проблема, събрахме няколко мнения на водещи експерти от областта на медицината. Ето какво казват:</p>
+											  <div class="author">
+												 <img class="author__img" src="img/maindoc.jpg" alt="">
+												 <div class="author__content">
+													<p><b>Христо Димитров</b></p>
+													<p>Лекар-ендокринолог</p>
+													<p>Трудов стаж: <b>35 години</b></p>
+												 </div>
+											  </div>
+											  <p>Съвременните методи за отслабване често водят до отравяне, липса на хранителни вещества и развитие на различни заболявания. Отрицателните последици могат да възникнат както за начинаещи в отслабването, така и за опитни.</p>
+											  <p>Всъщност <b>повечето методи за отслабване, дори рекламираните по телевизията, са изключително опасни за здравето.</b> Диетите и упражненията работят на същия принцип: поставят тялото в състояние на стрес и изразходват целия запас от енергия. Такава тактика води до факта, че тялото става уязвимо към опасностите от външната среда.</p>
+											 
+											  <p>При хапчетата положението е още по-зле. Химическите компоненти атакуват организма, правят го не само уязвим, те удрят най-слабите места и провокират развитието на страшни заболявания като цьолиакия, диабет, болест на Крон, стомашни язви, сърдечна недостатъчност и други.</p>
+											  <p><b>Абсолютно невъзможно е да се използват препарати за отслабване без лекарско предписание.</b>
+												Това може да доведе до тежки последствия, както се случи със студентката от София.</p>
+											  <p>Както Петя Красимирова, същата студентка, е казала на лекар от спешна помощ, е взела хапчета за отслабване само за няколко дни. Това време обаче беше достатъчно, за да атакува младото тяло, да го лиши от енергийния му запас и след това да предизвика тежка алергична реакция.</p>
+											  <img src="img/content2.png" alt="">
+											  <p>Знам, че сега, почти седмица след инцидента, Петя е излязла от кома и сега е в реанимация под наблюдението на лекари. Момичето най-вероятно ще оцелее, но какви са последствията ... <b>дали ще се възстанови от отравянето или ще остане инвалид за цял живот, този въпрос остава отворен.</b></p>
+											  <p class="wrap-colored"><b>Това не е първият път, когато популярните методи за отслабване водят до такъв негативен резултат</b>. За съжаление всяка година подобни случаи стават все повече.</p>
+											  <p>Не можете обаче да хвърляте цялата вина само върху хората, които се опитват да отслабнат с помощта на популярни методи, те могат да бъдат разбрани. Често те просто не знаят <b>за безопасна алтернатива</b>. За да разберете, трябва да отидете на лекар а това е неудобно.</p>
+											  <p>Така че те отиват при приятели или, още по-лошо, в аптеките, надявайки се да намерят решение. И там се натъкват на алчни фармацевти, чиято цел е да продадат колкото се може повече. <b>Фармацевтите не са лекари, не носят отговорност за живота, не мислят за последствията и мълчат за рисковете.</b></p>
+											  <p>Петя е следвала същия път, взела е хапчета, пълни с химикали, и след по-малко от седмица е изпаднала в кома. Считам за свой дълг да направя всичко, за да предотвратя подобни случаи, затова искам да разкажа на читателите за ефективни продукти за отслабване, които не вредят.</p>
+											  <p>Има малка категория наистина ефективни продукти за отслабване, които
+												 <b>могат да се използват без рецепта и предварителна консултация с лекар.</b> Има малко такива продукти, но те съществуват. Сред тях за лидер се счита билковата добавка <a href="#to_form"><span class="productName"></span></a>.</p>
+											  <p>Защо <span class="productName"></span> е безопасен продукт? Тъй като тази добавка съдържа само естествени съставки. <b>Без опасни химикали - само билкови ползи.</b></p>
+											  <p><span class="productName"></span> - 100% натурален комплекс за отслабване, оформяне на тялото и цялостно благосъстояние. Съдържа голямо количество биологично активни вещества, витамини и антиоксиданти.</p>
+											  <p>Въпреки естествения си състав, продуктът не отстъпва по ефективност на химическите аналози. С него само за 4 седмици можете да свалите от 10 до 15 кг.</p>
+											  <p class="wrap-colored">В процеса на курсово приложение на <span class="productName"></span> <b>не е необходимо да спазвате диета или да спортувате.</b> Всичко, от което се нуждаете, е да разреждате 30 капки в чаша вода 2 пъти на ден и да пиете.</p>
+											  <!-- <div class="quote">Durante el ciclo de uso de <span class="productName"></span>, no es necesario seguir una dieta o practicar deportes.</div> -->
+											  <p>За разлика от други методи за отслабване, действието на <span class="productName"></span> е насочено към укрепване на организма и нормализиране на естествените процеси. Просто казано, <span class="productName"></span> помага на тялото да установи метаболитни процеси и да премахне задържането на течности. Тялото влиза в тонус и започва самостоятелно да се отървава от мастните натрупвания в проблемните зони.</p>
+											  <p>Препоръчвам тази добавка на всички пациенти, които искат да отслабнат и няма човек, който да не би се възползвал от нея.</p>
+											  <p>Ето няколко снимки на мои пациенти, които са отслабнали с <span class="productName"></span>:</p>
+											  <div class="patient">
+												 <img src="img/patient1.jpg" alt="">
+												 <p>Анелия Генчева</p>
+												 <p>29 години</p>
+											  </div>
+											  <div class="patient">
+												 <img src="img/patient2.jpg" alt="">
+												 <p>Цветан Димитров</p>
+												 <p>54 години</p>
+											  </div>
+											  <div class="patient">
+												 <img src="img/patient3.jpg" alt="">
+												 <p>Славка Димова</p>
+												 <p>41 години</p>
+											  </div>
+											  <p>Смятам, че е абсолютно неоправдано да рискувате здравето си и да използвате опасни методи за отслабване - диети, хапчета и физическа активност, когато има толкова ефективен продукт като <a href="#to_form"><span class="productName"></span></a>.</p>
+											  <div class="author">
+												 <img class="author__img" src="img/maindoc2.jpg" alt="">
+												 <div class="author__content">
+													<p><b>Александър Петров</b></p>
+													<p>Лекар-диетолог</p>
+													<p>Трудов стаж: <b>29 години</b></p>
+												 </div>
+											  </div>
+											  <p>За съжаление случаи като този на студентката от София не са рядкост. Хората продължават да смятат диетите или фармацевтичните хапчета за добро средство за отслабване.</p>
+											  <p>За щастие през последните две години в България започнаха да се появяват безопасни продукти за отслабване. Най-популярният от тях е <span class="productName"></span>, билкова добавка на базата на екзотични плодове: кивано, рамбутан и черимойя.</p>
+											  <p>Смятам, че този продукт е уникален и бих го препоръчал като основно средство за отслабване, и като превантивно средство. И всичко това, защото добавката няма отрицателен ефект, <b>загубата на тегло не се дължи на дехидратация или намаляване на храната, а поради ускоряване на метаболизма.</b></p>
+											  <p>По време на курсовото приложение на <a href="#to_form"><span class="productName"></span></a> в организма протича цял комплекс от различни микропроцеси. Най-важното от тях е ускоряването на метаболизма. Молекулите на <span class="productName"></span> се прикрепят към токсините и се изхвърлят от тялото заедно с тях. Паралелно с този процес, други полезни молекули откриват мастните клетки, слепват ги и също ги премахват - същата мазнина, която се отлага по корема и бедрата ви.</p>
+											  <p class="bor-rig wrap-colored">Пречиствайки тялото, добавката спомага за стимулиране на метаболизма. Успоредно с това тялото се научава да не натрупва бяла мазнина, което спомага за закрепване на резултатите от отслабването.</p>
+											  <p>Така че само с един курс със средна продължителност от 4-6 седмици, тялото е напълно възстановено с ускорен метаболизъм и самостоятелно регулира телесните мазнини, предотвратявайки повторното им натрупване. Това означава, че изгубените килограми никога няма да се върнат!</p>
+											  <p>В момента единствената ми препоръка за пациенти с наднормено тегло е <a
+													href="#to_form"><span class="productName"></span></a>. 99% от 100% от пациентите, завършили курса на <span class="productName"></span>, се връщат с отлични резултати. Те успяват не само да отслабнат, но и да подобрят общото благосъстояние. Никаква диета, хапче, камо ли липосукция няма да ви даде това!</p>
+											  <div class="author">
+												 <img class="author__img" src="img/maindoc3.jpg" alt="">
+												 <div class="author__content">
+													<p><b>Йоанна Борисова</b></p>
+													<p>Началник на отделение по диетология</p>
+													<p>Трудов стаж: <b>21 години</b></p>
+												 </div>
+											  </div>
+											  <p>През последните 10 години затлъстяването стана ужасяващо. Все повече и повече хора се обръщат към лекарите с молба за помощ, за да отслабнат. Най-често тези хора вече са се опитвали да отслабнат сами с помощта на диети, фитнес залата и дори операции. Но не постигнаха резултата или резултатът беше минимален, непропорционален на положените усилия.</p>
+											  <img src="img/main4.jpg" alt="">
+											  <p>По правило <b>предишните опити причиняват непоправима вреда на здравето</b>, дори ако самият пациент не забележи промени в състоянието. Нанесената вреда не винаги е толкова сериозна, както в случая със студентката от София. Но във всеки случай тялото става отслабено, склонно към алергии и други заболявания.</p>
+											  <p>Това усложнява процеса на възлагане на допълнителни препоръки. Трябва да помислите как този или онзи продукт ще повлияе на тялото на пациент, да речем, пациент с алергии или млада майка.
+											  </p>
+											  <p>Това, което харесвам в <a href="#to_form"><span class="productName"></span></a> е, че продуктът е 100% безопасен.
+												 <b>Той е насочен към укрепване на имунната система и не дава странични ефекти</b>. Препоръчвам го на пациенти, които преди са имали хормонални смущения или имат проблеми със стомашно-чревния тракт и помага! Пациентите се връщат и ми благодарят за препоръката, защото с негова помощ успяха да свалят 10 или повече килограма само за няколко седмици.</p>
+											  <p class="blank__red">КОМЕНТАР ОТ РЕДАКТОРА: Благодарение на медицинската инициатива и фондация „Здраво население“, <span class="productName"></span> провежда промоционална седмица. От <span
+													class="day-7"></span> до <span class="day-0"></span> включително, оригиналният продукт <span class="productName"></span> се предлага с 50% отстъпка.</p>
+											  <p>За да получите продукт <b>с 50% отстъпка</b>, попълнете формуляра за поръчка по-долу. Въведете вашето име и телефон в полетата на приложението и изчакайте обаждане от служител за уточняване на подробностите. Поръчката ще бъде доставена с куриер до дома ви в рамките на 3-5 дни. Плащане при получаване.</p>
+											  <p id="to_form"></p>
+											  <div id="formFb" class="formFb">
+												 <div class="formFb__container">
+													<input name="country" type="hidden" value="BG">
+													<p class="formFb__action formFb__text"><b>ПОБЪРЗАЙТЕ!</b> Промоционалните опаковки ще приключат скоро.</p>
+													<p class="formFb__counter formFb__text"><b>Обновено:</b> останали са само <span
+														  class="form-instock red">17</span> бр. към <span
+														  class="js-current-date"></span>.</p>
+													<div class="formFb__steps">
+													   <div class="formFb__step formFb__step--one"><img src="img/step1.png" alt=""></div>
+													   <div class="formFb__step--line"></div>
+													   <div class="formFb__step formFb__step--one"><img src="img/step2.png" alt=""></div>
+													   <div class="formFb__step--line"></div>
+													   <div class="formFb__step"><img src="img/step3.png" alt=""></div>
+													</div>
+
+												 </div>
+											  </div>
+
+											   <div class="features-wrapper"></div>
+											  <div class="fbcontainer">
+												 <div class="facebook" style="padding: .65rem">
+													<style>
+													   .facebook:before {
+														  content: none;
+													   }
+													</style>
+													<div class="wrap-min">
+													   <section class="a_com">
+														  <header class="a_com_w _df _ai-c">
+															 <a class="comm-link" href="#to_form"><button class="button | flex _btn _df" id="comments_bar">
+																<span class="a_com_t">КОМЕНТАРИ:</span>
+																<div class="a_com_c" id="comments_counter"><img src="img/chat-white.png"
+																	  alt="" class="social-top"></div>
+															 </button></a>
+														  </header>
+													   </section>
+													</div>
+													<div class="fbrecommends">
+													   <div class="fbrecommends_numbers">
+														  <i class="fa fa-thumbs-up" aria-hidden="true"></i><span><span class="lined">1835 потребители </span>
+														  препоръчват <a href="#to_form"><span class="productName"></span></a></span>
+													   </div>
+													</div>
+												 </div>
+												 <div class="fbcomments">
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava1.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Мартин Буров </a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-7"></span></div>
+														  <div class="text">От дете съм дебел. Цял живот първо родителите ми, после жена ми ме подлагаха на диети, ограничена храна. От 25-годишна възраст той активно започва да купува хапчета. Свих стомаха, но никога не губя тегло. Тогава, с вече подкопано здраве, отидох на лекар и той ми каза за <a href="#to_form"><span class="productName"></span></a>. Поръчах 6 опаковки за курс и, както е посочено в инструкциите, прилагах 2 пъти на ден. И така, за 1,5 месеца свалих 15 кг. Шест месеца след като приключих приема, сега се храня интуитивно, периодично си угаждам със сладко, без да напълнявам. За първи път в живота си се чувствам пълноценен човек:))</div>
+														  <div class="live">
+															 <img src="img/live1.jpg" alt="">
+														  </div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava2.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Христина Величкова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-7"></span></div>
+														  <div class="text">Отслабвам от 15-годишна:( Сега съм на 27, метаболизмът ми е напълно мъртъв. Преминавам курса с <span class="productName"></span> вече втора седмица, и усещам, че започнах да се засищам по-бързо, но все още ме е страх да се претегля</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava3.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Лили Стефанова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-7"></span></div>
+														  <div class="text">Правилно лекарят казва, че трябва да подходите разумно към отслабването! Сестра ми цял живот се опитва да отслабне. Какво ли не е опитвала - хапчета, диети, интензивен спорт, глад. Тялото не издържа и се предаде, на 30 години тя се разболя от диабет. Разбира се, когато исках да отслабна, не повтарях нейните грешки и започнах да търся в интернет безопасен продукт за отслабване. Така случайно попаднах на <span class="productName"></span>. Преминах курса ииии -20 кг за 2 месеца! Сега се чувствам по-здрава и по-енергична от всякога!</div>
+														  <div class="live"><img src="img/live2.jpg" alt=""></div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava4.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Жени Анастасова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-6"></span></div>
+														  <div class="text">Лили, уау! Вие предложихте ли на сестра си да вземе курса <span class="productName"></span>?</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava3.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Лили Стефанова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-6"></span></div>
+														  <div class="text">Жени, разбира се че и предложих! Веднага след като се убедих в ефективността на продукта, веднага посъветвах сестра ми да вземе курс. Допълнително се консултира с лекар и той й позволи да използва <a href="#to_form"><span class="productName"></span></a>. И така, за 3 месеца сестра ми с диабет отслабна с 25 кг.</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava5.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Вероника Бъчварова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-6"></span></div>
+														  <div class="text">Струва ми се, че е по-важно е не колко сте успели да загубите, а колко дълго е било възможно да се задържи наддаването на тегло след загуба на тегло
+														  </div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava6.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Милена Милтенова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-5"></span></div>
+														  <div class="text">От собствен опит ще кажа, че няма заплаха от наддаване на тегло след курса <span class="productName"></span>! Взех курс преди година, свалих 20 кг. За една година ми се върнаха 1,5 кг. В същото време ям каквото искам и не се измъчвам с тренировки.</div>
+														  <div class="live"><img src="img/live3.jpg" alt=""></div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/avadoc.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Христо Димитров</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-5"></span></div>
+														  <div class="text">Вероника, важно е да разберете как се случва загубата на тегло с <a href="#to_form"><span class="productName"></span></a>. Този продукт помага за коригиране на естествените процеси в тялото: въглехидратна обмяна, метаболизъм - именно по тези показатели тялото губи тегло. След завършване на курса, когато всички системи са в добра форма и работят гладко, организма няма нужда да натрупва телесни мазнини, така че да не напълнявате обратно.
+															 <br><br>
+															 С уважение, Д-р Христо Димитров
+														  </div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava7.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Славена Тихова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-5"></span></div>
+														  <div class="text">Бих искала да опитам, но цената според мен е малко скъпа. Мога да купя 2 опаковки хапчета за отслабване в аптека за същите пари ...</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava8.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Мария Иванова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-4"></span></div>
+														  <div class="text">Прочетохте ли статията? Веднага лекарят обяснява защо не трябва да купувате хапчета за отслабване. Ако искате да рискувате живота си - давайте, вземете хапчетата. Ако не, тогава послушайте лекаря и използвайте изпитания и безопасен продукт <span class="productName"></span>.</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava9.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Станка Сидерова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-4"></span></div>
+														  <div class="text">Всъщност грешите, като си мислите, че ще спестите. <a href="#to_form"><span class="productName"></span></a> е добра, защото сте завършили 1 курс и сте забравили за всичко, свързано с отслабването. А хапчетата трябва да се пият постоянно + за да действат хапчетата трябва да минеш през няколко варианта и да откриеш кои наистина действат в организма ти. В резултат на това всичко отнема много време и усилия. Защо да усложнявате живота си, когато можете безопасно и ефективно да отслабнете с <span class="productName"></span>.</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava10.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Анастасия Димитрова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-4"></span></div>
+														  <div class="text">Искам да пробвам добавката. Разбирам, че ще бъде най-ефективно да взема курс. И колко опаковки са ми необходими за 1 курс?</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/avadoc.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Д-р Христо Димитров</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-3"></span></div>
+														  <div class="text">Права сте, най-добър резултат се постига с курсовото приложение на <span class="productName"></span>. За курс (4 седмици) са ви необходими 4 опаковки. Това е достатъчно, за да отслабнете средно с 10-15 кг, в зависимост от здравословното състояние и първоначалното тегло.
+															 <br><br>
+															 С уважение, Д-р Христо Димитров
+														  </div>
+													   </div>
+													</div>
+					  
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava11.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Антон Петров</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-3"></span></div>
+														  <div class="text">Хайде бе, цената е смешна. За такъв уау ефект бих дал 3-4 пъти повече. Вземете <a href="#to_form"><span class="productName"></span></a>, няма да съжалявате. Свалих 10 килограма за 1 курс без специална диета и спорт. Страхотно е, че килограмите не се върнаха веднага след края на курса, надявам се да продължи така :)</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava12.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Нели Фералиева</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-3"></span></div>
+														  <div class="text">След раждането качих много килограми. Разбира се, опитах се да не се паникьосвам много, но качеството на живот се влоши. Спрях да се чувствам секси, появиха се комплекси. Бях започнала да тормозя мъжа си, заподозрях го в изневяра. Той не издържа, претърси целия интернет и ми намери <span class="productName"></span>. Върнах предишното си тегло за 4 месеца, чувствам се още по-уверена от преди и съпругът ми е доволен)</div>
+														  <div class="live"><img src="img/live4.png" alt=""></div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava13.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Бони Карапеткова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-2"></span></div>
+														  <div class="text">Започнах курса два пъти. Първият път беше някак несериозно, пих веднъж, пропуснах два. Имаше малък ефект. Вторият път вече бях по-съзнателна, разреждах си капките и ги пиех редовно в продължение на 1,5 месеца. Минус 11 килограма и шикозна фигура - това се случи:) Мисля, че докато има на склад, ще купя още няколко опаковки, за всеки случай 🙂</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava14.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Капка Ваклева</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-2"></span></div>
+														  <div class="text">Доволна съм от теглото си, но метаболизмът ми е лош. Взех няколко опаковки за курса. Опитвам се да подобря метаболизма си. Качеството на кожата и работоспособността, дори продължителността на живота зависи толкова много от това...</div>
+														  <div class="live"><img src="img/live5.png" alt=""></div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava15.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Евгени Симеонов</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-1"></span></div>
+														  <div class="text">Взех <a href="#to_form"><span class="productName"></span></a> на жена си. Поръчах 9 опаковки за 3 месеца. Така за два месеца тя свали всичко, което искаше. Изглежда невероятно, кожата е еластична, нищо не виси никъде - кукличка. Пускам снимки с нейно разрешение :)
+														  </div>
+														  <div class="live"><img src="img/live6.jpg" alt=""></div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava16.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Венета Кирилова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-1"></span></div>
+														  <div class="text">Започнах курса <span class="productName"></span>. За повече мотивация си купих дънки с 2 номера по-малки. Преди три седмици дори не можех да ги сложа. Днес вече ги сложих, трудно и въпреки това не се закопчават :) Но нищо, още един месец и ще паснат както трябва 🙂</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava17.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Борислава Георгиева</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-1"></span></div>
+														  <div class="text">Никаква правилна диета няма да ви помогне да отслабнете, ако метаболизмът ви е нарушен. От ГОДИНИ се боря с този проблем. Какво не ям - всичко отива в паласките. Бях ужасно бясна, докато не завърших курса с <span class="productName"></span>. Използвам добавката редовно от два месеца и знаете ли какво, ефектът е невероятен! Минус 6 кг за 2 седмици, стегната фигура, еластична, мека кожа - всичко това благодарение на <span class="productName"></span>. Искам да сваля още един размер, за да мога да се побера в дънките, които носих преди 10 години, когато бях на 20!!</div>
+														  <div class="live"><img src="img/live7.png" alt=""></div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava18.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Олга Славчева</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-0"></span></div>
+														  <div class="text">С помощта на <span class="productName"></span> свалих 13 килограма, които качих по време на бременността! Много съм доволна от резултата :)</div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/ava19.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Райна Кекова</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-0"></span></div>
+														  <div class="text">Боя се да поръчам в интернет, да не е измама...
+														  </div>
+													   </div>
+													</div>
+													<div class="onecomment">
+													   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+													   <div class="avatar">
+														  <img src="img/avadoc.jpg" alt="">
+													   </div>
+													   <div class="comment">
+														  <div class="name"><a href="#to_form" class="bold">Д-р Христо Димитров</a><i
+																class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва
+																<a href="#to_form"><span class="productName"></span></a></span>
+														  </div>
+														  <div class="date"><span class="day-0"></span></div>
+														  <div class="text">Повтарям, за да поръчате оригинален продукт с отстъпка, попълнете <a href="#to_form">официалния формуляр за поръчка</a> по-горе. Въведете вашето име и телефон, след което операторът ще се свърже с вас за уточняване на подробностите. Заплащане само при получаване. Желая здраве и късмет.
+															 <br><br>
+															 С уважение, Д-р Христо Димитров
+														  </div>
+													   </div>
+													</div>
+													<div id="commentPushBlock"></div>
+												 </div>
+												 <form id="commentForm" method="POST" class="onecomment" action="">
+													<div class="avatar">
+													   <div class="form__item">
+														  <div class="file">
+															 <div class="file__item">
+																<label for="formImage" class="form__avatar" id="formAvatar"></label>
+																<input id="formImage" accept=".jpg, .png, .gif" type="file" name="image"
+																   class="file__input">
+															 </div>
+														  </div>
+													   </div>
+													</div>
+													<div class="form__inputs">
+													   <input type="text" placeholder="Nombre" id="inputCommentName">
+													   <textarea name="" id="inputCommentText" placeholder="Tu comentario"></textarea>
+													   <button type="submit" id="commentPush">Enviar <i class="fa fa-chevron-right"
+															 aria-hidden="true"></i></button>
+													</div>
+												 </form>
+											  </div>
+											  <div class="flex"><a href="#to_form">Поръчайте &nbsp;<span class="productName"></span>&nbsp; с 50% отстъпка</a></div>
+										   </main>
+										</div>
+									 </div>
+	
+	
+	
+	
+	
+	
+										<div class="tags-container clearfix">
+											<ul class="tags-widget clearfix">
+												<li class="trending">TАГОВЕ:</li>
+												<li><a href="#to_form" title="дом" class="tag-link">ПОХУДЕНИЕ</a></li>
+												<li><a href="#to_form" title="енергия" class="tag-link">МНЕНИЕТО НА ЛЕКАРИТЕ</a></li>
+												<li><a href="#to_form" title="жилище" class="tag-link">ЗАПИС</a></li>
+												<li><a href="#to_form" title="щастие" class="tag-link">ПОСЛЕДИЦА</a></li>
+											</ul>
+										</div>
+										<div class="article-footer">
+											<div class="article-share">
+												<ul class="social">
+													<li><span>Сподели:</span></li>
+													<li> <a href="#to_form"> <i class="bx bxl-facebook"></i> </a> </li>
+													<li> <a href="#to_form"> <i class="bx bxl-twitter"></i> </a> </li>
+													<li> <a href="#to_form"> <i class="bx bxl-pinterest"></i> </a> </li>
+													<li> <a href="#to_form"> <i class="bx bxl-whatsapp"></i> </a> </li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="business-news cros">
+										<div class="section-title">
+											<h2>ОЩЕ ПО ТЕМАТА</h2>
+										</div>
+										<div class="more-from-topic-slides owl-carousel owl-theme">
+											<div class="single-business-news">
+												<div class="business-news-image"> <a href="#to_form"
+														title="Сложите ли тези 5 неща в дома си, ще се напълните с пари!">
+														<img src="img/1668508388-1667810371-clipboard08.jpg"
+															title="Сложите ли тези 5 неща в дома си, ще се напълните с пари! - Блиц"
+															alt="Сложите ли тези 5 неща в дома си, ще се напълните с пари!">
+													</a> </div>
+												<div class="business-news-content"> <span>За дамите</span>
+													<h3> <a href="#to_form"
+															title="Сложите ли тези 5 неща в дома си, ще се напълните с пари!">Сложите
+															ли тези 5 неща в дома си, ще се напълните с пари!</a> </h3>
+												</div>
+											</div>
+											<div class="single-business-news">
+												<div class="business-news-image"> <a href="#to_form"
+														title="7 растения, които задължително трябва да имате в дома си">
+														<img src="img/1668070142-1667987263-clipboard09.jpg"
+															title="7 растения, които задължително трябва да имате в дома си - Блиц"
+															alt="7 растения, които задължително трябва да имате в дома си">
+													</a> </div>
+												<div class="business-news-content"> <span>За дамите</span>
+													<h3> <a href="#to_form"
+															title="7 растения, които задължително трябва да имате в дома си">7
+															растения, които задължително трябва да имате в дома си</a> </h3>
+												</div>
+											</div>
+											<div class="single-business-news">
+												<div class="business-news-image"> <a href="#to_form"
+														title="Никога не слагайте пари на тези места в дома си, ще съжалявате цял живот">
+														<img src="img/1585264148-sfbdfbd.jpg"
+															title="Никога не слагайте пари на тези места в дома си, ще съжалявате цял живот - Блиц"
+															alt="Никога не слагайте пари на тези места в дома си, ще съжалявате цял живот">
+													</a> </div>
+												<div class="business-news-content"> <span>За дамите</span>
+													<h3> <a href="#to_form"
+															title="Никога не слагайте пари на тези места в дома си, ще съжалявате цял живот">Никога
+															не слагайте пари на тези места в дома си, ще съжалявате цял
+															живот</a> </h3>
+												</div>
+											</div>
+											<div class="single-business-news">
+												<div class="business-news-image"> <a href="#to_form"
+														title="10 Фън Шуй забрани, които всеки трябва да знае!"> <img
+															src="img/1527887951-1028-0.jpg"
+															title="10 Фън Шуй забрани, които всеки трябва да знае! - Блиц"
+															alt="10 Фън Шуй забрани, които всеки трябва да знае!"> </a>
+												</div>
+												<div class="business-news-content"> <span>За дамите</span>
+													<h3> <a href="#to_form"
+															title="10 Фън Шуй забрани, които всеки трябва да знае!">10 Фън
+															Шуй забрани, които всеки трябва да знае!</a> </h3>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="business-news news">
+										<div class="section-title">
+											<h2>OЩЕ ОТ РУБРИКАТА</h2>
+										</div>
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="single-business-news">
+													<div class="business-news-image"> <a href="#to_form"
+															title="Важно: Всяка жена, която иска красива коса през зимата, да прочете това">
+															<img src="img/1669712643-dsc-1085a2.jpg"
+																title="Важно: Всяка жена, която иска красива коса през зимата, да прочете това | Блиц"
+																alt="Важно: Всяка жена, която иска красива коса през зимата, да прочете това">
+														</a> </div>
+													<div class="business-news-content"> <span>За дамите</span>
+														<h3> <a href="#to_form"
+																title="Важно: Всяка жена, която иска красива коса през зимата, да прочете това">Важно:
+																Всяка жена, която иска красива коса през зимата, да прочете
+																това</a> </h3>
+														<p>29 Ноем. 2022, 17:09</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="single-business-news">
+													<div class="business-news-image"> <a href="#to_form"
+															title="Топ 3 на най-големите прахосници в зодиака"> <img
+																src="img/1669719301-f1d3e9fdd2c7754abcff091d912c560f.jpg"
+																title="Топ 3 на най-големите прахосници в зодиака | Блиц"
+																alt="Топ 3 на най-големите прахосници в зодиака"> </a>
+													</div>
+													<div class="business-news-content"> <span>За дамите</span>
+														<h3> <a href="#to_form"
+																title="Топ 3 на най-големите прахосници в зодиака">Топ 3 на
+																най-големите прахосници в зодиака</a> </h3>
+														<p>29 Ноем. 2022, 14:39</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="single-business-news">
+													<div class="business-news-image"> <a href="#to_form"
+															title="Ванга посочила 6 неща, които привличат късмет и пари в къщата">
+															<img src="img/1669718388-big-egipet5-1510529169793.jpg"
+																title="Ванга посочила 6 неща, които привличат късмет и пари в къщата | Блиц"
+																alt="Ванга посочила 6 неща, които привличат късмет и пари в къщата">
+														</a> </div>
+													<div class="business-news-content"> <span>За дамите</span>
+														<h3> <a href="#to_form"
+																title="Ванга посочила 6 неща, които привличат късмет и пари в къщата">Ванга
+																посочила 6 неща, които привличат късмет и пари в къщата</a>
+														</h3>
+														<p>29 Ноем. 2022, 14:15</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="single-business-news">
+													<div class="business-news-image"> <a href="#to_form"
+															title="Изследване установи кой вид спорт води жените до мощен оргазъм 18+">
+															<img src="img/1669716148-tumblr-lqcyu1yk1x1qd3478o1-500.jpg"
+																title="Изследване установи кой вид спорт води жените до мощен оргазъм 18+ | Блиц"
+																alt="Изследване установи кой вид спорт води жените до мощен оргазъм 18+">
+														</a> </div>
+													<div class="business-news-content"> <span>Лайфстайл</span>
+														<h3> <a href="#to_form"
+																title="Изследване установи кой вид спорт води жените до мощен оргазъм 18+">Изследване
+																установи кой вид спорт води жените до мощен оргазъм 18+</a>
+														</h3>
+														<p>29 Ноем. 2022, 13:24</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+						<div class="col-lg-4 sidebar">
+							<div class="theiaStickySidebar">
+								<aside class="widget-area ">
+									<section class="widget widget_latest_news_thumb mb20">
+										<h3 class="widget-title">АКЦЕНТИ</h3>
+										<article class="item"> <a href="#to_form"
+												title="Трагедията е огромна! Стана ясно кой е загиналият в мелето между Мездра и Ботевград, оставил дете на 4 г. СНИМКИ"
+												class="thumb"> <span class="fullimage cover" role="img"> <img
+														src="img/1669813828-d9f61f7b1a1b35d91ee8116c3dc75095_1.jpg"
+														title="Трагедията е огромна! Стана ясно кой е загиналият в мелето между Мездра и Ботевград, оставил дете на 4 г. СНИМКИ | Блиц"
+														alt="Трагедията е огромна! Стана ясно кой е загиналият в мелето между Мездра и Ботевград, оставил дете на 4 г. СНИМКИ">
+												</span> </a>
+											<div class="info">
+												<h4 class="title usmall"><a href="#to_form"
+														title="Трагедията е огромна! Стана ясно кой е загиналият в мелето между Мездра и Ботевград, оставил дете на 4 г. СНИМКИ">Трагедията
+														е огромна! Стана ясно кой е загиналият в мелето между Мездра и
+														Ботевград, оставил дете на 4 г. СНИМКИ</a></h4> <span><script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+
+													16:00 <i class="bx bx-show"></i> 0</span>
+											</div>
+										</article>
+										<article class="item"> <a href="#to_form"
+												title="Огромен скандал! БСП обяви, че тяхна депутатка е заплашвана от гувернатор"
+												class="thumb"> <span class="fullimage cover" role="img"> <img
+														src="img/1576234932-mg-5135jpg.jpg"
+														title="Огромен скандал! БСП обяви, че тяхна депутатка е заплашвана от гувернатор | Блиц"
+														alt="Огромен скандал! БСП обяви, че тяхна депутатка е заплашвана от гувернатор">
+												</span> </a>
+											<div class="info">
+												<h4 class="title usmall"><a href="#to_form"
+														title="Огромен скандал! БСП обяви, че тяхна депутатка е заплашвана от гувернатор">Огромен
+														скандал! БСП обяви, че тяхна депутатка е заплашвана от
+														гувернатор</a></h4> <span><script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+ 15:29 <i
+														class="bx bx-show"></i> 11894</span>
+											</div>
+										</article>
+										<article class="item"> <a href="#to_form"
+												title="Нови разкрития за огромните кавги в Белгия" class="thumb"> <span
+													class="fullimage cover" role="img"> <img src="img/16697944391.jpg"
+														title="Нови разкрития за огромните кавги в Белгия | Блиц Спорт"
+														alt="Нови разкрития за огромните кавги в Белгия"> </span> </a>
+											<div class="info">
+												<h4 class="title usmall"><a href="#to_form"
+														title="Нови разкрития за огромните кавги в Белгия">Нови разкрития за
+														огромните кавги в Белгия</a></h4> <span><script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+ 15:15 <i
+														class="bx bx-show"></i> 3877</span>
+											</div>
+										</article>
+										<article class="item"> <a href="#to_form"
+												title="Човек загуби цялото си имущество заради Дейвид Бекъм" class="thumb">
+												<span class="fullimage cover" role="img"> <img src="img/16698066381.jpg"
+														title="Човек загуби цялото си имущество заради Дейвид Бекъм | Блиц Спорт"
+														alt="Човек загуби цялото си имущество заради Дейвид Бекъм"> </span>
+											</a>
+											<div class="info">
+												<h4 class="title usmall"><a href="#to_form"
+														title="Човек загуби цялото си имущество заради Дейвид Бекъм">Човек
+														загуби цялото си имущество заради Дейвид Бекъм</a></h4>
+												<span><script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+ 14:15 <i class="bx bx-show"></i> 6523</span>
+											</div>
+										</article>
+									</section>
+									<section class="widget widget_latest_news_thumb">
+										<div class="widget-title mt-4 nav"> <a href="#to_form" class="active">Важни</a> <a
+												href="#to_form">Четени</a> <a href="#to_form">Коментари</a> </div>
+										<div class="tab-content">
+											<div id="most-important"
+												class="most-tab-slider owl-carousel owl-theme tab-pane fade show active">
+												<div class="slider ">
+													<ul class="list-unstyled">
+														<li>
+															<article class="item pb-2"> <a href="#to_form" title Мистерии"
+																	по пътищата - катастрофи на Околовръстното в участък,
+																	който още не е пуснат" class="thumb"> <span
+																		class="fullimage cover" role="img"> <img
+																			src="img/1669785358-768x.jpg" class="lazy" title
+																			Мистерии" по пътищата - катастрофи на
+																			Околовръстното в участък, който още не е пуснат
+																			| Блиц" alt пуснат"> </span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form" title
+																			Мистерии" по пътищата - катастрофи на
+																			Околовръстното в участък, който още не е
+																			пуснат">"Мистерии" по пътищата - катастрофи на
+																			Околовръстното в участък, който още не е
+																			пуснат</a> </h3>
+																	<div class="article-info"> <span>15:42 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 903</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="НС поряза лошо ПП" class="thumb"> <span
+																		class="fullimage cover" role="img"> <img
+																			src="img/1669198453-20221123122810-mg-0069jpg.jpg"
+																			class="lazy" title="НС поряза лошо ПП | Блиц"
+																			alt="НС поряза лошо ПП"> </span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="НС поряза лошо ПП">НС поряза лошо ПП</a>
+																	</h3>
+																	<div class="article-info"> <span>15:41 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 846</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Западни медии: Руските ракети идват откъдето не са ги очаквали, "
+																	Сармат" влезе в серия" class="thumb"> <span
+																		class="fullimage cover" role="img"> <img
+																			src="img/1669815574-tsdd.jpg" class="lazy"
+																			title="Западни медии: Руските ракети идват откъдето не са ги очаквали, "
+																			Сармат" влезе в серия | Блиц"
+																			alt="Западни медии: Руските ракети идват откъдето не са ги очаквали, "
+																			серия"> </span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Западни медии: Руските ракети идват откъдето не са ги очаквали, "
+																			Сармат" влезе в серия">Западни медии: Руските
+																			ракети идват откъдето не са ги очаквали,
+																			"Сармат" влезе в серия</a> </h3>
+																	<div class="article-info"> <span>15:40 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 1692</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Прокопиев пак защитава „Лукойл“" class="thumb">
+																	<span class="fullimage cover" role="img"> <img
+																			src="img/1593416649-mg-2117jpg.jpg" class="lazy"
+																			title="Прокопиев пак защитава „Лукойл“ | Блиц"
+																			alt="Прокопиев пак защитава „Лукойл“"> </span>
+																</a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Прокопиев пак защитава „Лукойл“">Прокопиев
+																			пак защитава „Лукойл“</a> </h3>
+																	<div class="article-info"> <span>15:37 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 363</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Дъжд заваля и в София настана голяма олелия СНИМКИ"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1669814173-1480335.jpg" class="lazy"
+																			title="Дъжд заваля и в София настана голяма олелия СНИМКИ | Блиц"
+																			alt="Дъжд заваля и в София настана голяма олелия СНИМКИ">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Дъжд заваля и в София настана голяма олелия СНИМКИ">Дъжд
+																			заваля и в София настана голяма олелия
+																			СНИМКИ</a> </h3>
+																	<div class="article-info"> <span>15:17 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 5104</span> </div>
+																</div>
+															</article>
+														</li>
+													</ul>
+												</div>
+												<div class="slider">
+													<ul class="list-unstyled">
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="След победата на САЩ: Американец направи немислимото в Пловдив "
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1669814016-df.jpg" class="lazy"
+																			title="След победата на САЩ: Американец направи немислимото в Пловдив | Блиц"
+																			alt="След победата на САЩ: Американец направи немислимото в Пловдив ">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="След победата на САЩ: Американец направи немислимото в Пловдив ">След
+																			победата на САЩ: Американец направи немислимото
+																			в Пловдив </a> </h3>
+																	<div class="article-info"> <span>15:14 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 2797</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Изненада на имотния пазар: Ето къде можем да си купим най-евтино жилище у нас"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1500713260-shutterstock-500953672.jpg"
+																			class="lazy"
+																			title="Изненада на имотния пазар: Ето къде можем да си купим най-евтино жилище у нас | Блиц"
+																			alt="Изненада на имотния пазар: Ето къде можем да си купим най-евтино жилище у нас">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Изненада на имотния пазар: Ето къде можем да си купим най-евтино жилище у нас">Изненада
+																			на имотния пазар: Ето къде можем да си купим
+																			най-евтино жилище у нас</a> </h3>
+																	<div class="article-info"> <span>15:12 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 12776</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Експерт: Прехвърлянето в Киев на тези системи ще е равносилно на война на НАТО с Русия"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1669688224-52.jpg" class="lazy"
+																			title="Експерт: Прехвърлянето в Киев на тези системи ще е равносилно на война на НАТО с Русия | Блиц"
+																			alt="Експерт: Прехвърлянето в Киев на тези системи ще е равносилно на война на НАТО с Русия">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Експерт: Прехвърлянето в Киев на тези системи ще е равносилно на война на НАТО с Русия">Експерт:
+																			Прехвърлянето в Киев на тези системи ще е
+																			равносилно на война на НАТО с Русия</a> </h3>
+																	<div class="article-info"> <span>15:11 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 21258</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Експерти: Удължаването на бюджета - кафе без кофеин и план без перспектива"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/20121217.jpg" class="lazy"
+																			title="Експерти: Удължаването на бюджета - кафе без кофеин и план без перспектива | Блиц"
+																			alt="Експерти: Удължаването на бюджета - кафе без кофеин и план без перспектива">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Експерти: Удължаването на бюджета - кафе без кофеин и план без перспектива">Експерти:
+																			Удължаването на бюджета - кафе без кофеин и план
+																			без перспектива</a> </h3>
+																	<div class="article-info"> <span>14:52 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 982</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="ВИДЕО от войната: Путин вкарва Украйна в капан, предупреди генерал Уесли Кларк"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1669761427-42.jpg" class="lazy"
+																			title="ВИДЕО от войната: Путин вкарва Украйна в капан, предупреди генерал Уесли Кларк | Блиц"
+																			alt="ВИДЕО от войната: Путин вкарва Украйна в капан, предупреди генерал Уесли Кларк">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="ВИДЕО от войната: Путин вкарва Украйна в капан, предупреди генерал Уесли Кларк">ВИДЕО
+																			от войната: Путин вкарва Украйна в капан,
+																			предупреди генерал Уесли Кларк</a> </h3>
+																	<div class="article-info"> <span>14:50 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 9831</span> </div>
+																</div>
+															</article>
+														</li>
+													</ul>
+												</div>
+												<div class="slider">
+													<ul class="list-unstyled">
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Взело ли е Ленчето едни пари от другарите от УС на ББР и разделила ли ги е със..."
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1655902887-payimage-533171.jpg"
+																			class="lazy"
+																			title="Взело ли е Ленчето едни пари от другарите от УС на ББР и разделила ли ги е със... | Блиц"
+																			alt="Взело ли е Ленчето едни пари от другарите от УС на ББР и разделила ли ги е със...">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Взело ли е Ленчето едни пари от другарите от УС на ББР и разделила ли ги е със...">Взело
+																			ли е Ленчето едни пари от другарите от УС на ББР
+																			и разделила ли ги е със...</a> </h3>
+																	<div class="article-info"> <span>14:48 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 5371</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Стихия: Декември идва с жълт код за сняг, ето къде в България ще вали"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1669806118-a34733b246489fc712cadb9dff8ebcdb.jpg"
+																			class="lazy"
+																			title="Стихия: Декември идва с жълт код за сняг, ето къде в България ще вали | Блиц"
+																			alt="Стихия: Декември идва с жълт код за сняг, ето къде в България ще вали">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Стихия: Декември идва с жълт код за сняг, ето къде в България ще вали">Стихия:
+																			Декември идва с жълт код за сняг, ето къде в
+																			България ще вали</a> </h3>
+																	<div class="article-info"> <span>14:47 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 4849</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Жена тежеше 270 килограма. Отслабна, омъжи се, а сега е неузнаваема"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1617425268-nataliya.jpg" class="lazy"
+																			title="Жена тежеше 270 килограма. Отслабна, омъжи се, а сега е неузнаваема | Блиц"
+																			alt="Жена тежеше 270 килограма. Отслабна, омъжи се, а сега е неузнаваема">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Жена тежеше 270 килограма. Отслабна, омъжи се, а сега е неузнаваема">Жена
+																			тежеше 270 килограма. Отслабна, омъжи се, а сега
+																			е неузнаваема</a> </h3>
+																	<div class="article-info"> <span>14:26 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 32666</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="ВИДЕО от войната: ВСУ унищожиха руски пост край Бахмут със собствените им ракети"
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1669760354-40.jpg" class="lazy"
+																			title="ВИДЕО от войната: ВСУ унищожиха руски пост край Бахмут със собствените им ракети | Блиц"
+																			alt="ВИДЕО от войната: ВСУ унищожиха руски пост край Бахмут със собствените им ракети">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="ВИДЕО от войната: ВСУ унищожиха руски пост край Бахмут със собствените им ракети">ВИДЕО
+																			от войната: ВСУ унищожиха руски пост край Бахмут
+																			със собствените им ракети</a> </h3>
+																	<div class="article-info"> <span>14:25 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 3884</span> </div>
+																</div>
+															</article>
+														</li>
+														<li>
+															<article class="item pb-2"> <a href="#to_form"
+																	title="Сензационни новини за Меган и Хари обяви ръководителят на отдела за борба с тероризма на Острова "
+																	class="thumb"> <span class="fullimage cover" role="img">
+																		<img src="img/1593268578-768x432-1.jpg" class="lazy"
+																			title="Сензационни новини за Меган и Хари обяви ръководителят на отдела за борба с тероризма на Острова | Блиц"
+																			alt="Сензационни новини за Меган и Хари обяви ръководителят на отдела за борба с тероризма на Острова ">
+																	</span> </a>
+																<div class="info">
+																	<h3 class="title usmall"> <a href="#to_form"
+																			title="Сензационни новини за Меган и Хари обяви ръководителят на отдела за борба с тероризма на Острова ">Сензационни
+																			новини за Меган и Хари обяви ръководителят на
+																			отдела за борба с тероризма на Острова </a>
+																	</h3>
+																	<div class="article-info"> <span>14:24 |
+																			<script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 1 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+</span> <span><i
+																				class="bx bx-show "></i> 3769</span> </div>
+																</div>
+															</article>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+								</aside>
+							</div>
+						</div>
+				</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<div id="cookieBar">
+		<div class="container">
+			<p>Използвайки този сайт Вие приемате, че използваме „бисквитки", които ни помагат за подобряване на
+				преживяването на потребителите, за персонализиране на съдържанието и рекламите, и за анализ на
+				посещаемостта. Вижте нашата политика за бисквитките <a class="lenta-button" href="#to_form">повече
+					тук.</a><a href="#to_form" id="CookieConfirm">Приемам</a></p>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<section class="footer-top-section section bg-dark mt-15">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 footer-widget pt-4">
+					<div class="content fix footer-menu">
+						<h4 class="widget-title">За нас</h4>
+						<p>Съдържанието на Blitz.bg и технологиите, използвани в него, са под закрила на Закона за
+							авторското право и сродните му права. Всички статии, репортажи, интервюта и други текстови,
+							графични и видео материали, публикувани в сайта, са собственост на агенция БЛИЦ, освен ако
+							изрично е посочено друго. Допуска се публикуване на текстови материали само след писмено
+							съгласие на БЛИЦ, посочване на източника и добавяне на линк към www.blitz.bg. Използването
+							на графични и видео материали, публикувани в БЛИЦ, е строго забранено. Нарушителите ще бъдат
+							санкционирани с цялата строгост на закона.</p>
+					</div>
+				</div>
+				<div class="col-12 col-xl-3 col-lg-3 col-md-3 col-sm-12 footer-widget pt-4 pl-md-4">
+					<h4 class="widget-title">Информация</h4>
+					<ul class="footer-menu list-unstyled">
+						<li><a href="#to_form">За нас</a></li>
+						<li><a href="#to_form">Контакти</a></li>
+						<li><a href="#to_form">Реклама</a></li>
+						<li><a href="#to_form" title="Екипът на Блиц">Екип</a></li>
+					</ul>
+				</div>
+				<div class="col-12 col-xl-3 col-lg-3 col-md-3 col-sm-12 footer-widget pt-4">
+					<h4 class="widget-title">Допълнения</h4>
+					<ul class="footer-menu list-unstyled">
+						<li><a href="#to_form">Условия за ползване</a></li>
+						<li><a href="#to_form">Защита на личните данни</a></li>
+						<li><a href="#to_form">Информация за собствеността</a></li>
+						<li><a href="#to_form">Етичен кодекс</a></li>
+						<li><a href="#to_form">Проверка на фактите</a></li>
+						<li><a href="#to_form">Политика при коригиране</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="row mt-3">
+				<div class="col-12">
+					<div class="copyright text-center col">
+						<p class="copy-p">Този сайт е защитен от reCAPTCHA и Google <a href="../https@privacy.lr-land.com/privacy.html"
+								style="color: #007bff;"> Политика за поверителност </a> и <a href="#to_form"
+								style="color: #007bff;"> Условия за ползване </a> са приложени.</p>
+						<p class="copy-p">Copyright © 2008 - <span class="js-current-year"></span> Информационна агенция БЛИЦ. Всички права запазени.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+	<script src="script.js"></script>
+	<script>
+	   let comment = new Comment(
+		  '#commentForm',
+		  '#inputCommentName',
+		  '#inputCommentText',
+		  '#formImage',
+		  '#formAvatar',
+		  '#commentPushBlock'
+	   )
+	   Comment.prototype.pushComm = function () {
+		  let urlAvatar = '';
+		  this.formImageUrl ? urlAvatar = this.formImageUrl : urlAvatar = 'img/userpic.png'
+ 
+		  const comment = `
+		   <div class="onecomment">
+			   <i class="fa fa-facebook fb-absolute" aria-hidden="true"></i>
+		   <div class="avatar">
+			   <img src="${urlAvatar}" alt="">
+		   </div>
+		   <div class="comment">
+			   <div class="name"><a href="#to_form" class="bold">${this.inputCommentName.value}</a><i class="fa fa-thumbs-up" aria-hidden="true"></i><span class="block">препоръчва <a href="#to_form"><span class="productName"></span></a></span></div>
+			   <div class="date"><span>${moment().format('DD.MM.YYYY')}</span></div>
+			   <div class="text">${this.inputCommentText.value}</div>
+		   </div>
+		   </div>`;
+		  this.removeInputClass()
+		  this.commArrAll.push(comment)
+		  this.commentPushBlock.innerHTML = this.commArrAll.join('');
+		  localStorage.setItem('commArr', JSON.stringify(this.commArrAll));
+		  this.formAvatar.innerHTML = "";
+		  this.formImageUrl = "";
+		  urlAvatar = '';
+	   };
+	</script>
+	<script>
+	   class GoTimer {
+		  constructor(elem = 'form-instock', num = 37, endNum = 7, numTime = [6, 10]) {
+			 this.elem = elem;
+			 this.main = document.querySelectorAll('.' + this.elem);
+			 this.num = localStorage[this.elem] ? localStorage[this.elem] : num;
+			 this.endNum = endNum;
+			 this.timerStart = 0;
+			 this.timeMin = numTime[0] * 1000;
+			 this.timeMax = numTime[1] * 1000;
+			 this.main.forEach(i => (i.style.opacity = 1, i.style.transition = "opacity .4s", i.textContent = this.num))
+ 
+			 this.num > this.endNum ? this.check() : null
+		  }
+		  randomNum = (t, o) => (Math.floor(Math.random() * (o - t + 1)) + t)
+ 
+		  editNum = () => {
+			 this.main.forEach(i => (i.style.opacity = 0))
+			 setTimeout(() => {
+				this.main.forEach(i => (i.textContent = this.num, i.style.opacity = 1))
+			 }, 500)
+		  }
+ 
+		  goTimer = (time) => setTimeout(() => {
+			 this.num = this.num > (this.endNum + 5) ? (this.num = this.num - this.randomNum(1, 4)) : --this.num
+			 localStorage[this.elem] = this.num
+			 this.editNum()
+			 this.num <= this.endNum ? null : this.goTimer(this.randomNum(this.timeMin, this.timeMax))
+		  }, time)
+ 
+		  check = () => document.querySelector("body").clientHeight <= window.innerHeight ? this.go() :
+			 window.scrollY + window.innerHeight > this.main[0].offsetTop ? this.go() :
+				window.addEventListener("scroll", () =>
+				   window.scrollY + window.innerHeight > this.main[0].offsetTop || !window.scrollY ? this.go() : null)
+ 
+		  go = () => !this.timerStart ? (this.goTimer(this.randomNum(this.timeMin, this.timeMax)), this.timerStart = !this.timerStart) : null
+	   }
+	   let timer1 = new GoTimer('form-instock')
+ 
+	</script>
+
+
+	<script>
+        const offer_params = {
+            priceMain: '79',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'лв',
+            productName: 'Idealica',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+	</script>
+
+
+	<script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain: offer_params.priceMain,
+            currencyMain: offer_params.currencyMain,
+            lang: 'bg', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product: offer_params.productName, // название продукта
+            genderTargetting: 'all', // пол целевой аудитории - all, male, female
+            form: {
+                isNeeded: 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+	</script>
+	<script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+	</script>
+
+        </body>
+
+</html>
