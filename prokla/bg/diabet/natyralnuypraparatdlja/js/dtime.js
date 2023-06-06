@@ -1,1 +1,0 @@
-function dtime_nums(t,e){var a=new Date;a.setDate(a.getDate()+t+1);var n="";a.getDate()<10&&(n="0"),n+=a.getDate();var g="";a.getMonth()+1<10&&(g="0"),g+=a.getMonth()+1,document.write(n+"."+g+"."+a.getFullYear())}

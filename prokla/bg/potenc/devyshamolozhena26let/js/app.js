@@ -1,1 +1,0 @@
-$(document).ready((function(){$(".wr.wr2 .block .menu").click((function(){$(window).width()<810&&$(this).toggleClass("active")}))}));

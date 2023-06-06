@@ -1,1 +1,0 @@
-jQuery(function(e){e(".sidebar").scrollToFixed({})});
