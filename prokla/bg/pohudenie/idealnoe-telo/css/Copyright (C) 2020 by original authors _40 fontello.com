@@ -1,0 +1,436 @@
+<!doctype html>
+
+<html lang="bg" dir="ltr">
+<head><base >
+	 
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>НОВИНИ</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="MobileOptimized" content="320">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, target-densitydpi=device-dpi, shrink-to-fit=no">
+<meta name="msapplication-config" content="browserconfig.xml">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="always">
+<link rel="preload" as="style" href="../../https@fonts.googleapis.com/css@family=Open+Sans+Condensed_3A700_257COpen+Sans_3A400,400i,600,600i,700,700i&display=swap">
+<link rel="preload" as="style" href="screen.css">
+<link rel="stylesheet" media="screen" href="../../https@fonts.googleapis.com/css@family=Open+Sans+Condensed_3A700_257COpen+Sans_3A400,400i,600,600i,700,700i&display=swap">
+<link rel="stylesheet" media="screen" href="screen.css">
+<link rel="stylesheet" href="fontello.css">
+<link rel="icon" type="image/x-icon" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preconnect" href="../../https@ajax.googleapis.com/default.htm">
+<link rel="preconnect" href="../../https@fonts.googleapis.com/default.htm">
+<link rel="preconnect" href="../../https@fonts.gstatic.com/default.htm" crossorigin>
+<base target="_blank">
+</head>
+<body>
+<div id="root">
+<header id="top">
+<p id="logo"><a href="default.htm" accesskey="h">НОВИНИ</a></p>
+<nav id="skip">
+<!-- <ul>
+<li><a href="#nav" accesskey="n">Salta e naviga subito (n)</a></li>
+<li><a href="#content" accesskey="c">Vai subito al contenuto (c)</a></li>
+<li><a href="#footer" accesskey="f">Vai a fine pagina (f)</a></li>
+</ul> -->
+</nav>
+<nav id="nav" aria-label="Navigation">
+<ul>
+<li><a accesskey="1" href="default.htm">НОВИНИ</a> <em>(1)</em></li>
+<li><a accesskey="2" href="default.htm">СПОРТ</a> <em>(2)</em></li>
+<li><a accesskey="3" href="default.htm">ПОЛИТИКА</a> <em>(3)</em></li>
+<li><a accesskey="4" href="default.htm">ФУТБОЛ</a> <em>(4)</em></li>
+<li><a accesskey="5" href="default.htm">ЗНАМЕНИТОСТИ</a> <em>(5)</em></li>
+<li><a accesskey="6" href="default.htm">ТЕЛЕВИЗИЯ</a> <em>(6)</em></li>
+<li><a accesskey="8" href="default.htm">ДРУГО</a> <em>(8)</em></li>
+</ul>
+</nav>
+<ul class="list-social">
+<li><a rel="external" href="default.htm"><i class="icon-facebook"></i> <span>Facebook</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-pinterest"></i> <span>Pinterest</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-instagram"></i> <span>Instagram</span></a></li>
+</ul>
+</header>
+<article id="content">
+<header class="heading-a">
+<nav id="breadcrumbs">
+<ul>
+<li><a href="default.htm">Домът</a></li>
+<li><a href="default.htm">ТЕЛЕВИЗИЯ</a></li>
+<li><a href="default.htm">НОВИНИ</a></li>
+</ul>
+</nav>
+
+<h1 style="text-transform: capitalize">Вземете Живота В Ръцете Си И Ще Имате Перфектно Тяло През Цялата Година</h1>
+
+<ul class="list-details">
+<li>
+<ul class="list-social">
+<li><a rel="external" href="default.htm"><i class="icon-facebook"></i> <span>Facebook</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-pinterest"></i> <span>Pinterest</span></a></li>
+<li>
+<p class="strong">102 милиона</p>
+<p class="s11 text-uppercase">ГЛЕДАНИЯ</p>
+</li>
+</ul>
+</li>
+<li class="link-btn link-comment s11"><a href="default.htm"><i class="icon-comment"></i>КОМЕНТАРИ</a></li>
+<li>
+<p>Публикувано от: <a href="default.htm">Илияна</a></p>
+<p class="s11 text-uppercase">
+<script language="Javascript">
+									//     Array of month Names
+									var monthNames = new Array( "Януари", "Февруари", "Март", "Април", "Май", "Юни", "Юли", "Август", "Септември", "Октомври",
+									"Ноември", "Декември");
+									var now = new Date(); document.write(now.getDate() + " " + monthNames[now.getMonth()] + " " + now.getFullYear());
+								</script>
+</p>
+</li>
+<li class="link-btn"><a href="default.htm" style="background-color:#1e54b5; ">ТЕЛЕВИЗИЯ</a></li>
+</ul>
+</header>
+<div class="cols-a">
+<div>
+<figure><a href="default.htm"><img src="../img/5.jpg" width="500" ></a></figure>
+
+<p>Опитвайки се да получат „тялото на супермодел“, много момичета губят много повече тегло от допустимото. В днешно време отслабването е сравнително лесно, особено поради броя и разнообразието на диетични продукти, предлагани на пазара. Един от тях е мощна естествена горелка за мазнини <span class="productName"></span>, базирана на екстракти от екзотични плодове: рамбутан, кивано и черемоя. Капките <span class="productName"></span> наскоро бяха пуснати за продан в България и вече силно алармираха цялата медицинска общност.</p>
+				<center>
+					<img alt="" src="../img/7.jpg" style="max-width: 500px;" width="100%">
+				</center>
+				<p>Появата на <span class="productName"></span> на българския пазар предизвика увеличение на случаите на прекомерна загуба на тегло. За да постигнат перфектно тяло и да се отърват от излишните килограми, жените използвали по-високи дози от препоръчителните.  В крайна сметка, преди са използвали по-малко ефективни препарати и са свикнали с факта, че превишаването на дозата няма да повлияе на резултата.  Но <span class="productName"></span> е невероятно мощно средство и трябва да се приема според инструкциите.</p>
+				<p>Благодарение на уникалния си състав това средство интензивно и за кратко време унищожава мастните клетки в организма. Ето защо потребителите трябва внимателно да следват тези инструкции и да не надвишават дневната препоръчителна доза. Въпреки това, веднага щом видят първите резултати, те започват да увеличават броя на приетите капки в пъти, за да отслабнат по-бързо.</p><br>
+				<center>
+					<a href="default.htm"><img src="../img/2.jpg"></a>
+				</center><br>
+				<p>Всички, които отслабват с  <strong><a class="link-ideal" href="default.htm"><span class="productName"></span></a></strong> , съобщават за прекомерно отслабване - <b>от 5 кг седмично до 12 кг на месец</b> . Гледайки такива фантастични резултати, първоначално потребителите са много щастливи, но след това губят контрол над отслабването и са принудени да ядат висококалорични храни, за да компенсират бързото отслабване. Но дори и след като се върнат към диета с високо съдържание на въглехидрати, те продължават да отслабват.</p>
+				<center><a href="default.htm"><img src="../img/product.png" class="photo_cho product-img" width="283"></a></center>
+				<p class="link-btn animate"><a href="default.htm">ПОРЪЧАЙ <span class="productName"></span></a></p>
+				<p>Проучване, проведено от немска лаборатория, показа, че:</p>
+				<p><span class="productName"></span> причинява изключителна загуба на тегло и ускорява метаболизма до 5 пъти. Жените по света приемат прекомерни дози <span class="productName"></span> именно заради изключителната ефективност на тези капки.</p><br>
+				
+				<div class="module-block">
+<h2>ЗАЩО ОТСЛАБВАТЕ С <span class="productName"></span></h2>
+<ul class="list-b">
+<li>
+<p><strong>1.</strong> Капките съдържат само естествени съставки. Всички компоненти работят добре заедно и интензивно намаляват теглото всеки ден.</p>
+<p> Екстрактите от кивано, рамбутан и черимоя, съдържащи се в капки, ускоряват метаболизма и спомагат за намаляване на количеството мазнини в организма. В резултат на това мазнините изгарят по-бързо, без да се налага упражнения, но в същото време тялото е в състояние да абсорбира необходимите микроелементи.</p>
+<p> Екстрактите от зелено кафе и зелен чай имат мощен антиоксидантен ефект, спомагат за потискане на глада и повишаване на енергийните нива.</p>
+</li>
+<li>
+<p><strong>2.</strong>  Витаминен комплекс - B12, B1, C - укрепва имунната система и помага на кожата да остане гладка и еластична без стрии.</p>
+			
+				<p>За правилното отслабване (5 до 12 кг на месец) потребителите трябва <strong>да пият по 25 капки два пъти на ден.</strong></p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+				<p>Проучване, проведено сред жени, които успяха да отслабнат недвусмислено, потвърди, че всички те приемат много по-високи дози от препоръчителните - консумираха <strong><a class="link-ideal" href="default.htm"><span class="productName"></span></a></strong> 3-5 пъти повече от необходимото. Това обяснява защо те отслабват твърде бързо, като губят  <strong>7-10 кг седмично.</strong> Получавайки толкова впечатляващи резултати, им беше много трудно да спрат и затова те продължиха да отслабват твърде бързо.</p>
+				<p>Националният център за хранене предупреждава, че такава внезапна и бърза загуба на тегло може да доведе до сериозни здравословни проблеми.</p>
+				
+				<p>В сравнение с други продукти за отслабване, в момента <span class="productName"></span> е най-мощната горелка за мазнини с успеваемост от 97,8%. Въпреки това съществува риск от прекомерно увеличаване на дозата. Запомнете: трябва бавно да отслабнете и да поддържате здравето си. Ако решите да опитате от <span class="productName"></span> да свалите няколко килограма, пийте само 25 капки два пъти на ден, независимо от теглото ви.</p>
+				<p>Пазете се! </p>
+				<center>
+					<a href="default.htm"><img src="../img/4.jpg"> </a>
+				</center><br>
+<p class="link-btn animate"><a href="default.htm">ПОРЪЧАЙ <span class="productName"></span></a></p>
+<h6><u><a href="default.htm">Официален уебсайт на <span class="productName"></span></a></u></h6>
+<div class="module-comments">
+<ul class="list-c">
+<li class="strong">116 344 отзива</li>
+<li>сортиране по: <a href="default.htm">най-нов</a></li>
+</ul>
+<form action="./" method="post" class="form-comments">
+<figure><a href="default.htm"><img src="../img/avatar-blank.jpg" width="41" height="41" alt="Placeholder"></a></figure>
+<a href="default.htm">
+<div>
+
+<p>
+<label for="fa" class="hidden">Добави коментар</label>
+<a href>
+	<textarea id="fa" name="fa" placeholder="Добави коментар"></textarea>
+</a>
+</p>
+<ul class="list-c">
+<li>
+<input type="checkbox" name="fb" id="fb">
+<label for="fb">Публикуване във Facebook</label>
+</li>
+<li><a href="default.htm" style=" overflow: hidden;
+    float: left;
+    padding: 2px 12px;
+    border-radius: 0;
+    border: 0;
+    background: var(--pigeon);
+    color: var(--white);
+    font-weight: 700;">Влезте, за да коментирате</a></li>
+</ul>
+</div>
+</a>
+</form>
+<ul class="list-comments">
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-e-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Славея</a></h4>
+<p>Здравейте всички! Вече получих поръчката си <span class="productName"></span>. Днес пих 25 капки за първи път. Чувствата ми? Чувствам се прекрасно! И имат приятен вкус)) Вече минаха 3 часа след приема на тези капки, но изобщо не искам да ям! Това е първият път! Обикновено винаги съм гладна!</p>
+<img class="res__img" src="../img/8.jpg" alt="">
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>98k</li>
+<li><a href="default.htm">Преди 2 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-l-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Айше Абдулова</a></h4>
+<p>Здравейте. Това, което казват, е истина! <span class="productName"></span>, която поръчах от официалния сайт благодарение на съветите на приятел, дава невероятни резултати! Пия тези капки от два месеца: през първата седмица загубих 3 кг, през втората - 4 кг, през третата и четвъртата - още 8,5 кг и така нататък! Можете да видите снимките ми по-долу.</p>
+<img src="../img/review_1.jpg" alt="">
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>2497</li>
+<li><a href="default.htm">Преди 3 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-p-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Маша Верешагина</a></h4>
+<p>Тези капки действат! Самата аз съм истинското доказателство за това. Пих <span class="productName"></span> две седмици и отслабнах! Мазнини няма и е фантастично! Не искам да публикувам снимки, първо искам да постигна целта си. Пия калий както е в  инструкциите два пъти на ден и всичко е наред.</p>
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>430</li>
+<li><a href="default.htm">Преди 3 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-o-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Радка</a></h4>
+<p>Не мога да повярвам! Пия капки от няколко седмици и вече слабея! Тежах 85 кг и се чувствах ужасно, но сега тежа 73 кг и разбирам, че съм просто красива!  Влязох в старата си рокля, която носех още в училище!  Супер е! </p>
+<img src="../img/review_2.jpg" alt="">
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>430</li>
+<li><a href="default.htm">Преди 4 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-u-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Женя Иванова</a></h4>
+<p>Преди три месеца диетологът ми препоръча тези капки и така започнах да ги пия. Отслабнах с 20 кг! Това си е страхотен продукт, защото бързо свалих  килограми, които натрупах по време на бременността.  Наистина си заслужава, препоръчвам <span class="productName"></span> на всички.  Резултатите не се чакат дълго!</p>
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>430</li>
+<li><a href="default.htm">Преди 4 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-m-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Николина</a></h4>
+<p>Опитах много диети, но изобщо не отслабнах и вече загубих надежда, че това ще се случи. Чух за капките <span class="productName"></span>, но не повярвах, че те действат... Диетологът ми потвърди ефективността им, като каза, че работят перфектно, ако следвате инструкциите. Благодаря ви много за съветите, наистина отслабнах много =), но не искам да се меря, нека бъде загадка =)</p>
+<img src="../img/review_3.jpg" alt="">
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>1584</li>
+<li><a href="default.htm">Преди 4 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-v-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Петя Василева</a></h4>
+<p>Винаги съм била с наднормено тегло и за мен <span class="productName"></span> е възможност за промяна.  Мисля, че действат толкова добре благодарение за свръхестествения си състав.  Прочетох много за ползите от растителните компоненти на тези капки: те съдържат много омега-3 мастни киселини, включително калий, магнезий, фибри и др.  Надявам се с тях най-накрая да отслабна !!</p>
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>1584</li>
+<li><a href="default.htm">Преди 5 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-s-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Лили</a></h4>
+<p>
+Здравейте! Използвам <span class="productName"></span> само седмица и след като прочетох вашите коментари съм по-спокойна. Ще продължа да ги приемам, докато не получа желания резултат.  Благодаря!  Сега се чувствам страхотно :))))</p>
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>1584</li>
+<li><a href="default.htm">Преди 5 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-b-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Петранка С.</a></h4>
+<p>Привлякоха ме и тези иновативни капки с естествен състав. Пих <span class="productName"></span> в продължение на две седмици и вече загубих 10 кг мазнини. Резултатите са видими моментално!</p>
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>1584</li>
+<li><a href="default.htm">Преди 6 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-dd-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Аделин</a></h4>
+<p>Отслабнах с 8 кг и дори започнах да правя преса! В шок съм. Капките работят =) </p>
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>1584</li>
+<li><a href="default.htm">Преди 6 часа</a></li>
+</ul>
+</div>
+</li>
+<li>
+<figure><a href="default.htm"><img src="../img/avatar-gg-female.jpg" width="45" height="45" alt="Placeholder"></a></figure>
+<h4><a href="default.htm">Станислава Владимирова</a></h4>
+<p>Капките са натурални и са абсолютно безопасни за здравето. Внимателно проучих състава и едва след това започнах да го приемам. Сега имам минус 12 кг и е фантастично! Никога досега не съм била толкова слаба и така красива!  Благодаря!</p>
+<div class="footer-comments">
+<ul>
+<li><a href="default.htm">Харесва ми</a></li>
+<li><a href="default.htm">Отговор</a></li>
+</ul>
+<ul>
+<li>1584</li>
+<li><a href="default.htm">Преди 6 часа</a></li>
+</ul>
+</div>
+</li>
+</ul>
+<p class="link-btn a m12"><a href="default.htm" class="a">Заредете още 10 коментара</a></p>
+<p class="link-a a"><a href="default.htm">Plugin Commenti Facebook</a></p>
+<p class="link-btn animate"><a href="default.htm">ПОРЪЧАЙ <span class="productName"></span></a></p>
+</div>
+<div class="module-block">
+<h2>ДРУГО</h2>
+<ul class="list-tags">
+<li><a href="default.htm">НОВИНИ</a></li>
+<li><a href="default.htm">Хороскоп</a></li>
+<li><a href="default.htm">Тестове</a></li>
+<li><a href="default.htm">Съвети</a></li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<footer id="footer">
+<nav>
+<ul>
+<li><a href="default.htm">НОВИНИ</a></li>
+<li><a href="default.htm">ПОЛИТИКА</a></li>
+<li><a href="default.htm">СПОРТ</a></li>
+<li><a href="default.htm">ЗНАМЕНИТОСТИ</a></li>
+<li><a href="default.htm">ТЕЛЕВИЗИЯ</a></li>
+<li><a href="default.htm">ТЕХНОЛОГИИ</a></li>
+<li><a href="default.htm">ПЪТЕШЕСТВИЯ</a></li>
+<li><a href="default.htm">МОДА</a></li>
+<li><a href="default.htm">ХОРОСКОП</a></li>
+</ul>
+<hr>
+<h3 class="text-center">АБОНИРАЙ СЕ</h3>
+<ul class="list-social">
+<li><a rel="external" href="default.htm"><i class="icon-facebook"></i> <span>Facebook</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-twitter"></i> <span>Twitter</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-pinterest"></i> <span>Pinterest</span></a></li>
+<li><a rel="external" href="default.htm"><i class="icon-instagram"></i> <span>Instagram</span></a></li>
+</ul>
+<hr>
+<ul class="list-a">
+<li><a href="default.htm">Намери работа</a></li>
+<li><a href="default.htm">За нас</a></li>
+<li><a href="default.htm">Контакти</a></li>
+<li><a href="default.htm">Анкети</a></li>
+<li><a href="default.htm">Политика за поверителност </a></li>
+<li><a href="default.htm">Cookies</a></li>
+<li><a href="default.htm">Условия за използване</a></li>
+<li><a href="default.htm">Подписване</a></li>
+<li><a href="default.htm">ДРУГО </a></li>
+<li><a href="default.htm">&copy;<span class="date">2020</span></a></li>
+</ul>
+</nav>
+</footer>
+</div>
+<!-- <article class="popup-a text-center" data-title="dont-close">
+<h2><span class="text-uppercase">Complimenti!</span> Sei l'utente Facebook del mese!</h2>
+<p class="text-center">In esclusiva per te l'investimento minimo su Bitcoin System sarà di 250€ invece che <span class="line-through">4,997€</span>!</p>
+<p class="text-center">Senza rischi, ritira l'investimento quando vuoi.</p>
+<p class="link-btn"><a href="">Sì, voglio iniziare a guadagnare con Bitcoin System</a></p>
+<p class="link-btn"><a href="" class="b">No, non voglio guadagnare</a></p>
+<p><span class="strong">Offerta valida solo per oggi</span></p>
+</article> -->
+<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<!--COMEBACKER-->
+<!--EOF COMEBACKER-->
+
+<!--СЧЕТЧИКИ МЕТРИК-->
+
+
+
+
+
+
+
+<!-- Автозамена всех ссылок -->
+<!--  -->
+<script type="text/javascript">
+    var d = document.getElementsByTagName('a'),
+        i = d.length;
+    while (i--) {
+        d[i].setAttribute('href', '../@hash=1585a705ffe54ef6882d0731ed7333ff&flow_hash=css');
+                d[i].setAttribute('target', '_self');
+            }
+</script>
+<!--END Автозамена всех ссылок -->
+</body>
+</html>

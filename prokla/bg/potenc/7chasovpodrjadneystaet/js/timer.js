@@ -1,0 +1,1 @@
+function startTimer(t,n){var e,o,r=t;setInterval((function(){e=parseInt(r/60,10),o=parseInt(r%60,10),e=e<10?"0"+e:e,o=o<10?"0"+o:o,n.textContent=e+":"+o,--r<0&&(r=t)}),1e3)}window.onload=function(){startTimer(2862,document.querySelector("#countdownTimer"))};
