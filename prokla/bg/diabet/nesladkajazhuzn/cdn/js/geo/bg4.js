@@ -1,0 +1,20 @@
+(function() {
+    'use strict';
+
+    window.countryList = {
+        bg: {
+            name: 'България',
+            code: 'bg',
+            price: 79,
+            oldPrice: 158,
+            labelPrice: 'Лев',
+            phoneHelper: 'Например, +359 123456789',
+            nameHelper: 'Jivko Djurovic',
+            nameError: 'Името е задължително',
+            phoneError: 'Телефонният номер е задължителен',
+            countryError: 'Страната е задължителна',
+            isDefault: true
+        }
+    };
+    
+})();

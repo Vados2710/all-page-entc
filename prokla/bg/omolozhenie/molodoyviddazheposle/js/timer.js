@@ -1,0 +1,1 @@
+$(document).ready((function(){let t="30:01",e=setInterval((function(){let n=t.split(":"),a=parseInt(n[0],10),c=parseInt(n[1],10);--c,a=c<0?--a:a,a<0&&c<=0?clearInterval(e):(c=c<0?59:c,c=c<10?"0"+c:c,$(".clock-time").html(a+":"+c),t=a+":"+c)}),1e3)})),$(".top_nav__item").on("click",(function(t){$(".top_nav__item").removeClass("active"),$(this).addClass("active")}));
