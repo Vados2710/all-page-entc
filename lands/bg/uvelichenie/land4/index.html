@@ -1,0 +1,1518 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript">
+    </script>
+    <style>
+        .ac_footer {
+            position: relative;
+            top: 10px;
+            height: 0;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #A12000;
+        }
+
+        .ac_footer a {
+            color: #A12000;
+        }
+
+        .ac_footer p {
+            text-align: center;
+        }
+
+        img[height="1"],
+        img[width="1"] {
+            display: none !important;
+        }
+    </style>
+    <style>
+        a,
+        abbr,
+        acronym,
+        address,
+        applet,
+        article,
+        aside,
+        audio,
+        b,
+        big,
+        blockquote,
+        body,
+        canvas,
+        caption,
+        center,
+        cite,
+        code,
+        dd,
+        del,
+        details,
+        dfn,
+        div,
+        dl,
+        dt,
+        em,
+        embed,
+        fieldset,
+        figcaption,
+        figure,
+        footer,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        header,
+        hgroup,
+        html,
+        i,
+        iframe,
+        img,
+        ins,
+        kbd,
+        label,
+        legend,
+        li,
+        mark,
+        menu,
+        nav,
+        object,
+        ol,
+        output,
+        p,
+        pre,
+        q,
+        ruby,
+        s,
+        samp,
+        section,
+        small,
+        span,
+        strike,
+        strong,
+        sub,
+        summary,
+        sup,
+        table,
+        tbody,
+        td,
+        tfoot,
+        th,
+        thead,
+        time,
+        tr,
+        tt,
+        u,
+        ul,
+        var,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        body {
+            line-height: normal
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        blockquote,
+        q {
+            quotes: none
+        }
+
+        blockquote:after,
+        blockquote:before,
+        q:after,
+        q:before {
+            content: '';
+            content: none
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        body {
+            font-family: Montserrat, sans-serif;
+            line-height: normal;
+            color: #000
+        }
+
+        a {
+            text-decoration: none;
+            color: #373737
+        }
+
+        p {
+            font-size: 15px
+        }
+
+        .mobile_menu .logo {
+            z-index: 99999999999999999999999;
+            position: relative
+        }
+
+        .mobile_ul {
+            margin-top: 60px;
+            text-align: right;
+            padding-right: 30px
+        }
+
+        .mobile_ul li {
+            margin: 20px 0
+        }
+
+        .mobile_ul li a {
+            color: #fff;
+            text-transform: uppercase
+        }
+
+        #wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #ece9e6;
+            background: -webkit-linear-gradient(to bottom, #fff, #ece9e6);
+            background: linear-gradient(to bottom, #fff, #ece9e6)
+        }
+
+        .section {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            background-color: rgba(0, 0, 0, 0);
+            position: relative;
+            padding: 30px 0
+        }
+
+        .video_inner {
+            position: relative
+        }
+
+        .bgred {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 65%;
+            height: 100%;
+            background-color: #ffda00;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px
+        }
+
+        .logo {
+            position: relative;
+            width: 270px;
+            text-align: left !important;
+            z-index: 999999999999
+        }
+
+        .deer_img {
+            width: 40px;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            -webkit-transition: .5s;
+            -moz-transition: .5s;
+            -o-transition: .5s;
+            transition: .5s;
+            background-color: #fff
+        }
+
+        .deer_anim {
+            -webkit-animation: deer .1s ease-in;
+            -moz-animation: deer .1s ease-in;
+            -o-animation: deer .1s ease-in;
+            animation: deer .1s ease-in;
+            animation-iteration-count: 1
+        }
+
+        .deer_img img {
+            width: 100%
+        }
+
+        .s1_logo {
+            position: relative;
+            overflow: hidden;
+            z-index: 9999;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -o-transition: 1s;
+            transition: 1s
+        }
+
+        .s1_logo h1 {
+            background-color: rgba(255, 0, 0, .8);
+            box-sizing: border-box;
+            padding: 2px 15px 3px 15px;
+            display: inline-block;
+            font-size: 13px
+        }
+
+        .s1_logo h2 {
+            -wekbit-border-top: 2px solid #000;
+            -moz-border-top: 2px solid #000;
+            -o-border-top: 2px solid #000;
+            border-top: 2px solid #000;
+            -webkit-border-bottom: 2px solid #000;
+            -moz-border-bottom: 2px solid #000;
+            -o-border-bottom: 2px solid #000;
+            border-bottom: 2px solid #000;
+            box-sizing: border-box;
+            color: #000;
+            display: inline-block;
+            font-size: 50px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            font-size: 13px
+        }
+
+        .navbar {
+            z-index: 999999999;
+            width: 570px;
+            float: right
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin: 5px
+        }
+
+        .navbar li a {
+            color: #ffda00;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+            font-size: 13px;
+            font-weight: 600;
+            position: relative;
+            text-transform: uppercase
+        }
+
+        .navbar li a:hover {
+            color: #fff
+        }
+
+        .section1 {
+            width: 100%;
+            min-height: 10px;
+            max-height: 67px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 20px 30px 0 30px;
+            overflow: hidden;
+            position: fixed;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s;
+            background-color: #000;
+            top: 0;
+            z-index: 999999999999
+        }
+
+        .section1 ul {
+            margin: 0 0 30px 0;
+            text-align: right
+        }
+
+        .section1 ul li {
+            margin-bottom: 0;
+            color: #fff !important
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 50px;
+            font-weight: 900;
+            display: inline-block;
+            position: relative;
+            z-index: 99999999
+        }
+
+        .section img {
+            z-index: 999999
+        }
+
+        .section2 {
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0);
+            width: 100%;
+            max-width: 1400px;
+            overflow: hidden;
+            margin: 0 auto;
+            padding-top: 0;
+            display: table;
+            align-items: center;
+            padding: 80px 0 40px 0
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            position: relative
+        }
+
+        .s2_left,
+        .s2_right {
+            display: table-cell;
+            vertical-align: middle;
+            width: 50%
+        }
+
+        .s2_left {
+            width: 40%;
+            height: 550px;
+            margin-right: 50px;
+            position: relative;
+            background: url(img/testimg4.jpg) center no-repeat;
+            background-size: cover;
+            background-color: #fff;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px
+        }
+
+        .s2_right {
+            align-items: left;
+            width: 50%;
+            box-sizing: border-box;
+            padding: 0 20px
+        }
+
+        .s2_right h1 {
+            font-style: italic;
+            margin-bottom: 40px;
+            -webkit-text-shadow: 0 -2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, -2px 0 0 #000, 2px 0 0 #000, -1px -2px 0 #000, 1px -2px 0 #000, -1px 2px 0 #000, 1px 2px 0 #000, -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -3px 0 #000, 2px -3px 0 #000, -2px 3px 0 #000, 2px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 5px 5px 2px rgba(0, 0, 0, .3);
+            -moz-text-shadow: 0 -2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, -2px 0 0 #000, 2px 0 0 #000, -1px -2px 0 #000, 1px -2px 0 #000, -1px 2px 0 #000, 1px 2px 0 #000, -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -3px 0 #000, 2px -3px 0 #000, -2px 3px 0 #000, 2px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 5px 5px 2px rgba(0, 0, 0, .3);
+            -o-text-shadow: 0 -2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, -2px 0 0 #000, 2px 0 0 #000, -1px -2px 0 #000, 1px -2px 0 #000, -1px 2px 0 #000, 1px 2px 0 #000, -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -3px 0 #000, 2px -3px 0 #000, -2px 3px 0 #000, 2px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 5px 5px 2px rgba(0, 0, 0, .3);
+            text-shadow: 0 -2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, -2px 0 0 #000, 2px 0 0 #000, -1px -2px 0 #000, 1px -2px 0 #000, -1px 2px 0 #000, 1px 2px 0 #000, -2px -1px 0 #000, 2px -1px 0 #000, -2px 1px 0 #000, 2px 1px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -3px 0 #000, 2px -3px 0 #000, -2px 3px 0 #000, 2px 3px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 5px 5px 2px rgba(0, 0, 0, .3)
+        }
+
+        .s2_right h1 span {
+            color: red
+        }
+
+        .s2_right ul li {
+            font-size: 20px;
+            text-transform: uppercase;
+            margin: 10px 0;
+            color: #000;
+            -webkit-text-shadow: 0 0 5px #fff;
+            -moz-text-shadow: 0 0 5px #fff;
+            -o-text-shadow: 0 0 5px #fff;
+            text-shadow: 0 0 5px #fff;
+            padding: 5px 10px 5px 35px;
+            font-weight: 700;
+            box-sizing: border-box;
+            position: relative;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px
+        }
+
+        .s2_right ul li::before {
+            content: '';
+            background: url(img/check_mark.svg) center no-repeat;
+            background-size: contain;
+            padding-right: 10px;
+            font-weight: 400;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            width: 30px;
+            height: 30px;
+            color: #ffda00;
+            box-sizing: border-box;
+            padding-left: 5px
+        }
+
+        .s2_left_inner {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            position: relative;
+            z-index: 999;
+            box-sizing: border-box;
+            padding: 20px;
+            overflow: hidden
+        }
+
+        .slogan {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #fff;
+            box-sizing: border-box;
+            padding: 3px 5px;
+            background-color: #000;
+            -webkit-border-bottom-right-radius: 4px;
+            -moz-border-bottom-right-radius: 4px;
+            -o-border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 4px
+        }
+
+        .slogan h2 {
+            background-color: #000;
+            box-sizing: border-box;
+            padding: 5px
+        }
+
+        .slogan span {
+            font-weight: 700;
+            text-transform: uppercase
+        }
+
+        .mobile_menu {
+            width: 100%;
+            height: 140%;
+            margin-left: 100%;
+            position: fixed;
+            background-color: #000;
+            left: 0;
+            top: 0;
+            z-index: 99999999999;
+            padding: 10px;
+            box-sizing: border-box;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -o-transition: .3s;
+            transition: .3s
+        }
+
+        .logotest {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px
+        }
+
+        .logorow {
+            width: 10px;
+            height: 30px
+        }
+
+        .rowlog {
+            width: 10px;
+            height: 10px;
+            -webkit-transition: 2s linear;
+            -moz-transition: 2s linear;
+            -o-transition: 2s linear;
+            transition: 2s linear;
+            -webkit-animation-name: logo;
+            -moz-animation-name: logo;
+            -o-animation-name: logo;
+            animation-name: logo;
+            -webkit-animation-duration: 6s;
+            -moz-animation-duration: 6s;
+            -o-animation-duration: 6s;
+            animation-duration: 6s;
+            animation-iteration-count: infinite
+        }
+
+        @keyframes logo {
+            10% {
+                transform: scale(0)
+            }
+
+            20% {
+                transform: scale(1)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        .row1_1 {
+            background: url(img/logo.jpg) top left no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .3s;
+            -moz-animation-delay: .3s;
+            -o-animation-delay: .3s;
+            animation-delay: .3s
+        }
+
+        .row1_2 {
+            background: url(img/logo.jpg) center left no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .2s;
+            -moz-animation-delay: .2s;
+            -o-animation-delay: .2s;
+            animation-delay: .2s
+        }
+
+        .row1_3 {
+            background: url(img/logo.jpg) bottom left no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .1s;
+            -moz-animation-delay: .1s;
+            -o-animation-delay: .1s;
+            animation-delay: .1s
+        }
+
+        .row2_1 {
+            background: url(img/logo.jpg) -10px top no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .4s;
+            -moz-animation-delay: .4s;
+            -o-animation-delay: .4s;
+            animation-delay: .4s
+        }
+
+        .row2_2 {
+            background: url(img/logo.jpg) -10px center no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .3s;
+            -moz-animation-delay: .3s;
+            -o-animation-delay: .3s;
+            animation-delay: .3s
+        }
+
+        .row2_3 {
+            background: url(img/logo.jpg) -10px bottom no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .2s;
+            -moz-animation-delay: .2s;
+            -o-animation-delay: .2s;
+            animation-delay: .2s
+        }
+
+        .row3_1 {
+            background: url(img/logo.jpg) -20px top no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .5s;
+            -moz-animation-delay: .5s;
+            -o-animation-delay: .5s;
+            animation-delay: .5s
+        }
+
+        .row3_2 {
+            background: url(img/logo.jpg) -20px center no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .4s;
+            -moz-animation-delay: .4s;
+            -o-animation-delay: .4s;
+            animation-delay: .4s
+        }
+
+        .row3_3 {
+            background: url(img/logo.jpg) -20px bottom no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .3s;
+            -moz-animation-delay: .3s;
+            -o-animation-delay: .3s;
+            animation-delay: .3s
+        }
+
+        .row4_1 {
+            background: url(img/logo.jpg) -30px top no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .7s;
+            -moz-animation-delay: .7s;
+            -o-animation-delay: .7s;
+            animation-delay: .7s
+        }
+
+        .row4_2 {
+            background: url(img/logo.jpg) -30px center no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .6s;
+            -moz-animation-delay: .6s;
+            -o-animation-delay: .6s;
+            animation-delay: .6s
+        }
+
+        .row4_3 {
+            background: url(img/logo.jpg) -30px bottom no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .5s;
+            -moz-animation-delay: .5s;
+            -o-animation-delay: .5s;
+            animation-delay: .5s
+        }
+
+        .row5_1 {
+            background: url(img/logo.jpg) -40px top no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .8s;
+            -moz-animation-delay: .8s;
+            -o-animation-delay: .8s;
+            animation-delay: .8s
+        }
+
+        .row5_2 {
+            background: url(img/logo.jpg) -40px center no-repeat;
+            background-size: 170px 30px;
+            -wekbit-animation-delay: .7s;
+            -moz-animation-delay: .7s;
+            -o-animation-delay: .7s;
+            animation-delay: .7s
+        }
+
+        .row5_3 {
+            background: url(img/logo.jpg) -40px bottom no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .6s;
+            -moz-animation-delay: .6s;
+            -o-animation-delay: .6s;
+            animation-delay: .6s
+        }
+
+        .row6_1 {
+            background: url(img/logo.jpg) -50px top no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .9s;
+            -moz-animation-delay: .9s;
+            -o-animation-delay: .9s;
+            animation-delay: .9s
+        }
+
+        .row6_2 {
+            background: url(img/logo.jpg) -50px center no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .8s;
+            -moz-animation-delay: .8s;
+            -o-animation-delay: .8s;
+            animation-delay: .8s
+        }
+
+        .row6_3 {
+            background: url(img/logo.jpg) -50px bottom no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: .7s;
+            -moz-animation-delay: .7s;
+            -o-animation-delay: .7s;
+            animation-delay: .7s
+        }
+
+        .row7_1 {
+            background: url(img/logo.jpg) -60px top no-repeat;
+            background-size: 170px 30px;
+            -webkit-animation-delay: 1s;
+            -moz-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            animation-delay: 1s
+        }
+
+        .row7_2 {
+            background: url(img/logo.jpg) -60px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: .9s
+        }
+
+        .row7_3 {
+            background: url(img/logo.jpg) -60px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: .8s
+        }
+
+        .row8_1 {
+            background: url(img/logo.jpg) -70px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.1s
+        }
+
+        .row8_2 {
+            background: url(img/logo.jpg) -70px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1s
+        }
+
+        .row8_3 {
+            background: url(img/logo.jpg) -70px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: .9s
+        }
+
+        .row9_1 {
+            background: url(img/logo.jpg) -80px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.2s
+        }
+
+        .row9_2 {
+            background: url(img/logo.jpg) -80px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.1s
+        }
+
+        .row9_3 {
+            background: url(img/logo.jpg) -80px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1s
+        }
+
+        .row10_1 {
+            background: url(img/logo.jpg) -90px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.3s
+        }
+
+        .row10_2 {
+            background: url(img/logo.jpg) -90px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.2s
+        }
+
+        .row10_3 {
+            background: url(img/logo.jpg) -90px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.1s
+        }
+
+        .row11_1 {
+            background: url(img/logo.jpg) -100px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.4s
+        }
+
+        .row11_2 {
+            background: url(img/logo.jpg) -100px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.3s
+        }
+
+        .row11_3 {
+            background: url(img/logo.jpg) -100px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.2s
+        }
+
+        .row12_1 {
+            background: url(img/logo.jpg) -110px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.5s
+        }
+
+        .row12_2 {
+            background: url(img/logo.jpg) -110px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.4s
+        }
+
+        .row12_3 {
+            background: url(img/logo.jpg) -110px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.3s
+        }
+
+        .row13_1 {
+            background: url(img/logo.jpg) -120px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.6s
+        }
+
+        .row13_2 {
+            background: url(img/logo.jpg) -120px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.5s
+        }
+
+        .row13_3 {
+            background: url(img/logo.jpg) -120px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.4s
+        }
+
+        .row14_1 {
+            background: url(img/logo.jpg) -130px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.7s
+        }
+
+        .row14_2 {
+            background: url(img/logo.jpg) -130px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.6s
+        }
+
+        .row14_3 {
+            background: url(img/logo.jpg) -130px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.5s
+        }
+
+        .row15_1 {
+            background: url(img/logo.jpg) -140px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.8s
+        }
+
+        .row15_2 {
+            background: url(img/logo.jpg) -140px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.7s
+        }
+
+        .row15_3 {
+            background: url(img/logo.jpg) -140px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.6s
+        }
+
+        .row16_1 {
+            background: url(img/logo.jpg) -150px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 2s
+        }
+
+        .row16_2 {
+            background: url(img/logo.jpg) -150px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.9s
+        }
+
+        .row16_3 {
+            background: url(img/logo.jpg) -150px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.8s
+        }
+
+        .row17_1 {
+            background: url(img/logo.jpg) -160px top no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 2s
+        }
+
+        .row17_2 {
+            background: url(img/logo.jpg) -160px center no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.9s
+        }
+
+        .row17_3 {
+            background: url(img/logo.jpg) -160px bottom no-repeat;
+            background-size: 170px 30px;
+            animation-delay: 1.8s
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>MARAL GEL</title>
+    <link href="img/favicon.png" rel="icon">
+    <link href="css/slick-theme.css" media="nope!" onload="this.media='all'" rel="stylesheet">
+    <link href="css/slick.css" media="nope!" onload="this.media='all'" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,500,900" media="nope!"
+        onload="this.media='all'" rel="stylesheet">
+</head>
+
+<body>
+    <!--retarget-->
+    <!--retarget-->
+    <div id="wrapper">
+        <div class="mobile_menu closed">
+            <ul class="mobile_ul">
+                <li><a class="anchor" href="#anchor_nav"> HOME </a></li>
+                <li><a class="anchor" href="#content"> РАЗМЕРЪТ Е ВАЖЕН </a></li>
+                <li><a class="anchor" href="#maralsecret"> ТАЙНА СЪСТАВКА </a></li>
+                <li><a class="anchor" href="#reviews"> ОТЗИВИ </a></li>
+                <!--                <li><a class="anchor" href="#faq">FAQ</a></li>-->
+                <li><a class="anchor" href="#form"> ПОРЪЧАЙ СЕГА </a></li>
+            </ul>
+        </div>
+        <div class="video_cover">
+            <div class="video_inner" id="anchor_nav">
+                <div class="bgred">
+                    <div class="bgred_inner"></div>
+                </div>
+                <div class="section section1">
+                    <div class="logo">
+                        <div class="logotest">
+                            <div class="logorow logorow1">
+                                <div class="rowlog row1_1"></div>
+                                <div class="rowlog row1_2"></div>
+                                <div class="rowlog row1_3"></div>
+                            </div>
+                            <div class="logorow logorow2">
+                                <div class="rowlog row2_1"></div>
+                                <div class="rowlog row2_2"></div>
+                                <div class="rowlog row2_3"></div>
+                            </div>
+                            <div class="logorow logorow3">
+                                <div class="rowlog row3_1"></div>
+                                <div class="rowlog row3_2"></div>
+                                <div class="rowlog row3_3"></div>
+                            </div>
+                            <div class="logorow logorow4">
+                                <div class="rowlog row4_1"></div>
+                                <div class="rowlog row4_2"></div>
+                                <div class="rowlog row4_3"></div>
+                            </div>
+                            <div class="logorow logorow5">
+                                <div class="rowlog row5_1"></div>
+                                <div class="rowlog row5_2"></div>
+                                <div class="rowlog row5_3"></div>
+                            </div>
+                            <div class="logorow logorow6">
+                                <div class="rowlog row6_1"></div>
+                                <div class="rowlog row6_2"></div>
+                                <div class="rowlog row6_3"></div>
+                            </div>
+                            <div class="logorow logorow7">
+                                <div class="rowlog row7_1"></div>
+                                <div class="rowlog row7_2"></div>
+                                <div class="rowlog row7_3"></div>
+                            </div>
+                            <div class="logorow logorow8">
+                                <div class="rowlog row8_1"></div>
+                                <div class="rowlog row8_2"></div>
+                                <div class="rowlog row8_3"></div>
+                            </div>
+                            <div class="logorow logorow9">
+                                <div class="rowlog row9_1"></div>
+                                <div class="rowlog row9_2"></div>
+                                <div class="rowlog row9_3"></div>
+                            </div>
+                            <div class="logorow logorow10">
+                                <div class="rowlog row10_1"></div>
+                                <div class="rowlog row10_2"></div>
+                                <div class="rowlog row10_3"></div>
+                            </div>
+                            <div class="logorow logorow11">
+                                <div class="rowlog row11_1"></div>
+                                <div class="rowlog row11_2"></div>
+                                <div class="rowlog row11_3"></div>
+                            </div>
+                            <div class="logorow logorow12">
+                                <div class="rowlog row12_1"></div>
+                                <div class="rowlog row12_2"></div>
+                                <div class="rowlog row12_3"></div>
+                            </div>
+                            <div class="logorow logorow13">
+                                <div class="rowlog row13_1"></div>
+                                <div class="rowlog row13_2"></div>
+                                <div class="rowlog row13_3"></div>
+                            </div>
+                            <div class="logorow logorow14">
+                                <div class="rowlog row14_1"></div>
+                                <div class="rowlog row14_2"></div>
+                                <div class="rowlog row14_3"></div>
+                            </div>
+                            <div class="logorow logorow15">
+                                <div class="rowlog row15_1"></div>
+                                <div class="rowlog row15_2"></div>
+                                <div class="rowlog row15_3"></div>
+                            </div>
+                            <div class="logorow logorow16">
+                                <div class="rowlog row16_1"></div>
+                                <div class="rowlog row16_2"></div>
+                                <div class="rowlog row16_3"></div>
+                            </div>
+                            <div class="logorow logorow17">
+                                <div class="rowlog row17_1"></div>
+                                <div class="rowlog row17_2"></div>
+                                <div class="rowlog row17_3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar">
+                        <ul>
+                            <li><a class="anchor nav5" href="#anchor_nav"> HOME </a></li>
+                            <li><a class="anchor nav3" href="#content"> РАЗМЕРЪТ Е ВАЖЕН </a></li>
+                            <li><a class="anchor nav2" href="#maralsecret"> ТАЙНА СЪСТАВКА </a></li>
+                            <li><a class="anchor nav2" href="#reviews"> ОТЗИВИ </a></li>
+                            <!--                            <li><a class="anchor nav2" href="#faq">FAQ</a></li>-->
+                            <li><a class="anchor nav1" href="#form"> ПОРЪЧАЙ СЕГА </a></li>
+                        </ul>
+                        <div class="bar_cover">
+                            <div class="bar bar1"></div>
+                            <div class="bar bar2"></div>
+                            <div class="bar bar3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section section2">
+                    <div class="s2_left">
+                        <div class="s2_left_inner">
+                            <div class="slogan"> НАЙ-ДОБРИЯТ <span> ГЕЛ </span> ЗА УГОЛЕМЯВАНЕ НА ПЕНИСА </div>
+                        </div>
+                    </div>
+                    <div class="s2_right">
+                        <h1> ЩЕ ИМАТЕ <span> ПЕНИС КАТО НА ПОРНО ЗВЕЗДА САМО СЛЕД 1 МЕСЕЦ </span></h1>
+                        <div class="s2_right_inner"></div>
+                        <ul>
+                            <li> ПЕНИС С ДО 5 СМ ПО-ДЪЛЪГ! </li>
+                            <li> УГОЛЕМЯВАНЕ НА ПЕНИСА С 60% </li>
+                            <li> 100% ПРИРОДНИ КОМПОНЕНТИ </li>
+                            <li> БЕЗ СТРАНИЧНИ ЕФЕКТИ </li>
+                            <li> САМО ЕДНО ПРИЛАГАНЕ НА ДЕН </li>
+                        </ul>
+                        <div class="btn_cover2"><button class="btn topBtn anchor" href="#form"> ПОРЪЧАЙ СЕГА <span
+                                    class="btnSpan0"> ОТСТЪПКА! </span><span class="btnSpan2"> -50% </span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div class="section_header">
+                <h1> РАЗМЕРЪТ Е ВАЖЕН! </h1>
+            </div>
+            <div class="section section3">
+                <div class="container container1">
+                    <div class="s3_block_text s3_block_text1">
+                        <div class="s3_block_text_cover s3_block_text_cover_left">
+                            <h2> Повече от 89% от мъжете.. </h2>
+                            <p> Повече от 89% от мъжете не са доволни от размера на пениса си. Всички тези мъже искат да
+                                имат по-добър и вълнуващ сексуален живот. </p>
+                        </div>
+                        <div class="s3_block_head"><img alt class="lazy"
+                                data-src="img/penissize.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/penissize.jpg"></noscript></div>
+                    </div>
+                    <div class="s3_block_text s3_block_text2">
+                        <div class="s3_block_head"><img alt class="lazy"
+                                data-src="img/sizeMatter.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/sizeMatter.jpg"></noscript></div>
+                        <div class="s3_block_text_cover s3_block_text_cover_right">
+                            <h2> КАЧЕСТВОТО НА СЕКСА ЗАВИСИ ОТ РАЗМЕРА! </h2>
+                            <p> Момичетата със сигурност ще оценят не само новите усещания, но и вашето самочувствие. С
+                                Maral gel ще забравите за проблемите в леглото! Опитайте и оценете новото ниво на
+                                сексуални отношения. </p>
+                        </div>
+                    </div>
+                    <div class="s3_block_text s3_block_text3">
+                        <div class="s3_block_text_cover s3_block_text_cover_left">
+                            <h2> 67% от жените не получават удоволствие от секса </h2>
+                            <p> Не е тайна, че много жени имитират оргазъм, но впоследствие признават, че не харесват
+                                размера на пениса на партньора си, качеството на ерекцията и продължителността на самия
+                                акт. </p>
+                        </div>
+                        <div class="s3_block_head"><img alt class="lazy"
+                                data-src="img/sawbig.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/sawbig.jpg"></noscript></div>
+                    </div>
+                    <div class="section_header">
+                        <h1> ЗАЩО ИЗПОЛЗВАМЕ МАРАЛЕН ГЕЛ? </h1>
+                    </div>
+                    <div class="s3_block_text s3_block_text4">
+                        <div class="s3_block_head"><img alt class="lazy"
+                                data-src="img/confident.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/confident.jpg"></noscript></div>
+                        <div class="s3_block_text_cover s3_block_text_cover_right">
+                            <h2> ПОЛЗИ НА MARAL GEL </h2>
+                            <p> Ще спрете да се притеснявате за размера на пениса си и ще можете да доставите на жените
+                                невероятно удоволствие, както и да го изпитате сами. Комбинацията от естествени съставки
+                                ще ви помогне да увеличите размера на пениса си с 5 см през първата седмица! При редовна
+                                употреба резултатите ще са дълготрайни. </p>
+                        </div>
+                    </div>
+                    <div class="s3_block_text s3_block_text5">
+                        <div class="s3_block_text_cover s3_block_text_cover_left">
+                            <h2> ВИЖТЕ РЕЗУЛТАТИТЕ </h2>
+                            <p> С бързи забележими резултати партньорката ви ще ви обърне повече внимание, докато
+                                увереността ви се уголемява. </p>
+                        </div>
+                        <div class="s3_block_head"><img alt class="lazy"
+                                data-src="img/feed.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/feed.jpg"></noscript></div>
+                    </div>
+                </div>
+                <div id="slider">
+                    <div class="slide slide1"><img alt src="img/images.jpg">
+                        <div class="slidePcover">
+                            <p> УВЕЛИЧАВА ТЕСТОСТЕРОН </p>
+                        </div>
+                    </div>
+                    <div class="slide slide2"><img alt src="img/slider1.jpg">
+                        <div class="slidePcover">
+                            <p> ПЕНИС С ДО 5 СМ ПО-ДЪЛЪГ! </p>
+                        </div>
+                    </div>
+                    <div class="slide slide3"><img alt src="img/moreenergy.jpg">
+                        <div class="slidePcover">
+                            <p> 3 ПЪТИ ПОВЕЧЕ ИЗДРЪЖЛИВОСТ В ЛЕГЛОТО </p>
+                        </div>
+                    </div>
+                    <div class="slide slide4"><img alt src="img/slider2.jpg">
+                        <div class="slidePcover">
+                            <p> Уголемяване на пениса с 60% </p>
+                        </div>
+                    </div>
+                    <div class="slide slide5"><img alt src="img/480508_07.jpg">
+                        <div class="slidePcover">
+                            <p> Получете максимално удоволствие от секса! </p>
+                        </div>
+                    </div>
+                    <div class="slide slide6"><img alt src="img/slider3.jpg">
+                        <div class="slidePcover">
+                            <p> 100% ГАРАНЦИЯ </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_header section_header_secret">
+                    <h1> ТАЙНА СЪСТАВКА </h1>
+                </div>
+                <div class="secret" id="maralsecret">
+                    <div class="secret_content">
+                        <div class="secret_right secret_right1 secret_mobile"><img alt class="lazy"
+                                data-src="img/maralExtract.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/maralExtract.jpg"></noscript></div>
+                        <div class="secret_left secret_left1">
+                            <h2> ЕКСТРАКТ ОТ КОРЕН MARAL </h2>
+                            <p> Мараловият корен е коренът на растение, наречено Rhaponticum Carthamoides. Той е
+                                популярен сред спортистите и военните като склад за енергия, издръжливост и сила.
+                                Обикновено се използва от културистите за увеличаване на мускулната маса. </p>
+                        </div>
+                        <div class="secret_right secret_right1 secret_desctop"><img alt class="lazy"
+                                data-src="img/maralExtract.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/maralExtract.jpg"></noscript></div>
+                    </div>
+                    <div class="secret_content">
+                        <div class="secret_right secret_right2">
+                            <div class="secret_img_cover">
+                                <p class="spaces spaces1"> кавернозни пространства </p>
+                                <p class="spaces spaces2"> кавернозни пространства </p><img alt class="lazy"
+                                    data-src="img/penis.jpg"
+                                    src="img/spacer.gif"><noscript><img src="img/penis.jpg"></noscript>
+                            </div>
+                        </div>
+                        <div class="secret_left secret_left2">
+                            <h2> ПОЛЕЗНИ СВОЙСТВА </h2>
+                            <p> Най-важното и добре познато свойство на мараловия корен е: </p>
+                            <ul>
+                                <li> увеличава размера на пенисните кавернозни тела, поради което пенисът се уголемява
+                                </li>
+                                <li> подобрява потентността и засилва сексуалния нагон </li>
+                                <li> увеличава продължителността на половия акт </li>
+                                <li> натурална формула, без странични ефекти </li>
+                                <li> спомага за повишаване на нивото на тестостерон естествено благодарение на
+                                    повишаване на потентността и сексуалния нагон </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="section_header section_header2">
+                    <h1> РЕЗУЛТАТИТЕ ТИ В БЪДЕЩЕ </h1>
+                </div>
+                <div class="container container2">
+                    <div class="s3_week s3_week1">
+                        <div class="s3_week_header">
+                            <h2> 1 </h2>
+                        </div>
+                        <h3> 1ВА-2РА СЕДМИЦА: </h3>
+                        <p> Ерекцията става по-продължителна и по-твърда, чувствителността на пениса се увеличава
+                            двойно. Първите промени се виждат – дължината на пениса се увеличава с 1,5 см. </p>
+                    </div>
+                    <div class="s3_week s3_week2">
+                        <div class="s3_week_header">
+                            <h2> 2 </h2>
+                        </div>
+                        <h3> 2РА-3ТА СЕДМИЦА: </h3>
+                        <p> Пенисът е видимо ПО-ГОЛЯМ, формата му става анатомично правилна. Продължителността на
+                            половия акт се удължава със 70%! </p>
+                    </div>
+                    <div class="s3_week s3_week3">
+                        <div class="s3_week_header">
+                            <h2> 3 </h2>
+                        </div>
+                        <h3> 4 И ПОВЕЧЕ СЕДМИЦИ </h3>
+                        <p> Пенисът е с 4 см по-дълъг! Качеството на секса е значително по-високо. Оргазмът настъпва
+                            по-бързо и трае до 5-7 минути! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section section6" id="reviews">
+                <div class="section_header">
+                    <h1> ОТЗИВИ </h1>
+                </div>
+                <div class="s6_content">
+                    <div class="review review1">
+                        <div class="review_bottom"><img alt class="lazy"
+                                data-src="img/block_11_li2.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/block_11_li2.jpg"></noscript></div>
+                        <div class="review_text">
+                            <h2> Daniel Kostov </h2>
+                            <p> Всяка седмица снимам пениса си в ерекция. Толкова се радвам, че си мисля направо да
+                                закача резултатите на стената! :))) Преди, жена ми се съгласяваше да правим секс веднъж
+                                на 6 месеца, а сега ние просто не ставаме от леглото. </p>
+                        </div>
+                    </div>
+                    <div class="review review2">
+                        <div class="review_bottom"><img alt class="lazy"
+                                data-src="img/block_11_li1.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/block_11_li1.jpg"></noscript></div>
+                        <div class="review_text">
+                            <h2> Vladislav Vanko </h2>
+                            <p> Не можех да повярвам, когато видях ефекта след първата седмица. Новият ми живот започна!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="review review3">
+                        <div class="review_bottom"><img alt class="lazy"
+                                data-src="img/block_11_li3.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/block_11_li3.jpg"></noscript></div>
+                        <div class="review_text">
+                            <h2> Tihomir Denkov </h2>
+                            <p> Пенисът ми се уголеми с 5 см само за три седмици! Не съм очаквал такъв резултат. Сега
+                                съм много щастлив и всичко върви гладко с приятелката ми! Ще продължа да използвам този
+                                гел, защото искам още няколко сантиметра. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section7">
+                <div class="section_header">
+                    <h1> КАК МОЖЕТЕ ДА ПОРЪЧАТЕ MARALGEL </h1>
+                </div>
+                <div class="s7_content">
+                    <div class="s7_block s7_block1">
+                        <div class="s7_top"><img alt class="lazy"
+                                data-src="img/makeorder.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/makeorder.jpg"></noscript></div>
+                        <div class="s7_bottom">
+                            <h2><span> СТЪПКА: 1 </span></h2>
+                            <p> Попълнете формуляра за поръчка </p>
+                        </div>
+                    </div>
+                    <div class="s7_block s7_block2">
+                        <div class="s7_top"><img alt class="lazy"
+                                data-src="img/operator.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/operator.jpg"></noscript></div>
+                        <div class="s7_bottom">
+                            <h2><span> СТЪПКА: 2 </span></h2>
+                            <p> Изберете начин на доставка </p>
+                        </div>
+                    </div>
+                    <div class="s7_block s7_block3">
+                        <div class="s7_top"><img alt class="lazy"
+                                data-src="img/payondelivery.jpg"
+                                src="img/spacer.gif"><noscript><img src="img/payondelivery.jpg"></noscript></div>
+                        <div class="s7_bottom">
+                            <h2><span> СТЪПКА: 3 </span></h2>
+                            <p> Платете за продукта, когато го получите </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section8">
+                <form action="getform.php" id="form" method="post">
+             <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+<input type="hidden" name="utm_campaign" value="{domonetka}">
+                    <div class="form_left">
+                        <h3><span> ПОРЪЧАЙТЕ </span> MARALGEL </h3><img alt class="lazy"
+                            data-src="img/prod1.png"
+                            src="img/spacer.gif">
+                        <div class="pack">
+                            <h4> ОСТАВАТ САМО <span id="packs"></span> ОПАКОВКИ В ТВОЯ ГРАД </h4>
+                        </div>
+                    </div>
+                    <div class="form_right">
+                        <div class="input_cover input_cover1">
+                            <div class="input_inner input_inner1">
+                                <p> ИМЕ И ФАМИЛИЯ </p>
+                            </div><input class="inputName" name="name" placeholder="ИМЕ И ФАМИЛИЯ" required type="text">
+                        </div>
+                        <div class="input_cover input_cover2">
+                            <div class="input_inner input_inner2">
+                                <p> ТЕЛЕФОНЕН НОМЕР </p>
+                            </div><input class="inputPhone" name="phone" placeholder="ТЕЛЕФОНЕН НОМЕР" required
+                                type="tel">
+                        </div>
+                        <div class="price_cover">
+                            <div class="old_price">
+                                <p><span> <span class="priceOld"></span> <span class="currencyMain"></span> </span></p>
+                            </div>
+                            <div class="new_price">
+                                <p><span> <span class="priceMain"></span> <span class="currencyMain"></span> </span></p>
+                            </div>
+                        </div>
+                        <div class="offer">
+                            <div class="offerLeft">
+                                <h3> БРОЯТ Е ОГРАНИЧЕН! </h3>
+                            </div>
+                            <div class="offerRight">
+                                <div class="timerCover">
+                                    <div class="timer">
+                                        <div class="timeBlock hours"> 00 </div>
+                                        <div class="timeDot"> : </div>
+                                        <div class="timeBlock minut"></div>
+                                        <div class="timeDot"> : </div>
+                                        <div class="timeBlock second"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_cover"><button class="js_submit btn"> ПОРЪЧАЙ СЕГА </button></div>
+                        <div class="description2"> * Доставката, разбира се, се прави в пакет без разпознаваеми надпис
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var lazy = [];
+
+        registerListener('load', setLazy);
+        registerListener('load', lazyLoad);
+        registerListener('scroll', lazyLoad);
+        registerListener('resize', lazyLoad);
+
+        function setLazy() {
+
+            document.getElementById('wrapper').removeAttribute('class');
+
+            lazy = document.getElementsByClassName('lazy');
+            console.log('Found ' + lazy.length + ' lazy images');
+        }
+
+        function lazyLoad() {
+            for (var i = 0; i < lazy.length; i++) {
+                if (isInViewport(lazy[i])) {
+                    if (lazy[i].getAttribute('data-src')) {
+                        lazy[i].src = lazy[i].getAttribute('data-src');
+                        lazy[i].removeAttribute('data-src');
+                    }
+                }
+            }
+
+            cleanLazy();
+        }
+
+        function cleanLazy() {
+            lazy = Array.prototype.filter.call(lazy, function (l) {
+                return l.getAttribute('data-src');
+            });
+        }
+
+        function isInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.bottom >= 0 &&
+                rect.right >= 0 &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function registerListener(event, func) {
+            if (window.addEventListener) {
+                window.addEventListener(event, func)
+            } else {
+                window.attachEvent('on' + event, func)
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js">
+    </script>
+    <script src="js/main.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            try {
+                moment.locale("");
+                $('.day-before').text(moment().subtract(1, 'day').format('D.MM.YYYY'));
+                $('.day-after').text(moment().add(1, 'day').format('D.MM.YYYY'));
+            } catch (e) {
+                console.log('moment problems!');
+            }
+        });
+    </script>
+    <!--retarget-->
+    <!--retarget-->
+    <script src="js/12.min.js" type="text/javascript">
+    </script>
+    <div class="ac_footer"><span> © 2023 Copyright. All rights reserved. </span><br><a
+            href="//febatigr.com/content/shared/html/policy_en.html" target="_blank"> Privacy policy </a> | <a
+            href="http://ac-feedback.com/report_form/"> Report </a>
+        <p></p>
+        <script>
+            typeof adc_clearFooter !== 'undefined' && adc_clearFooter();
+        </script>
+    </div>
+    <script>
+       const offer_params = {
+           priceMain : '80',
+           customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+           currencyMain: 'лв',
+           productName : '',
+       };
+   
+   
+       var productName = document.getElementsByClassName("productName");
+       var priceMain = document.getElementsByClassName("priceMain");
+       var priceOld = document.getElementsByClassName("priceOld");
+       var currencyMain = document.getElementsByClassName("currencyMain");
+   
+   
+       for (var i = 0; i < productName.length; i++) {
+           productName[i].innerHTML = offer_params.productName;
+       }
+       for (var i = 0; i < priceMain.length; i++) {
+           priceMain[i].innerHTML = offer_params.priceMain;
+       }
+   
+   
+       if(offer_params.customPriceOld){
+           for (var i = 0; i < priceOld.length; i++) {
+               priceOld[i].innerHTML = offer_params.customPriceOld;
+           }
+       }else{
+           for (var i = 0; i < priceOld.length; i++) {
+               priceOld[i].innerHTML = offer_params.priceMain * 2;
+           }
+       }
+   
+   
+       for (var i = 0; i < currencyMain.length; i++) {
+           currencyMain[i].innerHTML = offer_params.currencyMain;
+       }
+    </script>
+<script>
+   $('[name="name"]').on('input change', function () {
+       var val = $(this).val();
+       $(this).val(val.replace(/[0-9+]/g, ''));
+   });
+   $('[name="name"]').attr('autocomplete', 'name');
+   $('[name="name"]').attr('pattern', '.{2,25}');
+   $('[name="phone"]').on('input change', function (e) {
+       var val = $(this).val();
+       $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+   });
+   $('[name="phone"]').get(0).type = 'tel';
+   $('[name="phone"]').attr('autocomplete', 'tel');
+   $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

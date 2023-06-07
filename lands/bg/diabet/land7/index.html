@@ -1,0 +1,731 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Gluconol </title>
+  <meta name="description" content="Gluconol">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="img/favicon.png">
+  <meta property="og:image" content="img/preview.jpg">
+
+  <link rel="stylesheet" href="css/styles.min.css">
+
+  <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+
+  <link rel="stylesheet" href="index_files/owl.carousel.min.css" />
+  <link rel="stylesheet" href="index_files/owl.theme.default.css" />
+  <script type="text/javascript" src="cdn/js/jquery.js"></script>
+
+
+  <script src="index_files/owl.carousel.min.js"></script>
+  <script src="index_files/slider.js"></script>
+
+</head>
+
+<body>
+  <!-- begin delivery-block -->
+  <style>
+    .delivery-wrapper {
+      position: fixed;
+      display: flex;
+      z-index: 10000;
+      justify-content: center;
+      top: 0;
+      left: 0;
+      font-family: sans-serif !important;
+    }
+
+    .delivery-info {
+      display: flex;
+      position: relative;
+      background-color: #ffffffde;
+      align-items: center;
+      text-align: center;
+      border: 1px solid black;
+      border-top: 0px !important;
+      border-radius: 0px 0px 10px 10px;
+      width: 80%;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .delivery-info {
+        width: 100%;
+        font-size: 12px;
+      }
+
+      .delivery-info>svg {
+        width: 200px;
+        height: 150px;
+      }
+    }
+
+    .delivery_close_btn {
+      position: absolute;
+      color: red;
+      top: -10px;
+      right: 0;
+      margin: 5px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+
+  <div class="delivery-wrapper" style="display: none;">
+    <div class="delivery-info" style="margin: 0; padding: 0;">
+      <span class="delivery_close_btn">&#215;</span>
+      <svg xmlns="http://www.w3.org/2000/svg" style="padding-left: 10px;" id="Capa_1"
+        enable-background="new 0 0 484.559 484.559" height="70" viewBox="0 0 484.559 484.559" width="100">
+        <g>
+          <g id="XMLID_107_">
+            <g>
+              <path
+                d="m484.426 222.033c1.77 22.9-14.34 43.23-35.97 45.4-16.56 1.66-31.54-7.81-38.46-22.6l-19.63 1.73-14.82 7.15c-3.39 1.63-5.67 4.87-6.19 8.59-1.4 10.03-3.94 19.69-7.47 28.87-1.2 3.11-.99 6.58.64 9.48l5.28 9.44 14.68 9.85c7.74-2.96 16.75-2.25 24.16 2.72 12.56 8.43 15.57 25.78 6.23 37.99-8.04 10.52-22.99 13.41-34.37 6.65-7.25-4.3-11.63-11.44-12.7-19.07l-16.27-10.91-10.24-1.25c-3.52-.43-7.02.78-9.58 3.23-8.64 8.23-18.4 15.3-29.01 20.96-3.57 1.9-5.86 5.55-6.11 9.58l-1.3 20.74 6.44 25.55c10.96 3.06 20.02 11.75 23 23.57 4.5 17.87-6.6 36-24.7 40.03-16.33 3.64-33.08-5.88-38.27-21.79-4.04-12.42-.33-25.26 8.21-33.65l-6.47-25.7-9.99-16.06c-2.68-4.31-7.42-6.86-12.5-6.85-.03 0-.05 0-.08 0-8.75 0-17.31-.87-25.59-2.5-4.93-.98-10.02.58-13.48 4.23l-13.2 13.93-14.78 30.66c3.46 7.03 3.77 15.52.11 23.13-6.58 13.64-23.36 19.06-36.77 11.52-11.48-6.47-16.45-20.75-11.45-32.95 3.41-8.32 10.48-13.88 18.48-15.74l14.87-30.86 2.92-20.71c.53-3.82-.93-7.67-3.93-10.09-11.83-9.6-21.97-21.19-29.9-34.27-1.97-3.25-5.51-5.22-9.31-5.25l-20.68-.2-22.64 7.12c-1.59 14.08-11.23 26.59-25.61 31.11-19.32 6.08-39.9-4.54-46.17-23.74-6.27-19.19 4.32-40.18 23.49-46.52 13.42-4.44 27.52-.75 37.06 8.32l24.03-7.56 17.55-12.51c2.61-1.85 4-4.95 3.74-8.13-.29-3.53-.44-7.09-.44-10.69 0-19.56 4.3-38.13 11.98-54.83 1.12-2.45 1.09-5.27-.09-7.69l-5.2-10.63-14.11-10.65c-7.9 2.53-16.85 1.32-23.97-4.05-12.08-9.12-14.12-26.61-4.12-38.28 8.61-10.05 23.7-12.11 34.69-4.73 7 4.7 10.98 12.06 11.62 19.74l15.64 11.8 15.76 2.81c11.47-10.65 24.84-19.28 39.53-25.33l3.7-22.48-4.67-23.22c-13.82-3.56-25.04-14.15-28.06-28.27-4.26-19.95 9.45-39.38 30.63-43.39 21.17-4.01 41.79 8.9 46.05 28.85 3.19 14.93-3.68 29.56-16.22 37.66l4.41 21.9 10.83 17.28c.71 1.13 1.95 1.81 3.28 1.81h.02c24.8 0 48.02 6.9 67.85 18.88 1.09.65 2.43.74 3.58.2l16.96-7.86 19.8-21.42c-1.19-7.68 1-15.82 6.69-21.97 10.28-11.11 27.88-11.39 38.5-.28 9.31 9.75 9.67 25.3.83 35.48-5.72 6.59-13.93 9.63-21.95 9.03l-19.8 21.42-6.43 17.3c-.45 1.2-.25 2.54.5 3.58 7.81 10.72 14.04 22.66 18.34 35.48 1.19 3.52 3.99 6.26 7.57 7.27l16.1 4.51 20.92-1.85c5.13-14.79 17.94-25.98 33.67-27.56 21.63-2.17 40.6 14.64 42.36 37.54z"
+                fill="#eb5569" />
+            </g>
+          </g>
+          <g id="XMLID_8_">
+            <g>
+              <circle cx="238.936" cy="243.983" fill="#f58a97" r="97.52" />
+            </g>
+          </g>
+          <path
+            d="m171.14 243.983c0-48.807 35.852-89.238 82.658-96.395-4.846-.741-9.809-1.125-14.862-1.125-53.86 0-97.52 43.66-97.52 97.52s43.66 97.52 97.52 97.52c5.053 0 10.016-.384 14.862-1.125-46.805-7.158-82.658-47.589-82.658-96.395z"
+            fill="#f07281" />
+          <g fill="#eb5569">
+            <circle cx="74.853" cy="38.921" r="27.771" />
+            <circle cx="67.262" cy="404.986" r="18.343" />
+            <circle cx="404.051" cy="435.118" r="27.018" />
+            <circle cx="209.002" cy="217.089" r="25.189" />
+            <circle cx="229.222" cy="295.328" r="17.145" />
+            <circle cx="283.058" cy="243.983" r="14.397" />
+          </g>
+        </g>
+      </svg>
+      <p style="text-align: initial; margin: 0; padding-left: 20px; padding-right: 20px; font-size: 15px;"
+        class="delivery-text">
+        <b style="color: red;">COVID-19 : </b>
+        Уважаеми клиенти, не се безпокойте! Ние сме предприели всички възможни предпазни мерки, с цел да осигурим Вашата
+        безопастност: нашите шофьори и куриери използват маски и ръкавици за еднократна употреба, спазват безопасна
+        дистанция при предаване на пратките, стараят се да намалят максимално времето на контакт с клиентите. Всички
+        пратки се обработват с дезинфекциращи средства.
+      </p>
+    </div>
+    <script>
+      "use strict";
+      const deliveryBlock = document.querySelector(".delivery-wrapper");
+      const btn_close = document.querySelector(".delivery_close_btn");
+      btn_close.addEventListener("click", () => {
+        deliveryBlock.remove();
+      });
+    </script>
+  </div>
+  <!-- end -->
+  <div class="main-banner">
+    <div class="container">
+      <div class="logo wow fadeInDown lt0" style="visibility: visible; animation-name: fadeInDown;">
+        Gluconol
+      </div>
+      <div class="main-banner-subtitle wow fadeIn lt1" data-wow-delay=".4s"
+        style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">Нормализира нивото на глюкозата и
+        стимулира производството на инсулин</div>
+      <div class="row main-banner-row align-items-end">
+        <div class="col-lg-3">
+          <ul class="main-banner-list wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+            <li><i class="wow pulse animated" data-wow-iteration="12"
+                style="visibility: visible; animation-iteration-count: 12; animation-name: pulse;"></i><span
+                class="lt2">Увеличава чувствителността към инсулин</span></li>
+            <li><i class="wow pulse animated" data-wow-iteration="12"
+                style="visibility: visible; animation-iteration-count: 12; animation-name: pulse;"></i><span
+                class="lt3">Нормализира метаболизъма</span></li>
+            <li><i class="wow pulse animated" data-wow-iteration="12"
+                style="visibility: visible; animation-iteration-count: 12; animation-name: pulse;"></i><span
+                class="lt4">Почиства кръвоносните съдове от холестерола</span></li>
+            <li><i class="wow pulse animated" data-wow-iteration="12"
+                style="visibility: visible; animation-iteration-count: 12; animation-name: pulse;"></i><span
+                class="lt5">Дава тласък на енергия</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-5"><img alt="main-banner-product" class="main-banner-product wow fadeIn" data-wow-delay="1s"
+            src="img/product.png" style="visibility: visible; animation-delay: 1s; animation-name: fadeIn;"></div>
+        <div class="col-lg-4">
+          <div class="main-banner-form wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+            <div class="main-banner-form-title">
+              <div class="left-z lt6">Само днес</div>
+              <div class="corner-z lt7"> <span>отстъпка</span> 50%</div>
+            </div>
+
+            <div class="timer">
+              <div class="count-block">
+
+                <div class="countdown">
+                  <div class="countdown__item hoursSH">00</div>
+                  <div class="countdown__item minutesSH">39</div>
+                  <div class="countdown__item secondsSH">51</div>
+                </div>
+              </div>
+            </div>
+
+            <form action="getform.php" method="post" class="order_form">
+              <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+              <input type="hidden" name="utm_campaign" value="{domonetka}">
+              <label>
+                <input name="name" placeholder="Имя" required="" type="text">
+              </label>
+              <label>
+                <input name="phone" placeholder="Телефон" required="" type="text">
+              </label>
+
+              <div class="main-banner-price">
+                <div class="price_old"><span class="priceOld"></span> <span class="currencyMain"></span></div>
+                <div class="price_main"><span class="priceMain"></span> <span class="currencyMain"></span></div>
+              </div>
+
+              <button class="main-form-button wow tada lt8" data-wow-delay="1.5s"
+                style="visibility: visible; animation-delay: 1.5s; animation-name: tada;"
+                type="submit">Поръчайте</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="disease-description">
+    <div class="container">
+      <div class="h1 lt9">Захарен диабет</div>
+      <div class="disease-txt wow fadeIn mobile-important-hide lt10" style="visibility: hidden; animation-name: none;">
+        Това е хронично заболяване, което при липса на подходящо лечение води до сериозни усложнения, дори до смърт.
+        Въпреки това повечето хора продължават да са несериозни относно здравето си.</div>
+      <div class="row disease-statistic-row align-items-center">
+        <div class="col-lg-6 mobile-important-hide">
+          <div class="disease-statistic">
+            <div class="disease-statistic-title wow pulse lt11" data-wow-iteration="5"
+              style="visibility: hidden; animation-iteration-count: 5; animation-name: none;">Статистика:</div>
+            <div class="disease-statistic-list">
+              <ul>
+                <li class="lt12"><i class="wow pulse" data-wow-iteration="50"
+                    style="visibility: hidden; animation-iteration-count: 50; animation-name: none;"></i> <span
+                    class="wow pulse d-inline-block" data-wow-iteration="5"
+                    style="visibility: hidden; animation-iteration-count: 5; animation-name: none;">1.6 милиона смъртни
+                  </span>случая през 2019 г. се дължат пряко на диабет.</li>
+                <li class="lt13"><i class="wow pulse" data-wow-iteration="50"
+                    style="visibility: hidden; animation-iteration-count: 50; animation-name: none;"></i> <span
+                    class="wow pulse d-inline-block" data-wow-iteration="5"
+                    style="visibility: hidden; animation-iteration-count: 5; animation-name: none;">2.2 милиона смъртни
+                  </span>случая се дължат на висока кръвна глюкоза.</li>
+                <li class="lt14"><i class="wow pulse" data-wow-iteration="50"
+                    style="visibility: hidden; animation-iteration-count: 50; animation-name: none;"></i> <span
+                    class="wow pulse d-inline-block" data-wow-iteration="5"
+                    style="visibility: hidden; animation-iteration-count: 5; animation-name: none;">Над 50%</span> от
+                  смъртните случаи от диабет са настъпили преди 70-годишна възраст.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6"><img alt="disease" class="disease-img wow fadeInDown" data-wow-delay="1s" src="img/2.jpg"
+            style="visibility: hidden; animation-delay: 1s; animation-name: none;"></div>
+      </div>
+      <div class="disease-txt-sm wow fadeIn lt15" style="visibility: hidden; animation-name: none;">Заболелите от
+        захарен диабет с всяка година стават все повече. За сравнение: през 1980 г. страдат от диабет, <span
+          class="wow pulse d-inline-block" data-wow-iteration="5"
+          style="visibility: hidden; animation-iteration-count: 5; animation-name: none;">108 милиона души</span> по
+        целия свят. По данни за 2019 г. броят на случаите се е увеличил до <span class="wow pulse d-inline-block"
+          data-wow-iteration="5" style="visibility: hidden; animation-iteration-count: 5; animation-name: none;">463
+          милиона.</span> </div>
+    </div>
+  </div>
+  <div class="complications">
+    <div class="container">
+      <div class="h1 lt16">Усложнения на диабета</div>
+      <div class="complications-row wow fadeIn" style="visibility: hidden; animation-name: none;">
+        <div class="comp-1 comp-title wow fadeInDown lt17" data-wow-delay="1s"
+          style="visibility: hidden; animation-delay: 1s; animation-name: none;">Поражения на големите кръвоносни
+          съдове:</div>
+        <div class="comp-3 comp-description lt18"><img alt="" class="complications-mobile-img" src="img/b1.png"><span
+            class="wow fadeInDown" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">Инсулт на </span>ГЛАВНИЯ МОЗЪК
+        </div>
+        <div class="comp-4 comp-description lt19"><img alt="" class="complications-mobile-img" src="img/b3.png"><span
+            class="wow fadeInDown" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">СЪРЦЕ </span>коронарна болест,
+          <br>инфаркт на миокарда</div>
+        <div class="comp-5 comp-description lt20"><img alt="" class="complications-mobile-img" src="img/b5.png"><span
+            class="wow fadeInDown" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">Гангрена на </span>КРАКА и
+          ампутация</div>
+        <div class="comp-2 comp-title wow fadeInDown mobile-important-hide lt21" data-wow-delay="1s"
+          style="visibility: hidden; animation-delay: 1s; animation-name: none;">Поражения на малките кръвоносни съдове:
+        </div>
+        <div class="comp-6 comp-description mobile-important-hide lt22"><img alt="" class="complications-mobile-img"
+            src="img/b2.png"><span class="wow fadeInDown" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">ОЧИ </span>загуба на зрението</div>
+        <div class="comp-7 comp-description mobile-important-hide lt23"><img alt="" class="complications-mobile-img"
+            src="img/b4.png"><span class="wow fadeInDown" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">БЪБРЕЦИ</span> диабетна
+          нефропатия,<br> нужда от хемодиализа</div>
+        <div class="comp-8 comp-description mobile-important-hide lt24"><img alt="" class="complications-mobile-img"
+            src="img/b6.png"><span class="wow fadeInDown" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">Нерви</span> диабетна невропатия
+        </div>
+      </div>
+      <div class="warning-banner wow pulse lt25" data-wow-iteration="5"
+        style="visibility: hidden; animation-iteration-count: 5; animation-name: none;">Помислете за последствията!
+      </div>
+    </div>
+  </div>
+  <div class="product-total-description">
+    <div class="container">
+      <div class="h1 logo-font wow fadeInDown lt26" style="visibility: hidden; animation-name: none;">
+        Gluconol
+      </div>
+      <div class="product-total-txt wow fadeIn mobile-important-hide lt27"
+        style="visibility: hidden; animation-name: none;">Не само ефективно регулира нивото на глюкоза в кръвта, но също
+        така има насочен ефект върху целевите клетки на инсулин и бета клетки на панкреаса, като възстановява функциите
+        и състоянието на органите, засегнати от сериозно заболяване.</div>
+      <div class="product-total-list-title wow fadeIn mobile-important-hide lt28"
+        style="visibility: hidden; animation-name: none;">Gluconol има и допълнително действие:</div>
+      <div class="row main-banner-row align-items-end">
+        <div class="col-lg-6">
+          <ul class="main-banner-list wow fadeIn" style="visibility: hidden; animation-name: none;">
+            <li class="lt29"><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i> регулира имунните
+              функции</li>
+            <li><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i><span class="lt30">
+                подобрява състоянието на кожата</span></li>
+            <li><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i><span class="lt31">
+                подрежда метаболитните процеси</span></li>
+            <li><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i><span class="lt32">
+                нормализира психоемоционалното състояние.</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-6"><img alt="main-banner-product" class="main-banner-product wow fadeIn" data-wow-delay="1s"
+            src="img/product.png" style="visibility: hidden; animation-delay: 1s; animation-name: none;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="catch-banner">
+    <div class="container">
+      <div class="catch-banner-title wow fadeInDown lt33" style="visibility: hidden; animation-name: none;">
+        <span>Gluconol</span> — ВАШИЯТ ПЪЛНОЦЕНЕН ЖИВОТ С ДИАБЕТ!</div><a
+        class="navigate-btn catch-banner-btn wow tada lt34" data-wow-delay="1s" href="#footer-form"
+        style="visibility: hidden; animation-delay: 1s; animation-name: none;">Поръчайте</a>
+    </div>
+  </div>
+  <div class="composition">
+    <div class="container">
+      <div class="h1 lt35"> <span>Gluconol</span> се състои само от естествени съставки</div>
+      <div class="row composition-row">
+        <div class="col-lg-6">
+          <div class="composition-card wow fadeInUp" style="visibility: hidden; animation-name: none;">
+            <div class="composition-card-title">
+              <img alt="icon" class="wow pulse" data-wow-delay=".1s" data-wow-iteration="5" src="img/z1.png"
+                style="visibility: hidden; animation-delay: 0.1s; animation-iteration-count: 5; animation-name: none;"><span
+                class="lt36">Банаба</span>
+            </div>
+            <div class="composition-card-description lt37">Полезното свойство на банаба се дължи на съдържанието на
+              коросолова киселина, която понижава кръвната захар. Тя съдържа и галова киселина, която понижава
+              холестерола в кръвта.</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="composition-card wow fadeInUp dark" style="visibility: hidden; animation-name: none;">
+            <div class="composition-card-title">
+              <img alt="icon" class="wow pulse" data-wow-delay=".1s" data-wow-iteration="5" src="img/z2.png"
+                style="visibility: hidden; animation-delay: 0.1s; animation-iteration-count: 5; animation-name: none;"><span
+                class="lt38">Трибулус<br> терестрис</span>
+            </div>
+            <div class="composition-card-description lt39">Съдържа голямо количество смола, аскорбинова киселина,
+              алкалоиди, сапонини, стероидни гликозиди и танини. Гликозидите имат инсулиноподобен ефект.</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="composition-card wow fadeInUp dark" style="visibility: hidden; animation-name: none;">
+            <div class="composition-card-title">
+              <img alt="icon" class="wow pulse" data-wow-delay=".1s" data-wow-iteration="5" src="img/z3.png"
+                style="visibility: hidden; animation-delay: 0.1s; animation-iteration-count: 5; animation-name: none;"><span
+                class="lt40">Джимнема<br> силвестре</span>
+            </div>
+            <div class="composition-card-description lt41">Съдържа химнемова киселина, която се бори с желанието за
+              сладко. Освен това помага за възстановяване на клетките на панкреаса, участващи в производството на
+              инсулин.</div>
+          </div>
+        </div>
+        <div class="col-lg-6 mobile-important-hide">
+          <div class="composition-card wow fadeInUp" style="visibility: hidden; animation-name: none;">
+            <div class="composition-card-title">
+              <img alt="icon" class="wow pulse" data-wow-delay=".1s" data-wow-iteration="5" src="img/z4.png"
+                style="visibility: hidden; animation-delay: 0.1s; animation-iteration-count: 5; animation-name: none;"><span
+                class="lt42">Гинкго Билоба</span>
+            </div>
+            <div class="composition-card-description lt43">Има положителен ефект върху клетките на панкреаса,
+              нормализира обменните процеси, има съдоразширяващ ефект, укрепва стените на кръвоносните съдове.</div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-6 mobile-important-hide">
+        <div class="composition-card wow fadeInUp" style="visibility: hidden; animation-name: none;">
+          <div class="composition-card-title">
+              <img alt="icon" class="wow pulse" data-wow-delay=".1s" data-wow-iteration="5" src="img/z5.png" style="visibility: hidden; animation-delay: 0.1s; animation-iteration-count: 5; animation-name: none;"><span class="lt44">Канела</span>
+          </div>
+          <div class="composition-card-description lt45">Ускорява метаболизъма, понижава кръвната захар, понижава лошия холестерол, подобрява състоянието на кръвоносните съдове и повишава чувствителността на меките тъкани към инсулин.</div>
+        </div>
+      </div>
+      <div class="col-lg-6 mobile-important-hide">
+        <div class="composition-card wow fadeInUp dark" style="visibility: hidden; animation-name: none;">
+          <div class="composition-card-title">
+              <img alt="icon" class="wow pulse" data-wow-delay=".1s" data-wow-iteration="5" src="img/z6.png" style="visibility: hidden; animation-delay: 0.1s; animation-iteration-count: 5; animation-name: none;"><span class="lt46">Астаксантин</span>
+          </div>
+          <div class="composition-card-description lt47">Мощен антиоксидант — помага за намаляване на оксидативния стрес от хипергликемия, активира червените кръвни клетки и укрепва имунната система. 4 пъти по-ефективно от лутеина предпазва зрението.</div>
+        </div>
+      </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="opinion mobile-important-hide">
+    <div class="container">
+      <div class="row align-items-end flex-lg-row-reverse">
+        <div class="col-lg-7">
+          <div class="opinion-title wow fadeIn lt48" style="visibility: hidden; animation-name: none;">Мнение <br>на
+            специалист</div>
+          <div class="opinion-description wow fadeIn" style="visibility: hidden; animation-name: none;">
+            <p class="lt49"> <span></span> Диабетът има два механизъма на развитие: първият — повреда на панкреаса,
+              свързана с нарушена секреция на инсулин, а вторият — наличието на инсулинова резистентност (загуба на
+              клетъчна чувствителност към инсулин).</p>
+            <p class="lt50">Gluconol стимулира производството на инсулин, заздравява панкреаса и възстановява увредените
+              клетки на органите. Заедно с това повишава чувствителността към посочения хормон.</p>
+            <p class="lt51">Това лекарство има положителен ефект върху целият организъм: елиминира хипертонията и
+              холестеролните плаки – основни спътници на диабета; насърчава регенерацията на структурата на черния дроб
+              и белите дробове; осигурява хранене на нервната система.</p>
+            <p class="lt52">Gluconol допринася за отслабването, като неутрализира най-честата причина за заболяването –
+              наднорменото тегло. Намалява желанието за сладко, блокира вкусовите зони на езика, които реагират на
+              захарта.</p>
+            <p class="lt53">Определено Gluconol е едно от най-добрите лекарства за диабет днес. То засяга проблема
+              комплексно, елиминирайки няколко причини за заболяването наведнъж, и показва отлични резултати.</p>
+          </div>
+          <div class="signa lt54">Иван Петров<span> Практикуващ ендокринолог, професор от катедрата по
+              ендокринология</span> </div>
+        </div>
+        <div class="col-lg-5"><img alt="doc" class="opinion-img wow fadeInLeft" src="img/doc.jpg"
+            style="visibility: hidden; animation-name: none;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="catch-banner">
+    <div class="container">
+      <div class="catch-banner-title wow fadeInDown lt55" style="visibility: hidden; animation-name: none;">
+        <span>Gluconol</span> — ВАШИЯТ ПЪЛНОЦЕНЕН ЖИВОТ С ДИАБЕТ!</div><a
+        class="navigate-btn catch-banner-btn wow tada lt56" data-wow-delay="1s" href="#footer-form"
+        style="visibility: hidden; animation-delay: 1s; animation-name: none;">Поръчайте</a>
+    </div>
+  </div>
+  <div class="result">
+    <div class="container">
+      <div class="h1 lt57">Резултат от прилагането на<span> Gluconol</span> </div>
+      <div class="row result-row">
+        <div class="col-lg-6">
+          <div class="result-list">
+            <ul>
+              <li><i class="wow pulse" data-wow-iteration="10"
+                  style="visibility: hidden; animation-iteration-count: 10; animation-name: none;"></i><span
+                  class="lt58"> Стабилно и ниско ниво на захар</span></li>
+              <li><i class="wow pulse" data-wow-iteration="10"
+                  style="visibility: hidden; animation-iteration-count: 10; animation-name: none;"></i><span
+                  class="lt59"> Намален риск от усложнения</span></li>
+              <li><i class="wow pulse" data-wow-iteration="10"
+                  style="visibility: hidden; animation-iteration-count: 10; animation-name: none;"></i><span
+                  class="lt60"> Подобряване на качеството на живот</span></li>
+              <li><i class="wow pulse" data-wow-iteration="10"
+                  style="visibility: hidden; animation-iteration-count: 10; animation-name: none;"></i><span
+                  class="lt61"> Отлага приемане на инсулин</span></li>
+              <li><i class="wow pulse" data-wow-iteration="10"
+                  style="visibility: hidden; animation-iteration-count: 10; animation-name: none;"></i><span
+                  class="lt62"> Намаляването на количеството на консумираните хапчета</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="feedback">
+    <div class="container">
+      <div class="h1 lt63">Отзиви на клиенти</div>
+      <div class="feedback-slider owl-carousel owl-theme">
+        <div>
+          <div class="feedback-slide-card">
+            <img src="img/ava1.png" alt="ava">
+            <div class="feedback-slide-card-description lt65">Взимам Gluconol вече трета седмица. Всеки ден усещам
+              постоянно подобрение на състоянието си: умората изчезна, апетитът се върна към нормалното. След хранене
+              нямам такива резки скокове в захарта, както преди. Но най-важното е, че пристъпите на стенокардия, които
+              ме измъчваха през последните няколко години, минаха. Най-накрая се чувствам практически здрава! <div
+                class="slider-signa">Марина Пенчева, 55 години</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="feedback-slide-card">
+            <img src="img/ava2.png" alt="ava">
+            <div class="feedback-slide-card-description lt66">Наднорменото тегло и диабетът винаги вървят ръка за ръка.
+              Всъщност през целия си живот бях пълен, но след четиридесет теглото започна да нараства като мая.
+              Приблизително по същото време ми откриха диабет. Благодарение на Gluconol успях постепенно да намаля
+              теглото, но все още продължавам пътя към целта си. Вече се чувствам страхотно: няма повече скокове на
+              глюкоза и неприятни симптоми, които пречат на пълноценния живот. <div class="slider-signa">Ана Димитрова,
+                53 години</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="feedback-slide-card">
+            <img src="img/ava3.png" alt="ava">
+            <div class="feedback-slide-card-description lt64">Когато научих, че имам диабет, реших, че нормалният живот
+              е приключил. Сега съм почти инвалид, принуден постоянно да следи нивото на захарта и да пие хапчета с
+              шепи. След курса на Gluconol отпаднаха умората и сънливостта, кръвната захар се върна към нормалното. И
+              най-важното спрях често да тичам до тоалетната. Чувствам се като здрав и нормален човек. Препоръчвам го на
+              всички! <div class="slider-signa">Виктор Ковалев, 62 години</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="use">
+    <div class="container">
+      <div class="h1 lt71">Начин на прилагане</div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="use-card use-card-1 wow fadeInLeft lt72" data-wow-delay="1s"
+            style="visibility: hidden; animation-delay: 1s; animation-name: none;"> <span>по 1 капсула<br> сутрин
+            </span>Приемайте капсули<br> преди хранене</div>
+        </div>
+        <div class="col-lg-4">
+          <div class="use-card use-card-2 wow fadeInLeft lt73" data-wow-delay=".5s"
+            style="visibility: hidden; animation-delay: 0.5s; animation-name: none;"> <span>по 1 капсула
+              <br>вечер</span> Приемайте капсули <br>преди хранене</div>
+        </div>
+        <div class="col-lg-4 mobile-important-hide">
+          <div class="use-card use-card-3 wow fadeInLeft" data-wow-delay=".1s"
+            style="visibility: hidden; animation-delay: 0.1s; animation-name: none;"></div>
+        </div>
+      </div>
+      <div class="use-subtitle lt74">Резултатът от приемането на курса – упорита ремисия за дълго време!</div>
+    </div>
+  </div>
+  <div class="main-banner">
+    <div class="container">
+      <div class="logo wow fadeInDown lt75" style="visibility: hidden; animation-name: none;">Gluconol</div>
+      <div class="main-banner-subtitle wow fadeIn lt76" data-wow-delay=".4s"
+        style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">Нормализира нивото на глюкозата и
+        стимулира производството на инсулин</div>
+      <div class="row main-banner-row align-items-end">
+        <div class="col-lg-3">
+          <ul class="main-banner-list wow fadeIn" style="visibility: hidden; animation-name: none;">
+            <li><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i><span
+                class="lt2">Увеличава чувствителността към инсулин</span></li>
+            <li><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i><span
+                class="lt3">Нормализира метаболизъма</span></li>
+            <li><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i><span
+                class="lt4">Почиства кръвоносните съдове от холестерола</span></li>
+            <li><i class="wow pulse" data-wow-iteration="12"
+                style="visibility: hidden; animation-iteration-count: 12; animation-name: none;"></i><span
+                class="lt5">Дава тласък на енергия</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-5"><img alt="main-banner-product" class="main-banner-product wow fadeIn" data-wow-delay="1s"
+            src="img/product.png" style="visibility: hidden; animation-delay: 1s; animation-name: none;"></div>
+        <div class="col-lg-4">
+          <div class="main-banner-form wow fadeIn" style="visibility: hidden; animation-name: none;">
+            <div class="main-banner-form-title" id="footer-form">
+              <div class="left-z lt81">Само днес</div>
+              <div class="corner-z lt82"> <span>50%</span> отстъпка</div>
+            </div>
+
+            <div class="timer">
+              <div class="count-block">
+
+                <div class="countdown">
+                  <div class="countdown__item hoursSH">00</div>
+                  <div class="countdown__item minutesSH">39</div>
+                  <div class="countdown__item secondsSH">51</div>
+                </div>
+              </div>
+            </div>
+
+            <form action="getform.php" method="post" class="order_form" id="order_form">
+              <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+              <input type="hidden" name="utm_campaign" value="{domonetka}">
+              <label>
+                <input name="name" placeholder="Имя" required="" type="text">
+              </label>
+              <label>
+                <input name="phone" placeholder="Телефон" required="" type="text">
+              </label>
+
+              <div class="main-banner-price">
+                <div class="price_old"><span class="priceOld"></span> <span class="currencyMain"></span></div>
+                <div class="price_main"><span class="priceMain"></span> <span class="currencyMain"></span></div>
+              </div>
+
+              <button class="main-form-button wow tada lt83" data-wow-delay="1.5s"
+                style="visibility: hidden; animation-delay: 1.5s; animation-name: none;"
+                type="submit">Поръчайте</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="how-work">
+    <div class="container">
+      <div class="h1 lt84">Как работим</div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="how-work-card wow fadeInUp" style="visibility: hidden; animation-name: none;">
+            <img alt="e1" src="img/e1.png">
+            <div class="how-work-card-description lt85">Оставете заявка на нашия уебсайт</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="how-work-card wow fadeInUp" style="visibility: hidden; animation-name: none;">
+            <img alt="e1" src="img/e2.png">
+            <div class="how-work-card-description lt86">Операторът ще се свърже с Вас, за да потвърди поръчката</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="how-work-card wow fadeInUp" style="visibility: hidden; animation-name: none;">
+            <img alt="e1" src="img/e3.png">
+            <div class="how-work-card-description lt87">Плащане при получаване на поръчката</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="wow flipInX lt88" data-wow-delay="1s"
+    style="visibility: hidden; animation-delay: 1s; animation-name: none;">
+    Gluconol
+  </footer>
+
+  <script type="text/javascript">
+    $(function () {
+      $("a[href^='#']").click(function () {
+        var _href = $(this).attr("href");
+        $("html, body").animate({
+          scrollTop: $(_href).offset().top + "px"
+        });
+        return false;
+      });
+    });
+  </script>
+
+  <script>
+    $(function () {
+      var nowDate = new Date();
+      var countDownDiff = Math.ceil((24 * 60 * 60) - (nowDate.getHours() * 60 * 60 + nowDate.getMinutes() * 60 +
+        nowDate.getSeconds()));
+      var endDate = new Date(nowDate.getTime() + countDownDiff * 1000);
+      setInterval(function () {
+        var diffDate = new Date(endDate.getTime() - Date.now()),
+          h = (diffDate.getHours() > 9) ? diffDate.getHours() : '0' + diffDate.getHours(),
+          m = (diffDate.getMinutes() > 9) ? diffDate.getMinutes() : '0' + diffDate.getMinutes(),
+          s = (diffDate.getSeconds() > 9) ? diffDate.getSeconds() : '0' + diffDate.getSeconds();
+        $('.hoursSH').html(h);
+        $('.minutesSH').html(m);
+        $('.secondsSH').html(s);
+      }, 1000);
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('.owl-carousel').owlCarousel();
+    });
+  </script>
+
+  <script>
+    new WOW().init();
+  </script>
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '69',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'лв',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>
