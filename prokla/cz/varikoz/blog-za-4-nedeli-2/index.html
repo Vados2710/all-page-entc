@@ -1,0 +1,1025 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BLOG AKTIVNÍ MATKY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link href="assets/css/bb0a7.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+    <!-- INTH_SNIPPET_TOP -->
+</head>
+<body>
+<svg style="display: none;">
+    <symbol id="talk" viewbox="0 0 512 512">
+        <g>
+            <g>
+                <path d="M346,189.489c-92.52,0-165,46.128-165,105s72.48,105,165,105c11.411,0,24.027-0.908,37.167-2.856L452,442.511V375.48
+                    c38.276-19.878,60-49.014,60-80.991C512,235.617,438.52,189.489,346,189.489z M286,309.489h-30v-30h30V309.489z M361,309.489h-30
+                    v-30h30V309.489z M437,309.489h-30v-30h30V309.489z"></path>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M328.777,160.05C317.93,108.325,250.723,69.489,166,69.489c-92.52,0-166,46.128-166,105c0,31.977,22.724,61.113,61,80.976
+                    v67.046l68.833-45.879c7.819,1.155,15.234,1.91,22.403,2.371c5.775-38.262,33.208-70.441,73.764-91.829v-27.686h30v14.698
+                    C277.991,166.607,302.333,161.513,328.777,160.05z M106,189.489H76v-30h30V189.489z M181,189.489h-30v-30h30V189.489z"></path>
+            </g>
+        </g>
+    </symbol>
+
+    <symbol id="star" viewbox="0 0 512.002 512.002">
+        <g>
+            <path d="M511.267,197.258c-1.764-5.431-6.457-9.389-12.107-10.209l-158.723-23.065L269.452,20.157
+                c-2.526-5.12-7.741-8.361-13.45-8.361c-5.71,0-10.924,3.241-13.451,8.361l-70.988,143.827l-158.72,23.065
+                c-5.649,0.82-10.344,4.778-12.108,10.208c-1.765,5.431-0.293,11.392,3.796,15.377l114.848,111.954L92.271,482.671
+                c-0.966,5.628,1.348,11.314,5.967,14.671c2.613,1.898,5.708,2.864,8.818,2.864c2.388,0,4.784-0.569,6.978-1.723l141.967-74.638
+                l141.961,74.637c5.055,2.657,11.178,2.215,15.797-1.141c4.619-3.356,6.934-9.044,5.969-14.672l-27.117-158.081l114.861-111.955
+                C511.56,208.649,513.033,202.688,511.267,197.258z"></path>
+        </g>
+    </symbol>
+
+    <symbol id="like" viewbox="0 0 512 512">
+        <g>
+            <g>
+                <path d="M512,304c0-12.821-5.099-24.768-13.888-33.579c9.963-10.901,15.04-25.515,13.653-40.725
+                    c-2.496-27.115-26.923-48.363-55.637-48.363H324.352c6.528-19.819,16.981-56.149,16.981-85.333c0-46.272-39.317-85.333-64-85.333
+                    c-22.144,0-37.995,12.48-38.656,12.992c-2.539,2.027-4.011,5.099-4.011,8.341v72.341L173.205,237.44l-2.539,1.301v-4.075
+                    c0-5.888-4.779-10.667-10.667-10.667H53.333C23.915,224,0,247.915,0,277.333V448c0,29.419,23.915,53.333,53.333,53.333h64
+                    c23.061,0,42.773-14.72,50.197-35.264C185.28,475.2,209.173,480,224,480h195.819c23.232,0,43.563-15.659,48.341-37.248
+                    c2.453-11.136,1.024-22.336-3.84-32.064c15.744-7.915,26.347-24.192,26.347-42.688c0-7.552-1.728-14.784-4.992-21.312
+                    C501.419,338.752,512,322.496,512,304z M467.008,330.325c-4.117,0.491-7.595,3.285-8.917,7.232
+                    c-1.301,3.947-0.213,8.277,2.816,11.136c5.419,5.099,8.427,11.968,8.427,19.307c0,13.461-10.176,24.768-23.637,26.325
+                    c-4.117,0.491-7.595,3.285-8.917,7.232c-1.301,3.947-0.213,8.277,2.816,11.136c7.019,6.613,9.835,15.893,7.723,25.451
+                    c-2.624,11.904-14.187,20.523-27.499,20.523H224c-17.323,0-46.379-8.128-56.448-18.219c-3.051-3.029-7.659-3.925-11.627-2.304
+                    c-3.989,1.643-6.592,5.547-6.592,9.856c0,17.643-14.357,32-32,32h-64c-17.643,0-32-14.357-32-32V277.333c0-17.643,14.357-32,32-32
+                    h96V256c0,3.691,1.92,7.125,5.077,9.088c3.115,1.877,7.04,2.069,10.368,0.448l21.333-10.667c2.155-1.067,3.883-2.859,4.907-5.056
+                    l64-138.667c0.64-1.408,0.981-2.944,0.981-4.48V37.781C260.437,35.328,268.139,32,277.333,32C289.024,32,320,61.056,320,96
+                    c0,37.547-20.437,91.669-20.629,92.203c-1.237,3.264-0.811,6.955,1.173,9.856c2.005,2.88,5.291,4.608,8.789,4.608h146.795
+                    c17.792,0,32.896,12.736,34.389,28.992c1.131,12.16-4.715,23.723-15.189,30.187c-3.264,2.005-5.205,5.632-5.056,9.493
+                    s2.368,7.317,5.781,9.088c9.024,4.587,14.613,13.632,14.613,23.573C490.667,317.461,480.491,328.768,467.008,330.325z"></path>
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M160,245.333c-5.888,0-10.667,4.779-10.667,10.667v192c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667
+                    V256C170.667,250.112,165.888,245.333,160,245.333z"></path>
+            </g>
+        </g>
+    </symbol>
+
+    <symbol id="calendar" viewbox="0 0 512 512">
+        <g>
+            <g>
+                <path d="M452,40h-24V0h-40v40H124V0H84v40H60C26.916,40,0,66.916,0,100v352c0,33.084,26.916,60,60,60h392
+                    c33.084,0,60-26.916,60-60V100C512,66.916,485.084,40,452,40z M472,452c0,11.028-8.972,20-20,20H60c-11.028,0-20-8.972-20-20V188
+                    h432V452z M472,148H40v-48c0-11.028,8.972-20,20-20h24v40h40V80h264v40h40V80h24c11.028,0,20,8.972,20,20V148z"></path>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="76" y="230" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="156" y="230" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="236" y="230" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="316" y="230" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="396" y="230" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="76" y="310" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="156" y="310" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="236" y="310" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="316" y="310" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="76" y="390" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="156" y="390" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="236" y="390" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="316" y="390" width="40" height="40"></rect>
+            </g>
+        </g>
+        <g>
+            <g>
+                <rect x="396" y="310" width="40" height="40"></rect>
+            </g>
+        </g>
+    </symbol>
+</svg>
+
+<div class="header container">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+            <h2 class="header-title">
+                <a href="#">BLOG AKTIVNÍ MATKY</a>
+            </h2>
+        </div>
+        <div class="col-4 col-md-2 header-social">
+            <a href="#">Diskuse<br>
+                <svg class="icon__header">
+                    <use xlink href="#talk"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="col-4 col-md-2 header-social">
+            <a href="#">Populární <br>
+                <svg class="icon__header">
+                    <use xlink href="#star"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="col-4 col-md-2 header-social">
+            <a href="#">Sledovatelnost<br>
+                <svg class="icon__header">
+                    <use xlink href="#like"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<main class="container page-main">
+    <div class="row justify-content-between">
+        <div class="col-12 col-lg-8 left-block">
+            <div class="container preland">
+                <div class="row">
+                    <div class="col-12 preland-article">
+                        <h1 class="preland-main-title text-center" style="text-transform: uppercase;">
+                            JAK JSEM SE ZBAVILA KŘEČOVÝCH ŽIL ZA 4 TÝDNY </h1>
+                        <hr>
+                        <p class="header-date">
+                            Aktualizováno
+                            <svg class="calendar">
+                                <use xlink href="#calendar"></use>
+                            </svg>
+                            <span class="js-current-date"></span>
+                            <span class="js-day-after"></span>
+                            Návštěvníků: 2,5 tisíce
+                        </p>
+
+                        <p class="text-center">
+                            <img class="img-fluid rounded" src="assets/img/001.jpg">
+                        </p>
+
+                        <hr>
+
+                        <p>
+                            Ahoj všichni! Prozradím vám tajemství: za poslední měsíc jsem vrátila svým nohám zdraví a
+                            krásu! Chci se s vámi podělit o své velké vítězství... <b>podařilo se mi zbavit křečových
+                            žil!</b>
+                            Sdílím s vámi svou metodu. A bude skvělé, pokud necháte zpětnou vazbu pod tímto článkem,
+                            pokud tento preparát také znáte! <b>Dobře?</b>
+                        </p>
+
+                        <p class="text-center">
+                            <img class="img__photo-350" src="assets/img/002.jpg">
+                        </p>
+
+                        <p>
+                            Stala jsem se matkou před dvěma lety. Po porodu se mi na nohou objevily strašidelné modré
+                            žíly. Vzpomínám si, jak tehdy moje matka si povzdechla: `Je ti teprve 33 let a ty už máš
+                            křečové žíly. Je mi 54 let a žíly na nohou jsou v pořádku...` Jo, moje máma rozhodně není
+                            choulostivá. Co dělat, když je její genetika lepší nebo možná má jen štěstí. A mě příroda
+                            nešetřila :(( a těhotenství vyvolalo křečové žíly. </p>
+
+                        <p class="text-center">
+                            <img class="img-fluid rounded" src="assets/img/003.jpg">
+                        </p>
+
+                        <p>
+                            <b>Křečové žíly jsou nejen ošklivé, ale také velmi bolestivé. Nohy se mi staly těžké a
+                                oteklé, </b>
+                            nemohla jsem dlouho stát, pořád se mi chtělo sednout nebo si lehnout, abych z nohou
+                            odstranila zátěž, trochu si protáhla nohy, odpočinula si... Takže moji rodiče a babička
+                            museli často chodit ven s dcerou místo mě. <b>Bolavé nohy mě vyčerpaly, takže jsem
+                            následovala radu lékaře a podstoupila operaci.</b>
+                            Dopadlo to dobře, ulevilo se mi, jediné co mi vadilo, že modřiny po operaci se dlouho
+                            hojily. Po pár měsících jsem se rozhodla, že jsem v pořádku, a šla jsem do posilovny.
+                            Necítila jsem žádnou bolest nebo nepohodlí, ale <b>ani ne o půl roku po operaci, co se nemoc
+                            vrátila!</b>
+                        </p>
+
+                        <p class="text-center">
+                            <img class="img__photo-350" src="assets/img/004.jpg">
+                        </p>
+
+                        <p>
+                            Pamatuju si, jak jsem dělala dřepy. Ohnula jsem nohy v klíně, pak jsem vstala (ne moc
+                            rachle) a v očích se mi udělalo šeru, zakroutila se mi hlava, v uších bylo strašidelné
+                            zvonění. Byla jsem velmi vyděšená, okamžitě jsem zavolala taxi a odjela na soukromou kliniku
+                            k lékaři. Doktor se mě ptal, co mě trápí, a já mu nevěděla. Abych byla diagnostikována,
+                            musela jsem být vyšetřena: nejprve jsem odevzdala krev. Pak jsem zavolala manželovi a on
+                            také přišel na kliniku. </p>
+
+                        <p>
+                            Když mě doktor začal vyšetřovat, všimla jsem si, že <b>žíla pod kolenem na pravé noze se
+                            stala tlustší než palec! Byla oteklá a pulzovala. A na levé noze se žíly také silně nafoukly
+                            a staly se jasně modrými!! Křečové žíly jsou zpět!</b>
+
+                            A co mi podle vás nabídl doktor? Správně - operace. Ale moje důvěra v operace už zmizela,
+                            tak jsem se zeptala na alternativní možnosti léčby, a bylo mi doporučeno pít pilulky. I když
+                            to není tak efektivní, přesto jsem si je vybrala. Nechtěla jsem totiž znovu chodit v
+                            modřínech a pořád se bát recidivy... </p>
+
+                        <p>
+                            Užívala jsem předepsané pilulky týden. Bolest ustoupila, ale žíly byly stále tak velké a
+                            ošklivé. <b>
+                            Nemohla jsem se dívat na nohy bez slz. </b>
+                            A litovala jsem, že jsem nesouhlasila s další operaci. </p>
+
+                        <p>
+                            Bylo mi doporučeno nosit kompresní prádlo. <b>Je to hrozné: nepohodlné, neatraktivní a vůbec
+                            pochybuji, že je to užitečné.</b>
+                            Komprese je slabá na látkách a velmi silná pod koleny. Punčochy tvoří drážky. Brázda pod
+                            kolenem bolestivě sevře nohu. Punčochy se roztahují a roztrhají v pase a jsou drahé. A jaký
+                            z nich mám užitek? Vždyť <b>já jsem chtěla tento problém vyřešit úplně, ne ho skrývat pod
+                            oblečením.</b>
+                        </p>
+
+                        <p class="text-center">
+                            <img class="img__photo-350" src="assets/img/005.jpg"><br>
+                            <b>
+                                Na fotografii (vlevo) - ve skutečnosti (vpravo) </b>
+                        </p>
+
+                        <p>
+                            Lékaři mě ujišťovali, že operace odstraní křečové žíly jednou provždy. Ale jsem opět v
+                            nemocnici se stejným problémem! Co mi o tom teď můžete říct? <b>Křečové žíly se vrátily a
+                            zhoršily se.</b>
+                        </p>
+                        <p>
+                            Celou noc jsem nespala, protože jsem četla různá fóra, kde <b>jiné ženy psaly o nesprávné
+                            léčbě křečových žil a strašlivých následcích operací.</b>
+                            (nejsem v tom sama!). Už toho mám dost. Už jsem dost vyděšená. Soudě podle toho, co píší,
+                            pokud se nezbavím problémů za rok nebo dva, pak <b>už nikdy neuvidím své nohy zdravé!</b>
+                        </p>
+
+
+                        <p>
+                            Přesto jsem nemohla přestat číst. Ať už jsem dělala cokoliv, dalo jen dočasnou úlevu, nebo
+                            nepomohl vůbec: masáž, kontrastní sprcha, venotonika, atd někdy bolest byla menší, ale
+                            požadované zlepšení nepřišlo. Proto <b>jsem pokračovala v hledání všech možných informací o
+                            křečových žilách a způsobech léčby.</b>
+                        </p>
+
+                        <p>
+                            Jednoho dne, uprostřed obvyklých drbech a stížností, jsem uviděla odkaz na lékařské fórum.
+                            Rozhodla jsem se tam napsat. Tehdy jsem ani netušila, že <b>to je můj klíč k záchraně! Našla
+                            jsem účinný způsob, jak se zbavit křečových žil!!!</b>
+                        </p>
+
+                        <p class="text-center">
+                            <img class="img-fluid rounded" src="prod.png">
+                        </p>
+
+                        <h2>
+                            JAK SE MŮŽETE ZBAVIT KŘEČOVÝCH ŽIL NAJEDNOU PROVŽDY ??! </h2>
+
+                        <p>
+                            Položila jsem svou otázku na tomto fóru. Odpověděli mi tři lékaři. Jeden doporučil operaci
+                            (znovu? jsou za to placeni?!), další mi doporučil další venotonickou terapii (ale polovinu z
+                            toho, co doporučil, jsem již vyzkoušela). Ale třetí varianta mě zaujala. Alespoň to bylo
+                            něco zcela nového! <b>Bylo mi nabídnuto použít nový pro Evropu preparát - gel</b>
+                            <a href="#">
+                                <span class="productName"></span> </a>
+                            Šla jsem na web, který mi dal lékař a podrobně jsem zkoumala tento preparát. Všechny složky
+                            jsou přírodní, spousta dobrých recenzí a doporučení flebologů. Gel prošel klinickými testy a
+                            je certifikován v EU. Podle toho, co jsme přečetla, <b>
+                            je to docela efektivní a naprosto bezpečné preparát. </b>
+                        </p>
+
+                        <p>
+                            V každém případě jsem neměla co ztratit a nemohla jsem už čekat. <b>Co mě čeká v budoucnu,
+                            když křečové žíly budou ještě závažnější? Nové operace? Nebo invalidní vozík?</b>
+                            Zkrátka, dlouho jsem nepřemýšlela, a rozhodla se, že je třeba objednat <span class="productName"></span> a osobně
+                            ověřit jeho účinnost. Ale předtím jsem ještě konzultovala s odborníkem na klinice. Když
+                            lékař slyšel název preparátu, souhlasně přikývl a podpořil mou volbu tím, že řekl, že <b>tento
+                            nástroj vyřeší můj problém asi za měsíc.</b>
+                            Na otázku: proč mi tento gel předtím nedoporučil, lékař odpověděl, že většina pacientů se
+                            rozhoduje pro operaci kvůli rychlému výsledku... <span class="productName"></span> se navíc v Čechách objevil teprve
+                            nedávno a ještě málo lidí to stihlo vyzkoušet. Takže se drží tradičních metod léčby
+                            křečových žil, ačkoli <b>tento preparát má významné výhody oproti operaci - </b>
+                            je vhodný pro všechny, protože nemá žádné kontraindikace, má dlouhodobý účinek, atd. <b>eliminuje
+                            křečové žíly JEDNOU PROVŽDY! </b>
+                            No, tak jsem si objednala <b><span class="productName"></span></b>
+                            a jakmile jsem dostala svou objednávku, hned jsem ho začala využívat. Upřímně řečeno, byla
+                            jsem dost skeptická... </p>
+
+                        <p>
+                            <b>
+                                Jaké byly výsledky? Zda zmizely křečové žíly? </b>
+                        </p>
+
+                        <p>
+                            <b>Po 2-3 dnech</b>
+                            zmizely bolesti nohou a křeče. Kapilární pavučina pod kolenem začala mizet, stejně jako
+                            oteklé modré žíly, kvůli kterým jsem nemohla nosit krátké sukně a šortky, otevřené boty.
+                            Nejprve se nemocné žíly stály méně nápadné, ale přibližně po <b>27-30 dnech zcela
+                            zmizely.</b>
+                        </p>
+
+                        <p>
+                            Nemohla jsem uvěřit těmto změnám, zejména tomu, že nastaly tak rychle. Prošla jsem
+                            sonografií (duplexní vyšetření žil a tepen). Jedná se o speciální vysoce přesnou
+                            ultrazvukovou diagnostiku a ukázala, že <b>povrchní a hluboký žilní systém mých nohou je v
+                            pořádku! Stěny žil se zpevnily, normální krevní oběh byl obnoven.</b>
+                            A spravedlnost taky! :) </p>
+
+                        <p>
+                            <b>Díky gelu </b>
+                            <b>
+                                <span class="productName"></span> </b>
+                        </p>
+                        <ol>
+                            <li>
+                                Křečové žíly zmizely!
+                            </li>
+                            <li>
+                                Už necítím tíhu a únavu v nohách;
+                            </li>
+                            <li>
+                                Krevní oběh se zlepšil a žíly se zpevnily;
+                            </li>
+                            <li>
+                                Konečně si zase můžu vzít sukni nebo minišaty. Protože moje nohy jsou opět zdravé a
+                                krásné! :)
+                            </li>
+                        </ol>
+                        <p></p>
+
+                        <p class="text-center">
+                            <img class="img-fluid rounded" src="assets/img/008.jpg">
+                        </p>
+
+                        <p>
+                            Samozřejmě, léčba netrvá hodinu ani týden, potřebuje čas, aby gel začal působit a pomáhat.
+                            Ale my jsme dospělí lidé a musíme si uvědomit, že výsledek nepřichází okamžitě. Použila jsem
+                            gel <b><span class="productName"></span></b>
+                            denně podle pokynů - <b>malaze jsem gel na nohy ráno a večer po dobu 28-30 dní. Ano, téměř
+                            celý měsíc. ALE STOJÍ TO ZA TO!
+                        </b>
+                            Cítím se teď skvěle
+                            <b>a už nemám žádné problémy s nohama:
+                            </b>
+                            žádná bolest a nepohodlí a nohy vypadají esteticky atraktivní! <b>Je to moje vítězství!
+                            :</b>
+                            Už jsou to 3 měsíce, chodím znovu do posilovny - a žádný problém! Kůže je stále rovná bez
+                            nepříjemných změn. To znamená <b>že žíly jsou v naprostém pořádku! </b>
+                            A co je pro mě nejdůležitější, že díky tomuto preparátu jsem se zbavila nejen křečových žil,
+                            ale i dalších komplikací tohoto onemocnění - rizika trombózy a vředů. </p>
+
+                        <p>
+                            Ze všech metod, které jsem vyzkoušela, jen <b>
+                            <span class="productName"></span>
+                        </b>
+                            dokázal znovu udělat nohy zdravé a krásné.
+                        </p>
+
+                        <p>
+                            Pro všechny zájemce jsem si gel objednal pomocí odkazu, který jsem nechala dole. Toto je
+                            jediná možnost, jak získat tento preparát, protože není k dispozici v lékárnách. Na tomto
+                            webu se prodává <b>
+                            originální certifikovaný produkt <span class="productName"></span>,
+                        </b>
+                            který mi pomohl zbavit se křečových žil! <b>
+                            <a href="#">
+                                <span class="preland-date-generate-1">Platíte za objednávku, když ji obdržíte, takže je vše bezpečné</span>!
+                            </a>
+                        </b>
+                        </p>
+
+                        <p><b>
+                            A mimochodem, nyní tento gel si můžete <b>koupit s 50% slevou, je to speciální nabídka, </b>
+                            kterou provádí výrobce pro popularizaci produktu. Podle mého názoru je to skutečný dárek pro
+                            zákazníky, vzhledem k účinnosti tohoto produktu! <b>Prosím, pokud někdo již vyzkoušel
+                            <span class="productName"></span>, nechte svůj názor.</b>
+                            To je pro mě zajímavé a pomůže ostatním čtenářům mého blogu vyřešit svůj problém s křečovými
+                            žilkami. </b></p>
+
+                        <div class="features-wrapper"></div>
+
+                        <br>
+                    </div>
+                    <div class="col-12 preland-comment">
+
+                        <h2 class="alert alert-info preland-comment-header">
+                            NÁZORY:
+                            <svg class="icon__main">
+                                <use xlink href="#talk"></use>
+                            </svg>
+                        </h2>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-1.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Lenka </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Křečové žíly jsou pro nás ženy něco hrozného. Jsem ráda, že ses tak rychle zbavila
+                                    ošklivých žil na nohou. Teď je řada na mně, doufám, že mi <span class="productName"></span> také pomůže! </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/admin.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Pavlína Posejpalová </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Lenko, bez pochyby! Díky za důvěru. </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate">
+                                        <svg class="calendar">
+                                            <use xlink href="#calendar"></use>
+                                        </svg>
+                                        <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-2.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">
+                                        Tereza </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Přiznám se, že slyším poprvé o tomto <a href="#">
+                                    gelu... </a>
+                                    Ale moje kamarádky, jak se ukázalo, že už ho používají a neřekli mi nic, víte? Až
+                                    teď jsem se o tom dozvěděla. Říkají, že tento produkt je velmi účinný. No jistě že,
+                                    vždyť jejich nohy vypadají perfektně!! </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/empty.png" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Simona</a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Podstoupila jsem operaci, stejně jako Pavlína, a také křečové žíly se po čase
+                                    vrátily... Začala jsem hledat alternativu k odstranění křečových žil bez opakované
+                                    orperace... ale nic jsem nenašla! A opět jsem dělala skleroterapii žil dolních
+                                    končetin. Autorka blogu měla větší štěstí než já, ona našla <span class="productName"></span> Škoda, že jsem
+                                    se o tom gelu dozvěděla až teď. Kdyby mi to někdo řekl dřív, tak bych nikdy operaci
+                                    neudělala, protože recidiva jsou nevyhnutelná! Ale už se nic nezmění. Díky za
+                                    informace, bude se hodit pro budoucnost. A poradím kamarádkám <br>
+                                    <img class="img__photo-250" src="assets/img/comments-img-4.jpg" alt="#">
+                                </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-3.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Barbora </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Nedávno se moje křečové žíly zhoršily! Žíly nejsou prakticky viditelné na kůži, ale
+                                    hrozně bolí. Někdy tak moc, že nemůžu ani chodit. Jsem si jistá, že ti, kteří trpí
+                                    křečovými žilkami, mě pochopí. Nemohla jsem sportovat ani chodit, někdy jsem nemohla
+                                    ani vstát z gauče.... Cítila jsem se jako invalida! Nebýt <span class="productName"></span>u, už bych se
+                                    rozhodla pro operaci, protože to se nedá vydržet! Naštěstí mi tento produkt pomohl.
+                                    Gel pomáhá od prvního okamžiku: snižuje bolest, otok a zánět, a po několika týdnech
+                                    jsem se cítil naprosto zdravá. To je ale něco! S tou slevou cena na gel je vůbec
+                                    parádní! </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/admin.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Pavlína Posejpalová </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Báro, děkuji za zpětnou vazbu. Máš fotku? </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-3.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Barbora </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Ne, mám jen fotka gelu. Možná se někomu bude hodit, tak vypadá originální balení
+                                    <span class="productName"></span> <br>
+
+                                </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-4.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Marie</a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Je mi teprve 24 let, ale cévní hvězdičky mám už jako šedesátiletá žena. :( </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/admin.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Pavlína Posejpalová </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Marie, naléhavě si objednejte <span class="productName"></span> a projděte plnou doporučenou kůrou! Nenechte
+                                    si ujít slevu 50% :) </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-4.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Marie</a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Nevím, jestli si chci něco objednat na internetu... </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/admin.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Pavlína Posejpalová </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Marie, nebojte se. Platíte pouze při převzetí objednávky a nic neriskujete. Tento
+                                    gel skutečně funguje a brzy budete hrdí na své nohy, než abyste se za ně styděli.
+                                    Hodně štěstí! </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"> </use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-5.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Tomáš</a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Po práci mě strašně bolí nohy. Celý večer ležím na posteli a nemůžu si ani uvařit
+                                    večeři. Je strašné přemýšlet, co by se mnou bylo dál, kdyby nebylo gelu <span class="productName"></span>!
+                                    Tento gel příjemně voní, není lepkavý, rychle se vstřebává. A hlavně: funguje to
+                                    stoprocentně! Druhý den se mi udělalo lépe. A o týden později se nohy staly tak
+                                    lehké. Je to nádherný pocit! V domácí lékárničce leží jedno balení <span class="productName"></span>, kdyby
+                                    náhodou.. Ale říká se, že efekt zůstává navždy. No, zkontroluju to! </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"> </use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-6.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Natálie </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Křečové žíly jsou problémem celé mé rodiny. Tato nemoc zničila nohy mé babičky,
+                                    tety, mé sestry a dokonce i mého dědečka ... A když jsem uviděla, že na nohách jsou
+                                    viditelnější žíly, zpanikařila jsem! Ptala jsem se všech známých, ale nikdo nevěděl,
+                                    co dělat. Pak jsem šla na konzultaci k flebologovi a dozvěděla se o tom <span class="productName"></span> A i
+                                    když podle lékaře ještě nebyl důvod k obavám, nečekala jsem na vznik vážných
+                                    problémů. Objednala jsem si tento gel a použila ho k prevenci. Moje nohy se staly
+                                    dokonalými během pouhých 2,5 týdnů: kůže je nyní rovná, žádné modré žíly nebo nějaké
+                                    nerovností. Jsem klidná! </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/empty.png" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Markéta </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    <a href="#"><span class="productName"></span> </a>
+                                    je ideální pro oteklé a těžké nohy! Doporučuji všem, kteří trpí křečovými žilkami.
+                                    Stačí začít léčbu včas a pak nebude nutná žádná operace!! <br>
+                                    <img class="img__photo-250" src="assets/img/comments-img-8.jpg" alt="#">
+                                </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/empty.png" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Jana </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Jsem velmi spokojená s terapií! Během 4 týdnů tento gel udělal nohy zdravé a krásné.
+                                    Jsem šťastná :) </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="media preland-comment-item">
+                            <a class="d-flex mr-3 preland-comment-avatar" href="#">
+                                <img class="rounded" src="assets/img/comments-7.jpg" alt="#">
+                            </a>
+                            <div class="media-body">
+                                <h5 class="mt-0 preland-comment-name">
+                                    <a href="#">Veronika </a>
+                                </h5>
+                                <p class="preland-comment-text">
+                                    Dobrý den! Křečové žíly se netýkají pouze žen... Můj manžel má stejný problém na
+                                    nohou. Když jsme spolu začali chodit před třemi lety, byla jsem z jeho nohou v šoku.
+                                    Je to nechutná podívaná! Té to obrovské křečové žíly...brrrrr! Samozřejmě chápu, že
+                                    pro člověka krása není hlavní věc, ale není to jen kosmetická nevýhoda. Křečové žíly
+                                    mohou vést k tvorbě krevních sraženin a dokonce i k smrti, pokud nejsou léčeny!
+                                    Krátce před dvěma měsíci jsem náhodou narazil na internetu na <span class="productName"></span> a okamžitě si
+                                    objednal. Manžel používal gel 5 týdnů, křečové žíly zmizely a teď je pro mě ideální
+                                    ve všem! Doporučuji!! </p>
+                                <p class="preland-comment-data">
+                                    <span class="preland-comment-data-generate"><svg class="calendar">
+                                        <use xlink href="#calendar"></use>
+                                    </svg> <span class="js-publish-reverse"></span></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <br>
+                    </div>
+                    <form class="b-comments__add form">
+                        <a class="link__blank" href="#">
+                            VÁŠ NÁZOR:<br>
+                            <textarea class="form__textarea" id="text"></textarea>
+                            JMÉNO: <br>
+                            <input type="text" class="form__input" id="name">
+                            <button class="form__submit" id="submit">Přidat názor</button>
+                        </a>
+                    </form>
+                    <h2 class="text-center" style="width: 100%;">
+                        <hr>
+                        <a class="btn btn-info btn-lg preland-offer-btn" href="#" style="text-decoration: underline">OFICIÁLNÍ
+                            WEBOVÉ STRÁNKA <span class="productName"></span>
+                        </a>
+                        <br>
+                        <a class="privacy" href="#" target="blank">
+                            Podmínky použití
+                        </a>
+                    </h2>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="d-none d-lg-block col-lg-4 right-block">
+            <div class="container social-gallery" style="padding-right: 2em;">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="social-blog">O MNĚ:</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mb-0 avatar-other" style="text-align: justify;">
+                            Jmenuji se Pavlína Posejpalová, je mi 35 let a trpím krizí středního věku ... dělám si
+                            legraci) poté, co jsem se zbavila křečových žil, o nic se nestarám a nic mně netrpím) Ráda
+                            cestuji a čtu knihy. Píšu o svém životě vážně, ale zároveň s ironií. Neexistují
+                            nevyřešitelné problémy, ale existují špatné rady. Ale ne moje! Vítejte na mém blogu! </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container social-gallery" style="padding: 0em; margin-top: 1em;">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="social-blog" style="padding: 0em 1em;">NEJLEPŠÍ TÉMATA BLOGU ZA MĚSÍC: </h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mb-0 avatar-other" style="text-align: justify;">
+                        </p>
+                        <ul class="themes">
+                            <li><a href="#">
+                                JAK SE ZBAVIT KŘEČOVÝCH ŽIL ZA TÝDEN-TOP (10) </a></li>
+                            <li><a href="#">
+                                ŽENSKÝ POHLED NA MUŽSKOU KRÁSU </a></li>
+                            <li><a href="#">
+                                JAK UPÉCT JABLEČNOU CHARLOTTE BEZ JABLEK </a></li>
+                            <li><a href="#">
+                                NEJLEPŠÍ FILMY PRO RODINNÉ SLEDOVÁNÍ </a></li>
+                        </ul>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container social-gallery">
+                <div class="row">
+                    <div class="col">
+                        <h4 class="social-blog">NÁVŠTĚVNÍCI </h4>
+                    </div>
+                </div>
+                <div class="row justify-content-between social-gallery-photo">
+
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-1.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/admin.jpg" alt=""></a></div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-2.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/empty.png" alt=""></a></div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-3.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/admin.jpg" alt=""></a></div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-3.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-4.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/admin.jpg" alt=""></a></div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-4.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/admin.jpg" alt=""></a></div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-5.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-6.jpg" alt=""></a>
+                    </div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/empty.png" alt=""></a></div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/empty.png" alt=""></a></div>
+                    <div class="col-lg-3"><a href="#"><img class="img-fluid" src="assets/img/comments-7.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mb-0 avatar-other">a dalších 279 uživatelů ...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</main>
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/moment-with-locales.min.js"></script>
+<!-- INTH_SNIPPET_BOTTOM -->
+
+<script>
+    const offer_params = {
+        priceMain : '890',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'Kč',
+        productName : 'Ultraven',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+
+<script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain : offer_params.priceMain,
+        currencyMain : offer_params.currencyMain,
+        lang : 'cz', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product : offer_params.productName, // название продукта
+        genderTargetting : 'all', // пол целевой аудитории - all, male, female
+        form : {
+            isNeeded : 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+
+</body>
+</html>

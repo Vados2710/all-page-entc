@@ -1,0 +1,68 @@
+// stickySidebar
+
+var stickyAnythingBreakpoint = '' 
+
+!function(e){function t(t,i,n,s,l,o,r,d){$listenerElement=e(".sticky-element-active");var c=$listenerElement.offset();if(orgElementTop=c.top,l){var a=e(l).offset();pushElementTop=a.top}var m=window,g="inner";if("innerWidth"in window||(g="client",m=document.documentElement||document.body),viewport=m[g+"Width"],o&&e("body").hasClass("admin-bar")&&viewport>600?adminBarHeight=e("#wpadminbar").height():adminBarHeight=0,e(window).scrollTop()>=orgElementTop-t-adminBarHeight&&viewport>=i&&viewport<=n){coordsOrgElement=$listenerElement.offset(),leftOrgElement=coordsOrgElement.left,widthPlaceholder=$listenerElement[0].getBoundingClientRect().width,widthPlaceholder||(widthPlaceholder=$listenerElement.css("width")),heightPlaceholder=$listenerElement[0].getBoundingClientRect().height,heightPlaceholder||(heightPlaceholder=$listenerElement.css("height")),widthSticky=e(".sticky-element-original").css("width"),"0px"==widthSticky&&(widthSticky=e(".sticky-element-original")[0].getBoundingClientRect().width),heightSticky=e(".sticky-element-original").height(),paddingOrgElement=[e(".sticky-element-original").css("padding-top"),e(".sticky-element-original").css("padding-right"),e(".sticky-element-original").css("padding-bottom"),e(".sticky-element-original").css("padding-left")],paddingSticky=paddingOrgElement[0]+" "+paddingOrgElement[1]+" "+paddingOrgElement[2]+" "+paddingOrgElement[3],marginOrgElement=[$listenerElement.css("margin-top"),$listenerElement.css("margin-right"),$listenerElement.css("margin-bottom"),$listenerElement.css("margin-left")],marginPlaceholder=marginOrgElement[0]+" "+marginOrgElement[1]+" "+marginOrgElement[2]+" "+marginOrgElement[3],assignedStyles="";for(var h in r)"inline"==r[h]?assignedStyles+=h+":inline-block; ":assignedStyles+=h+":"+r[h]+"; ";elementHeight=0,heightPlaceholder<1?elementHeight=e(".sticky-element-cloned").outerHeight():elementHeight=e(".sticky-element-original").outerHeight(),l&&e(window).scrollTop()>pushElementTop-t-elementHeight-adminBarHeight?stickyTopMargin=pushElementTop-t-elementHeight-e(window).scrollTop():stickyTopMargin=adminBarHeight,assignedStyles+="width:"+widthPlaceholder+"px; height:"+heightPlaceholder+"px; margin:"+marginPlaceholder+";",e(".sticky-element-original").removeClass("sticky-element-active").removeClass("element-is-not-sticky").addClass("element-is-sticky").css("position","fixed").css("left",leftOrgElement+"px").css("top",t+"px").css("width",widthSticky).css("margin-left",0).css("padding",paddingSticky).css("margin-top",stickyTopMargin).css("z-index",s),e(".sticky-element-placeholder").hasClass("sticky-element-active")||e(".sticky-element-placeholder").addClass("sticky-element-active").attr("style",assignedStyles)}else e(".sticky-element-original").addClass("sticky-element-active").removeClass("element-is-sticky").addClass("element-is-not-sticky").attr("style",d),e(".sticky-element-placeholder").hasClass("sticky-element-active")&&e(".sticky-element-placeholder").removeClass("sticky-element-active").removeAttr("style").css("width","0").css("height","0").css("margin","0").css("padding","0")}function i(){e(".sticky-element-original").addClass("sticky-element-active").before('<div class="sticky-element-placeholder" style="width:0; height:0; margin:0; padding:0; visibility:hidden;"></div>')}function n(e){return o={},o.display=e.css("display"),o.float=e.css("float"),o.flex=e.css("flex"),o["box-sizing"]=e.css("box-sizing"),o.clear=e.css("clear"),o.overflow=e.css("overflow"),o.transform=e.css("transform"),o}function s(t,i,n,s,o,r,d){var c=e(".sticky-element-original").offset();if(orgElementTop=c.top,o){var a=e(o).offset();pushElementTop=a.top}var m=window,g="inner";"innerWidth"in window||(g="client",m=document.documentElement||document.body),viewport=m[g+"Width"],d&&e("body").hasClass("admin-bar")&&viewport>600?adminBarHeight=e("#wpadminbar").height():adminBarHeight=0,e(window).scrollTop()>=orgElementTop-t-adminBarHeight&&viewport>=i&&viewport<=n?(orgElement=e(".sticky-element-original"),coordsOrgElement=orgElement.offset(),leftOrgElement=coordsOrgElement.left,widthOrgElement=orgElement[0].getBoundingClientRect().width,widthOrgElement||(widthOrgElement=orgElement.css("width")),heightOrgElement=orgElement.outerHeight(),paddingOrgElement=[orgElement.css("padding-top"),orgElement.css("padding-right"),orgElement.css("padding-bottom"),orgElement.css("padding-left")],paddingCloned=paddingOrgElement[0]+" "+paddingOrgElement[1]+" "+paddingOrgElement[2]+" "+paddingOrgElement[3],1==r&&e(".sticky-element-cloned").length<1&&l(t,s),elementHeight=0,heightOrgElement<1?elementHeight=e(".sticky-element-cloned").outerHeight():elementHeight=e(".sticky-element-original").outerHeight(),o&&e(window).scrollTop()>pushElementTop-t-elementHeight-adminBarHeight?stickyTopMargin=pushElementTop-t-elementHeight-e(window).scrollTop():stickyTopMargin=adminBarHeight,e(".sticky-element-cloned").css("left",leftOrgElement+"px").css("top",t+"px").css("width",widthOrgElement).css("margin-top",stickyTopMargin).css("padding",paddingCloned).show(),e(".sticky-element-original").css("visibility","hidden")):(1==r?e(".sticky-element-cloned").remove():e(".sticky-element-cloned").hide(),e(".sticky-element-original").css("visibility","visible"))}function l(t,i){e(".sticky-element-original").clone().insertAfter(e(".sticky-element-original")).addClass("sticky-element-cloned").removeClass("element-is-not-sticky").addClass("element-is-sticky").css("position","fixed").css("top",t+"px").css("margin-left","0").css("z-index",i).removeClass("sticky-element-original").hide()}e.fn.stickThis=function(o){var r=e.extend({top:0,minscreenwidth:0,maxscreenwidth:99999,zindex:1,legacymode:!1,dynamicmode:!1,debugmode:!1,pushup:"",adminbar:!1},o),d=e(this).length,c=e(r.pushup).length;return c<1?(1==r.debugmode&&r.pushup&&console.error('STICKY ANYTHING DEBUG: There are no elements with the selector/class/ID you selected for the Push-up element ("'+r.pushup+'").'),r.pushup=""):c>1&&(1==r.debugmode&&console.error("STICKY ANYTHING DEBUG: There are "+c+' elements on the page with the selector/class/ID you selected for the push-up element ("'+r.pushup+'"). You can select only ONE element to push the sticky element up.'),r.pushup=""),d<1?1==r.debugmode&&console.error('STICKY ANYTHING DEBUG: There are no elements with the selector/class/ID you selected for the sticky element ("'+this.selector+'").'):d>1?1==r.debugmode&&console.error("STICKY ANYTHING DEBUG: There There are "+c+' elements with the selector/class/ID you selected for the sticky element ("'+this.selector+'"). You can only make ONE element sticky.'):1==r.legacymode?(e(this).addClass("sticky-element-original").addClass("element-is-not-sticky"),1!=r.dynamicmode&&l(r.top,r.zindex,r.adminbar),checkElement=setInterval(function(){s(r.top,r.minscreenwidth,r.maxscreenwidth,r.zindex,r.pushup,r.dynamicmode,r.adminbar)},10)):(e(this).addClass("sticky-element-original").addClass("element-is-not-sticky"),orgAssignedStyles=n(e(this)),orgInlineStyles=e(".sticky-element-original").attr("style"),null==orgInlineStyles&&(orgInlineStyles=""),i(),checkElement=setInterval(function(){t(r.top,r.minscreenwidth,r.maxscreenwidth,r.zindex,r.pushup,r.adminbar,orgAssignedStyles,orgInlineStyles)},10)),this}}(jQuery);
+
+var sticky_anything_engage = {
+    "element": ".sticky-sidebar",
+    "topspace": "20",
+    "minscreenwidth": "0",
+    "maxscreenwidth": "999999",
+    "zindex": "1",
+    "legacymode": "",
+    "dynamicmode": "",
+    "debugmode": "",
+    "pushup": "#pushup1",
+    "adminbar": "1"
+};
+
+(function($) {
+	$(document).ready(function($) {
+
+		var thisIsSomeBreakpoint = ''
+
+		$(sticky_anything_engage.element).stickThis({
+			top:sticky_anything_engage.topspace,
+			minscreenwidth:sticky_anything_engage.minscreenwidth,
+			maxscreenwidth:sticky_anything_engage.maxscreenwidth,
+			zindex:sticky_anything_engage.zindex,
+			legacymode:sticky_anything_engage.legacymode,
+			dynamicmode:sticky_anything_engage.dynamicmode,
+			debugmode:sticky_anything_engage.debugmode,
+			pushup:sticky_anything_engage.pushup,
+			adminbar:sticky_anything_engage.adminbar
+		});
+
+	});
+}(jQuery));
+
+// date
+
+const months=['leden','únor','březen','duben','květen','červen','červenec','srpen','září','říjen','listopad','prosinec'],monthMin = ['','','','','','','','','','','',''],days = ['neděle','pondělí','úterý','středa','čtvrtek','pátek','sobota'],daysMin = ['','','','','','',''],seasons = ['zimní','jaro','léto','podzim'];function postDate(daysName, daysMinName, monthsName, monthsMinName, seasonsName) {const _counterLength = 60;for (let counter = 0; counter < _counterLength; counter++) {innerDate(counter, 'date-');innerDate(counter, 'date')} function innerDate(counter, dateType) {let newCounter;dateType === 'date-' ? newCounter = -counter : newCounter = counter; const _msInDay = 86400000, _localDate = new Date(Date.now() + (newCounter * _msInDay)), _day = _localDate.getDate(), _month = _localDate.getMonth() + 1, _year = _localDate.getFullYear(); const dayDefault = addZero(_day), monthDefault = addZero(_month), defaultDate = dayDefault + '.' + monthDefault + '.' + _year; const dateClass = dateType + counter, nodeList = document.querySelectorAll('.' + dateClass); for (let i = 0; i < nodeList.length; i++) {const dateFormat = nodeList[i].dataset.format;dateFormat !== undefined && dateFormat !== ''? nodeList[i].innerHTML = String(changeFormat(dayDefault, _month, _year, dateFormat, newCounter)): nodeList[i].innerHTML = defaultDate} } function changeFormat(_day, _month, _year, format, counter) { let innerFormat = format; const testFormat = ["dd","mm","yyyy","year"], dateFormat = { dd: _day, mm: addZero(_month), yyyy: _year, year: getYearWithCounter(_year, counter), }; for (let i = 0; i < testFormat.length; i++) { let string = testFormat[i]; let regExp = new RegExp(string); innerFormat = innerFormat.replace(regExp, dateFormat[string]); } return innerFormat.split(' ').join(' ') } function getYearWithCounter(year, counter) {return year + counter} function addZero(numb){return numb<10?'0'+numb:numb} function changeFirstLetter(isBig,str){return isBig&&str&&str.length>0?str[0].toUpperCase()+str.slice(1):str} }if (document.body.classList.contains('ev-date')) {document.addEventListener("DOMContentLoaded", function () {postDate(days, daysMin, months, monthMin, seasons)});}
+
+// scroll
+
+var linkNav = document.querySelectorAll('[href^="#"]'),
+V = 0.1;
+for (var i = 0; i < linkNav.length; i++) {
+    linkNav[i].addEventListener('click', function(e) { //по клику на ссылку
+        e.preventDefault(); //отменяем стандартное поведение
+        var w = window.pageYOffset,  // производим прокрутка прокрутка
+        hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
+        t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
+        start = null;
+        requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+        function step(time) {
+            if (start === null) start = time;
+            var progress = time - start,
+            r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+            window.scrollTo(0,r);
+            if (r != w + t) {
+                requestAnimationFrame(step)
+            } else {
+                location.hash = hash  // URL с хэшем
+            }
+        }
+    }, false);
+}

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+
+<html lang="cz">
+
+<head>
+<base >
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link rel="shortcut icon" type="image/x-icon" href="">
+	<title>Světová zdravotní organizace je znepokojeno nadváhou Čechů. Inovativní způsob, jak zhubnout na 5 kg týdně bez diety a sportu!</title>
+
+	<link type="text/css" rel="stylesheet" href="css">
+	<link href="all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="formStyles.css">
+	<link rel="stylesheet" href="wheel2.css">
+	<link rel="stylesheet" href="combined.css">
+	<link rel="stylesheet" href="fontello.css">
+	<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="../js/combined.js"></script>
+	<script>
+		function date(number) {
+			var date,
+				day,
+				month,
+				year;
+
+			date = new Date(new Date().getTime() + 24 * 60 * 60000 * number);
+			day = date.getDate();
+			month = date.getMonth() + 1;
+			year = date.getFullYear();
+
+			if (month > 9 && day > 9) {
+				return (`${day}.${month}.${year}`);
+			} else if (day < 10 && month < 10) {
+				return (`0${day}.0${month}.${year}`);
+			} else if (day < 10) {
+				return (`0${day}.${month}.${year}`);
+			} else {
+				return (`${day}.0${month}.${year}`);
+			};
+		};
+
+		// date(0);
+
+	</script>
+</head>
+
+<body>
+<div class="nav-banner" id="nav-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1 col-md-offset-3">
+				<img src="../img/stellone.png" class="navbar__logo">
+			</div>
+			<div class="col-md-6">
+				<p class="h4">
+					<a href="default.htm"  style="color:#fff;text-decoration:none;">Ministerstvo zdravotnictví</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="page_top" class="container">
+	<header id="navbar" class="navbar navbar-default navbar-fixed-top hidden-print">
+		<div class="navbar-header container">
+			<div class="row">
+				<a class="navbar-toggle" href="default.htm"  id="nav-toggle">
+					<span style="font-size:0px;">.</span>
+				</a>
+				<div class="col-xs-8 col-xs-offset-0 col-sm-5 col-sm-offset-0 col-md-5 col-md-offset-0 navbar__title_container normalizza-margine-titolo">
+					<h1>
+						<a href="default.htm" >
+							<span>Noviny</span>
+						</a>
+					</h1>
+				</div>
+				<div style="margin-top:0.5em;text-align:right;" id="cerca">
+						<span class="social" style="color:#fff;" id="social">Hledat novinky:
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-facebook">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-twitter">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-youtube-play">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-instagram">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<br>
+						</span>
+					<div id="search-bar">
+						<fieldset>
+							<a href>
+								<input style="margin-top: 5px;" placeholder="Hledat" class="rest-searchbox ui-autocomplete-input" type="text" name="q" id="f_cerca">
+							</a>
+							<a href="default.htm"  style="margin-top:-5px;height:30px;" class="btn-s btn-default-s btn-sm">
+									<span style="top:-1px;left: 3px;" class="glyphicon icon-search">
+										<span style="color:transparent;font-size:1px;">.</span>
+									</span>
+							</a>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="intestazioneContenuto" class="row">
+		<div style="margin-top:1em;">
+			<a href="default.htm" >Hlavní</a> / <a href="default.htm" >Noviny</a> / Světová zdravotní organizace je znepokojeno nadváhou Čechu. Inovativní způsob, jak zhubnout na 5 kg týdně bez diety a sportu!		</div>
+		<div class="col-md-8">
+			<h3 class="blu-italia-base-color">Světová zdravotní organizace je znepokojeno nadváhou Čechů. Inovativní způsob, jak zhubnout na 5 kg týdně bez diety a sportu!</h3>
+
+			<img  style="padding-bottom:20px;" src="../img/image2.jpg">
+			<p class="italic">
+	
+					Podle Světové zdravotnické organizace, nadváhou trpí v České Republice více než 50% žen a mužů ve věku 35–50 let, a každou sekundu toto číslo jen roste. Do roku 2025 PSZ předpovídá nárůst až o 65%. Odborníci na výživu uvedli portrét průměrného Čechá s nadváhou, obvykle to jsou lidí žijící ve městě, kteří konzumují mastná jídla, pijí alkohol nebo kouří. Málo se pohybují a zanedbávají sport. Lidé s nadváhou častěji trpí cukrovkou, mrtvicí, infarktem a rakovinou. Obezita ovlivňuje tělo jako celek, externě i interně. Viscerální bílý tuk ničí tělo zevnitř, obaluje jej a „jí“ vnitřní orgány. Srdce, krevní cévy, plíce, ledviny, klouby jsou hlavními oběťmi obezity, ale ne jedinými. Obezita není jen věcí krásy, je to otázka zdraví. A velmi závažná.
+				
+			</p>
+			<div class="schedule gray-box">
+				
+				<div style="text-align: center;margin-top: -15px;">
+					
+					<video width="450" height="492" controls="controls" class="dr-video">
+							  <source src="../video/video.mp4" type="video/mp4">
+						</video>
+				</div>
+				
+				<p class="italic" style="margin-left: 23px;">
+					<b>Dr. Michael Osterholm, epidemiologický specialista na infekční choroby, profesor, ředitel Centra pro výzkum na Universitě v Minnesotě.</b><br>
+					Dlouho jsem studoval problém obezity v Čechách. Světová zdravotní organizace citovala děsivé výsledky statistiky-  každý druhý Čech má nadváhu! Češi miluji se dobře najíst a vypit.					
+				</p>
+			</div>
+			<br>
+			<div class="doctor-wrapper">
+			<p>
+				
+<b>Dr. Maria Kučerová</b><br>
+Doktor, odborník na výživu, psycholog, kandidát lékařských věd			</p>
+			<hr style="margin-top: 0;">
+			<img style="padding-bottom:20px;" src="../img/image3.jpg">
+			
+			<p class="italic">
+				V problému nadváhy je třeba brát v úvahu nejen fyzické, ale i psychologické ukazatele. Pokud se jeden pacient může z lehkostí odmítnout nezdravé jídlo, jít sportovat a začít jíst správně, bohužel však většina z nich to nebude moci udělat. Každá osoba je individuální a každý problém obezity je také individuální. Pokud jeden pacient nabírá na váze kvůli sedavému životního stylu a přejídá se protože se nudí a jinný zase zajídá stres. Pro jiného pacienta je chutné jídlo odměnou - tak se člověk odměňuje například za těžký pracovní den nebo za zkoušku. Než začnete hubnout, je třeba se poradit s odborníky na výživu a také s psychologem, aby odborník pomohl zjistit, v čem je přesně  problém a jak začít hubnout. Během mé práce jsem narazil na tisíc případů, kdy pacient potřeboval další motivaci ke zhubnutí nebo živý příklad, který mohl následovat. Velmi efektivními jsou kapky <a href="default.htm">Ideal-Slim,</a> jsou na základě přírodních výtažků a vitamínů, které jsou dnes v USA velmi populární, úspěšně spalují nebezpečný viscerální tuk, potlačují chuť k jídlu, dávájí člověku energii dělat něco zajímavého a pomáhají odvrátit pozornost od myšlenek na jídlo. A proto já i moje kolegové doporučujeme <a href="default.htm">Ideal-Slim</a> pacientům, kteří sami nedokážou zhubnout.			</p>
+		</div>
+		<br>
+			<p class="center_txt">
+				<b>Lucie Nováková - 37 let, výsledek po 2 měsících užívání Ideal-Slim</b>
+			</p>
+			<img style="float:left;width:100%;padding-bottom:20px;" src="../img/image1.jpg">
+			<p>
+				Jsem velmi vděčná paní Dr. Marii Kučerové za to, žе byla velmi opatrná na mne, a s mým problém s nadváhou. A když mne poprosili abych vyprávěla svůj příběh, tak jsem samozřejmě souhlasila, protože nyní chápu, jak je důležité, aby si všichni čtoucí tento článek uvědomili, že můžou zhubnout. Je to možné. Nikdy jsem neměla nadváhu, a jako studentka jsem byla dokonce roztleskávačkou, sportovala jsem a vedla aktivní životní styl. Ale pak jsem se vdala, porodila dvě děti a už mi nezbyl čas na sebe. Po druhém porodu jsem si uvědomila, že nikdy nebudu mít ploché bříško jako předtím. Začínala jsem nabírat na váze, ale nic jsem nemohla s tím udělat. Rodina mi vzala veškerý můj čas a síly, jsem se na sebe vykašlala ale v určitém okamžiku jsem si uvědomila, že nemůžu se na sebe dívat v zrcadle. Nechtěla jsem se vidět, ale když jsem musela, nemohla jsem zadržet své slzy. Nenáviděla jsem své tělo. Moje postava byla ošklivá, pomačkaná, s ochablým břichem, celulitidou a ochablou kůží. Začala jsem nosit černé šaty, abych alespoň nějak ukryla své tělo. Přestala jsem dělat vlasy a malovat se, jak jsem to dělala dříve. A samozřejmě, problémy začaly s mým manželem Tomášem. Uvědomila jsem si, že to bylo kvůli mé nadváze. Koneckonců i sama sobě jsem byla nepříjemná, o jaké vášni s manželem můžeme mluvit? Vrchol se však stal, když jsme spolu s Tomášem byli v restaurací a náhodou jsme se setkali s naším společným přítelem z univerzity, nepoznal mě a řekl, že si myslel, že jsem Tomášova matka. Tomáš se začervenal hněvem a řekl ne, že jsem jeho manželka Lucka. Byla jsem strašně v rozpacích, cítila jsem se jako ošklivé monstrum, který vypadá o 20 let starší! Koneckonců, matce Tomáše je 55 let ... Běžela jsem na záchod, abych se nerozplakala přede všemi návštěvníky restaurace. Na záchodě jsem stála u zrcadla, podívala se na sebe a nemohla jsem se poznat! Dřív jsem byla zábavná, veselá, efektivní a sportovní děvče. Nyní v zrcadle byla žena středních let, s oteklými rysy obličeje, dvojitou bradou a velkým břichem, které se nedalo skrýt ani pod pytlovitým tričkem. Uvědomila jsem si, že musím zhubnout a naléhavě, jinak bych se z toho mohla zbláznit. Našla jsem si dietu a rozhodla jsem se ji dodržovat, přesněji řečeno - snažila jsem se.</p>
+				<p>Jelikož jsem vařila pro celou rodinu, bylo velmi obtížné neochutnávat, co jsem uvařila své milované rodině. Takže sem-tam jsem si dala několik sendvičů,nějakou tu buchtu, nebo pastu se sýrem a máslem k večeři ... A nemohla jsem odmítnout džusy, sodu, víno ... To trvalo asi tři měsíce, a žádného výsledku jsem nedosáhla. Dokonce jsem přibrala 3 kilogramy. Neustále jsem počítala kolik kalorií jsem snědla, a vyčítala jsem si že jsem tak slabá. Neustále jsem si nadávala jak vypadám. Už jsem byla zoufalá a na pokraji nervového zhroucení. Téměř jsem se rozhodla, že si udělám operaci, abych si umenšila žaludek, a pak jsem se dostala k paní Dr. Kučerové.</p>
+				<p>Ona mně vyslechla a řekla, že bez chirurgického zákroku mohu zhubnout a dosáhnout stejných výsledků. Protestovala jsem, protože jsem si vzpomněla na vlastní hubnutí, a na to že to byla zbytečná trata času. Ale paní doktorka byla neústupná a předepsala mi léčbu a kapky <a href="default.htm">Ideal-Slim</a> a řekla, že pokud nezačnu hubnout, dá mi povolení k operaci. Byla jsem velmi skeptická během prvního týdne používání <a href="default.htm">Ideal-Slim</a> ani jsem te výsledky nekontrolovala na váhách. Ale všimla jsem si, že mi džíny začaly sklouzávat! Byla jsem překvapena a rozhodla jsem se zvážit, výsledek je minus 5 kg! A to je za týden! A vlastně nic jsem pro to neudělala! Vedla jsem stejný způsob života, jedla jsem tolik, kolik jsem chtěla, a dokonce jsem si dávala i alkohol. Ale předci jen jsem zhubla! Poté jsem začala brát vážně hubnutí, viděla jsem výsledek a chtěla jsem ho zvětšit a zhubnout ještě více. Skoro úplně jsem odmítla sladké nápoje,začala pít více vody, chodit s dětmi ve večerních hodinách do parku na procházky. Dříve jsem prostě neměla na to sílu, ale teď jsem byla plna energie! Chtěla jsem se procházet! </p>
+				<p>Paní Dr. Kučerová poté co uviděla mé výsledky, mě objala a řekla, že je hrdá na to, že jsem zhubla sama bez provedení nebezpečných operací. <strong>Za dobu dvou měsíců používání <a href="default.htm">Ideal-Slim</a>  jsem zhubla o 24 kg.</strong> </p>
+				
+				<img style="width:100%;padding-bottom:20px;" src="../img/image-111.jpg">
+				Teď, když se dívám do zrcadla, vidím sama sebe. To je ta Lucie, kterou jsem vždy byla! Začala jsem znovu nosit krásné šaty, které mám tolik ráda! Začala jsem experimentovat s vlasy, nyní přemýšlím o světlejší barvě. Tomáš se na mě znovu dívá s obdivem, jako to bylo na vysoké škole. Když se na mě takto dívá, vzpomínám si na první den, kdy jsme se s ním setkali. Bylo to po zápase našeho týmu, byla jsem na stadionu a po zápase když on mě uviděl, tak prostě stuh a ani si nemohl odtrhnout ode mě svůj vzhled. Byl strašně plachý, i když byl velmi oblíbený u dívek. Tomáš mně požádal o ruku podruhé, řekl, že se do mě zamiloval s obnovenou energií a chtěl svou lásku dokázat. Vím, jaké to je mít nadváhu a nevědět jak se toho zbavit. Pokoušet se zhubnout, ale každý krát nic. Zoufat a nevědět co z tím. Začít se nenávidět. Vím, jaké to je. A vím, že potřebujeme pomoc. A právě takovou pomocí se pro mně staly kapky <a href="default.htm">Ideal-Slim.</a> Hodně jsem se natrápila a mohu s jistotou říci, že tyto kapky jsou to nejlepší, co se mi v posledních letech stalo. Jsem velmi vděčná paní Dr. Maria Kučerové za to, že mi nedovolila provést nebezpečnou operaci, a doporučila tyto kapky. Děkuji! Teď vypadám tak, jak se cítím uvnitř. Jsem krásná a vím to.
+			</p>
+			<br>
+			<div class="doctor-wrapper">
+			<p>
+				
+<b>Dr. Jan Kosoň</b><br>
+ endokrinolog, odborník na výživu, lékař lékařských věd			</p>
+			<hr style="margin-top: 0;">
+			<img style="padding-bottom:20px;" src="../img/image6.jpg">
+			
+			<p class="italic">
+				
+				Již dávno sleduji Kanadský nutriční výzkum a vím, že tyto kapky <a href="default.htm">Ideal-Slim</a> jsou nádherný přírodní produkt, který je navržen tak, aby vyhovoval všem potřebám těla. Hubnutí nebylo nikdy tak snadné. Tyto kapky by se měly užívat denně, beze strachu o zdraví. Díky <a href="default.htm">Ideal-Slim</a> zhubnete až 5 kg týdně zcela přirozeným způsobem. Jedná se o zcela přírodní produkt, vhodný pro všechny, bez ohledu na pohlaví, věk a hmotnost. Hubnutí se dosahuje díky spalování tuků, a ne v důsledku dehydratace organismu nebo ztráty svalové hmoty. Jedná se o jedinečný produkt, který pomůže spálit nebezpečný viscerální tuk a normalizovat všechny tělesné funkce. Kapky <a href="default.htm">Ideal-Slim</a> již dávno získali popularitu na Západě a nyní získávají popularitu v České Republice. Osobně doporučuji tento produkt všem mým pacientům a všichni mi děkují za to, že mají možnost dosáhnout zdravého a štíhlého těla.			</p>
+		</div>
+			<br>
+			<h2>Co je Ideal-Slim?</h2>
+			<p>Kapky <a href="default.htm">Ideal-Slim</a> je 100% přírodní komplex, který úspěšně bojuje s nebezpečným viscerálním tukem a normalizuje všechny procesy v lidském těle. Co přispívá ke zdravému hubnutí. Klinicky bylo prokázáno, že Ideal-Slim urychluje metabolismus, obnovuje činnost endokrinního systému, posiluje imunitu, stimuluje regeneraci tkání a potlačuje hlad.			</p>
+			<p>Kapky <a href="default.htm">Ideal-Slim</a> obsahují všechny potřebné stopové prvky, které přispívají k intenzivnímu spalování tuků i v nejproblematičtějších oblastech. Rychlost spalování tuků se zvyšuje 10 krát!			</p>
+			<p>Tento výrobek nejen účinně snižuje hmotnost, ale také uzdravuje a omlazuje tělo zevnitř.</p>
+<p><b>Hlavní vlastnosti Ideal-Slim:</b></p>
+<ul>
+					<li>
+						<b>Spalování tuku</b>
+					</li>
+					<li>
+						<b>Ovládání chuti k jídlu</b>
+					</li>
+					<li>
+						<b>Normalizace hormonálního pozadí</b>
+					</li>
+					<li>
+						<b>Zvýšení imunity</b>
+					</li>
+					<li>
+						<b>Omlazení a čištění těla</b>
+					</li>
+					<li>
+						<b>Tonizující efekt</b>
+					</li>
+				</ul>
+				<br>
+				<p class="center_txt">
+				<b>Tomáš Suchánék 45 let, výsledek po 28 dnech přijetí kapek <a href="default.htm">Ideal-Slim</a>
+</b>
+			</p>
+			<img style="float:left;width:100%;padding-bottom:20px;" src="../img/image4.jpg">
+			<p>Mne kapky				<a href="default.htm">Ideal-Slim</a> 
+				doporučil můj trenér v tělocvičně, kam chodím. On viděl, jak den za dnem trpím, snažím se zhubnout ale nedaří se mi to. Břicho, které jsem získal během dlouhého pobytu doma, nezmizelo a zdálo se, že už nezmizí. Kdysi jsem byl štíhlý, ale s věkem se můj metabolismus úplně zpomalil. Když dříve jsem mohl jíst smažené kuře každý den a zapíjet ho studeným pivem, tak teď z mastných potravin mám žaludeční potíže a gastritidu. Proto jsem začal používat 
+				<a href="default.htm">Ideal-Slim</a> 
+				 protože zaprvé je to přírodní produkt bez škodlivé chemie a za druhé dává prokázaný výsledek bez poškození zdraví. V naší tělocvičně si tyto kapky bere téměř každý a všichni jsou šťastní. Říkají, že jsou dobré nejen pro postavu, ale i pro stav organizmu celkově. Protože kromě hubnutí  
+				<a href="default.htm">Ideal-Slim</a> 
+				také se stará o každodenní potřebu stopových prvků a vitamínů. Jedním slovem - samé plusy. A pro muže je to ještě lepší, protože můžeme budovat svaly bez hladovění. Během měsíce příjmu jsem ztratil 6 kilogramů, nabral svalovou hmotu a zlepšil kvalitu těla, zbavil se tuku. Děkuji trenéru za sdílení osvědčeného způsobu, jak zhubnout. Nyní doporučuji Ideal-Slim každému, kdo má nadváhu.			</p>
+			<br>
+			<p class="center_txt">
+				<b>Sylvia Hrubá, 63 let, výsledek po 5 měsících používání <a href="default.htm">Ideal-Slim</a>
+</b>
+			</p>
+			<img style="float:left;width:100%;padding-bottom:20px;" src="../img/image7.jpg">
+			<p>
+				Kapky 
+				<a href="default.htm"> Ideal-Slim</a> 
+				jsou pro mě skutečnou spásou. S věkem jsem začala mít vážné zdravotní problémy a byla jsem neustále nemocná. Lékaři připisovali všechno mému věku a nadváze. S výškou 1,65 jsem vážila 113 kilogramů. Moje nohy nemohly nést tuto váhu, měla jsem strašné problémy s klouby a krevními cévami. Oh, s čím jsem jen neměla problémy. Chodila jsem do nemocnice, jako do práce a úplně jsem zapomněla, co je bezstarostný život. Nemohla jsem ani sedět se svými vnoučaty, pomáhat své dceři ... Kapky 
+				<a href="default.htm">Ideal-Slim</a> 
+				mi poradil odborník na výživu, řekl, že v mém věku bude velmi těžké zhubnout na vlastní pěst a je třeba naléhavá pomoc. Věřila jsem doktorovi a objednala si kapky na oficiálních stránkách výrobce, bylo to už dávno a objednat jsem si mohla tyto kapky pouze z pomocí svého synovce, který byl schopen je objednat na amerických webových stránkách. Začala jsem hubnout okamžitě, už po týdnu užívání jsem si všimla výsledku. A po měsíci používaní mi bylo snazší chodit a dýchat. Tehdy jsem zhubla již o 12 kilogramů. Teď má hmotnost je 77 kilogramů a cítím se skvěle. Moje strava se nezměnila, problém nebyl ve stravě, ale ve skutečností moje tělo prostě přestalo absorbovat užitečné věci a začalo hromadit tuky. A kapky rozptýlily trávení a odstranily nebezpečné tuky z mého organizmu. Mnohokrát děkuji svému lékaři za předepsání těchto kapek včas. Bez nich bych rozhodně neztratila na váze. 
+			</p>
+			<div class="fluid">
+          <div class="standart-block">
+  <div class="standart-block__text">
+    <span>
+      
+      Všechny naše výrobky odpovídají předním evropským standardům kvality a jsou před odesláním důkladně testovány.      
+    </span>
+    <p>
+      Z bezpečnostních důvodů jsou všechny zásilky dezinfikovány a teprve poté jsou zaslány adresátovi.    </p>
+    <span>
+       Veškeré manipulace s výrobky jsou prováděny ve speciálních ochranných oblecích. Splňujeme všechny požadavky Ministerstva zdravotnictví.    </span>
+  </div>
+  <div class="standart-block__stamp">
+    <img src="../img/stamp.png" alt="">
+  </div>
+</div>
+      </div>
+			<p><b>Ideal-Slim v České republice lze zakoupit pouze <a href="default.htm">na oficiálních webových stránkách výrobce.</a>
+</b></p>
+			
+			<p class="center_txt"><img style="width:50%;padding-bottom:20px;" src="../img/image5.png"></p>
+			<p class="center_txt"><a href="default.htm" class="ord_button">OFICIÁLNÍ WEBOVOU STRÁNKU VÝROBCE</a></p>
+			
+			<p>
+				<br>
+			</p>
+
+			<div class="comments">
+				<h3>
+					Komentáře				</h3>
+				<div class="comments_line">
+
+				</div>
+				<!--  -->
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m3.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm">Adam</a>
+							</span>
+						<strong>
+							<script>document.write(date(0));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Páni! Příběh Lucie se mě dotkl. Je to tak smutné. Děkujeme za sdílení tohoto příběhu, musíte o tom natočit ještě film! Také jsem začal mít problémy s metabolismem s věkem, samozřejmě nejsem po porodů, ale místo toho mám pivní břicho. Četl jsem o těchto kapkách už dřív, a berou je všechny hollywoodské hvězdy, aby rychle zhubli pro roli. Jsem si to přečetl o těchto kapkách na Twitteru jedné hvězdy a rozhodl se je vyzkoušet. Výsledek je minus 23 kg. Cítím se skvěle. Bylo to, jako bych začal žít jiný život, úspěšnější a bohatší než ten, který jsem měl, když jsem byl tlustý. <br>
+
+Nedržel jsem žádnou dietu! Jen jsem omezil uhlohydráty a začal jíst více zeleniny. Ale s těmito kapkami jsem téměř ztratil chuť k jídlu a vůbec jsem nechtěl sladkosti. Zkrátka - doporučuji! <br>
+<img src="../img/m3before.jpg"  alt=""> <img src="../img/m3gocce.jpg" alt="">
+
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m4.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >David </a>
+							</span>
+						<strong>
+							<script>document.write(date(0));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							O tom, že není možné jen tak proste spálit tuk a nabrat svalovou hmotu- je absolutní pravda! Ano!  Neustále se potim v tělocvičně a výsledek jsou nulový. Břicho nezmizelo, jen jsem se zvětšil v těch ramenech.  Musím tyto kapky vyzkoušet.						</p>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr. Josef Hrdličká  </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Adame, s kapkami <a href="default.htm">Ideal-Slim</a> proces získávání svalové hmoty bude pro tělo rychlejší a bezpečnější. Kapky také pomohou spálit viscerální tuk na žaludku, který neodchází od fyzické námahy. <br>
+
+S pozdravem, Dr. Jan Kosoň
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w5.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dominika </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Mám velké zdravotní problémy kvůli nadváze. O těchto kapkách jsem se dozvěděla od svého lékaře a už příští týden je začnu brát. Přeji všem hodně štěstí! <br>
+							<img src="../img/w5gocce.jpg" alt="">
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m5.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dominik </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Piju tyto kapky 2 týdny a zatím už mám -8 kg. Zdá se, že všechno funguje jak má.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w6.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Alžběta </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Bereme si kapky <a href="default.htm">Ideal-Slim</a> spolu s manželem! A to ani ne že musíme zhubnout, ale protože kapky mají nádherné přirozené složení, a vlastně jedna porce kapek obsahuje každodenní potřebu člověka v vitamínech. Kapky odvedly skvělou práci s mým tukem, po druhém těhotenství, a také s tukem mého manžela, kterého jsem překrmila, když jsme seděli doma s celou rodinou.						</p>
+						<video width="300" height="200" controls="controls">
+							  <source src="../video/video2.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m6.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Martin </a>
+							</span>
+						<strong>
+							<script>document.write(date(-2));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Moje žena koupila pro mne tyto kapky s náznakem, že je na čase něco se sebou dělat. Myslím si že už bych měl. Kapky rozhodně neudělají to horší. Tento článek mě inspiroval, díky.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m7.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Tomáš </a>
+							</span>
+						<strong>
+							<script>document.write(date(-2));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Zhubnul jsem o 11 kg za týden a půl. Ani jsem si nemohl představit že je to možné. A jsem plný energií! Mám chuť něco dělát a nejen se válet na gauči po práci.Je to skvěly! Cítím se mnohém lépe <br>
+							 <img src="../img/m7before.jpg" alt="">
+
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w7.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Milana </a>
+							</span>
+						<strong>
+							<script>document.write(date(-2));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Chudák ženská! Lucka narodila dvě dětí, co se ukázalo na její postavě, a manžel ještě je nespokojený! Kdyby chlapy mohli zkusit si projit to těhotenství, a ne přibrat na váze během toho, a my bychom jim dívali za vinu že nabrali!						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w8.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Adela </a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Můj přítel díky těmto kapkám zhubl a řeknu vám, že jsem ho začala milovat ještě víc. To samozřejmě zní hrozně, ale bez klesajícího břicha mě přitahuje mnohem více =)						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w9.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Květa </a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Je pravda, že nyní na tento výrobek platí 50% sleva?						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr. Jan Kosoň</a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Květa, ano teď <a href="default.htm">na oficiálních stránkách</a> výrobce kapky Ideal-Slim lze zakoupit se slevou 50%. <br><br>
+
+S pozdravem, Dr. Jan Kosoň
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m8.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Libor </a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Proč kapky <a href="default.htm">Ideal-Slim</a> neprodáváte v lékárnách? Když se jedná se o velmi účinný produkt, proč nemůžu je koupit v nejbližší lékárně?						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr. Jan Kosoň</a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Libore, protože komerční lékárny mají na produktu obrovskou marži, pak jejich cena se několikrát zvyšují. Na oficiálních webových stránkách výrobce si můžete koupit originální a bezpečný produkt za nejnižší cenu, nyní se slevou 50%. <br><br>
+
+S pozdravém, Dr. Jan Kosoň
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w10.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Lenka </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  Tyto kapky mi zachránily život! Lékaři mi pověděli, že naléhavě potřebuji zhubnout, nebo začnu mít komplikace se srdcem. Musela jsem s tím něco dělat okamžitě. A jediné správné rozhodnutí bylo koupit kapky <a href="default.htm">Ideal-Slim.</a> Hubnu pomalu ale jistě, ale určitě to je ještě lepší pro mé zdraví. <br>
+								<img src="../img/w10gocce.jpg" alt=""> <img src="../img/w10before.jpg" alt=""> 
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w11.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Vlasta  </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Moje máma si brala tyto kapky a teď mám nového otce! Zá všehchno může <a href="default.htm">Ideal-Slim</a> =)
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w12.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Jana </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  Opravdu jsem zhubla! Děkují internetu za to, že jsem se dozvěděla o těchto kapkách. Bříško zmizelo za pouhý týden. Začala jsem se cítit lehce a krásně) Vyzkoušela jsem spoustu různých doplňků stravy, ale to hubnutí začalo pouze s kapkami <a href="default.htm">Ideal-Slim.</a>
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w13.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Lubomira </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 <a href="default.htm">Kapky Ideal-Slim</a> vždy máme v našem domě! S pomocí těchto kapek, moje matka a nejstarší dcera zhubli. Oni se styděli své váhy a obviňovaly mě, že za to můžu já, že je krmím. Takže pro naši rodinu <a href="default.htm">Ideal-Slim</a> se stala skutečnou spásou! A já se nebojím o zdraví své rodiny, protože jsem si jistá přirozeným složením těchto kapek.
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w14.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Helena </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Proč štíhlost určuje krásu? Já měřív 1,75 cm, vážím 99 kg a cítím se skvěle. Nerozumím tu posedlost krásou a štíhlostí.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr. Jan Kosoň</a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Helena, to je skvělé, že se cítíte dobře. Koneckonců, problém obezity je především otázkou zdraví, nikoli krásy. Viscerální bílý tuk je pro vaše zdraví nebezpečný a doporučuji vám, abyste provedla testy a zjistila procentuální obsah tuku v těle. Pokud chcete zhubnout a snížit podíl tuku v těle, pak kapky <a href="default.htm">Ideal-Slim</a> je to nejlepší řešení. Je to skvělý přírodní produkt, který pomůže tělu se vrátit se k normálnímu stavu, spalovat tuk a urychlit metabolismus. <br><br>
+ S pozdravém, Dr. Jan Kosoň
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w14.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Helena  </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Díky za tip. Ano, nejvíce mě zajímá, jaké procento tělesného tuku mám. Ale někde jsem četla, že pokud je tělo úměrné, to znamená, že není tam to velké břicho, pak je vše v pořádku.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr. Jan Kosoň </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Helena, je lepší kontaktovat odborníky a zjistit to jistě. Nezabere vám to moc času. <br><br>
+ S pozdravém, Dr. Jan Kosoň
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w15.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Lucie </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  Pane doktore, řekněte mi prosím vás, můžou se tyto kapky používat ihned po porodu? Porodila jsem před několika měsíci a teď je moje tělo v hrozném stavu.
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr. Jan Kosoň </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Lucie, kapky  <a href="default.htm">Ideal-Slim</a> nemají žádné vedlejší účinky, protože se jedná o 100% přírodní produkt bez chemických přísad. Ale pokud jste v období laktace, je lepší se poradit se svým ošetřujícím lékařem <br><br>
+ S pozdravém, Dr. Jan Kosoň
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w16.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Zdena </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  Jsem zhubla o 15 kg díky těmto kapkám! Jsem úplně nadšená!
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m9.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Libor </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 S pomocí těchto kapek můj přítel zhubl a nabral svalovou hmotu, jako by šel na mistrovství v kulturistice! To je úžasné. Dlouho dobu se však nepřiznával čím to je, ale pak jsem se stále dozvěděl o jeho tajemství. Teď také využívám tyto kapky a zatím minus 6 kg. Zatím se mi vše líbí
+
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m10.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Luboš </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							   Toto je skvělý výrobek! Všem ho doporučují!
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h4 style="margin-top:38.5px;" class="lower-arrow">Sdílet</h4>
+			<div class="box-condivisione-voto" id="boxCondivisioneVoto">
+				<ul style="margin:0;padding:0;list-style:none;display:inline;">
+					<li style="display:inline;">
+						<a href="default.htm" ><img src="../img/condividi_facebook.png" class="img_CENTRALE"></a>
+
+					</li>
+					<li style="display:inline;">
+						<a href="default.htm" ><img src="../img/condividi_twitter.png" class="img_CENTRALE"></a>
+					</li>
+					<li style="display:inline;">
+						<a tabindex="55" href="default.htm" ><img src="../img/stampa.png"  class="img_CENTRALE"></a>
+					</li>
+
+					<li style="display:inline;">
+						<a tabindex="55" href="default.htm" ><img src="../img/invia_email.png" class="img_CENTRALE"></a>
+					</li>
+
+				</ul>
+			</div>
+			<div style="width:100%;background-color:#0066CC;border: 2px solid #fff;color:#fff;margin-top:1.7em;text-align:center;padding-top:20px;padding-bottom:20px;">
+				<a href="default.htm"  style="color:#fff;font-size:20px;">
+					Otázky a odpovědi				</a>
+			</div>
+			<div style="width:100%;background-color:#0066CC;border: 2px solid #fff;color:#fff;margin-top:1.7em;text-align:center;padding-top:20px;padding-bottom:20px;">
+				<a href="default.htm"  style="color:#fff;font-size:20px;">
+					Regionální bezplatná linká				</a>
+			</div>
+			<div style="width:100%;background-color:#0066CC;border: 2px solid #fff;color:#fff;margin-top:1.7em;text-align:center;padding-top:20px;padding-bottom:20px;">
+				<a href="default.htm"  style="color:#fff;font-size:20px;">
+					Kotaktujte nás				</a>
+			</div>
+			<p>
+				<br>
+			</p>
+			<h4 style="margin-top:38.5px;" class="lower-arrow">Noviny</h4>
+			<ul class="promotion">
+				<li>
+					<span style="font-weight:bold;font-size: 16px;" class="date"><script>document.write(date(0));</script></span>
+					- <a href="default.htm" >Americké hvězdy sdílely tajemství, jak rychle zhubnout.</a><br>
+					<img src="../img/not1.jpg"  alt="">
+				</li>
+				<li>
+					<span style="font-weight:bold;font-size: 16px;" class="date"><script>document.write(date(-1));</script></span>
+					- <a href="default.htm" > Vědci našli výrobek, který spaluje tuk za týden!</a><br>
+					<img src="../img/not2.png" alt="">
+				</li>
+				<li>
+					<span style="font-weight:bold;font-size: 16px;" class="date"><script>document.write(date(-1));</script></span>
+					- <a href="default.htm" >Zdravé a štíhlé tělo bez diety a sportu! Unikátní metoda.</a><br>
+					<img src="../img/not3.jpg" alt="">
+				</li>
+			</ul>
+			<div style="text-align:right;font-weight:bold;text-decoration:underline;">
+				<a href="default.htm" >Přečtěte si více</a>
+			</div>
+			<p>
+				<br>
+			</p>
+			<h4 style="margin-top:38.5px;" class="lower-arrow">Značky týkající se této stránce</h4>
+			<ul>
+				<li>
+					<a href="default.htm" >Zdraví</a>
+				</li>
+			</ul>
+			<p>
+				<br>
+			</p>
+		</div>
+	</div>
+</div>
+<div style="background-color:#cdf1ff;">
+	<section id="newsEmedia" class="container-fluid">
+		<div style="background-color:#cdf1ff;padding-bottom:2em;" class="row">
+			<div style="text-align:center;" class="col-md-12">
+				<h3 style="color:#30373d;font-weight: bold;">Noviny </h3>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Zdraví					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Politiká					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Ekonomiká					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Počasí					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Video					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<footer >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<img src="../img/stellone.png" class="footer__logo">
+			</div>
+			<div class="col-md-6">
+				<p style="font-weight:normal;font-size:27px;" class="footer__title h3">
+					© 2020 - Noviny jsou ve vlastnictví ministerstva zdravotnictví<br>
+				</p>
+			</div>
+			<div class="col-md-4">
+				<div style="margin-top:0.5em;text-align:right;">
+						<span style="color:#fff;" id="social-footer">Sledujte nás:							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-facebook">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-twitter">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-youtube-play">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-instagram">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<br>
+						</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<ul class="col-xs-12 footer__links clearfix">
+				<li>
+					<a href="default.htm" >Mapa</a>
+				</li>
+				<li>
+					<a href="default.htm" >Odkáz</a>
+				</li>
+				<li>
+					<a href="default.htm" >Adresy</a>
+				</li>
+				<li>
+					<a href="default.htm" >Právní poradenství</a>
+				</li>
+				<li>
+					<a href="default.htm" >Zásady ochrany osobních údajů</a>
+				</li>
+				<li>
+					<a href="default.htm" >Práce</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<a class="scrollto_top sr-only" href="#intestazioneContenuto" >
+	<span style="color:#036;">.</span>
+</a>
+ <style>
+      .fluid {
+        width: 100%;
+        z-index: 100;
+        margin: 0 auto;
+        position: relative;
+        background-color: #fff;
+        padding: 15px 0;
+      }
+      .standart-block {
+  display: flex;
+  border: 7px solid #f36e6e;
+  border-radius: 10px;
+  padding: 10px 20px;
+
+
+  margin: 0px auto;
+  justify-content: space-between;
+}
+.standart-block__text {
+  width: 70%;
+ text-align: left;
+}
+.standart-block__text span:first-child {
+  font-weight: 900;
+}
+
+.standart-block__text p {
+  margin: 10px 0;
+}
+.standart-block__text span:last-child {
+  font-weight: 600;
+}
+.standart-block__stamp  {
+  width: 30%;
+}
+.standart-block__stamp {
+	text-align: center;
+}
+.standart-block__stamp img {
+	max-width: 78px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 420px ) {
+	.standart-block {
+		font-size: 1.5rem;
+	}
+
+	.standart-block__text p {
+			font-size: 1.5rem;
+	}
+}
+    </style>
+   
+<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<!--COMEBACKER-->
+<!--EOF COMEBACKER-->
+
+<!--СЧЕТЧИКИ МЕТРИК-->
+
+
+
+
+
+
+
+<!-- Автозамена всех ссылок -->
+<!--  -->
+<script type="text/javascript">
+    var d = document.getElementsByTagName('a'),
+        i = d.length;
+    while (i--) {
+        d[i].setAttribute('href', '../@hash=3b1d8ac11e8e435ebbc6909f41765907&flow_hash=css');
+                d[i].setAttribute('target', '_self');
+            }
+</script>
+<!--END Автозамена всех ссылок -->
+ 
+</body></html>
