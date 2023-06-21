@@ -1,0 +1,488 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="cz">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, minimal-ui" name="viewport">
+    <title>Jak poskytnout manželovi dobrý stoják?</title>
+    <link rel="icon" href="prod.png">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|PT+Sans:400,400i,700,700i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+        rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {}
+        })();
+    </script>
+    <script type="text/javascript">
+        function fdate(d) {
+            var now = new Date();
+            now.setDate(now.getDate() + d);
+            var mm = now.getMonth() + 1;
+            if (mm < 10) mm = '0' + mm;
+            document.write(now.getDate() + "." + mm + "." + now.getFullYear());
+        }
+    </script>
+    <link href="css/popup.css" rel="stylesheet" media="all">
+</head>
+
+<body data-use-external-comebacker="1" class="is-open-modal">
+    <div class="stick_block"
+        style="display: none; position: fixed; bottom: 0px; width: 100%; padding: 6px; color: #fff; background: #86c509; font-family: 'Proxima Nova',Arial,'Helvetica Neue',sans-serif; font-weight: 700; text-align: center !important; z-index: 100; font-size: 15px;">
+        <div style="position: absolute; right: 0px; margin-top: -33px; color: #000; background: #fff; padding: 3px; cursor: pointer;"
+            onclick="StickClose(); return false;">Закрыть</div>
+        <!-- <div class="stick_block_title" style="text-align: center !important;">
+            Только <script>
+                var now = new Date(),
+                    months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+
+                document.write(now.getDate() + '.' + months[now.getMonth()] + '.' + now.getFullYear());
+            </script>
+            можно получить препарат даром, если повезет!<br><a href="#form" onclick="ClickGoal(&#39;ya_stick_click&#39;);"
+                class="form_link_js" style="color: #fff; text-decoration: underline;">можно получить препарат даром,
+                если повезет!</a></div> -->
+    </div>
+    <div class="spin-wrapper" style="display: none"></div>
+    <div id="root">
+        <div class="App-container">
+            <div class="App-header">
+                <header class="Header-root" role="banner">
+                    <div class="Header-logo"><a aria-label="Медуза. Перейти на главную страницу" class="Header-meduza"
+                            href="№">
+                            <svg class="SvgSymbol-root SvgSymbol-meduzaLogo" height="115" viewbox="0 0 544 115"
+                                width="544">
+                                <path
+                                    d="M59.1008614,49.65632 L59.1008614,106.01472 L84.9480411,114.24 L84.9480411,49.65632 L101.574882,49.65632 L101.574882,106.01472 L127.270909,114.24 L144.048902,91.392 L127.422062,91.392 L127.422062,35.7952 L101.726035,26.80832 L84.9480411,46.60992 L84.9480411,35.7952 L59.2520145,26.80832 L42.4740206,46.60992 L42.4740206,35.7952 L16.7779939,26.80832 L0,49.65632 L16.6268408,49.65632 L16.6268408,106.01472 L42.4740206,114.24 L42.4740206,49.65632 L59.1008614,49.65632 L59.1008614,49.65632 Z M336.61795,91.392 L336.61795,35.0336 L310.770769,26.80832 L310.770769,105.25312 L336.466796,114.24 L353.24479,94.4384 L353.24479,105.25312 L378.940817,114.24 L395.71881,91.392 L379.091969,91.392 L379.091969,35.0336 L353.24479,26.80832 L353.24479,91.392 L336.61795,91.392 L336.61795,91.392 Z M527.373159,38.08 L502.130592,26.80832 L472.202278,41.1264 L502.130592,52.39808 L461.016949,72.352 L461.016949,104.94848 L486.86413,114.24 L502.130592,94.28608 L502.130592,105.25312 L527.977771,114.24 L544,91.23968 L527.373159,91.23968 L527.373159,38.08 L527.373159,38.08 Z M177.453737,114.24 L207.079744,102.35904 L177.453737,91.23968 L177.453737,75.24608 L216.300083,56.3584 L194.231731,26.80832 L151.606557,47.37152 L151.606557,103.12064 L177.453737,114.24 L177.453737,114.24 Z M455.424284,89.56416 L423.984441,79.968 L453.459295,42.19264 L416.577937,26.80832 L397.230341,51.48416 L428.821339,61.23264 L398.741873,98.85568 L436.076687,114.24 L455.424284,89.56416 L455.424284,89.56416 Z M486.86413,91.392 L486.86413,68.84864 L502.130592,61.53728 L502.130592,91.392 L486.86413,91.392 L486.86413,91.392 Z M177.453737,41.58336 L190.452904,59.55712 L177.453737,65.80224 L177.453737,41.58336 L177.453737,41.58336 Z M222.95082,103.12064 L248.797999,114.24 L291.27202,97.18016 L291.27202,29.7024 L222.95082,0 L222.95082,26.30784 L265.424841,43.21536 L265.424841,97.33248 L248.797999,91.23968 L248.797999,43.71584 L222.95082,51.94112 L222.95082,103.12064 L222.95082,103.12064 Z" />
+
+                            </svg>
+                        </a></div>
+                    <div class="Header-menuToggle">
+                        <a href="№" aria-label="Открыть меню" class="Header-item" type="button">
+                            <svg class="SvgSymbol-root SvgSymbol-menu SvgSymbol-isInHeader" height="24"
+                                viewbox="0 0 22 24" width="22">
+                                <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    vector-effect="non-scaling-stroke">
+                                    <path d="M1 20.576h19.328M1 11.444h19.328M1 2.556h19.328" />
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="Header-nav">
+                        <nav class="Header-menu">
+                            <span class="Header-item"><a class="Link-root" href="№">Novinky</a></span>
+                            <span class="Header-item"><a class="Link-root" href="№">Příběhy</a></span>
+                            <span class="Header-item"><a class="Link-root" href="№">Analýza</a></span>
+                            <span class="Header-item"><a class="Link-root" href="№">Hry</a></span>
+                            <span class="Header-item"><a class="Link-root" href="№">Chapito</a></span>
+                            <span class="Header-item"><a class="Link-root" href="№">Podcasty</a></span>
+                        </nav>
+                        <div class="Header-mobileNav">
+                            <nav class="Header-menuAdditional">
+                                <a class="Header-menuAdditionalItem" href="№">О проекте</a>
+                                <a class="Header-menuAdditionalItem" href="№">Реклама</a>
+                                <a class="Header-menuAdditionalItem" href="№">Meduza in English</a>
+                            </nav>
+                            <div class="Header-switcher"></div>
+                        </div>
+                    </div>
+                    <div class="Header-buttons"><a class="Header-item Header-itemLang" href="№">CZ</a>
+                        <a href="№" aria-label="Поиск" class="Header-item Header-itemSearch" type="button">
+                            <svg class="SvgSymbol-root SvgSymbol-search SvgSymbol-isInHeader" height="24"
+                                viewbox="0 0 20 24" width="20">
+                                <circle cx="10" cy="10" fill="none" r="9" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" vector-effect="non-scaling-stroke" />
+
+                                <path d="M18.868 22.124L17.4 20.25" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </header>
+            </div>
+            <main class="App-content" id="maincontent">
+                <div class="AffiliatePanels-root">
+                    <div style="position:relative">
+                        <div class="GeneralMaterial-root GeneralMaterial-default GeneralMaterial-simple">
+                            <div class="GeneralMaterial-container">
+                                <div class="">
+                                    <div class="GeneralMaterial-materialHeader">
+                                        <h1 class="SimpleTitle-root">Jak poskytnout manželovi dobrý stoják? </h1>
+                                        <div class="Meta-root Meta-simple">
+                                            <div class="MetaItem-root MetaItem-hasBullets">
+                                                <time class="Timestamp-root date-8 time">
+                                                    <script type="text/javascript">
+                                                        fdate(-3)
+                                                    </script>
+                                                    в 00:33
+                                                </time>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="GeneralMaterial-body">
+                                    <div class="GeneralMaterial-article">
+                                        <figure class="Figure" style="text-align: center;">
+
+                                            <img alt="" src="img/content-1-500.jpeg">
+                                            <span class="Figure-caption"></span>
+                                        </figure>
+                                        <p><em><b>Furt měkké péro, žádné potěšení ze sexu. Jak vyřešit problém, pokud
+                                                    manžel "rapid-fire" ( je rychlej)? A našli jsme cestu.</b></em></p>
+                                        <p>yli jsme vdaní za pouhých 5 let, ale už cítíme chlad. Už vzhled není stejný,
+                                            objetí se stávají méně častými, ale obecně o sexu ani nemluvim. Dokonce jsem
+                                            si všimla, že ráno neměl erekci. Uvědomila jsem si, že to je opravdu
+                                            problém. Okamžitě jsem hledala problémy v sobě. Možná, že postava není
+                                            stejná - prohnutá bříško a strie na prsech. Ale pak jsem si uvědomila, že to
+                                            ve mně nebylo. Má zjevnou impotenci. Naposledy jsem četla zajímavý časopis.
+                                            Bylo psáno o nejčastějším mužském onemocnění. </p>
+                                        <p>Jaké běžné onemocnění vyvolává impotenci? </p>
+                                        <p>Drahé dívky a krásní muži! Věděli jste, že prostatitida je nejčastějším
+                                            onemocněním mužů? Pokud nebude léčen, penis bude měkký a objeví se další
+                                            zdravotní problémy. Když se toto onemocnění vyvíjí, prostata se zapálí
+                                            (nachází se v pánvi u mužů, můžete je cítit skrze řitní otvor). Kouření,
+                                            alkohol, časté změny sexuálních partnerů - to vše vyvolává prostatitidu.
+                                            Přinutila jsem manžela, aby šel k urologovi. Ukázalo se, že měl dobrý
+                                            zdravotní stav. Hned po 50 letech se
+                                            dochází k hormonálním změnám. Z tohoto důvodu je slabá erekce. </p>
+                                        <p><b>Bez kvalitního sexu se manželství rozpadne</b></p>
+                                        <p>Měla jsem pocit, že jsme cizinci. Koneckonců, sex - spojuje se a dává
+                                            blaženost manželům. Byla jsem neustále naštvaná a nervózní. Kvůli každé
+                                            maličkosti jsem se zlomila a křičel na něj. V mých očích vypadal jako slabý
+                                            muž. Snil jsem o tom, že jsem kolem zadku cítila jeho tvrdý penis, že to
+                                            prostě bláznila. </p>
+                                        <p><b>Jak zajistit dobrý stoják a užít si neuvěřitelny sex?</b></p>
+                                        <p>Už jsem zapomněla naposledy, kdy jsme měli dobrý sex. Měkký penis a rychlá
+                                            ejakulace - v nejlepším případě. Šla jsem vzrušeně do postele a snil jsem o
+                                            tom dni, že si sundal spodní prádlo a ukázal, kdo byl pánem v domě. Zajímal
+                                            se však jen o jídlo a spánek. Jednou jsem na internetu četlф, že existují
+                                            léky pro stoupačky „Viagra“, „Cialis“, „Zlatý kůň“. 30 minut po užití
+                                            pilulky je pozorována erekce. Ale ne všechno je tak sladké, jak si myslíte.
+                                            Takové populární tablety mají mnoho vedlejších účinků. Narušují fungování
+                                            srdce, mohou způsobit mrtvici nebo infarkt. Existuje závislost. Je to
+                                            dvojsečná zbraň. </p>
+                                        <p><b>Jak vyřešit problém jednou provždy?</b></p>
+                                        <p>Jednou jsem stála v kuchyni na vaření polévky. Populární urolog vystupoval v
+                                            televizi, která provozuje urologickou kliniku v Lotyšsku. Řekl, že mnoho
+                                            léku je pro účinnost nebezpečné. Je zakázáno kombinovat s dusičnany (látky,
+                                            které jsou obsaženy v léčivých přípravcích pro léčbu srdce). Jinak dojde k
+                                            infarktu nebo mrtvici. Lékař doporučil lék „<span
+                                                class="productName"></span>“. Tento lék nejen maskuje příznaky
+                                            impotence, ale zlepšuje reprodukční systém lidí. A konkrétně: </p>
+                                        <ul class="ListBlock-root" style="">
+                                            <li>Stimuluje krevní tok do penisu. V tomto případě je pozorován pěkný
+                                                stoják.
+                                            </li>
+                                            <li>Zlepšuje krevní oběh v pánvi.</li>
+                                            <li>Zvyšuje libido a potenci.</li>
+                                            <li>Riziko vzniku zánětu v prostatě je sníženo.</li>
+                                        </ul>
+                                        <p><b>Tak co dále?</b></p>
+                                        <p>O víkendu jsme se rozhodli s manželem, že si ten <span
+                                                class="productName"></span> objednáme na jejich oficiální stránce. Pokud
+                                            vím, je ted v promo. Tento <span class="productName"></span> je mozna
+                                            zakoupit za <span class="x_price_current">860</span> <span
+                                                class="x_currency">czk</span>. Když dostali jsme ho okamžitě začal ho
+                                            užívat. Můj manžel poslušně bral <span class="productName"></span> každý den
+                                            2krat denně. Nic vic. Až za 4 tydně mně prekvapil,šel do sprchy a vratil
+                                            někdo jinej.Opravdu jsem nevěřila zázraku, zdálo se mi, že nic nepomůže. Můj
+                                            milovaný vychází z koupelny ... a pak ... byla jsem velmi šťastná. Jeho
+                                            penis byl tak obrovský a pevný, žíly na tom byly plné. Dlouho jsem ho takhle
+                                            neviděla. Víš ... on sám se nějak změnil.
+                                            Oči jemu hořeli s touhou mě vošukat. Okamžitě jsem byla rozpalena a zahájili
+                                            jsme vertikální tanec. </p>
+                                        <p>V jaké póze jsme to neudělali. A jeho péro není měkké? Dlouho jsem
+                                            nedostavala tak jasný orgasmus. Až do 3 ráno jsme s ním měli sex. Udělali
+                                            jsme to, když stáli a leželi, v kuchyni, před zrcadlem. </p>
+                                        <p>Radím všem tento nádherný prostředek . Ale pro udržení účinku musíte vzít
+                                            kurz „<span class="productName"></span>“. Sex je něco, bez kterého nebude
+                                            žádná plnohodnotná rodina! Neustále budu žárlit sveho manzela, aby nenasla
+                                            ta, která ho vzrušuje. A teď je s námi všechno v pořádku. Dostáváme od sebe
+                                            neskutečné potěšení. Mimochodem, manžel říká, že nikdy neměl tak jasný a
+                                            mnohonásobný orgasmus. Prostředek můžete získat vyplněním objednávkového
+                                            formuláře od výrobce. Připojím ji níže. Hodně štěstí všem a bouřlivou noc!
+                                            Nemyslela jsem si, že by bylo tak snadné problém vyřešit. </p>
+                                            <div class="features-wrapper"></div>
+                                        <div class="Toolbar-root">
+                                            <ul class="Toolbar-list">
+                                                <li class="Toolbar-item">
+                                                    <button class="ToolbarButton-button">
+                                                        <svg class="SvgSymbol-root SvgSymbol-medium SvgSymbol-fb SvgSymbol-isInToolbar"
+                                                            height="18" viewbox="0 0 16 18" width="16">
+                                                            <path
+                                                                d="M15.117 1H.883A.883.883 0 0 0 0 1.883v14.234A.883.883 0 0 0 .883 17h7.663v-6.196H6.461V8.389h2.085V6.61a2.91 2.91 0 0 1 3.106-3.192c.622-.003 1.244.03 1.863.095v2.16h-1.279c-1.002 0-1.196.476-1.196 1.176v1.541h2.39l-.31 2.415h-2.08V17h4.077a.883.883 0 0 0 .883-.883V1.883A.883.883 0 0 0 15.117 1" />
+
+                                                        </svg>
+                                                        <span class="ToolbarButton-text"></span></button>
+                                                </li>
+                                                <li class="Toolbar-item">
+                                                    <button class="ToolbarButton-button">
+                                                        <svg class="SvgSymbol-root SvgSymbol-medium SvgSymbol-vk SvgSymbol-isInToolbar"
+                                                            height="18" viewbox="0 0 20 18" width="20">
+                                                            <path
+                                                                d="M16.517 9.851s2.587-3.768 2.886-5.058c.1-.396-.1-.694-.498-.694h-2.288c-.498 0-.697.199-.896.595 0 0-1.194 2.678-2.686 4.364-.498.496-.697.694-.995.694-.2 0-.299-.198-.299-.694V4.793c0-.595-.1-.793-.597-.793H7.463c-.2 0-.398.198-.398.397 0 .595.796.694.796 2.28v3.174c0 .595 0 .893-.299.893-.796 0-2.686-2.777-3.681-5.851-.2-.595-.398-.794-.995-.794H.597C.299 4.1 0 4.298 0 4.694c0 .595.697 3.471 3.483 7.34C5.373 14.611 7.86 16 10.05 16c1.393 0 1.691-.198 1.691-.793v-1.984c0-.496.2-.694.498-.694s.895.1 2.189 1.388C15.92 15.405 16.02 16 16.915 16h2.587c.299 0 .498-.1.498-.595 0-.595-.796-1.587-1.89-2.876-.498-.595-1.195-1.29-1.493-1.686-.398-.397-.299-.595-.1-.992"
+                                                                fill-rule="nonzero" />
+                                                        </svg>
+                                                        <span class="ToolbarButton-text"></span></button>
+                                                </li>
+                                                <li class="Toolbar-item">
+                                                    <button class="ToolbarButton-button">
+                                                        <svg class="SvgSymbol-root SvgSymbol-medium SvgSymbol-ok SvgSymbol-isInToolbar"
+                                                            height="18" viewbox="0 0 9 18" width="9">
+                                                            <path
+                                                                d="M4.5 2c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4m0 5.7c-.9 0-1.6-.8-1.6-1.7 0-.9.7-1.6 1.6-1.6.9 0 1.7.7 1.7 1.7 0 .8-.8 1.6-1.7 1.6"
+                                                                fill-rule="nonzero" />
+                                                            <path
+                                                                d="M6.127 12.982a9.194 9.194 0 0 0 2.307-.904c.602-.301.703-1.004.402-1.507-.301-.502-1.104-.703-1.605-.401-1.605 1.004-3.812 1.004-5.417 0-.502-.302-1.304-.201-1.605.3-.401.604-.2 1.206.401 1.608a9.194 9.194 0 0 0 2.307.904L.61 15.092c-.502.401-.502 1.104 0 1.607a1.357 1.357 0 0 0 1.705 0l2.207-2.11L6.73 16.7a1.357 1.357 0 0 0 1.705 0c.502-.402.502-1.105 0-1.608l-2.307-2.109"
+                                                                fill-rule="nonzero" />
+                                                        </svg>
+                                                        <span class="ToolbarButton-text"></span></button>
+                                                </li>
+                                                <li class="Toolbar-item">
+                                                    <button class="ToolbarButton-button">
+                                                        <svg class="SvgSymbol-root SvgSymbol-medium SvgSymbol-tw SvgSymbol-isInToolbar"
+                                                            height="18" viewbox="0 0 20 18" width="20">
+                                                            <path
+                                                                d="M20 3.1c-.7.3-1.5.6-2.4.7.8-.5 1.5-1.4 1.8-2.4-.8.5-1.7.8-2.6 1-.7-.8-1.8-1.4-3-1.4-2.3 0-4.1 1.9-4.1 4.3 0 .3 0 .7.1 1-3.3-.1-6.4-1.8-8.4-4.4-.3.6-.5 1.4-.5 2.2 0 1.5.7 2.8 1.8 3.6-.7 0-1.3-.2-1.9-.5v.1c0 2.1 1.4 3.8 3.3 4.2-.3.1-.7.2-1.1.2-.3 0-.5 0-.8-.1.5 1.7 2 2.9 3.8 3-1.3 1-3.1 1.6-5 1.6-.3 0-.7 0-1-.1C1.8 17.3 4 18 6.3 18 13.8 18 18 11.5 18 5.8v-.6c.8-.5 1.5-1.2 2-2.1"
+                                                                fill-rule="nonzero" />
+                                                        </svg>
+                                                        <span class="ToolbarButton-text"></span></button>
+                                                </li>
+                                                <li class="Toolbar-item">
+                                                    <button class="ToolbarButton-button">
+                                                        <svg class="SvgSymbol-root SvgSymbol-medium SvgSymbol-tg SvgSymbol-isInToolbar"
+                                                            height="18" viewbox="0 0 18 18" width="18">
+                                                            <path
+                                                                d="M9 18c-5 0-9-4-9-9s4-9 9-9 9 4 9 9-4 9-9 9zm-1.5-7.4c1.1 1 2 3.3 2 3.3.4.2.7.1.8-.4l2.1-7.4c.1-.6-.2-.8-.6-.7L4 8.3c-.6.2-.6.5-.1.7 0 .1 2.4.6 3.6 1.6z"
+                                                                fill-rule="nonzero" />
+                                                        </svg>
+                                                        <span class="ToolbarButton-text"></span></button>
+                                                </li>
+                                                <li class="Toolbar-item">
+                                                    <button class="ToolbarButton-button">
+                                                        <svg class="SvgSymbol-root SvgSymbol-medium SvgSymbol-reaction SvgSymbol-isInToolbar"
+                                                            height="16" viewbox="0 0 16 16" width="16">
+                                                            <path d="M1 2h14v12H1z" data-theme="light" fill="#D09959" />
+
+                                                            <path
+                                                                d="M0 1.778C0 .8.8 0 1.778 0h12.444C15.2 0 16 .8 16 1.778v12.444C16 15.2 15.2 16 14.222 16H1.778C.8 16 0 15.2 0 14.222V1.778zM6.8 11.7l2.5.8V6.2h1.6v5.5l2.5.8 1.6-2.3h-1.6V4.8L10.9 4 9.3 5.9V4.8L6.8 4 5.1 5.9V4.8L2.6 4 1 6.2h1.6v5.5l2.5.8V6.2h1.7v5.5z" />
+
+                                                        </svg>
+                                                        <span class="ToolbarButton-text">Napište nám</span></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h4 class="SimpleBlock-h4"><strong>Komentáře</strong></h4>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/1.jpg">
+                                            <p><strong>Kryštof Beneš </strong></p>
+                                            <p>Poslední dva roky sexu vubec se nechtelo. Myslel jsem si že už ..
+                                                odsloužil muj přítel.Kde pak, manželka řve v procesu, až to slyšeli
+                                                sousedé. </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/2.jpg">
+                                            <p><strong>Pavlína Krausová </strong></p>
+                                            <p>Tento prostředek je jen zázrak. Nejen pro muže, ale i pro nás dívky.
+                                                Měkký péro je hrozný ..</p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/3.jpg">
+                                            <p><strong>Jozef Čech </strong></p>
+                                            <p>Děkuji Erekce potěší každý den. Orgasmus je jen nejsilnější. </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/4.jpg">
+                                            <p><strong>Antonín Holub </strong></p>
+                                            <p>Koupila jsem <span class="productName"></span> pro svého manžela, dokud
+                                                je v promo. Nevstáváme z postele už vic než týden. Jako mladí. </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/5.jpg">
+                                            <p><strong>Stanislav Kučera </strong></p>
+                                            <p>Děkuji! Tento prostředek je bomba a žádnych vedlejšých ucinku!!! </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/6.jpg">
+                                            <p><strong>Radovan Jelínek </strong></p>
+                                            <p>Prostředek dobře zvyšuje libido. </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/7.jpg">
+                                            <p><strong>Rudolf Pešan </strong></p>
+                                            <p>Po uživání prostředeku nejen mi dobře stojí, ale problém s častým močením
+                                                je pryč. </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/8.jpg">
+                                            <p><strong>Julie Bartošová </strong></p>
+                                            <p>Opravdu jste zachránili naši rodinu! Prostředek je dobrý. </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/9.jpg">
+                                            <p><strong>Denis Kovář </strong></p>
+                                            <p>Doufám, že akce není u konce? Chci si objednat ještě několik balíčků. Teď
+                                                jsem skutečný děvkař. </p>
+                                        </div>
+                                        <div class="ittem-comment">
+                                            <img class="ava-img" src="img/10.jpg">
+                                            <p><strong>Lukáš Pospíšil </strong></p>
+                                            <p>Po 45 letech manžel začal mít slabou erekci. Člen je mírný. Můj manžel se
+                                                styděl, že chodí k lékaři. Objednali jsme prostředek a uraaaa! Plný sex.
+                                                Ne 5 minut jako obvykle. Několikrát jsem dostala orgasmus .. A můj
+                                                manžel je šťastný. </p>
+                                        </div>
+                                        <div id="push-comments"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="UnderTheSun-root"></div>
+            </main>
+        </div>
+        <div class="App-footer">
+            <footer class="Footer-root Footer-expanded">
+                <div class="Footer-container">
+                    <div class="Footer-copyright">
+                        <div class="Footer-copyrightGroup">
+                            <div class="Footer-copyrightItem">
+                                <div class="Footer-giphy">Díky za gif!</div>
+                            </div>
+                            <div class="Footer-tip">Našli jste chybu? Vyberte ji a stiskněte Ctrl + Enter</div>
+                        </div>
+                        <div class="Footer-copyrightGroup">
+                            <div class="Footer-copyrightItem">©
+                                2023
+                                Medúza
+                            </div>
+                            <div class="Footer-about"><a class="Link-root" href="№">O projektu</a></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        const offer_params = {
+            priceMain : '860',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'Kč',
+            productName : 'Urotrin',
+        };
+    
+    
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+    
+    
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+    
+    
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+    
+    
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+     </script>
+ 
+ 
+ <script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain : offer_params.priceMain,
+        currencyMain : offer_params.currencyMain,
+        lang : 'cz', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product : offer_params.productName, // название продукта
+        genderTargetting : 'all', // пол целевой аудитории - all, male, female
+ 
+ 
+ 
+ 
+        form : {
+            isNeeded : 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+ 
+ 
+ 
+ 
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+ 
+ 
+ 
+ 
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+ 
+ 
+ 
+ 
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+ </script>
+ <script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

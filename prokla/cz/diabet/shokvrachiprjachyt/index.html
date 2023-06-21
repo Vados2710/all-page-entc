@@ -1,0 +1,1026 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="cz" dir="ltr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+	<title>Vše pod jednou střechou</title>
+	<link href="prod.png" rel="shortcut icon" type="image/png" />
+	<link href="css/template.css" rel="stylesheet" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/styleForm.css" rel="stylesheet" />
+	<link href="css/comm.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+	<script src="drewlex_main.js"></script>
+	<script>
+		(function () {
+			let params = (new URL(document.location)).searchParams;
+			let block = '';
+			params.forEach(function (value, key) {
+				block = block + key + '=' + value + '&';
+			})
+			var t;
+			try {
+				for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+				onpopstate = function (t) {
+					t.state && location.replace("domonetka/index.php?cid={clickid}")
+				}
+			} catch (o) {}
+		})();
+	</script>
+	<style>
+		div.mod_search87 input[type="search"] {
+			width: auto;
+		}
+	</style>
+	<style>
+		.hide,
+		.flag-dropdown {
+			display: none;
+		}
+
+		.error-box {
+			color: #fff;
+			background-color: #DE5042 !important;
+			border-radius: 5px;
+			text-align: center;
+			width: 240px;
+			font-size: 13px;
+			line-height: 20px;
+			margin: 5px auto !important;
+			z-index: 100;
+		}
+
+		input:invalid {
+			box-shadow: none;
+		}
+	</style>
+</head>
+
+<body class="site com_content view-article no-layout no-task itemid-363">
+	<!-- Fixed Header -->
+	<header class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="container" id="header-container">
+			<a id="logo" href="#to_form" title="Čínský Lékař - přírodní medicína a léčba dle TČM"><img
+					src="img/logo.png" /></a>
+			<div id="login-form">
+				<ul class="login-form">
+					<li class="login">
+						<a href="#to_form">
+							Přihlásit se</a>
+					</li>
+					<li class="register">
+						<a href="#to_form">
+							Vytvořit účet <span class="icon-arrow-right"></span></a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<ul class="nav buttons-menu mod-list" id="header-menu-buttons">
+					<li class="item-1 item-odd"><a href="#to_form"><img src="img/btn_1.png" alt="O nás" /><span
+								class="image-title">O
+								nás</span></a></li>
+					<li class="item-2 item-even"><a href="#to_form"><img src="img/btn_2.png" alt="Léčba" /><span
+								class="image-title">Léčba</span></a></li>
+					<li class="item-3 item-odd"><a href="#to_form"><img src="img/btn_3.png" alt="Semináře" /><span
+								class="image-title">Semináře</span></a></li>
+					<li class="item-4 item-even"><a href="#to_form"><img src="img/btn_4.png" alt="Strava" /><span
+								class="image-title">Strava</span></a></li>
+				</ul>
+			</div>
+			<div id="search">
+				<div class="search mod_search87">
+					<form action="send.php" method="post" class="form-inline" role="form">
+						<input type="hidden" name="country" value="CZ">
+						<input type="hidden" name="goods_id" value="155688">
+
+						<a href="#to_form" class="form-group">
+							<label for="mod-search-searchword87" class="sr-only">Vyhledávání...</label> <input
+								name="searchword" id="mod-search-searchword87" maxlength="200"
+								class="form-control inputbox search-query input-medium" type="search" size="20"
+								placeholder="Hledaný výraz" /> <input type="image" alt="Hledat" class="button btn"
+								src="img/searchButton.png">
+						</a>
+
+						<input type="hidden" name="sub1" value="">
+						<input type="hidden" name="sub2" value="">
+						<input type="hidden" name="sub3" value="">
+						<input type="hidden" name="sub4" value="">
+						<input type="hidden" name="sub5" value="">
+					</form>
+				</div>
+			</div>
+			<div class="visible-sm visible-xs mobile-menu">
+				<div class="navbar-header">
+					<a href="#to_form" type="button" class="navbar-toggle">
+						<span class="sr-only">Toggle navigation</span>
+						<div class="icon">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</div>
+						<span class="label">Menu</span>
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<div class="moduletable">
+						<h3>Naše služby</h3>
+						<ul class="nav menu navbar-nav mod-list">
+							<li class="item-149"><a href="#to_form" class="">Vyšetření
+									a diagnostika</a></li>
+							<li class="item-177"><a href="#to_form" class="">Akupresura &amp;
+									masáže</a></li>
+							<li class="item-240"><a href="#to_form" class="">Čínské zdravotní cvičení</a></li>
+							<li class="item-148"><a href="#to_form" class="">Ceník služeb</a>
+							</li>
+							<li class="item-147"><a href="#to_form" class="">Kontakty 773 178 889</a></li>
+						</ul>
+					</div>
+					<div class="moduletable">
+						<h3>ČL Akademie</h3>
+						<ul class="nav menu navbar-nav mod-list">
+							<li class="item-172 deeper parent dropdown"><a href="#to_form"
+									class="dropdown-toggle">Semináře pro
+									veřejnost <b class="caret"></b></a>
+								<ul class="nav-child unstyled dropdown-menu">
+									<li class="item-178"><a href="#to_form" class="">Hubnutí je radost</a></li>
+									<li class="item-192"><a href="#to_form" class="">Imunitní systém</a></li>
+									<li class="item-186"><a href="#to_form" class="">Lupénka a její léčba</a></li>
+									<li class="item-193"><a href="#to_form" class="">Jak
+											na nespavost</a></li>
+									<li class="item-195"><a href="#to_form" class="">Jak zvládat stres</a></li>
+									<li class="item-189"><a href="#to_form" class="">Stravování dle 5 elementů</a></li>
+									<li class="item-187"><a href="#to_form" class="">TČM v domáčí praxi</a></li>
+									<li class="item-277"><a href="#to_form" class="">Běžné choroby a TČM</a></li>
+								</ul>
+							</li>
+							<li class="item-279"><a href="#to_form" class="">On-line kurzy a
+									školy</a></li>
+						</ul>
+					</div>
+					<div class="moduletable">
+						<h3>TČM</h3>
+						<ul class="nav menu navbar-nav mod-list">
+							<li class="item-101 default"><a href="#to_form" class="">Čínský lékař</a></li>
+							<li class="item-142 deeper parent dropdown"><a href="#to_form" class="dropdown-toggle "
+									data-toggle="dropdown">Nemoci a léčba TČM <b class="caret"></b></a>
+								<ul class="nav-child unstyled dropdown-menu">
+									<li class="item-210"><a href="#to_form" class="">Alergie a imunita</a></li>
+									<li class="item-144"><a href="#to_form" class="">Bolesti a únava</a></li>
+									<li class="item-146"><a href="#to_form" class="">Detoxikace a prevence</a></li>
+									<li class="item-211"><a href="#to_form" class="">Endokrinní systém</a></li>
+									<li class="item-143"><a href="#to_form" class="">Kožní</a></li>
+									<li class="item-244"><a href="#to_form" class="">Krevní oběh</a></li>
+									<li class="item-282"><a href="#to_form" class="">Sezónní onemocnění</a></li>
+									<li class="item-200"><a href="#to_form" class="">Zánětlivá onemocnění</a></li>
+								</ul>
+							</li>
+							<li class="item-104"><a href="#to_form" class="">Články</a></li>
+							<li class="item-145"><a href="#to_form" class="">Zdravé
+									stravování </a></li>
+							<li class="item-361"><a href="#to_form" class="">Nákupní zóna</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Body -->
+	<section class="article-view-container article-view">
+		<div class="row">
+			<div class="article-main-title order-1">
+				<h1 class="article-title">ŠOK: LÉKAŘI SKRÝVAJÍ NEJÚČINNĚJŠÍ PŘÍPRAVEK PROTI CUKROVCE. JAK
+					ENDOKRINOLOGOVÉ
+					PODVÁDĚJÍ SVÉ PACIENTY A CO VÁM OPRAVDU POMŮŽE - CELÁ PRAVDA V NAŠEM ČLÁNKU</h1>
+				<h3 class="article-sub-title">Zatímco celý civilizovaný svět směřuje k tomu, aby se zbavil nemocí a
+					zdravotní prevence, Česko je zachyceno epidemií cukrovky. <br><br>
+					Miliony lidí trpí touto nebezpečnou chorobou a každý den se počet lidí s diabetem a prediabetem
+					zvyšuje.
+					Opravdu vědci a lékaři ještě nic nevymysleli a lidstvo je před touto nemocí bezmocné?
+				</h3>
+			</div>
+			<div class="lan colum-left-640">
+				<div class="statia-content order-3 inarticle-text">
+					<p><em>V našem studiu je přední endokrinolog České republiky, doktor Boris Subotić. Dr. Subotić
+							nedávno
+							učinil šokující uznání:<strong> "ÚČINNÝ PRODUKT PROTI CUKROVCE JE JIŽ VYTVOŘEN, VYKAZUJE
+								VYNIKAJÍCÍ VÝSLEDKY. ALE LÉKAŘI O NĚM MLČÍ!"</strong>
+						</em>
+					</p>
+					<div class="doc-file">
+						<a class="doc-file__link" href="#to_form">
+							<div class="doc-file__photo">
+								<img class="doc-file__img" src="img/7b108e54be8b25dce636f9dc76a09959-kyo-3295.jpg">
+							</div>
+						</a>
+						<p class="doc-file__text"><em>Dr. Boris Subotić má vystudovaný obor medicína a chirurgie, je
+								specialistou na endokrinologii a výživu. <br><br>
+								Boris Subotić v současné době vyučuje na Universitě Karlova v Praze a vykonává lékařskou
+								praxi v
+								ATODA Medical - na oddělení komplexní léčby diabetu.</em></p>
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Dr. Subotić, opravdu Česko zažívá epidemii cukrovky?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em> "To je pravda. Cukrovka je jedním z nejzávažnějších zdravotních
+							problémů
+							Česka. V posledním desetiletí začala nabývat děsivých rozměrů.</em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em>Podle mezinárodní diabetologické federace (IDF) bylo v roce 2017 v Česku 2 miliony dospělých
+							s
+							diabetem. Údaje z konce loňského roku naznačují, že počet nemocných stoupl na 3,5 milionu,
+							což
+							znamená, že <strong>problém roste a bude narůstat.</strong> <br><br>
+							<strong>Lidé umírají, a pokud s tím nic neuděláte, tak do roku 2045 onemocní cukrovkou každý
+								pátý
+								člověk v Česku a počet zemřelých na nemoc se zvýší třikrát!</strong></em>
+					</div>
+					<div class="graph"><img src="img/graph.jpg" alt="" class="graph__img"></div>
+					<div class="paragraph doc-speach">
+						<em>V loňském roce se naše země stala lídrem v počtu diabetiků v celé Evropě. Na 10 000 obyvatel
+							připadá 2 500 diabetiků. 25% občanů České republiky buď trpí cukrovkou, nebo je ve stadiu
+							prediabetes."</em>
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Hrůza jen pomyslet! Řeší tento problém stát?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em>"Stát našel řešení, ale lékaři to nějak nespěchají. To mě překvapuje a
+							štve
+							zároveň. Nechápu, <strong>proč tyto oběti a proč lidé stále umírají, když ŘEŠENÍ JEJICH
+								PROBLÉMŮ
+								JIŽ EXISTUJE."</strong></em>
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Co tím myslíte?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em>"Došlo k neuvěřitelnému objevu ve vědeckém a lékařském světě.
+							Představte si,
+							že je <strong>vytvořen produkt, pomocí kterého se můžete v krátké době zbavit
+								diabetu.</strong> Ale
+							moji kolegové o něm mlčí. <br>
+							Neznám přesný důvod, ale hádám, že jde jako vždy o výdělek. Nový vývoj umožní pacientům
+							trpícím
+							cukrovkou jednou provždy zbavit se obávaného onemocnění. To znamená, že platy tisíců lékařů
+							se
+							sníží několikanásobně. </em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em>Jako lékař to nepovažuji za dobrý důvod, proč připravit obrovské množství lidí o možnost žít
+							plnohodnotný a zdravý život. Proto o tom mluvím. <br>
+							Jen se nad tím zamyslete, <strong> každý den na cukrovku a její komplikace zemře až pět set
+								našich
+								spoluobčanů.</strong> "
+						</em>
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Proč tolik obětí? Diabetici jsou také léčeni.</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em> "Diabetici u nás neléčí. Úkolem lékařů je udržet pacienta ve
+							stabilním
+							stavu. Pro tento úkol existuje celá řada léků. Maskují projevy diabetu a zajišťují
+							viditelnost
+							normálního života. <br><br>
+							Ale když se nad tím zamyslíte, tak takový život není normální. Dokonce i při použití těchto
+							léků
+							musí pacient neustále sledovat hladinu cukru v krvi a používat prostředky ke snížení
+							rezistence
+							buněk.</em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em><strong>Život s diabetem se změní na nekonečné plánování kdy a jak užívat tablety a co
+								dělat,
+								pokud začne hypoglykemický záchvat. </strong> <br><br>
+							Spontánně odjet na celý víkend nebo strávit další neplánovanou hodinu na návštěvě-pro
+							diabetika
+							nedostupná možnost. Protože v tomto případě je vysoká pravděpodobnost náhlé
+							komplikace."</em>
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: O jakých komplikacích mluvíte?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em> "Cukrovka má obrovské množství komplikací. Na rozdíl od populárního
+							přesvědčení, že tato nemoc neposkytuje komplikace, pokud se zabýváte terapií, chci
+							prohlásit-dává.
+							Denně to pozoruji u svých pacientů na klinice. <br><br>
+							Nezávisle sledovat a upravovat hladinu cukru v krvi je velmi obtížné. Pacienti i s
+							desetiletou
+							praxí se mýlí, protože nemohou poskytnout všechny nuance. Pak jsou postiženy takovými
+							komplikacemi,
+							jako jsou:</em>
+					</div>
+					<ul class="disease">
+						<li class="disease__item"><strong class="black-big">Ketoacidóza</strong>
+							<p class="disease__descr"><b class="black"> Účinky:</b> ztráta vědomí, náhlé narušení
+								životně
+								důležitých orgánů, smrt.</p>
+						</li>
+						<li class="disease__item"><strong class="black-big">Hypoglykemie</strong>
+							<p class="disease__descr"><b class="black"> Účinky: </b>ztráta vědomí, náhlé zvýšení hladiny
+								cukru
+								v krvi v krátkém čase, nedostatek citlivosti na světlo, akutní pocení a křeče. Extrémní
+								forma-kóma.</p>
+						</li>
+						<li class="disease__item"><strong class="black-big">Hyperosmatická kóma</strong>
+							<p class="disease__descr"><b class="black"> Účinky: </b>polydipsie (nadměrná žízeň),
+								polyurie
+								(nadměrné močení).</p>
+						</li>
+						<li class="disease__item"><strong class="black-big">Laktacidotická kóma</strong>
+							<p class="disease__descr"><b class="black">Účinky:</b> ztráta vědomí, problémy s dýcháním,
+								pokles
+								krevního tlaku a nedostatek močení, stejně jako kardiovaskulární poruchy.</p>
+						</li>
+					</ul>
+					<p class="main-text"> <em>Jedná se o komplikace, které se mohou objevit během několika měsíců po
+							začátku
+							vývoje onemocnění.
+							<br><br>
+							Během 2-3 let mohou nastat další komplikace, jako jsou:"</em></p>
+					<div class="disease-sec">
+						<p class="disease-sec__text">1. <strong> Retinopatie.</strong> Jedná se o poškození sítnice oka,
+							které
+							může vést k krvácení v zadní části oka a oddělení sítnice. Postupně vede k úplné ztrátě
+							zraku.</p>
+						<img src="img/dis1.jpg" alt="" class="disease-sec__img">
+						<span class="disease-sec__descr"><em>A - zdravé oko; B - oko s retinopatií.</em></span>
+					</div>
+					<div class="disease-sec">
+						<p class="disease-sec__text">2. <strong>Angiopatie.</strong> Vyznačuje se prudkým poklesem
+							propustnosti krevních cév. To přispívá k rozvoji trombózy a aterosklerózy. Zvyšuje se riziko
+							vnitřního nebo cerebrálního krvácení.</p>
+						<img src="img/dis2.jpg" alt="" class="disease-sec__img">
+					</div>
+					<div class="disease-sec">
+						<p class="disease-sec__text">3. <strong>Polyneuropatie.</strong> Je charakterizován ztrátou
+							citlivosti
+							na bolest a teplo v končetinách. První příznaky jsou necitlivost a pálení v končetinách,
+							které se
+							během noci zvyšují. Výsledkem je ztráta kontroly nad končetinami.</p>
+						<img src="img/dis3.jpg" alt="" class="disease-sec__img">
+					</div>
+					<div class="disease-sec">
+						<p class="disease-sec__text">4. <strong>Diabetická noha.</strong> Komplikace, při níž jsou dolní
+							končetiny pacienta pokryty otevřenými ulceracemi, hnisavými vředy, se objevují nekrotické
+							oblasti.
+							Vede k amputaci nebo smrti."</p>
+						<img src="img/dis4.jpg" alt="" class="disease-sec__img">
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Ukazuje se, že i při použití tradiční léčby tabletami přetrvávají rizika
+							komplikací
+							nebo dokonce smrti. Je možné se tomu vyhnout, pokud použijete alternativu, o které jste
+							mluvili
+							dříve.</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b> <em>"Ano, Je to možné. To byla jedna z podmínek pro vytvoření
+							produktu.</em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em>Vývoj tohoto doplňku zadala našemu ústavu vláda. Vytvoření a testování trvalo téměř 12
+							měsíců.
+							Nejprve byly zkoumány příčiny diabetu na buněčné úrovni.</em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em>Dříve jsme věřili, že diabetes je diagnóza celoživotní. Ale tyto studie odhalily něco úplně
+							jiného.
+							<br><br>
+							Moji kolegové vědci našli souvislost mezi vývojem diabetu a porušením určité funkce jater.
+							Toto
+							porušení způsobuje zvýšení hladiny volných mastných kyselin, které jsou následně uloženy ve
+							svalové
+							tkáni a způsobují inzulínovou rezistenci.</em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em>Na základě získaných informací vyvinuli vzorec, který pomáhá obnovit funkce jater.
+							<br><br>
+							Nový vzorec prošel rozsáhlým výzkumem. 10 000 dobrovolníků, kteří trpí diabetem typu 2, po
+							dobu 6
+							týdnů pravidelně užívalo přípravek, na jehož základě byl tento vzorec založen. Výsledky
+							uvedu
+							níže:</em>
+					</div>
+					<ul class="results">
+						<li class="results__item">Obnovení funkce jater-98%</li>
+						<li class="results__item">Odstranění nepříjemných příznaků diabetu a zlepšení pohody-99%</li>
+						<li class="results__item">Snížení inzulínové rezistence-95%</li>
+						<li class="results__item">Normalizace hladiny glukózy v krvi-100%</li>
+						<li class="results__item">Snížení cholesterolu-92%"</li>
+					</ul>
+					<p class="main-text underline"><strong>Účinnost tohoto vývoje je vědecky potvrzena. Výsledný produkt
+							se
+							nazývá <span class="productName"></span>.</strong></p>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Jak tento zázračný produkt funguje?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em> "Není to zázrak, ale čistá věda. Produkt generuje speciální
+							přeprogramované
+							imunitní buňky, které spouštějí proces obnovy jater a jeho funkcí.
+							<br><br>
+							Práce jater je normalizována, takže hladina volných mastných kyselin klesá. Inzulinová
+							rezistence
+							klesá. Dále se normalizují všechny ostatní ukazatele: cukr, cholesterol, zdravotní stav
+							obecně.</em>
+					</div>
+					<p class="main-text"><strong><span class="productName"></span> nejen zmírňuje příznaky, dočasně se vrací k normálu glukózy v
+							krvi. "Restartuje" tělo na buněčné úrovni. </strong></p>
+					<p class="main-text"><strong>Produkt pomáhá eliminovat hlavní příčinu diabetu, čímž stabilizuje cukr
+							v
+							krvi a vrátí pacientovi zdraví po mnoho let."</strong></p>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Proč je produkt tak účinný?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em>"Vše je o složení. Jeho vývoj trval několik měsíců. Tým vědců denně
+							vybíral
+							přísady a prováděl experimenty. Je to obrovská práce nejlepších mozků České republiky.
+							<br><br>
+							To vše za účelem vytvoření produktu, který bude vyhovovat všem lidem se stejným
+							problémem-cukrovkou.</em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em>Podařilo se jim najít nejlepší kombinaci a proporce a vytvořit kompozici zcela přirozenou.
+							Díky
+							tomu produkt nemá žádné vedlejší účinky a je vhodný pro všechny pacienty pro vlastní příjem
+							doma."</em>
+					</div>
+					<div class="sertificat"><img src="img/sertif.jpg" alt="" class="sertificat__img"></div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: V jaké fázi onemocnění je <span class="productName"></span> užitečný?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em> "Jedná se o všestranný produkt, který funguje v jakékoli fázi
+							diabetu.
+							Působí na buněčné úrovni a obnovuje ty systémy a orgány v lidském těle, které nefungují
+							správně.</em>
+					</div>
+					<div class="paragraph doc-speach">
+						<em><strong><span class="productName"></span> bude užitečný jak pro pacienta s vážnými komplikacemi, tak pro pacienta s
+								prediabetem. </strong> <br><br>
+							A co víc, můžete užívat přípravek <span class="productName"></span> <b>pro prevenci.</b> To pomůže vyhnout se
+							rozvoji
+							této nemoci, pokud máte špatnou dědičnost nebo zaznamenáte přítomnost jakýchkoli úzkostných
+							příznaků charakteristických pro Diabetes."</em>
+					</div>
+					<div class="product"><img src="prod.png" alt="" class="product__img"></div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Kde lze koupit <span class="productName"></span>?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em>"Výrobek prošel závěrečnými testy v dubnu 2022 a je nyní k dispozici
+							pro
+							objednávku online od oficiálního výrobce. Je to nejbezpečnější a nejjednodušší způsob, jak
+							získat
+							originální produkt."</em>
+					</div>
+					<div class="promo">
+						<p class="promo__text"><em><strong>Díky vládnímu programu "NE cukrovce" si můžete objednat
+									doplněk se
+									slevou 50%.</strong> Program je bohužel platný pouze do <span
+									class="js-current-date"></span>. Takové slevy jsou vzácností. Nenechte si ujít svou
+								šanci!"</em></p>
+						<p class="promo__text">Pro vaše pohodlí jsme zveřejnili oficiální objednávkový formulář níže.
+							<strong class="link-color"> Jestli chcete si objednát <span class="productName"></span>:</strong></p>
+						<ul class="promo__list">
+							<li class="promo__item">1. Zadejte jméno a telefonní číslo do speciálních polí níže
+							</li>
+							<li class="promo__item">2. Počkejte, až zavoláte zástupce společností, abyste upřesnili
+								podrobnosti
+								objednávky</li>
+							<li class="promo__item">3. Získejte objednávku do 3-5 dnů. Kurýr doručuje zásilku přímo k
+								vám domů,
+								platba při převzetí.</li>
+						</ul>
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: zbývá nám dost času. Co byste našim divákům na závěr vzkázal?</b>
+					</div>
+					<div class="paragraph doc-speach">
+						<img src="img/docava.png" alt="" class="doc-speach__photo">
+						<b>Boris Subotić: </b><em>"Žádám vás, abyste neztráceli čas pochybnostmi, pokud máte cukrovku -
+							už ji
+							máte tak málo. Objednejte si produkt právě teď, abyste mohli začít co nejdříve. <b>Již Tento
+								týden
+								se můžete zbavit prvních příznaků diabetu.</b> A za pár týdnů se s touto nemocí úplně
+							rozloučíte. Buďte zdraví!"</em>
+					</div>
+					<div class="paragraph editor-speach">
+						<img src="img/editava.png" alt="" class="editor-speach__photo">
+						<b>Moderátor: Díky, že jste v sobě našli sílu říct pravdu. Zachrání to život mnoha lidem.
+							Bohužel
+							dnes není nutné spoléhat na pomoc lékařů, takže naše zdraví je v našich rukou. Chraňte sebe
+							a své
+							blízké!</b>
+					</div>
+					<div class="redaction"><span class="cover"> OD REDAKCE:</span> Podle zprávy ústavu, v současné době
+						ve
+						skladu zůstalo jen <div class="form-bottom">
+							<p><span class="form-instock">37</span></p>
+						</div> balení <span class="productName"></span> a jejich počet rychle klesá. Pospěšte si: akce brzy skončí!</div>
+						<div class="features-wrapper"></div>
+				</div>
+				<div class="comments order-4" id="comments-listing">
+					<div class="comments-header">
+						<a href="#to_form">KOMENTÁŘE:</a>
+					</div>
+					<div class="comment-list">
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">1</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">7</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava1.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Roman Novák</span><br>
+								<span class="day-1"></span>
+							</div>
+							<div class="comment-content">
+								Nečekal jsem ... ale opravdu jsem se zbavil cukrovky ... trvalo to jen 6 týdnů
+							</div>
+						</div>
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">2</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">2</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava2.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Lenka Hejná </span><br>
+								<span class="day-2"></span>
+							</div>
+							<div class="comment-content">
+								Děkuji doktorovi za odvahu. Jste skutečný lékař a člověk s velkým S. Používám <span class="productName"></span>
+								již
+								druhý týden a všiml jsem si, že mi zmizela nesnesitelná žízeň. Poslední půlrok jsem se s
+								ní
+								trápila. Brala jsem všechny potřebné pilulky a bojovala s diabetem, ale tento příznak
+								stále
+								nebyl. S <span class="productName"></span> to šlo doslova za pár dní.
+							</div>
+							<div class="comment alter answer" id="comment-1041783">
+								<div class="comment-header">
+									<div class="rating" id="vote-1041783">
+										<span class="rate-up">
+											<span class="grade up">11</span>
+											<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+													src="img/rate-up.png" alt="rate up comment"></a>
+										</span>
+										<span class="rate-down grade">
+											<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+													src="img/rate-down.png" alt="rate down comment"></a>
+											<span class="grade down">0</span>
+										</span>
+									</div>
+									<img src="img/commdoc.png" alt="" class="comm-ava">
+									<span class="author" title="Нерегистриран потребител"> Boris Subotić</span><br>
+									<span class="day-2"></span>
+								</div>
+								<div class="comment-content">
+									Děkuji, Lenko. Váš komentář vzbuzuje důvěru, že jsem to udělal správně.
+								</div>
+							</div>
+						</div>
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">2</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">5</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava3.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Michal Stránský</span><br>
+								<span class="day-2"></span>
+							</div>
+							<div class="comment-content">
+								Po 50 letech se můj organismus zhroutil. Objevily se migrény, neustálá žízeň a silný
+								hlad. Někdy
+								jsem se v noci probudil z hladu a šel jíst. Díky tomu jsem přibral na váze, kterou
+								nemůžu
+								shodit. Nyní absolvuji kurz <span class="productName"></span> a cítím se lépe. Cukr se
+								normalizoval ve druhém týdnu příjmu produktu, hlad zmizel. Doufám, že v budoucnu bude
+								možné
+								zhubnout.
+							</div>
+							<div class="comment alter answer" id="comment-1041783">
+								<div class="comment-header">
+									<div class="rating" id="vote-1041783">
+										<span class="rate-up">
+											<span class="grade up">8</span>
+											<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+													src="img/rate-up.png" alt="rate up comment"></a>
+										</span>
+										<span class="rate-down grade">
+											<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+													src="img/rate-down.png" alt="rate down comment"></a>
+											<span class="grade down">0</span>
+										</span>
+									</div>
+									<img src="img/commdoc.png" alt="" class="comm-ava">
+									<span class="author" title="Нерегистриран потребител"> Boris Subotić</span><br>
+									<span class="day-2"></span>
+								</div>
+								<div class="comment-content">
+									Michale, nemusíte se o to bát. Když se metabolismus uhlohydrátů (a to je
+									nevyhnutelné v
+									průběhu aplikace <span class="productName"></span>), váha začne postupně klesat.
+								</div>
+							</div>
+						</div>
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">3</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">1</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava4.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Markéta Soukalová</span><br>
+								<span class="day-3"></span>
+							</div>
+							<div class="comment-content">
+								Preparát je opravdu jedinečný! Nevěřila jsem, že pomůže, ale s ním se cukr normalizoval
+								již v
+								prvním týdnu.
+							</div>
+						</div>
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">4</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">14</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava5.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Pavel Novák</span><br>
+								<span class="day-4"></span>
+							</div>
+							<div class="comment-content">
+								Zkoušel jsem spoustu prášků na normalizaci cukru v krvi. Nic jiného než vedlejší účinky
+								nedali.
+								Po posledních pilulkách, které mi lékař předepsal, se mi udělalo ještě hůř. Zkusím
+								<span class="productName"></span>, doufám, že mi pomůže
+							</div>
+							<div class="comment alter answer" id="comment-1041783">
+								<div class="comment-header">
+									<div class="rating" id="vote-1041783">
+										<span class="rate-up">
+											<span class="grade up">1</span>
+											<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+													src="img/rate-up.png" alt="rate up comment"></a>
+										</span>
+										<span class="rate-down grade">
+											<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+													src="img/rate-down.png" alt="rate down comment"></a>
+											<span class="grade down">0</span>
+										</span>
+									</div>
+									<img src="img/commava6.png" alt="" class="comm-ava">
+									<span class="author" title="Нерегистриран потребител">Michala Pozdejková</span><br>
+									<span class="day-4"></span>
+								</div>
+								<div class="comment-content">
+									Pavle, u mého manžela se cukr normalizoval třetí den po podání preparátu. Zpočátku
+									jsme tomu
+									ani nevěřili, tak najednou to bylo. Cukr klesl na 4.3. mmol/l.
+								</div>
+							</div>
+						</div>
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">5</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">2</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava7.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Barbora Potůčková</span><br>
+								<span class="day-4"></span>
+							</div>
+							<div class="comment-content">
+								Správně lékař říká, že terapie není vůbec zárukou, že vše bude v pořádku se zdravím.
+								Každý měsíc
+								jsem u lékaře a stále pravidelně dochází k hypoglykemickým záchvatům. Zkusím <span class="productName"></span>.
+								Doufám, že
+								konečně budu moci začít žít v klidu, bez strachu, že omdlím někde v obchodě nebo v
+								metru.
+							</div>
+						</div>
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">6</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">6</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava8.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Aleš Starý</span><br>
+								<span class="day-4"></span>
+							</div>
+							<div class="comment-content">
+								Nevěřím zboží z internetu
+							</div>
+							<div class="comment alter answer" id="comment-1041783">
+								<div class="comment-header">
+									<div class="rating" id="vote-1041783">
+										<span class="rate-up">
+											<span class="grade up">10</span>
+											<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+													src="img/rate-up.png" alt="rate up comment"></a>
+										</span>
+										<span class="rate-down grade">
+											<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+													src="img/rate-down.png" alt="rate down comment"></a>
+											<span class="grade down">0</span>
+										</span>
+									</div>
+									<img src="img/commava9.png" alt="" class="comm-ava">
+									<span class="author" title="Нерегистриран потребител">Lukaš Suchánek</span><br>
+									<span class="day-4"></span>
+								</div>
+								<div class="comment-content">
+									Aleši, a co je na tom tak špatného? Vše se nyní prodává na internetu. Navíc zde jsou
+									další
+									záruky - platba pouze při přijetí. Takže se nebojte, objednejte, dokud je sleva
+								</div>
+							</div>
+						</div>
+						<div class="comment alter" id="comment-1041783">
+							<span class="num">7</span>
+							<div class="comment-header">
+								<div class="rating" id="vote-1041783">
+									<span class="rate-up">
+										<span class="grade up">3</span>
+										<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+												src="img/rate-up.png" alt="rate up comment"></a>
+									</span>
+									<span class="rate-down grade">
+										<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+												src="img/rate-down.png" alt="rate down comment"></a>
+										<span class="grade down">0</span>
+									</span>
+								</div>
+								<img src="img/commava10.png" alt="" class="comm-ava">
+								<span class="author" title="Нерегистриран потребител">Monika Čižková</span><br>
+								<span class="day-5"></span>
+							</div>
+							<div class="comment-content">
+								Díky moc, že říkáte pravdu! Před čtyřmi měsíci mi doktor diagnostikoval prediabetes.
+								Byla jsem
+								šokovaná a vyděšená. Začala jsem používat tablety, které mi předepsal lékař. Ale bolel
+								mě
+								žaludek a byla jsem pořád nervozní. Nevěděla jsem, co mám dělat, tak jsem šla hledat
+								jiné řešení
+								na internetu. Tam jsem narazila na vaše vydání o preparátu <span class="productName"></span>.
+								Objednala jsem si ho hned. Jak jsem cítila, že to stojí za to! Můj cukr se okamžitě
+								normalizoval
+								a celkově se stav zlepšil poměrně rychle. Rozhodla jsem se použít <span class="productName"></span> pro prevenci
+								jednou
+								ročně.
+							</div>
+							<div class="comment alter answer" id="comment-1041783">
+								<div class="comment-header">
+									<div class="rating" id="vote-1041783">
+										<span class="rate-up">
+											<span class="grade up">4</span>
+											<a href="#to_form" class="yes" onclick="return vote(1,1041783);"><img
+													src="img/rate-up.png" alt="rate up comment"></a>
+										</span>
+										<span class="rate-down grade">
+											<a href="#to_form" class="no" onclick="return vote(-1,1041783);"><img
+													src="img/rate-down.png" alt="rate down comment"></a>
+											<span class="grade down">0</span>
+										</span>
+									</div>
+									<img src="img/commdoc.png" alt="" class="comm-ava">
+									<span class="author" title="Нерегистриран потребител"> Boris Subotić</span><br>
+									<span class="day-5"></span>
+								</div>
+								<div class="comment-content">
+									Moniko, děkujeme za váš odklik.
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Footer -->
+	<footer id="footer" class="footer container" role="contentinfo">
+		<div class="row">
+			<div class="col-md-9 col-md-offset-2">
+				<div class="moduletable">
+					<div class="footer1">Copyright &#169; <span class="js-current-year"></span> || <a class="privacy"
+							href="#">Privacy Policy</a></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<a href="#">
+		<footer>
+			<center>
+				<span style="text-decoration: underline; cursor: pointer;">Disclaimer</span> |
+				<span style="text-decoration: underline; cursor: pointer;">Terms &
+					Conditions</span> |
+				<span style="text-decoration: underline; cursor: pointer;">Privacy
+					policy</span> <br>
+			</center>
+		</footer>
+	</a>
+	<script>
+		const offer_params = {
+			priceMain : '849',
+			customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+			currencyMain: 'Kč',
+			productName : 'INSULINEX',
+		};
+	
+	
+		var productName = document.getElementsByClassName("productName");
+		var priceMain = document.getElementsByClassName("priceMain");
+		var priceOld = document.getElementsByClassName("priceOld");
+		var currencyMain = document.getElementsByClassName("currencyMain");
+	
+	
+		for (var i = 0; i < productName.length; i++) {
+			productName[i].innerHTML = offer_params.productName;
+		}
+		for (var i = 0; i < priceMain.length; i++) {
+			priceMain[i].innerHTML = offer_params.priceMain;
+		}
+	
+	
+		if(offer_params.customPriceOld){
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.customPriceOld;
+			}
+		}else{
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.priceMain * 2;
+			}
+		}
+	
+	
+		for (var i = 0; i < currencyMain.length; i++) {
+			currencyMain[i].innerHTML = offer_params.currencyMain;
+		}
+	 </script>
+ 
+ 
+ <script>
+	var usr = '{t2}';
+	var sabss = '{clickid}';
+	initFeatures({
+		priceMain : offer_params.priceMain,
+		currencyMain : offer_params.currencyMain,
+		lang : 'cz', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+		product : offer_params.productName, // название продукта
+		genderTargetting : 'all', // пол целевой аудитории - all, male, female
+ 
+ 
+ 
+ 
+		form : {
+			isNeeded : 1, // 1-включить форму, 0-выключить
+			img: 'prod.png', // путь до картинки продукта
+			price: true, // плашка с ценой
+			priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+			showSelect: false, // показывать или скрывать поле select
+			untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+		},
+ 
+ 
+ 
+ 
+		autoComments: {
+			isNeeded: 0, // 1-включить автокомы, 0-выключить
+			bgColor: '#d7f2d8' // цвет фона блока комчиков
+		},
+ 
+ 
+ 
+ 
+		popups: {
+			isNeeded: 0, // 1-включить попы, 0-выключить
+			bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+			textColor: '#fff', // цвет основного текста сообщения
+			emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+			blackIcons: false // черные или белые иконки, значения true или false
+		},
+ 
+ 
+ 
+ 
+		wheel: {
+			isNeeded: 1, // 1-включить колесо, 0-выключить
+			customWheel: false // ссылка на свое колесо, либо false
+		}
+	});
+ </script>
+ <script>
+	$('[name="name"]').on('input change', function () {
+		var val = $(this).val();
+		$(this).val(val.replace(/[0-9+]/g, ''));
+	});
+	$('[name="name"]').attr('autocomplete', 'name');
+	$('[name="name"]').attr('pattern', '.{2,25}');
+	$('[name="phone"]').on('input change', function (e) {
+		var val = $(this).val();
+		$(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+	});
+	$('[name="phone"]').get(0).type = 'tel';
+	$('[name="phone"]').attr('autocomplete', 'tel');
+	$('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

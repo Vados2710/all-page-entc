@@ -1,0 +1,889 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="cz">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EVROPSKÝ VĚDECKÝ ÚSTAV OFTALMOLOGIE</title>
+    <link rel="icon" href="prod.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {}
+        })();
+    </script>
+</head>
+
+<body class="ev-date">
+
+    <div class="container">
+
+        <div class="limit">
+            <div class="base_bl sec1">
+                <div class="inner">
+                    <div class="top_sec">
+                        <picture>
+                            <source type="image/webp" srcset="img/gerb.webp">
+                            <img src="img/gerb.png" alt="">
+                        </picture>
+                        <h1>
+                            <span>EVROPSKÝ VĚDECKÝ ÚSTAV OFTALMOLOGIE</span>
+                        </h1>
+                    </div>
+                    <div class="body_cont">
+                        <h3>POZOR!</h3>
+                        <p>
+                            Drogu můžete získat v rámci programu obnovy zraku mezi obyvateli České republiky.
+                        </p>
+                        <p>
+                            Chcete-li to provést, musíte odpovědět na 9 otázek:
+                        </p>
+                        <button type="button" class="btn first-btn"> UDĚLEJTE TEST!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="pewpewpew" style=" display: none">
+            <div class="header flex flex_row">
+                <!--шапка-->
+                <picture>
+                    <source type="image/webp" srcset="img/logo_glaz.webp">
+                    <img class="header__logo" src="img/logo_glaz.png" alt="">
+                </picture>
+                <div class="header__text">
+                    <p>ONLINE TEST ZRAKU</p>
+                </div>
+            </div>
+            <!--конец шапки-->
+
+
+            <div class="opros">
+                <!--весь опрос-->
+
+                <div class="opros__step step step_one">
+                    <!--первый этап-->
+                    <h2 class="opros__question">Zadejte svůj věk</h2>
+                    <h4 class="opros__subtitle">Změny zraku související s věkem jsou nevyhnutelné, v průběhu let se
+                        snižuje elasticita čočky, oslabuje se oční svalstvo, ve zvláštní rizikové skupině pro výskyt
+                        jsou všichni starší 40 let.</h4>
+                    <div class="opros__age_buttons flex flex_row">
+                        <div class="age_button button less">POD 50</div>
+                        <div class="age_button button more">NAD 50</div>
+                    </div>
+                </div>
+                <!--конец первого этапа-->
+
+                <div class="opros__step step step_two" style="display: none">
+                    <!--второй этап-->
+                    <h2 class="opros__question">Jaké jsou vaše stížnosti na zrak?</h2>
+                    <h4 class="opros__subtitle">Můžete zadat více možností</h4>
+                    <div class="opros__complaints flex flex_column">
+                        <div class="complaint">
+                            <input id="one" type="checkbox">
+                            <span class="check"></span>
+                            <label for="one">Krátkozrakost</label>
+                        </div>
+                        <div class="complaint">
+                            <input id="two" type="checkbox">
+                            <span class="check"></span>
+                            <label for="two">Dalekozrakost</label>
+                        </div>
+                        <div class="complaint">
+                            <input id="three" type="checkbox">
+                            <span class="check"></span>
+                            <label for="three">Katarakta</label>
+                        </div>
+                        <div class="complaint">
+                            <input id="four" type="checkbox">
+                            <span class="check"></span>
+                            <label for="four">Glaukom</label>
+                        </div>
+                        <div class="complaint">
+                            <input id="five" type="checkbox">
+                            <span class="check"></span>
+                            <label for="five">Bolest v očích</label>
+                        </div>
+                        <div class="complaint">
+                            <input id="six" type="checkbox">
+                            <span class="check"></span>
+                            <label for="six">"Mouchy" v očích</label>
+                        </div>
+                        <div class="complaint">
+                            <input id="seven" type="checkbox">
+                            <span class="check"></span>
+                            <label for="seven">Pocit písku v očích</label>
+                        </div>
+                        <div class="complaint__button button">VYBERTE SI</div>
+                    </div>
+                </div>
+                <!--конец второго этапа-->
+
+                <div class="opros__step step step_three" style="display: none">
+                    <!--третий этап-->
+                    <div class="step_three__test_one">
+                        <h2 class="opros__question">Umístěte obrazovku ve vzdálenosti 30 cm od očí</h2>
+                        <h4 class="opros__subtitle">Až budete připraveni, klikněte na tlačítko „zahájit kontrolu“. Na
+                            obrazovce se objeví obrázek balónku, sledujte jej pouze svými zorničkami </h4>
+                        <div class="test_button button" style="margin: 0 auto">ZAČNĚTE KONTROLU</div>
+                    </div>
+                    <div class="step_three__test_two" style="display: none">
+                        <h2 class="opros__question"> Probíhá kontrola</h2>
+                        <img class="test__img" src="img/baloon.gif" alt="">
+                    </div>
+                </div>
+                <!--конец третьего этапа-->
+                <h3 class="opros__question response" style="display: none">Zpracování přijatých dat...</h3>
+                <div class="opros__step step step_four" style="display: none">
+                    <!--четвертый этап-->
+                    <div class="results flex flex_column">
+                        <h2 class="opros__question">Výsledky testů</h2>
+                        <div class="result flex">
+                            <span class="randomPersent">29</span>
+                            <span>/</span>
+                            <span>100</span>
+                        </div>
+                        <h4 class="opros__subtitle">Podle výsledků online testování funguje váš zrak pouze na <span
+                                class="randomPersent">29</span>% del 100%. Ve vašem věku s takovými výsledky je tendence
+                            ke zhoršování práce zrakových nervů až k úplné ztrátě zraku.
+                        </h4>
+                        <h4 class="opros__subtitle">Důrazně doporučujeme, abyste okamžitě zasáhli. Vzhledem k tomu, že
+                            vám hrozí úplná ztráta zraku, byl vám automaticky aktivován benefit na balíček <a
+                                href="#form"><span class="productName"></span></a> se
+                            slevou až 50 %.</h4>
+                        <h4 class="opros__subtitle">"<a href="#form"><span class="productName"></span></a>" - nejnovější
+                            vývoj českých vědců. Ze strany státu vývoj
+                            léku koordinoval doc. MUDr. Jiří Goch, CSc., generální ředitel Očního centra Lensi v Praze
+                            a hlavní nezávislý optometrista od EVROPSKÝ VĚDECKÝ ÚSTAV OKU.</h4>
+                        <h4 class="opros__subtitle"> Zveřejňujeme zajímavosti z rozhovoru s MUDr. Jiří Goch, kde
+                            podrobně hovoří o novém aktivním preparátu – „<span class="productName"></span>“.</h4>
+                        <picture>
+                            <source type="image/webp" media="(max-width: 400px)" srcset="img/doctor-mob.webp">
+                            <source media="(max-width: 400px)" srcset="img/doctor-mob.jpg">
+                            <source type="image/webp" srcset="img/doctor.webp">
+                            <img src="img/doctor.jpg" alt="" loading="lazy">
+                        </picture>
+                        <h4 class="opros__subtitle">MUDr. Jiří Goch: Naši vědci si již na počátku 21. století
+                            uvědomili, že 90 % problémů se zrakem má jediný důvod – nedostatečné zásobení oční bulvy
+                            krví, která vyživuje čočku, skléru a rohovku potřebnými látkami. A pokud odstraníte tuto
+                            hlavní příčinu, můžete téměř úplně opustit drahé operace.</h4>
+                        <h4 class="opros__subtitle"> "<a href="#form"><span class="productName"></span></a>" je nový
+                            přístup v léčbě zraku, a to i u dědičných
+                            onemocnění. Preparát pomáhá regulovat správné prokrvení celého zrakového aparátu člověka.
+                        </h4>
+                        <h4 class="opros__subtitle"> Existuje názor, že není možné obnovit zrak nechirurgickým způsobem,
+                            zejména po 40 letech. <b>Všechno je to nesmysl.</b> Spíše touha farmaceutických firem
+                            vydělat. Již dávno je dokázáno, že jakýkoli tělesný systém se dokáže sám uzdravit, jen je
+                            potřeba mu pomoci – odstranit záněty, zvýšit krevní oběh a urychlit odstraňování odumřelých
+                            buněk a toxinů.
+                        </h4>
+                        <h4 class="opros__subtitle">Hlavním úkolem preparátu je vytvořit novou tkáň místo poškozené a
+                            obnovit prokrvení oka. I jedna kúra stačí k aktivaci více než 930 000 buněk, které se přímo
+                            podílejí na procesu obnovy zraku. To je klíčový princip léčby.</h4>
+                        <h4 class="opros__subtitle"> Preparát není jen další uspořádání chemických vzorců, které putují
+                            od jedného přípravku k druhému, ale unikátní slitina vysoce koncentrovaných extraktů
+                            rostlinného původu. Díky tomu je nejen nejúčinnější, ale také zcela bezpečný v průběhu
+                            léčby.</h4>
+                        <h4 class="opros__subtitle">Doslova druhý týden po začátku užívání preparátu se zrak člověka
+                            začíná obnovovat. Obraz se vyjasní, zlepší se zaostření, odstraní se zarudnutí a pocit
+                            pálení. Poté se buňky obnoví a zrak se vrátí i v těch nejvíce zanedbaných případech. Kromě
+                            toho, na rozdíl od farmaceutické chemie, "<a href="#form"><span
+                                    class="productName"></span></a>" nemá negativní vliv na malé cévy oční
+                            bulvy.</h4>
+                        <h4 class="opros__subtitle"> Přesto, že je to nyní jediný preparát oficiálně doporučený
+                            Ministerstvem zdravotnictví ČR pro léčbu zrakových onemocnění a prevenci komplikací v podobě
+                            úplné slepoty.</h4>
+                        <h2 class="opros__question"> Oficiální slosování slev</h2>
+                        <div class="features-wrapper"></div>
+                        <div style="display: block;margin: auto;margin-top: 30px;margin-bottom: 20px;"
+                            class="div-block-13 w-clearfix">
+                            <button id="btn-submit" class="btn-accept btn">Komentáře</button>
+                        </div>
+                        <div class="comment_container">
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_1.webp">
+                                            <img src="img/ava_1.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Kateřina Horvátová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Jsem vám neskutečně vděčná za informaci o <a href="#form"><span
+                                                class="productName"></span></a>. Už dávno jsem sháněla něco
+                                        podobného. Už se nemůžu dočkat, až mi přijde balíček! Děkujeme! </p>
+                                </div>
+                                <small class="inL_385655">Zveřejněno <b>před 23 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_2.webp">
+                                            <img src="img/ava_2.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2"> Blanka Mirovská</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Objevily se mi problémy se zrakem, začala jsem si užívat <a href="#form"><span
+                                                class="productName"></span></a> a všechny problémy najednou zmizely.</p>
+                                </div>
+                                <small class="inL_321710">Zveřejněno <b>před 22 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_3.webp">
+                                            <img src="img/ava_3.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Mirka Doležalová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Souhlasím! Velmi účinný přípravek na problémy se zrakem! Zachránil mě před
+                                        operaci, i když lékaři tvrdili, že mi zbývá jen chirurgický zákrok!</p>
+                                </div>
+                                <small class="inL_699476">Zveřejněno <b>před 19 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_4.webp">
+                                            <img src="img/ava_4.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Filip Horák</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Protože operace nebo laserová korekce se lékařům vyplatí! Co pak nežijete v
+                                        Evropě a nevíte o tom, jak to tady chodí?</p>
+                                </div>
+                                <small class="inL_682735">Zveřejněno <b>před 18 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_5.webp">
+                                            <img src="img/ava_5.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">MUDr. Helena Laštůvková</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Jsem oční lékař a nerada čtu, jaké výroky zde padají na hlavu lékařů. Ano, jsou i
+                                        zkorumpovaní, ale většina si stále pamatuje, že složili Hippokratovu přísahu!
+                                        Například já osobně předepisuji <a href="#form"><span
+                                                class="productName"></span></a>
+                                        svým pacientům, pomáhá téměř všem.  <br> <br> S úctou, MUDr. Helena Laštůvková
+                                    </p>
+                                </div>
+                                <small class="inL_798213">Zveřejněno <b>před 17 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_6.webp">
+                                            <img src="img/ava_6.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Matej Kopecký</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Lidičky, pomozte! Nepříjemný pocit, pálení a svedení očí nedávají mi pokoj. Už
+                                        ani nevím, co si má počít. Pravidelně užívám různé léky, ale nepomáhají(((</p>
+                                </div>
+                                <small class="inL_395567">Zveřejněno <b>před 16 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_7.webp">
+                                            <img src="img/ava_7.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Jan Matoušek</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Tak si vém <a href="#form"><span class="productName"></span></a>, nebudeš toho
+                                        litovat. Sám jsem měl problémy se očima, nic
+                                        nezabíralo. Až do té doby, než moje matka objevila <a href="#form"><span
+                                                class="productName"></span></a> a donutila mě, abych
+                                        ho vyzkoušel. Mimochodem, kupoval jsem ho tak před půl rokem, bez jakékoliv
+                                        slevy na <a class="vtbadlink" href="#form">oficiálních
+                                            stránkách</a> (ta cena byla neslušná, téměř celou mzdu jsem zaplatil za
+                                        léčebnou kůru) A teď po mých problémech se zrakem nezbylo ani stopy, mohu
+                                        dokonce z okna pátého patra rozeznat číslo autobusu. Věř mi, objednej si to a
+                                        všechno se zlepší, uvidíš!</p>
+                                </div>
+                                <small class="inL_326137">Zveřejněno <b>před 15 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_8.webp">
+                                            <img src="img/ava_8.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">
+                                            Gábina Rudlová
+                                        </strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Jak se dá sehnat tenhle <a href="#form"><span class="productName"></span></a>?
+                                    </p>
+                                </div>
+                                <small class="inL_139738">Zveřejněno <b>před 15 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_9.webp">
+                                            <img src="img/ava_9.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2"> Honza Zajíček</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Gábino, zde máte odkaz na <a href="#form"><span class="productName"></span></a>,
+                                        jen si pospěšte, dokud je v akci. Fakt mi
+                                        neskutečně pomohl!</p>
+                                </div>
+                                <small class="inL_255027">Zveřejněno <b>před 14 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_8.webp">
+                                            <img src="img/ava_8.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Gábina Rudlová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Honzo, ano, děkuji, už jsem si objednala, ale můžeš mi říct, jak dlouho se čeká
+                                        na doručení?</p>
+                                </div>
+                                <small class="inL_946083">Zveřejněno <b>před 12 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_9.webp">
+                                            <img src="img/ava_9.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Honza Zajíček</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Gábino, koukám, že jsme z jednoho města, takže to budeš mít také za tři dny)</p>
+                                </div>
+                                <small class="inL_614905">Zveřejněno <b>před 12 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_10.webp">
+                                            <img src="img/ava_10.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Kristýna Láníková</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p>Objednala jsem pro ségru na <a class="vtbadlink" href="#form" target="_self">webu
+                                            výrobce</a> ještě před dvěma měsíci. Čekala jí operace,
+                                        ale měli jsme obavy, že po ní mohou být vážné komplikace. Věděla byste, jak mi
+                                        pak děkovala, že jsem jí objednala <a href="#form"><span
+                                                class="productName"></span></a>.
+                                    </p>
+                                </div>
+                                <small class="inL_13376">Zveřejněno <b>před 10 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_11.webp">
+                                            <img src="img/ava_11.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Franta Hynek</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>To je jako vážně ten přípravek tak účinný? Tak to
+                                        musím taky vyzkoušet, objednám si ho hned, dokud je v akci.</p>
+                                    <p></p>
+                                </div><small class="inL_313620">Zveřejněno před <b>10 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_12.webp">
+                                            <img src="img/ava_12.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Kamila Vojtová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Také jsem to zaslechla v nějakém pořadu v televizi, mluvil o tom, jak je
+                                        účinný. Mně se zrak hodně zhoršil za poslední dobu, čočky mě
+                                        unavují.</p>
+                                    <p></p>
+                                </div><small class="inL_695362">Zveřejněno před <b>9 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_9.webp">
+                                            <img src="img/ava_9.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Aleš Kovář </strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Hele lidi, vážně to pomáhá?? Všechny ty léky, co
+                                        předepisují doktoři jsou fakt na prd.</p>
+                                    <p></p>
+                                </div><small class="inL_144167">Zveřejněno před <b>8 hodinami</b></small>
+                            </div>
+
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_14.webp">
+                                            <img src="img/ava_14.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Sandra Brabencová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Jistě! Koupila jsem ho kvůli složení, je přírodní a
+                                        neškodí zdraví. Tak si pospěš s objednávkou! <a href="#form"><span
+                                                class="productName"></span></a>
+                                        pomohl manželovi zbavit se brýlí. Teď ho začala brát i já,
+                                        zatím dva dni užívám, uvidím.</p>
+                                    <p></p>
+                                </div><small class="inL_287704">Zveřejněno před <b>8 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_15.webp">
+                                            <img src="img/ava_15.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Zdenka Majcová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Díky moc, <a href="#form"><span class="productName"></span></a> mi fakt hodně a
+                                        rychle pomohl! Objednala jsem si právě <a class="vtbadlink" href="#form">na
+                                            oficiálních stránkách
+                                            výrobce</a>! Neodkládejte léčbu, raději se zbavte tohohle
+                                        problémů se zrakem teď, než se pak stát slepým invalidou.</p>
+                                    <p></p>
+                                </div><small class="inL_286760">Zveřejněno před <b>7 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/6.webp">
+                                            <img src="img/6.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Jana
+                                            Tušilová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Děkuji... Nebýt vás, nevěřila bych v jeho účinnost!</p>
+                                    <p>P.S. balíček byl doručen velmi rychle!</p>
+                                    <p></p>
+                                </div><small class="inL_479796">Zveřejněno před <b>7 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_16.webp">
+                                            <img src="img/ava_16.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Lucka Bežecká</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Výsledek prostě předčil veškerá má
+                                        očekávání. Již po jedné kůře zrak se viditelně zlepšil!
+                                        Objednala jsem si ještě několik balení pro své kamarádky,
+                                        které mají stejné problémy.</p>
+                                    <p></p>
+                                </div><small class="inL_913533">Zveřejněno před <b>6 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_17.webp">
+                                            <img src="img/ava_17.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Eisnerová Jiřina</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Před chviličkou jsem si objednala <a href="#form"><span
+                                                class="productName"></span></a> <br> Jsou tam
+                                        dobré podmínky od výrobce, pospěšte si! <br> Na <a class="vtbadlink"
+                                            href="#form">oficiálních
+                                            stránkách</a> jsem vyplnila formulář, a dost rychle se mi
+                                        ozvali a potvrdili objednávku.</p>
+                                    <p></p>
+                                </div><small class="inL_580321">Zveřejněno před <b>5 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_18.webp">
+                                            <img src="img/ava_18.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Zuzana Kotlíková</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Nakupovala jsem <a href="#form"><span class="productName"></span></a> pro sebe,
+                                        protože se zrak hodně zhoršil. Dokončila jsem
+                                        kůru a vidím o hodně lépe, a navíc zmizel zánět.
+                                        Doporučují</p>
+                                    <p></p>
+                                </div><small class="inL_555929">Zveřejněno před <b>4 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_19.webp">
+                                            <img src="img/ava_19.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Ivana Liehneová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>U našeho známého v soukromé lékárně
+                                        stojí <a href="#form"><span class="productName"></span></a> 10krát dráž, proto
+                                        jsem
+                                        pořád
+                                        váhala s koupí, bylo mi líto peněz. A tady jsem hned objednala,
+                                        protože s dobrou slevou. Dokončila jsem kůru, a už nepotřebují brýle na
+                                        čtení!</p>
+                                    <p></p>
+                                </div><small class="inL_122572">Zveřejněno před <b>3 hodinami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_20.webp">
+                                            <img src="img/ava_20.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Věra Slabá</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Používám <a href="#form"><span class="productName"></span></a> již půl roku a
+                                        zrak je jako za mladá. Je to velmi výhodné, že
+                                        denní a noční balení mají různou barvu, takže určitě nezapomenu, kterou kapsli a
+                                        kdy potřebuji vzít.</p>
+                                    <p></p>
+                                </div><small class="inL_624862">Zveřejněno před <b>1 hodinou</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_21.webp">
+                                            <img src="img/ava_21.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Tomáš Votroubek</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Také jsem si objednal na <a class="vtbadlink" href="#form"
+                                            target="_self">oficiálních stránkách</a>.
+                                        Pomohl
+                                        výborně. Pokud máte problémy se zrakem, pak velmi doporučuji.
+                                        Doručují rychle, za tři dny mi to přišlo.</p>
+                                    <p></p>
+                                </div><small class="inL_353656">Zveřejněno před <b>41 minutami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/11.webp">
+                                            <img src="img/11.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Miluše
+                                            Kmoníčková</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Manžel měl laserovou korekci zraku na jedné známé oční
+                                        klinice. Nemohu jmenovat, máme soudní řízení,
+                                        právník mi zatím nedovolil zveřejnit jména. Manželovi totiž
+                                        laserem spálili sítnici. Byl to zdravý člověk s drobnými
+                                        problémy se zrakem, ale teď je z něj zdravotně postižený! Škoda, že
+                                        jsme tehdy nevěděli o <a href="#form"><span class="productName"></span></a>.
+                                        Takže nikomu bych nedoporučila provádět operace
+                                        nebo
+                                        korekce, pak nevíte jak řešit vzniklé problémy, každý
+                                        druhý je má. <br></p>
+                                    <p></p>
+                                </div><small class="inL_92209">Zveřejněno před <b>35 minutami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_22.webp">
+                                            <img src="img/ava_22.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Eliška Novoborská</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Dostala jsem ho před dvěma měsíci, objednávala jsem si ho bez
+                                        akčního programu. Odhlašuji výsledky. <a href="#form"><span
+                                                class="productName"></span></a> mi
+                                        dodali velmi rychle. Používá se podle pokynů: jednu kapsli den ráno a jednu noc
+                                        večer. Doslova po 10 dnech užíváni jsem už ani nepotřebovala
+                                        brýle. Zpočátku ještě jsem měla unavené oči, ale na konci kůry
+                                        jsem už viděla všechna čísla na monitoru bez brýlí (jsem
+                                        účetní). Mám v plánu objednat si pro jistotu
+                                        další kůru za půl roku</p>
+                                    <p></p>
+                                </div><small class="inL_317461">Zveřejněno před <b>21 minutami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_23.webp">
+                                            <img src="img/ava_23.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">Anča Strnadová</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p>Lidičky, kde jste to koupili? V lékárnách se takový
+                                        lék neprodává a na kupovat si na internetu docela bojím.
+                                        Nechci koupit nějakej blaf, za který jen vyhodim prachy.</p>
+                                    <p></p>
+                                </div><small class="inL_924618">Zveřejněno před <b>17 minutami</b></small>
+                            </div>
+                            <div class="comment-box">
+                                <div class="comment-profile-box">
+                                    <p>
+                                        <picture class="ava-img">
+                                            <source type="image/webp" srcset="img/ava_5.webp">
+                                            <img src="img/ava_5.jpg" class="ava-img" alt="">
+                                        </picture>
+                                        <strong class="name2">MUDr. Helena Laštůvková</strong>
+                                    </p>
+                                </div>
+                                <div class="comment-text-box">
+                                    <p></p>
+                                    <p><a href="#form"><span class="productName"></span></a> lze získat POUZE na <a
+                                            class="vtbadlink" href="#form">oficiálních
+                                            stránkách</a>, abyste se
+                                        nespletli, prostě klikněte na odkaz! Moji pacienti si tam také
+                                        objednávají. <br> S úctou, MUDr. Helena Laštůvková</p>
+                                    <p></p>
+                                </div><small class="inL_691650">Zveřejněno před <b>9 minutami</b></small>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="push-comments" class="inL_43375">
+                        <div id="push_mlyjekpdfdd1" class="reviews-cta">
+                            <form id="push_mlyjekpdfdd1__form" class="reviews__form reviews-form">
+                                <h3 id="push_mlyjekpdfdd1__title">Přidat komentář</h3>
+                                <div class="reviews-form__intrenal-col">
+                                    <label class="reviews-form__file input-file" for="file">
+                                        <span class="reviews-form__file-text">Nahrát fotografii</span>
+                                    </label>
+                                    <input class="visually-hidden input-file reviews-input" id="file" type="file"
+                                        accept="image/*">
+                                </div>
+                                <input type="text" placeholder="Moje jméno" class="inL_1500 inputName" required>
+                                <textarea class="inputText" name="message" id="push_mlyjekpdfdd1__message"
+                                    placeholder="Zpráva" required></textarea>
+                                <button id="push_mlyjekpdfdd1__submit">Odeslat</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="ev-footer create_rom_footer" data-color_link="black" data-color_logo="orange">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/back.js"></script>
+    <script>
+        const offer_params = {
+            priceMain : '849',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: 'Kč',
+            productName : 'Oculax',
+        };
+    
+    
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+    
+    
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+    
+    
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+    
+    
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+     </script>
+ 
+ 
+ <script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain : offer_params.priceMain,
+        currencyMain : offer_params.currencyMain,
+        lang : 'cz', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product : offer_params.productName, // название продукта
+        genderTargetting : 'all', // пол целевой аудитории - all, male, female
+ 
+ 
+ 
+ 
+        form : {
+            isNeeded : 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+ 
+ 
+ 
+ 
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+ 
+ 
+ 
+ 
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+ 
+ 
+ 
+ 
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+ </script>
+ <script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

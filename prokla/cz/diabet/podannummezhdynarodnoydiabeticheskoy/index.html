@@ -1,0 +1,869 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="cz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="prod.png">
+  <link rel="stylesheet" id="google-fonts-css"
+    href="https://fonts.googleapis.com/css?family=Fira+Sans%3A400%2C600%2C700%2C800%7CPT+Serif%3A400%2C400i%2C700%2C700i&amp;display=swap&amp;subset=latin-ext&amp;ver=3.0.41"
+    media="all">
+  <link rel="stylesheet" id="ff-theme-styles-css" href="css/app.css" media="all">
+  <link rel="stylesheet" id="sb-font-awesome-css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=6.0.3" media="all">
+  <link rel="stylesheet" href="css/comm.css">
+  <link rel="stylesheet" href="css/styleForm.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+    (function () {
+      let params = (new URL(document.location)).searchParams;
+      let block = '';
+      params.forEach(function (value, key) {
+        block = block + key + '=' + value + '&';
+      })
+      var t;
+      try {
+        for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+        onpopstate = function (t) {
+          t.state && location.replace("domonetka/index.php?cid={clickid}")
+        }
+      } catch (o) {}
+    })();
+  </script>
+  <style>
+    .hide,
+    .flag-dropdown {
+      display: none;
+    }
+
+    .error-box {
+      color: #fff;
+      background-color: #DE5042 !important;
+      border-radius: 5px;
+      text-align: center;
+      width: 240px;
+      font-size: 13px;
+      line-height: 20px;
+      margin: 5px auto !important;
+      z-index: 100;
+    }
+
+    input:invalid {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body class="post-template-default single single-post postid-373344 single-format-standard wp-embed-responsive">
+  <div class="branding-container branding-wrapper" style="position: relative; z-index: 999; background: #f6f6f6;">
+    <div id="brand-nav" class="hidden md:block bg-gray-900 text-xs text-white">
+      <div class="max-w-4xl mx-auto">
+        <nav>
+          <ul
+            class="flex uppercase font-bold mobile-horizontal-scroll md:flex-no-wrap md:items-stretch md:justify-center">
+            <li class="flex"><a href="#to_form"
+                class="transition duration-150 ease-in-out py-2 px-2 md:py-1 md:px-2 lg:px-4 hover:bg-brand-red">Forum
+                24</a></li>
+            <li class="flex"><a href="#to_form"
+                class="transition duration-150 ease-in-out py-2 px-2 md:py-1 md:px-2 lg:px-4 hover:bg-brand-red">Týdeník
+                FORUM</a></li>
+            <li class="flex"><a href="#to_form"
+                class="transition duration-150 ease-in-out py-2 px-2 md:py-1 md:px-2 lg:px-4 hover:bg-brand-red">E-shop
+                Forum</a></li>
+            <li class="flex"><a href="#to_form"
+                class="transition duration-150 ease-in-out py-2 px-2 md:py-1 md:px-2 lg:px-4 hover:bg-brand-red">Free
+                Czech Media</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <header>
+      <div class="flex container my-2 px-4 md:mt-0 flex-col md:flex-row justify-between items-center">
+        <div class="w-full">
+          <a href="#to_form">
+            <img src="fonts/logo_s_popisem_dole.svg" alt="Logo Forum 24" class="max-w-full" style="max-width: 250px;"
+              title="Vrátit se na hlavní stránku">
+          </a>
+        </div>
+        <div>
+          <a href="#to_form" class="hidden md:block">
+            <img src="img/4_1120x344_banner_web.jpg" alt="Týdeník FORUM" style="max-height: 200px;">
+          </a>
+        </div>
+      </div>
+      <nav class="bg-brand-blue" role="navigation">
+        <div class="md:container">
+          <ul class="flex font-bold text-white mobile-horizontal-scroll">
+            <li class="flex justify-center"><a href="#to_form"
+                class="hover:bg-brand-red py-4 px-3 md:px-4 tracking-wider"><svg class="w-5 h-5" fill="white"
+                  height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m498.195312 222.695312c-.011718-.011718-.023437-.023437-.035156-.035156l-208.855468-208.847656c-8.902344-8.90625-20.738282-13.8125-33.328126-13.8125-12.589843 0-24.425781 4.902344-33.332031 13.808594l-208.746093 208.742187c-.070313.070313-.140626.144531-.210938.214844-18.28125 18.386719-18.25 48.21875.089844 66.558594 8.378906 8.382812 19.445312 13.238281 31.277344 13.746093.480468.046876.964843.070313 1.453124.070313h8.324219v153.699219c0 30.414062 24.746094 55.160156 55.167969 55.160156h81.710938c8.28125 0 15-6.714844 15-15v-120.5c0-13.878906 11.289062-25.167969 25.167968-25.167969h48.195313c13.878906 0 25.167969 11.289063 25.167969 25.167969v120.5c0 8.285156 6.714843 15 15 15h81.710937c30.421875 0 55.167969-24.746094 55.167969-55.160156v-153.699219h7.71875c12.585937 0 24.421875-4.902344 33.332031-13.808594 18.359375-18.371093 18.367187-48.253906.023437-66.636719zm0 0" />
+                </svg></a></li>
+            <li class="flex"><a href="#to_form"
+                class="py-4 px-3 md:px-4 tracking-wider transition duration-150 ease-in-out hover:bg-brand-red">Zprávy</a>
+            </li>
+            <li class="flex"><a href="#to_form"
+                class="py-4 px-3 md:px-4 tracking-wider transition duration-150 ease-in-out hover:bg-brand-red">Komentáře</a>
+            </li>
+            <li class="flex"><a href="#to_form"
+                class="py-4 px-3 md:px-4 tracking-wider transition duration-150 ease-in-out hover:bg-brand-red">Nová
+                orientace</a></li>
+            <li class="flex"><a href="#to_form"
+                class="py-4 px-3 md:px-4 tracking-wider transition duration-150 ease-in-out hover:bg-brand-red">Rozhovory</a>
+            </li>
+            <li class="flex"><a href="#to_form"
+                class="py-4 px-3 md:px-4 tracking-wider transition duration-150 ease-in-out hover:bg-brand-red">Kontexty</a>
+            </li>
+            <li class="flex"><a href="#to_form"
+                class="py-4 px-3 md:px-4 tracking-wider transition duration-150 ease-in-out hover:bg-brand-red">Kultura</a>
+            </li>
+            <li class="hidden">
+              <a href class="flex items-center py-3 px-4 font-medium hover:bg-brand-red">Více <svg
+                  xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 fill-current ml-1" viewBox="0 0 20 20">
+                  <path
+                    d="M17.418 6.109a.697.697 0 0 1 .979 0 .68.68 0 0 1 0 .969l-7.908 7.83a.697.697 0 0 1-.979 0l-7.908-7.83a.68.68 0 0 1 0-.969.697.697 0 0 1 .979 0L10 13.25l7.418-7.141z" />
+                </svg></a>
+            </li>
+            <li class="flex flex-1 border-l md:border-0 lg:border-l border-brand-blue-light">
+              <a href="#to_form"
+                class="w-full flex items-center py-3 px-4 font-medium focus-within:bg-brand-blue-light hover:placeholder-brand-yellow"
+                role="search" id="searchform">
+                <svg class="w-4 h-4 fill-current mr-2" viewBox="0 0 56.966 56.966" space="preserve"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m55.146 51.887l-13.558-14.101c3.486-4.144 5.396-9.358 5.396-14.786 0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c0.571 0.593 1.339 0.92 2.162 0.92 0.779 0 1.518-0.297 2.079-0.837 1.192-1.147 1.23-3.049 0.083-4.242zm-31.162-45.887c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z" />
+                </svg>
+                <input name="s" type="text"
+                  class="appearance-none border-0 bg-transparent text-white placeholder-white placeholder-opacity-100 outline-none"
+                  placeholder="Vyhledávání...">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="md:flex" style="max-width: 1080px;margin: 0 auto;">
+        <a href="#to_form" class="hidden md:block md:flex-1">
+          <img src="img/volby2023_lista.jpg" style="width: 100%; height: auto;">
+        </a>
+        <a href="#to_form" class="flex-1">
+          <img src="img/volby2023_lista2.jpg" style="width: 100%; height: auto;">
+        </a>
+        <a href="#to_form" class="flex-1">
+          <img src="img/volby2023_lista3.jpg" style="width: 100%; height: auto;">
+        </a>
+      </div>
+    </section>
+    <main class="mt-5" role="main">
+      <section class="container px-4 mt-5">
+        <div class="md:flex -mx-2">
+          <div>
+            <article class="story">
+              <header class="story__hero">
+                <div class="story__header has-medium-media has-video">
+                  <div class="story__summary">Podle Mezinárodní diabetologické federace žije 1 z 10 lidí s cukrovkou. U
+                    poloviny z nich přitom nebyla diagnostikována. Na světě je dnes necelých 600 milionů lidí s
+                    cukrovkou, z nichž jeden z 90 zemře v tomto roce.</div>
+                </div>
+              </header>
+              <div class="bottom-wrapper">
+                <div class="main-content">
+                  <div class="story__wrapper">
+                    <div class="story__content" id="article-body">
+                      <div class="story__content-image">
+                        <img class="story__content-img" src="img/main1.png" alt="">
+                        <p class="story__content-descr">Informace převzaty z Mezinárodní diabetologické federace
+                        </p>
+                      </div>
+                      <div class="story__text">
+                        <p>Jedna věc je jasná: cukrovka nikoho nešetří a každý pacient bude mít nevyhnutelně průvodní
+                          onemocnění, které výrazně zvyšuje pravděpodobnost úmrtí.</p>
+                        <p>V poslední době stále více občanů chodí do nemocnic se stížnostmi na stejné příznaky: bolest
+                          hlavy, zvýšená žízeň, únava, rozmazané vidění, příznaky nachlazení (snížená imunita). Lékaři
+                          zjistili, že každý z nich užíval stejné léky na cukrovku. Zatímco vyšetřování probíhají,
+                          jediným důvodem je to, že se <b>do lékáren dostala vadná šarže léků na cukrovku</b>
+                          předepisovaných v celé Evropě.</p>
+                        <div class="story__content-image">
+                          <img class="story__content-img" src="img/main2.jpg" alt="">
+                          <p class="story__content-descr">Takto vypadá gangréna způsobená cukrovkou</p>
+                        </div>
+                        <p>Tyto šarže vedly k tomu, že <b>78% lidí dostalo anafylaktický šok, nekrózu orgánu nebo
+                            hyperglykemické kóma</b>. V jiných případech pacienti vyvázli s těžkým vyčerpáním a
+                          intoxikací celého organismu, nyní jsou pod přísným dohledem lékařů a dostávají šokové dávky
+                          léků na odstranění zkažených farmaceutických výrobků.</p>
+                        <div class="story__content-image">
+                          <img class="story__content-img" src="img/main3.png" alt="">
+                        </div>
+                        <p><b>Nyní je obtížné vyjmenovat úplný seznam léků</b>, které byly dodány <b>ve "smrtelné
+                            dodávce“</b> – lékaři tomu říkají takto. Pro některé byla poslední. Lékaři dělají vše pro
+                          záchranu životů otrávených pacientů, <b>ale bohužel to není tak jednoduché, protože obsah
+                            toxické látky není jasný.</b></p>
+                        <p>Lékaři se v panice obracejí na farmakologické laboratoře, aby zvýšili počet šarží nového
+                          produktu, který prošel důkladným testováním na složení, funkčnost a účinnost, aby ho mohli
+                          distribuovat do všech koutů Evropy. Podle vědců nyní k tomuto produktu neexistuje žádná
+                          alternativa a soudě podle minulých let ještě dlouho nebude.
+                        </p>
+                        <p>Tento produkt se nazývá <a href="#to_form"><span class="productName"></span></a>. 100%
+                          přírodní komplex <span class="productName"></span>
+                          <b>pomáhá rychle odstranit nepříjemné příznaky a působí na příčinu onemocnění, přispívá k
+                            přirozené stabilizaci hladiny cukru v krvi</b>. Kromě toho příjem kurzu pomáhá dokonale
+                          posílit imunitní systém a zlepšit obecné zdraví člověka.</p>
+                        <p>Hlavními výhodami produktu jsou plně otestované a výkonné složení a finanční dostupnost ke
+                          koupi.</p>
+                        <p>Je známo, že 80% lidí s cukrovkou žije v zemích s nízkými a středními příjmy a nemají
+                          prostředky na boj s cukrovkou. To je také důvod, proč byl <span class="productName"></span>
+                          vytvořen, aby byl dostupný
+                          pro všechny společenské vrstvy.</p>
+                        <h3>Komentář lékaře, současného člena Společnosti endokrinologů ČR</h3>
+                        <div class="story__content-image">
+                          <img class="story__content-img" src="img/main4.jpg" alt="">
+                        </div>
+                        <p>"Na farmakologickém trhu je spousta produktů. Mezi nimi je mnoho neúčinných nebo ne zcela
+                          testovaných. Existuje spousta výrobců, kteří podplatili lékárny a lékaře a snaží se vydávat
+                          svůj pochybný lék jako pomoc při cukrovce. Vím to, protože v naší laboratoři pravidelně
+                          testujeme všechny léky na cukrovku, které se prodávají.</p>
+                        <p><b>Diabetes je jednou z hlavních příčin úmrtí. Lidé onemocní slepotou, nekrózou orgánů,
+                            nemocemi kardiovaskulárního systému, reprodukčními problémy a mnoha dalšími nemocemi, které
+                            se nemusí objevit v počátečních stádiích.</b></p>
+                        <p>Vytvořili jsme produkt, který bojuje s komplikacemi cukrovky a jejími příznaky. Pomáhá
+                          odstranit nepříjemné příznaky, zlepšit obecné zdraví, snížit inzulínovou rezistenci,
+                          normalizovat metabolismus glukózy a sacharidů v krvi, obnovit funkci jater a slinivky břišní a
+                          snížit hladinu cholesterolu.</p>
+                        <div class="product"><img src="prod.png" alt="" class="product__img"></div>
+                        <a class="offer-link" href="#to_form">Objednejte si <span class="productName"></span> s 50%
+                          slevou</a>
+                        <p class="list-title">Produkt je 100% přírodní, nevyvolává závislost a vedlejší účinky.Jeho
+                          hlavní složky jsou:</p>
+                        <ul class="list">
+                          <li class="list__item"><b>Houbové beta-glukany a glukomannan:</b> Snižují hladinu špatného
+                            cholesterolu v krvi, pomáhají kontrolovat chuť k jídlu.</li>
+                          <li class="list__item"><b>Extrakt z kůry dřišťálu:</b> pomáhá posilovat srdeční sval, zvyšovat
+                            imunitu, zlepšovat činnost jater.</li>
+                          <li class="list__item"><b>Vitamíny B6, B9, B12:</b> ovlivňují metabolické procesy regulací
+                            metabolismu sacharidů, vstřebávání inzulínu, zabraňují poruchám v nervových buňkách,
+                            ovlivňují regulaci krevního oběhu.
+                          </li>
+                          <li class="list__item"><b>Vitamin C:</b> pomáhá snižovat hladinu cukru v krvi a posilovat
+                            stěny cév, normalizuje metabolismus, pomáhá předcházet diabetickým cévním lézím.
+                          </li>
+                        </ul>
+                        <p>Neodkládejte péči o své zdraví! <b>Každý může dostat cukrovku způsobenou nadváhou a špatnou
+                            stravou, užíváním hormonální antikoncepce, srdečními problémy, endokrinními patologiemi a
+                            genetikou</b>. Proto stojí za to co nejdříve zakročit, abyste zabránili vzniku cukrovky nebo
+                          upravili svůj stav, pokud již byla nemoc u pacienta diagnostikována.</p>
+                        <p>Naštěstí na to nyní existuje skvělý přípravek, který svou práci plní lépe než jiné léky na
+                          trhu. Je testován a vytvořen pod dohledem nejlepších technologů a lékařů. Dá se mu věřit."</p>
+                        <p><a href="#to_form"><span class="productName"></span></a> si můžete objednat na této stránce
+                          vyplněním objednávkového
+                          formuláře níže. Poté vás bude manažer kontaktovat, aby projednal podrobnosti objednávky.
+                          Platba na dobírku při doručení domů.
+                        </p>
+                        <div class="features-wrapper"></div>
+                        <div class="comments">
+                          <h4 class="comments__title">Komentáře</h4>
+                          <div class="comments__items">
+                            <div class="comments__item">
+                              <img src="img/ava-wom1.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Lenka</h4>
+                                <p class="comments__text">Můj manžel má cukrovku 2. typu. O těchto kapkách jsem se
+                                  dozvěděla z internetu, vše si o nich přečetla a koupila manželovi několik balení na
+                                  kurz. Věřila jsem tomu, protože to má doporučení lékařů z Panevropské společnosti
+                                  endokrinologů. Myslím, že by je měl mít každý diabetik.
+                                </p>
+                                <!-- <img src="img/live1.jpg" alt="" class="comments__live"> -->
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man1.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Pavel</h4>
+                                <p class="comments__text">Tyto kapky mi předepsal můj endokrinolog, už mám za sebou
+                                  jeden kurz a za 2 měsíce vypiju druhý. Působí na tělo jemně a žádné vedlejší účinky
+                                  ani závislost jsem nepoznamenal. Můj stav se výrazně zlepšil.</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom2.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Kamča65</h4>
+                                <p class="comments__text">No to je hruza ze se vadne leky dostaly uz i do lekaren...
+                                  Proc nezavedou dodatecne kontroly dodavek aby se tomu zabranovalo?</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man2.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">marek šedý</h4>
+                                <p class="comments__text">Věřit farmaceutickým přípravkům je teď ještě těžší. Není
+                                  jasné, z jakých komponent se skládají a zda výrobci kontrolují jejich kvalitu. Vypadá
+                                  to, že ne</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man3.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Kuchař1</h4>
+                                <p class="comments__text">Koupil jsem tyto kapky pro mamku a teď jsem si objednal ještě
+                                  několik balení na druhý kurz ve slevě</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom3.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Alena Malíčková
+                                </h4>
+                                <p class="comments__text">Moje známá je v nemocnici kvůli otravě nějakým lékem z
+                                  lékárny. Zatím se neví, kdy ji pustí. Měla příznaky anafylaktického šoku.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom4.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">elanovak
+                                </h4>
+                                <p class="comments__text">Kapky používám už třetí týden a účinek je top👍👍Už nemám
+                                  záchvaty žízně a bolesti hlavy jsou taky pryč, chuť k jídlu je už taky normální. Velký
+                                  hlady už nedostávám</p>
+                                <!-- <img src="img/live2.jpg" alt="" class="comments__live"> -->
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man4.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">honza kers</h4>
+                                <p class="comments__text"><span class="productName"></span> mi taky pomohl vyrovnat se s
+                                  chronickou unavou
+                                  silnym hladem a migrenamy. Mam pocit ze uz snad ani nemam cukrovku! Cholesterol a
+                                  glukoza se vratily do normalu a ukazatele se drzi uz nekolik mesicu</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man5.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Jan Menšík</h4>
+                                <p class="comments__text">Poslouchal jsem pořad, ve kterém pan doktor mluvil o těchto
+                                  kapkách a jejich vlivu na organismus. Prošly několika fázemi testování a nevyvolaly
+                                  žádné nežádoucí reakce. Proto o nich nemisíte pochybovat.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom5.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">mirkahajna</h4>
+                                <p class="comments__text">Jsem alergik a většina léků mi nevyhovuje. Tyto kapky jsou
+                                  výjimkou, proto mi byly doporučeny. Koupila jsem to ve slevě a za pár dní mi je
+                                  přivezli domů. Předpis jsem nepotřebovala.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man6.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Adames</h4>
+                                <p class="comments__text">Objednal jsem si je se slevou, zatím je beru jen pár dní. O
+                                  změnách tu pak ještě napíšu.</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom6.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">verča_</h4>
+                                <p class="comments__text">Tyto kapky mi pomahaji bojovat s hladem. Mam nadvahu a nutne
+                                  potrebuji zhubnout aby si nezpusobila nejaky komplikace. S takovou diagnozou je to
+                                  tezke a clovek si nechce delat omezeni nebo sahat po skodlivym silnym praskum a prave
+                                  proto je <span class="productName"></span> vhodny na 100 procent</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom7.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Lenka</h4>
+                                <p class="comments__text">Už jsem byla zoufalá že to už nikdy nebude lepší a že ty
+                                  příznaky cukrovky se mnou budou navždy... Ale uvědomila jsem si že jsem se mýlila když
+                                  jsem vyzkoušela <span class="productName"></span></p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man7.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Tomas</h4>
+                                <p class="comments__text">Je lepší koupit kapky se slevou od výrobce, než za ně
+                                  přeplácet v lékárně.</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom8.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">ivana hanusova</h4>
+                                <p class="comments__text">Doručili to rychle, vše proběhlo v pořádku</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-wom9.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">EVČA KOS</h4>
+                                <p class="comments__text">Moje ségra tyhle kapky pije pravidelně. Říká ze se po nich
+                                  cítí mnohem líp.</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man8.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">Stana77</h4>
+                                <p class="comments__text">Normalne neverim ze se jeste prodavaji ucinne pripravky za
+                                  normalni cenu.</p>
+                              </div>
+                            </div>
+                            <div class="comments__item">
+                              <img src="img/ava-man9.png" alt="" class="comments__ava">
+                              <div class="comments__info">
+                                <h4 class="comments__name">František Stříbrný</h4>
+                                <p class="comments__text">Objednávejte, jiný takový produkt nenajdete</p>
+                              </div>
+                            </div>
+                            <div id="commentPushBlock"></div>
+                            <form id="commentForm" action="send.php" method="post">
+                              <input type="hidden" name="country" value="CZ">
+                              <input type="hidden" name="goods_id" value="155688">
+
+                              <div class="form__item">
+                                <div class="file">
+                                  <div class="file__item">
+                                    <label for="formImage" class="form__avatar" id="formAvatar"></label>
+                                    <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image"
+                                      class="file__input">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form__inputs">
+                                <!----Добавляем input если нужно вводить имя ---->
+                                <input type="text" placeholder="Tvé jméno" id="inputCommentName">
+                                <textarea name="" id="inputCommentText" placeholder="Váš komentář" cols="20"
+                                  rows="5"></textarea>
+                                <button type="submit" id="commentPush">
+                                  <img src="img/go.png" alt="">
+                                </button>
+                              </div>
+
+                              <input type="hidden" name="sub1" value="">
+                              <input type="hidden" name="sub2" value="">
+                              <input type="hidden" name="sub3" value="">
+                              <input type="hidden" name="sub4" value="">
+                              <input type="hidden" name="sub5" value="">
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <aside class="hidden lg:block lg:w-ff-2/2 px-2" role="complementary" data-sticky-container>
+            <div class="widget">
+              <div class="leading-none font-bold mb-2 flex items-center">
+                <span class="inline-block bg-brand-red w-2 h-2 mr-2"></span> Aktuálně nejčtenější
+              </div>
+              <div class="mb-8">
+                <a href="#to_form" class="hover:highlight">
+                  <article class="article-hlasy flex border-b border-brand-red mb-2 shadow-lg-on-hover">
+                    <div class="w-full p-2">
+                      <h3 class="text-sm leading-tight ff-truncate-text mb-1">
+                        Pavel v debatě zničil Babiše. Každý, kdo se díval, musel vidět, co je
+                        šéf ANO zač </h3>
+                      <p class="text-xs font-semibold text-right lowercase">Přečteno: 560914</p>
+                    </div>
+                  </article>
+                </a>
+                <a href="#to_form" class="hover:highlight">
+                  <article class="article-hlasy flex border-b border-brand-red mb-2 shadow-lg-on-hover">
+                    <div class="w-full p-2">
+                      <h3 class="text-sm leading-tight ff-truncate-text mb-1">
+                        V Kremlu už vědí, že prohráli. Teď hledají náhradu za Putina, řekl
+                        Oleksij Danilov </h3>
+                      <p class="text-xs font-semibold text-right lowercase">Přečteno: 398893</p>
+                    </div>
+                  </article>
+                </a>
+                <a href="#to_form" class="hover:highlight">
+                  <article class="article-hlasy flex border-b border-brand-red mb-2 shadow-lg-on-hover">
+                    <div class="w-full p-2">
+                      <h3 class="text-sm leading-tight ff-truncate-text mb-1">
+                        Stačí už. Jdeme. Babiše musela na tiskovce usměrňovat jeho manželka
+                        Monika </h3>
+                      <p class="text-xs font-semibold text-right lowercase">Přečteno: 347183</p>
+                    </div>
+                  </article>
+                </a>
+                <a href="#to_form" class="hover:highlight">
+                  <article class="article-hlasy flex border-b border-brand-red mb-2 shadow-lg-on-hover">
+                    <div class="w-full p-2">
+                      <h3 class="text-sm leading-tight ff-truncate-text mb-1">
+                        Rusové už nemají na válku žaludek. Putina čeká poslední hod kostkou,
+                        říká důstojník britské armády </h3>
+                      <p class="text-xs font-semibold text-right lowercase">Přečteno: 153052</p>
+                    </div>
+                  </article>
+                </a>
+              </div>
+            </div>
+            <div class="block my-5"><a href="#to_form"><img src="img/banner_kniha.jpg" alt="Banner kniha"
+                  class="transition-all duration-150 ease-in-out hover:shadow-lg"></a></div>
+          </aside>
+        </div>
+      </section>
+      <section class="container px-4 mt-10">
+        <div class="md:flex -mx-2">
+          <div class="w-full px-2 md:px-10 md:pl-2 md:pr-3">
+            <div class="leading-none font-bold mb-4 flex items-center text-lg">
+              <span class="inline-block bg-brand-red w-2 h-2 mr-2"></span>
+              <span>Související články
+              </span></div>
+            <div class="flex flex-wrap -mx-2">
+              <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+                <div class="md:h-full bg-white">
+                  <a href="#to_form">
+                    <article class="article-stream md:h-full hover:shadow-lg">
+                      <div class="relative">
+                        <div class="flex text-xs font-bold text-brand-red tracking-wider mb-1 px-3 pt-3">
+                          <span class="ff-author-truncate uppercase pr-1">Pavel
+                            Šmejkal</span><span class="whitespace-no-wrap text-xs text-gray-600"> /
+                            zpráva</span></div>
+                        <h2 class="font-bold text-lg leading-tight ff-truncate-text px-3 hover:text-brand-red"
+                          style="margin-bottom: .75rem;">
+                          Počet Američanů, kteří by omezili pomoc Ukrajině, roste. Pořád jsou
+                          však ve výrazné menšině </h2>
+                      </div>
+                      <img width="385" height="230" class="w-full md:w-auto mb-1 wp-post-image"
+                        alt="Ilustrační foto (Generální štáb ukrajinské armády, se souhlasem)"
+                        srcset="img/325135443_504652858437015_8792807571400344114_n-385x230.jpg 385w, img/325135443_504652858437015_8792807571400344114_n-770x460.jpg 770w"
+                        sizes="(max-width: 385px) 100vw, 385px">
+                      <div class="p-3">
+                        <p class="text-sm leading-tight">Od jara 2022 se počet Američanů, kteří
+                          by chtěli omezit pomoc bojující Ukrajině, zvýšil čtyřnásobně.
+                          Většina …</p>
+                      </div>
+                    </article>
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+                <div class="md:h-full bg-white">
+                  <a href="#to_form">
+                    <article class="article-stream md:h-full hover:shadow-lg">
+                      <div class="relative">
+                        <div class="flex text-xs font-bold text-brand-red tracking-wider mb-1 px-3 pt-3">
+                          <span class="ff-author-truncate uppercase pr-1">Pavel
+                            Šmejkal</span><span class="whitespace-no-wrap text-xs text-gray-600"> /
+                            zpráva</span></div>
+                        <h2 class="font-bold text-lg leading-tight ff-truncate-text px-3 hover:text-brand-red"
+                          style="margin-bottom: .75rem;">
+                          V roce 2025 vypukne válka mezi USA a Čínou, předpovídá americký
+                          generál </h2>
+                      </div>
+                      <img width="385" height="230" src="img/beze-jmena-1-385x230.jpg"
+                        class="w-full md:w-auto mb-1 wp-post-image" alt="Mike Minihan (US Air Force, se souhlasem)">
+                      <div class="p-3">
+                        <p class="text-sm leading-tight">Americký generál a šéf Velitelství
+                          vzdušné mobility Mike Minihan poslal svým podřízeným memorandum s
+                          varováním, že …</p>
+                      </div>
+                    </article>
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+                <div class="md:h-full bg-white">
+                  <a href="#to_form">
+                    <article class="article-stream md:h-full hover:shadow-lg">
+                      <div class="relative">
+                        <div class="flex text-xs font-bold text-brand-red tracking-wider mb-1 px-3 pt-3">
+                          <span class="ff-author-truncate uppercase pr-1">ČTK</span><span
+                            class="whitespace-no-wrap text-xs text-gray-600"> /
+                            zpráva</span></div>
+                        <h2 class="font-bold text-lg leading-tight ff-truncate-text px-3 hover:text-brand-red"
+                          style="margin-bottom: .75rem;">
+                          Spojené státy dodají Ukrajině 31 tanků Abrams, oznámil prezident
+                          Biden </h2>
+                      </div>
+                      <img width="385" height="230" class="w-full md:w-auto mb-1 wp-post-image"
+                        alt="Americký prezident Joe Biden (Michael Stokes / Wikimedia Commons / CC BY 2.0)"
+                        srcset="img/ccc-91-385x230.jpg 385w, img/ccc-91-770x460.jpg 770w"
+                        sizes="(max-width: 385px) 100vw, 385px">
+                      <div class="p-3">
+                        <p class="text-sm leading-tight">Spojené státy v řádu několika měsíců
+                          dodají Ukrajině 31 pokročilých tanků M1 Abrams. Ve středu v podvečer
+                          …</p>
+                      </div>
+                    </article>
+                  </a>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+                <div class="md:h-full bg-white">
+                  <a href="#to_form">
+                    <article class="article-stream md:h-full hover:shadow-lg">
+                      <div class="relative">
+                        <div class="flex text-xs font-bold text-brand-red tracking-wider mb-1 px-3 pt-3">
+                          <span class="ff-author-truncate uppercase pr-1">ČTK</span><span
+                            class="whitespace-no-wrap text-xs text-gray-600"> /
+                            zpráva</span></div>
+                        <h2 class="font-bold text-lg leading-tight ff-truncate-text px-3 hover:text-brand-red"
+                          style="margin-bottom: .75rem;">
+                          Osoby s koronavirem mají šanci hlasovat v prezidentské volbě již ve
+                          středu </h2>
+                      </div>
+                      <img width="385" height="230" class="w-full md:w-auto mb-1 wp-post-image"
+                        alt="Ilustrační foto (AdobeStock)"
+                        srcset="img/AdobeStock_382314763-385x230.jpeg 385w, img/AdobeStock_382314763-770x460.jpeg 770w"
+                        sizes="(max-width: 385px) 100vw, 385px">
+                      <div class="p-3">
+                        <p class="text-sm leading-tight">Hlasování o tom, zda bude novým
+                          prezidentem generál Petr Pavel, nebo expremiér Andrej Babiš (ANO),
+                          začalo dnes v …</p>
+                      </div>
+                    </article>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-brand-blue text-white mt-5 md:mt-0">
+      <div class="container px-4 pt-8 pb-5">
+        <div class="flex justify-between flex-wrap -mx-2">
+          <div class="w-full md:w-1/3 lg:w-1/4 px-2 mb-4">
+            <ul>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">O
+                  projektu</a></li>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">Redakce</a></li>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">Inzerujte u
+                  nás</a></li>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">Přispívejte do Hydeparku</a></li>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">Nastavení notifikací</a></li>
+              <li class="mb-2 hidden"><a href="#to_form" class="hover:underline">Ochrana soukromí</a></li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/3 lg:w-1/5 px-2 mb-4">
+            <ul>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">Týdeník FORUM</a>
+              </li>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">E-SHOP FORUM</a>
+              </li>
+              <li class="mb-2"><a href="#to_form" class="hover:underline">Free Czech
+                  Media</a></li>
+              <li class="mb-2"><a class="privacy" href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/3 lg:w-1/5 lg:flex-1 px-2 mb-4">
+            <ul>
+              <li class="mb-3">
+                <a href="#to_form" class="flex hover:underline">
+                  <svg class="fill-current text-white w-6 h-6 mr-2" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6S15.302.4 10 .4zm2.274 6.634h-1.443c-.171 0-.361.225-.361.524V8.6h1.805l-.273 1.486H10.47v4.461H8.767v-4.461H7.222V8.6h1.545v-.874c0-1.254.87-2.273 2.064-2.273h1.443v1.581z" />
+                  </svg>
+                  Svobodné fórum
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#to_form" class="flex hover:underline">
+                  <svg class="fill-current text-white w-6 h-6 mr-2" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6S15.302.4 10 .4zm2.274 6.634h-1.443c-.171 0-.361.225-.361.524V8.6h1.805l-.273 1.486H10.47v4.461H8.767v-4.461H7.222V8.6h1.545v-.874c0-1.254.87-2.273 2.064-2.273h1.443v1.581z" />
+                  </svg>
+                  FORUM 24
+                </a>
+              </li>
+              <li class="mb-3">
+                <a href="#to_form" class="flex hover:underline">
+                  <svg class="fill-current text-white w-6 h-6 mr-2" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6S15.302.4 10 .4zm3.905 7.864c.004.082.005.164.005.244 0 2.5-1.901 5.381-5.379 5.381a5.335 5.335 0 0 1-2.898-.85c.147.018.298.025.451.025.886 0 1.701-.301 2.348-.809a1.895 1.895 0 0 1-1.766-1.312 1.9 1.9 0 0 0 .853-.033 1.892 1.892 0 0 1-1.517-1.854v-.023c.255.141.547.227.857.237a1.89 1.89 0 0 1-.585-2.526 5.376 5.376 0 0 0 3.897 1.977 1.891 1.891 0 0 1 3.222-1.725 3.797 3.797 0 0 0 1.2-.459 1.9 1.9 0 0 1-.831 1.047 3.799 3.799 0 0 0 1.086-.299 3.834 3.834 0 0 1-.943.979z" />
+                  </svg>
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="#to_form" class="flex hover:underline">
+                  <svg class="fill-current text-white w-6 h-6 mr-2" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M14.829 6.302c-.738-.034-.96-.04-2.829-.04s-2.09.007-2.828.04c-1.899.087-2.783.986-2.87 2.87-.033.738-.041.959-.041 2.828s.008 2.09.041 2.829c.087 1.879.967 2.783 2.87 2.87.737.033.959.041 2.828.041 1.87 0 2.091-.007 2.829-.041 1.899-.086 2.782-.988 2.87-2.87.033-.738.04-.96.04-2.829s-.007-2.09-.04-2.828c-.088-1.883-.973-2.783-2.87-2.87zm-2.829 9.293c-1.985 0-3.595-1.609-3.595-3.595 0-1.985 1.61-3.594 3.595-3.594s3.595 1.609 3.595 3.594c0 1.985-1.61 3.595-3.595 3.595zm3.737-6.491c-.464 0-.84-.376-.84-.84 0-.464.376-.84.84-.84.464 0 .84.376.84.84 0 .463-.376.84-.84.84zm-1.404 2.896c0 1.289-1.045 2.333-2.333 2.333s-2.333-1.044-2.333-2.333c0-1.289 1.045-2.333 2.333-2.333s2.333 1.044 2.333 2.333zm-2.333-12c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.958 14.886c-.115 2.545-1.532 3.955-4.071 4.072-.747.034-.986.042-2.887.042s-2.139-.008-2.886-.042c-2.544-.117-3.955-1.529-4.072-4.072-.034-.746-.042-.985-.042-2.886 0-1.901.008-2.139.042-2.886.117-2.544 1.529-3.955 4.072-4.071.747-.035.985-.043 2.886-.043s2.14.008 2.887.043c2.545.117 3.957 1.532 4.071 4.071.034.747.042.985.042 2.886 0 1.901-.008 2.14-.042 2.886z" />
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex justify-between items-center border-t border-brand-blue-light pt-5">
+          <svg class="hidden md:block mr-2" width="100" viewBox="0 0 271 66" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="191.29 65.462 270.47 65.462 270.47 0.26818 191.29 0.26818" fill="#1A1918" />
+            <polygon points="0 65.462 191.83 65.462 191.83 0.26818 0 0.26818" class="fill-current text-blue-700" />
+            <polyline
+              points="18.04 16.834 37.95 16.834 37.95 23.971 26.676 23.971 26.676 29.607 37.312 29.607 37.312 36.561 26.676 36.561 26.676 49.334 18.04 49.334 18.04 16.834"
+              fill="#fff" />
+            <path
+              d="m63.176 41.425c1.3015-0.84819 2.3102-1.9991 3.0204-3.4547 0.71234-1.455 1.0678-3.0598 1.0678-4.8175 0-1.7569-0.36321-3.3632-1.0896-4.8182-0.72572-1.455-1.7428-2.6051-3.0451-3.454-1.305-0.84749-2.7572-1.2726-4.3635-1.2726-1.6352 0-3.0986 0.42515-4.3874 1.2726-1.286 0.8489-2.2947 1.9991-3.0211 3.454-0.72924 1.455-1.0924 3.0612-1.0924 4.8182 0 1.7886 0.34984 3.4083 1.0467 4.8632 0.69686 1.4542 1.6894 2.5988 2.9775 3.4315 1.2867 0.83341 2.7797 1.2494 4.4768 1.2494 1.6359 0 3.1042-0.42304 4.4099-1.2719zm-10.228 7.7499c-1.9076-0.68137-3.6504-1.6436-5.2271-2.886-2.0314-1.6359-3.5913-3.5835-4.6809-5.8409-1.0924-2.2567-1.6359-4.6887-1.6359-7.2952 0-2.3031 0.43078-4.4845 1.2945-6.5455 0.86298-2.0603 2.1279-3.8925 3.7954-5.5002 1.6359-1.6042 3.5216-2.8409 5.6572-3.7039 2.1384-0.86368 4.3423-1.2952 6.6152-1.2952s4.4845 0.43994 6.6363 1.3177c2.1497 0.87987 4.0439 2.1068 5.6818 3.6814 1.6359 1.6077 2.8867 3.4399 3.7504 5.5002 0.86368 2.061 1.2938 4.2424 1.2938 6.5455 0 2.3024-0.43008 4.4845-1.2938 6.5441-0.86368 2.061-2.1145 3.8947-3.7504 5.5009-1.638 1.607-3.5322 2.8402-5.6818 3.7046-2.1518 0.86298-4.3635 1.2952-6.6363 1.2952-1.9688 0-3.9087-0.34209-5.8184-1.0228z"
+              fill="#fff" />
+            <path
+              d="m91.626 32.198c1.8801 0 3.2661-0.31746 4.1593-0.95378 0.89536-0.63632 1.3423-1.6661 1.3423-3.0908 0-1.1206-0.19146-2.0068-0.56804-2.6593-0.3787-0.6511-0.95448-1.1206-1.7267-1.4099-0.77499-0.28719-1.797-0.43008-3.069-0.43008h-1.7738v8.5439h1.6359zm-9.9531-15.364h9.8186c1.878 0 3.3871 0.039418 4.5225 0.11474 1.1347 0.076725 2.2342 0.27311 3.2963 0.59057 1.0601 0.31886 2.0286 0.8123 2.9078 1.4768 1.1811 0.90943 2.0821 2.0476 2.7037 3.4097 0.62154 1.3642 0.93337 2.8796 0.93337 4.5451 0 2.5157-0.62154 4.5612-1.8639 6.1359-1.2431 1.5774-3.0451 2.622-5.4101 3.1373l8.8642 13.09h-9.9988l-7.4564-12.727v12.727h-8.3172v-32.5z"
+              fill="#fff" />
+            <path
+              d="m118.06 49.221c-1.923-0.6511-3.4611-1.6436-4.6126-2.9782-0.81793-0.939-1.4317-1.992-1.84-3.1577-0.40896-1.1678-0.67574-2.4165-0.79681-3.7504-0.12037-1.3346-0.17949-2.9845-0.17949-4.9554v-17.545h8.8163v17.637c0 2.0307 0.15908 3.6377 0.47583 4.8182 0.31746 1.1811 0.87987 2.0526 1.6809 2.6136 0.80455 0.56101 1.9618 0.84116 3.4787 0.84116 1.7569 0 3.0289-0.36391 3.8179-1.091 0.78766-0.72783 1.2881-1.7654 1.5-3.114 0.21046-1.348 0.31816-3.3857 0.31816-6.1126v-15.592h8.8184v19.318c0 3.3041-0.49202 5.9859-1.4775 8.0469-0.98686 2.061-2.5305 3.5751-4.638 4.5436-2.1061 0.97067-4.885 1.4557-8.3391 1.4557-2.7572 0-5.0976-0.3259-7.0228-0.97701"
+              fill="#fff" />
+            <path
+              d="m149.08 16.834h8.7698l4.9097 16.773c0.18301 0.57649 0.37095 1.2431 0.56804 2.0005 0.19639 0.75739 0.35688 1.5619 0.47795 2.4087 0.1809-1.3642 0.51455-2.8487 0.99812-4.4543l4.9554-16.728h8.7727l5.0012 32.5h-8.275l-1.9069-14.046c-0.27522-1.9688-0.50047-4.393-0.68348-7.2712-0.15134 1.0305-0.34702 2.0061-0.58986 2.931-0.24425 0.92351-0.44064 1.6211-0.59127 2.0906s-0.25833 0.82637-0.31746 1.0685l-4.4085 15.227h-5.9106l-4.4071-15.227c-0.061943-0.24214-0.1985-0.7046-0.40896-1.3867-0.21187-0.68137-0.40896-1.4247-0.59198-2.2278-0.18231-0.80244-0.34913-1.6281-0.49977-2.4756-0.15063 2.484-0.39277 4.9076-0.72642 7.2712l-1.9104 14.046h-8.2257l5.0005-32.5"
+              fill="#fff" />
+            <path
+              d="m226.67 49.328h-26.167l8.0617-8.3623c2.1258-2.2123 3.794-4.0875 4.9991-5.6255 1.2072-1.5366 2.1061-2.8374 2.6952-3.9003 0.58635-1.0629 0.95448-1.9245 1.1002-2.5868 0.14219-0.66025 0.21539-1.2213 0.21539-1.6809 0-0.4885-0.080948-0.96223-0.23932-1.4219-0.15697-0.45964-0.39559-0.86861-0.71094-1.2297-0.31746-0.35758-0.69615-0.64547-1.1431-0.86086-0.44416-0.2161-0.96856-0.3245-1.5704-0.3245-1.1516 0-2.0497 0.37447-2.6959 1.1206-0.64829 0.74824-0.96856 1.6816-0.96856 2.8022 0 0.31605 0.042937 0.77569 0.126 1.3803h-9.221c0-1.8984 0.3062-3.6215 0.92492-5.1736 0.61872-1.5507 1.488-2.8881 2.6093-4.0094 1.1192-1.1192 2.4482-1.9829 3.9869-2.5854 1.5366-0.60394 3.2253-0.90521 5.0631-0.90521 1.8132 0 3.4864 0.28789 5.023 0.86227 1.538 0.57579 2.8677 1.3782 3.9869 2.413 1.1213 1.0361 1.9977 2.2637 2.6305 3.6856 0.6321 1.4233 0.94744 2.9683 0.94744 4.6352 0 1.7809-0.38222 3.4252-1.141 4.9336-0.76162 1.5099-1.9772 3.0549-3.6455 4.6352l-5.3876 5.0427h10.52v7.1558"
+              fill="#fff" />
+            <path
+              d="m245.64 36.182v-12.802l-7.4599 12.802h7.4599zm7.8449 0h3.9214v6.466h-3.9214v6.6807h-7.8449v-6.6807h-15.692v-5.432l12.415-20.388h11.122v19.354z"
+              fill="#fff" />
+          </svg>
+          <p class="text-sm align-middle">© <span class="js-current-year"></span> Forum 24 a.s. Publikování nebo šíření
+            obsahu je zakázáno bez
+            předchozího souhlasu.<br>Provozovatelem serveru je FORUM 24 a.s.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <a href="#">
+    <footer>
+      <center>
+        <span style="text-decoration: underline; cursor: pointer;">Disclaimer</span> |
+        <span style="text-decoration: underline; cursor: pointer;">Terms &
+          Conditions</span> |
+        <span style="text-decoration: underline; cursor: pointer;">Privacy
+          policy</span> <br>
+      </center>
+    </footer>
+  </a>
+  <script>
+    const offer_params = {
+        priceMain : '849',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: 'Kč',
+        productName : 'INSULINEX',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+    priceMain : offer_params.priceMain,
+    currencyMain : offer_params.currencyMain,
+    lang : 'cz', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+    product : offer_params.productName, // название продукта
+    genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+    form : {
+        isNeeded : 1, // 1-включить форму, 0-выключить
+        img: 'prod.png', // путь до картинки продукта
+        price: true, // плашка с ценой
+        priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+        showSelect: false, // показывать или скрывать поле select
+        untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+    },
+
+
+
+
+    autoComments: {
+        isNeeded: 0, // 1-включить автокомы, 0-выключить
+        bgColor: '#d7f2d8' // цвет фона блока комчиков
+    },
+
+
+
+
+    popups: {
+        isNeeded: 0, // 1-включить попы, 0-выключить
+        bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+        textColor: '#fff', // цвет основного текста сообщения
+        emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+        blackIcons: false // черные или белые иконки, значения true или false
+    },
+
+
+
+
+    wheel: {
+        isNeeded: 1, // 1-включить колесо, 0-выключить
+        customWheel: false // ссылка на свое колесо, либо false
+    }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>
