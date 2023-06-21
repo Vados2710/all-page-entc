@@ -1,0 +1,1860 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html lang="hu" dir="ltr">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style>
+		.ev-footer,
+		.create_rom_footer {
+			display: flex;
+			align-items: center;
+			padding: 15px 0;
+			justify-content: center;
+			flex-direction: column
+		}
+
+		.ev-footer__logo svg {
+			display: flex;
+			width: 30px;
+			height: 30px
+		}
+
+		.ev-footer__logo a {
+			text-decoration: none;
+			font-size: 14px;
+			font-family: inherit
+		}
+
+		.ev-footer__link {
+			display: flex;
+			text-decoration: underline
+		}
+
+		.ev-footer__link:hover {
+			text-decoration: none
+		}
+
+		:active,
+		:focus,
+		:hover,
+		:visited,
+		a,
+		a:active,
+		a:focus,
+		a:hover,
+		a:visited {
+			outline: 0 !important
+		}
+
+		::-moz-focus-inner {
+			border: 0;
+			outline: 0
+		}
+	</style>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#ffffff">
+	<title>Cannabis Oil
+		Inovativní preparát pro nemocné cukrovkou, vyvinutý podle americké technologie</title>
+
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/css2">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<script src="js/jquery.js"></script>
+
+
+
+	<style>
+		.ever-popup-build {
+			position: fixed;
+			opacity: 0;
+			z-index: -1;
+			top: 0;
+			left: -9999px;
+		}
+	</style>
+	<style>
+		.ever-popup__body.ever-mobile {
+			display: none
+		}
+
+		.ever-popup {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, .7);
+			z-index: 111;
+			display: none;
+			overflow: auto;
+		}
+
+		.ever-popup__body {
+			position: static;
+			float: none;
+			display: block;
+			margin: 0 auto;
+			width: auto
+		}
+
+		.ever-popup.show {
+			display: block;
+			align-items: center;
+		}
+
+		.ever-popup__inner {
+			position: relative;
+			margin: 0 auto;
+			padding-top: 35px
+		}
+
+		.ever-popup__close {
+			width: 35px;
+			height: 30px;
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			right: 0;
+			z-index: 1;
+			-webkit-transition: .3s;
+			-moz-transition: .3s;
+			-ms-transition: .3s;
+			-o-transition: .3s;
+			transition: .3s;
+		}
+
+		.ever-popup__close:after,
+		.ever-popup__close:before {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 10px;
+			width: 35px;
+			height: 10px;
+			background: #fff;
+			transition: all 1s;
+		}
+
+		.ever-popup__close:after {
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+
+		.ever-popup__close:before {
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+
+		@media screen and (max-width: 999px) {
+			.ever-popup__body.ever-desktop {
+				display: none
+			}
+
+			.ever-popup__body.ever-mobile {
+				display: block
+			}
+		}
+	</style>
+	<style>
+		.phoneBtnContainer {
+			position: fixed;
+			right: 10px;
+			bottom: 10px;
+			visibility: hidden;
+			background-color: transparent;
+			width: 200px;
+			height: 200px;
+			cursor: pointer;
+			z-index: 99;
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: translateZ(0);
+			-webkit-transition: visibility .5s;
+			-moz-transition: visibility .5s;
+			-o-transition: visibility .5s;
+			transition: visibility .5s
+		}
+
+		.cbh-phone.cbh-show {
+			visibility: visible
+		}
+
+		@-webkit-keyframes fadeInRight {
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0)
+			}
+
+			100% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none
+			}
+		}
+
+		@keyframes fadeInRight {
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(100%, 0, 0);
+				-ms-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0)
+			}
+
+			100% {
+				opacity: 1;
+				-webkit-transform: none;
+				-ms-transform: none;
+				transform: none
+			}
+		}
+
+		@-webkit-keyframes fadeInRightBig {
+			0% {
+				opacity: 0;
+				-webkit-transform: translate3d(2000px, 0, 0);
+				transform: translate3d(2000px, 0, 0)
+			}
+
+			100% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none
+			}
+		}
+
+		@-webkit-keyframes fadeOutRight {
+			0% {
+				opacity: 1
+			}
+
+			100% {
+				opacity: 0;
+				-webkit-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0)
+			}
+		}
+
+		@keyframes fadeOutRight {
+			0% {
+				opacity: 1
+			}
+
+			100% {
+				opacity: 0;
+				-webkit-transform: translate3d(100%, 0, 0);
+				-ms-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0)
+			}
+		}
+
+		.fadeOutRight {
+			-webkit-animation-name: fadeOutRight;
+			animation-name: fadeOutRight
+		}
+
+		.cbh-phone.cbh-static1 {
+			opacity: .6
+		}
+
+		.cbh-phone.cbh-hover1 {
+			opacity: 1
+		}
+
+		.cbh-ph-circle {
+			width: 160px;
+			height: 160px;
+			top: 20px;
+			left: 20px;
+			position: absolute;
+			background-color: transparent;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			border: 2px solid rgba(30, 30, 30, .4);
+			opacity: .1;
+			-webkit-animation: cbh-circle-anim 1.2s infinite ease-in-out;
+			-moz-animation: cbh-circle-anim 1.2s infinite ease-in-out;
+			-ms-animation: cbh-circle-anim 1.2s infinite ease-in-out;
+			-o-animation: cbh-circle-anim 1.2s infinite ease-in-out;
+			animation: cbh-circle-anim 1.2s infinite ease-in-out;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s
+		}
+
+		.cbh-phone.cbh-active .cbh-ph-circle1 {
+			-webkit-animation: cbh-circle-anim 1.1s infinite ease-in-out !important;
+			-moz-animation: cbh-circle-anim 1.1s infinite ease-in-out !important;
+			-ms-animation: cbh-circle-anim 1.1s infinite ease-in-out !important;
+			-o-animation: cbh-circle-anim 1.1s infinite ease-in-out !important;
+			animation: cbh-circle-anim 1.1s infinite ease-in-out !important
+		}
+
+		.cbh-phone.cbh-static .cbh-ph-circle {
+			-webkit-animation: cbh-circle-anim 2.2s infinite ease-in-out !important;
+			-moz-animation: cbh-circle-anim 2.2s infinite ease-in-out !important;
+			-ms-animation: cbh-circle-anim 2.2s infinite ease-in-out !important;
+			-o-animation: cbh-circle-anim 2.2s infinite ease-in-out !important;
+			animation: cbh-circle-anim 2.2s infinite ease-in-out !important
+		}
+
+		.cbh-phone.cbh-hover .cbh-ph-circle {
+			border-color: rgba(0, 175, 242, 1);
+			opacity: .5
+		}
+
+		.cbh-phone.cbh-green.cbh-hover .cbh-ph-circle {
+			border-color: rgba(117, 235, 80, 1);
+			opacity: .5
+		}
+
+		.cbh-phone.cbh-green .cbh-ph-circle {
+			border-color: rgba(0, 175, 242, 1);
+			opacity: .5
+		}
+
+		.cbh-phone.cbh-gray.cbh-hover .cbh-ph-circle {
+			border-color: rgba(204, 204, 204, 1);
+			opacity: .5
+		}
+
+		.cbh-phone.cbh-gray .cbh-ph-circle {
+			border-color: rgba(117, 235, 80, 1);
+			opacity: .5
+		}
+
+		.cbh-ph-circle-fill {
+			width: 100px;
+			height: 100px;
+			top: 50px;
+			left: 50px;
+			position: absolute;
+			background-color: #000;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			border: 2px solid transparent;
+			opacity: .1;
+			-webkit-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out;
+			-moz-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out;
+			-ms-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out;
+			-o-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out;
+			animation: cbh-circle-fill-anim 2.3s infinite ease-in-out;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s
+		}
+
+		.cbh-phone.cbh-active .cbh-ph-circle-fill {
+			-webkit-animation: cbh-circle-fill-anim 1.7s infinite ease-in-out !important;
+			-moz-animation: cbh-circle-fill-anim 1.7s infinite ease-in-out !important;
+			-ms-animation: cbh-circle-fill-anim 1.7s infinite ease-in-out !important;
+			-o-animation: cbh-circle-fill-anim 1.7s infinite ease-in-out !important;
+			animation: cbh-circle-fill-anim 1.7s infinite ease-in-out !important
+		}
+
+		.cbh-phone.cbh-static .cbh-ph-circle-fill {
+			-webkit-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out !important;
+			-moz-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out !important;
+			-ms-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out !important;
+			-o-animation: cbh-circle-fill-anim 2.3s infinite ease-in-out !important;
+			animation: cbh-circle-fill-anim 2.3s infinite ease-in-out !important;
+			opacity: 0 !important
+		}
+
+		.cbh-phone.cbh-hover .cbh-ph-circle-fill {
+			background-color: rgba(0, 175, 242, .5);
+			opacity: .75 !important
+		}
+
+		.cbh-phone.cbh-green.cbh-hover .cbh-ph-circle-fill {
+			background-color: rgba(117, 235, 80, .5);
+			opacity: .75 !important
+		}
+
+		.cbh-phone.cbh-green .cbh-ph-circle-fill {
+			background-color: rgba(0, 175, 242, .5);
+			opacity: .75 !important
+		}
+
+		.cbh-phone.cbh-gray.cbh-hover .cbh-ph-circle-fill {
+			background-color: rgba(204, 204, 204, .5);
+			opacity: .75 !important
+		}
+
+		.cbh-phone.cbh-gray .cbh-ph-circle-fill {
+			background-color: rgba(117, 235, 80, .5);
+			opacity: .75 !important
+		}
+
+		.cbh-ph-img-circle1 {
+			width: 60px;
+			height: 60px;
+			top: 70px;
+			left: 70px;
+			position: absolute;
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNmlDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjarY6xSsNQFEDPi6LiUCsEcXB4kygotupgxqQtRRCs1SHJ1qShSmkSXl7VfoSjWwcXd7/AyVFwUPwC/0Bx6uAQIYODCJ7p3MPlcsGo2HWnYZRhEGvVbjrS9Xw5+8QMUwDQCbPUbrUOAOIkjvjB5ysC4HnTrjsN/sZ8mCoNTIDtbpSFICpA/0KnGsQYMIN+qkHcAaY6addAPAClXu4vQCnI/Q0oKdfzQXwAZs/1fDDmADPIfQUwdXSpAWpJOlJnvVMtq5ZlSbubBJE8HmU6GmRyPw4TlSaqo6MukP8HwGK+2G46cq1qWXvr/DOu58vc3o8QgFh6LFpBOFTn3yqMnd/n4sZ4GQ5vYXpStN0ruNmAheuirVahvAX34y/Axk/96FpPYgAAACBjSFJNAAB6JQAAgIMAAPn/AACA6AAAUggAARVYAAA6lwAAF2/XWh+QAAAB/ElEQVR42uya7W3CMBCG31QM4A1aNggTlG6QbpBMkHYC1AloJ4BOABuEDcgGtBOETnD9c1ERCH/lwxeaV8oPFGP86Hy+DxMREW5Bd7gRjSDSNGn4/RiAOvm8C0ZCRD5PSkQVXSr1nK/xE3mcWimA1ZV3JYBZCIO4giQANoYxMwYS6+xKY4lT5dJPreWZY+uspqSCKPYN27GJVBDXheVSQe494ksiEWTuMXcu1dld9SARxDX1OAJ4lgjy4zDnFsC076A4adEiRwAZg4hOUSpNoCsBPDGM+HqkNGynYBCuILuWj+dgWysGsNe8nwL4GsrW0m2fxZBq9rW0rNcX5MOQ9eZD8JFahcG5g/iKT671alGAYQggpYWvpEPYWrU/HDTOfeRIX0q2SL3QN4tGhZJukVobQyXYWw7WtLDKDIuM+ZSzscyCE9PCy5IttCvnZNaeiGLNHKuz8ZVh/MXTVu/1xQKmIqLEAuJ0fNo3iG5B51oSkeKnsBi/4bG9gYB/lCytU5G9DryFW+3Gm+JLwU7ehbJrwTjq4DJU8bHcVbEV9dCannabis OilqqP6uqO5e2/QZRYJpqu2IUAA4B3tXvx8hgKp05QZW6dJqrLTNkB6vrRURLRwPHqtYgkC3cLWQAcDQGGKH13FER/NATzi786+BPDNjm1dMkfjn2pGkBHkf4D8DgBJDuDHx9BN+gAAAABJRU5ErkJggg==);
+			background-color: rgba(30, 30, 30, .1);
+			background-position: center center;
+			background-repeat: no-repeat;
+			-webkit-border-radius: 100%;
+			-moz-border-radius: 100%;
+			border-radius: 100%;
+			border: 2px solid transparent;
+			opacity: .7;
+			-webkit-animation: cbh-circle-img-anim 1s infinite ease-in-out;
+			-moz-animation: cbh-circle-img-anim 1s infinite ease-in-out;
+			-ms-animation: cbh-circle-img-anim 1s infinite ease-in-out;
+			-o-animation: cbh-circle-img-anim 1s infinite ease-in-out;
+			animation: cbh-circle-img-anim 1s infinite ease-in-out
+		}
+
+		.cbh-phone.cbh-active .cbh-ph-img-circle1 {
+			-webkit-animation: cbh-circle-img-anim 1s infinite ease-in-out !important;
+			-moz-animation: cbh-circle-img-anim 1s infinite ease-in-out !important;
+			-ms-animation: cbh-circle-img-anim 1s infinite ease-in-out !important;
+			-o-animation: cbh-circle-img-anim 1s infinite ease-in-out !important;
+			animation: cbh-circle-img-anim 1s infinite ease-in-out !important
+		}
+
+		.cbh-phone.cbh-static .cbh-ph-img-circle1 {
+			-webkit-animation: cbh-circle-img-anim 0s infinite ease-in-out !important;
+			-moz-animation: cbh-circle-img-anim 0s infinite ease-in-out !important;
+			-ms-animation: cbh-circle-img-anim 0s infinite ease-in-out !important;
+			-o-animation: cbh-circle-img-anim 0s infinite ease-in-out !important;
+			animation: cbh-circle-img-anim 0s infinite ease-in-out !important
+		}
+
+		.cbh-phone.cbh-hover .cbh-ph-img-circle1 {
+			background-color: rgba(0, 175, 242, 1)
+		}
+
+		.cbh-phone.cbh-green.cbh-hover .cbh-ph-img-circle1:hover {
+			background-color: rgba(117, 235, 80, 1)
+		}
+
+		.cbh-phone.cbh-green .cbh-ph-img-circle1 {
+			background-color: rgba(0, 175, 242, 1)
+		}
+
+		.cbh-phone.cbh-green .cbh-ph-img-circle1 {
+			background-color: rgba(0, 175, 242, 1)
+		}
+
+		.cbh-phone.cbh-gray.cbh-hover .cbh-ph-img-circle1 {
+			background-color: rgba(204, 204, 204, 1)
+		}
+
+		.cbh-phone.cbh-gray .cbh-ph-img-circle1 {
+			background-color: rgba(117, 235, 80, 1)
+		}
+
+		@-moz-keyframes cbh-circle-anim {
+			0% {
+				-moz-transform: rotate(0deg) scale(0.5) skew(1deg);
+				opacity: .1;
+				-moz-opacity: .1;
+				-webkit-opacity: .1;
+				-o-opacity: .1
+			}
+
+			30% {
+				-moz-transform: rotate(0deg) scale(.7) skew(1deg);
+				opacity: .5;
+				-moz-opacity: .5;
+				-webkit-opacity: .5;
+				-o-opacity: .5
+			}
+
+			100% {
+				-moz-transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .6;
+				-moz-opacity: .6;
+				-webkit-opacity: .6;
+				-o-opacity: .1
+			}
+		}
+
+		@-webkit-keyframes cbh-circle-anim {
+			0% {
+				-webkit-transform: rotate(0deg) scale(0.5) skew(1deg);
+				-webkit-opacity: .1
+			}
+
+			30% {
+				-webkit-transform: rotate(0deg) scale(.7) skew(1deg);
+				-webkit-opacity: .5
+			}
+
+			100% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg);
+				-webkit-opacity: .1
+			}
+		}
+
+		@-o-keyframes cbh-circle-anim {
+			0% {
+				-o-transform: rotate(0deg) kscale(0.5) skew(1deg);
+				-o-opacity: .1
+			}
+
+			30% {
+				-o-transform: rotate(0deg) scale(.7) skew(1deg);
+				-o-opacity: .5
+			}
+
+			100% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg);
+				-o-opacity: .1
+			}
+		}
+
+		@keyframes cbh-circle-anim {
+			0% {
+				transform: rotate(0deg) scale(0.5) skew(1deg);
+				opacity: .1
+			}
+
+			30% {
+				transform: rotate(0deg) scale(.7) skew(1deg);
+				opacity: .5
+			}
+
+			100% {
+				transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .1
+			}
+		}
+
+		@-moz-keyframes cbh-circle-fill-anim {
+			0% {
+				-moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+
+			50% {
+				-moz-transform: rotate(0deg) -moz-scale(1) skew(1deg);
+				opacity: .2
+			}
+
+			100% {
+				-moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+		}
+
+		@-webkit-keyframes cbh-circle-fill-anim {
+			0% {
+				-webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+
+			50% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .2
+			}
+
+			100% {
+				-webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+		}
+
+		@-o-keyframes cbh-circle-fill-anim {
+			0% {
+				-o-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+
+			50% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .2
+			}
+
+			100% {
+				-o-transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+		}
+
+		@keyframes cbh-circle-fill-anim {
+			0% {
+				transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+
+			50% {
+				transform: rotate(0deg) scale(1) skew(1deg);
+				opacity: .2
+			}
+
+			100% {
+				transform: rotate(0deg) scale(0.7) skew(1deg);
+				opacity: .2
+			}
+		}
+
+		@keyframes cbh-circle-img-anim {
+			0% {
+				transform: rotate(0deg) scale(1) skew(1deg)
+			}
+
+			10% {
+				transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			20% {
+				transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			30% {
+				transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			40% {
+				transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			100%,
+			50% {
+				transform: rotate(0deg) scale(1) skew(1deg)
+			}
+		}
+
+		@-moz-keyframes cbh-circle-img-anim {
+			0% {
+				transform: rotate(0deg) scale(1) skew(1deg)
+			}
+
+			10% {
+				-moz-transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			20% {
+				-moz-transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			30% {
+				-moz-transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			40% {
+				-moz-transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			100%,
+			50% {
+				-moz-transform: rotate(0deg) scale(1) skew(1deg)
+			}
+		}
+
+		@-webkit-keyframes cbh-circle-img-anim {
+			0% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg)
+			}
+
+			10% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			20% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			30% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			40% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			100%,
+			50% {
+				-webkit-transform: rotate(0deg) scale(1) skew(1deg)
+			}
+		}
+
+		@-o-keyframes cbh-circle-img-anim {
+			0% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg)
+			}
+
+			10% {
+				-o-transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			20% {
+				-o-transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			30% {
+				-o-transform: rotate(-25deg) scale(1) skew(1deg)
+			}
+
+			40% {
+				-o-transform: rotate(25deg) scale(1) skew(1deg)
+			}
+
+			100%,
+			50% {
+				-o-transform: rotate(0deg) scale(1) skew(1deg)
+			}
+		}
+
+		.cbh-ph-img-circle1 {}
+
+		.cbh-phone.cbh-green .cbh-ph-circle {
+			border-color: rgba(0, 175, 242, 1)
+		}
+
+		.cbh-phone.cbh-green .cbh-ph-circle-fill {
+			background-color: rgba(0, 175, 242, 1);
+		}
+
+		.cbh-phone.cbh-green .cbh-ph-img-circle1 {
+			background-color: rgba(0, 175, 242, 1);
+		}
+
+		body,
+		div,
+		dl,
+		dt,
+		dd,
+		ul,
+		ol,
+		li,
+		nav,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		pre,
+		code,
+		form,
+		fieldset,
+		legend,
+		input,
+		button,
+		textarea,
+		p,
+		blockquote,
+		th,
+		td,
+		a {
+			-webkit-transform-origin: center center;
+			-ms-transform-origin: center center;
+			-o-transform-origin: center center;
+			transform-origin: center center;
+		}
+
+		@media screen and (max-width: 999px) {
+			#clbh_phone_div {
+				display: none !important;
+			}
+		}
+	</style>
+	<style>
+		.main-banner img {
+			max-width: 61px;
+			max-height: 49px;
+			margin: 0 !important
+		}
+
+		.main-banner {
+			box-sizing: border-box;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 10px;
+			background-color: #e30c0c;
+			background-image: url(".img/banner-bg.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			z-index: 97
+		}
+
+		.main-banner.banner-bottom {
+			top: auto;
+			bottom: 0
+		}
+
+		.main-banner p {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			font-family: Roboto, sans-serif;
+			color: #fff !important;
+			margin-left: 20px;
+			text-align: center;
+			padding: 10px 0
+		}
+
+		.main-banner p b {
+			color: #fff;
+			display: block;
+			font-size: 19px;
+			font-weight: 700;
+			margin-bottom: 5px
+		}
+
+		.main-banner p .ban-small {
+			color: #fff;
+			display: block;
+			font-size: 17px;
+			line-height: 1.2;
+			font-weight: 400
+		}
+
+		@media screen and (max-width:1219px) {
+			.main-banner p .ban-small {
+				font-size: 15px;
+			}
+
+			.main-banner p b {
+				font-size: 17px;
+			}
+
+			.main-banner img {
+				max-width: 50px;
+				max-height: 40px
+			}
+
+			.main-banner p {
+				max-width: 920px
+			}
+		}
+
+		@media screen and (max-width:1023px) {
+			.main-banner .delete_mob {
+				display: none
+			}
+
+			.main-banner p {
+				max-width: 500px
+			}
+
+			.main-banner p b {
+				font-size: 16px
+			}
+
+			.main-banner p .ban-small {
+				font-size: 15px
+			}
+		}
+
+		@media screen and (max-width:767px) {
+			.main-banner p {
+				max-width: 420px
+			}
+
+			.main-banner p b {
+				font-size: 15px
+			}
+
+			.main-banner p .ban-small {
+				font-size: 14px
+			}
+		}
+
+		@media screen and (max-width:639px) {
+			.main-banner img {
+				max-width: 35px;
+				max-height: 30px
+			}
+
+			.main-banner p {
+				margin-left: 10px
+			}
+		}
+
+		@media screen and (max-width:479px) {
+			.main-banner img {
+				max-width: 50px;
+				max-height: 100%
+			}
+
+			.main-banner p {
+				max-width: 250px;
+				line-height: 1.1
+			}
+
+			.main-banner p b {
+				line-height: 18px;
+				font-size: 13px;
+				margin-bottom: 2px
+			}
+
+			.main-banner p .ban-small {
+				line-height: 17px;
+				font-size: 12px
+			}
+		}
+
+		@media screen and (max-width:370px) {
+			.main-banner img {
+				max-width: 35px
+			}
+		}
+
+		.main-banner p span {
+			color: #fff !important
+		}
+
+		.main-banner * {
+			box-sizing: border-box
+		}
+	</style>
+</head>
+
+<body class="timer-different body-banner" data-invalid-name-text="Helyesen adja meg a pontos nevét!"
+	data-invalid-phone-text="Adja meg a pontos telefonszámát különben nem tudjuk elérni!"
+	style="margin-top: 40px!important; margin-bottom: 40px!important">
+	<header class="header">
+		<div class="container">
+			<div class="header__wrapper">
+				<div class="header__logo"></div>
+				<nav class="header__nav">
+					<a class="nav__item" href="#how">
+						<div class="nav__item-image">
+							<svg height="40" viewBox="0 0 38 40" width="38" xmlns="http://www.w3.org/2000/svg">
+								<path class="nav__item-icon"
+									d="M9.51 10.659a.788.788 0 0 1-.792.783.788.788 0 0 1-.793-.783.79.79 0 0 1 .792-.785.79.79 0 0 1 .793.785zm7.132 14.654a.789.789 0 0 1-.792.784h-2.378v2.35a.788.788 0 0 1-.792.785.788.788 0 0 1-.792-.784v-2.35H9.51a.79.79 0 0 1-.792-.785c0-.432.354-.784.792-.784h2.378v-2.35c0-.433.354-.784.792-.784.438 0 .792.351.792.784v2.35h2.378c.438 0 .792.35.792.784zM34.92 33.8l-9.608 5.485c-3.004 1.715-6.836.729-8.612-2.216H3.962C1.777 37.069 0 35.312 0 33.15V17.973c0-.842.281-1.677.792-2.351l3.963-5.225V8.172A2.357 2.357 0 0 1 3.17 5.956V2.35C3.17 1.055 4.237 0 5.547 0h14.265c1.311 0 2.378 1.054 2.378 2.35v3.605a2.357 2.357 0 0 1-1.585 2.216v2.225l3.962 5.225c.512.674.793 1.51.793 2.35v6.806l3.219-1.838c3.035-1.732 6.908-.705 8.66 2.295 1.76 3.016.688 6.846-2.32 8.565zM4.755 2.35v3.606a.79.79 0 0 0 .792.784h14.265a.79.79 0 0 0 .793-.784V2.35a.789.789 0 0 0-.793-.784H5.547a.789.789 0 0 0-.792.784zM1.602 17.713h22.156a2.36 2.36 0 0 0-.459-1.15l-3.883-5.12h-7.528a.788.788 0 0 1-.793-.783c0-.432.355-.785.793-.785h7.132V8.307H6.34v2.352c0 .169-.056.335-.159.47l-4.12 5.432a2.36 2.36 0 0 0-.46 1.15zm2.36 17.79h12.06a6.21 6.21 0 0 1-.039-3.143H1.585v.791c0 1.297 1.067 2.351 2.378 2.351zm15.008-7.076l4.805-2.743V19.28H1.585V30.8h15.02a6.259 6.259 0 0 1 2.365-2.374zm9.85 7.045l-4.755-8.144-4.302 2.457a4.673 4.673 0 0 0-1.74 6.423c1.315 2.25 4.22 3.02 6.495 1.721zm7.047-9.453c-1.315-2.25-4.22-3.02-6.496-1.72l-3.934 2.246 4.756 8.144 3.933-2.246c2.258-1.29 3.06-4.161 1.74-6.424z"
+									fill="#eb2315"></path>
+							</svg>
+						</div>
+						<p class="nav__item-text"> <span class="lt0">Jak</span> <span class="lt1">funguje</span> </p>
+					</a><a class="nav__item" href="#graf">
+						<div class="nav__item-image">
+							<svg height="40" viewBox="0 0 32 40" width="32" xmlns="http://www.w3.org/2000/svg">
+								<path class="nav__item-icon"
+									d="M22.007 25.683v.894a.587.587 0 0 1-.59.586.587.587 0 0 1-.588-.586v-.894c0-.324.263-.586.589-.586.325 0 .589.262.589.586zm-2.677 6.849a.575.575 0 0 1-.577.573.575.575 0 0 1-.577-.573c0-.317.259-.574.577-.574.318 0 .577.257.577.574zm-1.458-5.53a2.49 2.49 0 0 1-3.745 0 .585.585 0 0 1 .057-.827.59.59 0 0 1 .832.057 1.31 1.31 0 0 0 1.968 0 .59.59 0 0 1 .831-.057c.246.213.271.584.057.827zm-6.7-1.32v.895a.587.587 0 0 1-.59.586.587.587 0 0 1-.589-.586v-.894c0-.324.264-.586.59-.586.325 0 .588.262.588.586zm1.05-6.256a.575.575 0 0 1-1.154 0c0-.316.258-.573.577-.573.318 0 .576.257.576.573zm10.017 2.966a.577.577 0 0 1-1.153 0 .577.577 0 0 1 1.153 0zm2.16 14.44v.78a.588.588 0 0 1-1.178 0v-.78a.589.589 0 0 1 1.178 0zm-6.513-23.41a2.32 2.32 0 0 1-2.323-2.312 2.32 2.32 0 0 1 2.323-2.313 2.32 2.32 0 0 1 2.323 2.313 2.32 2.32 0 0 1-2.323 2.311zm0-1.174c.631 0 1.145-.51 1.145-1.138 0-.63-.514-1.141-1.145-1.141s-1.145.51-1.145 1.14c0 .63.514 1.14 1.145 1.14zm14.103 22.78v.01a4.856 4.856 0 0 1-.714 2.592 4.896 4.896 0 0 1-4.22 2.372H4.946a4.896 4.896 0 0 1-4.22-2.372 4.858 4.858 0 0 1-.713-2.591l-.001-.011.001-.019a4.873 4.873 0 0 1 .572-2.195L8.56 17.757a8.236 8.236 0 0 0 .955-3.84v-3.649c0-.322.264-.585.59-.585.324 0 .588.263.588.585v3.598c1.71.086 3.264.595 4.432.98l.02.006c2.303.756 4.094.825 6.233.211a9.272 9.272 0 0 1-.071-1.147V5.954H10.693v1.523a.588.588 0 0 1-1.178 0V5.945a2.35 2.35 0 0 1-2.15-2.334V2.343A2.352 2.352 0 0 1 9.721 0h12.558a2.351 2.351 0 0 1 2.356 2.342V3.61a2.35 2.35 0 0 1-2.15 2.334v7.971c0 1.333.33 2.663.955 3.841l7.976 15.057c.368.694.558 1.443.572 2.195v.019zm-9.71-30.245c.65 0 1.178-.525 1.178-1.172V2.343c0-.645-.529-1.171-1.178-1.171H9.721c-.65 0-1.178.526-1.178 1.17v1.269c0 .647.529 1.172 1.178 1.172zm8.493 30.832h-1.809a.587.587 0 0 1-.589-.587c0-.321.264-.584.59-.584h1.785a3.744 3.744 0 0 0-.376-1.084l-7.975-15.058a9.412 9.412 0 0 1-.802-2.082c-1.024.283-1.99.427-2.964.427-1.23 0-2.472-.226-3.857-.682l-.02-.008c-1.102-.361-2.572-.842-4.13-.919a9.398 9.398 0 0 1-1.023 3.264L1.627 33.36a3.748 3.748 0 0 0-.376 1.084h25.018c.325 0 .59.263.59.584a.587.587 0 0 1-.59.587H1.229c.069.49.237.967.504 1.411a3.728 3.728 0 0 0 3.211 1.802h22.112a3.728 3.728 0 0 0 3.21-1.802c.268-.444.436-.92.506-1.411zm-14.183 1.217v.78a.588.588 0 0 1-1.178 0v-.78a.588.588 0 0 1 1.178 0zm-7.81 0v.78a.588.588 0 0 1-1.178 0v-.78a.588.588 0 0 1 1.178 0z"
+									fill="#eb2315"></path>
+							</svg>
+						</div>
+						<p class="nav__item-text"> <span class="lt2">Výzkum </span> <span class="lt3">a
+								statistika</span> </p>
+					</a>
+				</nav>
+				<div class="header__timer">
+					<div class="timer">
+						<div class="timer__wrapper">
+							<div class="timer__text lt4">Do konce akce zbývá:</div>
+							<div class="timer__block">
+								<div class="timer__hours">
+									<span class="hours">0</span> <span class="hours">0</span>
+								</div> <span class="timer__dots lt5">:</span>
+								<div class="timer__minutes">
+									<span class="minutes">1</span> <span class="minutes">9</span>
+								</div> <span class="timer__dots lt6">:</span>
+								<div class="timer__seconds">
+									<span class="seconds">1</span> <span class="seconds">4</span>
+								</div>
+							</div>
+						</div>
+					</div><button class="btn ever-popup-btn header__button lt7">Objednat telefonát</button>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="promo block bg-image">
+		<div class="container">
+			<div class="promo__wrapper">
+				<div class="promo__content">
+					<h1 class="promo__title lt8">Cannabis Oil</h1>
+					<p class="promo__subtitle lt9">Inovativní preparát pro nemocné cukrovkou, vyvinutý podle americké
+						technologie</p>
+					<ul class="promo__list">
+						<li class="promo__item">
+							<span class="promo__bulit"></span>
+							<p class="promo__text"> <span class="text-bold lt10">Normalizuje hladinu cukru</span> </p>
+						</li>
+						<li class="promo__item">
+							<span class="promo__bulit"></span>
+							<p class="promo__text"> <span class="text-bold lt11">Snižuje rizika vzniku komplikací</span>
+							</p>
+						</li>
+						<li class="promo__item">
+							<span class="promo__bulit"></span>
+							<p class="promo__text"> <span class="text-bold lt12">Pomáhá normalizovat hmotnost</span>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="promo__image">
+					<img alt="image" class="promo__image-bg" src="img/promo_image.png">
+					<div class="promo__product"><img alt="prod" class="promo__prod" src="img/product_img.png"><img
+							alt="image" class="promo__quality" src="img/qualities_img.png"></div>
+					<div class="promo__prove"><img alt="image" src="img/prove-1.png"><img alt="image"
+							src="img/prove-2.png"><img alt="image" src="img/prove-3.png"></div>
+				</div>
+				<div class="promo__form">
+					<div class="form">
+						<div class="form__wrapper">
+							<div class="form__inner">
+								<div class="form__image"><img alt="image" src="img/form_img.png"></div>
+								<div class="form__header">
+									<div class="form__title lt13">Jen dnes<br> <span class="date-0 red-word"
+											data-format="dd month"></span> </div>
+									<div class="form__price">
+										<div class="form__price-wrapper">
+											<p class="lt14">Stará cena</p>
+											<div class="form__price-old">
+												<span class="x_price_previous price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+											</div>
+										</div>
+										<div class="form__price-wrapper">
+											<p class="lt16">Nová cena</p>
+											<div class="form__price-new">
+												<span class="x_price_current price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<form action="getform.php" method="post" class="x_order_form order_form">
+									<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+									<input type="hidden" name="utm_campaign" value="{domonetka}">
+									<div class="form__name">
+										<img alt="image" src="img/form_name_icon.svg"><input autocomplete="name"
+											class="input action-form__field" name="name" placeholder="Nazev" required=""
+											type="text">
+									</div>
+									<div class="form__phone">
+										<input autocomplete="tel" class="input action-form__field" name="phone"
+											placeholder="Telefon" required="" type="tel">
+									</div><button class="btn form__btn lt18"> <span>Objednat </span> se slevou</button>
+								</form>
+							</div>
+							<div class="form__visitors">
+								<img alt="image" src="img/form_visitors.png">
+								<p class="lt19">Teď prohlíží webové stránky 20 lidí</p>
+							</div>
+						</div>
+						<div class="form__left lt20">Pozor! Zůstalo <span class="lastpack text-black red-word">80</span>
+							balení</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="strategy block">
+		<div class="container">
+			<div class="strategy__wrapper">
+				<div class="strategy__content">
+					<h2 class="strategy__title title lt21"> <span class="red-word">Nejnovější americké
+							technologie</span> pro diabetiky celého světa</h2>
+					<div class="strategy__text">
+						<p class="lt22">Podle údajů Centra pro kontrolu a prevenci onemocnění USA má cukrovku v zemi
+							okolo 110 miliónů lidí</p>
+						<p> <span class="red lt23">Pro řešení problému úmrtnosti na cukrovku vyvinuli přední američtí
+								vědci a lékaři preparát na bázi kanabidiolu – nenarkotické látky, získávané z
+								konopí.</span> </p>
+						<p class="lt24">Preparát ukázal vysokou účinnost jak v snížení hladiny cukru v krvi, tak i
+							snížení doprovodných příznaků cukrovky.</p>
+					</div>
+				</div>
+				<div class="strategy__image">
+					<img alt="image" src="img/strategy_bg.png">
+					<div class="strategy__info">
+						<img alt="image" src="img/strategy_logo.png">
+						<p class="strategy__info-text lt25">Asociace klinických<br>endokrinologů Ameriky</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="info block bg-image">
+		<div class="container">
+			<div class="info__wrapper">
+				<h2 class="info__title title lt26">Nezanedbejte cukrovku!</h2>
+				<p class="info__subtitle text-bold lt27">To hrozí vážnými komplikacemi.</p>
+				<div class="info__content">
+					<div class="info__image"><img alt="image" src="img/info_image.jpg"></div>
+					<div class="info__article">
+						<div class="info__photo"><img alt="image" src="img/info_photo.jpg"></div>
+						<div class="info__text lt28">"Katastrofický stav ve spojitosti s cukrovkou. Cukrovka je pátou
+							příčinou všech úmrtí a invalidity. Nejčastější komplikace cukrovky – slepota, obezita,
+							amputace končetin, selhání vnitřních orgánů; z úst lékařů to zní jako rozsudek. Jen
+							okamžitými opatřeními lze odvrátit smrt několika stovek tisíc lidí a předcházet následkům.".
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="about">
+		<div class="container">
+			<div class="about__wrapper block">
+				<div class="about__image"><img alt="image" class="about__image-kanabis" src="img/kanab_img.png"><img
+						alt="prod" class="about__image-prod" src="img/product_img.png"><img alt="image"
+						class="about__image-quality" src="img/qualities_img.png"></div>
+				<div class="about__content">
+					<h2 class="about__title title lt29">Kapsle Cannabis Oil chrání organizmus před negativním vlivem
+						cukrovky 2. typu</h2>
+					<p class="about__text lt30">Asociace amerických endokrinologů se po výzkumu doktora Marka Richarda
+						začala zajímat o kanabidiol. Během výzkumu doktor testoval preparát na <span
+							class="text-bold">4678 nemocných cukrovkou. </span> Testy ukázaly, že díky kanabidiolu <span
+							class="red">se u 98% testovaných normalizovala hladina cukru. </span> Takové příznaky <span
+							class="text-bold">jako neudržení moči, slabost a pocit žízně se snížily u</span> 86%
+						testovaných. Více než <span class="text-bold">91% účastníků testování zhublo.</span> </p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="action">
+		<div class="container">
+			<div class="action__wrapper">
+				<div class="action__title lt31">Jen dnes <span class="date-0 red-word text-nowrap"
+						data-format="dd month"></span> </div>
+				<div class="action__plashka"><img alt="image" src="img/form_img.png"></div>
+				<div class="action__timer">
+					<div class="timer">
+						<div class="timer__wrapper">
+							<div class="timer__text lt32">Do konce akce zbývá:</div>
+							<div class="timer__block">
+								<div class="timer__hours">
+									<span class="hours">0</span> <span class="hours">0</span>
+								</div> <span class="timer__dots lt33">:</span>
+								<div class="timer__minutes">
+									<span class="minutes">1</span> <span class="minutes">9</span>
+								</div> <span class="timer__dots lt34">:</span>
+								<div class="timer__seconds">
+									<span class="seconds">1</span> <span class="seconds">4</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="action__price">
+					<div class="form">
+						<div class="form__price">
+							<div class="form__price-wrapper">
+								<p class="lt14">Stará cena</p>
+								<div class="form__price-old">
+									<span class="x_price_previous price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+								</div>
+							</div>
+							<div class="form__price-wrapper">
+								<p class="lt16">Nová cena</p>
+								<div class="form__price-new">
+									<span class="x_price_current price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="action__form">
+					<div class="form">
+						<form action="getform.php" method="post" class="x_order_form order_form">
+							<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+							<input type="hidden" name="utm_campaign" value="{domonetka}">
+							<div class="form__name">
+								<img alt="image" src="img/form_name_icon.svg"><input autocomplete="name"
+									class="input action-form__field" name="name" placeholder="Nazev" required=""
+									type="text">
+							</div>
+							<div class="form__phone">
+								<input autocomplete="tel" class="input action-form__field" name="phone"
+									placeholder="Telefon" required="" type="tel">
+							</div><button class="btn form__btn lt18"> <span>Objednat </span> se slevou</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="better bg-image">
+		<div class="container">
+			<div class="better__left"><img alt="man" src="img/better-man.png"></div>
+			<div class="better__right block">
+				<h2 class="title better__title lt40">Žijte zdravým životem bez příznaků cukrovky</h2>
+				<ul class="better__list">
+					<li class="better__list--el">
+						<div class="better--img"><img alt="icon" src="img/better1.png"></div>
+						<p class="lt41">Hladina cukru je v mezích normy</p>
+					</li>
+					<li class="better__list--el">
+						<div class="better--img"><img alt="icon" src="img/better2.png"></div>
+						<p class="lt42">Močení pod kontrolou</p>
+					</li>
+					<li class="better__list--el">
+						<div class="better--img"><img alt="icon" src="img/better3.png"></div>
+						<p class="lt43">Skvělé pocity</p>
+					</li>
+					<li class="better__list--el">
+						<div class="better--img"><img alt="icon" src="img/better4.png"></div>
+						<p class="lt44">Ztráta váhy</p>
+					</li>
+					<li class="better__list--el">
+						<div class="better--img"><img alt="icon" src="img/better5.png"></div>
+						<p class="lt45">Dobrý spánek</p>
+					</li>
+					<li class="better__list--el">
+						<div class="better--img"><img alt="icon" src="img/better6.png"></div>
+						<p class="lt46">Prevence komplikací</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="how block" id="how">
+		<div class="container">
+			<h2 class="title how__title lt47">Jak funguje Cannabis Oil</h2>
+			<ul class="how__list">
+				<li class="how__list--el">
+					<div class="how__number">
+						1
+					</div>
+					<div class="how__list--el-text">
+						<b class="lt48">Normalizuje hladinu cukru</b>
+						<p class="lt49">Aktivuje práci enzymů, které stimulují tvorbu inzulínu a glukózy</p>
+					</div>
+				</li>
+				<li class="how__list--el how__list--el--2">
+					<div class="how__number">
+						2
+					</div>
+					<div class="how__list--el-text">
+						<b class="lt50">Obnovuje funkci slinivky břišní a normální hmotnost</b>
+						<p class="lt51">Reguluje látkovou výměnu a hladinu glukózy, normalizuje metabolické procesy</p>
+					</div>
+				</li>
+				<li class="how__list--el">
+					<div class="how__number">
+						3
+					</div>
+					<div class="how__list--el-text">
+						<b class="lt52">Chrání organizmus už při prvních příznacích cukrovky</b>
+						<p class="lt53">Je vhodný pro prevenci, snižuje rizika vzniku komplikací</p>
+					</div>
+				</li>
+			</ul>
+			<div class="how__prod"><img alt="medal" class="how__prod--medal" src="img/qualities_img.png"><img
+					alt="product" class="how__prod--pack" src="img/product_img.png"><img alt="certificate"
+					class="how__prod--cert" src="img/cert.jpg"></div>
+		</div>
+	</section>
+	<section class="new bg-image block">
+		<div class="container">
+			<div class="new__left">
+				<h2 class="new__title lt54">Fundamentální výzkum v léčbě cukrovky</h2>
+				<p class="new__subtitle lt55">Užívejte preparát Cannabis Oil pro obnovení zdraví</p>
+				<div class="new__right--mob"><img alt="devices" src="img/new-dev.png"></div><button
+					class="ever-popup-btn btn new__btn lt18"> <span>Objednat </span> se slevou</button>
+			</div>
+			<div class="new__right"><img alt="devices" src="img/new-dev.png"></div>
+		</div>
+	</section>
+	<section class="graf block" id="graf">
+		<div class="container">
+			<h2 class="title graf__title lt57">Klinické testování kapslí Cannabis Oil</h2>
+			<p class="graf__subtitle lt58">Preparát byl testován na <span class="graf__subtitle--highlight">965
+					nemocných s příznaky cukrovky 2. typu</span> <br>Účastníci testování užívali preparát po dobu 1
+				měsíce. Výsledky testování překonaly veškerá očekávání</p>
+			<div class="graf__big">
+				<div class="graf__col graf__col--1">
+					<p class="graf__col--title lt59">Srovnání Cannabis Oil s jinými preparáty</p><img alt="graphic"
+						class="graf__col--img" src="img/graf1.jpg">
+					<div class="graf__col--text">
+						<span class="graf__col--text-11 lt60">Placebo</span> <span
+							class="graf__col--text-12 lt8">Cannabis Oil</span> <span
+							class="graf__col--text-13 lt62">Léčiva</span> <span class="graf__col--text-14 lt63">Lidové
+							léky</span> <span class="graf__col--text-15 lt64">Jiné prostředky</span>
+					</div>
+				</div>
+				<div class="graf__col graf__col--2">
+					<p class="graf__col--title lt65">Rychlost účinku Cannabis Oil</p><img alt="graphic"
+						class="graf__col--img" src="img/graf2.jpg">
+					<div class="graf__col--text">
+						<span class="graf__col--text-21 lt66">Před užitím preparátu</span> <span
+							class="graf__col--text-22 lt67">Po užití preparátu</span> <span
+							class="graf__col--text-23 lt68">Doba (minut)</span>
+					</div>
+				</div>
+				<div class="graf__col graf__col--3">
+					<p class="graf__col--title lt69">Kumulativní účinek</p><img alt="graphic" class="graf__col--img"
+						src="img/graf3.jpg">
+					<div class="graf__col--text">
+						<span class="graf__col--text-31 lt8">Cannabis Oil</span> <span
+							class="graf__col--text-32 lt71">Léčiva</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="expert block bg-image">
+		<div class="container">
+			<h2 class="title expert__title lt72">Cukrovka vám už nebude ničit život</h2>
+			<div class="expert__main">
+				<img alt="expert" class="expert__main--img" src="img/expert-big.png">
+				<div class="expert__main--right">
+					<div class="expert__main--right-line"></div>
+					<div class="expert__main--right-name lt73">Jan Prokop</div>
+					<div class="expert__main--right-prof lt74">endokrinolog</div><img alt="sign"
+						src="img/expert-sign.png">
+				</div>
+			</div>
+			<div class="expert__graf">
+				<div class="expert__row">
+					<div class="expert__col expert__col--text lt75">Vzepření se cukrovce</div>
+					<div class="expert__col expert__col--line"> <span class="time lt76">% oproti normě</span> <span
+							class="lt77">doba</span> <img alt="line" class="top-line" src="img/expert-1.png"></div>
+				</div>
+				<div class="expert__row">
+					<div class="expert__col expert__col--text lt78">Energie a nálada</div>
+					<div class="expert__col expert__col--line"> <span class="lt79">doba</span> <img alt="line"
+							src="img/expert-2.png"></div>
+				</div>
+				<div class="expert__row">
+					<div class="expert__col expert__col--text lt80">Zlepšení vlastního pocitu</div>
+					<div class="expert__col expert__col--line"> <span class="lt81">doba</span> <img alt="line"
+							src="img/expert-3.png"></div>
+				</div>
+			</div>
+			<div class="expert__text">
+				<p class="expert__text--title lt82">"Spolehlivý prostředek, který změní životy lidí"</p>
+				<p class="expert__text--descr lt83"> <span class="red">Preparát Cannabis Oil se stal nejlepším
+						pomocníkem pro nemocné cukrovkou 2. typu a je ve stavu prediabetu. </span> Preparát pomáhá
+					normalizovat hladinu cukru v krvi, zbavuje častého nedobrovolného močení, abnormální žízně, ohromné
+					chuti k jídlu a chuti na sladké. Po jedné kúře se člověk cítí zdravější a znovu se vrací k aktivnímu
+					životnímu stylu.</p>
+			</div>
+		</div>
+	</section>
+	<section class="cert block">
+		<div class="container">
+			<h2 class="title cert__title lt84">Certifikáty Cannabis Oil</h2>
+			<div class="cert__main"><img alt="certificate" src="img/cert1.png">
+				<div class="line"></div><img alt="certificate" src="img/cert2.png">
+				<div class="line"></div><img alt="certificate" src="img/cert3.png">
+			</div>
+		</div>
+	</section>
+	<div class="action-2 bg-image">
+		<div class="container">
+			<div class="action-2__wrapper">
+				<div class="action-2__image"><img alt="prod" class="action-2__image-prod" src="img/product_img.png"><img
+						alt="image" class="action-2__image-quality" src="img/qualities_img.png"></div>
+				<div class="action-2__content">
+					<div class="action-2__title lt85">Pozor! <span class="red-word">Akce!</span> </div>
+					<div class="action-2__date lt86">Jen dnes <span class="date-0 red-word text-nowrap"
+							data-format="dd month"></span> </div>
+					<div class="action-2__plashka"><img alt="image" src="img/form_img.png"></div>
+					<div class="action-2__timer">
+						<div class="timer">
+							<div class="timer__wrapper">
+								<div class="timer__text lt87">Do konce akce zbývá:</div>
+								<div class="timer__block">
+									<div class="timer__hours">
+										<span class="hours">0</span> <span class="hours">0</span>
+									</div> <span class="timer__dots lt88">:</span>
+									<div class="timer__minutes">
+										<span class="minutes">1</span> <span class="minutes">9</span>
+									</div> <span class="timer__dots lt89">:</span>
+									<div class="timer__seconds">
+										<span class="seconds">1</span> <span class="seconds">4</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="action-2__form">
+						<div class="form">
+							<form action="getform.php" method="post" class="x_order_form order_form">
+								<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+								<input type="hidden" name="utm_campaign" value="{domonetka}">
+								<div class="form__name">
+									<img alt="image" src="img/form_name_icon.svg"><input autocomplete="name"
+										class="input action-form__field" name="name" placeholder="Nazev" required=""
+										type="text">
+								</div>
+								<div class="form__phone">
+									<input autocomplete="tel" class="input action-form__field" name="phone"
+										placeholder="Telefon" required="" type="tel">
+								</div><button class="btn form__btn lt18"> <span>Objednat </span> se slevou</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="reviews block" id="reviews">
+		<div class="container reviews__wrap">
+			<h2 class="reviews__title title">Reálné ohlasy kupujících na výrobek Cannabis Oil</h2>
+			<div class="reviews__slider js-reviews-slider">
+				<div class="slide">
+					<div class="slide__photo"><img class="slide__img" src="img/slide-1.png" alt="photo"></div>
+					<div class="slide__info">
+						<p class="slide__name">Veronika, 49 let</p>
+						<p class="slide__city">Praha</p>
+					</div>
+					<div class="slide__desc js-comment" data-expanded="false">
+						<p class="slide__main">Zdraví se zlepšilo</p>
+						<p class="slide__text">
+							Lékař stanovil diagnózu - stav, který předchází cukrovce Řekl, abych změnila dietu a
+							absolvovat kúru Cannabis Oil. Udělala jsem, jak řekl a mohu potvrdit, že díky tomuto a
+							zejména Cannabis Oil se zdraví obnovilo a víc už nepatřím do rizikové skupiny.
+						</p>
+					</div>
+					<div class="slide__btn js-show-comment"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__photo"><img class="slide__img" src="img/slide-2.png" alt="photo"></div>
+					<div class="slide__info">
+						<p class="slide__name">Daniel, 56 let</p>
+						<p class="slide__city">Ústí nad Labem</p>
+					</div>
+					<div class="slide__desc js-comment" data-expanded="false">
+						<p class="slide__main">Zhubl jsem</p>
+						<p class="slide__text">
+							Díky Cannabis Oil jsem silně zhubl znovu jsem mohl začít pracovat. Cukrovka vadila zhubnutí,
+							ale od doby, kdy jsem začínal užívat tyto kapsle, má hmotnost se postupně normalizovala.
+							Jsem velmi spokojen a za půl roku bych chtěl znovu absolvovat další kúru, abych nedal
+							cukrovce ani jednu šanci.
+						</p>
+					</div>
+					<div class="slide__btn js-show-comment"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__photo"><img class="slide__img" src="img/slide-3.png" alt="photo"></div>
+					<div class="slide__info">
+						<p class="slide__name">Marie, 61 let</p>
+						<p class="slide__city">Hradec Králové</p>
+					</div>
+					<div class="slide__desc js-comment" data-expanded="false">
+						<p class="slide__main">Cukr už nekolísá</p>
+						<p class="slide__text">
+							S Cannabis Oil jsem velmi spokojená. Díky němu jsem mohla zapomenout, co je kolísání hladiny
+							cukru v krvi. Ještě mohu říci, že preparát funguje nenápadně, v každém případě jsem
+							nepocítila nenadálé změny svého stavu.
+						</p>
+					</div>
+					<div class="slide__btn js-show-comment"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__photo"><img class="slide__img" src="img/slide-4.png" alt="photo"></div>
+					<div class="slide__info">
+						<p class="slide__name">Viktor, 58 let</p>
+						<p class="slide__city">Znojmo</p>
+					</div>
+					<div class="slide__desc js-comment" data-expanded="false">
+						<p class="slide__main">Žádné vedlejší účinky</p>
+						<p class="slide__text">
+							Koupil jsem preparát Cannabis Oil, jelikož jsem musel pomoci svému organizmu bojovat s
+							cukrovkou. Zvlášť zmíním, že po dobu užívání, se nestalo nic vedlejšího. To u preparátů
+							tohoto druhu nebývá příliš časté. Doporučuji všem, kdo má cukrovku. Cítím se lépe.
+						</p>
+					</div>
+					<div class="slide__btn js-show-comment"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__photo"><img class="slide__img" src="img/slide-5.png" alt="photo"></div>
+					<div class="slide__info">
+						<p class="slide__name">Karolína, 63 let</p>
+						<p class="slide__city">Olomouc</p>
+					</div>
+					<div class="slide__desc js-comment" data-expanded="false">
+						<p class="slide__main">Rychle normalizuje hladinu cukru v krvi</p>
+						<p class="slide__text">
+							Nejvíce mě překvapilo, jak rychle kapsle Cannabis Oil pomáhají snížit hladinu cukru do
+							potřebných hodnot. To je z pohledu zdraví a vlastního pocitu velmi důležité. S tak rychlým
+							účinkem jsem nepočítala, teď to všem doporučuji.
+						</p>
+					</div>
+					<div class="slide__btn js-show-comment"></div>
+				</div>
+				<div class="slide">
+					<div class="slide__photo"><img class="slide__img" src="img/slide-6.png" alt="photo"></div>
+					<div class="slide__info">
+						<p class="slide__name">Sylvie, 57 let</p>
+						<p class="slide__city">Hodonín</p>
+					</div>
+					<div class="slide__desc js-comment" data-expanded="false">
+						<p class="slide__main">Skvělý preparát ze skvělých ingrediencí</p>
+						<p class="slide__text">
+							Hledala jsem takový prostředek, který by posiloval můj organizmus v boji proti cukrovce. Ale
+							hledala jsem co nejvíce přírodní a Cannabis Oil se ukázal být přesně takovým preparátem.
+							Během celé doby užívání jsem měla jen dobré pocity. Pomáhá rychle, dobře a na dlouhou dobu.
+						</p>
+					</div>
+					<div class="slide__btn js-show-comment"></div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<section class="use block bg-image">
+		<div class="container">
+			<div class="use__wrapper">
+				<h2 class="use__title title lt148">Jak užívat preparát Cannabis Oil</h2>
+				<div class="use__inner">
+					<div class="use__image"><img alt="image" class="use__image-kanabis" src="img/kanab_img.png"><img
+							alt="prod" class="use__image-prod" src="img/product_img.png"><img alt="image"
+							class="use__image-quality" src="img/qualities_img.png"></div>
+					<div class="use__content">
+						<div class="use__item">
+							<div class="use__item-bulit">
+								<div class="use__item-image image-1"></div>
+							</div>
+							<p class="use__item-text lt149">Užívejte 2–3 kapsle <span class="text-nowrap">2–3 x </span>
+								denně</p>
+						</div>
+						<div class="use__item">
+							<div class="use__item-bulit">
+								<div class="use__item-image image-2"></div>
+							</div>
+							<p class="use__item-text lt150">Užívejte každý den, po dobu celé kúry</p>
+						</div>
+						<div class="use__item">
+							<div class="use__item-bulit">
+								<div class="use__item-image image-3"></div>
+							</div>
+							<p class="use__item-text lt151">Opakujte kúru <span class="text-nowrap">za 2–3 měsíce</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="recommendation">
+		<div class="container">
+			<div class="recommendation__wrapper">
+				<div class="recommendation__image"><img alt="image" src="img/recommendation_image.png"></div>
+				<div class="recommendation__inner">
+					<div class="recommendation__title">
+						<div class="recommendation__name lt152">Jan Prokop</div>
+						<div class="recommendation__profession lt153">endokrinolog</div>
+					</div>
+					<div class="recommendation__content">
+						<div class="recommendation__item">
+							<div class="recommendation__item-bulit"></div>
+							<p class="recommendation__item-text lt154"> <span>Pro urychlení účinku Cannabis Oil</span>
+								je třeba se vyvarovat škodlivé stravy a sladkostí.</p>
+						</div>
+						<div class="recommendation__item">
+							<div class="recommendation__item-bulit"></div>
+							<p class="recommendation__item-text lt155"> <span>Pro dosažení maximálního účinku</span> je
+								třeba dodržovat speciální dietu</p>
+						</div>
+						<div class="recommendation__item">
+							<div class="recommendation__item-bulit"></div>
+							<p class="recommendation__item-text lt156"> <span>Pro prevenci</span> cukrovky je třeba
+								sportovat a shodit nadbytečnou hmotnost</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section class="order block">
+		<div class="container">
+			<div class="order__wrapper">
+				<h2 class="order__title title lt157">Jak lze objednat Cannabis Oil</h2>
+				<div class="order__content">
+					<div class="order__item item-1">
+						<div class="order__item-step">
+							1
+						</div>
+						<div class="order__item-image">
+							<div class="order__item-image--inner">
+								<div class="fake__input lt158"><img alt="image" src="img/form_name_icon.svg">Moje jméno
+								</div>
+								<div class="fake__input lt159">
+									<div class="fake__flag">
+										<div class="flag"></div>
+									</div>Moje číslo telefonu
+								</div>
+								<div class="fake__btn lt18"> <span>Objednat </span> se slevou</div>
+							</div>
+						</div>
+						<p class="order__item-title lt161">Vyplňte formulář objednávky</p>
+						<p class="order__item-text lt162">Uveďte vaše jméno a telefon</p>
+					</div>
+					<div class="order__item item-2">
+						<div class="order__item-step">
+							2
+						</div>
+						<div class="order__item-image image-2"></div>
+						<p class="order__item-title lt163">Odpovězte na telefonát operátora</p>
+						<p class="order__item-text lt164">Odsouhlaste adresu a odpovězte na všechny otázky</p>
+					</div>
+					<div class="order__item item-3">
+						<div class="order__item-step">
+							3
+						</div>
+						<div class="order__item-image image-3"></div>
+						<p class="order__item-title lt165">Po doručení zaplaťte</p>
+						<p class="order__item-text lt166">Platba předem není potřeba</p>
+					</div>
+					<div class="order__item item-4">
+						<div class="order__item-step">
+							4
+						</div>
+						<div class="order__item-image image-4"></div>
+						<p class="order__item-title lt167">Normalizuje hladinu cukru</p>
+						<p class="order__item-text lt168">Žijte aktivní život</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="promo block bg-image">
+		<div class="container">
+			<div class="promo__wrapper">
+				<div class="promo__content">
+					<h1 class="promo__title lt8">Cannabis Oil</h1>
+					<p class="promo__subtitle lt170">Inovativní preparát pro nemocné cukrovkou, vyvinutý podle americké
+						technologie</p>
+					<ul class="promo__list">
+						<li class="promo__item">
+							<span class="promo__bulit"></span>
+							<p class="promo__text"> <span class="text-bold lt171">Normalizuje hladinu cukru</span> </p>
+						</li>
+						<li class="promo__item">
+							<span class="promo__bulit"></span>
+							<p class="promo__text"> <span class="text-bold lt172">Snižuje rizika vzniku
+									komplikací</span> </p>
+						</li>
+						<li class="promo__item">
+							<span class="promo__bulit"></span>
+							<p class="promo__text"> <span class="text-bold lt173">Pomáhá normalizovat hmotnost</span>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="promo__image">
+					<img alt="image" class="promo__image-bg" src="img/promo_image.png">
+					<div class="promo__product"><img alt="prod" class="promo__prod" src="img/product_img.png"><img
+							alt="image" class="promo__quality" src="img/qualities_img.png"></div>
+					<div class="promo__prove"><img alt="image" src="img/prove-1.png"><img alt="image"
+							src="img/prove-2.png"><img alt="image" src="img/prove-3.png"></div>
+				</div>
+				<div class="promo__form">
+					<div class="form">
+						<div class="form__wrapper">
+							<div class="form__inner">
+								<div class="form__image"><img alt="image" src="img/form_img.png"></div>
+								<div class="form__header">
+									<div class="form__title lt174">Jen dnes<br> <span class="date-0 red-word"
+											data-format="dd month"></span> </div>
+									<div class="form__price">
+										<div class="form__price-wrapper">
+											<p class="lt14">Stará cena</p>
+											<div class="form__price-old">
+												<span class="x_price_previous price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+											</div>
+										</div>
+										<div class="form__price-wrapper">
+											<p class="lt16">Nová cena</p>
+											<div class="form__price-new">
+												<span class="x_price_current price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<form action="getform.php" method="post" class="x_order_form order_form">
+									<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+									<input type="hidden" name="utm_campaign" value="{domonetka}">
+									<div class="form__name">
+										<img alt="image" src="img/form_name_icon.svg"><input autocomplete="name"
+											class="input action-form__field" name="name" placeholder="Nazev" required=""
+											type="text">
+									</div>
+									<div class="form__phone">
+										<input autocomplete="tel" class="input action-form__field" name="phone"
+											placeholder="Telefon" required="" type="tel">
+									</div><button class="btn form__btn lt18"> <span>Objednat </span> se slevou</button>
+								</form>
+							</div>
+							<div class="form__visitors">
+								<img alt="image" src="img/form_visitors.png">
+								<p class="lt180">Teď prohlíží webové stránky 20 lidí</p>
+							</div>
+						</div>
+						<div class="form__left lt181">Pozor! Zůstalo <span
+								class="lastpack text-black red-word">80</span> balení</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<div class="container"></div>
+	</footer>
+	<div class="ever-popup-build">
+		<div class="my-popup" id="cloneThis">
+			<div class="popup__wrapper">
+				<div class="popup__wrapper--img">
+					<div class="popup__title lt8">Cannabis Oil</div>
+					<p class="popup__subtitle lt183">Inovativní preparát pro nemocné cukrovkou, vyvinutý podle americké
+						technologie</p>
+					<img alt="image" class="pupup__product" src="img/product_img.png"><img alt="image"
+						class="popup__qualities" src="img/qualities_img.png">
+				</div>
+				<div class="form">
+					<div class="form__wrapper">
+						<div class="form__inner">
+							<div class="form__image"><img alt="image" src="img/form_img.png"></div>
+							<div class="form__header">
+								<div class="form__title lt184">Jen dnes<br> <span class="date-0 red-word"
+										data-format="dd month"></span> </div>
+								<div class="form__price">
+									<div class="form__price-wrapper">
+										<p class="lt14">Stará cena</p>
+										<div class="form__price-old">
+											<span class="x_price_previous price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+										</div>
+									</div>
+									<div class="form__price-wrapper">
+										<p class="lt16">Nová cena</p>
+										<div class="form__price-new">
+											<span class="x_price_current price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<form action="getform.php" method="post" class="x_order_form order_form">
+								<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+								<input type="hidden" name="utm_campaign" value="{domonetka}">
+								<div class="form__name">
+									<img alt="image" src="img/form_name_icon.svg"><input autocomplete="name"
+										class="input action-form__field" name="name" placeholder="Nazev" required=""
+										type="text">
+								</div>
+								<div class="form__phone">
+									<input autocomplete="tel" class="input action-form__field" name="phone"
+										placeholder="Telefon" required="" type="tel">
+								</div><button class="btn form__btn lt18"> <span>Objednat </span> se slevou</button>
+							</form>
+						</div>
+						<div class="form__visitors">
+							<img alt="image" src="img/form_visitors.png">
+							<p class="lt190">Teď prohlíží webové stránky 20 lidí</p>
+						</div>
+					</div>
+					<div class="form__left lt191">Pozor! Zůstalo <span class="lastpack text-black red-word">80</span>
+						balení</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<script src=".index.js"></script>-->
+	<script src="js/index.js">
+	</script>
+	<script src="js/slick.min.js" type="text/javascript">
+	</script>
+	<div class="ever-popup">
+		<div class="ever-popup__inner" style="width: 765px; margin: 64px auto 20px;">
+			<div class="ever-popup__close"></div>
+		</div>
+	</div>
+	<div class="phoneBtnContainer">
+		<div class="bluePhone">
+			<div class=" phone-call cbh-phone cbh-green cbh-show ever-popup-btn cbh-static" id="clbh_phone_div">
+				<div class="phoneJs">
+					<div class="cbh-ph-circle"></div>
+					<div class="cbh-ph-circle-fill"></div>
+					<div class="cbh-ph-img-circle1"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-banner">
+		<div class="fixed-el" style="width: 1px; height: 1px; opacity: 0; position: fixed; top: 0; left: 0;"></div><img
+			alt="icon" src="img/banner-icon-1.png">
+		<p class="en"><b class="lt202">BEZPEČNÍ DOPRAVA Neboj se! <span class="delete_mob">Bezpečnost našich zákazníků
+					bereme vážně. </span> </b> <span class="ban-small lt203">Naši kurýři si mění roušky a rukavice každé
+				dvě hodiny. Doprava a platba se provádí bez kontaktu.</span> </p>
+	</div>
+	<footer>
+		<center>
+			<span style="text-decoration: underline; cursor: pointer;"
+				onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+			<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+				Conditions</span> |
+			<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+				policy</span> <br>
+		</center>
+		<script>
+			function openInNewTab(url) {
+				var win = window.open(url, '_blank');
+				win.focus();
+			}
+		</script>
+	</footer>
+	<script>
+		const offer_params = {
+			priceMain : '990',
+			customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+			currencyMain: 'Kč',
+			productName : '',
+		};
+	
+	
+		var productName = document.getElementsByClassName("productName");
+		var priceMain = document.getElementsByClassName("priceMain");
+		var priceOld = document.getElementsByClassName("priceOld");
+		var currencyMain = document.getElementsByClassName("currencyMain");
+	
+	
+		for (var i = 0; i < productName.length; i++) {
+			productName[i].innerHTML = offer_params.productName;
+		}
+		for (var i = 0; i < priceMain.length; i++) {
+			priceMain[i].innerHTML = offer_params.priceMain;
+		}
+	
+	
+		if(offer_params.customPriceOld){
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.customPriceOld;
+			}
+		}else{
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.priceMain * 2;
+			}
+		}
+	
+	
+		for (var i = 0; i < currencyMain.length; i++) {
+			currencyMain[i].innerHTML = offer_params.currencyMain;
+		}
+	 </script>
+ <script>
+	$('[name="name"]').on('input change', function () {
+		var val = $(this).val();
+		$(this).val(val.replace(/[0-9+]/g, ''));
+	});
+	$('[name="name"]').attr('autocomplete', 'name');
+	$('[name="name"]').attr('pattern', '.{2,25}');
+	$('[name="phone"]').on('input change', function (e) {
+		var val = $(this).val();
+		$(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+	});
+	$('[name="phone"]').get(0).type = 'tel';
+	$('[name="phone"]').attr('autocomplete', 'tel');
+	$('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+ 
+</body>
+
+</html>
