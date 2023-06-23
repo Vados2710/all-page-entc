@@ -1,0 +1,460 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="lt" dir="ltr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-param" content="_csrf">
+  <meta name="csrf-token" content="OrR0xYYEkvNFhjlENERfhe3pOjmMWHpA3Z3MNx2S-lxe7lmu4jemgSPzVTAEJjXjopx_Dd8ZIw25179AUfDCDw==">
+  <title>ATSAKYKITE UŽ KELIS KLAUSIMUS
+    IR GAUSITE 50 % NUOLAIDĄ</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="css/sliding-form-style.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+
+</head>
+
+<body class="ev-date">
+
+  <div class="cover-get-diet  container-fluid" id="main-page">
+    <div class="keto-logo-row">
+      <h1><span class="productName"></span></h1>
+    </div>
+    <div class="clearfix"></div>
+    <div class="keto-form-wrap row" id="wrapper" style="display: none">
+      <div id="steps">
+        <form id="formElem" name="formElem" action="getform.php" method="post">
+
+
+          <transition name="slide-fade" :duration="1000" appear="" mode="out-in">
+            <fieldset v-if="step == 1" class="step">
+
+              <div class="keto-step-form-wrap">
+                <h1>Atsakykite už kelis klausimus <br>ir gausite 50 % nuolaidą</h1>
+                <div id="gender-select">
+                  <label id="gender-male-label" for="gender-male" class="radio-label " :class="getCheckboxClass('Male','gender') "> Vyras <input type="radio" name="gender" id="gender-male" v-model="form.gender" value="Male" @click="goToNext()" class=""> </label>
+                  <span>OR</span>
+                  <label id="gender-female-label" for="gender-female" class="radio-label" :class="getCheckboxClass('Female','gender')"> Moteris <input type="radio" name="gender" id="gender-female" v-model="form.gender" value="Female" @click="goToNext()" class="">
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+            <fieldset v-if="step == 2" class="step">
+              <div class="keto-step-form-wrap">
+                <h1>Kokias jūsų kūno dalis <br>reikia koreguoti?</h1>
+                <div id="activity-select" class="my_w">
+
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-12" :class="getCheckboxClass('12','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-12" value="12"> Juosmens ir skrandis </label>
+                  </div>
+
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-13" :class="getCheckboxClass('13','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-13" value="13"> Rankos ir kojos </label>
+                  </div>
+
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-14" :class="getCheckboxClass('14','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-14" value="14"> Aš noriu numesti svorio visur </label>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+            </fieldset>
+            <fieldset v-if="step == 3" class="step">
+              <div class="keto-step-form-wrap">
+                <h1> Ar jūs turite aktyvus <br>gyvenimo būdą?</h1>
+                <div id="activity-select" class="my_w">
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-141" :class="getCheckboxClass('141','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-141" value="141"> 3-5 kartus per savaitę sportuoju </label>
+                  </div>
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-142" :class="getCheckboxClass('142','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-142" value="142"> 1-3 kartus per savaitę sportuoju </label>
+                  </div>
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-143" :class="getCheckboxClass('143','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-143" value="143"> Nesportoju, bet vaikščioju </label>
+                  </div>
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-144" :class="getCheckboxClass('144','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-144" value="144"> Sėslus gyvenimo būdas </label>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </fieldset>
+            <fieldset v-if="step == 4" class="step">
+              <div class="keto-step-form-wrap">
+                <h1>Valgote Jūs teisingai?</h1>
+                <div id="activity-select" class="my_w fl">
+
+                  <div class="gradient-input-container mline">
+                    <label for="activity-level-241" :class="getCheckboxClass('241','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-241" value="241"> Taip, Skaičiuoju kalorijas, nevalgau saldumynų ir
+                      krakmolingo maisto </label>
+                  </div>
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-242" :class="getCheckboxClass('242','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-242" value="242"> Kažkas 50\50 </label>
+                  </div>
+
+                  <div class="gradient-input-container mline">
+                    <label for="activity-level-243" :class="getCheckboxClass('243','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-243" value="243"> Patinka nesveikas maistas, saldumynai ir greitas maistas
+                    </label>
+                  </div>
+
+                  <div class="gradient-input-container mline">
+                    <label for="activity-level-244" :class="getCheckboxClass('244','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-244" value="244"> Valgau tai, kam turiu pakankamai pinigų </label>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </fieldset>
+            <fieldset v-if="step == 5" class="step">
+              <div class="keto-step-form-wrap">
+                <h1>Kiek kilogramų svorio Jūs norite numesti?</h1>
+                <div id="activity-select">
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-341" :class="getCheckboxClass('341','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-341" value="341"> 5 kg </label>
+                  </div>
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-342" :class="getCheckboxClass('342','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-342" value="342"> nuo 5 iki 10 kg </label>
+                  </div>
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-343" :class="getCheckboxClass('343','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-343" value="343"> 10 iki 15 kg </label>
+                  </div>
+
+                  <div class="gradient-input-container ">
+                    <label for="activity-level-344" :class="getCheckboxClass('344','activity_level')"> <input type="radio" name="activity_level" v-model="form.activity_level" @click="goToNext()" id="activity-level-344" value="344"> Daugiau 15 kg </label>
+                  </div>
+
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset v-if="step == 6" class="step">
+              <div class="keto-step-form-wrap">
+                <h1>Jūsų parametrai</h1>
+                <div id="imperial-form" v-if="!form.imperial_metric" class="mt-3  metric-form">
+                  <div>
+                    <div class="input-field-row ">
+                      <input class="cake-icon inner-icon" id="input-age_i" v-model="form.age" name="age_i" type="number" @change="validateInput" placeholder="Amžius" min="14" max="100">
+                      <div class="a-input__unit">amžiaus</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-field-row">
+                      <input class="height-icon inner-icon-5 " id="input-height_i_ft" v-model="form.height_i_ft" @change="validateInput" name="height_i_ft" type="number" placeholder="m" min="4" max="7">
+                      <div class="a-input__unit">aukštis</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+
+                    <div class="input-field-row">
+                      <input class="height-icon inner-icon-5 " id="input-height_i_inh" v-model="form.height_i_inh" name="height_i_inh" type="number" @change="validateInput" placeholder="cm" min="0" max="11">
+                      <div class="a-input__unit">aukštis</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-field-row">
+                      <input class="weight-icon inner-icon" id="input-weight_i" name="current_i_weight" v-model="form.current_i_weight" @change="validateInput" type="number" placeholder="Svoris (kg)" min="88" max="400">
+                      <div class="a-input__unit">kg</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-field-row">
+                      <input class="weight-icon inner-icon" id="input-target_weight_i" name="target_i_weight" v-model="form.target_i_weight" @change="validateInput" type="number" placeholder="Tikslinis svoris (kg)" min="88" max="400">
+                      <div class="a-input__unit">kg</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="metric-form" v-if="form.imperial_metric" class="mt-3  metric-form">
+                  <div>
+                    <div class="input-field-row">
+                      <input class="cake-icon inner-icon" id="input-age" name="age" v-model="form.age" @change="validateInput" type="number" placeholder="Amžius" min="14" max="100">
+                      <div class="a-input__unit">amžiaus</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-field-row">
+                      <input class="height-icon inner-icon" id="input-height" v-model="form.height" @change="validateInput" name="height" type="number" placeholder="aukštis(cm)" min="130" max="242">
+                      <div class="a-input__unit">cm</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="input-field-row">
+
+                      <input class="weight-icon inner-icon" id="input-weight" name="weight" v-model="form.weight" @change="validateInput" type="number" placeholder="svoris(kg)" min="40" max="180">
+                      <div class="a-input__unit">kg</div>
+                      <span class="a-input__input--error"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-3">
+                  <a class="download-ebook-button" id="button-to-form" onclick="formPage.style.display = 'block';mainPage.style.display = 'none';">Continue →</a>
+                </div>
+
+              </div>
+
+
+              <div class="error-msg">{{error_msg}}</div>
+            </fieldset>
+          </transition>
+
+        </form>
+      </div>
+      <!--  Step 1 -->
+
+      <div id="navigation">
+        <a class="gray-round" @click="goToPrev">←</a>
+        <ul>
+          <li class="selected first-nav-step">
+            <a class="nav" :class="getNavPointStyle(1)" href="#"></a>
+          </li>
+          <li class="selected nav-step">
+            <a class="nav" :class="getNavPointStyle(2)" href="#"></a>
+          </li>
+          <li class="selected">
+            <a class="nav" :class="getNavPointStyle(3)" href="#"></a>
+          </li>
+          <li class="selected">
+            <a class="nav" :class="getNavPointStyle(4)" href="#"></a>
+          </li>
+          <li class="selected">
+            <a class="nav" :class="getNavPointStyle(5)" href="#"></a>
+          </li>
+
+          <li class="selected">
+            <a class="nav" :class="getNavPointStyle(6)" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="steps-progress-wrap">
+    </div>
+    <div class="modal" id="spinner" style="display: block">
+      <div class="sk-circle">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+      </div>
+    </div>
+    <div class="desclaimer text-center">
+      <p style="font-size: 20px; padding-top: 20px;">Rezultatai gali skirtis dėl asmeninių savybių</p>
+    </div>
+    <div class="footer text-center">
+      <a href="privacy.html" target="_blank" style="color:#fff">Privatumo politika</a>
+    </div>
+    <br>
+    <div class="coockiy_wrap text-center">
+
+      <p style="color:#fff;">Ši svetainė naudoja slapukus, kad pagerintų jūsų patirtį. Manome, kad jums tai tinka, bet
+        galite atsisakyti, jei norite.
+      </p>
+
+    </div>
+    <br>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="form-page" id="form-page" style="display: none;">
+    <div class="cover-get-diet">
+      <div class="keto-logo-row">
+        <h1><span class="productName"></span></h1>
+      </div>
+      <div class="clearfix"></div>
+      <div class="container-fluid">
+        <div class="row text-center ">
+
+
+          <div id="final-payment-box">
+            <div>
+              <div class="rounded-pink-rec">
+                <div class="big-price mt-2">Jūs užpildėte apklausą ir gaunate 50% nuolaidą <span class="productName"></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="my_text_block" style="margin-top: 40px; margin-bottom: 40px;">
+            <div class="my_wrapper">
+              <h1>Dalyvaudami gamintojo akcijoje turite galimybę gauti <span class="productName"></span> už <span class="n_price"><span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span></span>*
+              </h1>
+              <div class="box">
+                <p>Norėdami gauti <span class="productName"></span> parašykite savo vardą, pavardę ir telefono numerį žemiau esančioje užsakymo
+                  formoje.</p>
+                <p>Jūsų duomenys siunčiami tiesiogiai gamintojui, niekas kitas jų neturi.</p>
+                <p>Jums pasuk specialistas ir po išsiaiškinus visas detales, tą pačią dieną jums bus išsiųstas paketas
+                  su „<span class="productName"></span>“ kursu.</p>
+              </div>
+              <div class="my_form">
+                <form class="orderformcdn x_order_form" action="getform.php" method="post">
+                  <input type="hidden" name="utm_source" value="{clickid}">
+                  <input type="hidden" name="utm_campaign" value="{t2}">
+                  <input class="inp" name="name" placeholder="Vardas" type="text" required>
+                  <input class="inp" name="phone" placeholder="Telefonas" type="text" required>
+
+
+                  <button class="btn js_submit blue-gradient big-btn top-btn btn" >UŽSISAKYTI</button>
+
+              </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+  <!-- <div class="success-page" id="success-page" style="display: none;">
+    <div class="cover-get-diet">
+      <div class="keto-logo-row">
+        <h1><span class="productName"></span></h1>
+      </div>
+      <div class="clearfix"></div>
+      <div class="container-fluid">
+        <div class="row text-center ">
+
+
+
+
+          <div class="container-fluid my_box">
+
+            <div id="final-payment-box">
+              <div>
+                <span class="rounded-pink-rec">
+                  <div class="big-price mt-2">Sėkmingai!</div>
+                </span>
+              </div>
+            </div>
+            <div class="summary-header">
+              <h1 class="bold">Jūsų užsakymas priimtas ir išsiųstas į parduotuvę</h1>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div> -->
+
+  <script src="js/lajax.js" type="text/javascript"></script>
+
+  <script>
+      const offer_params = {
+          priceMain : '39',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: '€',
+          productName : 'Delislim',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+</body>
+
+</html>
