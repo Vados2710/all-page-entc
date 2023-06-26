@@ -1,0 +1,1261 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="CZ">
+<head>
+    
+
+    
+  <meta name="robots" content="noindex">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>“BLACKMACA” KAPSLE NA POTENCI</title>
+  <link href="css/css.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <style>
+    .ajax_loader {
+      display: none;
+    }
+  </style>
+  <style>
+    .hide,
+    .flag-dropdown {
+      display: none;
+    }
+    .error-box {
+      color: #fff;
+      background-color: #DE5042 !important;
+      border-radius: 5px;
+      text-align: center;
+      width: 240px;
+      font-size: 13px;
+      line-height: 20px;
+      margin: 5px auto !important;
+      z-index: 100;
+    }
+    input:invalid {
+      box-shadow: none;
+    }
+  </style>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		</head>
+	
+<body>
+  <div class="wrapper">
+    <div class="block_1">
+      <div class="p10">
+        <div class="tac">
+          <h1 class="h1_1">KAPSLE NA POTENCI</h1>
+        </div>
+        <div class="tar">
+          <a href="#form"><h1 class="h1_2"> Blackmaca</h1></a>
+        </div>
+        <div class="medals">
+          <div class="medal_1"></div>
+        </div>
+        <div class="medals">
+          <div class="medal_2"></div>
+        </div>
+      </div>
+      <div class="blue_text">
+        Díky kapslím Blackmaca ohromíte všechny svou silou a sebevědomím!
+      </div>
+      <div class="prod_block">
+        <div class="prod_img"></div>
+        <div class="sale_block">-50%</div>
+        <div class="timer">
+          <center>
+            <div class="countbox clearfix">
+              <div class="countbox-num hour">
+                <div class="countbox-hours1 num hour0"><span></span>0</div>
+                <div class="countbox-hours2 num hour1"><span></span>8</div>
+                <div class="countbox-hours-text">Часов</div>
+              </div>
+              <div class="countbox-space"></div>
+              <div class="countbox-num minute">
+                <div class="countbox-mins1 num min0"><span></span>3</div>
+                <div class="countbox-mins2 num min1"><span></span>6</div>
+                <div class="countbox-mins-text">Минут</div>
+              </div>
+              <div class="countbox-space"></div>
+              <div class="countbox-num second">
+                <div class="countbox-secs1 num sec0"><span></span>1</div>
+                <div class="countbox-secs2 num sec1"><span></span>8</div>
+                <div class="countbox-secs-text">Секунд</div>
+              </div>
+            </div>
+          </center>
+        </div>
+      </div>
+      <div class="" style="position: relative;">
+        <div class="orange_block_text">
+          <a href="#form" style="color:white;text-decoration:none">
+            STAŇTE SE HRDINOU KAŽDÉ ŽENY!
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="block_2">
+      <div class="p20_v">
+        <div class="block_2_info">
+          <div class="p10">První přírodní stimulant potence bez vedlejších účinků pro vaše zdraví!
+          </div>
+        </div>
+      </div>
+      <div class="p10">
+        <div class="flex ais" style="position: relative; left: -5px;">
+          <div class="block_2_item">
+            <div class="check"></div>
+            <p class="p_b white tac">Pevná a stabilní erekce za 2 minuty</p>
+          </div>
+          <div class="block_2_item">
+            <div class="check"></div>
+            <p class="p_b white tac">Způsobuje intenzivní sexuální touhu</p>
+          </div>
+          <div class="block_2_item">
+            <div class="check"></div>
+            <p class="p_b white tac">Prodlužuje trvání <br>pohlavního styku a kontrolu ejakulace</p>
+          </div>
+        </div>
+        <div class="posr m20">
+          <div class="playboy">
+            <div class="playboy_block">
+              <div class="playboy_img"></div>Po článku, který se objevil <span class="day-6"></span> <span
+                class="yellow"> v časopise Playboy, množství zboží na našich skladech rapidně klesá!</span>
+            </div>
+          </div>
+        </div>
+        <div class="prices">
+          <div class="old">
+            <p>Běžná cena:</p>
+            <div class="oldproductsum"><span class="oldPriceAndLabelForLandingInfoApi price_old"> <span class="priceOld"></span> <span class="currencyMain"></span></span></div>
+          </div>
+          <div class="new">
+            <p>Cena dnes:</p>
+            <div class="productsum"><span class="priceAndLabelForLandingInfoApi price_main"> <span class="priceMain"></span> <span class="currencyMain"></span></span> *</div>
+          </div>
+        </div>
+        <div class="form">
+           <form action="getform.php" method="post" class="orderformcdn order_form" id="form">
+
+             <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+             <input type="hidden" name="utm_campaign" value="{domonetka}">
+
+          <div class="input-name input-field">
+            <input type="text" name="name" required class="field input input-name" placeholder="Tvé jméno">
+          </div>
+          <div class="input-phone input-field">
+            <input type="text" name="phone" required class="field input input-phone" placeholder="Váš kontaktní telefon">
+          </div>
+          <div class="flex jcc m20 fww">
+            <div class="reolader">
+              <input class="submit mm_button" value="OBJEDNAT NYNÍ" type="submit">
+            </div>
+            <div class="last_products">
+              <p class="tac white">97% zásob je již vyprodáno. <br>ZBÝVÁ POUZE <span
+                  class="orange_num form-instock">18</span> BALENÍ SE SLEVOU</p>
+              <div class="line_products"></div>
+            </div>
+          </div>
+
+</form>
+        </div>
+      </div>
+    </div>
+    <div class="block_3">
+      <div class="p10">
+        <div class="block_3_img">
+          <div class="orange_circle">
+            <p style="font-weight: 500;">VŽDY ŘÍKÁME:<br><b>"JSEM JEN UNAVENÝ", "JE TO ASI KVŮLI VĚKU", "TO BYLA JEN
+                NÁHODA"<br>...</b></p>
+          </div>
+          <div class="blue_circle">
+            <p><b>ALE JSTE SI JISTÍ, ŽE TO JE TAK?</b></p>
+          </div>
+        </div>
+        <div class="block_3_title">IMPOTENCE V 100% PŘÍPADŮ VEDE K:</div>
+        <div class="red_items">
+          <div class="red_item">
+            <div class="red_mark"></div>
+            <div class="red_text">Nevěrám, hádkám, rozvodům</div>
+          </div>
+          <div class="red_item">
+            <div class="red_mark"></div>
+            <div class="red_text">Snížení sebevědomí a sexuální dysfunkce</div>
+          </div>
+          <div class="red_item">
+            <div class="red_mark"></div>
+            <div class="red_text">Zdravotní problémy a neplodnost</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block_4">
+      <div class="p10">
+        <div class="df_title">ZKONTROLUJTE SE, <br><span class="orange">NEŽ BUDE POZDĚ</span>
+        </div>
+        <div class="block_4_items">
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img1"></div>
+            <div class="block_4_text">Cítíte silnou sexuální touhu, ale nemůžete dosáhnout erekce</div>
+          </div>
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img2"></div>
+            <div class="block_4_text">Nemůžete udržet erekci během pohlavního styku</div>
+          </div>
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img3"></div>
+            <div class="block_4_text">Váš penis se zvětšuje v objemu, ale erekce je nestabilní</div>
+          </div>
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img4"></div>
+            <div class="block_4_text">Trpíte předčasnou nebo chybějící ejakulací během sexu</div>
+          </div>
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img5"></div>
+            <div class="block_4_text">Ráno nebo v noci již nemáte erekci</div>
+          </div>
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img6"></div>
+            <div class="block_4_text">Ztratili jste veškerou chuť na sex</div>
+          </div>
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img7"></div>
+            <div class="block_4_text">Prožíváte silný emoční stres</div>
+          </div>
+          <div class="block_4_item">
+            <div class="block_4_img block_4_img8"></div>
+            <div class="block_4_text">Již necítíte potřebu mít sex</div>
+          </div>
+        </div>
+        <div class="fw800 fz24 white ttu tac qqqqq">POKUD SE V NĚKTERÉM Z TĚCHTO BODŮ POZNÁVÁTE -
+        </div>
+        <div class="orange_block_text2">
+          JE ČAS ZVONIT NA POPLACH!
+        </div>
+      </div>
+      <div class="info_msg">
+        <div class="info_msg_text">
+          IMPOTENCE UKONČÍ VÁŠ SEXUÁLNÍ ŽIVOT A NAVŽDY VÁS PŘIPRAVÍ O MOŽNOST UŽÍVAT SI ŽIVOTA.
+          <div class="info_msg_text_f1"></div>
+          <div class="info_msg_text_f2"></div>
+          <div class="info_msg_text_f3"></div>
+          <div class="info_msg_text_f4"></div>
+        </div>
+      </div>
+      <div class="df_title">STRAŠLIVÁ
+        <br><span class="blue"> STATISTIKA</span>
+      </div>
+      <div class="stat"></div>
+      <div class="stat_text">Impotence "mládne" každým dnem. Jestliže donedávna muži trpěli impotencí po padesátce, nyní je to skutečná katastrofa.  <span class="orange"><b>Bylo prokázáno, že již ve věku 27 let má více než 20 % mužů sexuální problémy a sníženou hladinu testosteronu. 
+          </b></span>
+          Ve zralejším věku trpí impotencí asi třetina mužů.</div>
+    </div>
+    <div class="blue_info">
+      <p><b class="white ttu">IMPOTENCE NENÍ JEN "HROZBA", JE TO NĚCO, CO VÁM MŮŽE SKUTEČNĚ ZNIČIT ŽIVOT!</b></p>
+    </div>
+    <div class="block_order">
+      <div class="p10">
+        <div class="df_title black">BLACKMACA POMŮŽE  <br><span class="blue"> PORAZIT IMPOTENCI!</span>
+        </div>
+        <div class="img_prod2"></div>
+        <p class="tac black fz14">Díky unikátnímu vzorci vyvinutému německými vědci Blackmaca stimuluje nejen erektilní funkci a dodává mužům sebevědomí, ale také je silným preventivním produktem v boji proti prostatitidě.</p>
+        <div class="flex jcc m20">
+          <a href="#form" style="width: 100%; text-align: center;"><button class="submit">OBJEDNAT NYNÍ</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="brown_block">
+      <div class="brown_items">
+        <div class="brown_item">
+          <div class="brown_img brown_img1"></div>
+          <div class="brown_text">
+            <p>Získejte zpět svou sebedůvěru  <span class="blue">- nyní budete připraveni v každém okamžiku
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="brown_item">
+          <div class="brown_text">
+            <p>Staňte se skutečným  <span class="blue">samcem v posteli.
+              </span></p>
+          </div>
+          <div class="brown_img brown_img2"></div>
+        </div>
+        <div class="brown_item">
+          <div class="brown_img brown_img3"></div>
+          <div class="brown_text">
+            <p>Vraťte do svého vztahu <span class="blue">radost ze sexu </span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="components_block">
+      <div class="p10">
+        <div class="df_title black">VELMI SILNÉ <span class="blue"> PŘÍRODNÍ SLOŽKY</span></div>
+      </div>
+      <div class="components_bg" style="min-height: 300px;">
+        <div class="component_bg_title">
+          <p class="fz24"><b class="white tac">ORIGINÁLNÍ 
+              <br>FORMULE</b></p>
+        </div>
+      </div>
+      <div class="p10">
+        <p class="tac fz14">Komponenty Blackmaca mají supersilné ozdravné vlastnosti, které dokáží zvýšit mužskou potenci. Biologická dostupnost účinných látek je 4,5krát vyšší než u jiných pilulek nebo kapek, protože molekuly přípravku vstupují do krevního oběhu okamžitě. Kapsle Blackmaca okamžitě zvyšují produkci dihydrotestosteronu. Zároveň Blackmaca poskytuje optimální hladinu prospěšného estradiolu.</p>
+        <div class="components_items">
+          <div class="component_item">
+            <div class="component_img component_img1"></div>
+            <div class="component_title">EXTRAKT Z KOŘENE MACA</div>
+            <div class="component_text">Bojuje se s patologickou impotencí, má silné stimulační účinky a podporuje dlouhotrvající erekci.</div>
+          </div>
+          <div class="component_item">
+            <div class="component_img component_img2"></div>
+            <div class="component_title">EXTRAKT TRIBULUS TERRESTRIS</div>
+            <div class="component_text">Zlepšuje mužské zdraví, předchází zánětu prostaty</div>
+          </div>
+          <div class="component_item">
+            <div class="component_img component_img3"></div>
+            <div class="component_title">EXTRAKT Z KOŘENE ZÁZVORU</div>
+            <div class="component_text">Je to silný afrodiziakum, který stimuluje přísun krve do pánevních orgánů a posiluje erekci.</div>
+          </div>
+          <div class="component_item">
+            <div class="component_img component_img4"></div>
+            <div class="component_title">EXTRAKT Z LISTŮ ŽENŠENU</div>
+            <div class="component_text">Používá se při hormonálních poruchách, léčbě neplodnosti, zvýšení mužského libida.</div>
+          </div>
+          <div class="component_item">
+            <div class="component_img component_img5"></div>
+            <div class="component_title">EXTRAKT Z GUARANY</div>
+            <div class="component_text">Má cenné ozdravné účinky při mužské impotenci; zlepšuje průtok krve do pohlavních orgánů.</div>
+          </div>
+          <div class="component_item">
+            <div class="component_img component_img6"></div>
+            <div class="component_title">EXTRAKT Z KOŘENE KOPŘIVY</div>
+            <div class="component_text">Zvyšuje svalový tonus v intimních oblastech pro dlouhotrvající erekci.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block_4">
+      <div class="p10">
+        <div class="df_title">CO ŘÍKÁ  <span class="blue">VĚDA?</span></div>
+        <div class="tablets"></div>
+        <div class="stat_text"><span class="orange"><b>Tradiční kapsle často nedávají požadované výsledky, 
+            </b></span> protože 92% jejich složek je zničeno pod vlivem kyselin v žaludku.</div>
+        <div class="tablets_items">
+          <div class="tablets_item">
+            <div class="red_mark_sm"></div>
+            <p>Proto trvá standardní léčebný kurz nejméně 3 měsíce</p>
+          </div>
+          <div class="tablets_item">
+            <div class="red_mark_sm"></div>
+            <p>Dlouhodobé užívání léků poškozuje žaludeční sliznici</p>
+          </div>
+          <div class="tablets_item">
+            <div class="red_mark_sm"></div>
+            <p>Dlouhodobé užívání může vést k závislosti</p>
+          </div>
+          <div class="tablets_item">
+            <div class="red_mark_sm"></div>
+            <p>Podle Světové zdravotnické organizace jsou výsledky neuspokojivé: pouze 12% pacientů se zotavuje z erektilní dysfunkce</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block_checks">
+      <div class="p10">
+        <div class="df_title black">KAPSLE BLACKMACA FUNGUJÍ.
+          <br><span class="blue">ČÍSLA MLUVÍ SAMA ZA SEBE:</span>
+        </div>
+        <div class="block_checks_img"></div>
+        <div class="check_items">
+          <div class="check_item">
+            <div class="check_img"></div>
+            <div class="check_text"><b>95,6 % mužů </b>tvrdí, že jsou s výsledky spokojeni.</div>
+          </div>
+          <div class="check_item">
+            <div class="check_img"></div>
+            <div class="check_text"><b>3 státní</b> ocenění</div>
+          </div>
+          <div class="check_item">
+            <div class="check_img"></div>
+            <div class="check_text">592 urologů v Evropě doporučuje Blackmaca svým pacientům</div><b>
+            </b>
+          </div><b>
+            <div class="check_item">
+              <div class="check_img"></div>
+              <div class="check_text">Žádné kontraindikace a žádné vedlejší účinky</div>
+            </div>
+            <div class="check_item">
+              <div class="check_img"></div>
+              <div class="check_text">Účinnost byla prokázána v 8 nezávislých klinických studiích</div>
+            </div>
+            <div class="check_item">
+              <div class="check_img"></div>
+              <div class="check_text">Lze užívat společně s alkoholem a léky</div>
+            </div>
+            <div class="check_item">
+              <div class="check_img"></div>
+              <div class="check_text">Může být užíván v každém věku</div>
+            </div>
+            <div class="check_item">
+              <div class="check_img"></div>
+              <div class="check_text">Udržuje krevní tlak pod kontrolou</div>
+            </div>
+          </b>
+        </div><b>
+        </b>
+      </div><b>
+      </b>
+    </div><b>
+      <div class="block_2">
+        <div class="p10">
+          <div class="orange ttu fz30 tac fw800">POZOR!</div>
+          <div class="white fz16 tac white fw600">Originální přírodní kapsle Blackmaca lze objednat pouze na našem webu!</div>
+          <div class="posr m20">
+            <div class="playboy">
+              <div class="playboy_block">
+                <div class="playboy_img"></div>Po článku, který se objevil <span class="day-6"></span> <span
+                  class="yellow"> v časopise Playboy, množství zboží na našich skladech rapidně klesá!</span>
+              </div>
+            </div>
+          </div>
+          <div class="form">
+            <div class="flex jcc m20 fww">
+              <a href="#form" style="width: 100%; text-align: center;"><button class="submit">OBJEDNAT NYNÍ</button></a>
+              <div class="last_products">
+                <p class="tac white">97% zásob je již vyprodáno. <br>ZBÝVÁ POUZE <span
+                    class="orange_num form-instock">18</span> BALENÍ SE SLEVOU</p>
+                <div class="line_products"></div>
+              </div>
+            </div>
+          </div>
+          <div class="prices">
+            <div class="old">
+              <p>Běžná cena:</p>
+              <div class="oldproductsum"><span class="oldPriceAndLabelForLandingInfoApi"> <span class="priceOld"></span> <span class="currencyMain"></span></span>
+              </div>
+            </div>
+            <div class="new">
+              <p>Cena dnes:</p>
+              <div class="productsum"><span class="priceAndLabelForLandingInfoApi"> <span class="priceMain"></span> <span class="currencyMain"></span></span> *
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="certificates_block">
+        <div class="p10">
+          <div class="blue ttu fz30 tac fw800">Blackmaca</div>
+          <div class="black ttu fz16 tac fw800" style="padding: 0 5px;">První přírodní stimulant bez vedlejších účinků na vaše zdraví!</div>
+          <div class="cert_block_img"></div>
+          <div class="cert_checks">
+            <div class="cert_check_item">
+              <div class="cert_check"></div>
+              <div class="cert_check_text">Pevná a stabilní erekce do 2 minut</div>
+            </div>
+            <div class="cert_check_item">
+              <div class="cert_check"></div>
+              <div class="cert_check_text">Způsobuje silnou sexuální touhu</div>
+            </div>
+            <div class="cert_check_item">
+              <div class="cert_check"></div>
+              <div class="cert_check_text">Zvyšuje délku pohlavního styku a kontroluje ejakulaci</div>
+            </div>
+          </div>
+          <div class="cert_items">
+            <div class="cert_item">
+              <div class="cert_img cert_img1"></div>
+              <div class="cert_text">Schváleno  <b class="ttu">EVROPSKÝM ŘEDITELSTVÍM PRO KVALITU LÉKŮ A ZDRAVÍ  </b> a doporučeno předními evropskými odborníky.</div>
+            </div>
+            <div class="cert_item">
+              <div class="cert_img cert_img2"></div>
+              <div class="cert_text">Obsahuje pouze přírodní složky s prokázanou účinností. Všechny složky jsou zpracovávány po pečlivé kontrole kvality v nezávislých laboratořích.
+    </b>
+  </div>
+  </div>
+  <div class="cert_item">
+    <div class="cert_img cert_img3"></div>
+    <div class="cert_text">Vyráběno, baleno a skladováno v souladu s moderními standardy a zákony o licencování výroby.</div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="block_4">
+    <div class="p10">
+      <div class="df_title">NÁVOD K  <span class="blue">POUŽITÍ</span></div>
+    </div>
+    <div class="brown_items">
+      <div class="brown_item2">
+        <div class="brown_img brown_img4"></div>
+        <div class="brown_text" style="padding: 8px;">
+          <p style="font-size: 14px;">Užívejte Blackmaca dvakrát denně, po jedné kapsli a zapijte dostatečným množstvím vody. </p>
+        </div>
+      </div>
+      <div class="brown_item2">
+        <div class="brown_text" style="padding: 8px;">
+          <p style="font-size: 12px; font-weight: 500;">Kapsle se doporučují užívat nejméně 30 dní, aby se dostavil kumulativní účinek. </p>
+        </div>
+        <div class="brown_img brown_img5"></div>
+      </div>
+      <div class="brown_item2">
+        <div class="brown_img brown_img6"></div>
+        <div class="brown_text" style="padding: 8px;">
+          <p style="font-size: 14px;">Díky svému přírodnímu složení je Blackmaca plně kompatibilní s alkoholem a nemá žádné kontraindikace.</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="p10">
+                <div class="df_title fz16">NON SOLO, LA PASTIGLIE AL SAPORE DI MENTA  <span class="blue">RINFRESCHERA' IL TUO ALITO</span></div>
+            </div> -->
+  </div>
+  <div class="specialist">
+    <div class="p10">
+      <div class="df_title black">NÁZOR  <span class="blue">ODBORNÍKA</span></div>
+      <div class="specialist_photo"></div>
+      <div class="m20">
+        <p class="tac fz12">Klinických studií se zúčastnilo 850 dobrovolníků s různými poruchami erekce. Výsledky studie Blackmaca ukázaly, že 95,5% respondentů se zbavilo erektilní dysfunkce a vrátilo se k aktivnímu sexuálnímu životu.
+        </p><br>
+        <p class="tac fz12">Blackmaca tedy účinně bojuje proti sexuální impotenci. Jako lékař bych nedoporučoval zavírat oči před problémy s erekcí. Je běžné, že muži odkládají řešení problémů spojených s potencí, a to přináší závažnější onemocnění.
+        </p><br>
+        <p class="tac fz12">Blackmaca se osvědčil jako nejlepší přírodní lék na impotenci. Kapsle naplněné jedinečnými složkami jsou mnohem účinnější než jakýkoli lék, kapky nebo prášky.</p>
+      </div>
+      <div class="flex jcc">
+        <div class="blue_mark"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="block_4">
+    <div class="p10">
+      <div class="df_title">SKUTEČNÉ VÝSLEDKY!!!
+        <br><span class="blue"> SKUTEČNÉ VÝSLEDKY!!!</span>
+      </div>
+      <!-- <div class="reviews_img"></div> -->
+      <section class="banner-title">
+        <!--<img src="img/real-result.png" alt="" class="basic-image result">-->
+        <div id="DIV_1">
+          <div id="DIV_2">
+            <div id="DIV_3">
+              Recenze
+            </div>
+            <div id="DIV_4">
+              Aktualizováno
+              <script type="text/javascript" id="SCRIPT_5">
+                var d = new Date();
+                document.write(d.toLocaleString());
+              </script>
+            </div>
+          </div>
+          <div id="DIV_6">
+            <div id="DIV_7">
+              <div id="DIV_8">
+                <ul id="UL_9">
+                  <li id="LI_10">
+                    <div id="DIV_11">
+                      <img src="img/av1.jpg" alt="" id="IMG_12">
+                    </div>
+                    <div id="DIV_13">
+                      <div id="DIV_14">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_16">
+                        <span id="SPAN_17">
+                          <span class="day-1"></span>
+                        </span>
+                      </div>
+                      <p id="P_18">
+                        Přátelé, Blackmaca je skutečně jedinečný produkt! Vzal jsem si kapsli a během 20 minut jsem měl erekci, na kterou jsem mohl doslova zavěsit tašky!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_19">
+                    <div id="DIV_20">
+                      <img src="img/av2.jpg" alt="" id="IMG_21">
+                    </div>
+                    <div id="DIV_22">
+                      <div id="DIV_23">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_25">
+                        <span id="SPAN_26">
+                          <span class="day-1"></span>
+                        </span></span>
+                      </div>
+                      <p id="P_27">
+                        Vzal jsem Blackmaca a můj penis se během 20 minut změnil na tvrdý kámen. Neuvěřitelné :)
+                      </p>
+                      <!-- <img src="img/comm.jpg" style="width: 80%" alt=""> -->
+                    </div>
+                  </li>
+                  <li id="LI_37">
+                    <div id="DIV_38">
+                      <img src="img/av4.jpg" alt="" id="IMG_39">
+                    </div>
+                    <div id="DIV_40">
+                      <div id="DIV_41">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_43">
+                        <span id="SPAN_44">
+                          <span class="day-1"></span>
+                        </span></span>
+                      </div>
+                      <p id="P_45">
+                        Utahoval jsem si z kolegy v práci, řekl jsem mu, že kapsle je jen proti bolestem hlavy, ale nezmínil jsem se o hlavním účinku a jednu mu dal. Pak tam seděl s kamennou erekcí a nemohl vstát, styděl se před kolegyněmi.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_46">
+                    <div id="DIV_47">
+                      <img src="img/av5.jpg" alt="" id="IMG_48">
+                    </div>
+                    <div id="DIV_49">
+                      <div id="DIV_50">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_52">
+                        <span id="SPAN_53">
+                          <span class="day-2"></span>
+                        </span></span>
+                      </div>
+                      <p id="P_54">
+                        Líbilo se mi, že Blackmaca je přírodní a snadno se používá, stačí mi vzít jednu kapsli před sexem a je to. Účinek je dlouhodobý a přítelkyně je spokojená.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_55">
+                    <div id="DIV_56">
+                      <img src="img/av6.jpg" alt="" id="IMG_57">
+                    </div>
+                    <div id="DIV_58">
+                      <div id="DIV_59">
+                        <img src="img/twitter.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_61">
+                        <span id="SPAN_62">
+                          <span class="day-2"></span>
+                        </span></span>
+                      </div>
+                      <p id="P_63">
+                        Blackmaca je skvělý! Kupte si ho, nebudete litovat!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_64">
+                    <div id="DIV_65">
+                      <img src="img/av7.jpg" alt="" id="IMG_66">
+                    </div>
+                    <div id="DIV_67">
+                      <div id="DIV_68">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_70">
+                        <span id="SPAN_71">
+                          <span class="day-2"></span>
+                        </span>
+                      </div>
+                      <p id="P_72">
+                        Blackmaca je úžasný! Účinný a spolehlivý!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_73">
+                    <div id="DIV_74">
+                      <img src="img/av8.jpg" alt="" id="IMG_75">
+                    </div>
+                    <div id="DIV_76">
+                      <div id="DIV_77">
+                        <img src="img/twitter.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_79">
+                        <span id="SPAN_80">
+                          <span class="day-2"></span>
+                        </span>
+                      </div>
+                      <p id="P_81">
+                        Mám pocit, že jsem právě dnes zjistil, jaký je skutečný sex. Všechno, co se mi stalo za posledních 25 let, se ani zdaleka nepřibližuje tomu, jak mám sex teď. Děkuji vám Blackmaca!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_82">
+                    <div id="DIV_83">
+                      <img src="img/av9.jpg" alt="" id="IMG_84">
+                    </div>
+                    <div id="DIV_85">
+                      <div id="DIV_86">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_88">
+                        <span id="SPAN_89">
+                          <span class="day-2"></span>
+                        </span>
+                      </div>
+                      <p id="P_90">
+                        BLACKMACA JE RAKETA! První přírodní alternativa Viagry!!!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_91">
+                    <div id="DIV_92">
+                      <img src="img/av10.jpg" alt="" id="IMG_93">
+                    </div>
+                    <div id="DIV_94">
+                      <div id="DIV_95">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_97">
+                        <span id="SPAN_98">
+                          <span class="day-2"></span>
+                        </span>
+                      </div>
+                      <p id="P_99">
+                        BLACKMACA JE NEJLEPŠÍ! NEVĚDĚL JSEM, ŽE MOJE PÉRO MŮŽE BÝT TAK OBROVSKÉ!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_109">
+                    <div id="DIV_110">
+                      <img src="img/av12.jpg" alt="" id="IMG_111">
+                    </div>
+                    <div id="DIV_112">
+                      <div id="DIV_113">
+                        <img src="img/twitter.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_115">
+                        <span id="SPAN_116">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_117">
+                        Moje žena je teď v šoku. Příliš mnoho sexu, chápete? Děkuji Blackmaca!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_127">
+                    <div id="DIV_128">
+                      <img src="img/av14.jpg" alt="" id="IMG_129">
+                    </div>
+                    <div id="DIV_130">
+                      <div id="DIV_131">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_133">
+                        <span id="SPAN_134">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_135">
+                        Objednal jsem si ho před měsícem a teď už žádné selhání:))
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_136">
+                    <div id="DIV_137">
+                      <img src="img/av3.jpg" alt="" id="IMG_138">
+                    </div>
+                    <div id="DIV_139">
+                      <div id="DIV_140">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_142">
+                        <span id="SPAN_143">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_144">
+                        Nemohla jsem manželovi říct, že mě v posteli nedokáže uspokojit. A nechtěla jsem ho urazit. Po večeři jsem mu dala kapsli :) byl to opravdu dobrý sex! Nepamatuji si, že bych s ním byla tak spokojená! Fantastický účinek!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_145">
+                    <div id="DIV_146">
+                      <img src="img/av16.jpg" alt="" id="IMG_147">
+                    </div>
+                    <div id="DIV_148">
+                      <div id="DIV_149">
+                        <img src="img/twitter.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_151">
+                        <span id="SPAN_152">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_153">
+                        Je zajímavé, že tento produkt není propagován jako Viagra. Vždyť Blackmaca je ve skutečnosti mnohem účinnější!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_154">
+                    <div id="DIV_155">
+                      <img src="img/av17.jpg" alt="" id="IMG_156">
+                    </div>
+                    <div id="DIV_157">
+                      <div id="DIV_158">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_160">
+                        <span id="SPAN_161">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_162">
+                        Blackmaca je tak dobrý díky svým přírodním složkám: je úžasné, když nemusíte brát chemické přípravky jako Viagra a poškozovat si játra.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_163">
+                    <div id="DIV_164">
+                      <img src="img/av18.jpg" alt="" id="IMG_165">
+                    </div>
+                    <div id="DIV_166">
+                      <div id="DIV_167">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_169">
+                        <span id="SPAN_170">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_171">
+                        Lepší je jednou utratit peníze za Blackmaca, než být celý život závislý na Viagře!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_172">
+                    <div id="DIV_173">
+                      <img src="img/av3.jpg" alt="" id="IMG_174">
+                    </div>
+                    <div id="DIV_175">
+                      <div id="DIV_176">
+                        <img src="img/twitter.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_178">
+                        <span id="SPAN_179">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_180">
+                        Ano, Blackmaca je fantastický! Opravdu nemůžu najít nic lepšího.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_181">
+                    <div id="DIV_182">
+                      <img src="img/av20.jpg" alt="" id="IMG_183">
+                    </div>
+                    <div id="DIV_184">
+                      <div id="DIV_185">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_187">
+                        <span id="SPAN_188">
+                          <span class="day-3"></span>
+                        </span>
+                      </div>
+                      <p id="P_189">
+                        Po použití Blackmaca se můj sexuální život zcela změnil! Neměl jsem tušení, že můj penis může být tvrdý jako skála!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_190">
+                    <div id="DIV_191">
+                      <img src="img/av21.jpg" alt="" id="IMG_192">
+                    </div>
+                    <div id="DIV_193">
+                      <div id="DIV_194">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_196">
+                        <span id="SPAN_197">
+                          <span class="day-4"></span>
+                        </span>
+                      </div>
+                      <p id="P_198">
+                        Zkusil jsem Blackmaca, moje žena byla po sexu trochu šokována. Řekla: "Jdi do háje s těmi svými stimulanty! Už mě to šukání fakt unavilo!"
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_199">
+                    <div id="DIV_200">
+                      <img src="img/av22.jpg" alt="" id="IMG_201">
+                    </div>
+                    <div id="DIV_202">
+                      <div id="DIV_203">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_205">
+                        <span id="SPAN_206">
+                          <span class="day-4"></span>
+                        </span>
+                      </div>
+                      <p id="P_207">
+                        Dobrý produkt, nejlépe objednat alespoň 3 balení najednou. Objednal jsem si jich 6 s dobrou slevou.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_208">
+                    <div id="DIV_209">
+                      <img src="img/av3.jpg" alt="" id="IMG_210">
+                    </div>
+                    <div id="DIV_211">
+                      <div id="DIV_212">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_214">
+                        <span id="SPAN_215">
+                          <span class="day-4"></span>
+                        </span>
+                      </div>
+                      <p id="P_216">
+                        Blackmaca je asi nejlepším produktem, který lze na evropském trhu najít.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_226">
+                    <div id="DIV_227">
+                      <img src="img/av15.jpg" alt="" id="IMG_228">
+                    </div>
+                    <div id="DIV_229">
+                      <div id="DIV_230">
+                        <img src="img/twitter.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_232">
+                        <span id="SPAN_233">
+                          <span class="day-4"></span>
+                        </span>
+                      </div>
+                      <p id="P_234">
+                        Takový sex jsme s manželkou už dlouho neměli! Blackmaca je fantastická...! Pak jsme spali jako miminka.
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_208">
+                    <div id="DIV_209">
+                      <img src="img/av3.jpg" alt="" id="IMG_210">
+                    </div>
+                    <div id="DIV_211">
+                      <div id="DIV_212">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_214">
+                        <span id="SPAN_215">
+                          <span class="day-4"></span>
+                        </span>
+                      </div>
+                      <p id="P_216">
+                        Objednala jsem ho pro svého snoubence, rozhodli jsme se experimentovat, i když to bylo v pořádku předtím. Ale teď je to prostě úžasné, nemůže přestat 2 hodiny!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_208">
+                    <div id="DIV_209">
+                      <img src="img/av3.jpg" alt="" id="IMG_210">
+                    </div>
+                    <div id="DIV_211">
+                      <div id="DIV_212">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_214">
+                        <span id="SPAN_215">
+                          <span class="day-4"></span>
+                        </span>
+                      </div>
+                      <p id="P_216">
+                        Funguje to! Má silný a trvalý účinek. Teď mám erekci pro každou kolegyni v práci, nemůžu se soustředit na papíry... Kapsle v práci nepiju!
+                      </p>
+                    </div>
+                  </li>
+                  <li id="LI_208">
+                    <div id="DIV_209">
+                      <img src="img/av3.jpg" alt="" id="IMG_210">
+                    </div>
+                    <div id="DIV_211">
+                      <div id="DIV_212">
+                        <img src="img/facebook.png" alt="" id="IMG_15">
+                      </div>
+                      <div id="DIV_214">
+                        <span id="SPAN_215">
+                          <span class="day-4"></span>
+                        </span>
+                      </div>
+                      <p id="P_216">
+                        Je skvělé, že Blackmaca nezpůsobuje alergie, protože jsem měl vyrážky z jiných výrobků...
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="p10">
+      <div class="df_title">JAK SI <br><span class="blue">OBJEDNAT?</span></div>
+    </div>
+    <div class="how_items">
+      <div class="how_item">
+        <div class="how_item1">
+          <div class="how_icon how_icon1"></div>
+          <div class="how_num">01</div>
+          <div class="how_text">Zanechat objednávku na těchto webových stránkách</div>
+        </div>
+      </div>
+      <div class="how_item">
+        <div class="how_item2">
+          <div class="how_icon how_icon2"></div>
+          <div class="how_num">02</div>
+          <div class="how_text">Jeden z našich operátorů vás bude okamžitě kontaktovat a potvrdí podrobnosti vaší objednávky.</div>
+        </div>
+      </div>
+      <div class="how_item">
+        <div class="how_item3">
+          <div class="how_icon how_icon3"></div>
+          <div class="how_num">03</div>
+          <div class="how_text">Do 2-3 dnů vám zboží doručíme</div>
+        </div>
+      </div>
+      <div class="how_item">
+        <div class="how_item4">
+          <div class="how_icon how_icon4"></div>
+          <div class="how_num">04</div>
+          <div class="how_text">Objednávku můžete zaplatit ihned po doručení.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="question_block">
+    <div class="p10">
+      <div class="df_title black">POMOHLY VÁM KAPSLE BLACKMACA?
+      </div>
+      <div class="question_field">
+        <div class="p20">
+          <button class="answert_btn answert_btn1">Ano</button>
+          <button class="answert_btn answert_btn2">Ne </button>
+          <button class="answert_btn answert_btn3">Nekoupil jsem je</button>
+        </div>
+      </div>
+      <div class="result_field">
+        <div class="p20">
+          <div class="result result1">
+            <div class="result_num">82%</div>
+          </div>
+          <div class="result result2">
+            <div class="result_num">7%</div>
+          </div>
+          <div class="result result3">
+            <div class="result_num">11%</div>
+          </div>
+          <div class="m20 tac">
+            <p>Hlasoval: <span class="orange_block_text" style="padding: 3px 10px; position: unset;">973</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="block_1">
+    <div class="p10">
+      <div class="tac">
+        <h1 class="h1_1">KAPSLE NA POTENCI</h1>
+      </div>
+      <div class="tar">
+        <h1 class="h1_2"> Blackmaca</h1>
+      </div>
+      <div class="medals">
+        <div class="medal_1"></div>
+      </div>
+      <div class="medals">
+        <div class="medal_2"></div>
+      </div>
+    </div>
+    <div class="blue_text">
+      Díky kapslím Blackmaca ohromíte všechny svou silou a sebevědomím!
+    </div>
+    <div class="prod_block">
+      <div class="prod_img"></div>
+      <div class="sale_block">-50%</div>
+      <div class="timer">
+        <center>
+          <div class="countbox clearfix">
+            <div class="countbox-num hour">
+              <div class="countbox-hours1 num hour0"><span></span>0</div>
+              <div class="countbox-hours2 num hour1"><span></span>8</div>
+              <div class="countbox-hours-text">Часов</div>
+            </div>
+            <div class="countbox-space"></div>
+            <div class="countbox-num minute">
+              <div class="countbox-mins1 num min0"><span></span>3</div>
+              <div class="countbox-mins2 num min1"><span></span>6</div>
+              <div class="countbox-mins-text">Минут</div>
+            </div>
+            <div class="countbox-space"></div>
+            <div class="countbox-num second">
+              <div class="countbox-secs1 num sec0"><span></span>1</div>
+              <div class="countbox-secs2 num sec1"><span></span>8</div>
+              <div class="countbox-secs-text">Секунд</div>
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+    <div class="" style="position: relative;">
+      <div class="orange_block_text">
+        STAŇ SE HRDINOU PRO JAKOUKOLI ŽENU!
+      </div>
+    </div>
+  </div>
+  <div class="block_2">
+    <div class="p20_v">
+      <div class="block_2_info">
+        <div class="p10">První přírodní stimulant bez vedlejších účinků na vaše zdraví!</div>
+      </div>
+    </div>
+    <div class="p10">
+      <div class="flex ais">
+        <div class="block_2_item">
+          <div class="check"></div>
+          <p class="p_b white tac">Pevná a stabilní erekce za 2 minuty</p>
+        </div>
+        <div class="block_2_item">
+          <div class="check"></div>
+          <p class="p_b white tac">Způsobuje intenzivní sexuální touhu</p>
+        </div>
+        <div class="block_2_item">
+          <div class="check"></div>
+          <p class="p_b white tac">Prodlužuje trvání <br>pohlavního styku a kontrolu ejakulace</p>
+        </div>
+      </div>
+      <div class="posr m20">
+        <div class="playboy">
+          <div class="playboy_block">
+            <div class="playboy_img"></div>Po článku, který se objevil <span class="day-6"></span> <span class="yellow">
+              v časopise Playboy, množství zboží na našich skladech rapidně klesá!</span>
+          </div>
+        </div>
+      </div>
+      <div class="prices" id="form">
+        <div class="old">
+          <p>Běžná cena:</p>
+          <div class="oldproductsum"><span class="oldPriceAndLabelForLandingInfoApi price_old"> <span class="priceOld"></span> <span class="currencyMain"></span></span>
+          </div>
+        </div>
+        <div class="new">
+          <p>Cena dnes:</p>
+          <div class="productsum"><span class="priceAndLabelForLandingInfoApi price_main"> <span class="priceMain"></span> <span class="currencyMain"></span></span> *
+          </div>
+        </div>
+      </div>
+      <div class="form">
+        <form action="getform.php" method="post" class="orderformcdn order_form" id="form">
+          <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+          <input type="hidden" name="utm_campaign" value="{domonetka}">
+          <div class="input-name input-field">
+            <input type="text" name="name" class="field input input-name" placeholder="Tvé jméno" required>
+          </div>
+          <div class="input-phone input-field">
+            <input type="text" name="phone" class="field input input-phone" placeholder="Váš kontaktní telefon" required>
+          </div>
+          <div class="flex jcc m20 fww">
+            <div class="reolader">
+              <input class="submit mm_button" value="OBJEDNAT NYNÍ" type="submit">
+            </div>
+            <div class="last_products">
+              <p class="tac white">97% zásob je již vyprodáno. <br>ZBÝVÁ POUZE <span
+                  class="orange_num form-instock">18</span> BALENÍ SE SLEVOU</p>
+              <div class="line_products"></div>
+            </div>
+          </div>
+
+</form>
+      </div>
+    </div>
+    <div class="politica" style="text-align:center; padding: 40px 0 20px 0; font-size: 18px;">
+      <div><a href="#" class="link__privacy">Zásady ochrany osobních údajů</a>
+      </div>
+    </div>
+  </div>
+  </b>
+  </div><b>
+  </b>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+  <script src="script.js"></script>
+  <script src="js/result.js"></script>
+  <script src="js/countInStock.js"></script>
+
+			
+
+		<footer>
+<center>
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms & Conditions</span> |
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy policy</span> <br>
+</center>
+<script>
+function openInNewTab(url)
+{var win = window.open(url, '_blank'); win.focus(); }
+</script>
+</footer>
+
+  <script>
+      const offer_params = {
+          priceMain : '890',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'Kč',
+          productName : '',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+</body>
+	
+</html>
