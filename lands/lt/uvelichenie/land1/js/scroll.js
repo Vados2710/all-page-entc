@@ -1,0 +1,1 @@
+$(document).ready((function(){$(".toform").click((function(){return $("html, body").animate({scrollTop:$("#footform").offset().top-300},1e3),!1}))}));

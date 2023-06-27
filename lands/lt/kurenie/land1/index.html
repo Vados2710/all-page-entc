@@ -1,0 +1,608 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nicozero</title>
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body class="loaded">
+  <div class="wrap">
+    <section class="section section_face wow fadeIn" data-wow-duration="1s"
+      style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+      <div class="container">
+        <div class="face">
+          <div class="face__head">
+            <div class="logo"><img alt="" src="media/logo.png"></div>
+          </div>
+          <div class="face__box">
+            <h1 class="face__title lt0">Mesti <span>rūkyti</span> yra <span>lengva!</span> </h1>
+            <div class="advantages">
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon1.png"></div>
+                <div class="advantages__title lt1">Be potraukio <span> cigaretėms</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon2.png"></div>
+                <div class="advantages__title lt2">Be abstinencijos <span>sindromo</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon3.png"></div>
+                <div class="advantages__title lt3">Be knygų <span>ir hipnozės</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon4.png"></div>
+                <div class="advantages__title lt4">Be medikamentų <span>ir pleisterio</span> </div>
+              </div>
+            </div>
+          </div>
+          <div class="face__box face__box_eggs">
+            <div class="order face__order">
+              <div class="order__title lt5">Užsisakykite dabar <span>su nuolaida</span> </div>
+              <div class="order__price">
+                <span class="lt6 price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span> <span class="lt7 price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+              </div>
+              <form action="getform.php" method="post" class="order__form">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <label class="order__item"><span class="lt8">Jūsų vardas:</span> <input class="order__field" name="name"
+                    type="text" required></label>
+                <label class="order__item"><span class="lt10">Telefonas:</span> <input class="order__field" name="phone"
+                    type="text" required></label>
+                <div class="order__item order__item_btn">
+                  <button class="order__btn lt11">Užsisakyti</button>
+                </div>
+              </form>
+            </div>
+            <!--
+          <div class="eggs">
+            <div class="eggs__item"><img alt="" src="media/eggs/img1.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img2.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img3.png"></div>
+          </div>
+-->
+          </div>
+          <div class="face__product">
+            <div class="face__arrow"><img alt="" src="media/face/arrow.png"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_effects wow fadeIn" data-wow-duration="1s"
+      style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+      <div class="container">
+        <div class="effects">
+          <div class="effects__box">
+            <div class="effects__title lt12">Kai rūkėte <span>savo pirmąją cigaretę,</span> </div>
+            <div class="effects__subtitle lt13">jums tikrai norėjosi likti rūkaliu</div>
+            <div class="effects__description lt14">visam gyvenimui?</div>
+            <div class="effects__events wow shake lt15" data-wow-duration="10s" data-wow-iteration="infinite"
+              style="visibility: visible; animation-duration: 10s; animation-iteration-count: infinite;">užveskite
+              žymeklį ant nuotraukos<img alt="" src="media/effects/arrow-right.png"></div>
+          </div>
+          <div class="effects__media">
+            <div class="effects__hover js-effects__hover"></div>
+            <div class="effects__fadeLine"><img alt="" src="media/effects/fadeLine.png"></div>
+            <div class="effects__face effects__face_before"></div>
+            <div class="effects__face effects__face_after"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_warning wow fadeIn" data-wow-duration="1s"
+      style="visibility: visible; animation-duration: 1s;">
+      <div class="container">
+        <div class="facts">
+          <div class="facts__item">
+            <div class="facts__content">
+              <div class="facts__subTitle lt16">
+                <div class="facts__nomber">1.</div> Nikotinas yra medžiaga, sukelianti priklausomybę nuo pirmosios
+                dozės. <span>Pagal savo poveikį organizmui ji lenkia net heroiną, nes sukelia priklausomybę nuo pirmojo
+                  dūmelio.</span>
+              </div>
+            </div>
+            <div class="facts__media"><img alt="" src="media/facts/img1.jpg"></div>
+          </div>
+          <div class="facts__item facts__item_right">
+            <div class="facts__media"><img alt="" src="media/facts/img2.jpg"></div>
+            <div class="facts__content">
+              <div class="facts__subTitle lt17">
+                <div class=" faktai__nomber">2.</div>Prieš pradėdami rūkyti jūs turbūt buvote tikri: <span>Aš galiu bet
+                  kada mesti! Tikrovėje tai yra daug sunkiau nei atrodo.</span>
+              </div>
+            </div>
+          </div>
+          <div class="facts__item">
+            <div class="facts__content">
+              <div class="facts__subTitle lt18">
+                <div class=" faktai__nomber">3.</div>Jums gali būti gėda ar nepatikti, nes negalite mesti rūkyti patys.
+                <span>Jūs nuolat girdite apie rūkymo žalą ir jau susiformavote imunitetą prieš šiurpias rūkalių
+                  istorijas.</span>
+              </div>
+            </div>
+            <div class="facts__media"><img alt="" src="media/facts/img3.jpg"></div>
+          </div>
+        </div>
+        <div class="warning section__warning">
+          <div class="wraning__title lt19"> <span>Visur jus persekioja </span> cigarėčių <span> kvapas,</span> </div>
+          <div class="wraning__subTitle lt20">nuo jo neišgelbėja nei kramtomoji guma, nei kvepalai <span>.</span> </div>
+        </div>
+      </div>
+    </section>
+    <div class="section section_cause wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="cause">
+          <div class="cause__title lt21">Tačiau jūs <span>iki </span> šiol <span>esate</span> rūkalius.</div>
+          <div class="cause__subTitle lt22">Taigi kodėl jums <span>iš tikrųjų</span> norisi rūkyti?</div>
+          <div class="cause__description lt23"> <span>Nuolat rūkant, smegenyse staigom padidėja acetilcholino receptorių
+              skaičius (būtent jie teikia staigų džiaugsmo hormonų išsiskyrimą), o jų jautrumas krenta.</span> Šie
+            receptoriai normoje yra aktyvuojami specialiu organiniu junginiu acetilcholinu, labai panašiu į nikotiną
+            pagal savo struktūrą. Padidėjus receptorių skaičiui, nebeužtenka savo acetilcholino atsargų. Ir kad jaustųsi
+            laimingas, žmogus turi nuolat didinti nikotino dozę - taip susidaro fiziologinė priklausomybė.</div>
+          <div class="cause__info lt24">Kai pirmą kartą į organizmą patenka nikotinas, jūs iš karto tampate priklausomas
+            nuo šios nuodingos medžiagos. <span>Noras užsirūkyti kontroliuoja jūsų smegenis, keičia jūsų planus, elgesį
+              ir netgi bendravimo stilių.</span> </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_memories wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="memories">
+          <div class="memories_subTitle lt25">Prisiminkite, kada jums</div>
+          <div class="memories_title lt26">labiausiai norisi rūkyti?</div>
+          <div class="memories__box">
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img1.png"></div>
+              <div class="memories__name lt27">Tuoj pat pabudus</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img2.png"></div>
+              <div class="memories__name lt28">Lėktuve</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img3.png"></div>
+              <div class="memories__name lt29">Pas nerūkančius svečius</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img4.png"></div>
+              <div class="memories__name lt30">Išgėrus alkoholio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_question wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="question">
+          <div class="question__head">
+            <div class="question__title lt31"> <span>Atsakykite į vieną</span> vieną klausimą:</div>
+            <div class="question__description lt32">jums tikrai norisi išsilaisvinti nuo priklausomybės, nustoti
+              švaistyti aibę pinigų dūmams, mėgautis gyvenimu be noro užsirūkyti ir lengviau susidoroti su stresu?</div>
+          </div>
+          <div class="question__subTitle lt33">Jei taip, <span>NicoZero jums padės.</span> </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_step wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="step">
+          <div class="step__title lt34">Vos 4 savaitės -</div>
+          <div class="gradient">
+            <div class="step__subTitle lt35">ir jūs daugiau niekada nebenorėsite rūkyti</div>
+          </div>
+          <div class="step__box">
+            <div class="step__item">
+              <div class="step__count">
+                1
+              </div>
+              <div class="step__name lt36">Pirmoji savaitė</div>
+              <div class="step__line"></div>
+              <div class="step__description lt37">NicoZero sudėtyje esančios medžiagos padidina acetilcholino receptorių
+                (atsakingų už malonumą) jautrumą.</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                2
+              </div>
+              <div class="step__name lt38">Antroji savaitė</div>
+              <div class="step__line"></div>
+              <div class="step__description lt39">Jūs mėgaujatės skaniu maistu, žiūrėdami mėgstamą serialą ir paprastu
+                poilsiu. Streso hormonų lygis stabiliai mažėja. Nervinė įtampa dingsta ir išnyksta poreikis
+                "atsipalaiduoti" su cigarete.</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                3
+              </div>
+              <div class="step__name lt40">Trečioji savaitė</div>
+              <div class="step__line"></div>
+              <div class="step__description lt41">Smegenys blokuoja acetilcholino receptorių dirginimą gaunant nikotiną
+                - jūs nustojate mėgautis cigaretėmis, bet vis tiek tegalite rūkyti. Šiuo metu organizmas visiškai
+                perstatomas, kad gautų džiaugsmo hormoną natūraliu būdu.</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                4
+              </div>
+              <div class="step__name lt42">Ketvirtoji savaitė</div>
+              <div class="step__line"></div>
+              <div class="step__description lt43">Jūs pradedate pastebėti, kaip jūs vėl mėgaujatės tuo, kas jums iš
+                tikrųjų patinka. Dingsta fizinis ir psichologinis poreikis užsirūkyti!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_product wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="product">
+          <div class="gradient">
+            <div class="product__title lt44">
+              Nicozero
+            </div>
+          </div>
+          <div class="product__subTitle lt45">Purškiklis <span>nikotino priklausomybei atsikratyti </span> </div>
+          <div class="product__box">
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img1.jpg"></div>
+              <div class="product__name lt46"> <span>Avižų grūdų</span> ekstraktas</div>
+              <div class="product__description lt47">Stiprina nervų sistemą, kraujagysles ir širdies raumenį, palankiai
+                veikdamas kraujo sudėtį</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img2.jpg"></div>
+              <div class="product__name lt48">Jonažolė</div>
+              <div class="product__description lt49">Sukelia palaipsnišką ir nuolatinį pasibjaurėjimą tabako kvapui,
+                valo kvėpavimo takus nuo kenksmingų nuosėdų.</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img3.jpg"></div>
+              <div class="product__name lt50">Imbieras</div>
+              <div class="product__description lt51">Plonina kraują, mažina trombocitų sukibimą ir kraujo krešulių
+                susidarymą, valo organizmą nuo toksinų.</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img4.jpg"></div>
+              <div class="product__name lt52">Gudobelė</div>
+              <div class="product__description lt53">Pašalina iš organizmo medžiagas, susidariusias suskaidžius
+                nikotiną, valo plaučius</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_professional wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="professional">
+          <div class="professional__box professional__box_doc">
+            <div class="professional__title lt54">Specialisto nuomonė</div>
+            <div class="professional__subTitle lt55">Priklausomybė nuo nikotino yra mūsų laiko bėda. Atsikratyti jos yra
+              tikrai sunku. Man pačiam, kaip gydytojui, dažnai tai atrodė per sunkiai.</div>
+            <div class="professional__description lt56">Dabar, kai rinkoje pasirodė NicoZero, neabejojama, kad mesti
+              rūkyti kartą ir visiems laikams gali kiekvienas, nepaisant nuo stažo. <span>NicoZero yra pagrįstas iš
+                esmės nauju požiūriu. Vaistas veikia receptorius, atsakingus už potraukį rūkymui. Iš pradžių smegenys
+                apsigauna manydamos, kad joms duodama nikotino dozė, nes NicoZero patenkina tikruosius organizmo
+                poreikius, atsirandančius rūkant. Palaipsniui dingsta įprotis prisidegti cigaretę. NicoZero kurso
+                pabaigop, jums susidaro stiprs pasibjaurėjimas cigaretėms, ir jūs lengvai, o svarbiausia, visam laikui
+                atsikratote stipriausios nikotino priklausomyėsę.</span> </div>
+            <div class="professional__footer">
+              <!--<div class="professional__identifier"><img src="media/professional/identifier.png" alt=""></div>-->
+              <div class="professional__footer-box">
+                <div class="professional__name lt57">Vytautas Kraujelis</div>
+                <div class="professional__position lt58">aukščiausios kategorijos gydytojas, narkologas</div>
+              </div>
+            </div>
+          </div>
+          <div class="professional__box professional__box_human">
+            <div class="professional__media"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_reviews">
+      <div class="container">
+        <div class="reviews">
+          <div class="gradient">
+            <div class="reviews__title lt59"> <span>Atsiliepimai apie NicoZero</span> </div>
+          </div>
+          <div class="reviews__box">
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face1.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt60">Algirdas</div>
+                  <div class="reviews__age lt61">39 metai</div>
+                </div>
+              </div>
+              <div class="reviews__description lt62">Aš buvau rūkęs nuo 14 metų. Dabar man 39 metai ir tik prieš metus
+                su NicoZero pagalba man pavyko atsikratyti priklausomybės nuo nikotino. <span>Aš rūkau 24 metus savo
+                  sąmoningo gyvenimo ir negalėjau įsivaizduoti, koks nuostabus yra gyvenimas be šio baisaus tabako
+                  dvoko, geltonų dantų, amžino kosulio ir pikto nerūkančių žmonių žvilgsnio. Kelis kartus bandydavau
+                  mesti pats, viskas nesėkmingai. Dabar, NicoZero dėka, vien tik mintis apie cigaretę sukelia man
+                  bjaurėjimąsi.</span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face2.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt63">Birutė</div>
+                  <div class="reviews__age lt64">42 metai</div>
+                </div>
+              </div>
+              <div class="reviews__description lt65">Aš išbandydavau mesti rūkyti skirtingais būdais: gal ne visus, bet
+                labai daug. Jie visi baigdavosi vienodai: po mėnesio aš grįždavau prie cigaretės. <span>Ji buvo mano
+                  draugė ir palaikymas. Dabar suprantu, kokia kvaila buvau, juk save apgaudinėjau, nes tiesiog negalėjau
+                  mesti rūkyti. O visi mano išbandyti būdai buvo tik rinkodaros akcijos. Rašau atsiliepimą apie
+                  NicoZero, nes būtemt jis padėjo man VISIEMS LAIKAMS mesti rūkyti. Šios stebuklingos priemonės deka aš
+                  jau 8 mėnesius neberūkau ir tikrai žinau, kad nebegrįšiu į šią priklausomybę.</span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face3.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt66">Danielius</div>
+                  <div class="reviews__age lt67">33 metai</div>
+                </div>
+              </div>
+              <div class="reviews__description lt68">Tarp visų būdų atsisveikinti su rūkymu, NicoZero yra turbūt
+                vienintelis veiksmingasis. <span>Aš tuo įsitikinau iš savo patirties. Man prireikė trijų savaičių, kad
+                  išmesčiau paskutinę cigaretę mano gyvenime ir nuspręsti daugiau niekada nebegrįžti prie rūkymo. Ačiū
+                  gamintojams už šį vaistą!</span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_fake wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="fake">
+          <div class="fake__box">
+            <div class="fake__title lt69">Saugokitės padirbinių!</div>
+            <div class="fake__description lt70">Dėl didelio NicoZero populiarumo pradėjo atsirasti falsifikuoti
+              pavyzdžiai. Originalų produktą NicoZero galima įsigyti tik šioje svetainėje.</div>
+          </div>
+          <div class="fake__media"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_support wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="support">
+          <div class="gradient">
+            <div class="support__title lt71">Dažniausiai užduodami klausimai</div>
+          </div>
+          <div class="support__box">
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span></span> <span></span>
+                </div><span class="lt72">Ar aš priaugsiu svorio metęs rūkyti su NicoZero?</span>
+              </div>
+              <div class="support__description lt73">Ne. Svorio padidėjimas atsisakant nikotino valingu metodu yra
+                susijęs su bandymais nuraminti nervų sistemą, malšinti nikotino troškulį maistu. Taip nėra su NicoZero,
+                nes šis metodas iš pradžių nuramina nervų sistemą, ir tik tada jūs visiškai ramiai visam laikui
+                nustojate rūkyti.</div>
+            </div>
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span></span> <span></span>
+                </div><span class="lt74">Aš daug kartų mesdavau rūkyti, pasinaudodamas įvairiom priemonėm, bet visada
+                  grįždavau prie cigarečių. Kuo NicoZero skiriasi nuo kitų būdų, kodėl su juo aš tikrai mesiu rūkyti
+                  visam laikui?</span>
+              </div>
+              <div class="support__description lt75">NicoZero sudėtyje yra medžiagų, kurios absorbuojamos į kraują ir
+                palaipsniui iš organizmo išplauna nikotiną. Vyksta detoksikacijos procesas: apsinuodiję organai pagerina
+                veikimą. Detoksikacijos laikotarpiu organizmas prioritetą skiria organų veikimo atnaujinimui, o ne
+                naujos nikotino dozės gavimui. Jūs jausite savijautos pagerėjimą ir pati mintis apie cigaretę pasitrauks
+                į antra planą.</div>
+            </div>
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span></span> <span></span>
+                </div><span class="lt76">Ar man bus blogai, jei užsirūkysiu vartodamas NicoZero?</span>
+              </div>
+              <div class="support__description lt77">Ne. Skirtingai nuo kitų vaistų, NicoZero sudėtyje nėra toksinių
+                medžiagų, kurios gali sukelti neigiamą organizmo reakciją.</div>
+            </div>
+          </div>
+          <div class="support__callback">
+            <div class="support__subTitle lt78">Vis dar turite klausimų?</div>
+            <div class="support__info lt79">Užduokite jūs mūsų specialistui, jums paskambins ir pasikonsuoltuos</div>
+            <div class="support__btn lt80">Užduoti klausimą</div>
+          </div>
+          <div class="support__media"></div>
+        </div>
+      </div>
+    </div>
+    <section class="section section_footer-face section_face wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="face">
+          <div class="face__head">
+            <div class="logo"><img alt="" src="media/logo.png"></div>
+          </div>
+          <div class="face__box">
+            <h1 class="face__title lt81">Mesti <span>rūkyti</span> yra <span> lengva!</span> </h1>
+            <div class="advantages">
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon1.png"></div>
+                <div class="advantages__title lt82">Be potraukio <span>cigaretėms</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon2.png"></div>
+                <div class="advantages__title lt83">Be abstinencijos <span>sindromo</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon3.png"></div>
+                <div class="advantages__title lt84">Be knygų <span>ir hipnozės</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon4.png"></div>
+                <div class="advantages__title lt85">Be medikamentų <span>ir pleistario</span> </div>
+              </div>
+            </div>
+          </div>
+          <div class="face__box face__box_eggs face__box_scroll">
+            <div class="order face__order">
+              <div class="order__title lt86">Užsisakykite dabar <span>su nuolaida</span> </div>
+              <div class="order__price">
+                <span class="lt87 price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span> <span class="lt88 price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+              </div>
+              <form action="getform.php" method="post" class="order__form">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <label class="order__item"><span class="lt8">Jūsų vardas:</span> <input class="order__field" name="name"
+                    type="text" required></label>
+                <label class="order__item"><span class="lt10">Telefonas:</span> <input class="order__field" name="phone"
+                    type="text" required></label>
+                <div class="order__item order__item_btn">
+                  <button class="order__btn lt11">Užsisakyti</button>
+                </div>
+              </form>
+            </div>
+            <!--
+          <div class="eggs">
+            <div class="eggs__item"><img alt="" src="media/eggs/img1.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img2.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img3.png"></div>
+          </div>
+-->
+          </div>
+          <div class="face__product"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="section section_footer wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="footer">
+          <p class="footer_leadbit lt93">Global Partners LTD, <br>
+            <a href="#" target="_blank">Privacy Policy</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <script src="js/jquery.js">
+  </script>
+  <script src="js/plugin.js">
+  </script>
+  <script src="js/index.js">
+  </script>
+
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '39',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

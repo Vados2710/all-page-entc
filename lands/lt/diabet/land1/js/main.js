@@ -1,0 +1,1 @@
+$(document).ready((function(){$("a").on("click",(function(t){t.preventDefault();var e=$(this).attr("href"),o=$(e).offset().top;$("body,html").animate({scrollTop:o},1e3)}))}));

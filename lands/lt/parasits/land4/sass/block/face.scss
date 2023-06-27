@@ -1,0 +1,254 @@
+
+.face {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.face__logo {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 60px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #83b26e;
+    border-radius: 3px;
+}
+
+.face__title {
+    max-width: 380px;
+    margin-bottom: 40px;
+    font-size: 58px;
+    line-height: 56px;
+
+    & span {
+        display: block;
+    }
+}
+
+.face__list {
+    margin-bottom: 60px;
+}
+
+.face__check {
+    position: relative;
+    z-index: 1;
+    max-width: 270px;
+    padding-left: 45px;
+    font-size: 18px;
+    font-weight: 500;
+
+    & mark {
+        color: #000;
+    }
+
+    & + & {
+        margin-top: 25px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        content: '';
+    }
+
+    &:nth-child(1) {
+        &::before {
+            background-image: url("../media/face/check-1.png");
+        }
+    }
+
+    &:nth-child(2) {
+        &::before {
+            background-image: url("../media/face/check-2.png");
+        }
+    }
+
+    &:nth-child(3) {
+        &::before {
+            background-image: url("../media/face/check-3.png");
+        }
+    }
+
+    &:nth-child(4) {
+        &::before {
+            background-image: url("../media/face/check-4.png");
+        }
+    }
+}
+
+.face__eags {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 210px;
+}
+
+.face__eags-item {
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:nth-child(2) {
+        width: 50%;
+    }
+
+    &:nth-child(3) {
+        width: 50%;
+    }
+
+    &::before {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        content: '';
+        background-color: #2da761;
+        border-radius: 5px;
+    }
+}
+
+.face__product {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    z-index: 1;
+    margin-left: -25px;
+    transform: translateX(-50%);
+
+    &::before {
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        z-index: -1;
+        width: 602px;
+        height: 531px;
+        margin-left: 50px;
+        content: '';
+        background-image: url("../media/product-before.png");
+        background-size: cover;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 1030px) {
+    .face__title {
+        margin-bottom: 30px;
+    }
+
+    .face__product {
+        max-width: 300px;
+        margin-left: -50px;
+
+        &::before {
+            width: 350px;
+            height: 308px;
+            margin-left: 45px;
+        }
+    }
+
+    .face__check {
+        max-width: 250px;
+        font-size: 16px;
+    }
+
+    .face__logo {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .face {
+        flex-direction: column;
+    }
+
+    .face__title {
+        max-width: 100%;
+
+        & span {
+            display: inline;
+        }
+    }
+
+    .face__check {
+        max-width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .face__product {
+        position: relative;
+        bottom: -15px;
+        left: auto;
+        flex: 0 0 200px;
+        order: 4;
+        margin-top: -60px;
+        margin-left: 0;
+        transform: translateX(0);
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .face__list {
+        flex: 0 0 50%;
+        order: 3;
+        margin-bottom: 0;
+    }
+
+    .face__eags {
+        order: 5;
+        margin-top: 0;
+    }
+
+    .face__box {
+        &:first-child {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .face__title {
+        margin-bottom: 0;
+    }
+
+    .face__check {
+        padding-left: 35px;
+        font-size: 14px;
+
+        &::before {
+            width: 25px;
+            height: 25px;
+            background-size: auto 100%;
+        }
+    }
+
+    .face__list {
+        flex: 0 0 calc(100% - 140px);
+        padding-top: 30px;
+        margin-top: auto;
+    }
+
+    .face__eags {
+        margin-top: 60px;
+    }
+
+    .face__product {
+        display: flex;
+        flex: 0 0 125px;
+        align-items: center;
+        margin-top: 0;
+        margin-left: auto;
+    }
+}
