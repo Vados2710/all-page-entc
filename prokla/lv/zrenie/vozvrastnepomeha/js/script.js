@@ -1,0 +1,193 @@
+if (document.body.classList.contains('ev-date')) {
+  document.addEventListener("DOMContentLoaded", postDate);
+
+  function postDate() {
+    const msInDay = 86400000,
+      counterLength = 90,
+      countryName = 'lv', // Встановлюємо мову для місяців.
+      isAbbreviated = false, // Якщо потрібно скорочений варіант місяців з трьох букв, наприклад "янв", "июн" і т.д, тоді ставим TRUE.
+      localDate = new Date();
+
+    let months;
+
+    switch (countryName) {
+      case 'lv': // Latvia латышский
+        months = ['Janvāris', 'Februāris', 'Marts', 'Aprīlis', 'Maijs', 'Jūnijs', 'Jūlijs', 'Augusts', 'Septembris', 'Oktobris', 'Novembris', 'Decembris'];
+        break;
+    }
+
+    if (isAbbreviated) {
+      for (let i = 0; i < months.length; i++) months[i] = months[i].slice(0, 3).toLowerCase(); // Прибираємо ".toLowerCase()", якщо перша буква повинна бути великою.
+    }
+
+    for (let counter = 0; counter < counterLength; counter++) {
+      const dateClass = "date-" + counter,
+        nodeList = document.getElementsByClassName(dateClass),
+        date = new Date(localDate.getTime() - counter * msInDay);
+
+      let timeCounter = 0,
+        timeArray = time(nodeList /*, true*/ ); // Розкоментувати, якщо необхідне сортування в порядку спадання.
+
+      timeArray = timeFormat(timeArray);
+
+      for (let i = 0; i < nodeList.length; i++) {
+        const data = nodeList[i].dataset;
+
+        data.format ?
+          nodeList[i].innerHTML = format(date, data.format)
+          // format: особливий формать для окремої дати. Додаєм як data-format="фомарт". Формати дивитись в switch'і нижче. dd - цифри, day - прописом.
+          // <span class="date-1" data-format="dd month yyyy"></span> - мотає на 1 день назад і виводить цей span у вигляді "24 Липня 1995".
+          :
+          nodeList[i].innerHTML = format(date /*, "dd month yyyy"*/ ); // Default: dd.mm.yyyy ADD FORMAT HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
+        if (/\btime\b/.test(nodeList[i].className)) {
+          nodeList[i].innerHTML += " " + timeArray[timeCounter]; // Рядок для формату виводу часу.
+          timeCounter++;
+        }
+      }
+    }
+
+    // <span clas="date-NUMBER"></span> - мотає час назад на NUMBER днів. Наприклад, <span className="date-5"></span>
+    // <span clas="dateNUMBER"></span> - мотає час вперед на NUMBER днів. Наприклад, <span className="date5"></span>
+
+    for (let counter = 0; counter < counterLength; counter++) {
+      const dateClass = "date-" + counter,
+        nodeList = document.getElementsByClassName(dateClass),
+        date = new Date(localDate.getTime() - counter * msInDay);
+
+      let timeArray = time(nodeList /*, true*/ ); // Розкоментувати, якщо необхідне сортування в порядку спадання.
+      timeArray = timeFormat(timeArray);
+
+      for (let i = 0; i < nodeList.length; i++) {
+        const data = nodeList[i].dataset;
+
+        data.format ?
+          nodeList[i].innerHTML = format(date, data.format)
+          // format: особливий формать для окремої дати. Додаєм як data-format="фомарт". Формати дивитись в switch'і нижче. dd - цифри, day - прописом.
+          // <span class="date-1" data-format="dd month yyyy"></span> - мотає на 1 день назад і виводить цей span у вигляді "24 Липня 1995".
+          :
+          nodeList[i].innerHTML = format(date /*, "dd month yyyy"*/ ); // Default: dd.mm.yyyy ADD FORMAT HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+      }
+    }
+
+
+    function time(nodeList, reverse) {
+      const timeArray = [];
+
+      for (let i = 0; i < nodeList.length; i++)
+        nodeList[i].className.match(/\btime\b/) ?
+        timeArray.push(timeRandom()) :
+        false;
+
+      if (reverse) timeArray.sort(function(a, b) {
+        return b - a;
+      });
+      else timeArray.sort(function(a, b) {
+        return a - b;
+      });
+
+      return timeArray;
+    }
+
+    function timeRandom() {
+      return Math.round(Math.random() * 1440);
+    }
+
+    function timeFormat(timeArray) {
+      const array = [];
+
+      for (let i = 0; i < timeArray.length; i++) {
+        const hTemp = Math.floor(timeArray[i] / 60),
+          mTemp = timeArray[i] % 60,
+          hours = hTemp < 10 ? "0" + hTemp : hTemp,
+          minutes = mTemp < 10 ? "0" + mTemp : mTemp;
+        array.push(hours + ":" + minutes)
+      }
+      return array;
+    }
+
+    function format(date, formatString) {
+      let innerDate = "";
+
+      const day = date.getDate(),
+        year = date.getFullYear(),
+        month = date.getMonth() + 1,
+        fo = formatString || true;
+
+      switch (fo) {
+        case "yyyy":
+          innerDate += "" + year;
+          return innerDate;
+
+        case "month":
+          innerDate += months[month - 1].toLowerCase();
+          return innerDate;
+
+
+        default:
+          innerDate += (day < 10) ? ("0" + day) : day;
+          innerDate += ".";
+          innerDate += (month < 10) ? ("0" + month) : month;
+          innerDate += "." + year;
+          return innerDate;
+      }
+    }
+  }
+}
+
+var reviews = (function() {
+  var reviewsCta = $('.reviews-cta');
+  var inputFile = $('.input-file');
+  var labelFile = $('.input-file');
+  var reviewsInput = $('.reviews-input');
+  var reviewsInputText = $('.reviews-input-text');
+  var reviewsInputTextarea = $('.reviews-form__textarea');
+  var reviewsInputName = $('.reviews-form__input-name');
+  var reviewsPopup = $('.reviews-popup');
+  var fileText = $('.reviews-form__file-text');
+  var fileImg = $('.reviews-form__file-img img');
+  var fileIcon = $('.reviews-form__checkmark-icon');
+  var name = $('.inL_1500');
+  var text =  $('#push_mlyjekpdfdd1__message');
+  var fileFlag = true;
+  inputFile.change(function(e) {
+    fileText.html('Fotogrāfija ielādēta');
+    fileImg.hide();
+    fileIcon.show();
+    labelFile.addClass('rloaded');
+    fileFlag = false;
+  });
+  $('.reviews-form').submit(function() {
+    if (true) {
+      reviewsPopup.fadeIn();
+      event.preventDefault();
+      setTimeout(function() {
+        reviewsPopup.fadeOut();
+      }, 2000);
+      fileText.html('Augšupielādējiet fotoattēlu');
+      fileImg.show();
+      fileIcon.hide();
+      labelFile.removeClass('rloaded');
+      name.val('');
+      text.val('');
+      $('.reviews-form__star').removeClass('filled');
+    } else {
+      reviewsInputsWrap.each(function(i) {
+        if (!reviewsInputsWrap[i].classList.contains('valid')) {
+          reviewsInputsWrap[i].classList.add('invalid');
+        }
+      });
+      event.preventDefault();
+    }
+  });
+});
+reviews();
+
+// Show/Hide shock content
+const shockImgs = document.querySelectorAll('.shock-img');
+
+for (let img of shockImgs) {
+  img.addEventListener('click', function() {
+    this.classList.toggle('show')
+  });
+}

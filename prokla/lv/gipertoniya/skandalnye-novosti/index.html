@@ -1,0 +1,846 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Šīs nedēļas skandalozākā jaunuma apspriešana</title>
+    <link rel="icon" href="prod.png" type="image/x-icon">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+
+    <script data-polyfil="webp">!function (e, n, A) { function o(e, n) { return typeof e === n } function t() { var e, n, A, t, a, i, l; for (var f in r) if (r.hasOwnProperty(f)) { if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options.aliases.length)) for (A = 0; A < n.options.aliases.length; A++)e.push(n.options.aliases[A].toLowerCase()); for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++)i = e[a], l = i.split("."), 1 === l.length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-")) } } function a(e) { var n = u.className, A = Modernizr._config.classPrefix || ""; if (c && (n = n.baseVal), Modernizr._config.enableJSClass) { var o = new RegExp("(^|\s)" + A + "no-js(\s|$)"); n = n.replace(o, "$1" + A + "js$2") } Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className = n) } function i(e, n) { if ("object" == typeof e) for (var A in e) f(e, A) && i(A, e[A]); else { e = e.toLowerCase(); var o = e.split("."), t = Modernizr[o[0]]; if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr; n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a([(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n) } return Modernizr } var s = [], r = [], l = { _version: "3.6.0", _config: { classPrefix: "", enableClasses: !0, enableJSClass: !0, usePrefixes: !0 }, _q: [], on: function (e, n) { var A = this; setTimeout(function () { n(A[e]) }, 0) }, addTest: function (e, n, A) { r.push({ name: e, fn: n, options: A }) }, addAsyncTest: function (e) { r.push({ name: null, fn: e }) } }, Modernizr = function () { }; Modernizr.prototype = l, Modernizr = new Modernizr; var f, u = n.documentElement, c = "svg" === u.nodeName.toLowerCase(); !function () { var e = {}.hasOwnProperty; f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) { return n in e && o(e.constructor.prototype[n], "undefined") } : function (n, A) { return e.call(n, A) } }(), l._l = {}, l.on = function (e, n) { this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () { Modernizr._trigger(e, Modernizr[e]) }, 0) }, l._trigger = function (e, n) { if (this._l[e]) { var A = this._l[e]; setTimeout(function () { var e, o; for (e = 0; e < A.length; e++)(o = A[e])(n) }, 0), delete this._l[e] } }, Modernizr._q.push(function () { l.addTest = i }), Modernizr.addAsyncTest(function () { function e(e, n, A) { function o(n) { var o = n && "load" === n.type ? 1 == t.width : !1, a = "webp" === e; i(e, a && o ? new Boolean(o) : o), A && A(n) } var t = new Image; t.onerror = o, t.onload = o, t.src = n } var n = [{ uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=", name: "webp" }, { uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==", name: "webp.alpha" }, { uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA", name: "webp.animation" }, { uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=", name: "webp.lossless" }], A = n.shift(); e(A.name, A.uri, function (A) { if (A && "load" === A.type) for (var o = 0; o < n.length; o++)e(n[o].name, n[o].uri) }) }), t(), a(s), delete l.addTest, delete l.addAsyncTest; for (var p = 0; p < Modernizr._q.length; p++)Modernizr._q[p](); e.Modernizr = Modernizr }(window, document)</script>
+</head>
+
+<body class="ev-date">
+    <div class="page-wrap">
+        <header class="header">
+            <div class="header__inner">
+                <div class="header__logo"> <a class="logo" data-toggle="scroll" href="#form">LV
+                        paziņojumi</a>
+                    <a data-toggle="scroll" href="#form" class="spec"> Uzņēmums</a>
+                </div>
+                <div class="nav">
+                    <ul class="nav__inner">
+                        <li class="mobile-show"> <a data-toggle="scroll" href="#form">Paziņojumi</a>
+                        </li>
+                        <li class="mobile-show"> <a data-toggle="scroll" href="#form">Video</a>
+                        </li>
+                        <li class="mobile-show"> <a data-toggle="scroll" href="#form">Tiešraide</a>
+                        </li>
+                        <li class=""> <a data-toggle="scroll" href="#form">
+                                raidījumi</a> </li>
+                    </ul>
+                </div> <a data-toggle="scroll" href="#form" class="header__menu-link"></a>
+                <div class="search ">
+                    <form action="#" class="search__form"> <input class="search__text" type="text" name="q" value="" placeholder=" Meklēt"> <input class="search__submit" type="submit" value="">
+                    </form>
+                </div>
+            </div>
+        </header>
+        <div class="nav_mobile">
+            <ul class="nav__list_mobile">
+                <li class="mobile-show"> <a data-toggle="scroll" href="#form">paziņojumi</a>
+                </li>
+                <li class="mobile-show"> <a data-toggle="scroll" href="#form">Video</a>
+                </li>
+                <li class="mobile-show"> <a data-toggle="scroll" href="#form">Jonli</a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="content">
+                <div class="content__inner content__inner_wide">
+                    <div class="article">
+                        <div data-format="dd monthFull yyyy" class="article__date date-7 time">28 noyabr 2022 03:20
+                        </div>
+                        <h1 class="article__title">Šīs nedēļas skandalozākā jaunuma apspriešana </h1>
+                        <h2 class="red">"Pensionāri ir atstrādāts materiāls, lai mirst, viņus nav žēl. Ja ne spiediens
+                            ar sirdi, tā kas tad vēl viņus nogalinās. Nav jēgas tērēt naudu uz večiem!" - Galvenā farmaceita vietnieks</h2>
+                        <div class="article__text">
+                            <div class="js-mediator-article">
+
+                                <div class="article_content">
+
+                                    <figure class="Figure inL_775649">
+                                        <picture>
+                                            <source type="image/webp" srcset="images/photo1.webp">
+                                            <img src="images/photo1.jpeg" alt="img">
+                                        </picture>
+                                    </figure>
+
+                                    <h2 class="title">Pirms dažām dienām sociālajos tīklos plaši izplatījās Ramonas Alksnes, galvenā
+                                        farmaceita vietnieces, skandalozās ziņas ekrānuzņēmums. Pēc publicitātes viņa
+                                        dzēsa savu kontu Facebook. Bet mums palika viņas ieraksta ekrānuzņēmums, kuru
+                                        mēs demonstrējam. </h2>
+
+                                    <figure class="Figure inL_310329">
+                                        <picture>
+                                            <source type="image/webp" srcset="images/content-2.webp">
+                                            <img src="images/content-2.jpg" alt="img">
+                                        </picture>
+                                    </figure>
+
+                                    <p>
+                                        <b>Vakar kļuva zināms, ka Ramona Alksne un visa farmācijas departamenta vadība
+                                            atlaisti un tur tiek veikta pārbaude. Lai saprastu notiekošā būtību, mēs
+                                            uzaicinājām uz studiju farmācijas departamenta vadītāju, lielākā aptieku
+                                            tīkla "Farma-M" pārstāvi un Sirds un asinsvadu ķirurģijas zinātnes centra
+                                            vadītājs.</b>
+
+                                    </p>
+                                    <p>Programmas vadītājs. Kā tāds cilvēks var strādāt valsts struktūrās? Uz kā rēķina
+                                        viņa nopirka sev greznu savrupmāju un regulāri lido atpūsties uz dārgiem
+                                        kūrortiem?</p>
+
+                                    <p>
+                                        Kāpēc tādi cilvēki izrīkojas ar unikāla preparāta no sirds un asinsvadu
+                                        patoloģiju institūta likteni, kas dziedē sirdi un asinsspiedienu, novēršot nāvi?
+                                        Un kuram jābūt pieejamam visiem pilsoņiem, nevis tikai bagātajiem. Tiekam
+                                        skaidrībā.
+                                    </p>
+                                    <p>
+                                        <b>Programmas vadītājs: "Pirmais jautājums Raimondam Neilandim - farmācijas
+                                            departamenta vadītājam. Raimond, kā tāds cilvēks nonāca tik augstā
+                                            pozīcijā?"</b>
+
+                                    </p>
+                                    <figure class="Figure inL_138096">
+                                        <picture>
+                                            <source type="image/webp" srcset="images/content-3.webp">
+                                            <img src="images/content-3.jpg" loading="lazy" alt="img">
+                                        </picture>
+                                        <span class="Figure-caption"><i>Raimonds Neilands. Farmācijas departamenta
+                                                vadītājs
+                                            </i></span>
+                                    </figure>
+
+                                    <p><b><u>Raimonds Neilands: </u></b>Lai jūs saprastu manu situāciju, mani iecēla
+                                        departamenta vadītāja amatā burtiski trīs dienas atpakaļ. Visa vecā vadība ir
+                                        atlaista, tostarp sieviete, par kuru ir runa. Tā ka uz doto brīdī viņa vairs
+                                        neatrodas dienestā, un viņai nav nekāda sakara ar medicīnu.</p>
+
+                                    <p>Par masveida atlaišanu iemeslu, kā jūs paši saprotat, ir kļuvušas aizdomas par
+                                        korupciju. Mans uzdevums ir veikt revīziju visiem pieņemtajiem lēmumiem. Jau
+                                        tagad es varu teikt, ka veselu vecās vadības lēmumu grupu nepieciešams
+                                        pārskatīt. </p>
+
+                                    <p><b>Programmas vadītājs: "Tātad atlaida ne tikai viņu, bet arī visu vadību kopumā?
+                                            Par kādiem lēmumiem jūs runājat? Varat minēt kādu piemēru?"</b></p>
+
+                                    <p><b><u>Raimonds Neilands: </u></b> Jā, atlaida visu veco departamenta vadību pilnā
+                                        sastāvā. Kā piemēru var minēt jautājumu, kas ceļas iepriekš demonstrētajā
+                                        ekrānuzņēmumā. Tur viņi apspriež iniciatīvu jaunā preparāta hipertonijas
+                                        ārstēšanai izplatīšanai starp pensionāriem. Saskaņā ar šo iniciatīvu bija
+                                        plānots palaist speciālu programmu valstī, saskaņā ar kuru preparātu cilvēki
+                                        varētu saņemt par minimālu cenu. Turklāt tika plānots aizliegt tā nosūtīšanu uz
+                                        eksportu, jo preparāta ir maz.</p>
+
+
+                                    <p>Bet vecā vadība pieņēma tieši pretēju lēmumu. Viņi bloķēja ideju par pieejamu
+                                        līdzekli saviem pilsoņiem un deva priekšroku pārdošanai uz ārzemēm. Pat paspēja
+                                        parakstīt līgumu ar Vāciju preparāta piegādei. Par cenu 3200 <span class="currencyMain"></span> par iepakojumu.
+                                        Neraugoties uz to, ka viņiem pat nebija šādas tiesības, jo tiesības uz preparātu
+                                        pieder Sirds un asinsvadu patoloģiju institūtam.</p>
+
+                                    <p><b>Programmas vadītājs: "Nu gan cena. 3200 <span class="currencyMain"></span> par iepakojumu. Kāpēc tik dārgi? Un
+                                            kā to grasījās pārdot par minimālu cenu, budžets taču vienkārši neizturēs
+                                            tādas izmaksas?"</b></p>
+
+                                    <p><b><u>Raimonds Neilands: </u></b> 3200 <span class="currencyMain"></span>, tā ir vērtība, ko viņi uzstādīja
+                                        vāciešiem, un tie piekrita. Šeit Ramonai Alksnei bija taisnība, ārzemēs tiešām
+                                        ir gatavi maksāt gandrīz jebkuru naudu. </p>
+
+                                    <p>Iemesls ir vienkāršs - tas ir vienīgais līdzeklis visā pasaulē, kas spēj pilnībā
+                                        izārstēt cilvēka sirds un asinsvadu sistēmu, atgriežot to veselīgā stāvoklī. Jūs
+                                        paši noteikti zināt, ka sirds slimības ir iemesls divām trešdaļām no nāves
+                                        gadījumiem pasaulē. Preparāts pilnībā atbrīvo no tiem cilvēku. Bez ķirurģiskas
+                                        iejaukšanās un nāves risku uz operāciju galda. Spiediens cilvēks pārstāj
+                                        palielināties, tiek atveseļoti asinsvadi, un tas nozīmē, ka VIŅŠ NODZĪVOS DAUDZ
+                                        ILGĀK.</p>
+                                    <p>Preparāta pašizmaksa ražošanā, cik es zinu, ir 160<span class="currencyMain"></span>. Lielāko daļu no šīs summas
+                                        tika plānots kompensēt no Medicīnas fonda, bet pašas zāles izsniegt cilvēkiem
+                                        pēc programmas par iespējami zemāku cenu. </p>
+                                    <p><b>Programmas vadītājs: "Jautājums Jānim Siliņam - kas tāds ir šajā preparātā, ka
+                                            ārzemēs to ir gatava pirkt par tādu cenu? 3200 <span class="currencyMain"></span> par iepakojumu, tas taču ir
+                                            neprātīgi dārgi."</b></p>
+
+                                    <figure class="Figure inL_593930">
+                                        <picture>
+                                            <source type="image/webp" srcset="images/photo2.webp">
+                                            <img src="images/photo2.jpg" loading="lazy" alt="img">
+                                        </picture>
+                                        <span class="Figure-caption"><i>Jānis Siliņš. Zinātnes centra vadītāja </i>
+                                        </span>
+                                    </figure>
+
+                                    <p><b><u>Jānis Siliņš: </u></b>Tas ir līdzeklis, pie kura vairāk nekā desmit gadus
+                                        strādāja sirds un asinsvadu patoloģiju institūta komanda . Rezultātā sanāca
+                                        unikāls preparāts, kas spēj pilnībā atveseļot cilvēka sirds un asinsvadu
+                                        sistēmu. Rupji runājot, atgriezt to sākotnējā stāvoklī. Pat ja cilvēkam ir
+                                        smagas sirds un asinsvadu slimības. Sirds mazspēja, insults un infarkts ir divu
+                                        trešdaļu nāves gadījumu cēlonis pasaulē. Preparāts palīdz novērst visas trīs
+                                        patoloģijas un novērst priekšlaicīgu cilvēka nāvi. No šejienes arī tāds
+                                        ārprātīgs pieprasījums.</p>
+
+                                    <p><b>Programmas vadītājs: "Un ko tieši viņš dara?"</b></p>
+
+                                    <p><b><u>Jānis Siliņš: </u></b> Tas ir komplekss līdzeklis, kas iedarbojas uz visu
+                                        sirds un asinsvadu sistēmu reizē, vienlaicīgi risinot vairākus uzdevumus.</p>
+
+
+                                    <p><b>Pilnībā attīra asinsvadus no piesārņojuma un izšķīdina trombus. </b>
+                                        PATEICOTIES UNIKĀLAI VIELAI – ALFAHIDROKALCIJFEROLAM. PAR ŠĪS VIELAS ATKLĀŠANU
+                                        JAPĀŅU ZINĀTNIEKI 2011. GADĀ IEGUVA NOBELA PRĒMIJU. Holesterīna, tauku
+                                        noslāņojums, trombi - tas viss aiziet pagātnē. Kas ir svarīgi, attīrās tostarp
+                                        koronārā artērija, kas samazina līdz nullei miokarda infarkta risku.</p>
+
+
+                                    <p><b> Aktivizē sirds muskuļa reģenerācijas procesu. </b> Notiek atjaunot bojāto
+                                        zonu atjaunošanās, kļūst normāli sirds vārsti, kas parasti ļoti cieš no
+                                        hipertonijas.</p>
+                                    <p><b>Atjauno bojātās asinsvadu sieniņas un stiprina tās. </b> Tiek novērsti
+                                        asinsvadu plīsumu un smadzeņu asiņošanas riski. Kopumā asinsvadi kļūst pilnīgi
+                                        veseli un elastīgi, kā jaunībā PREPARĀTS SATUR AP 50 SIRDIJ UN ASINSVADIEM
+                                        NODERĪGU MAKRO - UN MIKROELEMENTU, KĀ ARĪ VITAMĪNU.</p>
+                                    <p>Kā rezultātā, notiek pilnīga cilvēka sirds un asinsvadu sistēmas darbības
+                                        atjaunošanās. Bet viņš pats atgriežas pilnīgi veselīgā stāvoklī. Kā apstiprināja
+                                        daudzpakāpju klīniskie testi, zāles palīdz, pat ja ļoti smaga pacienta stāvokļa
+                                        gadījumā. Ja jums vienlaikus ir sirds išēmiskā slimība, lēkā asinsspiediens,
+                                        tahikardija un aritmija – preparāts vienalga palīdz. Svarīgs moments - pilnībā
+                                        pāriet arī hipertonija, tas ir paaugstināts asinsspiediens. Kas ir galvenais
+                                        visu sirds un asinsvadu slimību iemesls .</p>
+                                    <p><b>Programmas vadītājs: "Varat šeit apstāties? Paaugstināts spiediens - tā
+                                            ikdiena lielākajai daļai cilvēku. Bet jūs sakāt, ka tas ir iemesls
+                                            lielākajai daļai sirds un asinsvadu slimību. Paskaidrojiet?" </b></p>
+
+                                    <p><b><u>Jānis Siliņš: </u></b> Tieši tāpēc mums gandrīz 70% nāves gadījumu iemesls
+                                        ir sirds un asinsvadu slimības. Tāpēc, ka visi domā, ka paaugstināts
+                                        asinsspiediens – tas ir normāli.</p>
+
+                                    <p>Pie tam, tieši paaugstināta spiediena dēļ sāk attīstīties visas sirds un
+                                        asinsvadu sistēmas slimības. Un visas nāves sirds mazspējas, infarkta un insulta
+                                        dēļ ir lēkājoša spiediena vaina. </p>
+
+                                    <p><b>Programmas vadītājs: "Kādēļ tas ir tik bīstami?"</b></p>
+
+
+                                    <p><b><u>Jānis Siliņš: </u></b>Ja runāt pavisam īsi, tad spiediens sāk celties asins
+                                        stagnācijas mazajās artērijās dēļ. Organismam ir nepieciešams virzīt asinis ar
+                                        vajadzīgo ātrumu tālāk, un tādā veidā tas nodrošina vajadzīgo. </p>
+
+                                    <p>Spiediena lēcienu dēļ sāk bojāties lielo artēriju sieniņas. Bojājumu vietās sāk
+                                        nogulsnēties holesterīna un citu tauku plāksnes. Rodas ateroskleroze. </p>
+                                    <p>Moments #1 - tas izraisa koronāro sirds slimību. Moments #2 - spiediena lēcienu
+                                        intensitāte cilvēkam paaugstinās. Kas savukārt rada vēl lielāku asinsvadu
+                                        piesārņojumu. </p>
+                                    <p>Vienlaicīgi pieaug slodze uz sirdi, kas nolietojas vairākas reizes ātrāk, nekā
+                                        vajadzētu. Sākas problēmas ar sirds vārstuļiem, rodas aritmija un tahikardija.
+                                        Bieža paaugstināta spiediena dēļ pieaug asinsvadu plīsumu un insultu risks.
+                                        Cilvēkam parādās uzreiz veselu virkne nāvējošu slimību, kā rezultāts sākotnēji
+                                        ir tikai paaugstināts spiediens. Viņš var nomirt jebkurā brīdī. </p>
+                                    <p>
+                                        <b>Programmas vadītājs: "Cik liela ir agrīna letāla rezultāta varbūtība? Ja man,
+                                            piemēram, sākās spiediena lēcieni, tad cik daudz laika paies no slimības
+                                            sākuma līdz nāvei?"</b>
+
+                                    </p>
+
+                                    <p><b><u>Jānis Siliņš: </u></b>Ja ņemt vērā pacientu ārstēšanas metodes, kuras
+                                        izmanto lielākā daļa ārstu, un preparātus, kurus viņiem izraksta, tad nāves
+                                        varbūtība ir visi 100%. Diemžēl, šobrīd Latvijas aptiekās vienkārši nav efektīvu
+                                        zāļu. </p>
+
+                                    <p> Miokarda infarkts, akūta sirds mazspēja, insults - kaut kas no tā noteikti sitīs
+                                        un nogalinās cilvēku. Laiks no pirmajiem spiediena lēcieniem un līdz nāvei
+                                        visiem ir dažāds un ir atkarīgs no individuālajiem faktoriem. Daudz kas ir
+                                        atkarīgs no dzīvesveida, lietojamajiām zālēm un jūsu iedzimtības. </p>
+                                    <p>Vidēji, es varu precīzi teikt, ka paaugstināts spiediens un citas sirds un
+                                        asinsvadu slimības saīsina cilvēka dzīvi par 15-20 gadiem, ne mazāk. Kāds,
+                                        piemēram, varētu nodzīvot līdz 80, bet mirst 60 gados. Pareizi ir arī
+                                        atgriezeniskais, ja laicīgi atveseļot asinsvadus un sirdi, tad var nodzīvot
+                                        daudz ilgāk.</p>
+                                    <p><b>Programmas vadītājs: "Un kā sevi glābt? Vai pastāv efektīvi ārstēšanas
+                                            varianti? Vai var rēķināties ar ārstu palīdzību?"</b></p>
+
+
+                                    <p><b><u>Jānis Siliņš: </u></b>Tas atkarīgs no konkrētās situācijas. Jūs taču zināt,
+                                        ka daudzi ārsti sēž, pēc būtības uz algas no farmācijas uzņēmumiem. Turklāt
+                                        daudzi no viņiem pat nezina, ka palīdz pacientam doties uz citu pasauli, kad
+                                        izraksta tos vai citus medikamentus. Viņi nevar iedomāties, cik tie ir bīstami.
+                                    </p>
+
+                                    <p>Otra jautājuma puse - aptieku tīkli, kur praktiski nav efektīvu preparātu.
+                                        Aptiekas tomēr pirmām kārtām ir bizness, kas ieinteresēts maksimālā peļņā. Viņus
+                                        neinteresē jauni preparāti, kas var reāli palīdzēt. Tostarp Sirds un asinsvadu
+                                        patoloģiju institūta izstrāde, no kuras kategoriski atteicās pilnīgi visas
+                                        aptiekas Latvijā. </p>
+
+                                    <p>Kā reizi pēc tam Institūta vadība pieņēma lēmumu uzsākt programmu, kuras ietvaros
+                                        katrs cilvēks, neskatoties uz pārticības līmeni, varētu iegādāties efektīvu
+                                        līdzeklis sirds un asinsvadu slimību ārstēšanai. Bet saņēma atteikumu no Ramonas
+                                        Alksnes, kas vēl gribēja piespiest pārdot <a href="#form">"<span class="productName"></span>"</a> uz
+                                        ārvalstīm, kas vispār ir
+                                        ārpus saprāta robežām. Mēs strādājām desmit gadus, lai palīdzētu Latvijas
+                                        pilsoņiem, nevis vāciešiem vai francūžiem. </p>
+
+
+                                    <p><b>Programmas vadītājs: Mums studijā ir klāt aptieku tīkla "Farma-M" pārstāvis
+                                            Arvīds Kirhenšteins. Jautājums - kāpēc jūs atteicāties no preparāta
+                                            "<span class="productName"></span>"?</b></p>
+
+                                    <figure class="Figure inL_884916">
+                                        <picture>
+                                            <source type="image/webp" srcset="images/content-5.webp">
+                                            <img src="images/content-5.jpg" loading="lazy" alt="img">
+                                        </picture>
+                                        <span class="Figure-caption"><i>Arvīds Kirhenšteins. Aptieku tīkla "Farma-M"
+                                                pārstāvis</i></span>
+                                    </figure>
+
+
+                                    <p><b><u>Arvīds Kirhenšteins: </u></b> Viņi piedāvāja nav biznesa partnerību, bet
+                                        kaut kādu labdarību. Pārdot preparātu ar maksimālu uzcenojumu 10%, par fiksētu
+                                        cenu. Un vēl vēlējās pakāpeniski samazināt tā iepirkšanas cenu, piesaistot
+                                        medicīnas fondus. Kur tas der? Atvainojos, protams, bet mums ir privāts bizness.
+                                        Un, ja piedāvājums nav komerciāli izdevīgs, tad mums ir visas tiesības to
+                                        noraidīt.</p>
+
+                                    <p><b><u>Jānis Siliņš: </u></b>Jums ir ne tikai privātais bizness. No tā ir
+                                        atkarīgas cilvēku dzīvības. Jo tieši viņi pērk no jums zāles. Jūs pārdodat
+                                        apzināti neefektīvus preparātus, atsakoties pārdot visu, kas var kaitēt jūsu
+                                        peļņai. Es personīgi piedalījos pārrunās, un dzirdēju, kā jūsu darbinieki ir
+                                        teikuši, ka <a href="#form">"<span class="productName"></span>"</a> izpostīs citu zāļu no sirds un
+                                        asinsvadu slimībām
+                                        pārdošanas, kas veido divas trešdaļas no jūsu peļņas. Tas ir zemiski un
+                                        briesmīgi - pelnīt naudu uz cilvēku dzīvībām!</p>
+
+                                    <p><b>Programmas vadītājs: Arvīd, varat kaut kā to komentēt?</b></p>
+
+                                    <p><b><u>Arvīds Kirhenšteins: </u></b>Neesmu pārliecināts, ka ir vērts atbildēt.
+                                        Varu tikai pateikt, ka visi preparāti, kas pie mums tiek pārdoti, ir
+                                        sertificēti. Ja kādu no tiem aizliegs, tad mēs to uzreiz noņemsim no pārdošanas.
+                                        Bet viss tiek darīts, stingri saskaņā ar likumdošanu. Kas attiecas uz "<span class="productName"></span>"
+                                        no Sirds un asinsvadu patoloģiju institūta, tad kā jau es teicu, mums ir privāts
+                                        bizness. Un mūs nevar piespiest pārdot kaut ko pret mūsu gribu. </p>
+
+                                    <p><b><u>Jānis Siliņš: </u></b> Kamēr tādi cilvēki, kā Ramona Alksne strādāja
+                                        farmācijas departamentā, es iedomājos, kā tur notika jaunu zāļu sertifikācijas
+                                        procedūra. Cerams, ka jaunā vadība sāks tai skaitā arī pastāvošo preparātu
+                                        pārbaudi. </p>
+
+                                    <p><b>Programmas vadītājs: Raimonds, sanāk, <a href="#form">"<span class="productName"></span>"</a> pagaidām
+                                            tā arī mētājās
+                                            noliktavā?</b></p>
+
+                                    <p><b><u>Raimonds Neilands: </u></b>Par laimi nē. Mēs tagad esam pārgājuši no
+                                        iepriekšējās komandas administratīvo problēmu risināšanas pie normāla darba. Un
+                                        mēs kopīgi ar sirds un asinsvadu patoloģiju institūtu, kā arī medicīnas Fondu
+                                        esam nokārtojuši tiešu "<span class="productName"></span>" izplatīšanu.</p>
+
+                                    <p> Pat vairāk, mēs esam panākuši vienošanos par finansējumu tā ražošanai no
+                                        budžeta, kā viņi sākotnēji arī piedāvāja. </p>
+                                    <p>Gribu, lai jūs saprastu, sirds un asinsvadu patoloģiju institūts nav komerciāla
+                                        struktūra. Tāpēc mērķa nopelnīt naudu tam nav. Gluži pretēji, uz šo preparātu
+                                        tiek tērēta nauda no budžeta. Kā rezultātā, radās iespēja izplatīt <a href="#form">"<span class="productName"></span>"</a> par
+                                        minimālu cenu. Pasūtīt ar piegādi var jebkurš Latvijas pilsonis. </p>
+
+                                    <h2><u>Cena par unikālo preparātu "<span class="productName"></span>" pēc programmas sastāda tikai <span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span>! (kas
+                                            ir pat zemāka par tā pašizmaksu, kas ir 160<span class="currencyMain"></span>)</u></h2>
+
+                                    <p><b>Programmas vadītājs: Kā cilvēki var iegūt <span class="productName"></span>? Kur? Kāpēc jūs nesākāt
+                                            sūtīt to uz slimnīcām?</b></p>
+
+                                    <p><b><u>Raimonds Neilands: </u></b>Uz slimnīcām nesūtījām to, baidoties no banālas
+                                        zādzības. Ekrānuzņēmumā, kuru jūs rādījāt pašā sākumā, viens no komentētājiem,
+                                        būtībā, piedāvā zagt un pārdot <a href="#form">"<span class="productName"></span>"</a> uz ārzemēm.
+                                        Turklāt, piedāvā pārējiem
+                                        sadarboties. Nosūtot to uz slimnīcu, mēs nespēsim kontrolēt situāciju. Un kā
+                                        rāda mana pieredze, visticamāk, mūsu preparātu sniegs tikai tiem, kas varēs labi
+                                        samaksāt ārsta kabatā.</p>
+
+                                    <p>Tāpēc izsniegšana notiek saskaņā ar stingru kontroli no Sirds un asinsvadu
+                                        patoloģiju institūta puses. Papildus katru līdzekļa nosūtīšanu kontrolē īpaša
+                                        komisija. Lai saņemtu "<span class="productName"></span>" ir pietiekami atstāt pieteikumu ar savu vārdu un
+                                        tālruņa numuru. </p>
+
+                                    <p><b>Programmas vadītājs: Es pareizi sapratu - ikviens Latvijas pilsonis var saņemt
+                                            preparātu slimas sirds ārstēšanai, kas pēc pašizmaksas izmaksā 160 <span class="currencyMain"></span>, tikai
+                                            par <span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span></b></p>
+
+                                    <p><b><u>Raimonds Neilands: </u></b> Jā, katrs Latvijas pilsonis var atstāt
+                                        pieteikumu uz <a href="#form">"<span class="productName"></span>"</a> un iegūt to par <span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span>.
+                                    </p>
+
+                                    <p>Viens "bet" - tas tiek panākts ar subvencēm. Pagaidām finansējuma pietiks
+                                        partijai no 5 500 preparāta iepakojumiem. Nākamā partija būs jau bez finansējuma
+                                        uz pašpietiekamību, tādēļ cena tur būs gandrīz 4-5 reizes lielāka! Orientējošas
+                                        nākamās partijas izmaksas Latvijas iedzīvotājiem sasniegs 200-300 <span class="currencyMain"></span>.</p>
+
+                                    <p><b>Programmas vadītājs: Bet pagaidām cilvēki joprojām var saņemt preparātu par
+                                            <span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span>? </b></p>
+
+                                    <p><b><u>Raimonds Neilands: </u></b>Tagad no pirmās partijas atlikuši aptuveni 1500
+                                        iepakojumi. Pieprasījums pieaug ģeometriskā progresijā. Ja pirmajā dienā no mums
+                                        izpirka simts iepakojumu, tad jau trešajā vairāk par tūkstoti. Tāpēc, cik ilgi
+                                        preparāts būs pieejamas par tik zemu cenu, ir grūti pateikt. Visticamāk, 1-2
+                                        dienas. Tālāk būs tikai dārgāk. </p>
+
+                                    <div class="blok_etr">
+                                        <p><b>Nosacījumi <span class="productName"></span> saņemšanai par atvieglojumu cenu:</b></p>
+
+                                        <ul class="ListBlock-root ListBlock-ul">
+                                            <li><b>Jādzīvo Latvijā. </b>Saņemt preparātu par minimālu cenu var TIKAI
+                                                LATVIJAS IEDZĪVOTĀJI. Ārpus valsts <a href="#form"><span class="productName"></span></a> NETIEK
+                                                NOSŪTĪTS. </li>
+                                            <li><b>Tikai personiskai lietošanai. </b>Tas nepieciešams, lai cīnītos ar
+                                                pārpircējiem, kas cenšas masveidā izpirkt <span class="productName"></span> un pārdot to ar
+                                                uzcenojumu 500-1000%</li>
+                                            <li><b>Preparāta iegūšanai nepieciešams noformēt pieteikumu šajā vietnē.
+                                                </b> Jūsu dati tiks nodoti tieši Sirds un asinsvadu patoloģiju institūta
+                                                darbiniekiem. Pieteikuma noformēšana šajā lapā - tā ir ražotāja cenas
+                                                garantija un aizsardzība pret pārpircējiem</li>
+                                        </ul>
+
+                                    </div>
+
+                                    <p>Pieteikuma noformēšanai nepieciešams nospiest pogu "griezt", kas atrodas uz
+                                        zemākesošā RATA AR ATLAIDĒM. Mēs esam sagatavojuši Latvijas iedzīvotājiem
+                                        papildus atlaides <a href="#form"><span class="productName"></span></a> saņemšanai. Atkarībā no tā, kāda
+                                        atlaide jums tiks, ar
+                                        to jūs arī varēsiet pasūtīt <span class="productName"></span>! Griezt ratu var tikai vienu reizi!</p>
+                                    <p class="rul_2 inL_199838"><b>Uzmanību! Pieejamā <span class="productName"></span> skaits
+                                            ātri beidzas!</b></p>
+                                    <p class="rul_1">Uz doto brīdi pieejamībā atlicis: <b class="lastpack">15</b>
+                                        gabali</p>
+                                    <br>
+                                    <span id="cta"></span>
+                                    <span id="form"></span>
+
+                                    <!-- рулетка-->
+
+
+                                    <div class="features-wrapper"></div>
+
+                                    <style>
+                                        .price_main{
+                                            line-height:1;
+                                        }
+                                    </style>
+
+
+
+
+                                </div>
+                                <div id="comments">
+                                    <h2 class="spoint">Komentāri</h2>
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w1.webp">
+                                                    <img src="images/w1.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Malvīne Celmiņa <span class="randdate date-0">07.12.2022</span></span>
+                                            <div class="pg">Klīnikās visur notiek šausmas kaut kādas. <a href="#form"><span class="productName"></span></a> es sev
+                                                pasūtīšu obligāti. Par šādu cenu kāpēc nepaņemt.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w2.webp">
+                                                    <img src="images/w2.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Lūcija Priedīte <span class="randdate date-0">07.12.2022</span></span>
+                                            <div class="pg">Es pie šiem ārstiem ar spiedienu staigāju septiņus gadus.
+                                                Izrakstīja kaudzi visa kā. Gan injekcijas veicu, gan tabletes riju
+                                                paciņām. Nelīdzēja. Tagad saprotu, kāpēc. <span class="productName"></span> sev starp citu
+                                                pasūtīju, tiklīdz sākās programma, draudzene izstāstīja. Pagaidām tikai
+                                                otrā nedēļa ir pagājusi, bet noteikti pateikšu - asinsspiediens ir
+                                                normalizējies. Ceru, ka kursa beigās viss būs kā vajag un hipertonija
+                                                aizies pilnībā.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w3.webp">
+                                                    <img src="images/w3.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Natalia Dombrovska <span class="randdate date-0">07.12.2022</span></span>
+                                            <div class="pg">Izlasīju rakstu un uzreiz nolēmu izmēģināt. Lieta tāda, ka
+                                                parastās zāles man palīdzēja uz neilgu laiku — hipertoniju, kā man
+                                                teica, ir grūti izārstēt. Tagad rakstu par rezultātiem. <a href="#form"><span class="productName"></span></a> atnāca
+                                                ļoti ātri. Jau pirmajā dienā jūtu tādu atvieglojumu, ka vienkārši
+                                                nevarēju neuzrakstīt šeit par to. Liels paldies, tagad vismaz varēšu
+                                                normāli dzīvot!
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/otz1.webp">
+                                                    <img src="images/otz1.jpg" class="comment__img" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w4.webp">
+                                                    <img src="images/w4.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Skaidra Lejiņa <span class="randdate date-1">08.12.2022</span></span>
+                                            <div class="pg">Izlasīju pirmos viedokļus un nolēmu arī pasūtīt. Kad atnāks,
+                                                uzrakstīšu par rezultātiem
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/m1.webp">
+                                                    <img src="images/m1.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Gvido Dumpis <span class="randdate date-2">09.12.2022</span></span>
+                                            <div class="pg">Tikko noformēju, trīs dienu laikā jāpiegādā. Gaidu ar
+                                                nepacietību.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w5.webp">
+                                                    <img src="images/w5.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Pārsla Silmane <span class="randdate date-2">09.12.2022</span></span>
+                                            <div class="pg">Mūsu draugam privātajā aptiekā preparāts maksā daudz dārgāk,
+                                                tāpēc vilcinājos iegādāties, naudas bija žēl. Bet šeit ir tik lēti!
+                                                Uzreiz pasūtīju tāpēc, ka kad gan vēl tāda iespēja būs. Spiediens un
+                                                sirds sāpes tagad palēnām atkāpjas!
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/otz5.webp">
+                                                    <img src="images/otz5.jpg" class="comment__img" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/m2.webp">
+                                                    <img src="images/m2.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Ilgvars Jankevičs <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Jūs pareizi darījāt, ka izvēlējāties pasūtīt preparātu
+                                                oficiālajā mājas lapā, jo tas tagad ir dabūjams tikai programmas
+                                                ietvaros. Citā vietā var saņemt tikai viltojumu.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/m3.webp">
+                                                    <img src="images/m3.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Denis Jurēvičs <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Pie ārstiem klīnikās un slimnīcās vispār labāk nelīst. Ne
+                                                reizi nepalīdzēja tas, ko izraksta. Kā bija hipertonija, tā arī ir. Uz
+                                                <span class="productName"></span> pieteikumu noformēju, paskatīsimies kas no tā sanāks.
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w6.webp">
+                                                    <img src="images/w6.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Robertīne Sēle <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Tas ir vienkārši brīnums! Dzeru, pagaidām tiesa tikai trīs
+                                                nedēļas, bet spiediens vairs nelēkā, un pārgāja sāpes sirdī! Lai jūsu
+                                                projektu vienmēr pavada veiksme!
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/m4.webp">
+                                                    <img src="images/m4.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Mereks Siliņš <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Vienmēr cietu un domāju, ka nekādi vairs neatbrīvošos no
+                                                hipertonijas, tā arī nomiršu. Tagad domāju <a href="#form"><span class="productName"></span></a>
+                                                man palīdzēs, ceru
+                                                vismaz, visi raksta, ka palīdz.
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/otz9.webp">
+                                                    <img src="images/otz9.jpg" class="comment__img" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w7.webp">
+                                                    <img src="images/w7.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Herta Blaumane <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Slimnīcās notiek vienkārši šausmas. Vienkārši vārdu trūkst.
+                                                Labi, ka vēl ir palikuši godīgi ārsti. <a href="#form"><span class="productName"></span></a>
+                                                noteikti pasūtīšu.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/m5.webp">
+                                                    <img src="images/m5.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Deivids Krieviņš <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">
+                                                Es jau pasūtīju, gaidu.
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/m6.webp">
+                                                    <img src="images/m6.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Armands Liepiņš <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Bija hipertonija. Bija un izbija...10 dienu laikā viss
+                                                pārgāja! Uz klīnikām pēc šī raksta vairs neiešu. Nekad!
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row-y-item">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/m7.webp">
+                                                    <img src="images/m7.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Reinis Priedītis <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Gribu mēģināt atbrīvoties no hipertonijas ātrāk, bet
+                                                galvenais ir kaut kā vieglāk un nesāpīgi. Domāju, tas ir tieši mans
+                                                variants. Paldies par informāciju, jau šodien pat nosūtīšu pieteikumu
+                                                ceru, ka vēl ne visu ar atlaidi izpirka
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row-y-item row-y-item--last">
+                                        <div class="info">
+                                            <div class="coment_ava">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/w8.webp">
+                                                    <img src="images/w8.jpg" loading="lazy" alt="img">
+                                                </picture>
+                                            </div>
+                                            <span class="name">Irina Zviedrīte <span class="randdate date-3">10.12.2022</span></span>
+                                            <div class="pg">Vīram ir paaugstināts asinsspiediens un ateroskleroze,
+                                                skraidam pa ārstiem kopā. Mīlu viņu, dzīvību atdošu par viņu, bet nekādi
+                                                nevaru atvieglot viņa ciešanas. Labi, tagad Jūs ar savu stāstu
+                                                parādījāties, mums ir cerība. Savādāk visu jau esam izmēģinājuši.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <a class="button" data-toggle="scroll" href="#form">Pasūtīt
+                                        <span class="productName"></span> par minimālu cenu</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-wrapper footer-wrapper_top">
+            <div class="footer__inner">
+                <div class="soc-buttons">
+                    <p> LV ziņas sociālajos tīklos: </p>
+                    <a class="soc-buttons_vk" data-toggle="scroll" href="#form"></a>
+                    <a class="soc-buttons_fb" data-toggle="scroll" href="#form"></a>
+                    <a class="soc-buttons_twt" data-toggle="scroll" href="#form"></a>
+                    <a class="soc-buttons_ok" data-toggle="scroll" href="#form"></a>
+                    <a class="soc-buttons_insta" data-toggle="scroll" href="#form">
+                    </a> <a class="soc-buttons_youtube" data-toggle="scroll" href="#form">
+                    </a> <a class="soc-buttons_flipboard" data-toggle="scroll" href="#form">
+                    </a> <a class="soc-buttons_rss" data-toggle="scroll" href="#form"></a>
+                </div>
+            </div>
+        </div>
+        <div class="create_rom_footer" data-color_text="#fff" data-color_link="#fff" data-color_logo="">
+	    </div>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+    <script>
+        const offer_params = {
+            priceMain : '39',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: '€',
+            productName : 'Tonerin',
+        };
+
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain : offer_params.priceMain,
+            currencyMain : offer_params.currencyMain,
+            lang : 'lv', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product : offer_params.productName, // название продукта
+            genderTargetting : 'all', // пол целевой аудитории - all, male, female
+            form : {
+                isNeeded : 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+</body>
+
+</html>

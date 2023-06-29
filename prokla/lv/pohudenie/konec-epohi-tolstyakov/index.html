@@ -1,0 +1,1819 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="lv" dir="ltr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Resnu cilvēku ēras beigas!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon" href="prod.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+
+  <script>
+    ! function (e, n, A) {
+      function o(e, n) {
+        return typeof e === n
+      }
+
+      function t() {
+        var e, n, A, t, a, i, l;
+        for (var f in r)
+          if (r.hasOwnProperty(f)) {
+            if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options
+                .aliases.length))
+              for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+            for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l
+              .length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[
+                0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+          }
+      }
+
+      function a(e) {
+        var n = u.className,
+          A = Modernizr._config.classPrefix || "";
+        if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+          var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+          n = n.replace(o, "$1" + A + "js$2")
+        }
+        Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className =
+          n)
+      }
+
+      function i(e, n) {
+        if ("object" == typeof e)
+          for (var A in e) f(e, A) && i(A, e[A]);
+        else {
+          e = e.toLowerCase();
+          var o = e.split("."),
+            t = Modernizr[o[0]];
+          if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+          n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[
+            0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a(
+            [(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+        }
+        return Modernizr
+      }
+      var s = [],
+        r = [],
+        l = {
+          _version: "3.6.0",
+          _config: {
+            classPrefix: "",
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0
+          },
+          _q: [],
+          on: function (e, n) {
+            var A = this;
+            setTimeout(function () {
+              n(A[e])
+            }, 0)
+          },
+          addTest: function (e, n, A) {
+            r.push({
+              name: e,
+              fn: n,
+              options: A
+            })
+          },
+          addAsyncTest: function (e) {
+            r.push({
+              name: null,
+              fn: e
+            })
+          }
+        },
+        Modernizr = function () {};
+      Modernizr.prototype = l, Modernizr = new Modernizr;
+      var f, u = n.documentElement,
+        c = "svg" === u.nodeName.toLowerCase();
+      ! function () {
+        var e = {}.hasOwnProperty;
+        f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+          return n in e && o(e.constructor.prototype[n], "undefined")
+        } : function (n, A) {
+          return e.call(n, A)
+        }
+      }(), l._l = {}, l.on = function (e, n) {
+        this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+          Modernizr._trigger(e, Modernizr[e])
+        }, 0)
+      }, l._trigger = function (e, n) {
+        if (this._l[e]) {
+          var A = this._l[e];
+          setTimeout(function () {
+            var e, o;
+            for (e = 0; e < A.length; e++)(o = A[e])(n)
+          }, 0), delete this._l[e]
+        }
+      }, Modernizr._q.push(function () {
+        l.addTest = i
+      }), Modernizr.addAsyncTest(function () {
+        function e(e, n, A) {
+          function o(n) {
+            var o = n && "load" === n.type ? 1 == t.width : !1,
+              a = "webp" === e;
+            i(e, a && o ? new Boolean(o) : o), A && A(n)
+          }
+          var t = new Image;
+          t.onerror = o, t.onload = o, t.src = n
+        }
+        var n = [{
+            uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+            name: "webp"
+          }, {
+            uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+            name: "webp.alpha"
+          }, {
+            uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+            name: "webp.animation"
+          }, {
+            uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+            name: "webp.lossless"
+          }],
+          A = n.shift();
+        e(A.name, A.uri, function (A) {
+          if (A && "load" === A.type)
+            for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+        })
+      }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+      e.Modernizr = Modernizr
+    }(window, document);
+  </script>
+</head>
+
+<body class="dark-blue body-white-back is-desktop ev-date" style="overflow: visible; margin-right: 0px;">
+  <div class="content-wrapper">
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="#forma" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="navbar-title" href="#forma">
+          <div class="navbar-title__bg"></div>
+          <span class="navbar-title__hashtag">#JAUNUMI</span>
+        </a>
+        <a class="navbar-rss hidden-xs hidden-sm" href="#forma">
+          <svg width="22" height="22" viewbox="880 78 22 22" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <rect id="a" width="22" height="22" rx="2"/>
+              <mask id="b" x="0" y="0" width="22" height="22" fill="#fff">
+                <use xlink:href=""/>
+              </mask>
+            </defs>
+            <g fill="none" fill-rule="evenodd" transform="translate(880 78)">
+              <g fill="#FFF">
+                <path d="M7.74 16c0 1.022-.836 1.85-1.87 1.85C4.84 17.85 4 17.02 4 16s.838-1.846 1.87-1.846c1.034 0 1.87.827 1.87 1.847"/>
+                
+                <path d="M4 8.694v2.555s6.28.17 6.474 6.6h2.765S13.563 9.114 4 8.692"/>
+                <path d="M4 4v2.603s10.216-.16 11.354 11.246h2.57S18.217 4.77 4 4"/>
+              </g>
+              <use stroke="#FFF" mask="url(#b)" stroke-width="2" xlink:href="#forma"/>
+            </g>
+          </svg>
+        </a>
+        <a class="gradient-navbar visible-xs visible-sm" href="#forma"></a>
+        <ul class="navbar-menu">
+          <li class="navbar-menu-item dropdown" style="display: list-item; order: 4;">
+            <a class="navbar-menu-toggle" href="#forma">VAIRĀK</a>
+          </li>
+          <li class="navbar-menu-item">
+            <a href="#forma"># JAUNUMI PASAULĒ</a>
+          </li>
+          <li class="navbar-menu-item">
+            <a href="#forma">#NOTIKUMI</a>
+          </li>
+          <li class="navbar-menu-item">
+            <a href="#forma">#VALSTS</a>
+          </li>
+          <li class="navbar-menu-item">
+            <a href="#forma">#JAUNUMI</a>
+          </li>
+          <li class="navbar-menu-item">
+            <a href="#forma">#POLITIKA</a>
+          </li>
+          <li class="navbar-menu-item">
+            <a href="#forma">#KULTŪRA </a>
+          </li>
+        </ul>
+        <div class="navbar-right"> <a class="button-text button-text-stream" href="#forma">Ēters</a> <a class="button-text button-text-mylife" href="#forma">Mana dzīve</a> <span class="button-user-container"> <a href="#forma" class="button button-user"></a> </span> <a href="#forma"> <span class="button-notification-container"></span></a> <a href="#forma" class="button button-search"> </a>
+        </div>
+        <div class="search-container">
+        </div>
+      </div>
+    </nav>
+
+  </div>
+  <div class="post-page" data-offset="timestamp">
+    <!-- Popups -->
+    <div class="popups buy-pop">
+      <div class="popup">
+
+        <p><span class="pop-name">Aleksa</span> no <span class="pop-city">Piltenes</span> pasūtīja <span class="pop-prod">"<span class="productName"></span>"</span></p>
+      </div>
+    </div>
+
+    <div class="popups count-pop">
+      <div class="popup">
+
+        <p>Ir palikušas akcijas paciņas ar 50% atlaidi: <span class="pop-count">33</span> gab. <br>Akcija ilgst tikai
+          līdz <b><span class="date-0"></span></b>(ieskaitot)</p>
+      </div>
+    </div>
+
+    <div class="pop-center">
+      <div class="pop-center-content">
+        <div class="cls-pop"></div>
+        <p><span class="pct1">Prece ar 50% atlaidi nav pieejama! Tomēr neuztraucieties - mēs esam jums rezervējuši
+            pēdējo paciņu!</span></p>
+        <p><span class="pct2">Jūs varat noklikšķināt šeit uz "krustiņa", izlasīt rakstu un pasūtīt preci. Vai
+            arī noklikšķiniet "pāriet pie pasūtījuma", lai pasūtīti tieši tagad!</span></p>
+        <a class="button-submit scrollToForm" href="#forma">
+          <span class="button-submit-text pcas">Pāriet pie pasūtījuma</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Popups -->
+    <div class="post-page-container">
+      <article class="post-page-item">
+        <div class="c-main">
+          <header class="o-jumbotron c-entry c-entry-lg c-entry-inverse u-pa-0">
+            <div class="c-port js-port-back">
+              <div class="c-port-back">
+                <div class="u-pos-r">
+                </div>
+              </div>
+            </div>
+          </header>
+          <div class="post-page__columns">
+            <div class="post-page__columns-left sticky-parent">
+              <ul class="tags tags_left">
+                <li class="tags-item">
+                  <a href="#forma">#JAUNUMI</a>
+                </li>
+                <li class="tags-item">
+                  <a href="#forma"># PĒDĒJIE JAUNUMI</a>
+                </li>
+
+                <li class="tags-item">
+                  <a href="#forma"># PĒDĒJAIS</a>
+                </li>
+              </ul>
+              <div class="read-next">
+                <h3 class="read-next__title">LASĪT ARĪ</h3>
+                <div class="read-next__container read-next__container_visible" data-mywidget-id="myWidget_ff7084618ee0d36bb819be1ea4870878_1">
+                  <article class="read-next-item">
+                    <a href="#forma" data-mywidget-id="myWidgetItem_ff7084618ee0d36bb819be1ea4870878_0">
+                      <div class="read-next-item__labels read-next-item__labels_top"></div>
+                    </a>
+                    <a class="read-next-item__title" href="#forma"> Kādēļ zāles pensionāriem ir tik dārgas? </a>
+                  </article>
+                  <article class="read-next-item">
+                    <a href="#forma" data-mywidget-id="myWidgetItem_ff7084618ee0d36bb819be1ea4870878_1">
+                      <div class="read-next-item__labels read-next-item__labels_top"></div>
+                    </a>
+                    <a class="read-next-item__title" href="#forma"> Izmaiņas veselības aizsardzības sistēmā - viņi vēlas
+                      atlaist daudz padzīvojušu ārstu. </a>
+                  </article>
+                  <article class="read-next-item">
+                    <a href="#forma" data-mywidget-id="myWidgetItem_ff7084618ee0d36bb819be1ea4870878_4">
+                      <div class="read-next-item__labels read-next-item__labels_top"></div>
+                    </a>
+                    <a class="read-next-item__title" href="#forma"> Prostatīts - 21. gadsimta mēris </a>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="post-page__columns-right">
+              <header class="post-page-header">
+                <ul class="tags">
+                  <li class="tags-item">
+                    <a href="#forma"># PĒDĒJIE JAUNUMI</a>
+                  </li>
+
+                </ul>
+
+                <div class="post-page-tools-footer">
+                  <div class="social-share social-share_post social-share_column-xs" data-action="Big buttons under title">
+                    <div class="social-share__icons">
+                      <a class="social-share__icon social-share__icon_small social-share__icon_vk js-vk" href="#forma">
+                        <svg width="24" height="24" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <a class="social-share__icon social-share__icon_small social-share__icon_tw js-tw" href="#forma">
+                        <svg width="18" height="15" viewbox="0 0 18 15" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0 12.616a10.657 10.657 0 0 0 5.661 1.615c6.793 0 10.507-5.476 10.507-10.223 0-.156-.003-.31-.01-.464A7.38 7.38 0 0 0 18 1.684a7.461 7.461 0 0 1-2.12.564A3.621 3.621 0 0 0 17.503.262c-.713.411-1.505.71-2.345.871A3.739 3.739 0 0 0 12.462 0C10.422 0 8.77 1.607 8.77 3.59c0 .283.033.556.096.82A10.578 10.578 0 0 1 1.254.656a3.506 3.506 0 0 0-.5 1.807c0 1.246.65 2.346 1.642 2.99a3.731 3.731 0 0 1-1.673-.45v.046c0 1.74 1.274 3.193 2.962 3.523a3.756 3.756 0 0 1-.972.126c-.239 0-.47-.022-.695-.064.469 1.428 1.833 2.467 3.449 2.494A7.531 7.531 0 0 1 .88 12.665c-.298 0-.591-.014-.881-.049" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <a class="social-share__icon social-share__icon_small social-share__icon_fb js-fb" href="#forma">
+                        <svg width="8" height="16" viewbox="0 0 8 16" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.937 2.752h1.891V.01L5.223 0c-2.893 0-3.55 2.047-3.55 3.353v1.829H0v2.824h1.673V16H5.19V8.006h2.375l.308-2.824H5.19v-1.66c0-.624.44-.77.747-.77" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <a class="social-share__icon social-share__icon_small social-share__icon_gp js-gp" href="#forma">
+                        <svg width="21" height="14" viewbox="0 0 21 14" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.816.006C8.5-.071 10.08.646 11.37 1.655a24.11 24.11 0 0 1-1.728 1.754C8.091 2.36 5.89 2.06 4.34 3.272c-2.217 1.503-2.317 5.05-.186 6.668 2.073 1.843 5.991.928 6.564-1.895-1.298-.02-2.6 0-3.899-.042-.003-.76-.006-1.518-.003-2.278 2.17-.006 4.341-.01 6.516.007.13 1.786-.11 3.688-1.23 5.164-1.696 2.34-5.1 3.022-7.756 2.02C1.681 11.921-.207 9.161.018 6.348.077 2.905 3.305-.11 6.816.006zm10.375 3.812h1.893c.004.634.007 1.27.014 1.903.632.007 1.27.007 1.902.013v1.893l-1.902.016c-.007.636-.01 1.27-.014 1.902h-1.896c-.006-.632-.006-1.266-.013-1.899l-1.902-.02V5.735c.633-.006 1.266-.01 1.902-.013.004-.636.01-1.27.016-1.903z" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <a class="social-share__icon social-share__icon_small social-share__icon_mail js-mail" href="#forma">
+                        <svg width="17" height="16" viewbox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.205 3.322c1.3 0 2.521.563 3.418 1.445v.003c0-.423.29-.742.694-.742l.101-.001c.631 0 .76.586.76.771l.004 6.584c-.045.431.454.653.73.377 1.077-1.086 2.366-5.585-.67-8.192-2.831-2.43-6.629-2.03-8.649-.664-2.146 1.453-3.52 4.668-2.185 7.688 1.455 3.294 5.617 4.276 8.091 3.296 1.253-.496 1.832 1.165.53 1.708-1.965.822-7.438.74-9.994-3.605C-.692 9.057-.6 3.896 3.98 1.222c3.505-2.046 8.125-1.48 10.91 1.374 2.913 2.985 2.743 8.572-.097 10.745-1.288.986-3.199.025-3.187-1.413l-.013-.47a4.827 4.827 0 0 1-3.388 1.381c-2.566 0-4.825-2.215-4.825-4.733 0-2.543 2.259-4.784 4.825-4.784zm3.231 4.602C11.34 6.08 9.944 4.97 8.26 4.97h-.063c-1.945 0-3.023 1.5-3.023 3.204 0 1.908 1.305 3.113 3.015 3.113 1.907 0 3.162-1.37 3.252-2.992l-.004-.372z" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <a class="social-share__icon social-share__icon_small social-share__icon_viber js-viber" href="#forma">
+                        <svg width="21" height="21" viewbox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.639 14.904c-.628-.506-1.3-.96-1.96-1.423-1.318-.926-2.523-.997-3.506.491-.552.836-1.325.873-2.133.506-2.228-1.01-3.949-2.567-4.956-4.831-.446-1.002-.44-1.9.603-2.609.552-.375 1.108-.818 1.064-1.637C7.693 4.334 5.1.765 4.077.39 3.653.233 3.23.243 2.8.388.4 1.195-.594 3.169.358 5.507c2.84 6.974 7.84 11.829 14.721 14.792.392.169.828.236 1.049.297 1.567.015 3.402-1.494 3.932-2.992.51-1.441-.568-2.013-1.421-2.7zm-7.716-13.8c-.417-.064-1.052.026-1.02-.525.046-.817.8-.513 1.165-.565 4.833.163 8.994 4.587 8.935 9.359-.006.468.162 1.162-.536 1.149-.668-.013-.493-.717-.553-1.185-.64-5.067-2.96-7.46-7.991-8.233zm.984 1.39c3.104.372 5.64 3.065 5.615 6.024-.047.35.157.95-.409 1.036-.764.116-.615-.583-.69-1.033-.511-3.082-1.593-4.213-4.7-4.907-.458-.102-1.17-.03-1.052-.736.113-.671.752-.443 1.236-.385zm.285 2.419c1.377-.034 2.992 1.616 2.969 3.044.014.39-.028.802-.49.857-.333.04-.552-.24-.586-.585-.128-1.272-.798-2.023-2.073-2.228-.382-.061-.757-.184-.579-.7.12-.345.436-.38.76-.388z" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <a class="social-share__icon social-share__icon_small social-share__icon_telegram js-telegram" href="#forma">
+                        <svg width="21" height="17" viewbox="0 0 21 17" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.873 13.323c-.784.757-1.56 1.501-2.329 2.252-.268.262-.57.407-.956.387-.263-.014-.41-.13-.49-.378-.589-1.814-1.187-3.626-1.773-5.44a.425.425 0 0 0-.322-.317A417.257 417.257 0 0 1 .85 8.541a2.37 2.37 0 0 1-.59-.265c-.309-.203-.353-.527-.07-.762.26-.216.57-.397.886-.522C2.828 6.304 4.59 5.638 6.35 4.964L19.039.101c.812-.311 1.442.12 1.366.988-.05.572-.2 1.137-.32 1.702-.938 4.398-1.88 8.794-2.82 13.191l-.003.026c-.23 1.006-.966 1.28-1.806.668-1.457-1.065-2.91-2.134-4.366-3.201-.068-.05-.14-.098-.217-.152zm-3.22 1.385c.023-.103.038-.151.043-.2.092-.989.189-1.977.27-2.967a.732.732 0 0 1 .256-.534c2.208-1.968 4.41-3.943 6.613-5.917.626-.561 1.256-1.12 1.876-1.688.065-.06.08-.174.117-.263-.095-.027-.203-.095-.285-.072-.189.052-.38.127-.545.23C12.722 5.343 9.45 7.395 6.175 9.44c-.167.104-.214.19-.147.389.518 1.547 1.022 3.098 1.531 4.648.02.061.048.12.094.23z" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                      <a class="social-share__icon social-share__icon_small social-share__icon_whatsapp js-whatsapp" href="#forma">
+                        <svg width="22" height="22" viewbox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.926 5.587c-.213-.51-.375-.53-.698-.543a6.234 6.234 0 0 0-.369-.013c-.42 0-.86.123-1.125.395-.323.33-1.125 1.1-1.125 2.677 0 1.578 1.15 3.104 1.306 3.318.162.213 2.244 3.498 5.476 4.837 2.528 1.048 3.278.95 3.853.828.84-.181 1.894-.802 2.16-1.552.265-.75.265-1.39.187-1.527-.078-.135-.291-.213-.614-.375-.323-.161-1.894-.937-2.192-1.04-.29-.11-.569-.072-.788.239-.31.433-.614.873-.86 1.138-.194.207-.511.233-.776.123-.356-.149-1.351-.498-2.58-1.591-.95-.847-1.596-1.901-1.784-2.218-.187-.323-.02-.511.13-.685.161-.201.316-.343.478-.53.161-.188.252-.285.355-.505.11-.214.033-.434-.045-.595-.078-.162-.724-1.74-.99-2.38zM10.996 0C4.934 0 0 4.934 0 11c0 2.405.776 4.636 2.095 6.447L.724 21.534l4.228-1.351A10.913 10.913 0 0 0 11.003 22C17.067 22 22 17.066 22 11S17.067 0 11.003 0h-.006z" fill="#FFF" fill-rule="evenodd"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </header>
+
+              <div class="post-page-content">
+                <div class="post-page-content-main">
+                  <div class="contentBox">
+                    <h1>
+                      <span style="font-family:Arial,Helvetica,sans-serif;color: darkred">
+                        Resnu cilvēku ēras beigas! Brīnums, ko paveica pats gudrākais students no Rīgas, ir ieguvis
+                        Latvijas Republikas augstāko medicīnas balvu par metodes atklāšanu, kura palīdz zaudēt 15 kg 1
+                        mēneša laikā bez diētām, bez smagiem fiziskiem vingrinājumiem un bez ķermeņa masas atgriešanās!
+                      </span>
+                    </h1>
+
+
+                    <hr style="border: #cc0000 1px solid;">
+                    <h3><span style="font-family:Arial,Helvetica,sans-serif">Dietologi baidās palikt bez darba. Vai
+                        jaunā svara zaudēšanas metode atstās bez darba tūkstošiem dietologu? Vadošie dietologi nešaubās,
+                        ka tā arī būs. Tādēļ, ka tagad mums ir dabīgs produkts svara zaudēšanai, ko ir izstrādājis
+                        Latvijas students, kas cīnās ar lieko svaru un kas rada gaidītos panākumus. </span>
+                    </h3>
+                    <hr style="border: #cc0000 1px solid;">
+                    <picture>
+                      <source type="image/webp" srcset="images/13.webp">
+                      <img src="images/13.jpg" class="img img-responsive" style="margin: 0 auto;" alt="img"></picture>
+                    <p><span style="font-family:Arial,Helvetica,sans-serif"><b>2020. gada sākumā Eiropas endokrinologu
+                          kongresā notika neticamais. Visa zāle 10 minūtes aplaudēja dāmai, kura stāvēja uz tribīnes. Tā
+                          bija Jeļena Klapkova - studente no Latvijas. Tieši viņa piedāvāja izmantot unikālu formulu,
+                          kas ļauj ātri novājēt, neierobežojot un nemainot ēšanas veidus un cilvēka ieradumus.
+                        </b></span></p>
+                    <picture>
+                      <source type="image/webp" srcset="images/11.webp">
+                      <img src="images/11.jpg" class="img img-responsive" loading="lazy" alt="img" style="margin: 10px auto 0;"></picture>
+                    <p><span style="font-family:Arial,Helvetica,sans-serif"><i>Jeļenai iešāvās prātā lieliska ideja un
+                          Latvijas zinātniskie institūti sāka izskatīt iespēju pārdot to aptiekās. Preparāta
+                          izstrādāšanā piedalījās visi Endokrinoloģijas speciālisti, Nacionālās medicīnas universitātes
+                          zinātnieki un daudzi citi, šis preparāts jau tiek ražots un tam ir lieliski rezultāti, tas ir
+                          ļoti efektīvs. </i></span>
+                    </p>
+                    <h3 style="font-family:Arial,Helvetica,sans-serif;color: red;">
+                      Par to kā jaunais produkts var glābt miljoniem dzīvību un kādēļ Latvijas pilsoņi to var iegūt ar
+                      lielu atlaidi, jūs uzzināsiet šodien - šajā rakstā.
+                    </h3>
+                    <div class="corr">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"><b>Korespondents: "Sveika Ļena, tu
+                            esi desmit pašu gudrāko medicīnas studentu pasaulē vidū. Kādēļ tu sāki nodarboties ar
+                            novājēšanas tēmu?" </b></span></p>
+                    </div>
+
+                    <div class="stud">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"><b>Ļena</b>: Es negribētu par to runāt
+                          publiski, bet motivācija šeit ir tīri personīga. Pirms dažiem gadiem mana māte mira no
+                          hipertonijas un liekā svara. Viss likās lieliski, tad viņas veselība miegā negaidīti
+                          pasliktinajās, un viņa nomira no sāpēm. Mana vecmāmiņa mira no tā paša. Tad es sāku vairāk
+                          lasīt par problēmām, kas ir saistītas ar lieko svaru un atbrīvošanos no slimības. Es biju
+                          šokēta, kad sapratu, ka diēta, fiziskie vingrinājumi, dažādas zāles un liposakcija 90%
+                          gadījumu ir bīstami veselībai un tikai padziļina liekā svara problēmu. Bet mana māte ievēroja
+                          speciālas diētas un nodarbojās ar aerobiku gandrīz 5 gadus. </span></p>
+                      <p>Pēdējo trīs gadu laikā es pilnībā iegrimu šajā tēmā. Īstenībā, savas disertācijas rakstīšanas
+                        laikā, es atklāju jaunu metodi, kura dod iespēju cilvēkiem ar lieko svaru atbrīvoties no šīs
+                        saslimšanas, par kuru pašlaik daudz runā. Beidzot es sapratu, ka ir izdomāts kas jauns. Bet man
+                        nebija nojausmas, ka tas var izraisīt dažādu zinātnisko struktūru tādu interesi. </p>
+
+                    </div>
+                    <div class="corr">
+                      <div style="font-family:Arial,Helvetica,sans-serif" class="av2">
+                        <p><b>Korespondents: "Nu, tiešām, kas ir ieinteresēts šajā produktā?" </b></p>
+                      </div>
+
+                    </div>
+                    <div class="stud">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"><b>Ļena</b>: Tikko kā parādījās
+                          publikācijas par manu metodi, es uzreiz sāku saņemt formulas pirkšanas priekšlikumus. Vispirms
+                          ar mani sazinājās franču kompānija un piedāvāja 120 000 euro. Pēdējais bija amerikāņu
+                          farmācijas holdings, kurš vēlējās pirkt manu formulu par 35 miljoniem dolāru. Pašlaik es esmu
+                          nomainījusi tālruņa numuru un neieeju pat sociālajos tīklos, jo katru dienu saņemu
+                          priekšlikumus pa visiem sakaru kanāliem. </span>
+                      </p>
+                    </div>
+                    <div class="corr">
+                      <div style="font-family:Arial,Helvetica,sans-serif" class="av2">
+                        <p><b>Korespondents: "Cik man zināms, jūs formulu nepārdevāt?"</b> </p>
+                      </div>
+                    </div>
+                    <div class="stud">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"><b>Ļena</b>: Jā. Tas var likties nedaudz
+                          dīvaini, bet es radīju šo formulu ne naudas pelnīšanai. Kas notiks, ja es pārdošu recepti?
+                          Viņi saņem patentu, aizliedz šīs formulas ražošanu un paaugstina cenu. Neskatoties uz to, ka
+                          esmu jauna, es neesmu dumja. Šādā situācijā Latvijas iedzīvotāji vienkārši nevar atbrīvoties
+                          no problēmām, kas saistītas ar lieko svaru. Viens ārzemju ārsts man pateica, ka šādām zālēm
+                          Latvijā būtu jāmaksā ne mazāk kā 5000 euro. Bet tas ir negodīgi! Kas Latvijā var tās nopirkt
+                          par 5000 euro? </span></p>
+                      <p>Tādēļ, kad es saņēmu priekšlikumu no valsts piedalīties nacionālā produkta izstrādāšanā, es
+                        uzreiz tam piekritu. Mēs sadarbojāmies ar labākajiem Nacionālās medicīnas universitātes
+                        Endokrinoloģijas institūta speciālistiem. Pašlaik šis produkts jau ir izgājis klīniskos
+                        izmēģinājumus un ir pieejams visiem cilvēkiem. </p>
+
+                    </div>
+
+                    <p><span style="font-family:Arial,Helvetica,sans-serif;color: darkred"><b>
+                          Profesors Miroslavs Ttrojans - Latvijas endokrinologs, zinātnieks - koordinēja produkta
+                          ražošanu. Mēs lūdzam viņu nedaudz pastāstīt mums par šo produktu un viņa plāniem.
+                        </b></span></p>
+            
+                      <img class="img img-responsive" src="images/foto.jpg" style="width:100%" loading="lazy" alt="img">
+              
+                    <p>
+                    </p>
+                    <div class="corr">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"><b>Korespondents: "Pēc Jūsu domām,
+                            kur slēpjas galvenā Klapkovas kundzes ideja? Vai tiešam ir iespējams zaudēt svaru bez
+                            speciāla diētiska uztura un fiziskām slodzēm?" </b></span></p>
+                    </div>
+                    <div class="doc">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"><b>Miroslavs Trojans:</b> <b>"Diēta
+                            un novājēšana - tās ir mocības un nevajadzīga naudas tērēšana!“</b> <br>Šos vārdus jau ir
+                          apliecinājuši 14 tūkstoši apmierinātu mūsu dabīga svara zaudēšana produkta lietotāju, kuri jau
+                          ir izgājuši ārstēšanas kursu, un tie, kuri jau bauda slaidu figūru. Mēs nolēmām testēt vienu
+                          populāru diētisko diētu. Un rūpīgi pārbaudījām, kādēļ tā nedod vēlamos rezultātus. Šeit jūs
+                          varat iepazīties ar secinājumiem: </span></p>
+                      <p><b>Vairums diētu pieredzējuši cilvēki neiesaka:</b> lai uz visiem laikiem zaudētu 10 kg, ir
+                        apmēram 2,5 mēnešus jāievēro diēta. Neskaitot to, visu mūžu ir jāierobežo sevi iecienīta ēdiena
+                        lietošana, lai svars neatgrieztos! Tas viss tādēļ, ka 98% diētisko programmu iesaka amatieri.
+                        Cilvēki, kuriem nav priekšstata par to kā darbojas organisms, kā arī par gremošanas sistēmu un
+                        pariezu ēšanu. Šīs diētas ir organismam kaitīgas, veselībai bīstamas un absolūti neefektīvas.
+                        <br><b>Diēta novājina organismu:</b> diēta arī izraisa vitamīnu un minerālu trūkumu. Organisms
+                        zaudē enerģiju, jo mēs pastāvīgi jūtam nogurumu, satraucamību un miegainību. Organisma
+                        pretestības spēja vīrusiem un baktērijam asi krītas, tādēļ mēs bieži inficējamies ar kaut kādu
+                        saslimšanu. <br><b>Tā saucamie diētiskie produkti var būt kaitīgi veselībai: </b> pārtikas
+                        produktu ražotāji piesaista cilvēkus, kuri pērk speciālus "fitnesa" produktus par ļoti
+                        augstu cenu. Diemžēl, neskatoties uz to, ka šajos produktos nav daudz šķiedrvielu, kā jūs
+                        gaidāt, tajos ir daudz glikozes, pateicoties kurai, kā jau jūs zināt, jūs varat saņemt vairāk
+                        kaloriju, nekā ēdot hamburgerus. No otras puses, produkti, kuri nesatur cukuru, iespējams, satur
+                        kancerogēno aspartamu! <br><b>Diēta, tāpat kā iepriekš, provocē cilvēkam bada sajūtu, tā arī
+                          paredz atteikšanos no iemīļotā ēdiena un sirdsapziņas mokas:</b> visam tam tik pāri ir grūti.
+                        Šādi aizliegumu rezultātā mums pēc tam nepaliek spēka lai sevi turpmāk ierobežotu un badotos,
+                        bet svars atgriežas tā rezultātā, ka pēc tam, gluži pretēji, mēs ēdam par daudz. <br><b>Diēta -
+                          tas ir dārgi:</b> ikmēneša diētiskā ēdienkarte un dietologa apmeklējums izmaksā vismaz 5000
+                        euro. Neskaitot to, visi "fitnesa" ēdieni un ēdieni ar zemu kaloriju skaitu parasti
+                        maksā dārgi. Rezultāta mēs tērējam diētiskai ēšanai 4 reizes vairāk naudas, nekā parastajai. Un
+                        nolūkā ievērot svaru, mums tā ir jāēd visu mūžu. Neviens maciņš neizturēs šādus tēriņus.
+                        <br><b>Pēc diētas rodas tā saucamais "jo-jo efekts":</b> bada novājinātais organisms
+                        automātiski sāks uzkrāt enerģijas krājumus nākamajai dienai, sakarā ar ko vielmaiņa palēninās -
+                        līdz pilnīgi apstājas. Rezultātā - pēc ēšanas mūsu organisms atgriežas pie sava sākotnējā svara,
+                        kurš bija iepriekš, pat ātrāk, nekā notika svara zaudēšana. Tādēļ Klapkovas kundzes novājēšana
+                        metode ir īsts izrāviens cīna par slaidu figūru! </p>
+                      <p><b>Klapkovas kundzes metode - rāda īsāko ceļu uz novājēšanu. Metode, kura palīdz novājēt uz
+                          visiem laikiem!</b> <br>
+
+                        <br> Tieši viņa piedāvāja izmantot unikālu ķīmisko formulu, kas palaiž ketozes* procesu, bez
+                        bažām par treknu barību! <br>
+                        <br>* Ketoze - tas ir enerģijas iegūšanas process no taukiem, nevis no glikozes, kura nonāk
+                        organismā kopā ar ogļhidrātiem. Ja jūsu organisms pārstāj saņemt enerģiju no ogļhidrātiem, tad 7
+                        - 14 dienu laikā tas pāriet ketozes stāvoklī. Rezultātā tauku šūnas aktīvi tiek pārveidotas
+                        enerģijā. Cilvēkam ir grūti ievērot diētu, kas izslēdz no ēdiena ogļhidrātus. </p>
+                      <p>Klapkovas kundzes mērķis - jauna un pilnīgi unikāla cīņas ar lieko svaru metode, kuras pamata
+                        ir ketoze (metabolisks stāvoklis pie kura organisms sāk sašķelt taukus, pārveidojot tos
+                        enerģijā)! Tomēr, ketozes sasniegšanai, jums parasti ir jāievēro diētas, kas 7 - 14 dienu laikā
+                        ierobežo organisma ogļhidrātu patēriņu. </p>
+                      <p><span class="time_remains">Pēc Klapkovas kundzes receptes tika radīts speciāls preparāts
+                          "<a href="forma"><span class="productName"></span></a>". Tikai 1 šī produkta kapsula paātrina organisma
+                          pāriešanu ketozes stāvoklī jau pēc 40 - 50 minūtēm, kuru laikā sākas tauku pārveidošanas
+                          enerģijā un viscerālo tauku samazināšanas process. </span> <br style="text-align: center ! important;">
+                        <picture>
+                          <img src="prod.png" alt="img" style="display: block;width: 100%; max-width: 300px; margin: 15px auto 0;" loading="lazy">
+                        </picture> <br>Produkts nodrošina ketona daļiņu no ārienes piegādi un palīdz atbrīvoties no
+                        liekajiem viscerālajiem taukiem. Tas garantē, ka jūs novājēsiet un liekais svars nekad
+                        neatgriezīsies. "<a href="forma"><span class="productName"></span></a> palaiž ketozes procesu: tas paātrina
+                        vielmaiņu, samazina apetīti un tieši ietekmē jūsu tauku krājumus!
+                      </p>
+                      <p>Īpašs "<span class="productName"></span>a" efekts ir ātra organisma pāriešana ketozes stāvoklī un palīdzība
+                        tauku pārveidošanā enerģijā. <br><span class="time_remains">Ja jūs lietojat "<a href="forma"><span class="productName"></span></a>" kapsulas pa 1 divas reizes dienā, jūs varat nomest 15 - 20
+                          kg mēneša laikā!</span>
+                        <picture>
+                          <source type="image/webp" srcset="images/stakan.webp">
+                          <img class="img img-responsive" src="images/stakan.jpg" style="width:100%" loading="lazy" alt="img"></picture>
+                      </p>
+                      <p>Pašlaik šo kompleksu pielieto un to iesaka 80% dietologu, jo tas nodrošina ātru un vieglu
+                        novājēšanu. Tas ir tieši tas, ko viņi iesaka saviem klientiem. Neskaitot ketona daļiņas,
+                        "<a href="forma"><span class="productName"></span></a>" satur apmēram 10 dabīgas un drošas sastāvdaļas. kas ir
+                        nepieciešamas ātrai un vieglai novājēšanai. Tās ir paredzētas ketonu iedarbības pastiprināšanai,
+                        kā arī organisma atbalstam zaudējot svaru. Uzskaitīt tās visas ir ilgi, šeit es pieminētu tikai
+                        dažas pašas svarīgākās: <br><b>GUAVES EKSTRAKTS</b> - tā ir unikāla sastāvdaļa, kas 7 - 10
+                        reizes paātrina tauku apmaiņu. Tas palīdz ketonam tikt galā ar pašiem sarežģītākajiem taukiem.
+                        <br><b>ZAĻĀS TĒJAS EKSTRAKTS</b> - palīdz organismam traukus pārveidot muskuļos, novērš turpmāku
+                        tauku uzkrāšanos. <br><b>RŪGTĀ APELSĪNA EKSTRAKTS</b> - pateicoties savām īpašībām, tas uzlabo
+                        vairogdziedzera darbību, samazina tūsku un novērš iekšējo orgānu tūsku. <br>Mēs vēlētos jums
+                        šeit parādīt kompleksa testēšanas Berlīnes dietoloģijas un veselīgas ēšanas institūtā. Kopumā
+                        testēšanā piedalījās 1000 brīvprātīgo, kas cieta no aptaukošanās. Tad visi pārgāja uz
+                        keto-diētu, lai to izmēģinātu viena mēneša laikā. </p>
+                      <p> <b>Testēšanas rezultāti (pēc 1 mēneša):</b> <br>Novājēja par 20 kg un vairāk - 18% no
+                        aptaujātajiem. <br>Novājēja par 7-20 kg - 77% izmēģinājuma dalībnieku. <br>Zaudēja mazāk par 7
+                        kg - 4% no testējamajiem. <br> Vispār nezaudēja svaru - 1% no tiek, kuri piedalījās testēšanā.
+                        <br>Ādas stāvokļa uzlabošanās, cīņa ar celulītu - 98% no testējamajiem. <br>Bioloģisko procesu
+                        asinīs normalizācija - 100% no testējamajiem. <br>Nekādu blakusefektu vai atkarības -100%. </p>
+
+                    </div>
+
+
+                    <p style="text-align: center;"><b class="lt50">Lūk to, kuri testēja "<a href="forma"><span class="productName"></span></a>" rezultāti:</b>
+                    </p>
+
+                    <picture>
+                      <source type="image/webp" srcset="images/6.webp">
+                      <img class="img img-responsive prod" src="images/6.jpg" loading="lazy" alt="img"></picture>
+
+                    <p style="text-align: center;"><b class="lt51">Rezultāts pēc 41 "<a href="forma"><span class="productName"></span></a>" lietošanas dienas</b></p><br>
+
+                    <picture>
+                      <source type="image/webp" srcset="images/9.webp">
+                      <img class="img img-responsive prod" src="images/9.jpg" loading="lazy" alt="img"></picture>
+
+                    <p style="text-align: center;"><b class="lt52"> Rezultāts pēc 35 "<a href="forma"><span class="productName"></span></a>" lietošanas dienām</b></p><br>
+
+                    <picture>
+                      <source type="image/webp" srcset="images/8.webp">
+                      <img class="img img-responsive prod" src="images/8.jpg" loading="lazy" alt="img"></picture>
+
+                    <p style="text-align: center;"><b class="lt53"> Rezultāts pēc 30 "<a href="forma"><span class="productName"></span></a>" lietošanas dienām</b></p><br>
+
+                    <picture>
+                      <source type="image/webp" srcset="images/7.webp">
+                      <img class="img img-responsive prod" src="images/7.jpg" loading="lazy" alt="img"></picture>
+
+                    <p style="text-align: center;"><b class="lt54"> Rezultāts pēc 90 "<a href="forma"><span class="productName"></span></a>" lietošanas dienām</b></p><br>
+
+                    <p>
+                    </p>
+                    <div class="corr">
+                      <div style="font-family:Arial,Helvetica,sans-serif" class="av2">
+                        <p><b>Korespondents: "Tas patiesi valdzina! Vai jūsu zāles tiks pārdotas
+                            aptiekās?"</b> </p>
+                      </div>
+                    </div>
+                    <div class="doc" id="pop-show">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"> <b>Miroslavs Trojans:</b> mēs mēģinājām
+                          pārdot "<span class="productName"></span>u" caur aptiekām tikai vienu mēnesi. Tomēr mēs nolēmām <span class="date-0"></span> "<a href="forma"><span class="productName"></span></a>" tirgošanas Latvijas aptiekās
+                          līgumu lauzt sakarā ar to, ka viņi pārdeva mūsu preparātu ar lielu uzcenojumu - no 3200 euro
+                          līdz 4000 euro par iepakojumu! </span></p>
+                      <p>Aptieku pārstāvji attaisnoja šādas augstas cenas uz "<a href="forma"><span class="productName"></span></a>"
+                        tikai ar to, ka pacientiem tas ir nepieciešams ārstnieciskos nolūkos un profilaksei tikai reizi
+                        7 - 10 gados. Neviens katru mēnesi netērēs naudu bezjēdzīgiem, novecojušiem un neefektīviem
+                        preparātiem, kad to vieta ir iespējams izmantot "<span class="productName"></span>" un pilnībā aizmirst par
+                        veselības problēmam. </p>
+                      <p>Pēc farmācijas kompāniju un aptieku īpašnieku domām, tas izraisas lielus naudas zaudējumus!
+                        Tādēļ cena uz "<a href="forma"><span class="productName"></span></a>" aptiekās bija ļoti augsta! </p>
+                      <p>Un tādēļ "<a href="forma"><span class="productName"></span></a>" ražotājs lauza līgumu ar visām aptiekām! Tā
+                        vietā, lai nevajadzīgi karotu ar farmaceitiem, kuri tirgo preparātu piecas reizes dārgāk,
+                        ražotājs pilnīgi pārslēdzās uz tirdzniecību caur interneta vietni! Tādā veidā mēs vara piedāvāt
+                        pacientiem vislabāko cenu! </p>
+
+
+                    </div>
+
+                    <div class="corr">
+                      <div style="font-family:Arial,Helvetica,sans-serif" class="av2">
+                          <p><b>Korespondents: bet cik maksā "<a href="forma"><span class="productName"></span></a>" jūsu vietnē?</b></p>
+                        </div>
+                    </div>
+                    <div class="doc">
+                      <p>
+                        <span style="font-family:Arial,Helvetica,sans-serif"> <b>Miroslavs Trojans:</b> Dietoloģijas
+                          institūts un citas nacionālās struktūras, uzzinot par produkta krāpnieciskas tirgošanas
+                          aptiekās gadījumiem, piedāvāja palaist atlaižu programmu un sniegs finansiālu palīdzību mūsu
+                          tiešsaistes projektam! Programmas ietvaros viņi ir gatavi kompensēt 50% no preces sākotnējās
+                          cenas! Rezultātā - cena ir par 50% zemāka, bet tieši - tikai <span class="x_price_current"><span class="priceMain"></span></span> <span class="x_currency"><span class="currencyMain"></span></span>! </span>
+                      </p>
+                    </div>
+                    <div class="corr">
+                      <div style="font-family:Arial,Helvetica,sans-serif" class="av2">
+                        <p><b>Korespondents: cik ilgi būs atlaižu programma?</b></p>
+                      </div>
+                    </div>
+                    <div class="doc">
+                      <p> <span style="font-family:Arial,Helvetica,sans-serif"> <b>Miroslavs Trojans</b>: Atlaide, kuras
+                          ietvaros jūs varat pasūtīt preparātu "<span class="productName"></span>" <span class="time_remains">ar 50%
+                            atlaidi</span> ilgs 2 nedēļas: no <span class="date-14"></span><span class="time_remains">
+                            līdz <span class="date-0"></span></span> (ieskaitot)!</span> Šī iemesla dēļ es iesaku pēc
+                        iespējas ātrāk pasūtīt kompānijā "<a href="forma"><span class="productName"></span></a>". <b>Šī gada laika
+                          programma netiks atkārtota!</b></p>
+                    </div>
+                    <div class="corr">
+                      <div style="font-family:Arial,Helvetica,sans-serif" class="av3">
+                          <p><b>Korespondents: Tad kur cilvēks varēs nopirkt oriģinālo "denislim", lai
+                            nesastaptos ar krāpniecību?</b> </p>
+                        </div>
+                    </div>
+
+
+                    <div class="doc">
+                      <p><span style="font-family:Arial,Helvetica,sans-serif"> <b>Miroslavs Trojans</b>: Lai izvairītos
+                          no krāpniecības, spekulācijām un viltojumiem, cilvēks, kas vēlas nopirkt "denislim",
+                          atstāj pieteikumu tieši mūsu vietnē, nedaudz zemāk par rakstu! </span></p>
+                      <p>AR redakcijas atļauju, uzreiz pēc intervijas, šeit būs pieejama <a href="#forma"><b>"OFICIĀLĀ PASŪTĪJUMA VEIDLAPA"</b></a>! Veidlapas laukos jums ir
+                        jāievada tikai savs vārds. kontakttālrunis un jāklikšķina uz pogas "pasūtīt ar 50%
+                        atlaidi"! </p>
+                      <p>Nebaidieties pēc iespējas ātrāk iesniegt produkta pieteikumu! Tagad, lai pasūtītu zāles sev ar
+                        atlaidi, jums vienkārši ir jāievada vārds un kontakttālrunis, pa kuru mūsu operators ar jums
+                        sazināsies! Viņš jums sniegt detalizētu informāciju par produktiem un atbildēs uz visiem jūsu
+                        jautājumiem par piegādi un ārstēšanas kursu. <br><b>Samaksa tiek veikta - tikai pēc preces
+                          saņemšanas no piegādes dienestiem.</b> </p>
+
+                    </div>
+
+                    <div class="uli" style="margin: 15px auto;text-align: center;"><b>Informācija tiek atjaunota reālā
+                        laika režīmā:</b>
+                      <p><span class="time_remains">Atlikuši iepakojumi ar 50% atlaidi: </span></p>
+                      <div style="display: block;" id="countdown" class="timeTo timeTo-white">
+                        <div class="first">
+                          <ul class="top">
+                            <li>1</li>
+                            <li>2</li>
+                          </ul>
+                        </div>
+                        <div class="second">
+                          <ul class="top">
+                            <li>3</li>
+                            <li>4</li>
+                          </ul>
+                        </div>
+                        <span> gab.</span>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+
+
+                  <p>
+                  </p>
+
+
+
+                  <div class="features-wrapper"></div>
+
+
+
+
+                  <hr style="border: #cc0000 1px solid;">
+
+                </div>
+                <div class="content-note">
+                </div>
+                <div class="post-page-content-tags">
+                  <ul class="tags">
+                    <li class="tags-item">
+                      <a href="#forma">#JAUNUMI</a>
+                    </li>
+                    <li class="tags-item">
+                      <a href="#forma">#POLITIKA</a>
+                    </li>
+                    <li class="tags-item">
+                      <a href="#forma"># JAUNUMI PASAULĒ</a>
+                    </li>
+                    <li class="tags-item">
+                      <a href="#forma">#AKTUĀLAIS</a>
+                    </li>
+
+                  </ul>
+                </div>
+
+
+              </div>
+              <div class="comments">
+                <div class="comments-flex comments-flex_top">
+                  <div class="comments__count js-comments-count-custom"> Uzdodiet savus jautājumus profesoram Miroslavas
+                    Trojanam. Mēs jums palīdzēsim ar kvalificētu konsultāciju un atbildēsim uz visiem jūsu jautājumiem.
+                  </div>
+                </div>
+                <div>
+                  <div class="comments-flex comments-flex_top">
+                    <div class="comments__count js-comments-count-custom">Komentāri: 14</div>
+                    <a href="#forma">
+                      <div class="comments-choose hidden-xs hidden-sm">
+                        <div class="comments-choose__btn">
+                          <span style="text-decoration: none; color: inherit;"><span class="comments-choose__btn-name comments-choose__btn-name_close">Populāri</span></span>
+                        </div>
+                        <div class="comments-list">
+                          <div class="comments-border comments-border_choose"></div>
+                        
+                            <div class="comments-list__item comments-list__item_chosen" data-sort="upvotes_count">
+                              Populāri </div>
+                      
+                          <div class="comments-list__item" data-sort="created_at">Pēc laika</div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="comments-btns">
+                      <a href="#forma">
+                        <div class="comments-toggle js-toggle-comments">Apskatīt visus komentārus</div>
+                      </a>
+                      <div class="comments-choose comments-choose__btn">
+                        <a href="#forma" class="comments-choose__btn">
+                          <span class="comments-choose__btn-name comments-choose__btn-name_close">Populāri</span>
+                        </a>
+                        <div class="comments-list">
+                          <div class="comments-list__border"></div>
+                          <a href="#forma">
+                            <div class="comments-list__item comments-list__item_chosen" data-sort="upvotes_count">
+                              Populāri </div>
+                          </a>
+                          <div class="comments-list__item" data-sort="created_at">Pēc laika</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comments-toggle-md hidden-xs hidden-sm">
+                    <a href="#forma">
+                      <div class="comments-toggle js-toggle-comments">Apskatīt visus komentārus</div>
+                    </a>
+                  </div>
+                  <div class="comments-chat">
+                    <div class="comments-chat-container">
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm1.webp">
+                                    <img src="images/comm1.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Simona Vasiliauskaitė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Pajautāšu tikai, ka cilvēks var vai nevar ēst, lietojot "<a href="forma"><span class="productName"></span></a>"? </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> "<span class="productName"></span>a" lietotājiem ir atļauts ēst visu un nekas
+                                nav aizliegts. </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm2.webp">
+                                    <img src="images/comm2.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Sonata Kavaliauskaitė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Lūdzu pasakiet, vai pastāv kādas medicīniskas kontrindikācija šī
+                                produkta lietošanai? Man ir diabēts, bet man ir jāzaudē svars. </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Nē, nekādu kontrindikāciju nav. Preparāts satur pilnīgi dabīgas
+                                sastāvdaļas. Ar šī produkta palīdzību novājēt var katrs! </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm3.webp">
+                                    <img src="images/comm3.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Rasa Radišauskaitė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Vai šis produkts ir paredzēts speciāli sievietēm? Mana vīram ir
+                                liekais svars un liels alus vēders. </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Nē, šīs zāles var lietot katrs. Pateicoties "<a href="forma"><span class="productName"></span></a>", daudzi vīrieši ir novājējuši. </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm4.webp">
+                                    <img src="images/comm4.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Patricija Augaitė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Ļoti labs rezultāts, es domāju, ka cilvēks spēj tik strauji
+                                novājēt tikai tad, kad badojas. Turpiniet tādā pašā garā! </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm5.webp">
+                                    <img src="images/comm5.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Romualdas Pakuckas</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Dakter Trojan, man vienkārši ir interesanti, kādēļ šis
+                                brīnumlīdzeklis nepārdodas aptiekās? </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Ka jau es teicu, Latvija negrib to pārdot par minimālo cenu ar
+                                PVN. Bet ražotāja mērķis - padarīt produktu pieejamu pēc cenas. Tika iedomājieties, cik
+                                aptiekas un citi veikali gribēs ņem maksu par šīm tabletēm. Tas ir pirmais un vienīgais
+                                preparāts ar šādu lielisku efektu un bez jebkādām kontrindikācijām. Visbiežāk tas
+                                pārdodas par 4000 euro. Tas nevienam nenāk par labu. </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm6.webp">
+                                    <img src="images/comm6.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Veronika Butkutė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Pirms pusgada, es lietoju "denislim", mēneša laikā
+                                zaudēju 19 kg. Svars nav atgriezies, produkts tiešām ir ļoti efektīvs. </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Lielisks rezultāts! Paldies! </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm7.webp">
+                                    <img src="images/comm7.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Julija Levickaitė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Dakter Trojan, līdzu pasakiet man, kur tiek ražots produkts un
+                                kur tiek pārdots oriģināls? </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Tikai mūsu vietnē <a href="#forma"><b>OFICIĀLĀ PASŪTĪJUMA
+                                    VEIDLAPA</b></a> </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm8.webp">
+                                    <img src="images/comm8.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Andrėja Paulauskienė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Vai profilakses nolūkos var to lietot atkārtoti? </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Jā, tas ir iespējams </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm9.webp">
+                                    <img src="images/comm9.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Irma Budrevičienė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Es domāju, ka tā ir krāpšana </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Jums ir tādas tiesības, bet ar "<span class="productName"></span>a" palīdzību
+                                svaru ir zaudējuši ne mazāk kā desmit tūkstoši cilvēku! </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm10.webp">
+                                    <img src="images/comm10.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Jovita Levickaitė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> zāles man palīdzējā, tādēļ esmu ļoti priecīga. Paldies dakterim
+                                Trojanam par zālēm. Es novājēju par 20 kg. Vai tas palīdzēs manam vīram? </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Es arī esmu ļoti priecīgs, ka tas jums palīdzēja. Esmu
+                                pārliecināts, ka tas palīdzēs arī jūsu vīram </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm11.webp">
+                                    <img src="images/comm11.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Albina Pociūtė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Lielisks rezultāts! Vai vecumam ir nozīme? </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Nē, jo tas ir pilnīgi dabīgs, tam nav kontrindikāciju, tādēļ
+                                vecumam nav nozīmes. </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm12.webp">
+                                    <img src="images/comm12.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Žemyna Žukė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Vai to var pasūtīt tikai caur internetu? </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Pagaidām, diemžēl, jā. </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm13.webp">
+                                    <img src="images/comm13.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Daumantė Zagorskytė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Cik laika aizņem paciņas piegāde? </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Mēs nosūtam pasūtījumu jau nākamajā dienā, t.i. pēc 2-3 dienām
+                                kurjers piegādās jūsu pasūtījumu. Pasūtījuma apmaksa tikai pēc preces piegādes. </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+                      <!-- Коммент: НАЧАЛО -->
+                      <div class="comment-bubble">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey  js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm14.webp">
+                                    <img src="images/comm14.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Erika Stasiūnaitė</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Es arī nevaru pastāvīgi ēst diētiski, man pietiek ar maksimāli 3
+                                dienām, tad man sākas depresijas, nervu lēkmes, asaras. Žēl, ka tikai tagad es uzzināju
+                                par "<span class="productName"></span>u", es jau veicu liposakciju. </p> <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- Коммент:КОНЕЦ -->
+                      <!-- ответ на Коммент: НАЧАЛО -->
+                      <div class="comment-bubble c-div">
+                        <article class="comments-message comments-message_grey ">
+                          <div class="comments-field comments-field_grey c-answer js-bubble">
+                            <header class="comments-flex header">
+                              <div class="comments-user">
+                                <div class="comments-avatar comments-avatar_grey">
+                                  <!-- АВАТАР -->
+                                  <picture>
+                                    <source type="image/webp" srcset="images/comm_doc.webp">
+                                    <img src="images/comm_doc.jpg" style="border-radius:24px;" loading="lazy" alt="img">
+                                  </picture>
+                                </div>
+                              </div>
+                              <div class="comments-flex__name">Edvinas Kateiva</div><!-- ИМЯ -->
+                            </header>
+                            <div class="comments-field__txt">
+                              <p>
+                                <!-- ТЕКСТ КОММЕНТА --> Žēl, ja informāciju būtu nonākusi pie jums laicīgi, jūs būtu
+                                ietaupījuši kaudzi naudas. Liposakcija - tā ir ļoti dārga lieta. </p>
+                              <!-- ТЕКСТ КОММЕНТА -->
+                            </div>
+                            <div class="comments-field__image js-image-block">
+                              <div class="comments-field__image-load hidden">
+                                <div class="spinner-inner">
+                                  <svg class="spinner" viewbox="25 25 50 50">
+                                    <circle class="spinner-path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                      <!-- ответ на Коммент: КОНЕЦ -->
+
+                    </div>
+                  </div>
+                  <div class="comments-form comments-form_unauthorized">
+                    <div class="comments-avatar comments-avatar_form hidden-xs hidden-sm comments-avatar_unauthorized">
+                    </div>
+                    <header class="comments-form-header comments-form-header_unauthorized">
+                      <div class="comments-avatar comments-avatar_unauthorized"></div>
+                    </header>
+                    <a href="#forma">
+                      <div class="comments-form__unauthorized js-show-auth">Lai uzrakstītu komentāru, reģistrējieties
+                      </div>
+                    </a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+  <div class="ev-footer create_rom_footer" data-background-color="white" data-color_link="black" data-color_logo="orange">
+  </div>
+
+  
+  <script src="js/p-date.js"></script>
+
+  <script>
+      const offer_params = {
+          priceMain : '39',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: '€',
+          productName : 'Delislim',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain : offer_params.priceMain,
+          currencyMain : offer_params.currencyMain,
+          lang : 'lv', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product : offer_params.productName, // название продукта
+          genderTargetting : 'all', // пол целевой аудитории - all, male, female
+          form : {
+              isNeeded : 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+</body>
+
+</html>
