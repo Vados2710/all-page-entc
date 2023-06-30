@@ -1,0 +1,637 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    Zenidol
+  </title>
+
+  <meta name="description" content="Zenidol">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="img/favicon.png">
+  <meta property="og:image" content="img/preview.jpg">
+  <link rel="stylesheet" href="css/styles.min.css">
+
+
+
+  <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+  <div class="top-line"></div>
+  <section class="main-banner">
+    <div class="container">
+      <div class="logo wow fadeInUpBig lt0" style="visibility: visible; animation-name: fadeInUpBig;">
+        Zenidol
+      </div>
+      <div class="logo-subtitle wow fadeInUp lt1" style="visibility: visible; animation-name: fadeInUp;">Ir pienācis
+        laiks atbrīvoties no sēnītes<br>uz visu mūžu!</div>
+      <div class="row margin-top-80 flex-md-row-reverse align-items-end">
+        <div class="col-lg-6">
+          <ul class="banner-list">
+            <li class="lt2"> <span class="heart-animation"></span>Zenidol Novērš kāju ādas niezi, lobīšanos un
+              kairinājumu</li>
+            <li class="lt3"> <span class="heart-animation"></span> Atgriež nagiem veselīgu izskatu</li>
+            <li class="lt4"> <span class="heart-animation"></span> Atbrīvo no smakas</li>
+            <li class="lt5"> <span class="heart-animation"></span> Dziedē rētas un plaisas</li>
+          </ul>
+        </div>
+        <div class="col-lg-2"><img alt="" class="banner-image wow fadeInDown" data-wow-delay=".3s" src="img/product.png"
+            style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;"></div>
+        <div class="col-lg-4">
+          <div class="contact-form wow fadeIn" data-wow-delay=".2s"
+            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+            <div class="contact-form-title lt6">ĪPAŠAIS PIEDĀVĀJUMS</div>
+            <div class="contact-form-timer">
+              <span class="lt7">līdz akcijas beigām atlicis</span>
+              <script type="text/javascript">
+                d = new Date();
+                p = new Date(d.getTime() - 0 * 86400000);
+                monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                var w = p.getDate();
+                document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+              </script>
+
+            </div>
+            <div class="contact-form-prices">
+              <div class="old-p">
+                <div class="price_old"><span class="priceOld"></span> <span class="currencyMain"></span></div><span
+                  class="lt8">Parastā cena</span>
+              </div>
+              <div class="main-p">
+                <div class="price_main"><span class="priceMain"></span> <span class="currencyMain"></span></div><span
+                  class="lt9">Akcijas cena</span>
+              </div>
+            </div>
+            <form action="getform.php" method="post" class="order_form">
+              <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+              <input type="hidden" name="utm_campaign" value="{domonetka}">
+              <label><input class="input-name" name="name" placeholder="Nosaukums" required="" type="text"></label>
+              <label><input class="input-form" name="phone" placeholder="Jūsu mobilais tālrunis" required=""
+                  type="text"></label>
+              <button class="send-button wow tada lt10" data-wow-delay="3s"
+                style="visibility: visible; animation-delay: 3s; animation-name: tada;">PASŪTĪT</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="invasion-section">
+    <div class="container">
+      <div class="invasion-title wow fadeIn mobile-hide lt11" style="visibility: hidden; animation-name: none;">
+        <b>Mikoze</b> ir viena no izplatītākajām saslimšanām. Statistikas dati liecina, ka ar to slimo aptuveni 85%
+        cilvēku.</div>
+      <div class="invasion-content-area mobile-hide">
+        <div class="invasion-content-title wow fadeIn lt12" style="visibility: hidden; animation-name: none;">Ar sēnīti
+          var inficēties:</div>
+        <ul class="invasion-content-list wow fadeInLeft" style="visibility: hidden; animation-name: none;">
+          <li class="lt13"> <b>Tiešā veidā:</b> ar basām kājām staigājot pa zemi vai zāli, kur var atrasties sēņu
+            sporas; kontaktējoties ar slimu cilvēku vai dzīvnieku.</li>
+          <li class="lt14"> <b>Netiešā veidā:</b> lietojot inficēta cilvēka personiskās mantas (dvieli, apavus, manikīra
+            piederumus).</li>
+        </ul>
+        <p class="invasion-content-p wow fadeIn lt15" style="visibility: hidden; animation-name: none;">Sēnītēm patīk
+          silta, mitra vide, tādēļ publiskās ģērbtuves, sporta zāles un baseini ir infekcijas avoti. Sēnīte ļoti bieži
+          tiek nodota starp vienas ģimenes locekļiem. </p>
+      </div>
+      <div class="warning-area wow pulse lt16" data-wow-delay=".3s" data-wow-iteration="10"
+        style="visibility: hidden; animation-delay: 0.3s; animation-iteration-count: 10; animation-name: none;">Sēnīte
+        ir ne vien estētiska problēma, bet arī nopietna slimība, kas atstāj sekas uz cilvēka veselību un novājina
+        imunitāti. <span class="danger-icon"></span> </div>
+    </div>
+  </section>
+  <section class="check-section">
+    <div class="container">
+      <div class="check-title wow fadeInUp lt17" style="visibility: hidden; animation-name: none;">Vismaz viena simptoma
+        esamība liecina par inficēšanos. <span>Vai joprojām domājat, ka esat ārpus riska zonas?</span> </div>
+      <div class="row">
+        <div class="col-lg-6"><img alt="" class="check-image wow fadeInLeft mobile-hide" src="img/4.jpg"
+            style="visibility: hidden; animation-name: none;"><img alt=""
+            class="check-image wow fadeInLeft desktop-hide animated animated" src="img/41.jpg"
+            style="visibility: visible; animation-name: fadeInLeft;"></div>
+        <div class="col-lg-6">
+          <div class="check-list-title lt18">PĀRBAUDIET SEVI:</div>
+          <ul class="check-list">
+            <li class="lt19"> <span class="heart-animation"></span> Nieze vai dedzinoša sajūta starp kāju pirkstiem vai
+              uz pēdas</li>
+            <li class="lt20"> <span class="heart-animation"></span> Balta, pēc izskata mitra āda starp kāju pirkstiem
+            </li>
+            <li class="lt21"> <span class="heart-animation"></span> Nolobījusies āda vai plaisas uz pēdām</li>
+            <li class="lt22"> <span class="heart-animation"></span> Izsitumi starp kāju pirkstiem</li>
+            <li class="lt23"> <span class="heart-animation"></span> Pūslīši vai čūlas pēdas virspusē</li>
+            <li class="lt24"> <span class="heart-animation"></span> Raupja, sausa, zvīņaina pēdu āda</li>
+            <li class="lt25"> <span class="heart-animation"></span> Sabiezējuši nevienmērīgas krāsas nagi</li>
+            <li class="lt26"> <span class="heart-animation"></span> Nepatīkama smaka</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="grass-section mobile-hide">
+    <div class="container">
+      <div class="logo wow fadeInUpBig lt27" style="visibility: hidden; animation-name: none;">
+        Zenidol
+      </div>
+      <div class="row grass-marged-row wow fadeIn" style="visibility: hidden; animation-name: none;">
+        <div class="col-md-8">
+          <div class="grass-title lt28">Vai jums apnicis cīnīties ar sēnīti?<br>Ir pienācis laiks no tās
+            atbrīvoties<br>uz visu mūžu!</div>
+          <p class="grass-p wow fadeInLeft lt29" style="visibility: hidden; animation-name: none;">Zenidol ātri un
+            efektīvi cīnās ar sēnīti jebkurā saslimšanas stadijā. Tas nekavējoties iekļūst ādā, veidojot ārstniecisko
+            sastāvdaļu augstu koncentrāciju visos tās slāņos. Tā iedarbība sākas jau pēc otrās lietošanas reizes.</p>
+          <p class="grass-p wow fadeInLeft lt30" style="visibility: hidden; animation-name: none;">Pateicoties
+            uzkrāšanās efektam, šis dabiskais preparāts nevis vienkārši novērš simptomus, bet arī izveido vidi, kurā
+            sēnīte gluži vienkārši nespēj attīstīties un izplatīties. Zenidol droši pasargā jūs no sēnītes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="confirm-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <a class="scroll-button navigate-btn wow tada desktop-hide lt31 animated animated" href="#mainForm"
+            style="visibility: visible; animation-name: tada;">Pasūtīt</a>
+          <div class="contact-form horizontal-form wow fadeIn mobile-hide" data-wow-delay=".2s"
+            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="contact-form-title lt32">ĪPAŠAIS PIEDĀVĀJUMS</div>
+                <div class="contact-form-timer">
+                  <span class="lt33">līdz akcijas beigām atlicis</span>
+                  <script type="text/javascript">
+                    d = new Date();
+                    p = new Date(d.getTime() - 0 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    var w = p.getDate();
+                    document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+                  </script>
+
+                </div>
+                <div class="contact-form-prices">
+                  <div class="old-p">
+                    <div class="price_old"><span class="priceOld"></span> <span class="currencyMain"></span></div><span
+                      class="lt34">Parastā cena</span>
+                  </div>
+                  <div class="main-p">
+                    <div class="price_main"><span class="priceMain"></span> <span class="currencyMain"></span></div>
+                    <span class="lt35">Akcijas cena</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <form action="getform.php" method="post" class="order_form">
+                  <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                  <input type="hidden" name="utm_campaign" value="{domonetka}">
+                  <label><input class="input-name" name="name" placeholder="Nosaukums" required="" type="text"></label>
+                  <label> <input class="input-form" name="phone" placeholder="Jūsu mobilais tālrunis" required=""
+                      type="text"></label>
+                  <button class="send-button wow tada lt36" data-wow-delay="3s"
+                    style="visibility: hidden; animation-delay: 3s; animation-name: none;">PASŪTĪT</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5"><img alt="" class="confirm-image wow fadeInDown mobile-hide" src="img/product2.png"
+            style="visibility: hidden; animation-name: none;"></div>
+      </div>
+    </div>
+  </section>
+  <section class="benefits-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="logo small wow fadeIn lt37" style="visibility: hidden; animation-name: none;">
+            Zenidol
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="benefits-title wow fadeInLeft lt38" style="visibility: hidden; animation-name: none;">kompleksa
+            pieeja<br>sēnītes ārstēšanai</div>
+        </div>
+      </div>
+      <div class="benefits-row">
+        <div class="benefits-column first-column">
+          <div class="benefits-column-title lt39">Atbrīvošanās</div>
+          <div class="benefits-column-description">
+            <ul class="benfits-list">
+              <li class="lt40"> <span class="heart-animation"></span> Aktīvās vielas ātri nonāk iekaisuma perēklī</li>
+              <li class="lt41"> <span class="heart-animation"></span> Iznīcina sēnītes šūnu struktūru, nomāc tās
+                vairošanos</li>
+              <li class="lt42"> <span class="heart-animation"></span> Mazina sēnītes infekcijas nepatīkamās izpausmes
+              </li>
+              <li class="lt43"> <span class="heart-animation"></span> Izvada no organisma iznīcinātās sēnītes organiskās
+                atliekas</li>
+            </ul>
+            <div class="benfits-icon-description">
+              <div><img alt="leg" src="img/lag.png"></div>
+              <p class="lt44">Sēnīte pazūd bez pēdām</p>
+            </div>
+          </div>
+        </div>
+        <div class="benefits-column second-column">
+          <div class="benefits-column-title lt45">Aizsardzība</div>
+          <div class="benefits-column-description">
+            <ul class="benfits-list">
+              <li class="lt46"> <span class="heart-animation"></span> Aktīvās sastāvdaļas nokļūst ādas dziļajos slāņos
+                un izveido nepiemērotu vidi sēnītes augšanai un attīstībai</li>
+              <li class="lt47"> <span class="heart-animation"></span> Ārstē ādu, dziedē plaisas un brūces, atjauno nagus
+              </li>
+              <li class="lt48"> <span class="heart-animation"></span> Izveido aizsargbarjeru, kas novērš atkārtotu
+                inficēšanos</li>
+            </ul>
+            <div class="benfits-icon-description" style="margin-top: 61px;">
+              <div><img alt="leg" src="img/shield.png"></div>
+              <p class="lt49">Nags ataug vesels un stiprs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="components-section">
+    <div class="container">
+      <div class="components-title wow fadeIn lt50" style="visibility: hidden; animation-name: none;">
+        <span>Zenidol</span> aktīvās sastāvdaļas </div>
+      <div class="components-area wow fadeIn" style="visibility: hidden; animation-name: none;">
+        <div class="component-item item-1 wow fadeInUp" data-wow-delay=".3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+          <div class="component-item-title lt51">Terpinēns</div>
+          <p class="lt52">Ļoti efektīvs pretsēnīšu līdzeklis, aptur sēnītes vairošanos, nomāc tās aktivitāti, izvada no
+            organisma sporas, novērš atkārtotu inficēšanos.</p>
+        </div>
+        <div class="component-item item-2 wow fadeInUp" data-wow-delay=".3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+          <div class="component-item-title lt53">Tējas koka<br>eļļa</div>
+          <p class="lt54">Fungicīdo (pretsēnīšu) iedarbību nodrošina sastāvā esošie terpēni, kas iznīcina sēnītes
+            struktūru un nomāc visu šo slimību izraisošo organismu dzīvības procesus.</p>
+        </div>
+        <div class="component-item item-3 wow fadeInUp" data-wow-delay=".3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+          <div class="component-item-title lt55">Tauksaknes<br>ekstrakts</div>
+          <p class="lt56">Aktivizē lokālo imunitāti, paaugstina spēju pretoties patogēniem mikroorganismiem. Ne vien
+            nogalina sēnīti, bet arī atjauno struktūru, paātrina augšanu, stiprina roku un kāju nagus.</p>
+        </div><img alt="" class="component-image wow fadeInLeft" data-wow-delay=".6s" src="img/product33.png"
+          style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+        <div class="component-item item-4 wow fadeInUp mobile-hide" data-wow-delay=".3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+          <div class="component-item-title lt57">Sērs</div>
+          <p class="lt58">Nomāc iekaisuma procesus, nodrošina mīksto audu barošanu, veicinot to reģenerāciju. Mazina
+            niezi un sāpju sajūtu, stimulē asinsriti.</p>
+        </div>
+        <div class="component-item item-5 wow fadeInUp mobile-hide" data-wow-delay=".3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+          <div class="component-item-title lt59">Koloidālais<br>sudrabs</div>
+          <p class="lt60">Palīdz organismam cīnīties ar infekciju ne sliktāk par antibiotikām, taču bez blakus
+            parādībām. Sudraba molekulas bloķē kaitīgo baktēriju, vīrusu un sēnīšu vairošanos, nomāc to dzīvības
+            procesus.</p>
+        </div>
+        <div class="component-item item-6 wow fadeInUp mobile-hide" data-wow-delay=".3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+          <div class="component-item-title lt61">Kadiķa<br>eļļa</div>
+          <p class="lt62">Sniedz izteiktu pretsēnīšu iedarbību un palīdz pat noturīga sēnīšu kaitējuma gadījumos.
+            Kadiķis ir efektīvs pat tādos gadījumos, kad sēnītes ir noturīgas pret pretsēnīšu preparātiem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="proof-section mobile-hide">
+    <div class="container">
+      <div class="proof-title wow fadeIn lt63" style="visibility: hidden; animation-name: none;">Klīniski pierādīts
+        efekts</div>
+      <div class="proof-subtitle wow fadeIn lt64" style="visibility: hidden; animation-name: none;">2019. gadā
+        Dermatoloģijas institūts veica Zenidol efektivitātes pētījumu 550 brīvprātīgo grupā, kuri cieta no pēdu un nagu
+        sēnītes. <span style="text-transform: uppercase">Tika iegūti šādi rezultāti:</span> </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="proof-card wow fadeInLeft" style="visibility: hidden; animation-name: none;">
+            <span class="lt65">100%</span>
+            <p class="lt66">Atbrīvošanās<br>no pēdu sēnītes</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="proof-card wow fadeInLeft" style="visibility: hidden; animation-name: none;">
+            <span class="lt67">95%</span>
+            <p class="lt68">Niezes, ādas lobīšanās<br>un plaisu novēršana</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="proof-card wow fadeInLeft" style="visibility: hidden; animation-name: none;">
+            <span class="lt69">90%</span>
+            <p class="lt70">Nepatīkamas smakas<br>un pēdu svīšanas pazušana</p>
+          </div>
+        </div>
+      </div><a class="scroll-button navigate-btn wow tada lt71" data-wow-delay="2s" href="#mainForm"
+        style="visibility: hidden; animation-delay: 2s; animation-name: none;">Pasūtīt</a>
+    </div>
+  </section>
+  <section class="doctor-section">
+    <div class="container">
+      <div class="doctor-title wow fadeIn lt72" style="visibility: hidden; animation-name: none;">ārsta-speciālista
+        viedoklis</div>
+      <div class="doctor-area wow fadeIn" style="visibility: hidden; animation-name: none;">
+        <img alt="doc" class="doctor-image" src="img/doc.png">
+        <p class="lt73">„Pie manis vēršas ļoti daudz pacienti ar sūdzībām par nagu un pēdu sēnīti. Tā patiesi ir ļoti
+          izplatīta problēma, kas sagādā daudz neērtības.<br>Iesaku Zenidol sēnīšu saslimšanu ārstēšanai. Šis līdzeklis
+          ātri un efektīvi atbrīvo no mikozes pat sarežģītakajos gadījumos. Ja jums vai kādam jūsu ģimenes loceklim ir
+          sēnīte, iesaku nekavējoties sākt ārstēšanu ar Zenidol“.</p>
+        <div class="signa">
+          <b class="lt74">Fricis Mors, ārsts dermatologs un venerologs, 22 gadu darba stāžs</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="feedback-section">
+
+    <div class="container">
+      <div class="feedback-title wow fadeIn lt75">
+        Mūsu pircēju atsauksmes
+      </div>
+
+      <div class="feedback-slider">
+
+
+        <div>
+          <div class="feedback-card">
+
+            <div class="feedback-avatar">
+              <img src="img/pavel.png" alt="pavel">
+              <div class="feedback-card-name lt78">
+                Pēteris
+              </div>
+            </div>
+
+            <div class="feedback-description lt79">
+              «Ilgi mocījos ar pēdas sēnīti. Kā tikko tieku vaļā, tā uzreiz parādās. Nācās ārstēties katru mēnesi. Par
+              Zenidol agrāk nebiju dzirdējis, taču izlasīju par to internetā un nolēmu izmēģināt. Izgāju pilnu kursu, un
+              jau 4 mēnešus pat neatceros par sēnīti. Beidzot parādījies līdzeklis, kas reāli palīdz. Iesaku visiem!»
+            </div>
+          </div>
+        </div>
+
+
+        <div>
+          <div class="feedback-card">
+            <div class="feedback-avatar">
+              <img src="img/olga.png" alt="pavel">
+              <div class="feedback-card-name lt80">
+                Olga
+              </div>
+            </div>
+
+            <div class="feedback-description lt81">
+              «Nekad nebiju cietusi no nagu sēnītes, biju par to tikai dzirdējusi, arī redzējusi citiem neglītus nagus.
+              Taču arī mani šī nelaime skāra. Dabūju sēnīti skaistumkopšanas salonā, acīmredzot, no slikti apstrādāta
+              instrumenta. Jau nākamajā dienā sāku just niezi, sākās kairinājums. Draudzene ieteica Zenidol. Ar šo
+              līdzekli es ātri tiku vaļā no sēnītes»
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="feedback-card">
+            <div class="feedback-avatar">
+              <img src="img/ivan.png" alt="pavel">
+              <div class="feedback-card-name lt82">
+                Jānis
+              </div>
+            </div>
+
+            <div class="feedback-description lt83">
+              «Dēls diezgan ilgi slēpa, ka viņam ir sēnīte. Labi, ka sieva pamanīja, ka viņš kasās, un lika viņam
+              vērsties pie dermatologa. Diagnoze — sēnīte. Ārsts izrakstīja Zenidol recepti. Dēlam laikam jau pašam bija
+              apnikusi nieze un ādas lobīšanās, tādēļ viņš bez mūsu palīdzības sāka lietot šo līdzekli, apstrādāja
+              skartās zonas. Pēc divām nedēļām nieze pārgāja kā nebijusi»
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="main-banner" id="mainForm">
+    <div class="container">
+      <div class="logo wow fadeInUpBig lt90" style="visibility: hidden; animation-name: none;">
+        Zenidol
+      </div>
+      <div class="logo-subtitle wow fadeInUp lt91" style="visibility: hidden; animation-name: none;">Ir pienācis laiks
+        atbrīvoties no sēnītes<br>uz visu mūžu!</div>
+      <div class="row margin-top-80 flex-md-row-reverse align-items-end">
+        <div class="col-lg-6">
+          <ul class="banner-list">
+            <li class="lt92"> <span class="heart-animation"></span> Novērš kāju ādas niezi, lobīšanos un kairinājumu
+            </li>
+            <li class="lt93"> <span class="heart-animation"></span> Atgriež nagiem veselīgu izskatu</li>
+            <li class="lt94"> <span class="heart-animation"></span> Atbrīvo no smakas</li>
+            <li class="lt95"> <span class="heart-animation"></span> Dziedē rētas un plaisas</li>
+          </ul>
+        </div>
+        <div class="col-lg-2"><img alt="" class="banner-image wow fadeInDown" data-wow-delay=".3s" src="img/product.png"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;"></div>
+        <div class="col-lg-4">
+          <div class="contact-form wow fadeIn" data-wow-delay=".2s"
+            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+            <div class="contact-form-title lt96">ĪPAŠAIS PIEDĀVĀJUMS</div>
+            <div class="contact-form-timer">
+              <span class="lt97">līdz akcijas beigām atlicis</span>
+              <script type="text/javascript">
+                d = new Date();
+                p = new Date(d.getTime() - 0 * 86400000);
+                monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                var w = p.getDate();
+                document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+              </script>
+
+            </div>
+            <div class="contact-form-prices">
+              <div class="old-p">
+                <div class="price_old"><span class="priceOld"></span> <span class="currencyMain"></span></div><span
+                  class="lt98">Parastā cena</span>
+              </div>
+              <div class="main-p">
+                <div class="price_main"><span class="priceMain"></span> <span class="currencyMain"></span></div><span
+                  class="lt99">Akcijas cena</span>
+              </div>
+            </div>
+            <form action="getform.php" method="post" class="order_form">
+              <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+              <input type="hidden" name="utm_campaign" value="{domonetka}">
+              <label><input class="input-name" name="name" placeholder="Nosaukums" required=""
+                  type="text"></label><label><input class="input-form" name="phone" placeholder="Jūsu mobilais tālrunis"
+                  required="" type="text"></label><button class="send-button wow tada lt100" data-wow-delay="3s"
+                style="visibility: hidden; animation-delay: 3s; animation-name: none;">PASŪTĪT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="how-work">
+    <div class="container">
+      <div class="feedback-title wow fadeIn lt101" style="visibility: hidden; animation-name: none;">kā mēs strādājam
+      </div>
+      <div class="row how-work-row">
+        <div class="col-lg-4">
+          <div class="how-work-card wow fadeInLeft" data-wow-delay=".1s"
+            style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+            <div class="step-number lt102">1. SOLIS</div><img alt="step&quot;&quot;" src="img/step1.png">
+            <div class="how-work-card-description lt103">Atstājiet pieteikumu<br>mūsu tīmekļa vietnē</div>
+            <div class="right-arrow-shevron"></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="how-work-card wow fadeInLeft" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+            <div class="step-number lt104">2. SOLIS</div><img alt="step&quot;&quot;" src="img/step2.png">
+            <div class="how-work-card-description lt105">Ar jums sazināsies<br>operators, lai apstiprinātu pasūtījumu
+            </div>
+            <div class="right-arrow-shevron"></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="how-work-card wow fadeInLeft" data-wow-delay=".5s"
+            style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+            <div class="step-number lt106">3. SOLIS</div><img alt="step&quot;&quot;" src="img/step3.png">
+            <div class="how-work-card-description lt107">Apmaksa tiešsaistē vai<br>saņemot<br>pasūtījumu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="top-line">
+  </div>
+  <script src="js/scripts.min.js">
+  </script>
+  <script>
+    new WOW().init();
+  </script>
+
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+      priceMain: '39',
+      customPriceOld: '', //вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+      currencyMain: '€',
+      productName: '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+      productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+      priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if (offer_params.customPriceOld) {
+      for (var i = 0; i < priceOld.length; i++) {
+        priceOld[i].innerHTML = offer_params.customPriceOld;
+      }
+    } else {
+      for (var i = 0; i < priceOld.length; i++) {
+        priceOld[i].innerHTML = offer_params.priceMain * 2;
+      }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+      currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+  </script>
+  <script>
+    $('[name="name"]').on('input change', function () {
+      var val = $(this).val();
+      $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+      var val = $(this).val();
+      $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+</body>
+
+</html>
