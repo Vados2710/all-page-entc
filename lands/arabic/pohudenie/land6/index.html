@@ -1,0 +1,813 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html lang="ar">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>SlimGO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}figcaption,figure,footer,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}h2,h4,h5{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ul{margin-top:0;margin-bottom:1rem}b,strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button{text-transform:none}[type=button],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h2,h4,h5{margin-bottom:.5rem;font-weight:500;line-height:1.2}h2{font-size:2rem}h4{font-size:1.5rem}h5{font-size:1.25rem}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-12,.col-6,.col-md-2,.col-md-3,.col-md-4,.col-md-6,.col-md-8,.col-xl-4,.col-xl-6,.col-xl-8{position:relative;width:100%;padding-right:15px;padding-left:15px}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:768px){.col-md-2{-ms-flex:0 0 16.66%;flex:0 0 16.66%;max-width:16.66%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.33%;flex:0 0 33.33%;max-width:33.33%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-8{-ms-flex:0 0 66.66%;flex:0 0 66.66%;max-width:66.66%}}@media (min-width:1200px){.col-xl-4{-ms-flex:0 0 33.33%;flex:0 0 33.33%;max-width:33.33%}.col-xl-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-xl-8{-ms-flex:0 0 66.66%;flex:0 0 66.66%;max-width:66.66%}}.custom-control-input.is-valid:focus:not(:checked)~.custom-control-label::before,.was-validated .custom-control-input:valid:focus:not(:checked)~.custom-control-label::before{border-color:#28a745}.custom-control-input.is-invalid:focus:not(:checked)~.custom-control-label::before,.was-validated .custom-control-input:invalid:focus:not(:checked)~.custom-control-label::before{border-color:#dc3545}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.btn{transition:none}}.btn:hover{color:#212529;text-decoration:none}.btn:focus{outline:0;box-shadow:0 0 0 .2rem rgba(0,123,255,.25)}.btn:disabled{opacity:.65}.btn-primary:not(:disabled):not(.disabled).active,.btn-primary:not(:disabled):not(.disabled):active{color:#fff;background-color:#0062cc;border-color:#005cbf}.btn-primary:not(:disabled):not(.disabled).active:focus,.btn-primary:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(38,143,255,.5)}.btn-secondary:not(:disabled):not(.disabled).active,.btn-secondary:not(:disabled):not(.disabled):active{color:#fff;background-color:#545b62;border-color:#4e555b}.btn-secondary:not(:disabled):not(.disabled).active:focus,.btn-secondary:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(130,138,145,.5)}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-info:not(:disabled):not(.disabled).active,.btn-info:not(:disabled):not(.disabled):active{color:#fff;background-color:#117a8b;border-color:#10707f}.btn-info:not(:disabled):not(.disabled).active:focus,.btn-info:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(58,176,195,.5)}.btn-warning:not(:disabled):not(.disabled).active,.btn-warning:not(:disabled):not(.disabled):active{color:#212529;background-color:#d39e00;border-color:#c69500}.btn-warning:not(:disabled):not(.disabled).active:focus,.btn-warning:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(222,170,12,.5)}.btn-danger:not(:disabled):not(.disabled).active,.btn-danger:not(:disabled):not(.disabled):active{color:#fff;background-color:#bd2130;border-color:#b21f2d}.btn-danger:not(:disabled):not(.disabled).active:focus,.btn-danger:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(225,83,97,.5)}.btn-light:not(:disabled):not(.disabled).active,.btn-light:not(:disabled):not(.disabled):active{color:#212529;background-color:#dae0e5;border-color:#d3d9df}.btn-light:not(:disabled):not(.disabled).active:focus,.btn-light:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(216,217,219,.5)}.btn-dark{color:#fff;background-color:#343a40;border-color:#343a40}.btn-dark:hover{color:#fff;background-color:#23272b;border-color:#1d2124}.btn-dark:focus{box-shadow:0 0 0 .2rem rgba(82,88,93,.5)}.btn-dark:disabled{color:#fff;background-color:#343a40;border-color:#343a40}.btn-dark:not(:disabled):not(.disabled).active,.btn-dark:not(:disabled):not(.disabled):active{color:#fff;background-color:#1d2124;border-color:#171a1d}.btn-dark:not(:disabled):not(.disabled).active:focus,.btn-dark:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(82,88,93,.5)}.btn-outline-primary:not(:disabled):not(.disabled).active,.btn-outline-primary:not(:disabled):not(.disabled):active{color:#fff;background-color:#007bff;border-color:#007bff}.btn-outline-primary:not(:disabled):not(.disabled).active:focus,.btn-outline-primary:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(0,123,255,.5)}.btn-outline-secondary:not(:disabled):not(.disabled).active,.btn-outline-secondary:not(:disabled):not(.disabled):active{color:#fff;background-color:#6c757d;border-color:#6c757d}.btn-outline-secondary:not(:disabled):not(.disabled).active:focus,.btn-outline-secondary:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(108,117,125,.5)}.btn-outline-success:not(:disabled):not(.disabled).active,.btn-outline-success:not(:disabled):not(.disabled):active{color:#fff;background-color:#28a745;border-color:#28a745}.btn-outline-success:not(:disabled):not(.disabled).active:focus,.btn-outline-success:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(40,167,69,.5)}.btn-outline-info:not(:disabled):not(.disabled).active,.btn-outline-info:not(:disabled):not(.disabled):active{color:#fff;background-color:#17a2b8;border-color:#17a2b8}.btn-outline-info:not(:disabled):not(.disabled).active:focus,.btn-outline-info:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(23,162,184,.5)}.btn-outline-warning:not(:disabled):not(.disabled).active,.btn-outline-warning:not(:disabled):not(.disabled):active{color:#212529;background-color:#ffc107;border-color:#ffc107}.btn-outline-warning:not(:disabled):not(.disabled).active:focus,.btn-outline-warning:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(255,193,7,.5)}.btn-outline-danger:not(:disabled):not(.disabled).active,.btn-outline-danger:not(:disabled):not(.disabled):active{color:#fff;background-color:#dc3545;border-color:#dc3545}.btn-outline-danger:not(:disabled):not(.disabled).active:focus,.btn-outline-danger:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(220,53,69,.5)}.btn-outline-light:not(:disabled):not(.disabled).active,.btn-outline-light:not(:disabled):not(.disabled):active{color:#212529;background-color:#f8f9fa;border-color:#f8f9fa}.btn-outline-light:not(:disabled):not(.disabled).active:focus,.btn-outline-light:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(248,249,250,.5)}.btn-outline-dark:not(:disabled):not(.disabled).active,.btn-outline-dark:not(:disabled):not(.disabled):active{color:#fff;background-color:#343a40;border-color:#343a40}.btn-outline-dark:not(:disabled):not(.disabled).active:focus,.btn-outline-dark:not(:disabled):not(.disabled):active:focus{box-shadow:0 0 0 .2rem rgba(52,58,64,.5)}.btn-block{display:block;width:100%}.collapse:not(.show){display:none}.custom-control-input:focus:not(:checked)~.custom-control-label::before{border-color:#80bdff}.custom-control-input:not(:disabled):active~.custom-control-label::before{color:#fff;background-color:#b3d7ff;border-color:#b3d7ff}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar>.container{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.navbar-nav{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}.navbar-nav .nav-link{padding-right:0;padding-left:0}.navbar-collapse{-ms-flex-preferred-size:100%;flex-basis:100%;-ms-flex-positive:1;flex-grow:1;-ms-flex-align:center;align-items:center}.navbar-toggler{padding:.25rem .75rem;font-size:1.25rem;line-height:1;background-color:transparent;border:1px solid transparent;border-radius:.25rem}.navbar-toggler:focus,.navbar-toggler:hover{text-decoration:none}@media (max-width:767.98px){.navbar-expand-md>.container{padding-right:0;padding-left:0}}@media (min-width:768px){.navbar-expand-md{-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-pack:start;justify-content:flex-start}.navbar-expand-md .navbar-nav{-ms-flex-direction:row;flex-direction:row}.navbar-expand-md .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}.navbar-expand-md>.container{-ms-flex-wrap:nowrap;flex-wrap:nowrap}.navbar-expand-md .navbar-collapse{display:-ms-flexbox!important;display:flex!important;-ms-flex-preferred-size:auto;flex-basis:auto}.navbar-expand-md .navbar-toggler{display:none}}.card{position:relative;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:1px solid rgba(0,0,0,.125);border-radius:.25rem}.card-body{-ms-flex:1 1 auto;flex:1 1 auto;padding:1.25rem}.close:not(:disabled):not(.disabled):focus,.close:not(:disabled):not(.disabled):hover{opacity:.75}.rounded-0{border-radius:0!important}.d-none{display:none!important}.d-block{display:block!important}.d-flex{display:-ms-flexbox!important;display:flex!important}@media (min-width:768px){.d-md-none{display:none!important}.d-md-block{display:block!important}}@media (min-width:992px){.d-lg-none{display:none!important}.d-lg-block{display:block!important}}@media (min-width:1200px){.d-xl-none{display:none!important}}.justify-content-center{-ms-flex-pack:center!important;justify-content:center!important}.float-right{float:right!important}.fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030}@supports ((position:-webkit-sticky) or (position:sticky)){}.mb-0{margin-bottom:0!important}.mb-3{margin-bottom:1rem!important}.ml-auto{margin-left:auto!important}.text-center{text-align:center!important}.text-white{color:#fff!important}@media print{*,::after,::before{text-shadow:none!important;box-shadow:none!important}a:not(.btn){text-decoration:underline}img{page-break-inside:avoid}h2,p{orphans:3;widows:3}h2{page-break-after:avoid}@page{size:a3}body{min-width:992px!important}.container{min-width:992px!important}.navbar{display:none}}</style>
+  <style>@font-face{font-family:'FontAwesome';src:url('fonts/fontawesome-webfont.eot');src:url('fonts/fontawesome-webfont.eot') format('embedded-opentype'),url('fonts/fontawesome-webfont.woff2') format('woff2'),url('fonts/fontawesome-webfont.woff') format('woff'),url('fonts/fontawesome-webfont.ttf') format('truetype'),url('fonts/fontawesome-webfont.svg') format('svg');font-weight:normal;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.pull-left{float:left}.fa-star:before{content:"\f005"}.fa-bars:before{content:"\f0c9"}</style>
+  <style>@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:local('Montserrat Regular'),local(Montserrat-Regular),url(fonts/Montserrat-Regular.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:local('Montserrat Regular'),local(Montserrat-Regular),url(fonts/Montserrat-Regular.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:local('Montserrat Regular'),local(Montserrat-Regular),url(fonts/Montserrat-Regular.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB;}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:local('Montserrat Regular'),local(Montserrat-Regular),url(fonts/Montserrat-Regular.woff2) format('woff2');unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;}@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:local('Montserrat Regular'),local(Montserrat-Regular),url(fonts/Montserrat-Regular.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
+  
+  <style>body,html{scroll-behavior:smooth;}h1,h2,h3,h4,h5,p{font-family:'ABeeZee',sans-serif;}body nav{font-family:'Montserrat',sans-serif;}ul li{list-style-type:none;margin:0;padding:0;text-decoration:&bull;}.fill:hover,.fill:focus{box-shadow:inset 0 0 0 2em var(--hover);}.fill{--color:#a972cb;--hover:#cb72aa;}.move-nav:hover .nav-size{filter:blur(1px);opacity:.5;transform:scale(.98);box-shadow:none;}.move-nav:hover .nav-size:hover{transform:scale(1);filter:blur(0);opacity:1;);}figure.snip1206{font-family:'Raleway',Arial,sans-serif;color:#fff;position:relative;overflow:hidden;margin:10px;min-width:220px;max-width:310px;max-height:220px;width:100%;color:#000000;text-align:center;}figure.snip1206 *{-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:all 0.6s ease;transition:all 0.6s ease;}figure.snip1206 img{opacity:1;width:60%;-webkit-transition:opacity 0.35s;transition:opacity 0.35s;}figure.snip1206:after{background:#ffffff;width:115%;height:115%;position:absolute;left:0;bottom:0;content:'';opacity:0.90;-webkit-transform:skew(-45deg) scaleX(0);transform:skew(-45deg) scaleX(0);-webkit-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}figure.snip1206 figcaption{position:absolute;top:50%;left:0;width:100%;-webkit-transform:translateY(-50%);transform:translateY(-50%);z-index:1;}figure.snip1206 h2,figure.snip1206 p{margin:0;width:100%;opacity:0;}figure.snip1206 h2{font-size:20px;padding:0 30px;display:inline-block;font-weight:400;text-transform:uppercase;}figure.snip1206 p{padding:0 50px;font-size:1em;font-weight:500;}figure.snip1206 a{left:0;right:0;top:0;bottom:0;position:absolute;z-index:1;}figure.snip1206:hover:after,figure.snip1206.hover:after{-webkit-transform:skew(-45deg) scaleX(1);transform:skew(-45deg) scaleX(1);transition:all 400ms cubic-bezier(0.17,0.88,0.32,1.27);}figure.snip1206:hover figcaption h2,figure.snip1206.hover figcaption h2,figure.snip1206:hover figcaption p,figure.snip1206.hover figcaption p{-webkit-transform:translate3d(0%,0%,0);transform:translate3d(0%,0%,0);-webkit-transition-delay:0.2s;transition-delay:0.2s;}figure.snip1206:hover figcaption h2,figure.snip1206.hover figcaption h2{opacity:1;}figure.snip1206:hover figcaption p,figure.snip1206.hover figcaption p{opacity:0.7;}.shake-btn{animation:shake 0.5s;animation-iteration-count:infinite;}*{box-sizing:border-box;}.img-zoom-container{position:relative;}.img-zoom-lens{position:absolute;border:1px solid #d4d4d4;width:40px;height:40px;}.img-zoom-result{border:1px solid #d4d4d4;width:300px;height:300px;}@keyframes shake{0%{transform:translate(1px,1px) rotate(0deg);}10%{transform:translate(-1px,-2px) rotate(-1deg);}20%{transform:translate(-3px,0) rotate(1deg);}30%{transform:translate(3px,2px) rotate(0deg);}40%{transform:translate(1px,-1px) rotate(1deg);}50%{transform:translate(-1px,2px) rotate(-1deg);}60%{transform:translate(-3px,1px) rotate(0deg);}70%{transform:translate(3px,1px) rotate(-1deg);}80%{transform:translate(-1px,-1px) rotate(1deg);}90%{transform:translate(1px,2px) rotate(0deg);}100%{transform:translate(1px,-2px) rotate(-1deg);}}.shake-btn:hover{animation:shake 8s;animation-iteration-count:infinite;}@keyframes shake{0%{transform:translate(1px,1px) rotate(0deg);}10%{transform:translate(-1px,-2px) rotate(-1deg);}20%{transform:translate(-3px,0) rotate(1deg);}30%{transform:translate(3px,2px) rotate(0deg);}40%{transform:translate(1px,-1px) rotate(1deg);}50%{transform:translate(-1px,2px) rotate(-1deg);}60%{transform:translate(-3px,1px) rotate(0deg);}70%{transform:translate(3px,1px) rotate(-1deg);}80%{transform:translate(-1px,-1px) rotate(1deg);}90%{transform:translate(1px,2px) rotate(0deg);}100%{transform:translate(1px,-2px) rotate(-1deg);}}.ingred-move{margin-left:-150px;}.margin-pic-s1{margin-top:230px;padding-bottom:200px;}.margin-pic-s4{margin-top:230px;}.margin-s5{margin-top:5px;margin-bottom:5px;margin-left:-10px;}.h2-s5{color:#204e7a;font-size:70px;margin-top:150px;}.h2-s5-1{color:#204e7a;font-size:50px;font-weight:bold;padding-left:50px;}.style-s6{margin-left:-350px;padding-top:150px;}.rating-stars{color:#ffd203;}.reviewer__status{color:#163ad7;margin:0;}.button-green-mob{padding:20px 50px;background:#11e011;color:white;font-size:25px;text-decoration:none;border-radius:6px;}.button-green-mob:hover{color:white;text-decoration:none;}.button-green{padding:20px 200px;background:#11e011;color:white;font-size:50px;text-decoration:none;border-radius:6px;transition-duration:900ms;}.button-green:hover{padding:25px 210px;background:#00be00;color:white;font-size:50px;text-decoration:none;border-radius:6px;}.btn-margin{margin-top:40px;margin-bottom:40px;}.h2-mob{font-size:35px;}.mob-margin{margin-top:20px;margin-bottom:20px;}.photo{object-fit:cover;box-shadow:4px 4px 4px 0 rgba(0,0,0,.4);transition:all .5s;}.photo:hover{box-shadow:1px 1px 1px 0 rgba(0,0,0,0);}.button-s4{padding-top:350px;padding-left:100px;}.text-right{text-align:right;}.color-blue{color:#3da0ec;}.color-white{color:white;}.color-black{color:black;}.nav-size{padding:15px 20px;font-size:15px;font-weight:bold;border-radius:20px;transition-duration:500ms;}.nav-size:hover{padding:10px 30px;font-size:18px;font-weight:bold;border:1px solid #eaada6;background:#eaada6;}.mob-nav-size{font-size:15px;text-align:center;opacity:0.8;border-bottom:0.5px solid black;transition-duration:1s;}.mob-nav-size:hover{font-size:25px;opacity:1;border-bottom:2px solid black;}.mob-width-text{width:95%;margin-left:10px;}.br{border:0 solid red;}.li-size{font-size:20px;margin-top:10px;}.move-nav{background:;padding-left:900px;padding-top:10px;padding-bottom:10px;display:inline-block;}.logo-move{margin-left:20px;margin-top:10px;}.about-move{padding-top:60px;padding-left:100px;padding-bottom:100px;font-weight:bold;}.p-about{width:650px;padding-left:50px;}.p-just{text-align:justify;}.how-move-sec{padding-top:50px;padding-bottom:50px;}.icon1-move{padding-left:70px;padding-top:50px;}.p-width{width:400px;}.bg-tick{background-image:url(img/ti1.png);background-repeat:no-repeat;background-position:center left;background-size:40px 40px;padding-left:40px;}.bg-1{background-image:url(img/bgr.png);background-repeat:no-repeat;background-size:cover;}.bg-2{background-image:url(img/bgr2.png);background-repeat:no-repeat;background-size:cover;}.bg-3{background-image:url(img/bgr3.png);background-repeat:no-repeat;background-size:cover;}.bg-4{background-image:url(img/model4.jpg);background-repeat:no-repeat;background-size:cover;height:1000px;}.bg-5{background-image:url();background-repeat:no-repeat;background-size:cover;}.bg-6{background-image:url(img/hh.jpg);background-repeat:no-repeat;background-size:cover;}.nav-size-mob{padding:8px 8px;font-size:15px;}.nav-size-mob1{padding:10px 28px;font-size:15px;}.about-mob{padding-top:30px;}.clearfix::after{content:"";display:block;clear:both;}.faq-margin{margin-top:40px;}.pack-img{padding-top:;padding-bottom:85px;}.footer-p-size{text-align:center;margin-top:20px;font-size:15px;}.foote-h3-size{text-align:center;margin-top:20px;border-bottom:1px solid #8c8c8c;color:#f04f50;}.p-size{line-height:1.5;font-size:20px;}.p-size-2{line-height:2;margin-top:35px;font-size:30px;padding-bottom:30px;text-align:justify;}.p-size-rev{line-height:1.5;margin-top:25px;font-size:20px;padding-bottom:30px;text-align:justify;width:98%;}.img-rev{border-radius:50%;margin-right:10px;}.color-rev-name{color:#ef6a1b;}.mob-p-size{font-size:20px;margin-left:10px;width:95%;text-align:justify;}.center{text-align:center;}.bgcolor-grey{background:#c9c8c2;}.zoom{transition:transform .2s;}.zoom:hover{transform:scale(1.02);}.zoom-ingred{transition:transform .2s;}.zoom-ingred:hover{transform:scale(1.07);}.zoom-faq{transition:transform .2s;}.zoom-faq:hover{transform:scale(1.01);}.blob{background:#7dc1f2;color:white;margin-top :;padding:10px 70px;box-shadow:#7dc1f2;transform:scale(1);animation:pulse 2s infinite;}@keyframes pulse{0%{transform:scale(0.95);box-shadow:0 0 0 0 rgba(0,0,0,0.7);}70%{transform:scale(1);box-shadow:0 0 0 5px rgba(0,0,0,0);}100%{transform:scale(0.95);box-shadow:0 0 0 0 rgba(0,0,0,0);}}.cube-grey{width:400px;padding:40px 30px;margin:0 auto;}.dec-none{list-style-type:none;}.style-s2{padding-right:150px;padding-top:150px;text-align:right;}.p-move-left{margin-left:200px;}.move-min{margin-top:-40px;}.h2-size{padding:20px 20px;margin-top:10px;text-align:center;font-size:50px;}nav a{text-decoration:none;}nav a:hover{color:black;text-decoration:none;}.rotate{-ms-transform:rotate(90deg);transform:rotate(90deg);}.navbar-bg,.who-are-we-bg{background:#ff4a7d;background:-moz-linear-gradient(90deg,#ff4a7d 0%,#ff4ea3 25%,#ff4a7d 60%);background:-webkit-linear-gradient( 90deg,#ff4a7d 0%,#ff4ea3 25%,#ff4a7d 60% );background:linear-gradient(90deg,#ff4a7d 0%,#ff4ea3 25%,#ff4a7d 60%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4a7d",endColorstr="#ff4a7d",GradientType=1);}.hero-bg{background:#f4f3f8;background:-moz-linear-gradient(180deg,#f4f3f8 0%,#e1e0e7 100%);background:-webkit-linear-gradient(180deg,#f4f3f8 0%,#e1e0e7 100%);background:linear-gradient(180deg,#f4f3f8 0%,#e1e0e7 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4f3f8",endColorstr="#e1e0e7",GradientType=1);}.bg-grey-gradient{background:#8e9295;background:-moz-linear-gradient( 180deg,#8e9295 0%,#7d8895 50%,#dddee0 100% );background:-webkit-linear-gradient( 180deg,#8e9295 0%,#7d8895 50%,#dddee0 100% );background:linear-gradient(180deg,#8e9295 0%,#7d8895 50%,#dddee0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#8e9295",endColorstr="#dddee0",GradientType=1);}.bg-grey,.counter__heading{background-color:#f1f0f6;}.bgcolor-gray{background:#edecf2;}.bg-white{background-color:#fff;}.bg-pink,.bg-pink:focus,.bg-pink:hover,.bg-pink:active{background-color:#ff4a7d;}.bg-pink-gradient{background:#fde8ee;background:linear-gradient(180deg,#fde8ee 0%,#f8a5bb 50%,#fde8ed 100%);}.bg-dark-pink-gradient{background:#ff4c7f;background:-moz-linear-gradient( 180deg,#ff4c7f 0%,#ff0235 50%,#ff4b7e 100% );background:-webkit-linear-gradient( 180deg,#ff4c7f 0%,#ff0235 50%,#ff4b7e 100% );background:linear-gradient(180deg,#ff4c7f 0%,#ff0235 50%,#ff4b7e 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff4c7f",endColorstr="#ff4b7e",GradientType=1);}.text-dark-grey{color:#858585;}.text-pink{color:#ff4fa4;}.text-gold{color:#ffc114;}.text-black{color:#000000!important;}.text-white{color:#ffffff;}.move-left{padding-left:50px;}.btn{border-radius:0;padding:0.27rem 1.75rem;}.btn,.btn:hover{color:#ffffff;}.btn:focus{box-shadow:none;}.navbar .nav-link{color:black;}.section-header{font-size:30px;color:#ffffff;padding:10px 50px;text-align:center;}.counter{position:relative;}.counter__heading{word-spacing:-1px;transform:scale(0.75,1.05);padding:0 5px;z-index:1;font-size:20px;}.counter::after{content:"";display:block;position:absolute;top:12px;border-bottom:1px solid black;width:100%;}.counter__time{display:flex;justify-content:center;}.counter__time__digits{display:flex;flex-direction:column;align-items:center;padding:0 5px;font-size:24px;}.counter__time__digits span{font-size:20px;color:#d00000;text-transform:uppercase;}.counter__bracket{color:#d00000;font-size:28px;font-weight:700;transform:scaleY(1.75);position:relative;top:5px;}.counter__bracket:first-of-type{right:30px;}.counter__bracket:last-of-type{left:30px;}.hero__modal{flex:1;position:relative;}.hero__modal img{width:500px;max-width:448px;transform:translateX(-100px);height:100%;position:absolute;}@media (max-width: 545px) {.hero__modal img{max-width:253px;}.hero__product .product__img{width:150px;}}.hero__content{flex:2;}.hero__content h4{font-size:48px;}.hero__content p{font-size:36px;}@media (max-width: 1700px){.style-s6{margin-left:-80px;}.move-nav{padding-left:530px;}.small-pic{width:280px;}.dnone1{display:none;}}@media (max-width: 1400px){.dnone-faq-pic{display:none;}.style-s6{margin-left:-60px;}.small-pic7{width:70%;}.small-pic6{width:100%;}.small-pic5{width:85%;}.move-nav{padding-left:450px;}.nav-size{padding:10px 10px;font-size:15px;font-weight:bold;}}@media (max-width: 800px){.small-pic1{width:90%;}}@media (max-width: 1050px){.ingred-move{margin-left:-10px;}.dnone-pic{display:none;}.h2-size{padding:20px 20px;margin-top:10px;text-align:center;font-size:30px;}.small-pic-mob{width:100%;}}@media (max-width: 1205px){.pading-desc{padding-top:20px;}.disp-none{display:none;}.style-s6{margin-left:-30px;}.small-pic6{width:125%;margin-left:-50px;}.pack-img{padding-top:100px;padding-bottom:85px;}}@media (max-width: 1050px){.center-tab{text-align:center;margin-left:100px;}.small-pic6{width:130%;}.tablet-move{margin-top:50px;}.icon-move-mob{text-align:center;}.p-width{width:100%;}.move-left{margin-left:-60px;}.move-left1{margin-left:-80px;}.dnone3{display:none;}.small-pic{width:130px;}}@media (max-width: 1000px) {.hero-text{font-size:20px!important;}.hero-heading{font-size:24px!important;}}.hero__product{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative;}.hero__product img{max-width:371px;max-height:400px;}.hero__product__discount-img{width:70px;height:70px;position:absolute;top:30px;left:20px;}.hero__product__text-size{font-size:18px;}.brands .brand__img{max-height:100px;display:block;max-width:130px;margin:0 auto;}.who-we-are .section-header{background-color:#992f61;}.who-we-are .btn{color:black;background:#817f79;background:-moz-linear-gradient( 180deg,#817f79 0%,#e5e0d6 50%,#817f79 100% );background:-webkit-linear-gradient( 180deg,#817f79 0%,#e5e0d6 50%,#817f79 100% );background:linear-gradient(180deg,#817f79 0%,#e5e0d6 50%,#817f79 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#817f79",endColorstr="#817f79",GradientType=1);}@media (max-width: 660px) {.who-we-are img{max-height:250px;}}.wow-touch-about .section-header{background-color:#545659;}.ingredients .ingredient-item{position:relative;}.ingredients .ingredient-item img{max-width:80%;display:block;margin:0 auto;max-height:200px;}.ingredients .ingredient-item .plus-icon::after{content:"+";position:absolute;bottom:0;right:0;background-color:#ff0149;width:40px;height:30px;text-align:center;font-size:18px;border-radius:50px;color:#ffffff;}.use-wow-touch .section-header{background-color:#571a31;}.reviews .section-header{background-color:#999999;}.reviews .review__comment{font-family:"InkFree";margin-top:20px;max-width:500px;text-align:center;font-size:24px;}.reviews .slider{position:relative;}.reviews .arrows{position:absolute;top:50%;left:0;width:100%;pointer-events:none;}.reviews .arrows .arrow-left,.reviews .arrows .arrow-right{position:absolute;cursor:pointer;font-size:36px;pointer-events:all;z-index:10;}.reviews .arrows .arrow-left{left:0;}.reviews .arrows .arrow-right{right:0;}.course-duration .week-index{position:absolute;top:-10px;left:-10px;padding:5px 15px;font-size:18px;color:#fff;text-align:center;border-radius:50px;background-color:#ff0149;}.footer{padding:20px 0;}.footer__links,.footer__link{color:#dc915d;}.footer__link{}.footer__link:hover{text-decoration:none;}.step .w-90{width:90%;margin:0 auto;}.step .line-through{text-decoration:line-through #000000 solid;}.step .side-img,.step .decoration-img{position:fixed;width:100%;left:0;z-index:-1;}.step .side-img{height:100%;}.step .side-img img{height:100vh;transform:translateX(-40%);}.step .decoration-img{bottom:0;}.step .decoration-img img{max-height:100px;width:100%;object-position:center;object-fit:cover;}.step .brand .logo{font-size:36px;color:#ffffff;font-weight:900;}.step .brand .logo span{color:#fa5fab;}.step .main-content{margin-left:30px;background-color:rgba(0,0,0,0.8);min-height:90vh;margin-top:2vh;flex:1;}.step .main-content p{color:#ff4a7d;font-size:14px;}.step .main-content .card-img{display:flex;flex-direction:column;}.step .main-content .card-img img{max-height:100px;}.step .main-content .card-img img.fix-width{max-width:70px;}.step .main-content .card-img a{color:red;background-color:transparent;}.step .main-content .card-text{font-size:22px;font-weight:700;}.step .main-content .card-text p{margin:0;}.step textarea.font-control,.step textarea.font-control::placeholder{color:#ffffff!important;}.step .feature__icon img{height:50px;margin-top:20px;}.step .feature__text{margin-top:25px;}.step .feature__text h5,.step .feature__text p{color:white;}.sticky-button{position:sticky;top:0;z-index:2;}.sticky-order-button{display:none;}@media (min-width:992px) {.sticky-button .sticky-navbar{display:none;}.sticky-button .sticky-order-button{display:block;}}.alert_message{background-color:#ff4278;border:3px dashed #fff;font-weight:bold;margin-bottom:10px;padding:5px;margin-top:10px!important;color:black!important;}.checkbox{top:0;right:15px;}.backGrey2{border:2px solid #bad7f9;padding:10px 5px 5px 5px;border-radius:10px;}@media (max-width:1200px){.dnone-nav{display:none;}}@media (max-width:766px){.dnone{display:none;}}@media (max-width:1024px){.ampules-mob{width:100%;}}</style>
+  <style>.main-carousel{position:relative;}.carousel-cell{width:100%;}.carousel-cell img{width:100%;}.gallery-cell{width:25%;}.gallery-cell img{width:100%;}.gallery-carousel .gallery-cell{width:24%;margin:0 1% 0 0;}.flickity-enabled{position:relative;}.flickity-enabled:focus{outline:none;}.flickity-viewport{overflow:hidden;position:relative;height:100%;}.flickity-slider{position:absolute;width:100%;height:100%;}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab;}.flickity-prev-next-button{position:absolute;bottom:0;width:74px;height:74px;border:none;background:rgba(0,0,0,0.2);cursor:pointer;}.flickity-prev-next-button:hover{background:#6d7890;}.flickity-prev-next-button:focus{outline:none;box-shadow:0 0 0 5px #09F;}.flickity-prev-next-button:active{opacity:0.6;}.flickity-prev-next-button.previous{right:76px;}.flickity-prev-next-button.next{right:0;}.flickity-prev-next-button:disabled{opacity:0.3;cursor:auto;}.flickity-prev-next-button svg{position:absolute;left:20%;top:20%;width:60%;height:60%;}.flickity-prev-next-button .arrow{fill:#ffffff;}@-webkit-keyframes fadeInDown{from{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);}to{opacity:1;-webkit-transform:none;transform:none;}}@keyframes fadeInDown{from{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);}to{opacity:1;-webkit-transform:none;transform:none;}}.fadeInDown{-webkit-animation:fadeInDown 0.75s;animation:fadeInDown 0.75s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;}</style>
+  <style>*{margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;outline:0}html,body,div,span,h2,h4,h5,p,a,img,b,ul,li{margin:0;padding:0;border:0;outline:0;}body{position:relative;width:100%;padding:0;margin:0 auto;font-family:'Roboto','Helvetica','Arial',sans-serif;font-size:17px;line-height:1.5em;color:#333;font-weight:400;}h2,h4,h4{margin:0;padding:10px 0;}ul{text-align:left;}.orderform{overflow:visible;position:relative;max-width:300px;width:95%;margin:0 auto;}.orderform input{height:40px;border:1px solid #1F9DD3;font-weight:normal;font-size:16px;line-height:12px;padding:3px;width:100%;margin:0 auto 5px;display:block;resize:none;}.orderform #shipping_areacode{width:40px!important;float:left;margin:0 10px 0 0;}.orderform input:focus{box-shadow:0 0 5px red;-webkit-box-shadow:0 0 5px red;-moz-box-shadow:0 0 5px red;border:1px solid red;}.orderform input[name="shipping_phone"]{max-width:216px;float:right;}.orderform br{clear:both;}.red{color:red;font-size:22px;margin-bottom:10px;font-weight:bold;}.wrapper{width:100%;max-width:1000px;margin:0 auto;padding:0 10px;text-align:center;position:relative;}.section_11{}.section_11 h2{text-shadow:1px 1px 3px rgb(237,216,114);}.formBox,.box{display:inline-block;vertical-align:middle;}.box{width:49%;}.formBox{width:100%;max-width:280px;background-color:rgba(255,255,255,0.7);border-radius:8px;margin-bottom:10px;padding:10px 0;-webkit-box-shadow:0 1px 8px 0 rgb(232,128,48);-moz-box-shadow:0 1px 8px 0 rgb(232,128,48);box-shadow:0 1px 8px 0 rgb(232,128,48);}.formBox h4{padding:0;}.orderform button{font-weight:700;margin:10px auto;font-size:21px;color:#FFFFFF!important;text-decoration:none;text-align:center;display:inline-block;padding:10px;cursor:pointer;text-transform:uppercase;background-color:#F00;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;min-width:210px;-webkit-box-shadow:0 3px 5px 0 rgba(50,50,50,0.75);-moz-box-shadow:0 3px 5px 0 rgba(50,50,50,0.75);box-shadow:0 3px 5px 0 rgba(50,50,50,0.75);border:none;}.orderform button:hover{box-shadow:none;background-color:#c90101;}.section_11 .wrapper{padding-bottom:50px;}.section_11 .box{min-width:280px;}.section_11 .product{vertical-align:middle;}.section_11 .formBox{background-color:transparent;box-shadow:none;max-width:300px;margin:0 auto;}.content{background-color:rgba(255,255,255,0.7);-webkit-box-shadow:0 1px 8px 0 rgb(232,128,48);-moz-box-shadow:0 1px 8px 0 rgb(232,128,48);box-shadow:0 1px 8px 0 rgb(232,128,48);border-radius:8px;}.countdown_box{width:auto;margin:5px 0;text-align:center;}.order-countdown-hours,.order-countdown-minutes,.order-countdown-seconds{background-color:#ff0000;border-radius:5px;color:#fff;display:inline-block;font-size:30px;font-weight:900;padding:10px;text-align:center;margin:0;}.time{margin:0 auto;font-size:11px;font-weight:900;text-align:center;line-height:10px;}.time span{margin:0 8px;}.countbox{color:#000;text-decoration:none;cursor:pointer;}.countbox:hover,.countbox:focus{text-decoration:none;color:#000;}.toend{text-align:center;font-weight:900;font-size:14px;line-height:12px;}.prices{width:95%;max-width:300px;padding:5px;display:table;margin:0 auto;text-align:center;}.prices .red{color:red;font-weight:bold;text-decoration:line-through;margin-bottom:10px;font-size:18px;}.prices .green{color:green;font-weight:bold;font-size:1.5em;}.prices p{margin:0 auto;line-height:1.4em;}@media screen and (max-width: 781px) {.arrow{background-size:40px;top:254px;width:42px;}}@media screen and (max-width: 732px) {ul{padding-left:20px;}}@media screen and (max-width: 482px) {h2{font-size:20px;line-height:normal;}}@media screen and (max-width: 477px) {.formBox{margin:0 auto;}}</style>
+	<style>.prices p{text-align:center;}input{text-align:right}h2,h4,h5,p,.card-body{direction:rtl;text-align:right;}.formBox h4{text-align:center}figure{margin:10px auto!important;}.orderform #shipping_areacode{width:45px!important}#home .glossy-button{float:right;margin-top:20px;}.bg-3 .glossy-button{font-size:32px;}.glossy-button{background-color:#e20000;text-transform:uppercase;display:inline-block;position:relative;background-image:linear-gradient( hsla(0,0%,100%,0.6),hsla(0,0%,100%,0) 50%,hsla(0,0%,0%,0.3) 50%,hsla(0,0%,100%,0.2) );font-size:34px;color:white;padding:20px 40px;text-shadow:0 0 15px hsla(0,0%,100%,1),0 2px 4px hsla(0,0%,0%,0.7);border:none;border-radius:50px;box-shadow:inset 0 -5px 20px hsla(0,0%,0%,0.4),inset 0 5px 20px hsla(0,0%,100%,0.4),-8px 8px 5px hsla(0,0%,0%,0.15),5px 18px 10px hsla(0,0%,0%,0.2);cursor:pointer;transition:transform 0.1s,box-shadow 0.1s;}.glossy-button:hover{color:white;text-decoration:none;transform:scale(1.05);box-shadow:inset 0 -5px 20px hsla(0,0%,0%,0.4),inset 0 5px 20px hsla(0,0%,100%,0.4),-12px 12px 5px hsla(0,0%,0%,0.15),10px 25px 10px hsla(0,0%,0%,0.2);}.reviewer__status{float:right;}.p-size{font-size:25px;}.ingredients{font-size:23px}.product{margin-bottom:20px}@media only screen and (max-width: 500px){.product{width:80%;}}.footer__link{text-align:center!important}.content{padding:10px;}</style>
+</head>
+<body>
+  <nav class="fixed-top dnone-nav" style="background:linear-gradient(90deg, rgba(239, 200, 195,0.4) 30%, rgba(239, 200, 195,0.8) 60%);">
+    <div class="move-nav" style="">
+      <a class="color-black  nav-size " href="#home">صفحة رئيسية</a>
+      <a class="nav-size color-black " href="#about">نبذة علينا</a>
+      <a class="nav-size color-black" href="#how">مكونات</a>
+      <a class="nav-size color-black" href="#works">كيفاش كيخدم</a>
+      <a class="nav-size color-black " href="#review">الآراء</a>
+      <a class="nav-size color-black " href="#faq20">أسئلة شائعة</a>
+      <a class="btn blob" style="border:1px solid white;background: red;font-size: 28px;padding: 0px 22px;" href="#order">طلب دابا</a>
+    </div>
+  </nav>  <section style="" id="home" class="dnone bg-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <img class="margin-pic-s1 dnone-pic zoom" style="    width: 100%;" src="img/badge.png" alt="" width="">
+        </div>
+        <div class="col-md-6">
+          <div style="padding-left: 50px;" class="margin-pic-s1">
+            <h2 style="font-size: 50px;"><b>وازن جسمك و عقلك</b></h2>
+            <h5><b>SlimGO</b></h5>
+            <p class="p-size">معترف أنه مبين أحسن المنتجات لخسارة الوزن فسوق، SlimGO كيعطي حل ساهل وفعال لناس لي باغيين يبانوا صحيين أو فلياقة بدنية. خود خطوة وحدة وبدا تغير الإيجابي ديال جسمك.</p>              <a href="#order" class="glossy-button glossy-button--red">خسر الوزن</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img style="" class="margin-pic-s1 move-left small-pic6 zoom" src="img/product.png" alt="" width="">
+        </div>
+      </div>
+    </div>
+  </section>  <section id="about" class="dnone">
+    <div class="container-fluid">
+      <div class="row">b
+        <div class="col-xl-6">
+          <img src="img/O1.png" class="zoom" alt="" width="">
+        </div>
+        <div class="col-xl-6" style="max-width: 49%;">
+          <div class="style-s2" style="padding-left: 150px;padding-right: initial;">
+            <h2 class="center-tab"><b>نبذة علينا</b></h2>
+          <p class="p-size center-tab">SlimGO هو مكمل غذائي جذري فيها مضادات أكسدة قوية ومخلطة مع أغذية فائقة الجودة. تركيبة ديالو لممنهاش جوج مصممة باش تستهدف مسار استقلاب الدهون لأساسي ديال الجسم وتعطي تعزيز لي كيحيد السموم مركزة. خصائص SlimGO كيخليه مع أي حمية. ودليل فالأعداد! بأكتر من 1،000،000 علبة تباعت SlimGO من أنجح منتجات لي كتحرق دهون وتخلص من سموم ف امريكا </p>
+          </div>        </div>
+      </div>
+    </div>
+  </section>  <section id="how" style="margin-top: 50px;" class="dnone bg-2">
+    <div style="padding-top: 180px;padding-left: 300px;">
+      <h2 style="padding-top: 50px;padding-left: 250px;text-align: left;"><b>مكونات</b></h2>
+    </div>
+    <div class="ingredients">
+    <div style="margin-top: 150px;padding-bottom: 100px;" class="container">
+      <div class="row">
+        <div class="col-12">        </div>
+      </div>
+      <div class="row">
+        <div style="" class="col-6 col-md-6 col-xl-4 ingred-move">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#vitamin_c" aria-expanded="false" aria-controls="vitamin_c">
+<img class="zoom" src="img/in1.jpg" alt="">
+            <p class="text-center">فيتامين سي</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="vitamin_c">
+            <div class="card card-body">
+              <p>
+                فيتامين سي كيخدم باش يفتح و يوحد لون البشرة ديالك. خصائصو كتحسن حتى ترطيب و كتقلل ضرر ديال الملوثات.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-xl-4">
+           <div class="ingredient-item" data-toggle="collapse" data-target="#Beeswax" aria-expanded="false" aria-controls="Beeswax">
+            <img src="img/newingr.png" alt="">
+            <p class="text-center">قرع مر</p>
+            <span class="plus-icon" data-toggle="collapse" data-target="#Beeswax" aria-expanded="false" aria-controls="Beeswax"></span>
+          </div>
+          <div class="collapse" id="Beeswax">
+            <div class="card card-body">
+              <p>
+                قرع مر (بطيخ لمر) خضرا نباتية كتستعمل فطب تقليدي.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Licorice" aria-expanded="false" aria-controls="Licorice">
+<img class="zoom" src="img/in3.jpg" alt="">
+            <p class="text-center">عرق سوس</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Licorice">
+            <div class="card card-body">
+              <p>
+                جذور عرق سوس كتبيض و ترخي لبشرة بلطف، و كيبدا عملية التجديد.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Acids" aria-expanded="false" aria-controls="Acids">
+<img class="zoom" src="img/in2.jpg" alt="">
+            <p class="text-center">الأحماض</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Acids">
+            <div class="card card-body">
+              <p>
+                حمض الكابريليك والجليكوليك مسؤولين على تقليل التصبغ.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Ginger" aria-expanded="false" aria-controls="Ginger">
+<img class="zoom" src="img/in4.jpg" alt="">
+            <p class="text-center">جذر الزنجبيل</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Ginger">
+            <div class="card card-body">
+              <p>
+                جذر الزنجبيل مكون مضاد للأكسدة عندو تأثير قوي كحمي بشرتك ضرر لكيوصل لقلب المنطقة الدهونة.
+              </p>
+            </div>
+          </div>
+          </div>
+        <div class="col-6 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Niacinamide" aria-expanded="false" aria-controls="Niacinamide">
+<img class="zoom" src="img/in5.jpg" alt="">
+            <p class="text-center">فيتامين ب 3 (نياسيناميد)</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Niacinamide">
+            <div class="card card-body">
+              <p>
+                النياسيناميد المعروف كثر باسم فيتامين ب 3 ، مركب عضوي ومغذٍ مهم للإنسان كيتعاون مع المكونات لخرى باش يعطي لبشرتك قوة صحية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>  <section id="works" style="margin-top: 50px;" class="dnone">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-6">
+         <img class="small-pic7 zoom" style="margin-top: -120px;margin-left: -10px;" src="img/model.png" alt="" width="1100">
+        </div>        <div class="col-xl-6 style-s2">
+          <div>
+            <h2 class="center-tab"><b>كيفاش كتخدم</b></h2>
+          <p class="p-size center-tab">لكونها مكمل غذائي ناجح، SlimGO ساهلة تناولها أو تهضمها. غير خود كبسولة فاش تكون كتاكل ولا مورا لماكلة ونضم لآلاف زبائن ديالنا الراضيين!  </p>
+            <img class="zoom" src="img/product.png" alt="" width="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <section class="dnone">
+    <h2 class="center mob-margin"><b>زبائن فرحانين</b></h2>
+     <div class="section_bg ">
+        <div class="gallery-carousel">
+            <div class="gallery-cell"><img src="img/ba1.jpg" alt="" width=""></div>
+            <div class="gallery-cell"><img src="img/ba2.jpg" alt="" width=""></div>
+            <div class="gallery-cell"><img src="img/ba3.jpg" alt="" width=""></div>
+            <div class="gallery-cell"><img src="img/ba4.jpg" alt="" width=""></div>
+            <div class="gallery-cell"><img src="img/ba5.jpg" alt="" width=""></div>        </div>
+    </div>
+  </section>  <section class="dnone bg-3">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-3 margin-pic-s4">
+            <img class="zoom" src="img/model3.jpg" alt="" width="600">
+        </div>
+        <div class="col-md-6 margin-pic-s4">
+          <a href="#order" style="margin-left: 250px;margin-top: 350px;" class="glossy-button glossy-button--red">خسر الوزن</a>
+        </div>
+        <div class="col-md-3 margin-pic-s4">
+            <img class="small-pic6 move-left zoom" src="img/product.png" alt="" width="">
+        </div>
+      </div>
+    </div>
+    <div style="padding-bottom: 100px;" class="container">
+      <h2><b>شنو لي كيخلي SlimGO ناجحة بزاف؟</b></h2>
+      <p class="p-size"><b>SlimGO هو مكمل غذائي لي كيستهدف مسار تمييل الغذائي لي كيحرق دهون و مصدر طاقتو الأساسي بطريقة مثبة علميا. كيخليك تعزز طاقتك، نشاطتك، و قدرتك البدنية، فحين كيسمحلك تبقا متبع الحمية لي نتا بغيها. مع المكمل الغذائي SlimGO نتا كتحرق فعليا الدهون على قبل طاقة و مشي لفظلات! </b></p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="zoom" src="img/gimnastic1.png" alt="" width="">
+        </div>
+        <div class="col-md-4">
+          <img class="zoom" src="img/gimnastic2.png" alt="" width="">
+        </div>
+        <div class="col-md-4">
+          <img class="zoom" src="img/gimnastic3.png" alt="" width="">
+        </div>
+      </div>
+    </div>
+  </section>  <section class="dnone">
+    <div style="background: #efc8c3;" class="container-fluid ">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="margin-s5 zoom" src="img/model9.jpg" alt="" width="100%">
+        </div>
+        <div class="col-md-8">
+          <h2 class="h2-s5 center"><b>"مشي حمية،<br>
+           ولكن تغيير نمط الحياة"</b></h2>
+        </div>
+      </div>
+    </div>
+  </section>  <section id="review" class="bg-4 dnone">
+    <h2 class="h2-s5-1">شوف شنو كيقولوا زبائن ديالنا...</h2>
+    <div class="container">
+      <div style="" class="row style-s6">
+        <div class="col-md-4">
+          <p class="p-size" style="font-weight: normal !important;">حياتي كاملة ونا رقيق، ولكن ملي وصلت لمتوسط عمر الجسم ديالي بدا كيجمع دهون كتر وكتر. ومع هدشي، ثقتي فالجسم ديال نقصات. هدشي كان كافي! جربت SlimGO... نتائج بانوا تم نيت! فالواقع أنا فرحان بسهولة كيفاش تباقا فلياقة بدنية مزيانة هاد الأيام. أنا راضي بزاف على هاد المنتج!</p>
+              <p class="mb-0">-إفرين منتالبو، 46<i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i>
+              </p>
+              <em><strong class="reviewer__status">مشتري تم تحقق منه</strong></em>
+        </div>
+        <div class="col-md-4">
+          <p class="p-size" style="font-weight: normal !important;">كوني فطفولتي غليظة وعشر سنين معمري كان عندي الأمل يكون عندي جسم رقيق وجداب... هدشي علاش كنت حشومية ومنغالقة فسن 20 فحين كلشي كان كيخرج فمواعد أو كيوقعوا فالحب. لعام لي فات زرت واحد صديقة من مدة طويلة ولي عندا جسم زوين. كنت فرحانة بزاف أنني نكتشف بلي كانت كتاخد مكمل لي كيحرق دهون ولي هدرتلي عليه بزاف. كناخد SlimGO من داك لوقت ونتائج كتر من واضحين... أو عندي صديق حاليا و نا فرحانة بزاف بزاف!</p>
+              <p class="mb-0">-إييا بوركوايدو، 31<i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i>
+              </p>
+              <em><strong class="reviewer__status">مشتري تم تحقق منه</strong></em>
+        </div>
+        <div class="col-md-4">
+          <p class="p-size" style="font-weight: normal !important;">أكبر خطأ فحياتي هو نمط حياتي لي غير صحي. للأسف، عرفت هدشي غير ملي مشاكلي صحية بانو. جربت بزاف نصحح أخطائي، وليت مكناكلش الماكلة لغير صحية بزاف، كندير رياضة كتر وكنجرب كينات مختلفة باش نحرق دهون و نخلص الجسم ديالي من دهون. حتى قترح عليا جاري SlimGO عاد حصلت على نتائج لي بغاها. كانت مباركة حقيقية وفرصتي تانية لحياة مزيانة. </p>
+              <p class="mb-0">محالينة أزارياس – كانسيو، 53 <i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i>
+              </p>
+              <em><strong class="reviewer__status">مشتري تم تحقق منه</strong></em>
+        </div>
+      </div>
+    </div>
+  </section>  <section id="faq20" class="dnone">
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="col-xl-4">
+          <img class="dnone-faq-pic zoom" src="img/model5.png" alt="" width="">
+        </div>
+        <div class="col-xl-8 margin-pic-s1">
+          <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 style="font-size: 50px;color: #204e7a;" class="text-center"><b>أسئلة شائعة</b></h2>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq0" aria-expanded="false">فوقاش كيوصل شحن؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq0">
+              <div class="card card-body">عادة، كتاخد مابين 2-6 يام من بعد مكيدار طلب على العلب.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq1" aria-expanded="false">كيفاش ناخد هاد المكملات غذائية؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq1">
+              <div class="card card-body">فقط خود كبسولة وحدة كل نهار قبل نعاس و نظم لواحد من آلاف زبنائنا راضيين!</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq2" aria-expanded="false">واش نقدر نستعمل SlimGO قبل نعاس؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq2">
+              <div class="card card-body">نعم، هدا هو أنسب وقت باش تاخد SlimGO. تقدرش تاكل مورا لعشا. سبب هو أننا بغيين نسمحوا ب 2 تل 3 تسوايع من الهضم قبل نعاس. هدشي غدي يسمحليك  تخلص جسمك من سموم بشكل مناسب وبزربا و تخدم قناة الهضمية. فاش كتاكل قبل نعاس كتعاود تخدم عملية الهضم، ولي تقدر تأثر على بجوج تخلص من دهون و جودة نعاس.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq5" aria-expanded="false">شحال تمن ديال شحن؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq5">
+              <div class="card card-body">شحن فابور!</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq4" aria-expanded="false">شنو هي سياسة الإرجاع ديالكم؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq4">
+              <div class="card card-body">شوف تفاصيل فبلاصة الخاصة بسياسة الخصوصية.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq3" aria-expanded="false">واش كتوفروا  دعم زبناء؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq3">
+              <div class="card card-body"> بتأكيد! إلى عندك أي سؤال تقدر تواصل معانا على support@megaslimbody.com.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top: -150px;" class="center">
+  <img src="img/dd.png" alt="" width="">
+</div>
+</section><section class="dnone bg-6">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-4 center">
+        <img class="pading-desc" style="margin-left: -15px;" src="img/gg.jpg" alt="" width="">
+      </div>
+      <div class="col-xl-4">
+        <div class="center">
+        <a href="#order" class="glossy-button " style="margin-top:300px">خسر الوزن</a>
+      </div>
+      </div>
+      <div class="col-xl-4 center">
+        <img class="zoom" style="margin-top: 30px;" src="img/product.png" alt="" width="">
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background: ;" class="dnone">
+  <div style="background: ;">
+   <h2 style="text-align: center;font-size: 25px;margin-bottom: 10px;padding-top: 30px;">شحن و لخلاص</h2>
+      <div class="container">
+        <div class="row">
+          <div style="text-align: center;" class="col-md-4">
+           <figure class="snip1206">
+               <img style="margin-left: 40px;" src="img/1.png" alt="sample74">
+                  <figcaption>
+                     <h2><b>توصيل عن طريق البريد مابين 1-7 يام. شحن فابور</b></h2>
+                     
+                </figcaption>
+          </figure>
+</div>
+          <div style="text-align: center;" class="col-md-4">
+             <figure class="snip1206 hover">
+                <img style="margin-left: 40px;width: 50%;" src="img/2.png" alt="sample69">
+                 <figcaption>
+                 <h2><b>ضمان ديال ارجاع لفلوس مدتو 14</b></h2>
+                   
+             </figcaption>
+          </figure>
+</div>
+          <div style="text-align: center;" class="col-md-4">
+           <figure class="snip1206">
+                   <img style="margin-left: 40px;" src="img/3.png" alt="sample13">
+                     <figcaption>
+                      <h2><b>لخلاص عند الاستلام</b></h2>
+                     </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+  <nav style="background: #c5af77;" class="navbar navbar-expand-md bgcolor-gray d-block d-md-none " id="sticky-main-navbar">
+    <div class="container">
+     
+     <button onclick="mobbtn()" class="navbar-toggler sticky-button" data-target="" data-toggle="collapse" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars text-white"></i>
+      </button>           <div style="margin-right: ;" class="order-now ">
+        <a class="btn blob" style="border:1px solid white;background: red;" href="#order1">طلب دابا</a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-navbar">        <ul class="navbar-nav ml-auto sticky-navbar">
+          <li style="margin-top: 20px;" class="nav-item "><a style="" class="nav-link mob-nav-size" href="#home1"><b>صفحة رئيسية</b></a></li>
+          <li class="nav-item">
+<a style="" class="nav-link mob-nav-size" href="#about1"><b>نبذة علينا</b></a>
+          </li>
+          <li class="nav-item"><a style="" class="nav-link mob-nav-size" href="#how1"><b>مكونات</b></a></li>
+          <li class="nav-item"><a style="" class="nav-link mob-nav-size" href="#works1"><b>كيفاش كيخدم</b></a></li>
+          <li class="nav-item"><a style="" class="nav-link mob-nav-size" href="#rev1"><b>الآراء</b></a></li>
+          <li class="nav-item"><a style="" class="nav-link mob-nav-size" href="#faq15"><b>أسئلة شائعة</b></a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto sticky-order-button">
+          <div class="order-now">
+            <a class="btn blob" style="border:1px solid white;background: red;" href="#order1">طلب دابا</a>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>  <div id="home1" onclick="mobbtn1()" class="d-block d-md-none">    <div>
+      <img src="img/product.png" alt="" width="100%">
+      <h4 class="center"><b>وازن جسمك و عقلك</b></h4>
+      <h4 class="center">SlimGO</h4>
+      <p class="mob-p-size mob-margin">معترف أنه مبين أحسن المنتجات لخسارة الوزن فسوق، SlimGO كيعطي حل ساهل وفعال لناس لي باغيين يبانوا صحيين أو فلياقة بدنية. خود خطوة وحدة وبدا تغير الإيجابي ديال جسمك.</p>
+      <div class="center">        <a href="#order1" class="glossy-button glossy-button--red">خسر الوزن</a>
+      </div>
+    </div>
+    <div>
+      <img id="about1" class="mob-margin" src="img/O1.png" alt="" width="100%">
+      <h4 class="center"><b>نبذة علينا</b></h4>
+      <p class="mob-margin mob-p-size">SlimGO هو مكمل غذائي جذري فيها مضادات أكسدة قوية ومخلطة مع أغذية فائقة الجودة. تركيبة ديالو لممنهاش جوج مصممة باش تستهدف مسار استقلاب الدهون لأساسي ديال الجسم وتعطي تعزيز لي كيحيد السموم مركزة. خصائص SlimGO كيخليه مع أي حمية. ودليل فالأعداد! بأكتر من 1،000،000 علبة تباعت SlimGO من أنجح منتجات لي كتحرق دهون وتخلص من سموم ف امريكا </p>
+    </div>    <div>
+      <div class="center">
+        <h4 class="center mob-margin"><b>مكونات</b></h4>
+        <div class="ingredients">
+    <div class="container center">
+      <div class="row">
+        <div class="col-12">        </div>
+      </div>
+      <div class="row">
+        <div style="" class="col-12 col-md-6 col-xl-4 ingred-move">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#vitamin_c" aria-expanded="false" aria-controls="vitamin_c">
+<img src="img/in1.jpg" alt="">
+            <p class="text-center">فيتامين سي</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="vitamin_c">
+            <div class="card card-body">
+              <p>
+                فيتامين سي كيخدم باش يفتح و يوحد لون البشرة ديالك. خصائصو كتحسن حتى ترطيب و كتقلل ضرر ديال الملوثات.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Beeswax" aria-expanded="false" aria-controls="Beeswax">
+            <img src="img/newingr.png" alt="">
+            <p class="text-center">قرع مر</p>
+            <span class="plus-icon" data-toggle="collapse" data-target="#Beeswax" aria-expanded="false" aria-controls="Beeswax"></span>
+          </div>
+          <div class="collapse" id="Beeswax">
+            <div class="card card-body">
+              <p>
+                قرع مر (بطيخ لمر) خضرا نباتية كتستعمل فطب تقليدي.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Licorice" aria-expanded="false" aria-controls="Licorice">
+<img src="img/in3.jpg" alt="">
+            <p class="text-center">عرق سوس</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Licorice">
+            <div class="card card-body">
+              <p>
+                جذور عرق سوس كتبيض و ترخي لبشرة بلطف، و كيبدا عملية التجديد.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Acids" aria-expanded="false" aria-controls="Acids">
+<img src="img/in2.jpg" alt="">
+            <p class="text-center">الأحماض</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Acids">
+            <div class="card card-body">
+              <p>
+                حمض الكابريليك والجليكوليك مسؤولين على تقليل التصبغ.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Ginger" aria-expanded="false" aria-controls="Ginger">
+<img src="img/in4.jpg" alt="">
+            <p class="text-center">جذر الزنجبيل</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Ginger">
+            <div class="card card-body">
+              <p>
+                جذر الزنجبيل مكون مضاد للأكسدة عندو تأثير قوي كحمي بشرتك ضرر لكيوصل لقلب المنطقة الدهونة.
+              </p>
+            </div>
+          </div>
+          </div>
+        <div class="col-12 col-md-6 col-xl-4">
+          <div class="ingredient-item" data-toggle="collapse" data-target="#Niacinamide" aria-expanded="false" aria-controls="Niacinamide">
+<img src="img/in5.jpg" alt="">
+            <p class="text-center">فيتامين ب 3 (نياسيناميد)</p>
+            <span class="plus-icon"></span>
+          </div>
+          <div class="collapse" id="Niacinamide">
+            <div class="card card-body">
+              <p>
+                النياسيناميد المعروف كثر باسم فيتامين ب 3 ، مركب عضوي ومغذٍ مهم للإنسان كيتعاون مع المكونات لخرى باش يعطي لبشرتك قوة صحية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>    </div>    <div id="works1">
+     <img src="img/model.png" alt="" width="80%">
+     <h4 class="center"><b>كيفاش كتخدم</b></h4>
+     <p class="mob-margin mob-p-size">لكونها مكمل غذائي ناجح، SlimGO ساهلة تناولها أو تهضمها. غير خود كبسولة فاش تكون كتاكل ولا مورا لماكلة ونضم لآلاف زبائن ديالنا الراضيين!</p>
+    <img src="img/product.png" alt="" width="100%">
+    </div>    <div style="width: 100%;" class="clmn_2 float-right mob-margin">
+                <div class="main-carousel fadeInDown">
+                    <div class="carousel-cell"><img class="img_main" src="img/ba1.jpg" alt=""></div>
+                    <div class="carousel-cell"><img class="img_main" src="img/ba2.jpg" alt=""></div>
+                    <div class="carousel-cell"><img class="img_main" src="img/ba3.jpg" alt=""></div>
+                    <div class="carousel-cell"><img class="img_main" src="img/ba4.jpg" alt=""></div>
+                    <div class="carousel-cell"><img class="img_main" src="img/ba5.jpg" alt=""></div>                </div>
+      </div>    <div>
+      <img src="img/product.png" alt="" style="    padding: 50px;" width="100%">
+      <img class="mob-margin" src="img/model3.jpg" alt="" width="100%">
+      <h4 class="center"><b>شنو لي كيخلي SlimGO ناجحة بزاف؟</b></h4>
+      <p class="mob-margin mob-p-size">SlimGO هو مكمل غذائي لي كيستهدف مسار تمييل الغذائي لي كيحرق دهون و مصدر طاقتو الأساسي بطريقة مثبة علميا. كيخليك تعزز طاقتك، نشاطتك، و قدرتك البدنية، فحين كيسمحلك تبقا متبع الحمية لي نتا بغيها. مع المكمل الغذائي SlimGO نتا كتحرق فعليا الدهون على قبل طاقة و مشي لفظلات!</p>
+        <div class="center">
+          <a href="#order1" class="glossy-button glossy-button--red">خسر الوزن</a>
+        </div>    </div>    <div style="background: #efc8c3;" class="mob-margin">
+      <img id="rev1" src="img/model9.jpg" alt="" width="100%">
+      <h4 style="color: #204e7a;font-size: 40px;" class="center"><b>"مشي حمية،<br>
+       ولكن تغيير نمط الحياة"</b></h4>
+    </div>    <div>
+      <h4 class="center"><b>شوف شنو كيقولوا زبائن ديالنا...</b></h4>      <p class="mob-margin mob-p-size">حياتي كاملة ونا رقيق، ولكن ملي وصلت لمتوسط عمر الجسم ديالي بدا كيجمع دهون كتر وكتر. ومع هدشي، ثقتي فالجسم ديال نقصات. هدشي كان كافي! جربت SlimGO... نتائج بانوا تم نيت! فالواقع أنا فرحان بسهولة كيفاش تباقا فلياقة بدنية مزيانة هاد الأيام. أنا راضي بزاف على هاد المنتج!</p>
+              <p class="mb-0 center">-إفرين منتالبو، 46<i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star center"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i>
+        </p>
+                   <p class="mob-margin mob-p-size">كوني فطفولتي غليظة وعشر سنين معمري كان عندي الأمل يكون عندي جسم رقيق وجداب... هدشي علاش كنت حشومية ومنغالقة فسن 20 فحين كلشي كان كيخرج فمواعد أو كيوقعوا فالحب. لعام لي فات زرت واحد صديقة من مدة طويلة ولي عندا جسم زوين. كنت فرحانة بزاف أنني نكتشف بلي كانت كتاخد مكمل لي كيحرق دهون ولي هدرتلي عليه بزاف. كناخد SlimGO من داك لوقت ونتائج كتر من واضحين... أو عندي صديق حاليا و نا فرحانة بزاف بزاف!</p>
+              <p class="mb-0 center">-إييا بوركوايدو، 31<i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star center"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i>
+              </p>
+          
+          <p class="mob-margin mob-p-size">أكبر خطأ فحياتي هو نمط حياتي لي غير صحي. للأسف، عرفت هدشي غير ملي مشاكلي صحية بانو. جربت بزاف نصحح أخطائي، وليت مكناكلش الماكلة لغير صحية بزاف، كندير رياضة كتر وكنجرب كينات مختلفة باش نحرق دهون و نخلص الجسم ديالي من دهون. حتى قترح عليا جاري SlimGO عاد حصلت على نتائج لي بغاها. كانت مباركة حقيقية وفرصتي تانية لحياة مزيانة.</p>
+          <p class="mb-0 center">محالينة أزارياس – كانسيو، 53<i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i><i class="rating-stars fa fa-star"></i>
+          </p>
+                </div>      <div>
+        <img id="faq15" class="mob-margin" src="img/model5.png" alt="" width="100%">
+        <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 style="font-size: 50px;color: #204e7a;" class="text-center"><b>أسئلة شائعة</b></h2>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq0" aria-expanded="false">فوقاش كيوصل شحن؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq0">
+              <div class="card card-body">عادة، كتاخد مابين 2-6 يام من بعد مكيدار طلب على العلب.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq10" aria-expanded="false">كيفاش ناخد هاد المكملات غذائية؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq10">
+              <div class="card card-body">فقط خود كبسولة وحدة كل نهار قبل نعاس و نظم لواحد من آلاف زبنائنا راضيين!</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq2" aria-expanded="false">واش نقدر نستعمل SlimGO قبل نعاس؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq2">
+              <div class="card card-body">نعم، هدا هو أنسب وقت باش تاخد SlimGO. تقدرش تاكل مورا لعشا. سبب هو أننا بغيين نسمحوا ب 2 تل 3 تسوايع من الهضم قبل نعاس. هدشي غدي يسمحليك  تخلص جسمك من سموم بشكل مناسب وبزربا و تخدم قناة الهضمية. فاش كتاكل قبل نعاس كتعاود تخدم عملية الهضم، ولي تقدر تأثر على بجوج تخلص من دهون و جودة نعاس.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq5" aria-expanded="false">شحال تمن ديال شحن؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq5">
+              <div class="card card-body">شحن فابور!</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq4" aria-expanded="false">شنو هي سياسة الإرجاع ديالكم؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq4">
+              <div class="card card-body">شوف تفاصيل فبلاصة الخاصة بسياسة الخصوصية.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12">
+            <button class="rounded-0 btn btn-dark btn-block" type="button" data-toggle="collapse" data-target="#faq3" aria-expanded="false">واش كتوفروا  دعم زبناء؟</button>
+          </div>
+          <div class="col-12">
+            <div class="collapse multi-collapse" id="faq3">
+              <div class="card card-body"> بتأكيد! إلى عندك أي سؤال تقدر تواصل معانا على support@megaslimbody.com.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="img/gg.jpg" alt="" width="100%">
+    </div>  </div>
+<section style="background:linear-gradient(90deg, rgb(249, 218, 214) 30%, rgb(239, 200, 195) 80%)" onclick="mobbtn1()" id="order-form">
+  <div id="order" class="section_11">
+        <div class="">
+            <div class="wrapper zoom ">
+                <h2></h2>
+                <div class="content ">
+                    <h4 class="center"> <b>SlimGO مكمل غذائي جذري فيه مضادات أكسدة قوية مخلط مع أطعمة لي عندها قيمة غذائية مرتفعة.</b>
+</h4>                    <img class="product small-pic1" src="img/product.png" width="400" alt="">                    <div id="order1" class="box">
+                        <div style="background: rgb(239, 200, 195);margin-bottom: 5px;border-radius: 20px;border: 1px solid red;" class="formBox">
+                            
+                            <h4 class="red">همزة سخونة! صولد 50%!</h4>
+                            
+                            <a class="countbox" href="#form-index2">
+                                <div class="toend">لوقت لي غدي تتسالى فيه مدة الهمزة:</div>
+                                <div class="countdown_box">
+                                    <p class="order-countdown-hours" id="hours3"></p>
+                                    <p class="order-countdown-minutes" id="minutes3"></p>
+                                    <p class="order-countdown-seconds" id="seconds3"></p>
+                                </div>
+                                <div class="time">
+                                    <span>ثواني</span>
+                                    <span>دقايق</span>
+                                    <span>سوايع</span>
+                                </div>
+                            </a>
+                            <div class="prices">
+                              <p> تمن لقديم <span class="red"><span class="priceOld"></span><span class="currencyMain"></span></span></p>
+                              <p> تمن جديد <span class="green"><span class="priceMain"></span><span class="currencyMain"></span></span></p>
+                            </div>                            
+                            <form name="form-index" id="form-index2" class="orderform" action="getform.php" method="post" >
+                                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                              <input class="zoom" id="shipping_fname2" type="text" name="name" required placeholder="اسم و نسب" value="">
+                              <input class="zoom" id="shipping_phone2" type="numbers" required maxlength="15" name="phone" placeholder="رقم الهاتف" value="">                                
+                              <button type="submit">تسريع طلب ديالي</button>
+                                <br class="clear">
+
+</form>                            <img class="stamp" src="img/dual-medals.png" alt="" width="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><footer style="background: ;" class="footer dnone ">
+    <div class="container">
+            <div style="margin-top: 30px;" class="d-flex justify-content-center">
+<a style="color:black;" class="footer__link" href="#" >تواصل  </a>| <a style="color:black;" class="footer__link" href="#" >سياسة الخصوصية  </a>|  <a style="color:black;" class="footer__link" href="#" >بنود و شروط</a>
+      </div>
+      <div class="text-center">
+        <p style="color:black;" class="footer__link text-center">حقوق نشر <?php echo date('Y') ?></p>
+        <p>*إخلاء المسؤولية المعلومات لي فهاد صفحة إخبارية و مكتبدلش الآراء ديال الخبراء. النتائج تقدر تختلف بناءا على شخص لي كيستعمل المنتوج. هدو شهادات مدفوعة. نتائج مشي نموذجية.
+</p>
+      </div>
+    </div>
+  </footer>     
+  <section style="background: white;" class="d-block d-md-none ">
+          <div onclick="mobbtn1()"> <div>
+   <h2 style="text-align: center;font-size: 25px;margin-bottom: 10px;padding-top: 30px;">شحن و لخلاص</h2>
+      <div class="container">
+        <div class="row">
+          <div style="text-align: center;" class="col-md-4">
+           <figure class="snip1206">
+               <img style="margin-left: 40px;" src="img/1.png" alt="sample74">
+                  <figcaption>
+                     <h2><b>توصيل عن طريق البريد مابين 1-7 يام. شحن فابور</b></h2>
+                     
+                </figcaption>
+          </figure>
+</div>
+          <div style="text-align: center;" class="col-md-4">
+             <figure class="snip1206 hover">
+                <img style="margin-left: 40px;width: 50%;" src="img/2.png" alt="sample69">
+                 <figcaption>
+                 <h2><b>ضمان ديال ارجاع لفلوس مدتو 14 </b></h2>
+                   
+             </figcaption>
+          </figure>
+</div>
+          <div style="text-align: center;" class="col-md-4">
+           <figure class="snip1206">
+                   <img style="margin-left: 40px;" src="img/3.png" alt="sample13">
+                     <figcaption>
+                      <h2><b>لخلاص عند الاستلا</b></h2>
+                       
+                        </figcaption>                         </figure>
+          </div>
+        </div>      </div>  </div>
+</div>
+<footer onclick="mobbtn1()" style="background: ;" class="footer ">
+    <div class="container mob-width-text">      <div style="margin-top: 50px;" class="d-flex justify-content-center">
+<a style="color:black;" class="footer__link" href="#" >تواصل  </a>| <a style="color:black;" class="footer__link" href="#" >سياسة الخصوصية  </a>|  <a style="color:black;" class="footer__link" href="#" >بنود و شروط</a>
+      </div>
+      <div class="text-center">
+        <p style="color:black;" class="footer__link">حقوق نشر <?php echo date('Y') ?></p>
+        <p>*إخلاء المسؤولية المعلومات لي فهاد صفحة إخبارية و مكتبدلش الآراء ديال الخبراء. النتائج تقدر تختلف بناءا على شخص لي كيستعمل المنتوج. هدو شهادات مدفوعة. نتائج مشي نموذجية.
+</p>
+      </div>
+    </div>
+  </footer>
+    
+    </section>
+    <nav style="background:linear-gradient(90deg, rgba(239, 200, 195,0.4) 30%, rgba(239, 200, 195,0.8) 60%);;padding-left:;padding-top: 10px;padding-bottom: 10px;" class="center fixed-top d-none d-lg-block d-xl-none">
+          <a style="color: black;" class="nav-size-mob1  " href="#home"><b>صفحة رئيسية</b></a>
+          <a style="color: black;" class="nav-size-mob1 " href="#about"><b>نبذة علينا</b></a>          <a style="color: black;" class="nav-size-mob1 " href="#how"><b>مكونات</b></a>
+          <a style="color: black;" class="nav-size-mob1 " href="#works"><b>كيفاش كيخدم</b></a>
+          <a style="color: black;" class="nav-size-mob1 " href="#review"><b>الآراء</b></a>
+          <a style="color: black;" class="nav-size-mob1 " href="#faq20"><b>أسئلة شائعة</b></a>
+          <a class="btn blob" style="border:1px solid white;background: red;" href="#order">طلب دابا</a>
+  </nav>
+  <nav style="background:linear-gradient(90deg, rgba(239, 200, 195,0.4) 30%, rgba(239, 200, 195,0.8) 60%);padding-left:;padding-top: 10px;padding-bottom: 10px;" class="center fixed-top d-none d-md-block d-lg-none">
+          <a style="margin-left: 10px;color: black;" class="nav-size-mob " href="#home"><b>صفحة رئيسية</b></a>
+          <a style="color: black;" class="nav-size-mob" href="#about"><b>نبذة علينا</b></a>          <a style="color: black;" class="nav-size-mob" href="#how"><b>مكونات</b></a>
+          <a style="color: black;" class="nav-size-mob " href="#works"><b>كيفاش كيخدم</b></a>
+          <a style="color: black;" class="nav-size-mob" href="#review"><b>الآراء</b></a>
+          <a style="color: black;" class="nav-size-mob" href="#faq20"><b>أسئلة شائعة</b></a>
+          <a class="btn blob" style="border:1px solid white;background: red;" href="#order">طلب دابا</a>
+  </nav>  
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/timer.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/main_1.js"></script>
+<script src="js/script.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript">
+  function  mobbtn(){
+      $("#main-navbar").slideToggle(700);
+    }
+  </script>
+<script type="text/javascript">
+  function  mobbtn1(){
+      $("#main-navbar").slideUp(700);
+    }
+</script>
+
+  <script>
+      const offer_params = {
+          priceMain : '399',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: 'د.إ',
+          productName : '',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
-  <title>Faleminderit! Porosia juaj u pranua!</title>
+  <title>با تشکر! سفارش شما در حال پردازش است! اپراتور ما برای تایید سفارش شما با شما تماس خواهد گرفت</title>
   <style>
   body {
     background: #eeeeee url(/_thankyou/pattern.png);
@@ -55,8 +55,8 @@ h3 {
 
     <div id="parent">
         <div id="content">
-            <h2> <span> Faleminderit! </span> Porosia juaj u pranua! </h2>
-            <p> Operatori ynë do t'ju kontaktojë për të konfirmuar porosinë. <br /> Dorëzimi sigurohet nga një shërbim korrier. Pagesa - me dorëzimin! </p>
+            <h2>با تشکر! سفارش شما در حال پردازش است! اپراتور ما برای تایید سفارش شما با شما تماس خواهد گرفت.</h2>
+
         </div>
     </div>
 
