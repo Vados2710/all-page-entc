@@ -1,0 +1,1 @@
+var $nav,$h=0;$(window).load((function(){$nav=$(".sidebar-scroll"),$h=$nav.offset().top,$(window).scroll((function(){$(window).scrollTop()>$h?$nav.addClass("fixed"):$nav.removeClass("fixed")}))}));
