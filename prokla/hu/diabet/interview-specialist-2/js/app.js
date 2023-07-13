@@ -718,17 +718,7 @@ if (document.body.classList.contains("ev-date")) {
         }
     }
 }
-$(function () {
-    $('a[href^="#"]').on("click", function (event) {
-        // отменяем стандартное действие
-        event.preventDefault();
 
-        var sc = $(this).attr("href"),
-            dn = $(sc).offset().top;
-
-        $("html, body").animate({scrollTop: dn}, 1000);
-    });
-});
 
 const oldPrice = document.querySelectorAll(".x_price_previous");
 const newPrice = document.querySelectorAll(".x_price_current");
@@ -742,13 +732,6 @@ function delimiter(price) {
 delimiter(oldPrice);
 delimiter(newPrice);
 
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 1000);
-});
 
 let blur = document.querySelectorAll('.blur');
 

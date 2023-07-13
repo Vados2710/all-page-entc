@@ -1,0 +1,478 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Health Today</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+  
+  <style>a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}@font-face{font-family:OpenSans-Light;font-weight:300;font-style:normal;font-display:fallback}@font-face{font-family:OpenSans-Regular;font-weight:400;font-style:normal;font-display:fallback;src:url(fonts/OpenSans-Regular.woff2) format("woff2")}@font-face{font-family:OpenSans-Bold;font-weight:700;font-style:normal;font-display:fallback;}@font-face{font-family:Montserrat-Regular;font-weight:400;font-style:normal;font-display:fallback;}@font-face{font-family:Montserrat-ExtraBold;font-weight:800;font-style:normal;font-display:fallback;src:url(fonts/Montserrat-ExtraBold.woff2) format("woff2")}@font-face{font-family:Montserrat-Bold;font-weight:700;font-style:normal;font-display:fallback;}@font-face{font-family:Montserrat-SemiBold;font-weight:600;font-style:normal;font-display:fallback;}@font-face{font-family:Montserrat-Black;font-weight:900;font-style:normal;font-display:fallback;src:url(fonts/Montserrat-Black.woff2) format("woff2")}.owl-carousel{display:none;width:100%;-webkit-tap-highlight-color:transparent;position:relative;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{position:relative;min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-loaded{display:block}.owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{visibility:hidden}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-grab{cursor:move;cursor:-webkit-grab;cursor:grab}.owl-carousel.owl-rtl{direction:rtl}.owl-carousel.owl-rtl .owl-item{float:right}.no-js .owl-carousel{display:block}.owl-carousel .animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.owl-carousel .owl-animated-in{z-index:0}.owl-carousel .owl-animated-out{z-index:1}.owl-carousel .fadeOut{-webkit-animation-name:fadeOut;animation-name:fadeOut}@-webkit-keyframes fadeOut{0%{opacity:1}100%{opacity:0}}@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}.owl-height{-webkit-transition:height .5s ease-in-out;-o-transition:height .5s ease-in-out;transition:height .5s ease-in-out}.owl-carousel .owl-item .owl-lazy{opacity:0;-webkit-transition:opacity .4s ease;-o-transition:opacity .4s ease;transition:opacity .4s ease}.owl-carousel .owl-item .owl-lazy:not([src]),.owl-carousel .owl-item .owl-lazy[src^=""]{max-height:0}.owl-carousel .owl-item img.owl-lazy{-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.owl-carousel .owl-video-wrapper{position:relative;height:100%;background:#000}.owl-carousel .owl-video-play-icon{position:absolute;height:80px;width:80px;left:50%;top:50%;margin-left:-40px;margin-top:-40px;background:url(owl.video.play.png) no-repeat;cursor:pointer;z-index:1;-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform .1s ease;transition:-webkit-transform .1s ease;-o-transition:transform .1s ease;transition:transform .1s ease;transition:transform .1s ease,-webkit-transform .1s ease}.owl-carousel .owl-video-play-icon:hover{-ms-transform:scale(1.3,1.3);-webkit-transform:scale(1.3,1.3);transform:scale(1.3,1.3)}.owl-carousel .owl-video-playing .owl-video-play-icon,.owl-carousel .owl-video-playing .owl-video-tn{display:none}.owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;background-size:contain;-webkit-transition:opacity .4s ease;-o-transition:opacity .4s ease;transition:opacity .4s ease}.owl-carousel .owl-video-frame{position:relative;z-index:1;height:100%;width:100%}.mfp-bg{top:0;left:0;width:100%;height:100%;z-index:1042;overflow:hidden;position:fixed;background:#0b0b0b;opacity:.8}.mfp-wrap{top:0;left:0;width:100%;height:100%;z-index:1043;position:fixed;outline:0!important;-webkit-backface-visibility:hidden}.mfp-container{text-align:center;position:absolute;width:100%;height:100%;left:0;top:0;padding:0 8px;-webkit-box-sizing:border-box;box-sizing:border-box}.mfp-container:before{content:'';display:inline-block;height:100%;vertical-align:middle}.mfp-align-top .mfp-container:before{display:none}.mfp-content{position:relative;display:inline-block;vertical-align:middle;margin:0 auto;text-align:left;z-index:1045}.mfp-ajax-holder .mfp-content,.mfp-inline-holder .mfp-content{width:100%;cursor:auto}.mfp-ajax-cur{cursor:progress}.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .mfp-close{cursor:-webkit-zoom-out;cursor:zoom-out}.mfp-zoom{cursor:pointer;cursor:-webkit-zoom-in;cursor:zoom-in}.mfp-auto-cursor .mfp-content{cursor:auto}.mfp-arrow,.mfp-close,.mfp-counter,.mfp-preloader{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mfp-loading.mfp-figure{display:none}.mfp-hide{display:none!important}.mfp-preloader{color:#ccc;position:absolute;top:50%;width:auto;text-align:center;margin-top:-.8em;left:8px;right:8px;z-index:1044}.mfp-preloader a{color:#ccc}.mfp-preloader a:hover{color:#fff}.mfp-s-ready .mfp-preloader{display:none}.mfp-s-error .mfp-content{display:none}button.mfp-arrow,button.mfp-close{overflow:visible;cursor:pointer;background:0 0;border:0;-webkit-appearance:none;display:block;outline:0;padding:0;z-index:1046;-webkit-box-shadow:none;box-shadow:none;-ms-touch-action:manipulation;touch-action:manipulation}button::-moz-focus-inner{padding:0;border:0}.mfp-close{width:44px;height:44px;line-height:44px;position:absolute;right:0;top:0;text-decoration:none;text-align:center;opacity:.65;padding:0 0 18px 10px;color:#fff;font-style:normal;font-size:28px;font-family:Arial,Baskerville,monospace}.mfp-close:focus,.mfp-close:hover{opacity:1}.mfp-close:active{top:1px}.mfp-close-btn-in .mfp-close{color:#333}.mfp-iframe-holder .mfp-close,.mfp-image-holder .mfp-close{color:#fff;right:-6px;text-align:right;padding-right:6px;width:100%}.mfp-counter{position:absolute;top:0;right:0;color:#ccc;font-size:12px;line-height:18px;white-space:nowrap}.mfp-arrow{position:absolute;opacity:.65;margin:0;top:50%;margin-top:-55px;padding:0;width:90px;height:110px;-webkit-tap-highlight-color:transparent}.mfp-arrow:active{margin-top:-54px}.mfp-arrow:focus,.mfp-arrow:hover{opacity:1}.mfp-arrow:after,.mfp-arrow:before{content:'';display:block;width:0;height:0;position:absolute;left:0;top:0;margin-top:35px;margin-left:35px;border:medium inset transparent}.mfp-arrow:after{border-top-width:13px;border-bottom-width:13px;top:8px}.mfp-arrow:before{border-top-width:21px;border-bottom-width:21px;opacity:.7}.mfp-arrow-left{left:0}.mfp-arrow-left:after{border-right:17px solid #fff;margin-left:31px}.mfp-arrow-left:before{margin-left:25px;border-right:27px solid #3f3f3f}.mfp-arrow-right{right:0}.mfp-arrow-right:after{border-left:17px solid #fff;margin-left:39px}.mfp-arrow-right:before{border-left:27px solid #3f3f3f}.mfp-iframe-holder{padding-top:40px;padding-bottom:40px}.mfp-iframe-holder .mfp-content{line-height:0;width:100%;max-width:900px}.mfp-iframe-holder .mfp-close{top:-40px}.mfp-iframe-scaler{width:100%;height:0;overflow:hidden;padding-top:56.25%}.mfp-iframe-scaler iframe{position:absolute;display:block;top:0;left:0;width:100%;height:100%;-webkit-box-shadow:0 0 8px rgba(0,0,0,.6);box-shadow:0 0 8px rgba(0,0,0,.6);background:#000}img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;-webkit-box-sizing:border-box;box-sizing:border-box;padding:40px 0 40px;margin:0 auto}.mfp-figure{line-height:0}.mfp-figure:after{content:'';position:absolute;left:0;top:40px;bottom:40px;display:block;right:0;width:auto;height:auto;z-index:-1;-webkit-box-shadow:0 0 8px rgba(0,0,0,.6);box-shadow:0 0 8px rgba(0,0,0,.6);background:#444}.mfp-figure small{color:#bdbdbd;display:block;font-size:12px;line-height:14px}.mfp-figure figure{margin:0}.mfp-bottom-bar{margin-top:-36px;position:absolute;top:100%;left:0;width:100%;cursor:auto}.mfp-title{text-align:left;line-height:18px;color:#f3f3f3;word-wrap:break-word;padding-right:36px}.mfp-image-holder .mfp-content{max-width:100%}.mfp-gallery .mfp-image-holder .mfp-figure{cursor:pointer}@media screen and (max-width:800px) and (orientation:landscape),screen and (max-height:300px){.mfp-img-mobile .mfp-image-holder{padding-left:0;padding-right:0}.mfp-img-mobile img.mfp-img{padding:0}.mfp-img-mobile .mfp-figure:after{top:0;bottom:0}.mfp-img-mobile .mfp-figure small{display:inline;margin-left:5px}.mfp-img-mobile .mfp-bottom-bar{background:rgba(0,0,0,.6);bottom:0;margin:0;top:auto;padding:3px 5px;position:fixed;-webkit-box-sizing:border-box;box-sizing:border-box}.mfp-img-mobile .mfp-bottom-bar:empty{padding:0}.mfp-img-mobile .mfp-counter{right:5px;top:3px}.mfp-img-mobile .mfp-close{top:0;right:0;width:35px;height:35px;line-height:35px;background:rgba(0,0,0,.6);position:fixed;text-align:center;padding:0}}@media all and (max-width:900px){.mfp-arrow{-webkit-transform:scale(.75);-ms-transform:scale(.75);transform:scale(.75)}.mfp-arrow-left{-webkit-transform-origin:0;-ms-transform-origin:0;transform-origin:0}.mfp-arrow-right{-webkit-transform-origin:100%;-ms-transform-origin:100%;transform-origin:100%}.mfp-container{padding-left:6px;padding-right:6px}}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:100%}*,::after,::before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;font-size:1rem;line-height:1.24;overflow-x:hidden;font-family:OpenSans-Regular,sans-serif;color:#333;letter-spacing:.02rem;background-color:#fff;position:relative}.body--overlay{overflow:hidden}.body--overlay::before{content:'';position:fixed;width:100%;height:100vh;background-color:rgba(51,51,51,.25);z-index:1}.flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap}.flex-ai-c{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.flex-jc-sb{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.flex-jc-fe{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}.flex-jc-c{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.flex-fd-c{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.container{width:100%;margin:0 auto;padding:0 .9375rem;position:relative}@media (max-width:75){.container{max-width:48rem;padding:0 1.875rem}}.container--sm{max-width:50rem}.container--md{max-width:75rem}@media (max-width:75rem){.container--md,.container--sm{max-width:48rem;padding:0 1.875rem}}@media (max-width:25.875rem){.container--md,.container--sm{padding:0 1.25rem}}a{text-decoration:none;color:inherit}p{line-height:1.375rem;letter-spacing:.03125rem}img,svg{max-width:100%;vertical-align:middle}.button{max-width:23.125rem;width:100%;font-family:Montserrat-Bold,sans-serif;text-transform:uppercase;color:#fff;display:block;line-height:1.25rem;padding:1.25rem 0;text-transform:uppercase;text-align:center}.button--blue{border-radius:100px;background-color:#1579d7}.button--orange{background-color:#f90}.button--w-344{max-width:21.5rem}.button--brs-5{border-radius:5px}.title{font-family:Montserrat-ExtraBold,sans-serif;margin-bottom:1.25rem}.title--h1{font-size:2.25rem;margin-bottom:0;letter-spacing:.045rem}@media (max-width:75rem){.title--h1{font-size:1.5rem}.title--h1 br{display:none}}@media (max-width:25.875rem){.title--h1{font-size:1.125rem}}.title--h2{font-size:1.5rem;letter-spacing:.01125rem}@media (max-width:75rem){.title--h2{font-size:1.125rem}}.title--h3{font-size:1.125rem}.title--background{background-color:#d9edff;padding:.625rem}.mobile-menu{background-color:#fff;position:absolute;top:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:100%;z-index:9998;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.25);box-shadow:0 5px 20px rgba(0,0,0,.25);display:none}.mobile-menu--open{display:block}.mobile-menu__header{padding:.625rem 1.875rem 1.1875rem;position:relative}.mobile-menu__header::before{content:'';position:absolute;bottom:0;left:0;background-image:-webkit-gradient(linear,left top,right top,from(#0079f4),to(#1e5084));background-image:-o-linear-gradient(left,#0079f4 0,#1e5084 100%);background-image:linear-gradient(90deg,#0079f4 0,#1e5084 100%);width:100%;height:.25rem}@media (max-width:25.875rem){.mobile-menu__header{padding-left:1.25rem;padding-right:1.25rem}}.mobile-menu__inner{width:100%;margin:0 auto}@media (max-width:75rem){.mobile-menu__inner{max-width:48rem}}.mobile-menu__list{text-align:center}.mobile-menu__link{line-height:1.375rem;padding:1.1875rem 0;display:block;border-bottom:2px solid #efefef}@media (max-width:25.875rem){.mobile-menu__link{padding:.9375rem 0}}@media (max-width:20rem){.mobile-menu__link{padding:.625rem 0}}.mobile-menu__footer{padding:2.5rem 0}@media (max-width:25.875rem){.mobile-menu__footer{padding:2.5rem 1.25rem}}.mobile-menu__button{margin:0 auto}@media (max-width:25.875rem){.mobile-menu__button{max-width:100%!important}}.header{position:relative}.header__container::before{content:'';position:absolute;bottom:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:calc(100% - 1.875rem);height:4px;background-image:-webkit-gradient(linear,left top,right top,from(#0079f4),to(#1e5084));background-image:-o-linear-gradient(left,#0079f4 0,#1e5084 100%);background-image:linear-gradient(90deg,#0079f4 0,#1e5084 100%)}@media (max-width:75rem){.header__container::before{width:calc(100% - 3.75rem)}}@media (max-width:25.875rem){.header__container::before{width:calc(100% - 2.5rem)}}.header__main{padding:1.4375rem 0 1.8125rem}@media (max-width:75rem){.header__main{padding:.625rem 0 1.375rem}}.header__menu{margin-right:4.375rem}@media (max-width:75rem){.header__menu{display:none}}.header__bottom{padding-bottom:.6875rem}.header__auth-link{font-size:.75rem;line-height:.9375rem}.header__auth-link:last-child{margin-left:.625rem}.header__mobile-btn{display:none;width:1.375rem;height:1.375rem;background-image:url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.75 16.5H19.25' stroke='%231E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.75 11H19.25' stroke='%231E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2.75 5.5H19.25' stroke='%231E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");background-repeat:no-repeat;background-position:center;z-index:9999}@media (max-width:75rem){.header__mobile-btn{display:block}}.header__mobile-btn--open{background-image:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 4.5L4.5 13.5' stroke='%238B8B8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M4.5 4.5L13.5 13.5' stroke='%238B8B8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")}.header__search{width:1.375rem;height:1.375rem;background-repeat:no-repeat;background-size:contain;background-position:center;background-image:url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0833 17.4167C14.1334 17.4167 17.4167 14.1334 17.4167 10.0833C17.4167 6.03325 14.1334 2.75 10.0833 2.75C6.03325 2.75 2.75 6.03325 2.75 10.0833C2.75 14.1334 6.03325 17.4167 10.0833 17.4167Z' stroke='%231E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19.25 19.2502L15.2625 15.2627' stroke='%231E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")}@media (max-width:75rem){.header__search{-webkit-box-ordinal-group:0;-webkit-order:-1;-ms-flex-order:-1;order:-1}}.logo{font-size:.875rem;color:#000;font-family:Montserrat-ExtraBold,sans-serif;padding-left:2.625rem;position:relative;line-height:1.0625rem}.logo::before{content:'';position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);width:2rem;height:2rem;border-radius:100%;background-image:-webkit-gradient(linear,left top,left bottom,from(#2791ff),to(#003771));background-image:-o-linear-gradient(top,#2791ff 0,#003771 100%);background-image:linear-gradient(180deg,#2791ff 0,#003771 100%)}.logo--footer{padding-left:2.125rem;line-height:.6875rem;font-size:.625rem}.logo--footer::before{width:1.5rem;height:1.5rem}.menu__link{font-size:.875rem;padding:0 .7125rem}.main{padding-top:1.25rem}.article__blue-block{margin-bottom:1.25rem}@media (max-width:23.4375rem){.article__blue-block{margin:0 -1.25rem 1.25rem;padding-left:1.25rem!important;padding-right:1.25rem!important}}.article__title{margin-top:1.25rem}.article__image{margin-bottom:1.25rem}.article__text{padding-bottom:1.25rem}.article__text--mb{margin-bottom:1.25rem;padding-bottom:0}.article__text--pn{padding:0}.article__list{padding-bottom:1.25rem}.article__list-item{padding-left:1.25rem;position:relative}.article__list-item::before{content:'';position:absolute;top:50%;left:0;width:.625rem;height:.625rem;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);background-color:#1e5084;border-radius:100%}.article__list-item--icon{padding-left:1.75rem}.article__list-item--icon::before{border-radius:0;width:1.125rem;height:1.125rem;background-color:transparent;background-image:url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.25 16.5H3C2.60218 16.5 2.22064 16.342 1.93934 16.0607C1.65804 15.7794 1.5 15.3978 1.5 15V9.75C1.5 9.35218 1.65804 8.97064 1.93934 8.68934C2.22064 8.40804 2.60218 8.25 3 8.25H5.25M10.5 6.75V3.75C10.5 3.15326 10.2629 2.58097 9.84099 2.15901C9.41903 1.73705 8.84674 1.5 8.25 1.5L5.25 8.25V16.5H13.71C14.0717 16.5041 14.4228 16.3773 14.6984 16.143C14.9741 15.9087 15.1558 15.5827 15.21 15.225L16.245 8.475C16.2776 8.26002 16.2631 8.04051 16.2025 7.83169C16.1419 7.62287 16.0366 7.42972 15.8939 7.26564C15.7512 7.10155 15.5746 6.97045 15.3762 6.88141C15.1778 6.79238 14.9624 6.74754 14.745 6.75H10.5Z' stroke='%231E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")}.article__label{font-size:.625rem;line-height:.75rem;text-transform:uppercase;padding-bottom:.3125rem;border-bottom:2px solid #1e5084;display:inline-block;font-family:Montserrat-Regular,sans-serif;vertical-align:middle;letter-spacing:.01125rem}.article__info{font-family:Montserrat-Regular,sans-serif;font-size:.75rem;color:#8b8b8b;margin:.625rem 0 1.25rem;letter-spacing:.01125rem}.article__info-author,.article__info-date{padding-left:1.25rem;line-height:.9375rem;position:relative}.article__info-author::before,.article__info-date::before{content:'';position:absolute;top:0;left:0;width:.9375rem;height:.9375rem;background-position:center;background-size:contain;background-repeat:no-repeat}.article__info-date::before{background-image:url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.875 2.5H11.25V1.875C11.25 1.70924 11.1842 1.55027 11.0669 1.43306C10.9497 1.31585 10.7908 1.25 10.625 1.25C10.4592 1.25 10.3003 1.31585 10.1831 1.43306C10.0658 1.55027 10 1.70924 10 1.875V2.5H5V1.875C5 1.70924 4.93415 1.55027 4.81694 1.43306C4.69973 1.31585 4.54076 1.25 4.375 1.25C4.20924 1.25 4.05027 1.31585 3.93306 1.43306C3.81585 1.55027 3.75 1.70924 3.75 1.875V2.5H3.125C2.62772 2.5 2.15081 2.69754 1.79917 3.04917C1.44754 3.40081 1.25 3.87772 1.25 4.375V11.875C1.25 12.3723 1.44754 12.8492 1.79917 13.2008C2.15081 13.5525 2.62772 13.75 3.125 13.75H11.875C12.3723 13.75 12.8492 13.5525 13.2008 13.2008C13.5525 12.8492 13.75 12.3723 13.75 11.875V4.375C13.75 3.87772 13.5525 3.40081 13.2008 3.04917C12.8492 2.69754 12.3723 2.5 11.875 2.5ZM12.5 11.875C12.5 12.0408 12.4342 12.1997 12.3169 12.3169C12.1997 12.4342 12.0408 12.5 11.875 12.5H3.125C2.95924 12.5 2.80027 12.4342 2.68306 12.3169C2.56585 12.1997 2.5 12.0408 2.5 11.875V6.25H12.5V11.875ZM12.5 5H2.5V4.375C2.5 4.20924 2.56585 4.05027 2.68306 3.93306C2.80027 3.81585 2.95924 3.75 3.125 3.75H11.875C12.0408 3.75 12.1997 3.81585 12.3169 3.93306C12.4342 4.05027 12.5 4.20924 12.5 4.375V5Z' fill='%238B8B8B'/%3E%3C/svg%3E%0A")}.article__info-author{margin-top:.625rem}.article__info-author::before{background-image:url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 13.125V11.875C12.5 11.212 12.2366 10.5761 11.7678 10.1072C11.2989 9.63839 10.663 9.375 10 9.375H5C4.33696 9.375 3.70107 9.63839 3.23223 10.1072C2.76339 10.5761 2.5 11.212 2.5 11.875V13.125' stroke='%238B8B8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M7.5 6.875C8.88071 6.875 10 5.75571 10 4.375C10 2.99429 8.88071 1.875 7.5 1.875C6.11929 1.875 5 2.99429 5 4.375C5 5.75571 6.11929 6.875 7.5 6.875Z' stroke='%238B8B8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")}.article__slider{background-color:#efefef;padding:1.25rem 0;overflow:hidden}.article__bottom-approved-icon{background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.375 33.75H5.625C3.55393 33.75 1.875 35.4289 1.875 37.5V54.375C1.875 56.4461 3.55393 58.125 5.625 58.125H54.375C56.4461 58.125 58.125 56.4461 58.125 54.375V37.5C58.125 35.4289 56.4461 33.75 54.375 33.75Z' fill='%234D8C28'/%3E%3Cpath d='M5.625 33.75C4.63044 33.75 3.67661 34.1451 2.97335 34.8484C2.27009 35.5516 1.875 36.5054 1.875 37.5V54.375C1.87703 54.6567 1.91099 54.9372 1.97625 55.2112C2.25028 55.2765 2.53082 55.3105 2.8125 55.3125H51.5625C52.5571 55.3125 53.5109 54.9174 54.2141 54.2141C54.9174 53.5109 55.3125 52.5571 55.3125 51.5625V34.6875C55.3105 34.4058 55.2765 34.1253 55.2113 33.8513C54.9372 33.786 54.6567 33.752 54.375 33.75H5.625Z' fill='%23559B2D'/%3E%3Cpath d='M47.8123 19.6876C47.8143 17.8824 47.1611 16.1379 45.9739 14.7779C45.2499 13.8832 44.8215 12.7859 44.7477 11.6373C44.5766 9.91918 43.816 8.31324 42.5951 7.09233C41.3742 5.87142 39.7683 5.11085 38.0502 4.93981C36.9016 4.86601 35.8042 4.43755 34.9095 3.71356C33.5486 2.52805 31.8047 1.875 29.9999 1.875C28.195 1.875 26.4511 2.52805 25.0902 3.71356C24.1955 4.43755 23.0981 4.86601 21.9496 4.93981C20.2314 5.11085 18.6255 5.87142 17.4046 7.09233C16.1837 8.31324 15.4231 9.91918 15.2521 11.6373C15.1783 12.7859 14.7498 13.8832 14.0258 14.7779C12.8403 16.1389 12.1873 17.8828 12.1873 19.6876C12.1873 21.4925 12.8403 23.2364 14.0258 24.5973C14.7498 25.492 15.1783 26.5894 15.2521 27.7379C15.4231 29.4561 16.1837 31.062 17.4046 32.2829C18.6255 33.5038 20.2314 34.2644 21.9496 34.4354C23.0981 34.5092 24.1955 34.9377 25.0902 35.6617C26.4511 36.8472 28.195 37.5002 29.9999 37.5002C31.8047 37.5002 33.5486 36.8472 34.9095 35.6617C35.8042 34.9377 36.9016 34.5092 38.0502 34.4354C39.7683 34.2644 41.3742 33.5038 42.5951 32.2829C43.816 31.062 44.5766 29.4561 44.7477 27.7379C44.8215 26.5894 45.2499 25.492 45.9739 24.5973C47.1611 23.2374 47.8143 21.4928 47.8123 19.6876Z' fill='%236BC13B'/%3E%3Cpath d='M30 31.875C36.731 31.875 42.1875 26.4185 42.1875 19.6875C42.1875 12.9565 36.731 7.5 30 7.5C23.269 7.5 17.8125 12.9565 17.8125 19.6875C17.8125 26.4185 23.269 31.875 30 31.875Z' fill='%23F2F2F2'/%3E%3Cpath d='M21.5625 21.5625L27.1875 27.1875L38.4375 15.9375L35.625 13.125L27.1875 21.5625L24.375 18.75L21.5625 21.5625Z' fill='%237BDF45'/%3E%3Cpath d='M9.35625 42C9.31303 41.7882 9.19797 41.5979 9.03054 41.4613C8.86312 41.3246 8.65362 41.25 8.4375 41.25H6.5625C6.34638 41.25 6.13688 41.3246 5.96946 41.4613C5.80203 41.5979 5.68697 41.7882 5.64375 42L4.70625 46.6875C4.69372 46.7492 4.68744 46.812 4.6875 46.875V50.625H6.5625V47.8125H8.4375V50.625H10.3125V46.875C10.3126 46.812 10.3063 46.7492 10.2937 46.6875L9.35625 42ZM7.66969 43.125L8.23219 45.9375H6.76875L7.33125 43.125H7.66969Z' fill='%23F2F2F2'/%3E%3Cpath d='M14.0625 41.25H12.1875C11.9389 41.25 11.7004 41.3488 11.5246 41.5246C11.3488 41.7004 11.25 41.9389 11.25 42.1875V50.625H13.125V46.875H14.0625C14.8084 46.875 15.5238 46.5787 16.0512 46.0512C16.5787 45.5238 16.875 44.8084 16.875 44.0625C16.875 43.3166 16.5787 42.6012 16.0512 42.0738C15.5238 41.5463 14.8084 41.25 14.0625 41.25ZM14.0625 45H13.125V43.125H14.0625C14.3111 43.125 14.5496 43.2238 14.7254 43.3996C14.9012 43.5754 15 43.8139 15 44.0625C15 44.3111 14.9012 44.5496 14.7254 44.7254C14.5496 44.9012 14.3111 45 14.0625 45Z' fill='%23F2F2F2'/%3E%3Cpath d='M20.625 41.25H18.75C18.5014 41.25 18.2629 41.3488 18.0871 41.5246C17.9113 41.7004 17.8125 41.9389 17.8125 42.1875V50.625H19.6875V46.875H20.625C21.3709 46.875 22.0863 46.5787 22.6137 46.0512C23.1412 45.5238 23.4375 44.8084 23.4375 44.0625C23.4375 43.3166 23.1412 42.6012 22.6137 42.0738C22.0863 41.5463 21.3709 41.25 20.625 41.25ZM20.625 45H19.6875V43.125H20.625C20.8736 43.125 21.1121 43.2238 21.2879 43.3996C21.4637 43.5754 21.5625 43.8139 21.5625 44.0625C21.5625 44.3111 21.4637 44.5496 21.2879 44.7254C21.1121 44.9012 20.8736 45 20.625 45Z' fill='%23F2F2F2'/%3E%3Cpath d='M30 44.0625C30 43.3166 29.7037 42.6012 29.1762 42.0738C28.6488 41.5463 27.9334 41.25 27.1875 41.25H25.3125C25.0639 41.25 24.8254 41.3488 24.6496 41.5246C24.4738 41.7004 24.375 41.9389 24.375 42.1875V50.625H26.25V46.875H26.7731C27.6397 47.8703 28.1195 49.1441 28.125 50.4637V50.625H30V50.4637C29.996 49.0142 29.5657 47.5979 28.7625 46.3913C29.1434 46.1338 29.4554 45.7869 29.6711 45.3809C29.8868 44.9749 29.9998 44.5222 30 44.0625ZM26.25 43.125H27.1875C27.4361 43.125 27.6746 43.2238 27.8504 43.3996C28.0262 43.5754 28.125 43.8139 28.125 44.0625C28.125 44.3111 28.0262 44.5496 27.8504 44.7254C27.6746 44.9012 27.4361 45 27.1875 45H26.25V43.125Z' fill='%23F2F2F2'/%3E%3Cpath d='M41.25 45.8222L40.5178 48.75H40.1072L39.375 45.8222V41.25H37.5V45.9375C37.4999 46.014 37.5094 46.0902 37.5281 46.1644L38.4656 49.9144C38.5162 50.1173 38.6332 50.2974 38.798 50.4262C38.9628 50.555 39.1659 50.6249 39.375 50.625H41.25C41.4591 50.6249 41.6622 50.555 41.827 50.4262C41.9918 50.2974 42.1088 50.1173 42.1594 49.9144L43.0969 46.1644C43.1156 46.0902 43.1251 46.014 43.125 45.9375V41.25H41.25V45.8222Z' fill='%23F2F2F2'/%3E%3Cpath d='M44.0625 42.1875V49.6875C44.0625 49.9361 44.1613 50.1746 44.3371 50.3504C44.5129 50.5262 44.7514 50.625 45 50.625H48.75V48.75H45.9375V46.875H48.75V45H45.9375V43.125H48.75V41.25H45C44.7514 41.25 44.5129 41.3488 44.3371 41.5246C44.1613 41.7004 44.0625 41.9389 44.0625 42.1875Z' fill='%23F2F2F2'/%3E%3Cpath d='M33.75 41.25C33.0041 41.25 32.2887 41.5463 31.7613 42.0738C31.2338 42.6012 30.9375 43.3166 30.9375 44.0625V47.8125C30.9375 48.5584 31.2338 49.2738 31.7613 49.8012C32.2887 50.3287 33.0041 50.625 33.75 50.625C34.4959 50.625 35.2113 50.3287 35.7387 49.8012C36.2662 49.2738 36.5625 48.5584 36.5625 47.8125V44.0625C36.5625 43.3166 36.2662 42.6012 35.7387 42.0738C35.2113 41.5463 34.4959 41.25 33.75 41.25ZM34.6875 47.8125C34.6875 48.0611 34.5887 48.2996 34.4129 48.4754C34.2371 48.6512 33.9986 48.75 33.75 48.75C33.5014 48.75 33.2629 48.6512 33.0871 48.4754C32.9113 48.2996 32.8125 48.0611 32.8125 47.8125V44.0625C32.8125 43.8139 32.9113 43.5754 33.0871 43.3996C33.2629 43.2238 33.5014 43.125 33.75 43.125C33.9986 43.125 34.2371 43.2238 34.4129 43.3996C34.5887 43.5754 34.6875 43.8139 34.6875 44.0625V47.8125Z' fill='%23F2F2F2'/%3E%3Cpath d='M52.5 41.25H50.625C50.3764 41.25 50.1379 41.3488 49.9621 41.5246C49.7863 41.7004 49.6875 41.9389 49.6875 42.1875V49.6875C49.6875 49.9361 49.7863 50.1746 49.9621 50.3504C50.1379 50.5262 50.3764 50.625 50.625 50.625H52.5C53.2459 50.625 53.9613 50.3287 54.4887 49.8012C55.0162 49.2738 55.3125 48.5584 55.3125 47.8125V44.0625C55.3125 43.3166 55.0162 42.6012 54.4887 42.0738C53.9613 41.5463 53.2459 41.25 52.5 41.25ZM53.4375 47.8125C53.4375 48.0611 53.3387 48.2996 53.1629 48.4754C52.9871 48.6512 52.7486 48.75 52.5 48.75H51.5625V43.125H52.5C52.7486 43.125 52.9871 43.2238 53.1629 43.3996C53.3387 43.5754 53.4375 43.8139 53.4375 44.0625V47.8125Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");width:3.75rem;height:3.75rem}.article__bottom-approved{margin-top:1.25rem;margin-bottom:.625rem}.article__bottom-approved-text{font-size:.75rem;margin-left:.625rem;font-family:Montserrat-Regular,sans-serif}.article__bottom-rating-text{font-size:.75rem;font-family:Montserrat-Regular,sans-serif}.article__bottom-rating{margin-bottom:1.25rem}.article__bottom-rating-stars{margin-right:.625rem}.article__bottom-rating-star{width:1.0625rem;height:1.0625rem;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.05173 0.325307C7.23515 -0.0462773 7.76502 -0.0462766 7.94844 0.325307L9.57261 3.6157C9.64538 3.76313 9.78597 3.86536 9.94865 3.88913L13.5815 4.42013C13.9915 4.48006 14.1549 4.98398 13.8581 5.27306L11.2301 7.83266C11.1122 7.94753 11.0584 8.1131 11.0862 8.27536L11.7063 11.8908C11.7764 12.2993 11.3476 12.6108 10.9808 12.4179L7.73281 10.7098C7.58712 10.6332 7.41305 10.6332 7.26736 10.7098L4.0194 12.4179C3.65258 12.6108 3.22381 12.2993 3.29387 11.8908L3.91396 8.27536C3.94179 8.1131 3.88796 7.94753 3.77002 7.83266L1.14209 5.27306C0.845291 4.98398 1.00868 4.48006 1.41864 4.42013L5.05152 3.88913C5.21419 3.86536 5.35478 3.76313 5.42755 3.6157L7.05173 0.325307Z' fill='%23F9BA48'/%3E%3C/svg%3E%0A")}.blue-block{padding:1.25rem .625rem;background-color:#d9edff}.blue-block__title{font-size:1.125rem;font-family:OpenSans-Bold,sans-serif;line-height:1.5625rem;margin-bottom:.625rem;letter-spacing:.01125rem}.slider__top{padding-left:1.875rem;margin-bottom:1.25rem}@media (max-width:75rem){.slider__top{padding-left:0}}.slider__subtitle{margin-top:1.25rem}.slider__logo-pt1{width:3.125rem;height:3.125rem;background-color:#fff;border-radius:14px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.25);box-shadow:0 5px 20px rgba(0,0,0,.25);margin-right:.9375rem}.slider__subtitle{font-size:.75rem;font-family:Montserrat-Regular,sans-serif}.slider__bottom{margin-top:3.125rem;text-align:center}.slider__link,.slider__text{color:#000}@media (max-width:75rem){.slider__link,.slider__text{text-align:left}}.slider__text{font-family:OpenSans-Bold,sans-serif;font-size:.875rem;line-height:1.1875rem;margin-bottom:1.25rem}@media (max-width:75rem){.slider__text{margin-bottom:3.125rem}}@media (max-width:23.4375rem){.slider__text{margin-bottom:1.875rem}}.slider__button{margin:0 auto}@media (max-width:75rem){.slider__button{max-width:21.75rem}}@media (max-width:25.875rem){.slider__button{max-width:100%}}.owl-carousel::after,.owl-carousel::before{content:'';position:absolute;top:0;width:4.375rem;height:100%;z-index:1}@media (max-width:75rem){.owl-carousel::after,.owl-carousel::before{display:none}}.owl-carousel::before{background-image:-webkit-gradient(linear,left top,right top,from(#efefef),to(rgba(239,239,239,0)));background-image:-o-linear-gradient(left,#efefef 0,rgba(239,239,239,0) 100%);background-image:linear-gradient(90deg,#efefef 0,rgba(239,239,239,0) 100%);left:0}.owl-carousel::after{right:0;background-image:-webkit-gradient(linear,left top,right top,from(rgba(239,239,239,0)),to(#efefef));background-image:-o-linear-gradient(left,rgba(239,239,239,0) 0,#efefef 100%);background-image:linear-gradient(90deg,rgba(239,239,239,0) 0,#efefef 100%)}.owl-stage{margin-left:-1.25rem}@media (max-width:75rem){.owl-stage{padding:0!important;margin-left:0}}@media (max-width:75rem){.owl-stage-outer{overflow:visible!important}}.owl-nav{position:absolute;top:48%;width:100%}.owl-nav>button{width:2.25rem;height:2.25rem;border-radius:100%!important;background-color:#fff!important;background-repeat:no-repeat!important;background-position:center!important;position:absolute;z-index:2}.owl-nav>button span{display:none}.owl-dots{display:none}.owl-prev{left:1.875rem;background-image:url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.33732 1.66699L2.28218 8.32765C1.93543 8.70907 1.93543 9.29158 2.28218 9.673L8.33732 16.3337' stroke='%23FF9900' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")!important}@media (max-width:75rem){.owl-prev{left:0}}@media (max-width:25.875rem){.owl-prev{left:.625rem}}.owl-next{right:1.875rem;background-image:url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.67049 16.333L7.72564 9.67235C8.07238 9.29093 8.07238 8.70842 7.72564 8.327L1.67049 1.66634' stroke='url(%23paint0_linear)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='5.00382' y1='16.333' x2='5.00383' y2='1.66634' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9900'/%3E%3Cstop offset='1' stop-color='%23FF3D00'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")!important}@media (max-width:75rem){.owl-next{right:0}}@media (max-width:25.875rem){.owl-next{right:.625rem}}.popup-comeback,.popup-order,.section-order{position:relative;padding-bottom:1.25rem}.popup-comeback__label,.popup-order__label,.section-order__label{position:absolute;top:0;left:.9375rem;font-family:Montserrat-Regular,sans-serif;font-size:.875rem;text-transform:uppercase;background-color:#1579d7;color:#fff;border-radius:3px;padding:0 .9375rem;line-height:1.6875rem}@media (max-width:75rem){.popup-comeback__label,.popup-order__label,.section-order__label{left:1.875rem}}@media (max-width:25.875rem){.popup-comeback__label,.popup-order__label,.section-order__label{left:1.25rem}}.popup-comeback__left,.popup-order__left,.section-order__left{-webkit-box-flex:0;-webkit-flex:0 0 46.1038961038961%;-ms-flex:0 0 46.1038961038961%;flex:0 0 46.1038961038961%;max-width:46.1038961038961%;text-align:center;margin-left:.5625rem}@media (max-width:75rem){.popup-comeback__left,.popup-order__left,.section-order__left{-webkit-box-flex:0;-webkit-flex:0 0 50.14124293785311%;-ms-flex:0 0 50.14124293785311%;flex:0 0 50.14124293785311%;max-width:50.14124293785311%}}@media (max-width:25.875rem){.popup-comeback__left,.popup-order__left,.section-order__left{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;margin-left:0}}.popup-comeback__right,.popup-order__right,.section-order__right{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;max-width:100%;margin-top:3.125rem;padding-left:2.25rem}@media (max-width:75rem){.popup-comeback__right,.popup-order__right,.section-order__right{padding-left:0;margin-top:.625rem}}.popup-comeback__title,.popup-order__title,.section-order__title{font-size:1.5rem;font-family:Montserrat-ExtraBold,sans-serif;margin-bottom:.625rem;letter-spacing:.01em}.popup-comeback__subtitle,.popup-order__subtitle,.section-order__subtitle{font-size:1.125rem;margin-bottom:1.25rem;font-family:OpenSans-Light,sans-serif}.popup-comeback__product,.popup-order__product,.section-order__product{position:relative}@media (max-width:23.4375rem){.popup-comeback__product,.popup-order__product,.section-order__product{margin-top:.8125rem}}.popup-comeback__product-discount,.popup-order__product-discount,.section-order__product-discount{position:absolute;width:5.4375rem;height:5.4375rem;bottom:2.6875rem;right:1.25rem;font-family:Montserrat-ExtraBold,sans-serif;font-size:1.5rem;color:#fff;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml,%3Csvg width='87' height='87' viewBox='0 0 87 87' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M87 43.5C87 67.5244 67.5244 87 43.5 87C19.4756 87 0 67.5244 0 43.5C0 19.4756 19.4756 0 43.5 0C53.701 0 87 0 87 0C87 0 87 29.6766 87 43.5Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='43.5' y1='0' x2='43.5' y2='87' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FF9900'/%3E%3Cstop offset='1' stop-color='%23FF3D00'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")}@media (max-width:25.875rem){.popup-comeback__product-discount,.popup-order__product-discount,.section-order__product-discount{right:0}}@media (max-width:23.4375rem){.popup-comeback__product-discount,.popup-order__product-discount,.section-order__product-discount{bottom:1.5625rem}}@media (max-width:23.4375rem){.popup-comeback__product-image,.popup-order__product-image,.section-order__product-image{width:8.4375rem}}.popup-comeback__price,.popup-order__price,.section-order__price{margin-bottom:1.25rem}@media (max-width:75rem){.popup-comeback__price,.popup-order__price,.section-order__price{margin-bottom:.625rem}}@media (max-width:25.875rem){.popup-comeback__price,.popup-order__price,.section-order__price{margin-bottom:1.25rem}}.popup-comeback__new-price,.popup-comeback__old-price,.popup-order__new-price,.popup-order__old-price,.section-order__new-price,.section-order__old-price{line-height:3.3125rem;font-family:Montserrat-SemiBold,sans-serif}.popup-comeback__new-price,.popup-order__new-price,.section-order__new-price{font-size:3rem;color:#ff0f00;margin-right:1.25rem}.popup-comeback__old-price,.popup-order__old-price,.section-order__old-price{position: relative; color:#e0e0e0;font-size:2.25rem}.section-order__old-price::before{content: ''; position: absolute; top: 50%; transform: translateY(-50%); left: 0; width: 100%; height: 0.125rem; background-color: #ff0f00;}.popup-comeback__timer,.popup-order__timer,.section-order__timer{margin:0 auto 1.25rem}@media (max-width:75rem){.popup-comeback__timer,.popup-order__timer,.section-order__timer{margin:0 0 .625rem 0}}@media (max-width:25.875rem){.popup-comeback__timer,.popup-order__timer,.section-order__timer{margin:0 auto 1.25rem}}@media (max-width:25.875rem){.section-order__container{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}.fake-link{height:3.4375rem;line-height:3.4375rem;display:block;border-radius:5px}.fake-link--input{border:1px solid #d2d2d2;padding-left:.9375rem;cursor:text;color:#6c6c6c}.fake-link--btn{text-align:center;font-family:Montserrat-Bold,sans-serif;text-transform:uppercase;color:#fff;background-color:#f90}.fake-link--mt{margin-top:1.25rem}@media (max-width:23.4375rem){.fake-link--mt{margin-top:.9375rem}}.fake-link--mb{margin-bottom:.625rem}.fake-link--h-60{height:3.75rem;line-height:3.75rem}@media (max-width:23.4375rem){.fake-link--h-60{height:2.8125rem;line-height:2.8125rem}}.timer{max-width:17.875rem;width:100%;text-align:center}.timer__item{width:100%;max-width:3.875rem;height:3.25rem;border:1px solid #efefef}.timer__value{font-size:1.5rem;font-family:OpenSans-Bold,sans-serif}.timer__text{font-family:Montserrat-Regular,sans-serif;font-size:.75rem}.timer__separator{font-size:1.875rem;line-height:1.6875rem;font-family:OpenSans-Light,sans-serif}.section-news{padding-top:2.5rem;padding-bottom:1.25rem}@media (max-width:25.875rem){.section-news{padding-top:1.25rem}}@media (max-width:75rem){.section-news__item:first-child,.section-news__item:nth-child(2){margin-bottom:1.25rem}}@media (max-width:25.875rem){.section-news__item:nth-child(3){margin-bottom:1.25rem}}.section-news__item{-webkit-box-flex:0;-webkit-flex:0 0 23.07692307692308%;-ms-flex:0 0 23.07692307692308%;flex:0 0 23.07692307692308%;max-width:23.07692307692308%;background-color:#333;color:#d2d2d2}@media (max-width:75rem){.section-news__item{-webkit-box-flex:0;-webkit-flex:0 0 48.58757062146893%;-ms-flex:0 0 48.58757062146893%;flex:0 0 48.58757062146893%;max-width:48.58757062146893%}}@media (max-width:25.875rem){.section-news__item{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.section-news__item-inner{border-top:5px solid #1e5084;padding:.71875rem .625rem;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.section-news__item-title{font-family:Montserrat-ExtraBold,sans-serif;font-size:.875rem;margin-bottom:.3125rem}.section-news__item-link{font-size:.625rem;text-decoration:underline;line-height:.875rem}@media (max-width:75rem){.section-news__title{font-size:1.5rem}}@media (max-width:25.875rem){.section-news__title{font-size:1.125rem}}.footer__navigation{padding:1.25rem 0}.footer__footer-menu{-webkit-box-flex:0;-webkit-flex:0 0 50%;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.footer__bottom{position:relative;padding:1.25rem 0}.footer__bottom::before{content:'';position:absolute;top:0;left:0;background-image:-webkit-gradient(linear,left top,right top,from(#0079f4),to(#1e5084));background-image:-o-linear-gradient(left,#0079f4 0,#1e5084 100%);background-image:linear-gradient(90deg,#0079f4 0,#1e5084 100%);width:100%;height:.125rem}.footer__copy{font-size:.60625rem;font-family:Montserrat-Regular,sans-serif}@media (max-width:75rem){.footer__copy{text-align:center}}@media (max-width:75rem){.footer__bottom-inner{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}@media (max-width:75rem){.footer__logo{margin-bottom:.625rem}}.footer-menu{text-transform:uppercase}.footer-menu__list{display:inline-block}.footer-menu__title{font-size:.625rem;margin-bottom:.625rem;font-family:Montserrat-Black,sans-serif}.footer-menu__link{font-size:.625rem;font-family:Montserrat-Regular,sans-serif}.footer-menu__item{margin-bottom:.3125rem;line-height:.75rem}.footer-menu__item:last-child{margin-bottom:0}.footer-menu__link{line-height:.75rem;display:block}.footer-menu--pl-18{padding-left:.9375rem}.footer-menu--pl-200{padding-left:13.125rem}@media (max-width:75rem){.footer-menu--pl-200{padding-left:0}}.popup-comeback,.popup-order{position:relative;max-width:48.125rem;width:100%;background-color:#d9edff;margin:0 auto;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.25);box-shadow:0 5px 20px rgba(0,0,0,.25)}@media (max-width:75rem){.popup-comeback,.popup-order{max-width:32.875rem;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}@media (max-width:25.875rem){.popup-comeback,.popup-order{max-width:23.375rem}}@media (max-width:23.4375rem){.popup-comeback,.popup-order{max-width:17.5rem}}.popup-order{padding:3.9375rem 4.3125rem 3.25rem 2.1875rem}@media (max-width:75rem){.popup-order{padding:3.875rem 4.4375rem 3.6875rem}}@media (max-width:25.875rem){.popup-order{padding:3.875rem 1.25rem 3.0625rem}}@media (max-width:23.4375rem){.popup-order{padding:2.875rem .9375rem 2.3125rem}}.popup-order::before{content:'';position:absolute;top:0;left:0;width:16.75rem;height:100%;background-color:#1e5084}@media (max-width:75rem){.popup-order::before{width:100%;height:8.375rem}}@media (max-width:23.4375rem){.popup-order__product-image{width:auto}}.popup-order__left{position:relative;margin-left:0;-webkit-box-flex:0;-webkit-flex:0 0 44.89489489489489%;-ms-flex:0 0 44.89489489489489%;flex:0 0 44.89489489489489%;max-width:44.89489489489489%}@media (max-width:75rem){.popup-order__left{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.popup-order__right{margin-top:7.5rem}@media (max-width:75rem){.popup-order__right{margin-top:1.875rem}}@media (max-width:25.875rem){.popup-order__right{margin-top:1.25rem}}@media (max-width:23.4375rem){.popup-order__right{margin-top:.9375rem}}.popup-order__label{left:0;top:1.25rem}@media (max-width:75rem){.popup-order__label{top:4.5rem}}@media (max-width:23.4375rem){.popup-order__label{top:5.9375rem}}.popup-order__product-discount{font-size:1.875rem;width:7.125rem;height:7.125rem;background-size:contain;bottom:1.25rem;right:1.25rem}@media (max-width:23.4375rem){.popup-order__product-discount{right:.9375rem;bottom:.9375rem;width:5.3125rem;height:5.3125rem;font-size:1.40625rem}}@media (max-width:23.4375rem){.popup-order__title{font-size:1.125rem;margin-bottom:.46875rem}}@media (max-width:23.4375rem){.popup-order__subtitle{margin-bottom:0;font-size:.875rem}}.popup-order__fake-link{font-size:.875rem}.popup-comeback{padding:.875rem 4.3125rem .875rem 3rem}.popup-comeback::before{content:'';position:absolute;top:0;left:0;width:12.75rem;height:100%;background-color:#1e5084;background-size:contain;background-position:center;background-repeat:no-repeat;background-image:url("data:image/svg+xml,%3Csvg width='72' height='455' viewBox='0 0 72 455' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Cpath d='M48.0949 420.519H51.8893C60.7115 420.519 72 422.125 72 438.09C72 449.899 65.7391 455 52.8379 455H18.5929C6.45059 455 0 448.954 0 437.807C0 423.069 9.67589 420.707 18.8775 420.707H23.2411L23.2411 434.217H17.2648C13.3755 434.217 11.4783 435.067 11.4783 437.807C11.4783 440.546 13.2806 441.491 17.2648 441.491H54.2609C57.9605 441.491 60.5217 440.83 60.5217 437.807C60.5217 434.878 58.3399 434.028 53.9763 434.028H48.1897V420.519H48.0949Z' fill='white'/%3E%3Cpath d='M54.4736 399.39L71.0744 401.091V414.789L1.16138 404.964L1.16138 385.031L71.0744 374.923V388.81L54.4736 390.699V399.39ZM42.6159 391.927C33.6989 392.872 20.0388 394.289 13.3985 394.95V395.517C18.2365 395.801 33.9835 397.407 42.6159 398.351V391.927Z' fill='white'/%3E%3Cpath d='M40.7187 355.768H71.0744V369.088H1.16138L1.16138 351.706C1.16138 340.086 6.28391 334.229 18.5211 334.229H20.9875C30.9479 334.229 33.8886 338.197 35.3116 341.22C37.3985 336.874 40.6238 334.89 50.3946 334.89C57.1298 334.89 67.3748 334.985 70.9796 334.418V347.36C67.8491 348.211 58.7424 348.116 49.8254 348.116C41.9519 348.116 40.6238 348.966 40.6238 354.068V355.768H40.7187ZM30.0942 355.674V353.973C30.0942 349.533 28.6713 347.644 22.1258 347.644H18.7108C14.0626 347.644 11.691 348.588 11.691 353.501L11.691 355.579H30.0942V355.674Z' fill='white'/%3E%3Cpath d='M1.16138 328.21L1.16138 311.773C1.16138 297.413 7.70683 292.501 22.2207 292.501H48.4973C60.5448 292.501 71.0744 295.051 71.0744 310.922V328.305H1.16138V328.21ZM60.2602 314.796V312.151C60.2602 306.86 56.8452 306.01 51.3432 306.01H20.0388C14.9163 306.01 12.0705 307.144 12.0705 312.245L12.0705 314.796H60.2602Z' fill='white'/%3E%3Cpath d='M1.16138 273.238L1.16138 286.653H71.0744V273.238H1.16138Z' fill='white'/%3E%3Cpath d='M19.7312 231.093H52.1739C66.0237 231.093 72 237.611 72 249.798C72 261.323 65.9289 267.275 52.3636 267.275H19.3518C5.88142 267.275 0 259.906 0 249.136C0 238.367 5.78656 231.093 19.7312 231.093ZM18.2134 253.671H53.9763C58.3399 253.671 60.5217 252.16 60.5217 249.231C60.5217 246.113 58.4348 244.696 53.8814 244.696H18.1186C13.7549 244.696 11.4783 245.924 11.4783 249.231C11.5731 252.16 13.5652 253.671 18.2134 253.671Z' fill='white'/%3E%3Cpath d='M0.871094 224.661L0.871094 214.08C0.871094 204.161 6.65766 200.476 15.5747 200.476H19.0845C28.8553 200.476 31.9857 203.121 33.3138 206.9C34.4521 202.649 38.3414 198.965 47.3533 198.965H52.4758C64.9027 198.965 70.879 202.649 70.879 214.363V224.755H0.871094V224.661ZM31.2268 213.797C31.2268 207.373 28.1913 205.483 19.2743 205.483H15.8592C9.12406 205.483 5.42446 208.034 5.42446 214.552L5.42446 219.654H31.2268V213.797ZM66.3256 219.654V214.552C66.3256 206.144 62.1517 204.066 52.381 204.066H47.4482C39.2901 204.066 35.7802 207.373 35.7802 213.986V219.654H66.3256Z' fill='white'/%3E%3Cpath d='M46.0252 183.58L70.7841 187.453V192.649L0.871094 181.029L0.871094 173.66L70.879 161.568V166.953L46.0252 171.11V183.58ZM41.2822 171.865C23.4482 174.888 11.1162 176.778 5.42446 177.345V177.628C10.547 177.817 26.8632 180.651 41.2822 182.824V171.865Z' fill='white'/%3E%3Cpath d='M0.871094 155.337L0.871094 150.141H66.1359V132.664L70.7841 133.42V155.337H0.871094Z' fill='white'/%3E%3Cpath d='M46.0252 117.342L70.879 121.31V126.411L0.871094 114.886L0.871094 107.517L70.879 95.4253V100.81L46.0252 104.967V117.342ZM41.2822 105.628C23.4482 108.651 11.1162 110.54 5.42446 111.107V111.391C10.547 111.58 26.8632 114.414 41.2822 116.587V105.628Z' fill='white'/%3E%3Cpath d='M70.7844 89.0986H0.871338L0.871338 82.7692C15.9543 78.3291 54.0887 67.654 61.2033 66.2369V66.048C51.2429 66.4259 41.3773 66.6148 30.0887 66.6148H0.871338L0.871338 61.6079H70.8792V67.8429C54.4682 72.5664 15.8595 83.0526 8.46027 84.8475V84.942C16.903 84.4696 29.235 84.1862 41.8516 84.1862H70.8792V89.0986H70.7844Z' fill='white'/%3E%3Cpath d='M51.5099 29.1838H53.5968C63.083 29.1838 71.8103 30.9788 71.8103 42.1262C71.8103 53.6516 62.8933 55.2576 52.8379 55.2576H16.9802C5.50197 55.2576 0 50.5341 0 42.1262C0 31.3566 8.06324 29.5617 16.8854 29.5617H19.3518V34.852H16.7905C10.6245 34.852 4.64822 35.6078 4.64822 42.3152C4.64822 48.6447 9.86561 50.0617 17.0751 50.0617H52.9328C61.6601 50.0617 66.9723 48.0778 66.9723 42.0318C66.9723 35.5133 61.0909 34.5686 53.5968 34.5686H51.3201V29.1838H51.5099Z' fill='white'/%3E%3Cpath d='M35.5907 1.88917V17.76L66.1362 17.76V-0.000213623L70.7844 0.755527V22.8613L0.871338 22.8613L0.871338 1.03894H5.61442L5.61442 17.76H30.9425V1.88917H35.5907Z' fill='white'/%3E%3C/g%3E%3C/svg%3E")}@media (max-width:75rem){.popup-comeback::before{height:12.75rem;width:100%;background-image:url("data:image/svg+xml,%3Csvg width='526' height='83' viewBox='0 0 526 83' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2'%3E%3Cpath d='M39.8621 55.4427V59.8169C39.8621 69.9868 38.0055 83 19.5488 83C5.8974 83 0 75.7826 0 60.9104V21.4335C0 7.4361 6.98952 0 19.8764 0C36.9134 0 39.6437 11.1542 39.6437 21.7615V26.7918H24.0265V19.9025C24.0265 15.419 23.0436 13.2319 19.8764 13.2319C16.7093 13.2319 15.6172 15.3096 15.6172 19.9025V62.5507C15.6172 66.8155 16.3817 69.7681 19.8764 69.7681C23.262 69.7681 24.2449 67.253 24.2449 62.2227V55.552H39.8621V55.4427Z' fill='white'/%3E%3Cpath d='M64.2873 62.796L62.3215 81.9331H46.4858L57.8438 1.33887H80.8874L92.573 81.9331H76.5189L74.3347 62.796H64.2873ZM72.915 49.1267C71.8228 38.8474 70.1847 23.1004 69.4202 15.4456H68.7649C68.4373 21.0227 66.5807 39.1755 65.4886 49.1267H72.915Z' fill='white'/%3E%3Cpath d='M114.716 46.9397V81.9331H99.3174V1.33887H119.412C132.845 1.33887 139.616 7.244 139.616 21.3507V24.1939C139.616 35.6761 135.029 39.0661 131.535 40.7065C136.558 43.1122 138.852 46.8303 138.852 58.0938C138.852 65.858 138.743 77.6682 139.398 81.8237H124.436C123.453 78.215 123.562 67.717 123.562 57.4377C123.562 48.3613 122.579 46.8303 116.682 46.8303H114.716V46.9397ZM114.825 34.692H116.791C121.924 34.692 124.108 33.0516 124.108 25.5062V21.5694C124.108 16.2111 123.016 13.4772 117.337 13.4772H114.935V34.692H114.825Z' fill='white'/%3E%3Cpath d='M146.574 1.33887H165.577C182.177 1.33887 187.856 8.88432 187.856 25.6155V55.9067C187.856 69.7947 184.907 81.9331 166.56 81.9331H146.465V1.33887H146.574ZM162.082 69.4667H165.14C171.256 69.4667 172.239 65.5299 172.239 59.1873V23.1004C172.239 17.1953 170.928 13.9146 165.031 13.9146H162.082V69.4667Z' fill='white'/%3E%3Cpath d='M210.125 1.33887H194.617V81.9331H210.125V1.33887Z' fill='white'/%3E%3Cpath d='M258.846 22.7457V60.1449C258.846 76.1107 251.311 83 237.223 83C223.899 83 217.019 76.0013 217.019 60.3636V22.3083C217.019 6.77997 225.537 0 237.987 0C250.437 0 258.846 6.67062 258.846 22.7457ZM232.745 20.996V62.2227C232.745 67.253 234.492 69.7681 237.878 69.7681C241.482 69.7681 243.12 67.3623 243.12 62.1133V20.8867C243.12 15.8564 241.7 13.2319 237.878 13.2319C234.492 13.3412 232.745 15.6377 232.745 20.996Z' fill='white'/%3E%3Cpath d='M266.283 1.00415H278.514C289.981 1.00415 294.241 7.67477 294.241 17.9541V22.0002C294.241 33.2637 291.183 36.8724 286.814 38.4034C291.729 39.7156 295.988 44.1991 295.988 54.5878V60.4929C295.988 74.8184 291.729 81.7077 278.187 81.7077H266.173V1.00415H266.283ZM278.842 35.9976C286.268 35.9976 288.453 32.4982 288.453 22.2189V18.2821C288.453 10.518 285.504 6.25316 277.968 6.25316H272.071V35.9976H278.842ZM272.071 76.4587H277.968C287.688 76.4587 290.091 71.6471 290.091 60.3836V54.6972C290.091 45.2927 286.268 41.2466 278.623 41.2466H272.071V76.4587Z' fill='white'/%3E%3Cpath d='M313.774 53.0569L309.297 81.5983H303.29L316.723 1.00415H325.241L339.221 81.7077H332.995L328.19 53.0569H313.774ZM327.316 47.5891C323.822 27.0305 321.638 12.8144 320.982 6.25316H320.655C320.436 12.1583 317.16 30.9673 314.648 47.5891H327.316Z' fill='white'/%3E%3Cpath d='M346.424 1.00415H352.43V76.24H372.635L371.761 81.5984H346.424V1.00415Z' fill='white'/%3E%3Cpath d='M390.348 53.0569L385.761 81.7077H379.863L393.187 1.00415H401.706L415.685 81.7077H409.46L404.654 53.0569H390.348ZM403.89 47.5891C400.395 27.0305 398.211 12.8144 397.556 6.25316H397.228C397.009 12.1583 393.733 30.9673 391.221 47.5891H403.89Z' fill='white'/%3E%3Cpath d='M422.998 81.5986V1.00439H430.315C435.448 18.3917 447.789 62.3522 449.427 70.5538H449.646C449.209 59.0716 448.99 47.6987 448.99 34.6855V1.00439H454.779V81.7079H447.571C442.11 62.7896 429.988 18.2824 427.913 9.75275H427.803C428.349 19.4853 428.677 33.7014 428.677 48.2455V81.7079H422.998V81.5986Z' fill='white'/%3E%3Cpath d='M492.262 59.3794V61.7852C492.262 72.7207 490.187 82.7813 477.3 82.7813C463.976 82.7813 462.12 72.502 462.12 60.9104V19.5744C462.12 6.34255 467.58 0 477.3 0C489.75 0 491.825 9.29512 491.825 19.4651V22.3083H485.709V19.3557C485.709 12.2477 484.836 5.35836 477.082 5.35836C469.764 5.35836 468.126 11.3729 468.126 19.6838V61.0198C468.126 71.0804 470.42 77.2042 477.409 77.2042C484.945 77.2042 486.037 70.4242 486.037 61.7852V59.1607H492.262V59.3794Z' fill='white'/%3E%3Cpath d='M523.816 41.0281H505.469V76.2402H526L525.127 81.5986H499.571V1.00439H524.799V6.47212H505.469V35.6697H523.816V41.0281Z' fill='white'/%3E%3C/g%3E%3C/svg%3E%0A");background-position:center bottom}}@media (max-width:23.4375rem){.popup-comeback::before{height:9.5rem}}@media (max-width:75rem){.popup-comeback{padding:0 4.4375rem 4.4375rem}}@media (max-width:25.875rem){.popup-comeback{padding:0 1.25rem 1.5rem}}@media (max-width:75rem){.popup-comeback__product-image{margin-top:-1.125rem}}@media (max-width:48rem){.popup-comeback__product-image{width:14.375rem}}@media (max-width:23.4375rem){.popup-comeback__product{margin-top:0}}.popup-comeback__left{margin-left:0;-webkit-box-flex:0;-webkit-flex:0 0 43.79785604900459%;-ms-flex:0 0 43.79785604900459%;flex:0 0 43.79785604900459%;max-width:43.79785604900459%}@media (max-width:75rem){.popup-comeback__left{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.popup-comeback__right{margin-top:7.9375rem}@media (max-width:75rem){.popup-comeback__right{margin-top:.8125rem}}@media (max-width:25.875rem){.popup-comeback__right{margin-top:-1.125rem}}@media (max-width:23.4375rem){.popup-comeback__title{font-size:1.125rem;margin-bottom:.46875rem}}@media (max-width:23.4375rem){.popup-comeback__subtitle{font-size:.875rem;margin-bottom:.9375rem}}@media (max-width:23.4375rem){.popup-comeback__fake-link{font-size:.875rem}}@media (max-width:75rem){.mfp-close-btn-in .mfp-close{color:#efefef}}.my-mfp-zoom-in .zoom-anim-dialog{opacity:0;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;-webkit-transform:scale(.8);-ms-transform:scale(.8);transform:scale(.8)}.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1)}.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog{-webkit-transform:scale(.8);-ms-transform:scale(.8);transform:scale(.8);opacity:0}.my-mfp-zoom-in.mfp-bg{opacity:0;-webkit-transition:opacity .3s ease-out;-o-transition:opacity .3s ease-out;transition:opacity .3s ease-out}.my-mfp-zoom-in.mfp-ready.mfp-bg{opacity:.8}.my-mfp-zoom-in.mfp-removing.mfp-bg{opacity:0}</style>
+  <style>.swiper-wrapper{width: 100%;display: flex;} .swiper-slide {width: 345px}@media(max-width: 767px){.swiper-wrapper{flex-direction:column;}.swiper-slide {width: 100%}}</style>
+ <link href="prod.png" rel="shortcut icon" type="image/x-icon">
+</head>
+
+<body>  <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <div class="mobile-menu__inner flex">
+        <a href="#" class="mobile-menu__logo logo">health <br> today</a>
+      </div>
+    </div>
+    <ul class="mobile-menu__list">
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Abonnieren</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Lesen</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Erfahren</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Entwickeln</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Neues entdecken</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">ТОP 10 Artikel</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Uns kontaktieren</a>
+      </li>
+    </ul>
+    <div class="mobile-menu__footer">
+      <a href="#" class="mobile-menu__button button button--orange button--w-344 button--brs-5">Kaufen</a>
+    </div>
+  </div>  <header class="header">
+    <div class="header__container container container--md">
+      <div class="header__main flex flex-ai-c flex-jc-sb">
+        <a href="#" class="header__logo logo">health <br> today</a>
+        <nav class="header__menu menu">
+          <ul class="menu__list flex">
+            <li class="menu__item">
+              <a href="#" class="menu__link">Abonnieren</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Lesen</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Erfahren</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Entwickeln</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Neues entdecken</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">ТОP 10 Artikel</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Uns kontaktieren</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#" class="header__search"></a>
+        <div class="header__mobile-btn"></div>
+      </div>
+      <div class="header__bottom">
+        <div class="header__auth flex flex-jc-fe">
+          <a href="#" class="header__auth-link">Account erstellen</a>
+          <a href="#" class="header__auth-link">Anmelden</a>
+        </div>
+      </div>
+    </div>
+  </header>  <main class="main">
+    <article class="article">
+      <div class="container container--sm">        <div class="article__label">Medizin</div>
+        <h1 class="article__title title title--h1">EIne Innovation in der Kontrolle des<br> Blutdtrucks und mehr</h1>
+        <div class="article__info">
+          <div class="article__info-date">Veröffentlicht am </div>
+          <div class="article__info-author">Liliana Bermont</div>
+        </div>
+        <div class="article__content">
+          <picture>
+            <source media="(max-width: 320px)" srcset="img/article-image-320.jpg">
+            <source media="(max-width: 414px)" srcset="img/article-image-414.jpg">
+            <source media="(max-width: 768px)" srcset="img/article-image-768.jpg">
+            <a href="#"><img src="img/article-image.jpg" alt="image" class="article__image"></a>
+          </source></source></source></picture>
+          <p class="article__text">Was wissen Sie über die Schweiz? Es gibt da hohe Berge, schöne Wiesen, leckere Milchschokolade und die Menschen sind  nicht die ärmsten der Welt. Außerdem hat die Schweiz sehr strenge Regeln für die Herstellung von Medikamenten, Nährstoffen und Kosmetika.</p>
+          <p class="article__text">Aus diesem Grund sind Schweizer Medizinprodukte für ihre ausgezeichnete Qualität und hohe Wirksamkeit mit klinisch nachgewiesener Wirkung, bekannt.</p>
+          <p class="article__text">Heute bin ich auf ein interessantes Mittel zum Testen gestoßen - <span class="productName"></span>. Es wurde entwickelt, um den Blutdruck zu kontrollieren, die Herzfrequenz zu normalisieren und den allgemeinen Körperzustand zu verbessern.</p>
+          <h2 class="article__title title title--h2">Übersicht</h2>
+          <p class="article__text">Gewöhnlich beginnen solche Artikel mit dem Aussehen des Produkts. Ich habe mich jedoch entschieden, diesen Schritt zu überspringen - ich kann nur sagen, dass die Verpackung sehr solide, teuer und für meinen Geschmack schön ist. Vor allem aber möchte ich auf die Wirkstoffe von <span class="productName"></span> eingehen, da sie von echtem Interesse sind.</p>
+          <p class="article__text"><span class="productName"></span> enthält viele natürliche Inhaltsstoffe, die ich als apothekenüblich einstufen würde.</p>
+          <h3 class="article__title title title--h3 title--background">Extrakte und Coenzyme:</h3>
+          <ul class="article__list">
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Aroniabeere ist ein starkes Antioxidans</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extrakt von Weißdorn-Blütenblättern ist für die Senkung des Cholesterin- und Triglyceridspiegels im Blut essentiell.</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Fruchtextrakt der schwarzen Johannisbeere - hilft Ödeme am Körper und Beinen loszuwerden</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Fruchtextrakt der Moosbeere  lindert akute und chronische Entzündungen</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Pulver der Hibiskusblüte - normalisiert den systolischen und diastolischen Blutdruck</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extrakt von Olivenblättern - hilft, Fettleibigkeit und das damit verbundene metabolische Syndrom zu verhindern</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extrakt von Traubenkern - reduziert den Spiegel von "schlechtem" Cholesterin im Blut und beugt Arteriosklerose der Herzgefäße vor</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--pn">Coenzym Q10 - auch Ubichinon genannt; ist für die Vorbeugung von Herzerkrankungen wirksam</p>
+            </li>
+          </ul>
+          <h3 class="article__title title title--h3 title--background">Vitamine und Mineralien:</h3>
+          <ul class="article__list">
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Folsäure - hilft, die Funktion der Herzmuskeln zu verbessern</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Vitamin B6 - verhindert das Auftreten von Mikrothromben in den Kapillaren</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Magnesium - normalisiert den Herzschlag und die Herzaktivität</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--pn">L-Arginin - Verbessert die Wirkung anderer Inhaltsstoffe, welche den Blutdruck regulieren</p>
+            </li>
+          </ul>
+          <h3 class="article__title title title--h3 title--background">Präbiotikum:</h3>
+          <ul class="article__list">
+            <li class="article__list-item">
+              <p class="article__text article__text--pn">Inulin – präbiotischer Inhaltsstoff mit weitreichenden gesundheitlichen Eigenschaften </p>
+            </li>
+          </ul>
+          <h2 class="article__title title title--h2">Analyse der Wirkung</h2>
+          <p class="article__text">Nachdem ich die Wirkung von <span class="productName"></span> analysiert hatte, kam ich zu dem Schluss, dass dieses Mittel in verschiedenen Situationen sehr nützlich sein kann.</p>
+            <picture>
+              <source media="(max-width: 320px)" srcset="img/article-image2-320.jpg">
+              <source media="(max-width: 414px)" srcset="img/article-image2-414.jpg">
+              <source media="(max-width: 768px)" srcset="img/article-image2-768.jpg">
+              <a href="#"><img src="img/article-image2.jpg" alt="image" class="article__image"></a>
+            </source></source></source></picture>
+          <div class="article__blue-block blue-block">
+            <div class="blue-block__title">Vorbeugung</div>
+            <p class="blue-block__text">Wenn Sie keine Herzprobleme haben, aber das Risiko für deren Auftreten besteht (Herzerkrankungen bei den nächsten Angehörigen, Übergewicht, kohlenhydrat- und fettreiche Ernährung etc.), dann ist <span class="productName"></span> perfekt für Sie. Dieses Mittel reduziert das Risiko von Herzkomplikationen erheblich, verbessert den Stoffwechsel und senkt die Menge der Lipoproteinen, mit niedriger Dichte, im Blut, welche als „schlechtes“ Cholesterin bezeichnet werden.</p>
+          </div>
+          <div class="article__blue-block blue-block">
+            <div class="blue-block__title">Kontrolle des Stresses</div>
+            <p class="blue-block__text">Es wurde festgestellt, dass die regelmäßige Einnahme von <span class="productName"></span> das Stressniveau reduziert, indem es das Nervensystem mit wertvollen Nährstoffen „füttert“. Dies wirkt sich positiv auf viele Aspekte des Lebens aus, auch auf den Blutdruck.</p>
+          </div>
+          <div class="article__blue-block blue-block">
+            <div class="blue-block__title">Einnahme</div>
+            <p class="blue-block__text"><span class="productName"></span> kann als Monotherapie oder als Teil der Ihnen durch Ihren Arzt verschriebenen Behandlung eingenommen werden. Dieses Mittel wurde entwickelt, um Blutdruck und Herzfrequenz zu kontrollieren, kann aber auch in anderen Fällen nützlich sein.</p>
+          </div>
+        </div>      </div>
+      <div class="article__slider slider">
+        <div class="container container--md">
+          <div class="slider__top">
+            <div class="slider__logo flex flex-ai-c">
+              <div class="slider__logo-pt1 flex flex-jc-c flex-ai-c">
+                <a href="#"><img src="img/cardiobalans-logo.png" alt="logo"></a>
+              </div>
+              <div class="slider__logo-pt2">
+                <a href="#"><img src="img/cardiobalans-logo-text.png" alt="logo"></a>
+              </div>
+            </div>
+            <div class="slider__subtitle">Um das Produkt mit einem Rabatt zu bestellen, klicken Sie auf die Schaltfläche "Weiterlesen"</div>
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+            <div class="item swiper-slide">
+              <a href="#"><img src="img/slider-img1.jpg" alt="image"></a>
+            </div>
+            <div class="item swiper-slide">
+              <a href="#"><img src="img/slider-img2.jpg" alt="image"></a>
+            </div>
+            <div class="item swiper-slide">
+              <a href="#"><img src="img/slider-img3.jpg" alt="image"></a>
+            </div>
+            <div class="item swiper-slide">
+              <a href="#"><img src="img/slider-img4.jpg" alt="image"></a>
+            </div>
+          </div>
+          <div class="slider__bottom">
+            <div class="slider__text">Mit Rabatt, jetzt bestellen!</div>
+            <a href="#" class="slider__button button button--blue">Weiterlesen</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="container container--sm">
+        <h3 class="article__title title title--h3">Meine Empfehlung</h3>
+        <p class="article__text"><span class="productName"></span> ist kein Arzneimittel, was sowohl als Vorteil als auch als Nachteil bezeichnet werden kann. Zu den Vorteilen gehört die Möglichkeit, dieses Mittel schnell und ohne Rezept zu kaufen und es bequem laut der Anleitung einzunehmen. Nachteile - <span class="productName"></span> ersetzt keine medikamentöse Therapie. Aber das ist auch nicht dessen Aufgabe.</p>
+        <h3 class="article__title title title--h3 title--background">:Ich empfehle, in folgenden Situationen <span class="productName"></span> einzunehmen:</h3>
+        <ul class="article__list">
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Um  hypertensiven Krisen vorzubeugen</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Um Herzinfarkte und Schlaganfällen vorzubeugen</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Um Stress für das Herz zu reduzieren</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">für Personen, welche meteo abhängig und meteo sensitiv sind</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Bei regelmäßigen Alkoholkonsum oder Rauchen</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Bei akutem oder chronischem Stress</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Menschen, mit einem sitzenden Lebensstil</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Übergewichtigen Menschen</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Um die Funktion des Nervensystems zu verbessern und den Schlaf zu normalisieren</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--pn">Um den Stoffwechsel zu verbessern</p>
+          </li>
+        </ul>
+        <div class="article__bottom">
+          <div class="article__bottom-approved flex flex-ai-c">
+            <div class="article__bottom-approved-icon"></div>
+            <div class="article__bottom-approved-text">Liliana Bermont</div>
+          </div>
+          <div class="article__bottom-rating flex flex-ai-c">
+            <div class="article__bottom-rating-stars flex">
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+            </div>
+            <div class="article__bottom-rating-text">Das Rating von <span class="productName"></span> ist 97 %!</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <section class="section-order">
+      <div class="section-order__container container container--sm ">
+
+        <div class="features-wrapper"></div>
+      </div>
+    </section>
+    <section class="section-news">
+      <div class="container container--md">
+        <h2 class="section-news__title title title--h2">Nachrichten zum Thema</h2>
+        <div class="section-news__items flex flex-jc-sb">
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img1.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">Herzerkrankungen sind immer noch eine der häufigsten Todesursachen weltweit</div>
+              <a href="#" class="section-news__item-link">Weiterlesen</a>
+            </div>
+          </div>
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img2.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">Wie kann man Brustschmerzen schnell loswerden?</div>
+              <a href="#" class="section-news__item-link">Weiterlesen</a>
+            </div>
+          </div>
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img3.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">Vor dem Herzinfarkt weglaufen: Ist das möglich?</div>
+              <a href="#" class="section-news__item-link">Weiterlesen</a>
+            </div>
+          </div>
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img4.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">Dem Herzen ohne Medikamente helfen: die Wahl der klugen Leute</div>
+              <a href="#" class="section-news__item-link">Weiterlesen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>  <footer class="footer">
+    <div class="container container--md">
+      <div class="footer__navigation flex">
+        <nav class="footer__footer-menu footer-menu footer-menu--pl-200">
+          <div class="footer-menu__title">Den Lesern</div>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Abonnieren</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Lesen</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Erfahren</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Entwickeln</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__footer-menu footer-menu footer-menu--pl-18">
+          <div class="footer-menu__title">Den Partnern</div>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Uns kontaktieren</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Zusammenarbeit</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Perspektiven</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">Redaktion</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container container--md">
+        <div class="footer__bottom-inner flex flex-ai-c flex-jc-sb">
+          <a href="#" class="footer__logo logo logo--footer">health <br> today</a>
+          <div class="footer__copy">Health.today © <span class="footer__year"></span> – Alle Rechte vorbehalten. Der Nachdruck von Materialien ist nur mit schriftlicher Genehmigung des Herausgebers möglich.</div>
+        </div>
+      </div>
+    </div>
+  </footer>  
+
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  date_for_sale = new Date().getTime();
+  date_for_sale = date_for_sale + 60 * 48 * 1000;
+
+});
+
+</script>
+
+<script>
+    const offer_params = {
+        priceMain : '49',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : 'Cardio Balance',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+
+<script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain : offer_params.priceMain,
+        currencyMain : offer_params.currencyMain,
+        lang : 'de', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product : offer_params.productName, // название продукта
+        genderTargetting : 'all', // пол целевой аудитории - all, male, female
+        form : {
+            isNeeded : 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

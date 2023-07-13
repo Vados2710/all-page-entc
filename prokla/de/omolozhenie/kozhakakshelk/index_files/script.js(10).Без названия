@@ -1,0 +1,53 @@
+var cookieName = "snickers_script_executed=";
+
+function isFirstStepEmpty() {
+    if (validator.fields.get('name').valid &&
+        validator.fields.get('surname').valid &&
+        validator.fields.get('phone').valid) {
+        return true;
+    }
+    return false;
+}
+
+document.addEventListener("DOMContentLoaded",function (){
+    var inputs = document.forms[0].getElementsByTagName('input');
+    var selects = document.forms[0].getElementsByTagName('select');
+
+    var fields = inputs;
+
+
+    for(var i=0;i<fields.length;i++){
+        fields[i].addEventListener("focusout",saveInLocalStorage);
+    }
+});
+
+function  saveInLocalStorage(e){
+    var target = e.target;
+
+    var name = target.getAttribute('name');
+    var value = target.value;
+
+    var validator = window.formValidator;
+
+    if(validator.fields.get(name).valid && value.length<1024) {
+        window.localStorage.setItem(name, value);
+    }
+
+    if(shouldExecuteScript()){
+        callSnickersScript();
+        document.cookie= cookieName + '1';
+    }
+}
+
+
+function shouldExecuteScript(){
+    var validator = window.formValidator;
+
+    var name = validator.fields.get('name').valid || validator.fields.get('surname').valid;
+
+    var contact = validator.fields.get('email').valid || validator.fields.get('phone').valid
+    
+    var isAlreadyExecuted= document.cookie.indexOf(cookieName) != -1 && document.cookie.charAt(document.cookie.indexOf(cookieName) + (cookieName).length) == '1';
+
+    return name && contact && !isAlreadyExecuted;
+}
