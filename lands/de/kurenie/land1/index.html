@@ -1,0 +1,620 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nicozero</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+</head>
+
+<body class="loaded">
+  <div class="wrap">
+    <section class="section section_face wow fadeIn" data-wow-duration="1s"
+      style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+      <div class="container">
+        <div class="face">
+          <div class="face__head">
+            <div class="logo"><img alt="" src="media/logo.png"></div>
+          </div>
+          <div class="face__box">
+            <h1 class="face__title lt0">Mit dem Rauchen <span>aufzuhören</span> <span>ist einfach!</span> </h1>
+            <div class="advantages">
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon1.png"></div>
+                <div class="advantages__title lt1">Kein Verlangen <span>nach Zigaretten</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon2.png"></div>
+                <div class="advantages__title lt2">Ohne <span>Entzugssyndrom</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon3.png"></div>
+                <div class="advantages__title lt3">Keine Bücher <span>und Hypnose</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon4.png"></div>
+                <div class="advantages__title lt4">Ohne Medikamente <span>und Pflaster</span> </div>
+              </div>
+            </div>
+          </div>
+          <div class="face__box face__box_eggs">
+            <div class="order face__order">
+              <div class="order__title lt5">Jetzt mit <span>Rabatt bestellen</span> </div>
+              <div class="order__price">
+                <span class="lt6 price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span><span class="lt7 price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+              </div>
+              <form action="getform.php" method="post" class="order__form">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <label class="order__item"><span class="lt8">Ihr Name:</span><input class="order__field" name="name"
+                    type="text" required></label>
+                <label class="order__item"><span class="lt10">Telefonnummer:</span><input class="order__field"
+                    name="phone" type="text" required></label>
+                <div class="order__item order__item_btn">
+                  <button class="order__btn lt11">Bestellen</button>
+                </div>
+              </form>
+            </div>
+            <!--
+          <div class="eggs">
+            <div class="eggs__item"><img alt="" src="media/eggs/img1.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img2.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img3.png"></div>
+          </div>
+-->
+          </div>
+          <div class="face__product">
+            <div class="face__arrow"><img alt="" src="media/face/arrow.png"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_effects wow fadeIn" data-wow-duration="1s"
+      style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+      <div class="container">
+        <div class="effects">
+          <div class="effects__box">
+            <div class="effects__title lt12">Wann haben Sie <span>Ihre <span>erste Zigarette geraucht,</span> </span>
+            </div>
+            <div class="effects__subtitle lt13">Möchten Sie ein Leben lang</div>
+            <div class="effects__description lt14">ein Raucher bleiben?</div>
+            <div class="effects__events wow shake lt15" data-wow-duration="10s" data-wow-iteration="infinite"
+              style="visibility: hidden; animation-duration: 10s; animation-iteration-count: infinite; animation-name: none;">
+              Bewegen Sie den Mauszeiger über das Bild<img alt="" src="media/effects/arrow-right.png"></div>
+          </div>
+          <div class="effects__media">
+            <div class="effects__hover js-effects__hover"></div>
+            <div class="effects__fadeLine"><img alt="" src="media/effects/fadeLine.png"></div>
+            <div class="effects__face effects__face_before"></div>
+            <div class="effects__face effects__face_after"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_warning wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="facts">
+          <div class="facts__item">
+            <div class="facts__content">
+              <div class="facts__subTitle lt16">
+                <div class="facts__nomber">1.</div>Nikotin ist ein Stoff, der von der ersten Dosis an süchtig macht.
+                <span>Die Einwirkung auf den Körper übertrifft sogar Heroin, da es vom ersten Tag an süchtig
+                  macht.</span>
+              </div>
+            </div>
+            <div class="facts__media"><img alt="" src="media/facts/img1.jpg"></div>
+          </div>
+          <div class="facts__item facts__item_right">
+            <div class="facts__media"><img alt="" src="media/facts/img2.jpg"></div>
+            <div class="facts__content">
+              <div class="facts__subTitle lt17">
+                <div class="facts__nomber">2.</div>Bevor Sie das erste Mal geraucht haben, waren Sie sicher: <span>Ich
+                  kann jederzeit damit aufhören! Das ist aber viel komplizierter als es scheint.</span>
+              </div>
+            </div>
+          </div>
+          <div class="facts__item">
+            <div class="facts__content">
+              <div class="facts__subTitle lt18">
+                <div class="facts__nomber">3.</div>Möglicherweise schämen Sie sich dafür, dass Sie nicht mehr aufhören
+                zu Rauchen. <span>Sie hören ständig von den Gefahren des Rauchens und sind bereits gegen die
+                  schrecklichen Rauchergeschichten immun geworden.</span>
+              </div>
+            </div>
+            <div class="facts__media"><img alt="" src="media/facts/img3.jpg"></div>
+          </div>
+        </div>
+        <div class="warning section__warning">
+          <div class="wraning__title lt19"> <span>Der Geruch von Zigaretten </span> verfolgt <span>Sie überall,</span>
+          </div>
+          <div class="wraning__subTitle lt20">Weder <span>Kaugummi noch Parfüm rettet Sie davor.</span> </div>
+        </div>
+      </div>
+    </section>
+    <div class="section section_cause wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="cause">
+          <div class="cause__title lt21">Doch Sie bleiben <span>immer noch</span> <span>ein</span> Raucher.</div>
+          <div class="cause__subTitle lt22">Warum bekommen Sie <span>aber wirklich den</span> zu rauchen?</div>
+          <div class="cause__description lt23"> <span>Bei ständigem Rauchen steigt die Anzahl der Acetylcholinrezeptoren
+              im Gehirn stark an (sie sorgen für eine scharfe Freisetzung von Glückshormonen) und ihre Empfindlichkeit
+              nimmt ab.</span> Diese Rezeptoren werden normalerweise durch eine spezielle organische Verbindung,
+            Acetylcholin, aktiviert, deren Struktur Nikotin sehr ähnlich ist. Mit zunehmender Anzahl von Rezeptoren
+            reichen die intrinsischen Acetylcholin-Reserven nicht mehr aus. Und um sich glücklich zu fühlen, muss man
+            die Nikotindosis ständig erhöhen - so entsteht eine physiologische Abhängigkeit.</div>
+          <div class="cause__info lt24">Gelangt das Nikotin in den Körper, macht es sofort abhängig.<span>Der Wunsch zu
+              rauchen, wird von Ihrem Gehirn kontrolliert, es verändert Ihre Pläne, Ihr Verhalten und sogar Ihren
+              Kommunikationsstil.</span> </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_memories wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="memories">
+          <div class="memories_subTitle lt25">Wann bekommen Sie</div>
+          <div class="memories_title lt26">die stärkste Lust zu Rauchen?</div>
+          <div class="memories__box">
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img1.png"></div>
+              <div class="memories__name lt27">Unmittelbar nach dem Wachwerden</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img2.png"></div>
+              <div class="memories__name lt28">Im Flugzeug</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img3.png"></div>
+              <div class="memories__name lt29">Bei Nichtrauchern</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img4.png"></div>
+              <div class="memories__name lt30">Nach dem Alkoholkonsum</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_question wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="question">
+          <div class="question__head">
+            <div class="question__title lt31"> <span>Beantworten Sie</span> nur eine Frage:</div>
+            <div class="question__description lt32">Möchten Sie die Sucht wirklich loswerden, kein Geld mehr fürs
+              Rauchen ausgeben und das Leben genießen und leichter mit Stress umgehen können?</div>
+          </div>
+          <div class="question__subTitle lt33">Wenn das so ist, <span>dann wird NicoZero Ihnen dabei helfen.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_step wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="step">
+          <div class="step__title lt34">Nur 4 Wochen –</div>
+          <div class="gradient">
+            <div class="step__subTitle lt35">und Sie werden nie mehr rauchen wollen</div>
+          </div>
+          <div class="step__box">
+            <div class="step__item">
+              <div class="step__count">
+                1
+              </div>
+              <div class="step__name lt36">Erste Woche</div>
+              <div class="step__line"></div>
+              <div class="step__description lt37">Die Inhaltsstoffe von NicoZero erhöhen die Empfindlichkeit von
+                Acetylcholinrezeptoren (die Glückshormone).</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                2
+              </div>
+              <div class="step__name lt38">Zweite Woche</div>
+              <div class="step__line"></div>
+              <div class="step__description lt39">Sie fangen an leckeres Essen zu genießen, können sich Ihre
+                Lieblingssendung ansehen und sich entspannen. Der Stresshormonspiegel wird stetig abnehmen. Die
+                Anspannung verschwindet und Sie brauchen sich nicht mehr mit Hilfe einer Zigarette zu "entspannen".
+              </div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                3
+              </div>
+              <div class="step__name lt40">Dritte Woche</div>
+              <div class="step__line"></div>
+              <div class="step__description lt41">Ihr Gehirn blockiert die Reizung der Acetylcholinrezeptoren, wenn Sie
+                Nikotin erhalten - Sie hören auf, Zigaretten zu genießen, können aber trotzdem weiter rauchen. Zu diesem
+                Zeitpunkt wird der Körper vollständig neu aufgebaut, um auf natürliche Weise das Glückshormon zu
+                erhalten.</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                4
+              </div>
+              <div class="step__name lt42">Vierte Woche</div>
+              <div class="step__line"></div>
+              <div class="step__description lt43">Sie fangen ihr Leben an wieder zu genießen. Das physische und
+                psychische Bedürfnis zu Rauchen verschwindet! </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_product wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="product">
+          <div class="gradient">
+            <div class="product__title lt44">
+              Nicozero
+            </div>
+          </div>
+          <div class="product__subTitle lt45">Spray gegen <span>Nikotinsucht</span> </div>
+          <div class="product__box">
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img1.jpg"></div>
+              <div class="product__name lt46"><span>Haferkorn-Extrakt</span> </div>
+              <div class="product__description lt47">Stärkt das Nervensystem, die Blutgefäße und den Herzmuskel,
+                verbessert die Zusammensetzung des Blutes</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img2.jpg"></div>
+              <div class="product__name lt48">Johanniskraut</div>
+              <div class="product__description lt49">Verursacht eine allmähliche und stetige Abneigung gegen Tabakgeruch
+                und reinigt die Atemwege von schädlichen Ablagerungen.</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img3.jpg"></div>
+              <div class="product__name lt50">Ingwer</div>
+              <div class="product__description lt51">Verdünnt das Blut, reduziert die Blutplättchenadhäsion und die
+                Bildung von Blutgerinnseln und reinigt den Körper von Toxinen.</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img4.jpg"></div>
+              <div class="product__name lt52">Weißdorne</div>
+              <div class="product__description lt53">Entfernt die nach dem Nikotinabbau entstandenen Stoffe aus dem
+                Körper und reinigt die Lunge</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_professional wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="professional">
+          <div class="professional__box professional__box_doc">
+            <div class="professional__title lt54">Expertenmeinung</div>
+            <div class="professional__subTitle lt55">Nikotinsucht ist eine Krankheit der Moderne. Man kann nur sehr
+              schwer loswerden. Selbst für mich al Arzt schien es sehr schwierig zu sein.</div>
+            <div class="professional__description lt56">Nun, als NicoZero auf den Markt gekommen ist, gibt es keine
+              Zweifel mehr, dass man mit dem Rauchen ein für alle Mal aufhören kann. <span>NicoZero basiert auf einem
+                grundlegend neuen Ansatz. Das Medikament wirkt auf Rezeptoren, die für das Verlangen nach Rauchen
+                verantwortlich sind. Zunächst wird das Gehirn getäuscht und glaubt, dass das Gehirn eine Dosis Nikotin
+                bekommt, da NicoZero die wahren Bedürfnisse des Körpers befriedigt, die beim Rauchen entstehen.
+                Allmählich schwindet die Gewohnheit zu Rauchen. Am Ende des Kurses mit NicoZero bekommen Sie eine starke
+                Abneigung gegen Zigaretten und Sie werden selbst die stärkste Nikotinsucht für immer los. </span> </div>
+            <div class="professional__footer">
+              <!--<div class="professional__identifier"><img src="media/professional/identifier.png" alt=""></div>-->
+              <div class="professional__footer-box">
+                <div class="professional__name lt57">Bill Smith,</div>
+                <div class="professional__position lt58">Dr. med., Arzt der höchsten Qualifikationsstufe, Narkologe
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="professional__box professional__box_human">
+            <div class="professional__media"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_reviews">
+      <div class="container">
+        <div class="reviews">
+          <div class="gradient">
+            <div class="reviews__title lt59">Bewertungen <span>über NicoZero</span> </div>
+          </div>
+          <div class="reviews__box">
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face1.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt60">Stefan</div>
+                  <div class="reviews__age lt61">39 Jahre</div>
+                </div>
+              </div>
+              <div class="reviews__description lt62">Ich habe seit dem 14. Lebensjahr geraucht und bin jetzt 39 Jahre
+                alt. Erst mit Hilfe von NicoZero konnte ich vor einem Jahr endlich mit dem Rauchen aufhören. <span>Ich
+                  habe ganze 24 Jahre lang geraucht und konnte mir nicht vorstellen, wie wunderbar das Leben ohne diesen
+                  schrecklichen Gestank nach Tabak, gelben Zähnen, ewigem Husten und den wütenden Blicken von
+                  Nichtrauchern ist. Habe davor mehrmals versucht mit dem Rauchen aufzuhören, aber ohne Erfolg. Dank
+                  NicoZero ist es mit aber endlich gelungen. </span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face2.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt63">Anna</div>
+                  <div class="reviews__age lt64">42 Jahre</div>
+                </div>
+              </div>
+              <div class="reviews__description lt65">Ich habe sehr viele Möglichkeiten ausprobiert, um mit dem Rauchen
+                aufzuhören, es hat aber alles überhaupt nicht geholfen. Das Ergebnis war immer das gleiche. Nach etwa
+                einem Monat habe ich wieder mit dem Rauchen angefangen. <span>Zigaretten waren für mich wie Freunde, die
+                  mich immer unterstützt haben. Inzwischen ist mir klar, wie dumm ich gewesen bin und dass ich mich
+                  selbst getäuscht habe, da ich mit dem Rauchen einfach nicht aufhören konnte. All die von mir
+                  ausprobierten Methoden ist nicht anderes als nur Marketing. Nur NicoZero hat mir geholfen für IMMER
+                  mit dem Rauchen aufzuhören. Dank dieses wunderbaren Mittels habe ich 8 Monate lang nicht geraucht und
+                  ich bin mir sicher, dass ich es nie wieder tun werde. </span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face3.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt66">Daniel</div>
+                  <div class="reviews__age lt67">33 Jahre</div>
+                </div>
+              </div>
+              <div class="reviews__description lt68">Unter all den vorhandenen Methoden, um mit dem Rauchen aufzuhören,
+                ist NicoZero wahrscheinlich die einzig wirksame. <span>Da habe ich mich selbst davon überzeugt. Ich
+                  brauchte nur drei Wochen, um mit dem Rauchen aufzuhören. Danke an die Hersteller dieses Mittels!
+                </span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_fake wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="fake">
+          <div class="fake__box">
+            <div class="fake__title lt69">Hüten Sie sich vor Fälschungen!</div>
+            <div class="fake__description lt70">Aufgrund der steigenden Nachfrage von NicoZero sind auf dem Markt
+              gefälschte Produkte aufgetaucht. Das Original NicoZero kann nur auf dieser Website erworben werden.</div>
+          </div>
+          <div class="fake__media"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_support wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="support">
+          <div class="gradient">
+            <div class="support__title lt71">Oft gestellte Fragen</div>
+          </div>
+          <div class="support__box">
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span></span><span></span>
+                </div><span class="lt72">Nehme ich nach dem ich mit Hilfe von NicoZero mit dem Rauchen aufhöre, nicht an
+                  Gewicht zu?</span>
+              </div>
+              <div class="support__description lt73">Nein. Eine Gewichtszunahme bei der Verweigerung von Nikotin wird
+                durch den Versuch das Nervensystem zu beruhigen, ausgelöst. Mit NicoZero wird sowas nicht passieren, da
+                diese Methode zunächst das Nervensystem beruhigt und erst dann werden Sie für immer mit dem Rauchen
+                aufhören. </div>
+            </div>
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span></span><span></span>
+                </div><span class="lt74">Ich habe mehrmals versucht mit Hilfe unterschiedlicher Mittel mit dem Rauchen
+                  aufzuhören und habe es letztendlich doch nicht geschafft. Wie unterscheidet sich NicoZero von allen
+                  anderen Methoden? </span>
+              </div>
+              <div class="support__description lt75">NicoZero enthält Stoffe, die vom Blut aufgenommen werden und nach
+                und nach Nikotin aus dem Körper entfernen. Es findet also ein Entgiftungsprozess statt: Die Leistung
+                vergifteter Organe wird verbessert. Während der Entgiftungsphase aktualisiert der Körper die
+                Funktionsweise der Körperorgane. Sie werden sich besser fühlen und überhaupt nicht ans Rauchen denken.
+              </div>
+            </div>
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span></span><span></span>
+                </div><span class="lt76">Werde ich mich schlecht fühlen, wenn ich während der Einnahme von NicoZero
+                  rauche?</span>
+              </div>
+              <div class="support__description lt77">Nein. Im Gegensatz zu anderen Medikamenten enthält NicoZero keine
+                Giftstoffe, die sich schlecht auf den Körper auswirken könnten.</div>
+            </div>
+          </div>
+          <div class="support__callback">
+            <div class="support__subTitle lt78">Haben Sie noch Fragen?</div>
+            <div class="support__info lt79">Stellen Sie sie an unseren Spezialisten, er ruft Sie zurück und berät Sie.
+            </div>
+            <div class="support__btn lt80">Frage stellen</div>
+          </div>
+          <div class="support__media"></div>
+        </div>
+      </div>
+    </div>
+    <section class="section section_footer-face section_face wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="face">
+          <div class="face__head">
+            <div class="logo"><img alt="" src="media/logo.png"></div>
+          </div>
+          <div class="face__box">
+            <h1 class="face__title lt81">Mit dem Rauchen <span>aufzuhören</span> <span>ist einfach!</span> </h1>
+            <div class="advantages">
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon1.png"></div>
+                <div class="advantages__title lt82"> Kein Verlangen <span>nach Zigaretten</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon2.png"></div>
+                <div class="advantages__title lt83"> Ohne <span>Entzugssyndrom</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon3.png"></div>
+                <div class="advantages__title lt84">Keine Bücher <span>und Hypnose</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon4.png"></div>
+                <div class="advantages__title lt85"> Ohne Medikamente <span>und Pflaster</span> </div>
+              </div>
+            </div>
+          </div>
+          <div class="face__box face__box_eggs face__box_scroll">
+            <div class="order face__order">
+              <div class="order__title lt86">Jetzt <span>mit Rabatt bestellen</span> </div>
+              <div class="order__price">
+                <span class="lt87 price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span><span class="lt88 price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+              </div>
+              <form action="getform.php" method="post" class="order__form">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <label class="order__item"><span class="lt8">Ihr Name:</span><input class="order__field" name="name"
+                    type="text" required></label>
+                <label class="order__item"><span class="lt10">Telefonnummer:</span><input class="order__field"
+                    name="phone" type="text" required></label>
+                <div class="order__item order__item_btn">
+                  <button class="order__btn lt11">Bestellen</button>
+                </div>
+              </form>
+            </div>
+            <!--
+          <div class="eggs">
+            <div class="eggs__item"><img alt="" src="media/eggs/img1.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img2.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img3.png"></div>
+          </div>
+-->
+          </div>
+          <div class="face__product"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="section section_footer wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="footer">
+          <p class="footer_leadbit lt93">Global Partners LTD, <br>
+            <a href="#" target="_blank">Privacy Policy</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <script src="js/jquery.js">
+  </script>
+  <script src="js/plugin.js">
+  </script>
+  <script src="js/index.js">
+  </script>
+
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '39',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

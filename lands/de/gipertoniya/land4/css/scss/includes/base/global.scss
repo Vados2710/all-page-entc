@@ -1,0 +1,162 @@
+* {
+	box-sizing: border-box;
+
+	*::before, *::after {
+		box-sizing: border-box;
+	}
+
+	&:not(iframe) {
+		transition: 0.25s ease;
+		transition-property: background, border, color, left, margin, padding, right, opacity;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: #fff url(../img/hero-bg.jpg) no-repeat center 0;
+	color: $color-text;
+	font-family: $font-Roboto;
+	font-size: 16px;
+	line-height: 1.5;
+	transition: 0s;
+}
+
+::selection {
+	background: #0086ad;
+	color: white;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
+textarea{
+	background: none;
+	border: 2px solid #fff;
+	border-radius: 42px;
+	color: #fff;
+	font: 16px $font-Roboto;
+	height: 42px;
+	margin: 0 0 32px;
+	padding: 0 26px;
+	width: 100%;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:focus:required:invalid{
+		color: #f00;
+		opacity: 1;
+	}
+
+	&:required:valid{
+		color: #fff;
+		opacity: 1;
+	}
+
+	&::placeholder{
+		color: #fff;
+		opacity: 1;
+	}
+}
+
+input[type="submit"]:focus {
+	outline: none;
+}
+
+select {
+	-webkit-appearance: none;
+	background: none;
+	border: 2px solid #fff;
+	border-radius: 42px;
+	color: #fff;
+	font: 16px $font-Roboto;
+	height: 42px;
+	margin: 0 0 32px;
+	padding: 0 26px;
+	width: 100%;
+
+	&:focus::-ms-value {
+		color: #12161e;
+		background: #fff;
+	}
+	
+	option {
+		color: #000;
+	}
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+textarea{
+	height: 180px;
+	padding: 16px 0 0 16px;
+	resize: none;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+
+	&:not([href]){
+		cursor: initial;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+h1 {
+	font-size: 36px;
+	margin: 0 0 32px;
+
+	@include desktop() {
+		font-size: 64px;
+	}
+}
+
+h2 {
+	font-size: 36px;
+	margin: 0 0 18px;
+	
+	&.title {
+		color: #e6453b;
+		font: 700 36px/40px $font-BebasNeue;
+		margin: 0 0 17px;
+		text-align: center;
+		text-transform: uppercase;
+		
+		@include desktop-extra {
+			font-size: 60px;
+			line-height: 50px;
+		}
+	}
+}
+
+h3 {
+	font: 700 36px/36px $font-Roboto;
+	margin: 0;
+}
+
+p {
+	font-size: 16px;
+	margin: 0 0 8px;
+
+	&:last-child{
+		margin: 0;
+	}
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
