@@ -1,0 +1,701 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+	<script src="drewlex_main.js"></script>
+	<script>
+		(function () {
+			let params = (new URL(document.location)).searchParams;
+			let block = '';
+			params.forEach(function (value, key) {
+				block = block + key + '=' + value + '&';
+			})
+			var t;
+			try {
+				for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+				onpopstate = function (t) {
+					t.state && location.replace("domonetka/index.php?cid={clickid}")
+				}
+			} catch (o) {}
+		})();
+	</script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="prod.png">
+	<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=League+Gothic&Mukta:wght@400;600&display=swap&_v=20230331113403"
+		rel="stylesheet">
+	<!-- fonts -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css?_v=20230331113403">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230331113403" type="text/css">
+	<title>Un cigarrillo que vale toda la vida</title>
+	<style>
+		#modal1 .fancybox-button svg path {
+			fill: #000000 !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="images/1.png" alt="" class="logo__images">
+					<span class="logo__name">Portal de Salud de Guatemala</span>
+				</div>
+				<nav class="header__menu menu">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a class="menu__link" href="#form">hogar</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#form">negocios hoy</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#form">video</a>
+						</li>
+						<li class="menu__item">
+							<a class="menu__link" href="#form">información</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header__shedule"></div>
+				<button class="header__burger-btn">
+					<svg width="45" height="25" viewBox="0 0 45 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M1.798 0.104474C1.14179 0.289338 0.672802 0.593502 0.321851 1.0619C0.0470971 1.4286 0 1.5932 0 2.18639C0 2.79995 0.0414878 2.93401 0.353639 3.33024C0.572881 3.60845 0.924884 3.88465 1.27946 4.05667L1.85152 4.33415H22.38H42.9085L43.4805 4.05667C43.8351 3.88465 44.1871 3.60845 44.4064 3.33024C44.7193 2.93291 44.76 2.80068 44.76 2.17924C44.76 1.5578 44.7193 1.42557 44.4064 1.02824C44.1871 0.75003 43.8351 0.473835 43.4805 0.301809L42.9085 0.02433L22.5645 0.00489016C6.1368 -0.0107902 2.13913 0.00837457 1.798 0.104474ZM1.798 10.3747C1.14179 10.5595 0.672802 10.8637 0.321851 11.3321C0.0470971 11.6988 0 11.8634 0 12.4566C0 13.0702 0.0414878 13.2042 0.353639 13.6004C0.572881 13.8787 0.924884 14.1549 1.27946 14.3269L1.85152 14.6044H22.38H42.9085L43.4805 14.3269C43.8351 14.1549 44.1871 13.8787 44.4064 13.6004C44.7193 13.2031 44.76 13.0709 44.76 12.4494C44.76 11.828 44.7193 11.6958 44.4064 11.2985C44.1871 11.0202 43.8351 10.744 43.4805 10.572L42.9085 10.2945L22.5645 10.2751C6.1368 10.2594 2.13913 10.2786 1.798 10.3747ZM1.798 20.6449C1.14179 20.8298 0.672802 21.1339 0.321851 21.6023C0.0470971 21.969 0 22.1336 0 22.7268C0 23.3404 0.0414878 23.4744 0.353639 23.8707C0.572881 24.1489 0.924884 24.4251 1.27946 24.5971L1.85152 24.8746H22.38H42.9085L43.4805 24.5971C43.8351 24.4251 44.1871 24.1489 44.4064 23.8707C44.7193 23.4733 44.76 23.3411 44.76 22.7197C44.76 22.0982 44.7193 21.966 44.4064 21.5687C44.1871 21.2905 43.8351 21.0143 43.4805 20.8422L42.9085 20.5647L22.5645 20.5453C6.1368 20.5296 2.13913 20.5488 1.798 20.6449Z"
+							fill="black" />
+					</svg>
+				</button>
+			</div>
+		</header>
+		<div class="block-1">
+			<div class="container">
+				<div class="row">
+					<nav class="block-1__bread-crumb">
+						<ul class="bread-crumb__list">
+							<li class="bread-crumb__item">
+								<a href="#form" class="bread-crumb__link">
+									<img src="images/2.png" alt="" class="img-fluid">
+								</a>
+							</li>
+							<li class="bread-crumb__item">
+								<a href="#form" class="bread-crumb__link">Término de búsqueda</a>
+							</li>
+							<li class="bread-crumb__item">
+								<a href="#form" class="bread-crumb__link">SUSCRÍBETE</a>
+							</li>
+							<li class="bread-crumb__item">
+								<a href="#form" class="bread-crumb__link">SALA PLUS</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="block-2">
+			<div class="container">
+				<div class="row">
+					<div class="block-2__left-block">
+						<div class="block-content">
+							<div class="block-text">
+								<p class="left-block__sub-title">Un cigarrillo que vale toda la vida</p>
+								<p class="left-block__title">Todo el mundo sabe que “fumar mata”, pero en realidad nadie
+									le presta mucha atención.</p>
+								<p class="left-block__text">Eso es porque la mayoría de la gente nunca ve a alguien
+									muriendo por fumar.</p>
+							</div>
+							<img src="images/14.png" alt="" class="img-fluid">
+						</div>
+						<p class="left-block__question">Solo ver para creer, ¿no?</p>
+						<p class="left-block__answer">La mayoría de la gente vive su vida, poniendo pretestos como “todo
+							el mundo muere de todos modos” para seguir
+							fumando y seguir haciéndolo hasta que llegue ese día.El día en que estás sentado en una
+							silla de hospital y un Especialista revisa tus
+							informes.</p>
+						<p class="left-block__answer">Te sientas con calma y paciencia, esperando que el Especialista te
+							informe su diagnóstico y finalmente puedas
+							salir de ese lugar y fumarte un cigarro.</p>
+						<p class="left-block__answer">Y de repente, los ojos del especialista se abren como platos y su
+							tono se vuelve más tranquilo.</p>
+						<p class="left-block__answer">Él te informa que no puedes irte todavía. De hecho, es posible que
+							te quedes allí durante mucho tiempo,
+							probablemente por el resto de tu vida.</p>
+						<p class="left-block__question">¿El resto de tu vida? Eso es un largo tiempo.</p>
+						<p class="left-block__answer">En el caso de mi amigo Sebastián, en realidad no.
+							Fue uno de esos pacientes desafortunados que le dionosticaron a una edad muy temprana de 37
+							años que solo le quedaban dos años de vida
+							después de su diagnóstico.
+							Un hombre exitoso que se deterioro en poco tiempo. No es que Sebastian fuera una persona
+							infeliz y deprimido.
+							De hecho, envidiaba a mi mejor amigo por su exitoso negocio, gran cuerpo y hermosa esposa de
+							Europa del Este.
+							Parecía ganar en casi todo. Sin embargo, a pesar de ganar en la vida, tenía un problema
+							serio. Un problema de tabaquismo muy grave. Mi
+							amigo fumaba como una chimenea. Se fumaba los paquetes de cigarrillos como caramelos. Tenía
+							una adicción grave y no había nada que
+							pudiera hacer para evitarlo. No es porque fuera débil. Es una de las personas más fuertes
+							que conozco. Es solo porque las personas
+							realmente subestiman la cantidad de daño que se están causando al fumar. Tampoco es porque
+							la personas sea estúpida. Sebastian era
+							inteligente, el mejor de su clase y simplemente un genio cuando se trataba de construir
+							negocios complejos y ganar millones de
+							dólares.</p>
+						<div class="block-content">
+							<img src="images/3.png" alt="" class="img1 img-fluid">
+							<img src="images/4.png" alt="" class="img-fluid">
+						</div>
+						<p class="left-block__text">Creo que se debe principalmente a la cultura en torno al tabaquismo
+							y cómo la sociedad lo percibe.
+							Es genial fumar. Es ideal no preocuparse por la muerte.pero arriesgarse y creer que “¡lo que
+							les pasó a ellos, no me pasará a mí!”
+							De hecho, la verdad es que fumar daña su salud de una forma u otra, ya sea que le
+							diagnostiquen o no una enfermedad mortal aterradora
+							como le pasó a Sebastian.
+							A la edad de 37 años, a Sebastián le diagnosticaron cáncer de pulmón.
+							Aparentemente, en su caso, los síntomas no aparecieron tan pronto como en la mayoría de las
+							personas.
+							Sucedió tan repentinamente que ni siquiera se dio cuenta de que se estaba muriendo por
+							dentro todo el tiempo.</p>
+						<div class="block-content">
+							<img src="images/5.png" alt="" class="img-fluid">
+							<img src="images/6.png" alt="" class="img-fluid">
+						</div>
+						<p class="left-block__text">Lo triste es que recibió su diagnóstico solo un mes después de que
+							su esposa diera a luz a su hermosa hija.
+							Su única oportunidad de sobrevivir era pasar por un tratamiento extenso, una dieta adecuada
+							y muchas visitas al hospital durante el
+							tiempo que fuera necesario.<br>
+							Sin embargo, la parte más difícil de su tratamiento fue que, para sobrevivir, no tuvo más
+							remedio que dejar de fumar de inmediato. Para
+							un chico que ha fumado a un ritmo inhumano desde los 13 años todos los días, esto fue una
+							gran golpe.
+							Dejar de fumar fue más complicado para él que soportar todas las visitas al hospital, las
+							facturas, los tratamientos y el deterioro
+							crónico de la salud. Cuando tu única salida es la muerte No hace falta decir que cayó
+							peligrosamente en una depresión. Nada podía
+							calmar su estado de animo emocional roto y, por primera vez, lo senti abatido, llorando como
+							el hombre más débil del mundo. Los
+							Especialista intentaron administrarle parches de nicotina y otras soluciones para calmar sus
+							nervios. Esto ayudó al principio.<br>
+							Pero finalmente, esto no fue suficiente. Su depresión regresaría y los Especialistas temían
+							que ni siquiera sobreviviera a todo su
+							tiempo de tratamiento.<br>
+							En un momento, pensamos que ni siquiera duraría los 2 años que le quedaban. No tuvimos más
+							remedio que dejarlo fumar una vez y sus
+							signos vitales volvieron a la normalidad. Pero poco después, comenzó a toser sangre como un
+							hombre enfermo.</p>
+						<div class="block-img">
+							<img src="images/7.png" alt="" class="img-fluid">
+						</div>
+						<p class="left-block__text">Lo único que podía mantenerlo con vida un poco más para que pudiera
+							realizar su tratamiento era lo que lo mató
+							en primer lugar. Nos sentimos atascados y nada parecía funcionar. Y entonces... De repente
+							me di cuenta. La solución que estaba justo
+							delante de nuestras narices Uno de mis amigos de la infancia, alberto, también tenía un
+							grave problema con el tabaquismo. Me encontré
+							con él aproximadamente un año antes del diagnóstico de Sebastian y cuando lo vi, no lo
+							reconocí en absoluto.
+							Su piel se veía fresca, sus dientes blancos y su humor tan alegre como siempre. Nunca lo
+							había visto luciendo tan bien en todos los
+							25 años que lo conocía. ¿Y cómo logró eso? Dejó de fumar después de ser un adicto grave
+							durante su adolescencia y edad adulta. Tuve
+							que llamarlo para preguntarle cómo lo hizo. Me visitó en el hospital donde Sebastián estaba
+							en reposo en cama.<br>
+							Cuando alberto vio a Sebastian, sintió ganas de llorar porque el estado actual de Sebastian
+							le recordaba lo que solía ser antes de dejar
+							de fumar. Sebastian estaba demasiado débil para hablar o decir algo, así que no dijo mucho.
+							Me encontre con alberto fuera de la sala y
+							comencé a hacerle preguntas sobre como dejo de fumar. Al igual que Sebastian,Alberto fumó
+							desde la infancia y tratar de dejar de fumar
+							casi lo mata. Literalmente. Fuera de la sala, me dijo que no había fumado en 3 años y que no
+							sentía adicción alguna. Fácilmente podría
+							sentarse en una habitación llena de gente fumando y no sentir ni la más mínima atracción por
+							ello. Llevaba tanto tiempo sin fumar que ni
+							siquiera recordaba a qué sabía. Era tan difícil para él que solía sentir miedo de su
+							incapacidad para dejar de fumar y de lo que podría
+							significar para él si nunca pudiera hacerlo. Pero cuando encontró la solución adecuada,
+							logró dejar de fumar en solo pocos meses. Y
+							mientras me contaba la historia, se sintió tonto por el hecho de que era tan difícil y que
+							solía sentirse tan asustado, mientras que la
+							remedio estaba delante de sus narices: simple y eficaz. Le pregunté si había comenzado algún
+							tipo de rutina de ejercicios o yoga. Me
+							dijo que no necesitaba hacer ningún tipo de ejercicio especial. Sin embargo, después de
+							dejar defumar, podía ir al gimnasio con
+							regularidad y cuidarse mucho mejor. Su confianza en sí mismo mejoro y comenzó a vivir una
+							vida mucho más feliz y plena. Un remedio
+							simple pero repentino, Entonces, ¿cuál fue la solución? Un sencillo remedio repentino hecho
+							en Guatemala. Todos escuchamos acerca de
+							todos estos remedios y pastillas engañosas que se supone que lo ayudarán a dejar de fumar.
+							Sin embargo, todo lo que hacen es crear
+							adicion a ellos . Reemplazan una fuente de nicotina por otra. Y no hacen su trabajo si no
+							“aplicas fuerza de voluntad”, dicen. Pero,
+							¿cuál es el punto de usar un remedio cuando podría simplemente "aplicar la fuerza de
+							voluntad" cuando lo desee? Ahí es donde entra
+							<a href="#form" style="background-color: #6FD007;"><span class="productName"></span></a>.
+						</p>
+						<div class="block-img">
+							<img src="prod.png" alt="" class="img-fluid">
+						</div>
+						<p class="left-block__text">Alberto me dijo que <a href="#form"
+								style="background-color: #6FD007;"><span class="productName"></span></a> era su remedio
+							beneficioso .
+							Aparentemente, es una mezcla libre de nicotina de
+							diversas plantas y hierbas naturales que pueden ayudar a cualquier persona a mejorar el
+							habito de fumar en cuestión de meses.
+							No es una alternativa a la nicotina (como lo son la mayoría de los "remedios"), sino una
+							fórmula a base de hierbas que fortalece la
+							resistencia natural de su cuerpo a la adicción a la nicotina. Aumente la resistencia natural
+							a la nicotina de su cuerpo La nicotina es
+							una sustancia antinatural y su cuerpo la mejora fácilmente para disminuirla de la sangre.
+							Sin embargo, cuando sale de su torrente
+							sanguíneo, comienza a tener abstinencia. Durante la abstinencia, su resistencia a la
+							nicotina disminuye y no tiene más remedio que
+							volver a fumar para calmar los nervios. <a href="#form"
+								style="background-color: #6FD007;"><span class="productName"></span></a>, sin embargo,
+							no sustituye a la
+							nicotina. Más bien construye esta mejora donde su cuerpo
+							puede funcionar normalmente sin necesidad de nicotina en el torrente sanguíneo. Además,
+							después de rociar <a href="#form" style="background-color: #6FD007;"><span
+									class="productName"></span></a> en la boca,
+							su cuerpo
+							reaciona aceleradamente a la nicotina; algunas personas lo llaman "el polo opuesto de
+							fumar". En lugar de hacerte sentir atraído por la
+							nicotina, la repele.
+							Contiene hierbas naturales como el Kudzu y la planta de Valeriana que te relajan y hacen que
+							tu cuerpo repele la nicotina. Incluso
+							pensar en la nicotina te da ganas de vomitar.<br>
+							El único remedio en Guatemala que mejora Lo mejor de <a href="#form"
+								style="background-color: #6FD007;"><span class="productName"></span></a> es que está
+							hecho en
+							Guatemala. Eso lo hace asequible, fácil de usar y de
+							conseguir. No utiliza ingredientes importados especiales ni productos químicos caros. Está
+							creado 100% a partir de sustancias naturales
+							que han sido utilizadas durante miles de años por curanderos de todo el mundo. Todos los
+							ingredientes provienen de Guatemala. El remedio
+							que ayudo a Sebastián</p>
+						<div class="block-img">
+							<img src="images/9.png" alt="" class="img-fluid img-leafs wow fadeIn"
+								data-wow-duration="1s" data-wow-delay="1s">
+							<img src="images/10.png" alt="" class="img-fluid img-leafs wow fadeIn"
+								data-wow-duration="1s" data-wow-delay="1.2s">
+							<img src="images/11.png" alt="" class="img-fluid img-leafs wow fadeIn"
+								data-wow-duration="1s" data-wow-delay="1.4s">
+							<img src="images/12.png" alt="" class="img-fluid img-leafs wow fadeIn"
+								data-wow-duration="1s" data-wow-delay="1.6s">
+						</div>
+						<div class="block-content">
+							<div class="block-text">
+								<p class="left-block__text">Ahora, volviendo a la historia. Después de la recomendación
+									de Alberto, ordené inmediatamente <a href="#form"
+										style="background-color: #6FD007;"><span class="productName"></span></a>
+									para Sebastian. Por supuesto, primero hablamos con sus Especialista antes de que lo
+									usara. Ya estaba en un hospital y no
+									queríamos correr ningún riesgo. Los Especialistas dijeron que estaba completamente
+									bien usarlo ya que no encontraron nada
+									dañino en él. Después de todo, <a href="#form"
+										style="background-color: #6FD007;"><span class="productName"></span></a> solo
+									está hecho de hierbas
+									naturales.</p>
+								<p class="left-block__text">En pocas palabras, Sebastian logró pasar todo su tratamiento
+									en pocos meses sin fumar después de que
+									comenzó a usar <a href="#form" style="background-color: #6FD007;"><span
+											class="productName"></span></a>.
+									Después de que dejó de fumar, los Especialistas pudieron mejorar el pronostico de
+									vida sin ningún
+									problema y, finalmente, ¡le dieron a Sebastian las buenas noticias! Su condición se
+									mejoro a un nivel que ya no corria peligro.
+									¡Ya no le quedaban solo 2 años de vida, sino que estaría presente para ver crecer a
+									su hija!</p>
+							</div>
+							<div class="block-img">
+								<img src="prod.png" alt="">
+							</div>
+						</div>
+						<p class="left-block__answer">2 años después de su tratamiento para mejorar la adicción de dejar
+							el avito de fumar, no siente la necesidad
+							de usar <a href="#form" style="background-color: #6FD007;"><span
+									class="productName"></span></a> ni de fumar.</p>
+						<p class="left-block__sub-title--bottom">¡Está más sano, rico y contento que nunca!</p>
+						<div class="features-wrapper"></div>
+						<div class="block-comments">
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/16.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">José <span>2 hari yang lepas</span></p>
+									<p class="description">Buen artículo. He comprado el producto, debería llegar en dos
+										días.</p>
+									<!-- <div class="product-img">
+										<a href="images/new/1.jpg" class="popup-img">
+											<img src="images/new/1.jpg" alt="" class="img-fluid">
+										</a>
+										<a href="images/new/2.jpg" class="popup-img">
+											<img src="images/new/2.jpg" alt="" class="img-fluid">
+										</a>
+									</div> -->
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">43</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/17.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Michelle <span>2 hari yang lepas</span></p>
+									<p class="description">¡Qué historia tan conmovedora! Le deseo lo mejor a Sebastián.
+										¡Definitivamente compraré <span class="productName"></span> hoy!</p>
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">23</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/18.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Jimmy <span>3 hari yang lepas</span></p>
+									<p class="description">Este producto sigue siendo mi favorito. Después de usar
+										millones de diferentes tipos de gomas de mascar,
+										caramelos y parches, y de deprimirme cada vez que fallaban, ¡<span
+											class="productName"></span> mejoro mi
+										vida! ¡Recomendado para todos los fumadores
+										que quieren dejar de fumar rápidamente sin productos a base de nicotina!</p>
+									<!-- <div class="product-img">
+										<a href="images/new/3.jpg" class="popup-img">
+											<img src="images/new/3.jpg" alt="" class="img-fluid">
+										</a>
+										<a href="images/new/4.jpg" class="popup-img">
+											<img src="images/new/4.jpg" alt="" class="img-fluid">
+										</a>
+									</div> -->
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">21</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/19.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Jeremías <span>3 hari yang lepas</span></p>
+									<p class="description">¡LO DEJO! ¡Por fin RENUNCIO! Para alguien que ha estado
+										fumando desde los 12 años (ahora tengo 30), este
+										es el mayor logro de la historia. ¡Me tomó solo varias semanas!</p>
+									<!-- <div class="product-img">
+										<a href="images/new/5.jpg" class="popup-img">
+											<img src="images/new/5.jpg" alt="" class="img-fluid">
+										</a>
+										<a href="images/new/6.jpg" class="popup-img">
+											<img src="images/new/6.jpg" alt="" class="img-fluid">
+										</a>
+										<a href="images/new/7.jpg" class="popup-img">
+											<img src="images/new/7.jpg" alt="" class="img-fluid">
+										</a>
+									</div> -->
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">15</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/20.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Sofía <span>5 hari yang lepas</span></p>
+									<p class="description">¡Qué gran artículo! Hice un pedido de <span
+											class="productName"></span>, la compañía
+										dice que debería llegar en dos días, así que
+										publicaré una reseña después de que llegue.</p>
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">34</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/21.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Augusto <span>7 hari yang lepas</span></p>
+									<p class="description">¡Probé el producto y fue un verdadero cambio de juego! Me
+										ayudó a controlar mis antojos a lo largo del
+										día y pude disminuir gradualmente la cantidad de nicotina que estaba usando.
+										¡Después de varias semanas, logré dejar de
+										fumar por completo!</p>
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">28</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/20.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Luis <span>7 hari yang lepas</span></p>
+									<p class="description">Fumé mucho durante 40 años e intenté dejarlo muchas veces,
+										pero nada parecía funcionar. Este producto me
+										ayudó a mejorar mis impulsos e hizo que dejar de fumar fue mucho más fácil de lo
+										que pensaba.</p>
+									<!-- <div class="product-img">
+										<a href="images/new/8.jpg" class="popup-img">
+											<img src="images/new/8.jpg" alt="" class="img-fluid">
+										</a>
+									</div> -->
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">45</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/20.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Ana <span>7 hari yang lepas</span></p>
+									<p class="description">¡Probé este spray una vez y ya pude sentir una GRAN mejoria!
+										¡Nunca pensé que dejar de fumar podría ser
+										tan sencillo!</p>
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">11</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="comment__item comment__item--show">
+								<div class="item__avatar">
+									<img src="images/22.png" alt="" class="avatar-img">
+								</div>
+								<div class="item__text">
+									<p class="name">Sergio <span>7 hari yang lepas</span></p>
+									<p class="description">Estaba muy escéptico cuando lo vi por primera vez, pero
+										decidí probarlo después de leer este artículo. No
+										voy a mentir, este es el mejor producto contra el tabaquismo que he usado.
+										¡10/10 recomendado para todos los fumadores!</p>
+									<!-- <div class="product-img">
+										<a href="images/new/9.jpg" class="popup-img">
+											<img src="images/new/9.jpg" alt="" class="img-fluid">
+										</a>
+										<a href="images/new/10.jpg" class="popup-img">
+											<img src="images/new/10.jpg" alt="" class="img-fluid">
+										</a>
+										<a href="images/new/11.jpg" class="popup-img">
+											<img src="images/new/11.jpg" alt="" class="img-fluid">
+										</a>
+									</div> -->
+									<div class="block-like">
+										<span class="like">
+											<img src="images/15.png" alt="" class="img-fluid img-like">
+											<span class="like-count">45</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="input-block">
+								<p class="number-comments">9 comentarios</p>
+								<input type="text" name="comment" id="input-comment1"
+									placeholder="escribir un comentario" class="input-comment">
+							</div>
+							<div class="block-btns">
+								<button type="reset" id="cancel-btn1" class="cancel-btn">cancelación
+								</button>
+								<a data-fancybox data-src="#modal1" href="javascript:;" id="submit-btn1"
+									class="submit-btn">comentario</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="pp">
+			<span>©
+				<script>
+					document.write((new Date).getFullYear());
+				</script>
+			</span>
+			<a href="#">Privacy Policy</a>
+		</div>
+	</div>
+
+	<div class="popup-menu">
+		<div class="popup-wrapper">
+			<img src="images/1.png" alt="" class="popup-menu__logo">
+			<button class="popup-menu__close-btn">
+				<svg width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M1.38509 0.0360085C0.812834 0.176561 0.354594 0.586302 0.13964 1.14961C-0.00742636 1.53503 0.0206319 2.13259 0.204585 2.5324C0.292524 2.72343 2.55573 5.03701 7.68157 10.1755L15.0324 17.5446L7.64852 24.902C2.58954 29.9428 0.223678 32.3457 0.134576 32.5335C-0.0515668 32.9258 -0.0432862 33.6745 0.151206 34.0404C0.455125 34.6119 1.04832 34.984 1.66882 34.9921C2.5159 35.0032 2.00846 35.4595 10.1283 27.3859L17.5208 20.0354L24.8433 27.3603C32.861 35.3808 32.4275 34.9879 33.2618 34.9898C34.5398 34.9927 35.3993 33.5873 34.811 32.4566C34.7285 32.2981 31.7327 29.2502 27.3799 24.8964C23.3689 20.8843 20.0871 17.5707 20.0871 17.5329C20.0871 17.495 23.3562 14.2127 27.3519 10.2388C35.252 2.38178 34.9361 2.72693 34.9361 1.95019C34.9361 1.50997 34.7179 0.987275 34.4157 0.703841C33.8468 0.170054 32.9069 0.0741605 32.2586 0.483833C32.1194 0.571781 28.7522 3.88704 24.776 7.85102L17.5465 15.0583L10.1427 7.65046C5.17234 2.67734 2.66016 0.210124 2.49934 0.143889C2.16579 0.00669232 1.69167 -0.0392682 1.38509 0.0360085Z"
+						fill="#000000" />
+				</svg>
+			</button>
+			<nav class="popup-menu__nav">
+				<ul class="popup-menu__list">
+					<li class="popup-menu__item">
+						<a href="#form" class="popup-menu__link">hogar</a>
+					</li>
+					<li class="popup-menu__item">
+						<a href="#form" class="popup-menu__link">negocios hoy</a>
+					</li>
+					<li class="popup-menu__item">
+						<a href="#form" class="popup-menu__link">video</a>
+					</li>
+					<li class="popup-menu__item">
+						<a href="#form" class="popup-menu__link">información</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div id="modal1" style="display: none;">
+		<div class="block-img text-center">
+			<img src="images/28.png" alt="" class="img-succes">
+		</div>
+		<p class="success-text">su comentario es revisado por el moderador</p>
+	</div>
+	<script>
+		const offer_params = {
+			priceMain : '280',
+			customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+			currencyMain: 'Q',
+			productName : 'Fumarex',
+		};
+	
+	
+		var productName = document.getElementsByClassName("productName");
+		var priceMain = document.getElementsByClassName("priceMain");
+		var priceOld = document.getElementsByClassName("priceOld");
+		var currencyMain = document.getElementsByClassName("currencyMain");
+	
+	
+		for (var i = 0; i < productName.length; i++) {
+			productName[i].innerHTML = offer_params.productName;
+		}
+		for (var i = 0; i < priceMain.length; i++) {
+			priceMain[i].innerHTML = offer_params.priceMain;
+		}
+	
+	
+		if(offer_params.customPriceOld){
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.customPriceOld;
+			}
+		}else{
+			for (var i = 0; i < priceOld.length; i++) {
+				priceOld[i].innerHTML = offer_params.priceMain * 2;
+			}
+		}
+	
+	
+		for (var i = 0; i < currencyMain.length; i++) {
+			currencyMain[i].innerHTML = offer_params.currencyMain;
+		}
+	 </script>
+ 
+ 
+ <script>
+	var usr = '{t2}';
+	var sabss = '{clickid}';
+	initFeatures({
+		priceMain : offer_params.priceMain,
+		currencyMain : offer_params.currencyMain,
+		lang : 'gt', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+		product : offer_params.productName, // название продукта
+		genderTargetting : 'all', // пол целевой аудитории - all, male, female
+ 
+ 
+ 
+ 
+		form : {
+			isNeeded : 1, // 1-включить форму, 0-выключить
+			img: 'prod.png', // путь до картинки продукта
+			price: true, // плашка с ценой
+			priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+			showSelect: false, // показывать или скрывать поле select
+			untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+		},
+ 
+ 
+ 
+ 
+		autoComments: {
+			isNeeded: 0, // 1-включить автокомы, 0-выключить
+			bgColor: '#d7f2d8' // цвет фона блока комчиков
+		},
+ 
+ 
+ 
+ 
+		popups: {
+			isNeeded: 0, // 1-включить попы, 0-выключить
+			bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+			textColor: '#fff', // цвет основного текста сообщения
+			emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+			blackIcons: false // черные или белые иконки, значения true или false
+		},
+ 
+ 
+ 
+ 
+		wheel: {
+			isNeeded: 1, // 1-включить колесо, 0-выключить
+			customWheel: false // ссылка на свое колесо, либо false
+		}
+	});
+ </script>
+ <script>
+	$('[name="name"]').on('input change', function () {
+		var val = $(this).val();
+		$(this).val(val.replace(/[0-9+]/g, ''));
+	});
+	$('[name="name"]').attr('autocomplete', 'name');
+	$('[name="name"]').attr('pattern', '.{2,25}');
+	$('[name="phone"]').on('input change', function (e) {
+		var val = $(this).val();
+		$(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+	});
+	$('[name="phone"]').get(0).type = 'tel';
+	$('[name="phone"]').attr('autocomplete', 'tel');
+	$('[name="phone"]').attr('pattern', '.{6,18}')
+ </script>
+</body>
+
+</html>

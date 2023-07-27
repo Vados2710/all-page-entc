@@ -1,0 +1,553 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html lang="es"><head>
+    
+
+
+
+   
+    
+    
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="css/css2" rel="stylesheet">
+
+    
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Gardener</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params = (new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value, key) {
+              block = block + key + '=' + value + '&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+
+</head>
+
+<body id="prelanding">
+  <header class="site-header">
+    <div class="site-header__logo-wrapper d-none d-lg-block">
+      <div class="container d-flex align-items-center">
+        <img class="site-header__logo img-fluid" src="img/logo.png" alt="Logo">
+        <p class="lh-1 ms-3 mb-0 pt-3"> <span class="site-header__title">Nuestros jardines</span> <span class="d-block text-white">Y más...</span> </p>
+      </div>
+    </div>
+    <nav class="main-nav navbar navbar-expand-lg">
+      <div class="container">
+        <div class="d-flex flex-row flex-nowrap">
+          <button class="col-2 hamburger hamburger--squeeze collapsed d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Menu">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          <div class="col-10 site-header__logo-wrapper d-flex align-items-center navbar-brand d-lg-none">
+            <img class="site-header__logo img-fluid" src="img/logo.png" alt="Logo">
+            <p class="lh-1 ms-3 mb-0 pt-3"> <span class="site-header__title">Nuestros jardines</span> <span class="mt-2 mt-md-0 d-block text-white">Y más...</span> </p>
+          </div>
+        </div>
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          <ul class="navbar-nav justify-content-center flex-wrap">
+            <li class="nav-item current-box"> <a class="landing-url current nav-link" href="#order_form0">Jardines domésticos</a> </li>
+            <li class="nav-item"> <a class="landing-url nav-link" href="#order_form0">Fotos de vuestros jardines</a> </li>
+            <li class="nav-item"> <a class="landing-url nav-link" href="#order_form0">Nuestros asuntos</a> </li>
+            <li class="nav-item"> <a class="landing-url nav-link" href="#order_form0">Intercambiemos plantas</a> </li>
+            <li class="nav-item">
+              <a class="landing-url nav-link nav-link--last" href="#order_form0">
+                <svg width="66" height="28" viewBox="0 0 66 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_56_37)">
+                    <path d="M14 0C6.26864 0 0 6.3009 0 14.072C0 21.1272 5.16992 26.9519 11.9078 27.9696V17.8017H8.44368V14.1024H11.9078V11.6415C11.9078 7.56626 13.8835 5.77742 17.2525 5.77742C18.8664 5.77742 19.7198 5.89788 20.1242 5.95304V9.18173H17.8259C16.3957 9.18173 15.8962 10.545 15.8962 12.0817V14.1036H20.0883L19.5194 17.8028H15.8962V28.0011C22.7293 27.069 28.0011 21.197 28.0011 14.0732C28 6.3009 21.7314 0 14 0Z" fill="#3B5998"></path>
+                  </g>
+                  <g clip-path="url(#clip1_56_37)">
+                    <path d="M55.2816 7.3248H48.7296C46.8592 7.3248 45.3472 8.8368 45.3472 10.7072V17.2592C45.3472 19.1296 46.8592 20.6416 48.7296 20.6416H55.2816C57.152 20.6416 58.664 19.1296 58.664 17.2592V10.7072C58.664 8.8368 57.152 7.3248 55.2816 7.3248ZM56.1104 13.9888C56.1104 16.2176 54.296 18.032 52.056 18.0208C49.8272 18.0208 48.0128 16.2064 48.024 13.9664C48.024 11.7376 49.8384 9.9232 52.0784 9.9344C54.3072 9.9456 56.1104 11.76 56.1104 13.9888ZM57.3088 9.6656C57.3088 10.2032 56.872 10.6288 56.3456 10.6288C55.808 10.6288 55.3824 10.192 55.3824 9.6656C55.3824 9.128 55.8192 8.7024 56.3456 8.7024H56.3568C56.8832 8.7024 57.3088 9.1392 57.3088 9.6656ZM52.056 11.3792C50.6224 11.3792 49.4576 12.5552 49.4688 13.9776C49.4688 15.4112 50.6448 16.576 52.0672 16.5648C53.5008 16.5648 54.6544 15.4 54.6544 13.9776V13.9664C54.6544 12.5328 53.4896 11.3792 52.056 11.3792Z" fill="url(#paint0_linear_56_37)"></path>
+                    <path d="M52 0C44.272 0 38 6.272 38 14C38 21.728 44.272 28 52 28C59.728 28 66 21.728 66 14C66 6.272 59.728 0 52 0ZM60.2096 17.2592C60.1872 19.9696 57.992 22.1536 55.2816 22.1536H48.7184C45.9968 22.1536 43.7904 19.9472 43.7904 17.2256V10.7072C43.7904 7.9856 45.9968 5.7792 48.7184 5.768H55.2704C57.992 5.768 60.1984 7.9856 60.1984 10.7072V17.2592H60.2096Z" fill="url(#paint1_linear_56_37)"></path>
+                  </g>
+                  <defs>
+                    <lineargradient id="paint0_linear_56_37" x1="41" y1="28" x2="70" y2="1.61252e-07" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FEDA77"></stop>
+                      <stop offset="0.244792" stop-color="#F58529"></stop>
+                      <stop offset="0.489583" stop-color="#DD2A7B"></stop>
+                      <stop offset="0.744792" stop-color="#8134AF"></stop>
+                      <stop offset="1" stop-color="#515BD4"></stop>
+                    </lineargradient>
+                    <lineargradient id="paint1_linear_56_37" x1="41" y1="28" x2="70" y2="1.61252e-07" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FEDA77"></stop>
+                      <stop offset="0.244792" stop-color="#F58529"></stop>
+                      <stop offset="0.489583" stop-color="#DD2A7B"></stop>
+                      <stop offset="0.744792" stop-color="#8134AF"></stop>
+                      <stop offset="1" stop-color="#515BD4"></stop>
+                    </lineargradient>
+                    <clippath id="clip0_56_37">
+                      <rect width="28" height="28" fill="white"></rect>
+                    </clippath>
+                    <clippath id="clip1_56_37">
+                      <rect width="28" height="28" fill="white" transform="translate(38)"></rect>
+                    </clippath>
+                  </defs>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container section-main">
+      <div class="row">
+        <article class="col-lg-8 main-article">
+          <h1 class="mb-3">El dolor de articulaciones lo ató al sillón. No podía moverse. Ahora anda en bicicleta y corre medias maratones, <span class="text-green">SOLO NECESITÓ 1 DÍA DE TRATAMIENTO CON ESTE…</span></h1>
+          <h2 class="bg-yellow text-center mb-3">¡Invento pionero que no se creó en una farmacéutica ricachona, sino en un huerto de hierbas normal y corriente!</h2>
+          <img class="img-fluid mb-3" src="img/img__img-1.png" alt="<span class="productName"></span>">
+          <p class="text-big">¿Te duelen las articulaciones? ¿O alguno de tus seres queridos sufre por esa razón? ¿Tienes problemas de columna? ¿El reuma o la artritis no te dejan vivir? ¿Has probado decenas de tratamientos que te han dado efectos insignificantes o nulos? ¿Has perdido la esperanza?</p>
+          <p class="text-big">¡Ahora tienes una <span class="text-green">GARANTÍA DE ÉXITO DEL 100 %!</span> Si estás inmóvil y sufres dolores punzantes, este tratamiento tan simple como genial te transformará en un SUPERHÉROE. Y lo mejor es que tu bolsillo no se resentirá en absoluto, ya que cuesta lo mismo que una barra de pan.</p>
+          <p class="text-big">Lee la entrevista con el inventor de este método para averiguar cómo funciona el tratamiento y cómo conseguirlo.</p>
+          <div class="d-flex justify-content-between mb-3 mb-lg-5">
+            <div class="bg-blue d-lg-flex align-items-center"> <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 0C8.53125 0 9 0.46875 9 1C9 1.5625 8.53125 2 8 2H7.5V3.09375C8.65625 3.28125 9.71875 3.75 10.5938 4.46875L11.2812 3.8125C11.6562 3.40625 12.3125 3.40625 12.6875 3.8125C13.0938 4.1875 13.0938 4.84375 12.6875 5.21875L11.9375 5.96875C12.5938 7 13 8.21875 13 9.5C13 13.0938 10.0625 16 6.5 16C2.90625 16 0 13.0938 0 9.5C0 6.25 2.375 3.5625 5.5 3.09375V2H5C4.4375 2 4 1.5625 4 1C4 0.46875 4.4375 0 5 0H8ZM7.25 6C7.25 5.59375 6.90625 5.25 6.5 5.25C6.0625 5.25 5.75 5.59375 5.75 6V10C5.75 10.4375 6.0625 10.75 6.5 10.75C6.90625 10.75 7.25 10.4375 7.25 10V6Z" fill="#ffffff"></path>
+              </svg> Este artículo se lee en 3 minutos </div>
+          </div>
+          <div class="d-flex align-items-center mb-3 author-box">
+            <div class="author-box__img">
+              <img alt="img-fluid mr-3" src="img/IMG_autor.png">
+            </div>
+            <span> redactora <strong>Sara Blanco</strong></span>
+          </div>
+          <p>Nuestro invitado de hoy es Andoni Beitia, profesor de bioquímica jubilado y aficionado a la jardinería. Pero lo más <strong>destacable es que ha inventado el pionero Tratamiento de Biorregeneración Articular</strong> que combate con eficacia cualquier afección de articulaciones, incluido el reumatismo y la artritis.</p>
+          <p><strong>- Buenos días, profesor. Hoy no vamos a hablar sobre los jardines domésticos, sino sobre su invento para regenerar las articulaciones extremadamente rápido.</strong></p>
+          <p>- En realidad sí que hablaremos de jardines, ya que la idea surgió en mi huerto de hierbas (el profesor se ríe sinceramente). Fue una necesidad del momento.</p>
+          <p><strong>- Entonces cuéntenos si le parece cómo inventó este tratamiento que liquida el dolor y reconstruye las articulaciones en 1 día.</strong></p>
+          <p>- Mi vecino estaba trabajando en la finca. Un tipo fuerte y grande, pero que llevaba años sufriendo artritis. Aun así, no era capaz de renunciar al placer de trabajar en el huerto. Ese día estaba desenterrando un tronco enorme después de haber talado un árbol. Si es un trabajo extenuante para tres personas, imagínate para una sola. No tendría que haberse encargado de ello. En un momento dado, quedó agotado. Aunque "agotado" es un adjetivo demasiado benévolo.</p>
+          <p>El dolor de rodillas y cadera tumbó directamente a este hombre tan imponente y fuerte. Su dolor era tan terrible que cayó fulminado y pidió ayuda con gritos desgarradores.</p>
+          <p>Acudí rápido en su ayuda. Por desgracia, no podía llamar a la ambulancia porque mi móvil se había descargado y no podía encontrar el suyo.</p>
+          <p><strong>- ¿Entonces le dio analgésicos para aplacar el dolor de su vecino?</strong></p>
+          <p>- Qué va. Yo no tengo de esas cosas, el vecino tampoco tenía.</p>
+          <p>Por suerte soy profesor de bioquímica aunque ya no estoy en activo, pero los conocimientos no se desvanecen al jubilarse. Así que eché un vistazo rápido a mi huerto de hierbas. Empecé a arrancar plantas que sabía que funcionaban en las articulaciones. Sabía que tenía que actuar rápido, porque el vecino estaba sufriendo de tal manera que incluso rogaba por que lo rematara.</p>
+          <p>Cualquiera que nos hubiera visto habría quedado extrañado, ¿no? Un tío tirado retorciéndose de dolor, y otro recogiendo flores y hojas. Pero todo tenía sentido, sabía muy bien lo que estaba haciendo.</p>
+          <p>Eché las hierbas que había recogido al mortero, añadí agua hirviendo y lo machaqué todo hasta formar una pasta. Después, la apliqué en las rodillas y la cadera del vecino, que seguía retorciéndose de dolor. Pasaron 5 minutos y me dijo que el dolor se le había pasado como por arte de magia. Al final, pude establecer un contacto normal con él y enterarme de si tenía el móvil encima para llamar a la ambulancia.</p>
+          <p>Cuando llegaron los ambulancieros y preguntaron qué había pasado, no se creían que mi vecino hubiera sufrido tanto y que la compresa verde que le había puesto sobre las articulaciones hubiera aliviado el dolor.</p>
+          <p><strong>- ¿Cualquiera puede preparar este antídoto para el dolor de articulaciones en su jardín?</strong></p>
+          <p>- (el profesor se ríe) Sería lo ideal. Pero mi compresa de hierbas funcionó porque soy experto y sé lo que me hago. Sin embargo, he de reconocer que yo mismo quedé asombrado con su eficacia, aunque sabía que esas hierbas eran fantásticas para las articulaciones.</p>
+          <p>Una vez en frío después de que pasaran todos estos acontecimientos, gracias a Dios con final feliz, empecé a reflexionar. Si la naturaleza es tan potente, ¿por qué nos atiborramos a productos químicos? Sin embargo, no solo pensaba en la actividad analgésica, sino también en un tratamiento que fuera capaz de regenerar las articulaciones.</p>
+          <p>Por eso para crear una fórmula verdadera para las articulaciones, llevé a cabo una serie de investigaciones en mi laboratorio. Lo más importante es que añadí un ingrediente que facilita la biorregeneración rápida de las articulaciones.. Gracias a él, las articulaciones, la columna y los músculos se reconstruyen. De este modo, después de un tratamiento de varios días, el <strong>dolor se va para no volver jamás.</strong> Así se creó el <strong>Tratamiento de Biorregeneración Articular.</strong></p>
+          <p><strong>- ¿Significa eso que el Tratamiento de Biorregeneración Articular es caro y una persona normal y corriente, por ejemplo un jubilado, no se lo puede permitir?</strong></p>
+          <p>- En absoluto. <strong>Su coste diario equivale a una barra de pan de toda la vida.</strong> Ya se sabe que buena parte de la jubilación la gastamos en medicamentos. Yo mismo tomo pastillas para el corazón, la hipertensión, la regulación del azúcar, el hígado. Se acumulan bastantes. Sería absurdo tragar fármacos adicionales para las articulaciones. Sobre todo porque mira dónde está el estómago, y dónde las articulaciones (el profesor se encoge de hombros). Además, ¿qué voy a tomar para el estómago y el hígado cuando digan basta?</p>
+          <p><strong>- ¿Usted también usa su Tratamiento de Biorregeneración Articular?</strong></p>
+          <p>- ¿Cree que a los profesores de bioquímica no les duelen las articulaciones? Estoy de broma, claro. Sí, uso la fórmula. Por comodidad le di forma de pomada, así que se puede aplicar en cualquier momento que sea necesario. Se echa sobre las zonas doloridas directamente. Así no hay que esperar a que se disuelva en el estómago y se distribuya por todo el cuerpo.</p>
+          <p><strong>- Es un invento verdaderamente pionero. ¿Qué tal está su vecino después de haberle salvado con la compresa de hierbas para el dolor de articulaciones?</strong></p>
+          <p>- Por suerte está bien. En el hospital le dijeron que fue un ataque de dolor artrítico agudo causado por una sobrecarga. Ahora el vecino usa mi Tratamiento de Biorregeneración Articular en forma de pomada y me dice que ya no le ataca ningún dolor. Sigue sin renunciar a las labores del jardín, pero ahora tiene la certeza de que no sufrirá durante o después de los esfuerzos grandes.</p>
+          <p><strong>- Entonces, ¿en qué casos funciona su Tratamiento de Biorregeneración Articular en forma de pomada?</strong></p>
+          <p>- Esta pomada funciona en cualquier caso de dolor de articulaciones de origen reumático y artrítico.</p>
+          <p>Además, es ideal para la recuperación tras las lesiones y el cansancio muscular general relacionado con el esfuerzo físico.</p>
+          <p><strong>- Entonces, ¿incluso las personas jóvenes y muy activas pueden utilizar el Tratamiento de Biorregeneración Articular?</strong></p>
+          <p>- ¡Sin ningún problema! Por ejemplo mi nieto, que anda mucho en bicicleta y participa en triatlones, suele usar mi fórmula para las agujetas.</p>
+          <p><strong>- ¿Su pionera pomada para las articulaciones está disponible en farmacias?</strong></p>
+          <p>- No, se puede comprar por internet. Las farmacias cobran demasiadas comisiones, la pomada costaría el doble. A mí los beneficios me dan igual, yo lo que quiero es ayudar a la gente. Por eso decidí que sería mejor venderla de esta forma.</p>
+          <p><strong>- Muchas gracias por la conversación y le deseo mucha salud.</strong></p>
+          <p><i>Sara Blanco entrevistó a Andoni Beitia.</i></p>
+          <p>Queridos lectores del portal Nuestros jardines, el Tratamiento de Biorregeneración Articular está disponible en la página siguiente. Solo tenéis que hacer clic en el enlace azul. <strong>El profesor Beitia tiene un descuento especial para vosotros.</strong></p>
+          <p>Lo hemos conseguido gracias a que es un aficionado a la jardinería y le gustaría apoyar a todo el mundo que profesa esa pasión.</p>
+
+          <div class="features-wrapper"></div>
+
+
+            
+          <div class="comments mt-3">
+            <h3 class="comments__title text-bold d-flex align-items-center">COMENTARIOS AL ARTÍCULO <span class="comments__count">(149 comentarios)</span></h3>
+            <form class="comments__form">
+              <div class="mb-3 d-flex flex-column">
+                <label class="text-bold">Login:</label>
+                <input type="text" placeholder="Login...">
+              </div>
+              <div class="mb-3 d-flex flex-column">
+                <label class="text-bold">Contraseña:</label>
+                <input type="email" placeholder="Contraseña...">
+              </div>
+              <a href="#order_form0" class="btn w-100 landing-url">Iniciar sesión</a>
+            
+
+</form>
+            <div class="comments-list mt-5">
+              <h4>Lo último:</h4>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Yola <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">Siempre he sabido que tantas pastillas analgésicas que recetan los médicos es para llenarse los bolsillos. ¡Bravo, profesor!</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Mariano D. <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">Profesor, ¿eso funciona de verdad? ¡Ya me he gastado varias pensiones en distintas pomadas, pastillas y supositorios!</p>
+                </div>
+              </div>
+              <div class="comment response d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__autor.png" alt="autor">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Adrián <span class="comment__date"> hoy</span></p>
+                  <p class="comment__content"><span class="comment__mentioned">@Mariano D.</span> ahí lo tienes escrito, después de 1 día ya notas alivio. De todas formas yo lo sé porque lo uso, y efectivamente fue así, después del primer uso andé a la compra sin dolor por fin.</p>
+                </div>
+              </div>
+              <div class="comment response-2 d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Borja <span class="comment__date">hoy</span></p>
+                  <p class="comment__content"><span class="comment__mentioned">@Adrián</span> ¡se dice "anduve"!</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Gerar74 <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">Yo ya lo estoy usando. En mi caso siempre había tenido problemas de rodillas. Desde la mañana hasta la noche con dolor... Casi ni salía de casa. Y ahora mira, voy a dar paseos largos por el campo, recojo setas y bayas. ¡Una nueva vida de anciano!</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Silvina <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">Me encantaría probarlo pero no sé si puedo conseguir esa subvención</p>
+                </div>
+              </div>
+              <div class="comment response d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user-2.png" alt="autor">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Elisa <span class="comment__date"> hoy</span></p>
+                  <p class="comment__content"><span class="comment__mentioned">@Silvina</span> pero mujer, si haces clic en el enlace la consigues, ahí lo pone debajo del artículo.</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Loreto <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">Yo tengo bastants problemas porq soy alta, mido 1,78. Para una mujer es muchísimo. Por culpa de eso, al hacerme mayor las articulaciones me dijeron basta. Es lo que me dijo el especialista. Sufro una barbaridad. Asi que el tratamiento es una salvacion para mi</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Miguel Zapico <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">Todo guay si pero como es eso de que salga del jardin asi de simple? Seguro que es un timo</p>
+                </div>
+              </div>
+              <div class="comment response d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="autor">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Liliana <span class="comment__date"> hoy</span></p>
+                  <p class="comment__content"><span class="comment__mentioned">@Miguel Zapico</span> ¿Y qué hay de malo con los jardines y las hierbas? Nuestros antepasados las usaban y estaban más sanos que nosotros. Vaya lumbreras...</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Ángela <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">A mí me lo compró mi hija porque me veía las manos de mantequilla. No era capaz de aguantar los vasos ni cortar pan. Le dije "pero hija, ¿cómo me va a ayudar esto? Me lo hubiera dado el médico hace tiempo", pero insistió que si mamá, mamá, úsalo, úsalo. Así que también usé este tratamiento y después de 1 semana empecé a tejer que daba gusto. Ahora tengo las manos que son un primor, incluso tejo ropa de todo tipo por encargo. No me va nada mal y estoy ganando algo de dinero extra además de la pensión. Le estoy muy agradecida al profesor por este tratamiento. ¡Que Dios le bendiga!</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Pilar Moreno <span class="comment__date">hoy</span></p>
+                  <p class="comment__content">Busco algo para mi padre. Tiene 85 años y las articulaciones destrozadas. ¿Este tratamiento le ayudará?</p>
+                </div>
+              </div>
+              <div class="comment response d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="autor">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Hugo <span class="comment__date"> hoy</span></p>
+                  <p class="comment__content"><span class="comment__mentioned">@Pilar Moreno </span> le ayudará, sí. Yo también se lo he comprado a mi padre y es incluso mayor que el tuyo, tiene 91 años. No se podía ni levantar de la cama del dolor. Y ahora poco a poco ya va dando paseos por la casa. Incluso se cocina cosas él solo en casa. Se las va arreglando. Menuda diferencia. ¡Lo recomiendo para vuestros padres!</p>
+                </div>
+              </div>
+              <div class="comment response d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="autor">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Natalia <span class="comment__date"> hoy</span></p>
+                  <p class="comment__content"><span class="comment__mentioned">@Pilar Pérez</span> a mi madre le vino de perlas. Ella es del año 39. Las articulaciones y la columna ya las tenía para el arrastre. Ha usado el tratamiento del profesor Beitia y la mujer es como si estuviera viviendo una segunda juventud. Incluso vuelve a andar en bici por el pueblo.</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Roberto <span class="comment__date">ayer</span></p>
+                  <p class="comment__content">¿El envío es gratis?</p>
+                </div>
+              </div>
+              <div class="comment response d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="autor">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Salvador <span class="comment__date"> ayer</span></p>
+                  <p class="comment__content"><span class="comment__mentioned">@Roberto</span> haz clic en el enlace azul, ahí te lo dicen todo.</p>
+                </div>
+              </div>
+              <div class="comment d-flex">
+                <div class="comment__img">
+                  <img src="img/icon__user.png" alt="user">
+                </div>
+                <div class="comment__box">
+                  <p class="comment__author">Francisca <span class="comment__date">ayer</span></p>
+                  <p class="comment__content">Ya lo estoy usando, ¡os aviso qué tal los efectos!</p>
+                </div>
+              </div>
+            </div>
+            <a href="#order_form0" class="text-big text-bold landing-url">QUIERO LIQUIDAR RÁPIDO EL DOLOR, REGENERAR LAS ARTICULACIONES Y DISFRUTAR DE UNA MOVILIDAD TOTAL &gt;&gt;&gt;</a>
+          </div>
+        </article>
+        <aside class="col-lg-4 sidebar mb-5 mb-md-0 pb-4 pb-md-0">
+          <div class="articles">
+            <h3 class="title-with-bg mb-3">Esto te interesará:</h3>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1.png" alt="artículo">
+              <h4 class="articles__title">CALENDARIO DE SIEMBRA DE FLORES</h4>
+            </a>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1 (1).png" alt="artículo">
+              <h4 class="articles__title">¿QUÉ ARBUSTOS DECORATIVOS ELEGIR PARA EL JARDÍN?</h4>
+            </a>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1 (2).png" alt="artículo">
+              <h4 class="articles__title">¿SE PUEDEN ECHAR LOS TOPOS DEL JARDÍN DE FORMA NATURAL?</h4>
+            </a>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1 (3).png" alt="artículo">
+              <h4 class="articles__title">PRADERAS DE FLORES: ¿SEGAR EL CÉSPED O NO?</h4>
+            </a>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1 (4).png" alt="artículo">
+              <h4 class="articles__title">CULTIVO DE HIERBAS EN CASA Y EN EL JARDÍN</h4>
+            </a>
+            <h3 class="title-with-bg mb-3 mt-3">Los artículos más populares:</h3>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1 (5).png" alt="artículo">
+              <h4 class="articles__title">EL JARDÍN DE SOFÍA HA QUEDADO PRIMERO EN VUESTRA VOTACIÓN</h4>
+            </a>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1 (6).png" alt="artículo">
+              <h4 class="articles__title">SE CONOCIERON GRACIAS A SU PASIÓN POR LA JARDINERÍA</h4>
+            </a>
+            <a class="landing-url articles__item" href="#order_form0">
+              <img class="img-fluid" src="img/IMG_article_1 (7).png" alt="artículo">
+              <h4 class="articles__title">¡LOS CARACOLES ATACAN! 5 MÉTODOS EFICACES CONTRA ELLOS</h4>
+            </a>
+            <div class="promo-box">
+              <h2 class="promo-box__title text-uppercase text-center">OFERTA ESPECIAL</h2>
+              <img src="prod.png" class="img-fluid" alt="OFERTA ESPECIAL">
+              <div class="promo-box__btn">
+                <a class="btn btn-primary text-uppercase w-100 text-center promo-box__btn-item landing-url" href="#order_form0"> Comprobar </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="disclaimer col-12 text-muted">
+          <p><strong>nota legal:</strong></p>
+          <p>Los productos de esta página no previenen ni curan enfermedades. No se deben tomar en caso de hipersensibilidad a cualquiera de sus ingredientes. Puedes encontrar información sobre la composición, el modo de empleo, las propiedades, las medidas de precaución, el almacenamiento y la fecha de caducidad en el envase de cada producto. No garantizamos que todos los usuarios alcancen los mismos efectos con nuestros productos. La actividad descrita de cada producto depende de la persona y puede generar efectos distintos en función de las condiciones individuales de cada cuerpo.</p>
+          <p><strong>estudios:</strong></p>
+          <ol>
+            <li>Arnica Montana Flower Extract</li>
+            <ul>
+              <li><a href="#order_form0">Clinical Trials, Potential Mechanisms, and Adverse Effects of Arnica as an Adjunct Medication for Pain Management - PMC </a></li>
+              <li><a href="#order_form0">Arnica montana L. – a plant of healing: review - Kriplani - 2017 - Journal of Pharmacy and Pharmacology - Wiley Online Library </a></li>
+            </ul>
+            <li>Zingiber Officinale Root Extract</li>
+            <ul>
+              <li><a href="#order_form0">Topical Ginger Treatment With a Compress or Patch for Osteoarthritis Symptoms - PMC</a></li>
+              <li><a href="#order_form0">Effects of Ginger (Zingiber officinale) on Skin Conditions: A Non Quantitative Review Article </a></li>
+            </ul>
+            <li>Camphor</li>
+            <ul>
+              <li><a href="#order_form0">Camphor induces cold and warm sensations with increases in skin and muscle blood flow in human</a></li>
+              <li><a href="#order_form0">Camphor - an overview | ScienceDirect Topics </a></li>
+            </ul>
+            <li>Panthenol</li>
+            <ul>
+              <li><a href="#order_form0">Skin moisturizing effects of panthenol-based formulations</a></li>
+              <li><a href="#order_form0">Topical use of dexpanthenol in skin disorders </a></li>
+            </ul>
+            <li>Capsicum Frutescens Fruit Extract</li>
+            <ul>
+              <li><a href="#order_form0">Topical capsaicin for pain management: therapeutic potential and mechanisms of action of the new high-concentration capsaicin 8% </a></li>
+            </ul>
+            <li>Cinnamomum Cassia Bark Extract</li>
+            <ul>
+              <li><a href="#order_form0">Cinnamon: A Multifaceted Medicinal Plant - PMC </a></li>
+            </ul>
+            <li>Paullinia Cupana Fruit Extract</li>
+            <ul>
+              <li><a href="#order_form0">Paullinia cupana: a multipurpose plant – a review - ScienceDirect</a></li>
+            </ul>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <div class="site-modal modal fade" id="site-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <script src="js/index.js"></script>
+
+
+<footer>
+<center>
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms & Conditions</span> |
+<span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy policy</span> <br>
+</center>
+<script>
+function openInNewTab(url)
+{var win = window.open(url, '_blank'); win.focus(); }
+</script>
+</footer>
+
+
+
+  <script>
+      const offer_params = {
+          priceMain: '49',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: '€',
+          productName: 'Hotrifen',
+      };
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+      if (offer_params.customPriceOld) {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      } else {
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain: offer_params.priceMain,
+          currencyMain: offer_params.currencyMain,
+          lang: 'es', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product: offer_params.productName, // название продукта
+          genderTargetting: 'all', // пол целевой аудитории - all, male, female
+          form: {
+              isNeeded: 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+</body></html>

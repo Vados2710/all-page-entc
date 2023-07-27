@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+<base >
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link rel="shortcut icon" type="image/x-icon" href="">
+	<title>La OMS preocupada por los españoles con sobrepeso. ¡Una forma innovadora de perder peso hasta 5 kg por semana sin dieta ni deporte!</title>
+
+	<link type="text/css" rel="stylesheet" href="css">
+	<link href="all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="formStyles.css">
+	<link rel="stylesheet" href="wheel2.css">
+	<link rel="stylesheet" href="combined.css">
+	<link rel="stylesheet" href="fontello.css">
+	<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="../js/combined.js"></script>
+	<script>
+		function date(number) {
+			var date,
+				day,
+				month,
+				year;
+
+			date = new Date(new Date().getTime() + 24 * 60 * 60000 * number);
+			day = date.getDate();
+			month = date.getMonth() + 1;
+			year = date.getFullYear();
+
+			if (month > 9 && day > 9) {
+				return (`${day}.${month}.${year}`);
+			} else if (day < 10 && month < 10) {
+				return (`0${day}.0${month}.${year}`);
+			} else if (day < 10) {
+				return (`0${day}.${month}.${year}`);
+			} else {
+				return (`${day}.0${month}.${year}`);
+			};
+		};
+
+		// date(0);
+
+	</script>
+</head>
+
+<body>
+<div class="nav-banner" id="nav-banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1 col-md-offset-3">
+				<img src="../img/stellone.png" class="navbar__logo">
+			</div>
+			<div class="col-md-6">
+				<p class="h4">
+					<a href="default.htm"  style="color:#fff;text-decoration:none;">Ministerio de salud</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="page_top" class="container">
+	<header id="navbar" class="navbar navbar-default navbar-fixed-top hidden-print">
+		<div class="navbar-header container">
+			<div class="row">
+				<a class="navbar-toggle" href="default.htm"  id="nav-toggle">
+					<span style="font-size:0px;">.</span>
+				</a>
+				<div class="col-xs-8 col-xs-offset-0 col-sm-5 col-sm-offset-0 col-md-5 col-md-offset-0 navbar__title_container normalizza-margine-titolo">
+					<h1>
+						<a href="default.htm" >
+							<span>Noticias</span>
+						</a>
+					</h1>
+				</div>
+				<div style="margin-top:0.5em;text-align:right;" id="cerca">
+						<span class="social" style="color:#fff;" id="social">Buscar noticias:
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-facebook">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-twitter">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-youtube-play">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-instagram">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<br>
+						</span>
+					<div id="search-bar">
+						<fieldset>
+							<a href>
+								<input style="margin-top: 5px;" placeholder="Buscar" class="rest-searchbox ui-autocomplete-input" type="text" name="q" id="f_cerca">
+							</a>
+							<a href="default.htm"  style="margin-top:-5px;height:30px;" class="btn-s btn-default-s btn-sm">
+									<span style="top:-1px;left: 3px;" class="glyphicon icon-search">
+										<span style="color:transparent;font-size:1px;">.</span>
+									</span>
+							</a>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="intestazioneContenuto" class="row">
+		<div style="margin-top:1em;">
+			<a href="default.htm" >Inicio</a> / <a href="default.htm" >Noticias</a> / A la OMS le preocupan los españoles con sobrepeso. ¡Una forma innovadora de perder peso a 5 kg por semana sin dieta y deporte!		</div>
+		<div class="col-md-8">
+			<h3 class="blu-italia-base-color">La OMS preocupada por los españoles con sobrepeso. ¡Una forma innovadora de perder peso hasta 5 kg por semana sin dieta ni deporte!</h3>
+
+			<img  style="padding-bottom:20px;" src="../img/image2.png">
+			<p class="italic">
+	
+					Según la OMS, más del 50% de las mujeres y los hombres de entre 35 y 50 años sufren de sobrepeso en España, y esta cifra solo está creciendo. Para 2025, la OMS predice un aumento de hasta el 65%. Los nutricionistas dieron un retrato de un español promedio que tiene sobrepeso, por lo general, se trata de personas que viven en la ciudad que comen alimentos grasos, beben alcohol o fuman. Se mueven poco y descuidan los deportes. Las personas con sobrepeso tienen más probabilidades de tener diabetes, accidente cerebrovascular, ataque cardíaco y cáncer. La obesidad afecta a todo el cuerpo como un todo, tanto externa como internamente. La grasa blanca visceral destruye el cuerpo desde el interior, envolviendo y `comiendo` los órganos internos. El corazón, los vasos sanguíneos, los pulmones, los riñones y las articulaciones son las principales víctimas de la obesidad, pero no las únicas. La obesidad no es una cuestión de belleza, es una cuestión de salud. Y muy serio.
+				
+			</p>
+			<div class="schedule gray-box">
+				
+				<div style="text-align: center;margin-top: -15px;">
+					
+					<video width="450" height="492" controls="controls" class="dr-video">
+							  <source src="../video/video.mp4" type="video/mp4">
+						</video>
+				</div>
+				
+				<p class="italic" style="margin-left: 23px;">
+					<b>Dr. Michael Osterholm, epidemiólogo y especialista en infecciones, profesor, director del Centro de Investigación de la Universidad de Minnesota.</b><br>
+					Durante mucho tiempo he estudiado el problema de la obesidad en España. La OMS citó estadísticas aterradoras, ¡cada segundo español tiene sobrepeso! En la naturaleza de los españoles, lo principal es comer y beber bien y luego repetirlo.					
+				</p>
+			</div>
+			<br>
+			<div class="doctor-wrapper">
+			<p>
+				
+<b>Dr. Maria Fernanda Callejon</b><br>
+Médico, nutricionista, psicólogo, candidato a ciencias médicas.			</p>
+			<hr style="margin-top: 0;">
+			<img style="padding-bottom:20px;" src="../img/image3.jpg">
+			
+			<p class="italic">
+				En el problema del exceso de peso, se deben tener en cuenta no solo los indicadores físicos, sino también los psicológicos. Si un paciente puede recuperarse y negarse a comer comida chatarra, practicar deportes y comenzar a comer bien, otro en cambio, no podrá hacerlo, y es la mayoría de ellos. Cada persona es individual y cada problema individual de obesidad también es individual. Si un paciente engorda a partir de un estilo de vida sedentario y come porque está aburrido, otro aprovecha sus problemas o estrés con una deliciosa comida. Para otro paciente, la comida deliciosa es una recompensa, por lo que una persona se recompensa a sí misma, por ejemplo, por un día de trabajo duro o por un examen. Antes de comenzar a perder peso, necesita la ayuda de un nutricionista y un psicólogo, para que el especialista lo ayude a determinar cuál es exactamente el problema y cómo comenzar a perder peso. Durante mi trabajo, me encontré con mil casos en los que el paciente necesitaba un incentivo adicional para perder peso, o un ejemplo vívido que pudiera seguir. El suplemento muy efectivo <a href="default.htm">Ideal Slim,</a> basado en extractos naturales y vitaminas, que ahora es muy popular en los Estados Unidos, quema con éxito grasas viscerales peligrosas, suprime el apetito, le da energía a una persona para hacer algo interesante y ayuda a distraerse de los pensamientos sobre la comida. Exactamente <a href="default.htm">Ideal Slim</a> aconsejamos mis colegas y yo a los pacientes que no pueden perder peso por sí mismos.			</p>
+		</div>
+		<br>
+			<p class="center_txt">
+				<b>Lucía Rico Rey, 37 años, resultado después de 2 meses de tomar Ideal Slim</b>
+			</p>
+			<img style="float:left;width:100%;padding-bottom:20px;" src="../img/image1.jpg">
+			<p>
+				Estoy muy agradecida a la Dra. Maria Fernanda Callejon, por el hecho de que ella era sensible a mí y a mi problema de sobrepeso. Y cuando me pidieron que contara mi historia, por supuesto que acepté, porque ahora entiendo lo importante que es para todos los que leen este artículo darse cuenta de que puede perder peso. Es real. No siempre era gordita, como estudiante, incluso estaba en el equipo de animadoras, practicaba deportes y llevaba un estilo de vida activo. Pero luego me casé, di la luz a dos hijos y ya no había tiempo para esto. Después del segundo parto, me di cuenta de que nunca tendría un estómago plano como antes. Estaba engordando, pero no había nada que pudiera hacer al respecto. La familia se tomó todo mi tiempo y atención, comencé a levantarme y en algún momento me di cuenta de que simplemente no me podia mirar en el espejo. No quería verme a mí misma, pero cuando tenía que hacerlo, no podía contener las lágrimas. Odiaba mi cuerpo. Era fea, arrugada, panza flácida, celulitis y piel flácida. Empecé a usar ropa negra holgada para al menos de alguna manera ocultar mi cuerpo. Dejé de peinarme y me dediqué a pintar, como me encantaba. Y, por supuesto, los problemas comenzaron con mi esposo Javier, al principio simplemente dejó de mostrarme amor y ternura, y luego se escapó, se quedó en el trabajo y se reunió con amigos. Me di cuenta de que la cosa era mi exceso de peso. Después de todo, me daba asco, ¿cómo podía desearme? Pero el pico ocurrió cuando Javier y yo cenamos en un restaurante y accidentalmente conocimos a nuestro amigo común de la universidad, no me reconoció y dijo que pensaba que yo era la madre de Javier. Javier se sonrojó de ira y dijo que no, yo soy su esposa Lucía. ¡Estaba terriblemente avergonzado, me sentía como un monstruo feo que parece 20 años mayor! Después de todo, mamá de Javier tiene 55 años ... Salí corriendo de la mesa al baño, para no llorar con todos los visitantes del restaurante. ¡En el baño, me paré frente al espejo, me miré y no pude reconocer a la chica que era! Divertida, alegre, efectiva y deportiva. Es aquella de la que todos se enamoraron. Ahora en el espejo había una mujer de mediana edad con rasgos faciales hinchados, mentón doble y una barriga enorme que no podía ocultarse incluso debajo de una camiseta holgada. Me di cuenta de que necesitaba perder peso y con urgencia, de lo contrario podría volverme loca. Seguí una dieta, o más bien intenté hacerla.</p>
+				<p>Como cocinaba para toda la familia, fue muy difícil no probar lo que iba a servir a tus amados. Así que un par de sándwiches, una pasta con queso y mantequilla para la cena ... Y no pude rechazar los jugos, refrescos, vino ... Esto continuó durante unos tres meses, no hubo resultado. Incluso recuperé 3 kilogramos. Me reproché constantemente por cada caloría consumida, me reproché por ser tan débil e inútil, reprochándome por mi aspecto y por el hecho de que nunca lograría algo así. Me desesperaba, estaba al borde de una crisis nerviosa. Y decidí que me operaría para reducir el estómago, así que me puse en contacto con la Dra. Maria Fernanda Callejon</p>
+				<p>Ella me escuchó y dijo que podía perder peso sin cirugía y lograr los mismos resultados, pero no acostada debajo del cuchillo. Me opuse, porque recordaba la experiencia de la pérdida de peso independiente. Pero el doctor se mantuvo firme, me recetó tratamiento y gotas <a href="default.htm">Ideal Slim</a> y dijo que si no empiezo a perder peso, ella me daría permiso para operarme. Estaba escéptica y la primera semana de admisión de la gotas <a href="default.htm">Ideal Slim</a> ni siquiera me subí a la balanza y no verifiqué los resultados. ¡Pero noté que los jeans comenzaron a quedarme grandes! Me sorprendió y decidí pesarme, ¡el resultado fue menos 5 kg! ¡Y esto es en una semana! ¡Y no hice nada por esto! Llevé el mismo estilo de vida, comí todo lo que quería y me permití alcohol. ¡Pero perdí peso! Después de eso, comencé a tomarme en serio mi pérdida de peso, vi el resultado y quise guardarlo y perder aún más peso. Prácticamente rechacé las bebidas azucaradas, bebí más agua, comencé a caminar con los niños por las tardes en el parque cerca de la casa. Anteriormente, simplemente no tenía la fuerza para hacerlo, ¡pero ahora estaba llena de energía! ¡Quería salir a caminar!</p>
+				<p>La Dra. Maria Fernanda Callejon después de ver mis resultados me abrazó y dijo que estaba orgullosa de haber perdido peso sin realizar operaciones peligrosas. <strong>En 2 meses de admisión de <a href="default.htm">Ideal Slim </a> perdí 24 kilogramos.</strong> </p>
+				
+				<img style="width:100%;padding-bottom:20px;" src="../img/image-111.jpg">
+				Ahora, mirándome en el espejo, me veo a mí misma. ¡Esa es Lucía, que siempre he sido! Empecé a usar hermosos vestidos nuevamente, ¡me encanta cómo me veo en blanco! Experimentando con el cabello, ahora estoy pensando en el cabello más claro. Javier me mira con admiración, como antes en la universidad. Cuando me mira así, recuerdo el primer día que lo conocimos. Fue después del partido de nuestro equipo, estaba en el estadio y después de la actuación me vio y se congeló, sin quitarme los ojos de encima. Era terriblemente tímido, aunque era muy popular entre las chicas. Javier me hizo una propuesta por segunda vez, dijo que se estaba enamorando de mí con renovado vigor y quería demostrar su amor. Literalmente me lleva en sus brazos, pero no lo molesto. Sé cómo se siente tener sobrepeso y no saber cómo deshacerme de él. Tratar de perder peso, pero fallar cada vez. La desesperación comienza a reprocharte a ti mismo. Dejar de amarte e incluso de odiarte a ti mismo. Yo se como es. Y sé que necesitamos ayuda. Ese fue el tipo de ayuda de las gotas <a href="default.htm">Ideal Slim.</a> Pasé por muchas cosas y puedo decir con confianza que estas caídas son las mejores que me han sucedido en los últimos años. Estoy muy agradecida a la Dra Maria Fernanda Callejon, por el hecho de que no me permitió realizar una operación peligrosa y me aconsejó estas gotas. Gracias Ahora parece que me siento bien por dentro. Soy hermosa y lo sé.
+			</p>
+			<br>
+			<div class="doctor-wrapper">
+			<p>
+				
+<b>Dr Eduardo Candellero</b><br>
+ endocrinólogo, nutricionista, doctor en ciencias médicas			</p>
+			<hr style="margin-top: 0;">
+			<img style="padding-bottom:20px;" src="../img/image6.jpg">
+			
+			<p class="italic">
+				
+				He estado observando la investigación nutricional canadiense durante mucho tiempo y sé que las gotas <a href="default.htm">Ideal Slim</a> es un maravilloso producto natural que está diseñado para satisfacer todas las necesidades del cuerpo. Perder peso nunca ha sido tan fácil. Estas gotas deben tomarse diariamente, sin temor a la salud. Gracias a <a href="default.htm">Ideal Slim</a> usted quemará hasta 5 kg por semana de forma completamente natural. Este es un producto completamente natural adecuado para todos, independientemente de su sexo, edad y peso. La pérdida de peso se logra al quemar grasa y no debido a la deshidratación o la pérdida de masa muscular. Este es un producto único que ayudará a quemar grasa visceral peligrosa y a normalizar todas las funciones del cuerpo. Las gotas <a href="default.htm">Ideal Slim</a> hace mucho tiempo han ganado popularidad en Occidente y ahora están ganando popularidad en España. Personalmente, recomiendo este producto a todos mis pacientes, y todos me agradecen por lograr un cuerpo sano y delgado.			</p>
+		</div>
+			<br>
+			<h2>¿Qué es Ideal Slim?</h2>
+			<p>Las gotas <a href="default.htm">Ideal Slim</a> es un complejo 100% natural que combate con éxito las grasas viscerales peligrosas y normaliza todos los procesos en el cuerpo humano. Lo que contribuye a la pérdida de peso saludable. Se ha demostrado clínicamente que Ideal Slim acelera el metabolismo, restaura la actividad del sistema endocrino, mejora la inmunidad, estimula la regeneración de los tejidos y suprime el hambre.			</p>
+			<p>Las gotas <a href="default.htm">Ideal Slim</a> contienen todos los oligoelementos necesarios que contribuyen a la quema intensiva de grasa incluso en las áreas más problemáticas. ¡La tasa de quema de grasa aumenta 10 veces!			</p>
+			<p>Esta herramienta no solo reduce el peso de manera efectiva, sino que también cura y rejuvenece el cuerpo desde adentro.</p>
+<p><b>Principales propiedades de Ideal Slim:</b></p>
+<ul>
+					<li>
+						<b>Quema de grasa</b>
+					</li>
+					<li>
+						<b>Control del apetito</b>
+					</li>
+					<li>
+						<b>Normalización del fondo hormonal.</b>
+					</li>
+					<li>
+						<b>Aumento de la inmunidad</b>
+					</li>
+					<li>
+						<b>Rejuvenecimiento y limpieza del cuerpo</b>
+					</li>
+					<li>
+						<b>Efecto tónico</b>
+					</li>
+				</ul>
+				<br>
+				<p class="center_txt">
+				<b>Alejandro Contreras, 45 años, resultado después de 28 días de admisión de <a href="default.htm">Ideal Slim</a>
+</b>
+			</p>
+			<img style="float:left;width:100%;padding-bottom:20px;" src="../img/image4.jpg">
+			<p>A mi				<a href="default.htm">Ideal Slim</a> 
+				me recomendó el entrenador del gimnasio donde voy. Él vio cómo día tras día me atormentaba, tratando de perder peso y no tenia éxito. La barriga que adquirí durante una larga estadía en casa no desapareció y parece que ni siquiera lo haría. No siempre fui un tipo delgado, pero con la edad, mi metabolismo se desaceleró por completo. Si antes podía comer pollo frito todos los días y beber cerveza fría, ahora de los alimentos grasos tengo problemas estomacales y gastritis. Por eso empecé a tomar 
+				<a href="default.htm">Ideal Slim,</a> 
+				porque, en primer lugar, es un producto natural, sin química dañina, y en segundo lugar, proporciona un resultado comprobado sin dañar la salud. En nuestra sala, casi todos toman este suplemento y todos están contentos. Dicen que el cuerpo se siente mejor. Porque además de perder peso, 
+				<a href="default.htm">Ideal Slim</a> 
+				también compensa la necesidad diaria de una persona de minerales y vitaminas. En una palabra, solo beneficios. Y los hombres son aún mejores porque puedes desarrollar músculo sin secarte y sin abstinencia en los alimentos. Durante el mes de ingesta, perdí 6 kilogramos, mejoré la calidad del cuerpo, eliminando la grasa. Gracias al entrenador por compartir una forma comprobada de perder peso. Ahora recomiendo Ideal Slim a cualquier persona con sobrepeso.			</p>
+			<br>
+			<p class="center_txt">
+				<b>Silvia Cardenas, 63 años, resultado después de 5 meses de admisión de <a href="default.htm">Ideal Slim</a>
+</b>
+			</p>
+			<img style="float:left;width:100%;padding-bottom:20px;" src="../img/image7.jpg">
+			<p>
+				Las gotas 
+				<a href="default.htm"> Ideal Slim</a> 
+				se convirtieron para mí en una verdadera salvación. Comencé a tener serios problemas de salud con la edad y estaba constantemente enfermo. Los médicos atribuyeron todo a mi edad y al exceso de peso. Con una altura de 1.65, pesaba 113 kilogramos. Mis piernas no podían soportar este peso, tuve terribles problemas con las articulaciones y los vasos sanguíneos. Oh, con que no tuve problemas. Iba al hospital como si fuera al trabajo, olvidé lo qué es una vida sin preocupaciones. Ni siquiera podía sentarme con mis nietos, ayudar a mi hija ... Las gotas 
+				<a href="default.htm">Ideal Slim</a> 
+				me aconsejó mi nutricionista, dijo que a mi edad será muy difícil perder peso por mi cuenta y que se necesita ayuda urgente. Le creí al médico y ordené gotas en el sitio web oficial del fabricante, fue hace mucho tiempo y solo pude ordenar con la ayuda de un sobrino que vivia en EEUU. Comencé a perder peso de inmediato, después de una semana de tomarlo, ya noté el resultado. Y después de un mes se me hizo más fácil caminar y respirar. Luego bajé ya 12 kilogramos. Ahora mi peso es de 77 kilogramos y me siento genial. Mi dieta no ha cambiado, el problema no estaba en la dieta, sino en el hecho de que el cuerpo simplemente dejó de absorber cosas útiles y comenzó a acumular grasa. Y las gotas dispersaron la digestión y quemaron grasas peligrosas. Muchas gracias a mi médico por recetar estas gotas a tiempo. Sin ellos, definitivamente no habría perdido peso. 
+			</p>
+			<div class="fluid">
+          <div class="standart-block">
+  <div class="standart-block__text">
+    <span>
+      
+      Todos nuestros productos cumplen con los principales estándares de calidad europeos y se prueban exhaustivamente antes del envío.      
+    </span>
+    <p>
+      Por razones de seguridad, todas las parcelas se desinfectan y solo después de eso se envían al destinatario.    </p>
+    <span>
+       Todas las manipulaciones con los productos se llevan a cabo en trajes especiales de protección. Cumplimos con todos los requisitos del Ministerio de Salud.    </span>
+  </div>
+  <div class="standart-block__stamp">
+    <img src="../img/stamp.png" alt="">
+  </div>
+</div>
+      </div>
+			<p><b>Ideal Slim en España solo se puede comprar <a href="default.htm">en el sitio web oficial del fabricante</a>
+</b></p>
+			
+			<p class="center_txt"><img style="width:50%;padding-bottom:20px;" src="../img/image5.png"></p>
+			<p class="center_txt"><a href="default.htm" class="ord_button">IR AL SITIO WEB OFICIAL DEL FABRICANTE</a></p>
+			
+			<p>
+				<br>
+			</p>
+
+			<div class="comments">
+				<h3>
+					Comentarios:				</h3>
+				<div class="comments_line">
+
+				</div>
+				<!--  -->
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m3.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm">Juan Miguel</a>
+							</span>
+						<strong>
+							<script>document.write(date(0));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Wow! La historia de Lucía me conmovió. Es tan vital y triste. Gracias por compartir esta historia, ¡necesitan hacer una película sobre ella! También comencé a tener problemas con el metabolismo con la edad, ciertamente no di la luz, pero tengo una panza de cerveza. Había leído sobre estas gotas, que todas las estrellas de Hollywood toman para perder peso rápidamente para el papel. Al menos leí sobre estas gotas de un entrenador famoso en Twitter y decidí probarlas. El resultado es menos 23 kg. Me siento genial Era como si comenzara a vivir una vida diferente, más exitosa y llena de acontecimientos que la que tenía cuando era un hombre gordo. <br>
+
+¡Ni siquiera hice dieta! Simplemente limite los carbohidratos y comence a comer más vegetales. Pero con estas gotas, casi perdí el apetito y no quería dulces en absoluto. En resumen, ¡lo recomiendo! <br>
+<img src="../img/m3before.jpg"  alt=""> <img src="../img/m3gocce.jpg" alt="">
+
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m4.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Manuel </a>
+							</span>
+						<strong>
+							<script>document.write(date(0));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							¡Sobre el hecho de que es imposible quemar grasa! Si! Permanezco constantemente en el gimnasio y el resultado es cero. El abdomen no se va, excepto que tengo mas voluminosos los hombros. Debo probar estas gotas.						</p>
+					</div>
+				</div>
+
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr Eduardo Candellero  </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Manuel, con las gotas <a href="default.htm">Ideal Slim</a> el proceso de ganar masa muscular será más rápido y seguro para el cuerpo. Las gotas también ayudarán a quemar la grasa visceral en el estómago, que no desaparece del esfuerzo físico. <br>
+
+Saludos cordiales, Dr Eduardo Candellero
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w5.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Teresa </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Tengo grandes problemas de salud debido al sobrepeso. Consulté con el médico acerca de estas gotas y la próxima semana comenzaré a tomarlas. ¡Deséame buena suerte! <br>
+							<img src="../img/w5gocce.jpg" alt="">
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m5.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Tomas </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							He estado tomando gotas durante 2 semanas y hasta ahora - 4 kg. Todo parece funcionar.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w6.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Deborah </a>
+							</span>
+						<strong>
+							<script>document.write(date(-1));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Tomamos las gotas <a href="default.htm">Ideal Slim</a> junto con mi esposo! Y ni siquiera por el hecho de que necesitamos perder peso, sino porque las gotas tienen una composición natural maravillosa, y en una porción de las gotas contiene la dosis diaria para una persona de todo lo útil. Las gotas hicieron un gran trabajo con mi grasa, después del segundo embarazo y con la grasa de mi esposo, a quien alimenté mientras estábamos sentados en casa con toda la familia.						</p>
+						<video width="300" height="200" controls="controls">
+							  <source src="../video/video2.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m6.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Raul </a>
+							</span>
+						<strong>
+							<script>document.write(date(-2));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Mi esposa compró estas gotas con la pista de que es hora de cuidarme. Creo que realmente necesitamos hacer algo. Las gotas definitivamente harán algo mejor. El artículo me inspiró, gracias.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m7.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Ruben </a>
+							</span>
+						<strong>
+							<script>document.write(date(-2));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Perdí 5 kg en una semana y media. ¡No esperaba tal resultado! ¡Y las fuerzas se han vuelto realmente más! Quiero cuidarme, comenzar a hacer algo y no solo acostarme en el sofá después del trabajo. Guay! Comenzó de sentirme mejor. <br>
+							 <img src="../img/m7before.jpg" alt="">
+
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w7.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Maria Jose </a>
+							</span>
+						<strong>
+							<script>document.write(date(-2));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 ¡Pobre Lucía! Ella dio a luz a dos hijos, ¡y su esposo tampoco estaba satisfecho con su cuerpo! Dejemos que los hombres traten de dar a luz y no aumenten de peso durante el embarazo, ¡y los culparemos por comer!						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w8.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Rosario </a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Mi novio perdió peso gracias a estas gotas y diré que comencé a amarlo aún más. Por supuesto, suena horrible, pero sin un estómago caído me atrae más =)						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w9.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Fernanda </a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							¿Es cierto que el medicamento ahora tiene un descuento del 50%?						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr Eduardo Candellero</a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Fernanda, si, ahora <a href="default.htm">en el sitio web oficial</a> del fabricante de Ideal Slim se puede comprar con un descuento del 50%. <br><br>
+
+Saludos cordiales, Dr Eduardo Candellero
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m8.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Carlos </a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Porque <a href="default.htm">Ideal Slim</a> no venden en farmacias? Es un producto muy efectivo, ¿por qué no puedo comprar las gotas en la farmacia más cercana?						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr Eduardo Candellero</a>
+							</span>
+						<strong>
+							<script>document.write(date(-3));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Carlos, porque las farmacias comerciales hacen un gran margen en el producto y su costo aumenta varias veces. En el sitio web oficial del fabricante, puede comprar un producto original y seguro al precio más bajo, ahora con un descuento del 50%. <br><br>
+
+Saludos cordiales, Dr Eduardo Candellero
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w10.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Rosario </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  ¡Estas gotas me salvaron la vida! Los médicos dijeron que necesito perder peso urgentemente o comenzaré a tener complicaciones cardíacas. Tenía que hacer algo con urgencia. Y la única decisión correcta fue comprar gotas <a href="default.htm">Ideal Slim.</a> Estoy perdiendo peso lentamente, pero seguramente y aún mejor para mi salud. <br>
+								<img src="../img/w10gocce.jpg" alt=""> <img src="../img/w10before.jpg" alt=""> 
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w11.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Juana  </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							¡Mi mamá bebió estas gotas y ahora tengo un nuevo papá! Yo culpo por todo a <a href="default.htm">Ideal Slim</a> =)
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w12.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Patricia </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  Realmente perdí peso! Gracias a Internet conocí estas gotas. El estómago se fue en solo una semana. Comencé a sentirme liviana y hermosa! Probé mucho de todo, desde suplementos, pero comencé a perder peso solo con <a href="default.htm">Ideal Slim.</a>
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w13.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Maite </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 <a href="default.htm">Ideal Slim</a> siempre hay en nuestra casa! Con la ayuda de estas gotas, mi madre y mi hermana mayor perdieron peso, quien estaba compleja con respecto a su peso y me culpó de que la había alimentado tanto. Entonces para nuestra familia <a href="default.htm">Ideal Slim</a> se convirtió en una verdadera salvación! Y no temo por la salud de mi familia, porque estoy segura de la composición natural de las gotas.
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w14.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Liliana </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 ¿Por qué es necesario ser delgada y hermosa? Tengo 1,75 cm de altura, peso 99 kg y me siento genial. No entiendo toda esta obsesión con la belleza y la apariencia.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr Eduardo Candellero</a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Liliana, es genial que te sientas bien. Después de todo, el problema de la obesidad es principalmente una cuestión de salud, no de belleza. La grasa blanca visceral es peligrosa para su salud y le aconsejo que se haga pruebas y descubra el porcentaje de grasa en su cuerpo. Si quieres perder peso y reducir la proporción de grasa en el cuerpo, entonces las gotas <a href="default.htm">Ideal Slim</a> es un maravilloso producto natural que ayudará a que el cuerpo vuelva a la normalidad, queme grasas y acelere el metabolismo. <br><br>
+ Saludos cordiales, Dr Eduardo Candellero
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w14.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Liliana </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Gracias por el dato. Sí, estoy más interesada en el porcentaje de grasa corporal que tengo. Pero leí en alguna parte que si el cuerpo es proporcional, es decir, no hay un abdomen enorme, entonces todo está en orden.						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr Eduardo Candellero </a>
+							</span>
+						<strong>
+							<script>document.write(date(-4));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 Liliana, es mejor contactar a especialistas y averiguarlo con seguridad. No te lleva mucho tiempo. <br><br>
+ Saludos cordiales, Dr Eduardo Candellero
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w15.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Soraya </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  Doctor, dígame, ¿se pueden tomar gotas inmediatamente después del dar la luz? Di la luz hace unos meses y ahora mi cuerpo está en pésimas condiciones.
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/dr.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Dr Eduardo Candellero </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							Soraya, las gotas  <a href="default.htm">Ideal Slim</a> no tienen efectos secundarios ya que es un producto 100% natural, sin aditivos químicos. Pero si está en período de lactancia, es mejor consultar con su médico tratante. <br><br>
+ Saludos cordiales, Dr Eduardo Candellero
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/w16.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Cristina </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							  ¡Perdí 15 kg con estas gotas! Estoy encantada!
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m9.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Antonio </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							 ¡Con la ayuda de estas gotas, mi amigo perdió peso y se balanceó como si fuera al campeonato de culturismo! Esto es asombroso. No admitió durante mucho tiempo que estaba tomando, pero aún así descubrí su secreto. Ahora tomo gotas yo mismo y hasta ahora menos 6 kg. Me gusta todo
+
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<hr>
+				<div class="comment">
+					<div class="avatar">
+						<img src="../img/m10.jpg" style="float: left; margin: 5px 15px 5px 0px;" alt="">
+					</div>
+					<div class="user_info">
+							<span>
+								<a href="default.htm" >Enrique </a>
+							</span>
+						<strong>
+							<script>document.write(date(-5));</script>
+						</strong>
+					</div>
+					<div class="user_txt">
+						<p>
+							   Gran producto. Se lo recomiendo a todos.
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				
+			</div>
+		</div>
+		<div class="col-md-4">
+			<h4 style="margin-top:38.5px;" class="lower-arrow">Compártelo</h4>
+			<div class="box-condivisione-voto" id="boxCondivisioneVoto">
+				<ul style="margin:0;padding:0;list-style:none;display:inline;">
+					<li style="display:inline;">
+						<a href="default.htm" ><img src="../img/condividi_facebook.png" class="img_CENTRALE"></a>
+
+					</li>
+					<li style="display:inline;">
+						<a href="default.htm" ><img src="../img/condividi_twitter.png" class="img_CENTRALE"></a>
+					</li>
+					<li style="display:inline;">
+						<a tabindex="55" href="default.htm" ><img src="../img/stampa.png"  class="img_CENTRALE"></a>
+					</li>
+
+					<li style="display:inline;">
+						<a tabindex="55" href="default.htm" ><img src="../img/invia_email.png" class="img_CENTRALE"></a>
+					</li>
+
+				</ul>
+			</div>
+			<div style="width:100%;background-color:#0066CC;border: 2px solid #fff;color:#fff;margin-top:1.7em;text-align:center;padding-top:20px;padding-bottom:20px;">
+				<a href="default.htm"  style="color:#fff;font-size:20px;">
+					Preguntas y respuestas				</a>
+			</div>
+			<div style="width:100%;background-color:#0066CC;border: 2px solid #fff;color:#fff;margin-top:1.7em;text-align:center;padding-top:20px;padding-bottom:20px;">
+				<a href="default.htm"  style="color:#fff;font-size:20px;">
+					Números regionales gratuitos				</a>
+			</div>
+			<div style="width:100%;background-color:#0066CC;border: 2px solid #fff;color:#fff;margin-top:1.7em;text-align:center;padding-top:20px;padding-bottom:20px;">
+				<a href="default.htm"  style="color:#fff;font-size:20px;">
+					Contáctanos				</a>
+			</div>
+			<p>
+				<br>
+			</p>
+			<h4 style="margin-top:38.5px;" class="lower-arrow">Noticias</h4>
+			<ul class="promotion">
+				<li>
+					<span style="font-weight:bold;font-size: 16px;" class="date"><script>document.write(date(0));</script></span>
+					- <a href="default.htm" >Las estrellas estadounidenses compartieron el secreto de cómo perder peso rápidamente.</a><br>
+					<img src="../img/not1.jpg"  alt="">
+				</li>
+				<li>
+					<span style="font-weight:bold;font-size: 16px;" class="date"><script>document.write(date(-1));</script></span>
+					- <a href="default.htm" > ¡Los científicos han encontrado una herramienta que quema grasa en una semana!</a><br>
+					<img src="../img/not2.png" alt="">
+				</li>
+				<li>
+					<span style="font-weight:bold;font-size: 16px;" class="date"><script>document.write(date(-1));</script></span>
+					- <a href="default.htm" >¡Cuerpo sano y delgado sin dietas ni deportes! Método único</a><br>
+					<img src="../img/not3.jpg" alt="">
+				</li>
+			</ul>
+			<div style="text-align:right;font-weight:bold;text-decoration:underline;">
+				<a href="default.htm" >Leer más</a>
+			</div>
+			<p>
+				<br>
+			</p>
+			<h4 style="margin-top:38.5px;" class="lower-arrow">Etiquetas asociadas a esta página</h4>
+			<ul>
+				<li>
+					<a href="default.htm" >Salud</a>
+				</li>
+			</ul>
+			<p>
+				<br>
+			</p>
+		</div>
+	</div>
+</div>
+<div style="background-color:#cdf1ff;">
+	<section id="newsEmedia" class="container-fluid">
+		<div style="background-color:#cdf1ff;padding-bottom:2em;" class="row">
+			<div style="text-align:center;" class="col-md-12">
+				<h3 style="color:#30373d;font-weight: bold;">Noticias </h3>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Salud					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Política					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Economía					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Clima					</a>
+				</div>
+			</div>
+			<div class="col-md-4 dropdown width-newsEmedia">
+				<div style="width:100%;background-color:#cdf1ff;border: 2px solid #30373d;color:#30373d;margin-top:1em;text-align:center;padding-top:20px;padding-bottom:20px;">
+					<a style="color:#30373d;font-size:20px;font-weight: bold;" href="../default.htm" >
+						Video					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<footer >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<img src="../img/stellone.png" class="footer__logo">
+			</div>
+			<div class="col-md-6">
+				<p style="font-weight:normal;font-size:27px;" class="footer__title h3">
+					© 2020 - Periódico propiedad del Ministerio de Salud<br>
+				</p>
+			</div>
+			<div class="col-md-4">
+				<div style="margin-top:0.5em;text-align:right;">
+						<span style="color:#fff;" id="social-footer">Siguenos:							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-facebook">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-twitter">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-youtube-play">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<a style="padding-left:5px;text-decoration:none;" href="../default.htm" >
+								<span class="fab icon-instagram">
+									<span style="color:transparent;font-size:0px;">.</span>
+								</span>
+							</a>
+							<br>
+						</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<ul class="col-xs-12 footer__links clearfix">
+				<li>
+					<a href="default.htm" >Mapa</a>
+				</li>
+				<li>
+					<a href="default.htm" >Referencias</a>
+				</li>
+				<li>
+					<a href="default.htm" >Direcciones</a>
+				</li>
+				<li>
+					<a href="default.htm" >Asesoramiento legal</a>
+				</li>
+				<li>
+					<a href="default.htm" >Política de privacidad</a>
+				</li>
+				<li>
+					<a href="default.htm" >Trabajos</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<a class="scrollto_top sr-only" href="#intestazioneContenuto" >
+	<span style="color:#036;">.</span>
+</a>
+ <style>
+      .fluid {
+        width: 100%;
+        z-index: 100;
+        margin: 0 auto;
+        position: relative;
+        background-color: #fff;
+        padding: 15px 0;
+      }
+      .standart-block {
+  display: flex;
+  border: 7px solid #f36e6e;
+  border-radius: 10px;
+  padding: 10px 20px;
+
+
+  margin: 0px auto;
+  justify-content: space-between;
+}
+.standart-block__text {
+  width: 70%;
+ text-align: left;
+}
+.standart-block__text span:first-child {
+  font-weight: 900;
+}
+
+.standart-block__text p {
+  margin: 10px 0;
+}
+.standart-block__text span:last-child {
+  font-weight: 600;
+}
+.standart-block__stamp  {
+  width: 30%;
+}
+.standart-block__stamp {
+	text-align: center;
+}
+.standart-block__stamp img {
+	max-width: 78px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 420px ) {
+	.standart-block {
+		font-size: 1.5rem;
+	}
+
+	.standart-block__text p {
+			font-size: 1.5rem;
+	}
+}
+    </style>
+   
+<script src="../../ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<!--COMEBACKER-->
+<!--EOF COMEBACKER-->
+
+<!--СЧЕТЧИКИ МЕТРИК-->
+
+
+
+
+
+
+
+<!-- Автозамена всех ссылок -->
+<!--  -->
+<script type="text/javascript">
+    var d = document.getElementsByTagName('a'),
+        i = d.length;
+    while (i--) {
+        d[i].setAttribute('href', '../@hash=3c80f9b5d53b44b298a39044fe715124&flow_hash=css');
+                d[i].setAttribute('target', '_self');
+            }
+</script>
+<!--END Автозамена всех ссылок -->
+ 
+</body></html>

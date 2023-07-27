@@ -1,0 +1,138 @@
+const months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],monthMin = ['','','','','','','','','','','',''],days = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'],daysMin = ['','','','','','',''],seasons = ['invierno','primavera','verano','otoño'];function postDate(daysName, daysMinName, monthsName, monthsMinName, seasonsName) {const _counterLength = 60;for (let counter = 0; counter < _counterLength; counter++) {innerDate(counter, 'date-');innerDate(counter, 'date')} function innerDate(counter, dateType) {let newCounter;dateType === 'date-' ? newCounter = -counter : newCounter = counter; const _msInDay = 86400000, _localDate = new Date(Date.now() + (newCounter * _msInDay)), _day = _localDate.getDate(), _month = _localDate.getMonth() + 1, _year = _localDate.getFullYear(); const dayDefault = addZero(_day), monthDefault = addZero(_month), defaultDate = dayDefault + '.' + monthDefault + '.' + _year; const dateClass = dateType + counter, nodeList = document.querySelectorAll('.' + dateClass); for (let i = 0; i < nodeList.length; i++) {const dateFormat = nodeList[i].dataset.format;dateFormat !== undefined && dateFormat !== ''? nodeList[i].innerHTML = String(changeFormat(dayDefault, _month, _year, dateFormat, newCounter)): nodeList[i].innerHTML = defaultDate} } function changeFormat(_day, _month, _year, format, counter) { let innerFormat = format; const testFormat = ["dd","mm","yyyy","year"], dateFormat = { dd: _day, mm: addZero(_month), yyyy: _year, year: getYearWithCounter(_year, counter), }; for (let i = 0; i < testFormat.length; i++) { let string = testFormat[i]; let regExp = new RegExp(string); innerFormat = innerFormat.replace(regExp, dateFormat[string]); } return innerFormat.split(' ').join(' ') } function getYearWithCounter(year, counter) {return year + counter} function addZero(numb){return numb<10?'0'+numb:numb} function changeFirstLetter(isBig,str){return isBig&&str&&str.length>0?str[0].toUpperCase()+str.slice(1):str} }if (document.body.classList.contains('ev-date')) {document.addEventListener("DOMContentLoaded", function () {postDate(days, daysMin, months, monthMin, seasons)});}
+
+
+var close = document.querySelector(".closeblock");
+var button = document.querySelector(".out-comebacker-content-btn");
+var reviews = (function() {
+
+  var inputFile = $('.input-file');
+  var labelFile = $('.input-file');
+  var reviewsPopup = $('.reviews-popup');
+  var fileText = $('.reviews-form__file-text');
+  var inputName = $('.inputName');
+  var inputText = $('.inputText');
+  inputFile.change(function(e) {
+    fileText.html('Foto subida');
+    labelFile.addClass('rloaded');
+  });
+  $('.btnn').click(function() {
+      event.preventDefault();
+      reviewsPopup.fadeIn();
+      setTimeout(function() {
+        reviewsPopup.fadeOut();
+      }, 2000);
+      fileText.html('Adjuntar una foto');
+      labelFile.removeClass('rloaded');
+      inputName.val('');
+      inputText.val('');
+  });
+});
+reviews();
+
+let result = 0;
+$('.test__answer-choice').click(function () {
+    $(this).toggleClass('choiced');
+});
+
+$('.answer-1').click(function () {
+    result += 1;
+    $('.question-1').removeClass('show');
+    $('.question-2').addClass('show');
+});
+
+$('.answer-2').click(function () {
+    if($(this).hasClass('answer-first')) {
+        result += 1;
+    }
+    $('.question-2').removeClass('show');
+    $('.question-3').addClass('show');
+});
+
+$('.answer-3').click(function () {
+    if($(this).hasClass('answer-first')) {
+        result += 1;
+    }
+    $('.question-3').removeClass('show');
+    $('.question-4').addClass('show');
+});
+
+$('.answer-4').click(function () {
+    if($(this).hasClass('answer-first')) {
+        result += 1;
+    }
+    $('.question-4').removeClass('show');
+    $('.question-5').addClass('show');
+});
+
+$('.answer-5').click(function () {
+    if($('.test__answer-choice.choiced').length > 2) {
+        result += 1;
+    }
+    $('.question-5').removeClass('show');
+    $('.question-6').addClass('show');
+});
+$('.answer-6').click(function () {
+    if($(this).hasClass('answer-first')) {
+        result += 1;
+    }
+    $('.question-6').removeClass('show');
+    $('.question-7').addClass('show');
+});
+$('.answer-7').click(function () {
+    if($(this).hasClass('answer-first')) {
+        result += 1;
+    }
+    $('.question-7').removeClass('show');
+    $('.question-8').addClass('show');
+});
+
+$('.answer-8').click(function () {
+    if($(this).hasClass('answer-first')) {
+        result += 1;
+    }
+    $('.question-8').removeClass('show');
+    if(result === 8) {
+        $('.test__result-1').addClass('show');
+    } else {
+        $('.test__result-2').addClass('show');
+    }
+});
+var timeCounter={
+	id:false,
+	//counter:0,
+	startTime:Math.floor(Date.now()/1000),
+	count:function(vid,type){
+		if($('#hiddenDiv')[0])
+		{
+			var a=document.createElement('img');
+			a.src='tc.php?id='+vid+'&type='+type;
+			if(vid==0||((Math.floor(Date.now()/1000))-timeCounter.startTime)>=300)
+			{
+				clearInterval(timeCounter.id);
+			}
+			//timeCounter.counter++;
+		}
+		else
+		{
+			clearInterval(timeCounter.id);
+		}
+	},
+	init:function(id,type){
+		clearInterval(timeCounter.id);
+		timeCounter.id=setInterval(function(){timeCounter.count(id,type);},5000);
+	}
+};
+
+var loadTime={
+	val:0,
+	id:0,
+	init:function(id){
+		loadTime.id=id;
+		window.onload=function(){
+			loadTime.val=window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;
+			var a=document.createElement('img');
+			a.src='tc.php?id='+loadTime.id+'&lt='+loadTime.val+'&type=lt';
+		}
+	}
+};
+

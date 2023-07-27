@@ -1,0 +1,1421 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="prod.png" type="image/x-icon">
+  <title>¡Los científicos inventaron la fórmula de la juventud!</title>
+  <link href="css/new_css.css" rel="stylesheet" type="text/css" media="all">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+    (function () {
+      let params = (new URL(document.location)).searchParams;
+      let block = '';
+      params.forEach(function (value, key) {
+        block = block + key + '=' + value + '&';
+      })
+      var t;
+      try {
+        for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+        onpopstate = function (t) {
+          t.state && location.replace("domonetka/index.php?cid={clickid}")
+        }
+      } catch (o) {}
+    })();
+  </script>
+</head>
+
+<body class="template-article ev-date">
+  <div id="shopify-section-header" class="shopify-section">
+    <div id="SearchDrawer" class="search-bar drawer drawer--top">
+      <div class="search-bar__interior">
+        <div class="search-form__container" data-search-form-container="">
+          <form class="search-form search-bar__form" action="/search" method="get" role="search">
+            <div class="search-form__input-wrapper">
+              <input type="text" name="q" placeholder="Search" class="search-form__input search-bar__input">
+
+              <div class="predictive-search-wrapper predictive-search-wrapper--drawer"
+                data-predictive-search-mount="drawer"></div>
+            </div>
+            <button class="search-bar__submit search-form__submit" type="submit" data-search-form-submit="">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
+                viewbox="0 0 37 40">
+                <path
+                  d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z" />
+
+              </svg>
+              <span class="icon__fallback-text">Submit</span>
+            </button>
+          </form>
+          <div class="search-bar__actions">
+            <button type="button" class="btn--link search-bar__close js-drawer-close">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewbox="0 0 40 40">
+                <path
+                  d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z"
+                  class="layer" />
+              </svg>
+              <span class="icon__fallback-text">Close search</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-section-id="header" data-section-type="header-section" data-header-section="">
+      <header class="site-header border-bottom logo--left">
+        <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
+          <div class="grid__item medium-up--one-quarter logo-align--left">
+            <div class="h2 site-header__logo">
+              <a href="" class="site-header__logo-image" data-image-loading-animation="">
+                <svg width="91" height="44" viewbox="0 0 91 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_48:5335)">
+                    <path
+                      d="M33.4676 9.3835C34.9497 9.62177 36.4174 9.83145 37.8661 10.1221C38.6768 10.3147 39.5304 10.1866 40.2489 9.76473C40.9265 9.40471 41.6695 9.18433 42.4338 9.11664C43.4774 9.00941 44.4186 8.80927 45.1406 7.97531C47.2493 5.54256 50.0895 4.34644 53.0369 3.33616C56.3131 2.21152 59.7395 1.74689 63.1063 1.02254C63.5995 0.915322 63.9116 1.00587 64.0022 1.61822C64.2238 3.12172 64.7456 4.57756 64.6646 6.13109C64.636 6.71247 64.4954 7.1914 63.9664 7.47732C63.5852 7.68462 63.69 8.00867 63.7282 8.31128C63.9903 10.2723 63.8735 12.2285 63.142 14.0512C61.9101 17.1178 59.6895 19.0835 56.3155 19.5315C54.6214 19.7698 52.8987 19.9723 51.2213 19.5982C48.3978 18.9716 46.2724 17.368 45.0667 14.6827C44.7522 13.9678 44.4758 13.253 44.1994 12.5382C43.923 11.8234 43.6061 11.5613 42.8961 11.7162C42.1149 11.9112 41.3514 12.171 40.6134 12.4929C40.1964 12.6621 40.1178 13.0314 40.1821 13.4889C40.4204 15.2378 40.6587 16.9915 40.3918 18.7619C39.9939 21.5068 38.6072 23.5821 36.2244 25.0165C33.887 26.4223 31.459 27.4397 28.6474 27.1872C27.5228 27.0871 26.4601 26.8226 25.5499 26.1173C25.0161 25.7027 24.4586 25.3191 23.9487 24.8807C23.1648 24.2064 22.45 23.4773 22.0592 22.4741C21.7995 21.8118 21.4111 21.1994 21.1323 20.5441C21.0258 20.255 20.8573 19.9925 20.6388 19.7752C20.4203 19.5579 20.1569 19.391 19.8671 19.2861C18.752 18.8977 18.285 18.0947 18.1992 16.951C18.1024 16.1248 17.9632 15.304 17.7822 14.492C17.6917 13.9941 17.7489 13.6772 18.3541 13.4865C21.7518 12.4072 25.1067 11.192 28.5283 10.1912C30.1056 9.71946 31.7974 9.64083 33.4676 9.3835ZM33.4939 11.5732C29.7935 11.6947 27.8182 12.0331 24.399 14.0846C23.2077 14.7994 22.1974 15.6834 22.3928 17.2941C22.4404 17.6873 22.4738 18.0828 22.531 18.4736C22.8574 20.6609 24.075 22.3931 25.3902 24.0658C26.4076 25.3477 27.7729 25.8433 29.3741 25.7814C31.6866 25.6787 33.9252 24.9364 35.8408 23.6369C37.0536 22.8435 38.1211 21.9071 38.6143 20.4774C39.1793 18.8598 39.3124 17.1228 39.0003 15.438C38.791 14.2561 38.1295 13.2023 37.1561 12.5001C36.0624 11.6685 34.7972 11.5708 33.4939 11.5851V11.5732ZM54.4999 18.6427C58.8769 18.6594 62.1556 15.8669 62.6011 11.609C62.787 9.84575 62.5821 8.073 61.7195 6.46229C61.0309 5.17562 60.0516 4.35835 58.4719 4.54182C57.7428 4.62521 57.0113 4.68002 56.2845 4.78009C54.2974 5.05887 52.3292 5.40436 50.5184 6.34077C49.0339 7.10801 47.6591 8.00867 46.8466 9.52884C46.6432 9.86652 46.5201 10.2464 46.4868 10.6392C46.4823 12.0503 46.7526 13.4488 47.2826 14.7565C47.8211 16.1552 48.7123 17.1893 50.1562 17.7445C51.5356 18.3114 53.0087 18.616 54.4999 18.6427Z"
+                      fill="black" />
+                    <path
+                      d="M84.5713 37.2113C84.5713 36.1224 84.5713 35.1359 84.5713 34.1519C84.5452 33.9356 84.5557 33.7165 84.6023 33.5038C84.669 33.3298 84.8596 33.1011 85.005 33.0939C85.1503 33.0868 85.3457 33.2988 85.4625 33.4537C85.5316 33.549 85.503 33.723 85.5053 33.8612C85.5053 35.7244 85.5196 37.5901 85.5053 39.4558C85.4887 41.1046 84.5094 42.4199 83.0249 42.8535C82.2456 43.1022 81.4043 43.0741 80.6433 42.774C79.8824 42.4739 79.2483 41.9202 78.8485 41.2066C78.4487 40.4929 78.3075 39.6631 78.449 38.8574C78.5904 38.0517 79.0058 37.3195 79.6248 36.7848C80.7685 35.7888 83.0178 35.5934 84.3045 37.054C84.3876 37.1158 84.477 37.1685 84.5713 37.2113ZM81.9503 36.8157C80.4254 36.8157 79.3294 37.9237 79.3008 39.4868C79.2967 39.8384 79.3621 40.1874 79.4934 40.5137C79.6246 40.8399 79.819 41.1371 80.0655 41.3879C80.3119 41.6388 80.6055 41.8385 80.9294 41.9755C81.2533 42.1126 81.6011 42.1842 81.9527 42.1864C83.4276 42.1745 84.5594 40.995 84.5737 39.4534C84.5795 39.1066 84.5156 38.7622 84.386 38.4406C84.2564 38.1189 84.0636 37.8265 83.819 37.5806C83.5745 37.3347 83.2831 37.1403 82.9621 37.0089C82.6412 36.8776 82.2971 36.8119 81.9503 36.8157Z"
+                      fill="black" />
+                    <path
+                      d="M34.3605 39.3653L37.5867 36.6251C37.7759 36.423 37.9944 36.2503 38.2348 36.1128C38.4063 36.0414 38.6517 36.1533 38.8638 36.1843C38.8185 36.3726 38.8352 36.6299 38.7161 36.7395C38.0275 37.3685 37.3079 37.9618 36.6002 38.567C36.4358 38.7076 36.2786 38.853 36.0856 39.0269C36.991 40.0801 37.8797 41.0927 38.7375 42.1244C38.871 42.2865 38.9901 42.6391 38.9091 42.7654C38.6517 43.1538 38.3491 43.0037 38.0918 42.6939C37.3675 41.8536 36.6399 41.0133 35.9092 40.173C35.7544 39.9967 35.5923 39.8251 35.4208 39.6369C34.7274 40.0324 34.1889 40.4661 34.3533 41.3644C34.3928 41.6808 34.3928 42.001 34.3533 42.3174C34.3319 42.6248 34.2675 42.9298 33.8506 42.9155C33.4336 42.9012 33.374 42.6343 33.374 42.3008C33.374 42.0244 33.374 41.7456 33.374 41.4668C33.374 38.9252 33.374 36.3837 33.374 33.8421C33.374 33.4609 33.3883 33.063 33.8839 33.0725C34.3319 33.0725 34.3605 33.4776 34.3605 33.8254C34.3605 35.3933 34.3605 36.9611 34.3605 38.5313V39.3653Z"
+                      fill="black" />
+                    <path
+                      d="M7.83438 36.7443C8.56587 36.4893 9.22827 36.1152 9.91926 36.0461C11.8683 35.8555 13.1598 36.9992 13.2789 38.953C13.3504 40.0991 13.3194 41.2523 13.2789 42.4008C13.2605 42.5233 13.2119 42.6393 13.1374 42.7383C13.0629 42.8373 12.965 42.9162 12.8524 42.9679C12.4878 43.0203 12.3878 42.7034 12.3901 42.3651C12.3901 41.3143 12.4068 40.2635 12.3901 39.2128C12.3615 37.4615 10.9891 36.4655 9.3069 36.9611C8.8818 37.072 8.50657 37.3231 8.24193 37.6738C7.97729 38.0245 7.83873 38.4542 7.84867 38.8935C7.84867 40.0229 7.84867 41.1523 7.84867 42.2841C7.84867 42.62 7.84867 42.9822 7.41502 42.9989C6.98137 43.0156 6.93848 42.6296 6.93848 42.2698C6.93848 39.4534 6.93848 36.637 6.93848 33.8207C6.93848 33.4633 6.95992 33.0844 7.41502 33.1059C7.87012 33.1273 7.84867 33.4823 7.84629 33.8207C7.83199 34.8 7.83438 35.8102 7.83438 36.7443Z"
+                      fill="black" />
+                    <path
+                      d="M66.4848 39.7655C66.4157 41.1761 67.7691 42.3722 69.1749 42.1626C69.6515 42.0911 70.0923 41.8218 70.5617 41.686C70.799 41.6554 71.0392 41.6554 71.2765 41.686C71.1788 41.91 71.143 42.234 70.9715 42.346C69.7658 43.1252 68.4816 43.2586 67.2116 42.5319C65.8725 41.7623 65.415 40.497 65.5699 39.0364C65.8081 36.7895 67.4975 35.5529 69.5847 36.0199C70.9477 36.3249 72.0842 37.9261 71.9103 39.2938C71.8555 39.725 71.5505 39.7703 71.2145 39.7703H66.4848V39.7655ZM66.4848 38.9673H70.9715C71.0573 37.7879 70.1256 36.8062 68.8914 36.7347C68.5862 36.7203 68.2812 36.767 67.9942 36.872C67.7073 36.9769 67.4442 37.1381 67.2203 37.346C66.9964 37.5539 66.8163 37.8044 66.6904 38.0828C66.5645 38.3612 66.4954 38.6619 66.4872 38.9673H66.4848Z"
+                      fill="black" />
+                    <path
+                      d="M45.9313 36.7204C46.222 36.5132 46.5306 36.3322 46.8534 36.1796C49.0121 35.317 51.0494 36.6323 51.1733 38.9888C51.2328 40.1158 51.2066 41.2524 51.1733 42.3818C51.1569 42.5064 51.1101 42.6251 51.037 42.7273C50.9638 42.8296 50.8666 42.9122 50.7539 42.9679C50.3941 43.0323 50.2774 42.7297 50.2774 42.3818C50.2774 41.2905 50.3012 40.1968 50.2774 39.1055C50.2321 37.2303 48.4117 36.1986 46.7533 37.0945C46.4314 37.256 46.1632 37.5074 45.9814 37.8183C45.7995 38.1291 45.7118 38.4861 45.7288 38.8458C45.7288 39.9991 45.7288 41.1499 45.7288 42.3008C45.7288 42.6415 45.7026 42.9941 45.2737 42.987C44.8448 42.9798 44.8114 42.6367 44.8114 42.2936C44.8114 40.4875 44.8114 38.6814 44.8114 36.8753C44.8114 36.5274 44.7304 36.0485 45.2355 36.0628C45.4571 36.07 45.6692 36.4583 45.9313 36.7204Z"
+                      fill="black" />
+                    <path
+                      d="M57.9048 36.7872C58.429 36.5251 58.8937 36.1986 59.4107 36.0557C61.4527 35.4862 63.1826 36.7538 63.3184 38.934C63.3899 40.0801 63.3589 41.2357 63.3184 42.3842C63.3029 42.5088 63.2564 42.6275 63.1831 42.7295C63.1099 42.8315 63.0122 42.9135 62.899 42.9679C62.5392 43.0299 62.4225 42.7297 62.4225 42.3794C62.4225 41.2881 62.4439 40.1968 62.4225 39.1079C62.3796 37.2709 60.6831 36.2487 59.0104 37.0421C58.6598 37.1898 58.3629 37.4415 58.1596 37.7631C57.9564 38.0848 57.8567 38.461 57.8739 38.8411C57.8739 39.9705 57.8739 41.1023 57.8739 42.2317C57.8739 42.5772 57.9001 42.9822 57.4307 42.987C56.9613 42.9918 56.9541 42.601 56.9541 42.246C56.9541 40.4399 56.9541 38.6362 56.9541 36.8301C56.9541 36.4965 56.8993 36.0914 57.3663 36.039C57.9191 35.977 57.8357 36.4536 57.9048 36.7872Z"
+                      fill="black" />
+                    <path
+                      d="M29.0881 35.9532C29.9768 35.9532 30.7941 36.151 31.3898 36.8586C31.5184 37.0111 31.497 37.2947 31.5446 37.5162C31.3064 37.4996 30.9633 37.5782 30.8298 37.4472C30.5272 37.1586 30.1572 36.9503 29.7536 36.8413C29.3499 36.7322 28.9253 36.7259 28.5186 36.8229C28.0039 36.9301 27.5655 37.1684 27.5155 37.7617C27.4654 38.355 27.8753 38.6194 28.359 38.7648C29.0976 38.984 29.8648 39.1127 30.5892 39.3724C31.5423 39.7083 31.8639 40.2897 31.8044 41.2381C31.785 41.4963 31.7028 41.746 31.5649 41.9652C31.4271 42.1845 31.2377 42.3668 31.0133 42.4961C29.8815 43.2634 27.7442 43.1204 26.7077 42.2102C26.4695 42.0077 26.1549 41.7813 26.4861 41.4311C26.7816 41.1189 27.0365 41.3072 27.3034 41.5359C28.1517 42.2674 29.1333 42.3127 30.1627 42.0124C30.6392 41.8766 31.0347 41.524 30.9514 41.0355C30.9014 40.8441 30.814 40.6644 30.6942 40.5069C30.5743 40.3495 30.4245 40.2173 30.2532 40.1182C29.8172 39.8799 29.2763 39.8227 28.7831 39.6869C28.4972 39.6059 28.2041 39.5439 27.9301 39.4486C27.0342 39.0984 26.5648 38.4717 26.6243 37.7378C26.6958 36.8825 27.3391 36.2105 28.2803 36.0414C28.5329 35.9889 28.8164 35.9794 29.0881 35.9532Z"
+                      fill="black" />
+                    <path
+                      d="M2.58964 36.2725C3.02318 36.2472 3.45799 36.2535 3.89061 36.2915C4.08361 36.3225 4.24563 36.5536 4.42195 36.6942L3.91443 37.0635C3.90014 37.0635 3.87631 37.0635 3.85487 37.0635C2.59203 37.1136 2.58964 37.1136 2.59203 38.3597C2.59203 39.0936 2.57058 39.8275 2.6087 40.5614C2.66351 41.5573 3.1472 41.991 4.13603 42.1149C4.34332 42.1387 4.52203 42.3937 4.71264 42.5414C4.4982 42.6963 4.28852 42.975 4.06693 42.987C3.50503 43.0144 2.9543 42.8233 2.53013 42.4538C2.10595 42.0843 1.84123 41.5649 1.79143 41.0045C1.7128 39.9585 1.72948 38.9054 1.70804 37.8546C1.70804 37.6163 1.70804 37.378 1.70804 37.1017C1.49785 37.1134 1.28705 37.0965 1.08138 37.0516C0.875617 36.9513 0.680786 36.8299 0.5 36.6894C0.688604 36.5339 0.892125 36.3974 1.10759 36.282C1.30439 36.2372 1.507 36.2235 1.70804 36.2415C1.70804 35.7483 1.70804 35.2884 1.70804 34.8119C1.6881 34.5957 1.71159 34.3778 1.77714 34.1709C1.85338 34.0113 2.06306 33.9136 2.21317 33.7873C2.33946 33.9422 2.55867 34.0923 2.57058 34.2638C2.60632 34.9024 2.58964 35.5529 2.58964 36.2725Z"
+                      fill="black" />
+                    <path
+                      d="M75.1319 36.7419C75.7406 36.4462 76.3659 36.1861 77.0047 35.9627C77.3145 35.8698 77.7052 35.9937 78.0436 36.0866C78.1675 36.12 78.3438 36.3821 78.3104 36.4726C78.2719 36.5543 78.2154 36.6262 78.1453 36.6831C78.0752 36.74 77.9932 36.7805 77.9054 36.8014C77.598 36.8515 77.2739 36.8014 76.9523 36.8181C75.7395 36.892 75.0223 37.6354 75.0128 38.8434C75.0128 39.9943 75.0128 41.1427 75.0128 42.2936C75.0128 42.6296 75.0128 42.9846 74.572 42.987C74.1312 42.9894 74.1073 42.6415 74.1073 42.3007C74.1073 40.5161 74.1073 38.7267 74.1073 36.9468C74.1073 36.5822 73.9572 36.0318 74.5624 36.0676C74.7864 36.0795 74.9746 36.5393 75.1319 36.7419Z"
+                      fill="black" />
+                    <path
+                      d="M41.6683 39.482C41.6683 40.4351 41.6683 41.3882 41.6683 42.3413C41.6683 42.6915 41.6111 43.0132 41.1917 42.9965C40.8176 42.9822 40.7438 42.6868 40.7461 42.3532C40.7461 40.4137 40.7461 38.4733 40.7461 36.5322C40.7461 36.2058 40.8033 35.9198 41.206 35.9127C41.6087 35.9056 41.6826 36.1915 41.6706 36.5179C41.6659 37.502 41.6683 38.4908 41.6683 39.482Z"
+                      fill="black" />
+                    <path
+                      d="M90.5 34.4807C90.4943 34.7573 90.4069 35.026 90.2487 35.253C90.0905 35.48 89.8687 35.6551 89.6111 35.7562C89.3536 35.8572 89.0718 35.8798 88.8015 35.821C88.5311 35.7622 88.2842 35.6246 88.0919 35.4257C87.8997 35.2268 87.7706 34.9754 87.721 34.7032C87.6713 34.431 87.7034 34.1502 87.8132 33.8962C87.9229 33.6423 88.1054 33.4265 88.3376 33.2761C88.5698 33.1256 88.8414 33.0474 89.118 33.0511C89.4879 33.0663 89.8377 33.2233 90.095 33.4895C90.3522 33.7556 90.4973 34.1105 90.5 34.4807ZM89.0704 33.2441C88.8294 33.2489 88.5953 33.3253 88.3979 33.4636C88.2005 33.6018 88.0486 33.7956 87.9616 34.0204C87.8746 34.2451 87.8564 34.4907 87.9094 34.7258C87.9623 34.9609 88.0839 35.175 88.2588 35.3408C88.4337 35.5067 88.654 35.6167 88.8916 35.6571C89.1292 35.6974 89.3734 35.6661 89.5933 35.5673C89.8131 35.4684 89.9985 35.3065 90.126 35.1019C90.2536 34.8974 90.3174 34.6596 90.3094 34.4187C90.297 34.1004 90.1608 33.7995 89.9298 33.5801C89.6988 33.3607 89.3913 33.2401 89.0728 33.2441H89.0704Z"
+                      fill="black" />
+                    <path
+                      d="M41.983 33.8588C41.7281 34.0494 41.4922 34.352 41.2134 34.3997C40.8251 34.4664 40.5439 34.1614 40.5391 33.754C40.5344 33.3465 40.7941 33.0391 41.1896 33.0868C41.4708 33.1249 41.7162 33.4132 41.9783 33.5895L41.983 33.8588Z"
+                      fill="black" />
+                    <path
+                      d="M89.383 34.6308L89.6665 35.1526L89.6141 35.2098L89.4044 35.0239L88.9541 34.6117L88.6229 35.174C88.6229 34.7904 88.5991 34.4592 88.6229 34.1376C88.642 33.9469 88.7468 33.6038 88.8064 33.6062C89.0691 33.598 89.3279 33.6713 89.5474 33.8159C89.6451 33.8945 89.5474 34.2233 89.5188 34.4354C89.5093 34.5021 89.433 34.5617 89.383 34.6308ZM89.6641 34.0184C89.458 33.8955 89.2348 33.804 89.0017 33.7468C88.9255 33.7468 88.7492 33.9994 88.7754 34.0947C88.8135 34.2305 88.9994 34.4163 89.1137 34.4139C89.2281 34.4116 89.3901 34.2209 89.6641 34.0184Z"
+                      fill="black" />
+                    <path
+                      d="M15.7114 39.7941C15.6828 41.5335 17.5342 42.6534 19.2331 41.9791C19.4499 41.8933 19.6381 41.7146 19.8597 41.6527C20.0699 41.6229 20.2833 41.6229 20.4935 41.6527C20.4316 41.8695 20.4435 42.184 20.2981 42.2888C18.4277 43.6541 15.5899 43.0227 14.9156 40.4994C14.439 38.7457 15.1539 36.9754 16.5835 36.263C17.0761 35.9987 17.6319 35.8752 18.19 35.9059C18.7482 35.9365 19.2871 36.1203 19.7477 36.4369C20.7509 37.0921 21.0844 38.1191 21.1392 39.2509C21.1631 39.7274 20.8009 39.7655 20.4387 39.7655H16.2928C16.1165 39.7679 15.9497 39.7822 15.7114 39.7941ZM15.7281 38.9626H20.2147C20.2259 38.6788 20.1805 38.3956 20.0813 38.1295C19.9821 37.8633 19.8311 37.6195 19.6369 37.4123C19.4427 37.205 19.2093 37.0384 18.9502 36.9221C18.691 36.8058 18.4114 36.7421 18.1275 36.7347C17.8237 36.7217 17.5203 36.7692 17.2351 36.8745C16.9498 36.9798 16.6884 37.1408 16.466 37.3481C16.2435 37.5555 16.0646 37.805 15.9396 38.0822C15.8145 38.3593 15.7459 38.6586 15.7376 38.9626H15.7281Z"
+                      fill="black" />
+                  </g>
+                  <defs>
+                    <clippath id="clip0_48:5335">
+                      <rect width="90" height="42.0311" fill="white" transform="translate(0.5 0.984436)" />
+                    </clippath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <nav class="grid__item small--hide" id="AccessibleNav">
+            <ul class="site-nav list--inline" id="SiteNav">
+              <li class="site-nav--has-dropdown" data-has-dropdowns="">
+                <button class="site-nav__link site-nav__link--main site-nav__link--button" type="button">
+                  <span class="site-nav__label">Marcas</span><svg aria-hidden="true" focusable="false"
+                    role="presentation" class="icon icon-chevron-down" viewbox="0 0 9 9">
+                    <path
+                      d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z"
+                      fill="#fff" />
+                  </svg>
+                </button>
+              </li>
+              <li class="site-nav--has-dropdown" data-has-dropdowns="">
+                <button class="site-nav__link site-nav__link--main site-nav__link--button" type="button">
+                  <span class="site-nav__label">Todo para la piel</span><svg aria-hidden="true" focusable="false"
+                    role="presentation" class="icon icon-chevron-down" viewbox="0 0 9 9">
+                    <path
+                      d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z"
+                      fill="#fff" />
+                  </svg>
+                </button>
+              </li>
+              <li class="site-nav--has-dropdown site-nav--has-centered-dropdown" data-has-dropdowns="">
+                <button class="site-nav__link site-nav__link--main site-nav__link--button" type="button">
+                  <span class="site-nav__label">Consulta</span><svg aria-hidden="true" focusable="false"
+                    role="presentation" class="icon icon-chevron-down" viewbox="0 0 9 9">
+                    <path
+                      d="M8.542 2.558a.625.625 0 0 1 0 .884l-3.6 3.6a.626.626 0 0 1-.884 0l-3.6-3.6a.625.625 0 1 1 .884-.884L4.5 5.716l3.158-3.158a.625.625 0 0 1 .884 0z"
+                      fill="#fff" />
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <a href="" class="site-nav__link site-nav__link--main">
+                  <span class="site-nav__label">Elección de las estrellas</span>
+                </a>
+              </li>
+              <li class="site-nav--active">
+                <a href="" class="site-nav__link site-nav__link--main site-nav__link--active">
+                  <span class="site-nav__label">Nuevos</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="grid__item medium-up--one-quarter text-right site-header__icons site-header__icons--plus">
+            <div class="site-header__icons-wrapper">
+              <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top"
+                data-predictive-search-open-drawer="">
+                <svg width="21" height="20" viewbox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M20.5 18.086L19.0153 19.5L14.5602 15.258L16.0449 13.843L20.5 18.086ZM8.89999 14.5C5.42659 14.5 2.60001 11.809 2.60001 8.5C2.60001 5.192 5.42659 2.5 8.89999 2.5C12.3734 2.5 15.2 5.192 15.2 8.5C15.2 11.809 12.3734 14.5 8.89999 14.5ZM8.89999 0.5C4.26109 0.5 0.5 4.082 0.5 8.5C0.5 12.918 4.26109 16.5 8.89999 16.5C13.5389 16.5 17.3 12.918 17.3 8.5C17.3 4.082 13.5389 0.5 8.89999 0.5Z"
+                    fill="#333333" />
+                </svg>
+              </button>
+              <a href="" class="site-header__icon site-header__account">
+                <svg width="25" height="24" viewbox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.5 1.335C15.3285 1.335 18.0412 2.45863 20.0413 4.4587C22.0414 6.45878 23.165 9.17146 23.165 12C23.165 14.8285 22.0414 17.5412 20.0413 19.5413C18.0412 21.5414 15.3285 22.665 12.5 22.665C9.67147 22.665 6.95879 21.5414 4.95871 19.5413C2.95864 17.5412 1.83501 14.8285 1.83501 12C1.83501 9.17146 2.95864 6.45878 4.95871 4.4587C6.95879 2.45863 9.67147 1.335 12.5 1.335ZM12.5 0C10.1266 0 7.80655 0.703788 5.83316 2.02236C3.85977 3.34094 2.3217 5.21508 1.41345 7.4078C0.505199 9.60051 0.267559 12.0133 0.730582 14.3411C1.1936 16.6689 2.33649 18.807 4.01472 20.4853C5.69295 22.1635 7.83115 23.3064 10.1589 23.7694C12.4867 24.2324 14.8995 23.9948 17.0922 23.0865C19.2849 22.1783 21.1591 20.6402 22.4776 18.6668C23.7962 16.6934 24.5 14.3734 24.5 12C24.5 8.8174 23.2357 5.76515 20.9853 3.51472C18.7348 1.26428 15.6826 0 12.5 0V0Z"
+                    fill="#333333" />
+                  <path
+                    d="M12.5 14.5799C11.5551 14.5799 10.6314 14.2997 9.84574 13.7747C9.06008 13.2498 8.44774 12.5036 8.08614 11.6307C7.72454 10.7577 7.62993 9.7971 7.81427 8.87036C7.99861 7.94362 8.45363 7.09235 9.12177 6.4242C9.78992 5.75606 10.6412 5.30104 11.5679 5.1167C12.4947 4.93236 13.4553 5.02697 14.3282 5.38857C15.2012 5.75017 15.9474 6.36251 16.4723 7.14817C16.9973 7.93382 17.2775 8.8575 17.2775 9.8024C17.2765 11.0692 16.7728 12.2838 15.8771 13.1795C14.9813 14.0752 13.7667 14.5789 12.5 14.5799ZM12.5 6.3749C11.8184 6.3749 11.1521 6.57702 10.5853 6.9557C10.0186 7.33438 9.57689 7.87261 9.31605 8.50233C9.05522 9.13205 8.98697 9.82498 9.11994 10.4935C9.25292 11.162 9.58114 11.7761 10.0631 12.258C10.5451 12.74 11.1591 13.0682 11.8276 13.2012C12.4962 13.3342 13.1891 13.2659 13.8188 13.0051C14.4485 12.7442 14.9867 12.3025 15.3654 11.7358C15.7441 11.1691 15.9462 10.5028 15.9462 9.82115C15.9452 8.90746 15.5818 8.03147 14.9357 7.38538C14.2897 6.7393 13.4137 6.3759 12.5 6.3749Z"
+                    fill="#333333" />
+                  <path
+                    d="M18.9838 19.6424C18.8867 19.6425 18.7908 19.6214 18.7027 19.5806C18.6146 19.5398 18.5365 19.4803 18.4738 19.4062C17.7235 18.5671 16.802 17.8987 15.7716 17.4459C14.7411 16.993 13.6255 16.7664 12.5 16.7812C11.3745 16.7664 10.259 16.993 9.22849 17.4459C8.19801 17.8987 7.27657 18.5671 6.52628 19.4062C6.46965 19.4731 6.40038 19.5283 6.32242 19.5685C6.24447 19.6087 6.15937 19.6332 6.07196 19.6405C5.98456 19.6478 5.89657 19.6378 5.81302 19.6111C5.72948 19.5844 5.652 19.5416 5.58503 19.4849C5.51805 19.4283 5.46289 19.359 5.42269 19.2811C5.38248 19.2031 5.35803 19.118 5.35071 19.0306C5.3434 18.9432 5.35338 18.8552 5.38007 18.7717C5.40676 18.6881 5.44965 18.6106 5.50628 18.5437C6.38358 17.5594 7.46193 16.7748 8.66846 16.243C9.87499 15.7113 11.1816 15.4446 12.5 15.4612C13.8184 15.4446 15.1251 15.7113 16.3316 16.243C17.5381 16.7748 18.6165 17.5594 19.4938 18.5437C19.5761 18.6409 19.6288 18.7596 19.6458 18.8858C19.6628 19.012 19.6434 19.1404 19.5897 19.256C19.5361 19.3715 19.4506 19.4692 19.3432 19.5377C19.2358 19.6062 19.1111 19.6425 18.9838 19.6424Z"
+                    fill="#333333" />
+                </svg>
+              </a>
+              <a href="" class="site-header__icon site-header__cart">
+                <svg width="19" height="24" viewbox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9.49996 0C6.95656 0 4.90019 2.08343 4.90019 4.65389V6.95378H0.841565C0.543932 6.95378 0.300415 7.19729 0.300415 7.49493V20.2119C0.300415 22.2954 2.00504 24 4.08846 24H14.9115C16.9949 24 18.6995 22.2954 18.6995 20.2119V7.49493C18.6995 7.19729 18.456 6.95378 18.1584 6.95378H14.0997V4.65389C14.0997 2.08343 12.0434 0 9.49996 0ZM5.98249 4.65389C5.98249 2.67869 7.55182 1.0823 9.49996 1.0823C11.4481 1.0823 13.0174 2.67869 13.0174 4.65389V6.95378H5.98249V4.65389ZM17.6172 8.06313V20.239C17.6172 21.7272 16.3996 22.9448 14.9115 22.9448H4.08846C2.6003 22.9448 1.38271 21.7272 1.38271 20.239V8.06313H4.90019V9.7407C4.90019 10.0383 5.14371 10.2818 5.44134 10.2818C5.73897 10.2818 5.98249 10.0383 5.98249 9.7407V8.06313H13.0174V9.7407C13.0174 10.0383 13.261 10.2818 13.5586 10.2818C13.8562 10.2818 14.0997 10.0383 14.0997 9.7407V8.06313H17.6172Z"
+                    fill="#333333" />
+                </svg>
+                <div id="CartCount" class="site-header__cart-count hide critical-hidden" data-cart-count-bubble="">
+                  <span data-cart-count="">0</span>
+                  <span class="icon__fallback-text medium-up--hide">items</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+  </div>
+  <div class="page-container drawer-page-content" id="PageContainer">
+    <main class="main-content js-focus-hidden" id="MainContent" tabindex="-1">
+      <div class="page-width">
+        <nav class="breadcrumb">
+          <a href="" title="Home">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="" title="">The Skin Nerd Blog</a>
+          <span aria-hidden="true">›</span>
+          <span>¡Los científicos inventaron la fórmula de la juventud!</span>
+        </nav>
+      </div>
+      <article class="page-width">
+        <div class="grid">
+          <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+            <div id="shopify-section-article-template" class="shopify-section">
+              <div class="section-header text-center">
+                <h1 class="article__title">¡Los científicos inventaron la fórmula de la juventud! </h1>
+                <h3>¡Después de muchas investigaciones, los expertos lograron crear un producto que puede revertir el
+                  proceso de envejecimiento!</h3>
+                <span class="article__author">by Jennifer Rock</span>
+                <span class="article__date date-5">
+
+                </span>
+              </div>
+
+              <div class="grid flex-content">
+                <div class="grid__item small--one-whole content-left">
+                  <p class="first-par"><strong><i>¿Es posible detener el envejecimiento? Hasta hace poco, esta pregunta
+                        no se podía responder
+                        de forma definitiva. Los productos cosméticos, las inyecciones de belleza y los procedimientos
+                        quirúrgicos solo podían corregir temporalmente los cambios que ya se habían producido en la
+                        piel.
+                        Pero un nuevo descubrimiento ha puesto patas arriba la cosmetología moderna y el enfoque del
+                        rejuvenecimiento.</i></strong></p>
+
+
+                  <picture>
+                    <source media="(max-width: 479px)" type="image/webp" srcset="images/700_479.webp">
+                    <source media="(max-width: 479px)" srcset="images/700_479.jpg">
+                    <source type="image/webp" srcset="images/700.webp">
+                    <img alt="photo" class="main__img" src="images/700.jpg">
+                  </picture>
+
+                  <div class="rte">
+                    <h3>EL ENVEJECIMIENTO ES INEVITABLE: ¿CÓMO NO EMPEORARLO?</h3>
+                    <p>Los primeros signos de envejecimiento comienzan a aparecer a partir de los 25 años. Con el
+                      tiempo, las arrugas se hacen más visibles y profundas, la piel pierde firmeza y elasticidad,
+                      comienza a descolgarse y aparecen manchas de pigmentación. <b>El 80% de las mujeres de 45 años</b>
+                      recurren a diferentes formas de eliminar los cambios relacionados con la edad: láser, inyecciones,
+                      peelings y resurfacing.</p>
+                    <p>Por desgracia, todas <b>estas medidas solo tienen un efecto temporal</b>. Su objetivo es eliminar
+                      los cambios visibles, por lo que al cabo de un tiempo la piel comienza a deteriorarse de nuevo.
+                      Las mujeres que quieren recuperar su juventud, tienen que volver a hacer un curso de
+                      procedimientos, el costo de los cuales puede llegar a varios miles de pesos. Muchos métodos de
+                      rejuvenecimiento estético pueden ser peligrosos para la salud. </p>
+
+                    <div class="blur-wrap">
+                      <picture>
+                        <source type="image/webp" srcset="images/bad.webp">
+                        <img src="images/bad.jpg" alt="img">
+                      </picture>
+                      <div class="blur">
+                        <picture>
+                          <source type="image/webp" srcset="images/bad1.webp">
+                          <img src="images/bad1.jpg" alt="img">
+                        </picture>
+                        <p class="blur-warning">
+                          18+
+                        </p>
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li>Las inyecciones de belleza pueden eliminar <b>las líneas de expresión y las arrugas, pero la
+                          mayoría de las inyecciones son tóxicas para el organismo</b>. Los ingredientes activos pueden
+                        acumularse y envenenar su cuerpo. Cuantas más inyecciones, mayor es el riesgo.</li>
+                      <li>La exposición de la capa subcutánea a la radiación de radiofrecuencia puede dar lugar a una
+                        espectacular producción de colágeno. Sin embargo, el cuerpo puede responder con una producción
+                        excesiva de proteínas y esto <b>conduce a la formación de tejido fibroso en el 95% de los
+                          casos</b>.</li>
+                      <li>El resurfacing y los peelings pueden provocar <b>inflamación</b>, microfisuras y manchas de la
+                        edad.</li>
+                    </ul>
+                    <h3>REJUVENECIMIENTO SEGURO: ¿MITO O REALIDAD?</h3>
+                    <p>Se ha invertido mucho tiempo y dinero en encontrar una forma segura y eficaz de rejuvenecer. Los
+                      científicos llevan décadas estudiando los efectos de los principios activos en las células y los
+                      tejidos, su capacidad de regeneración y reparación. Los expertos probaron al menos 3.000 fórmulas
+                      con vitaminas, extractos y los principales componentes de la juventud hasta que consiguieron
+                      encontrar la más eficaz.</p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp"
+                        srcset="images/stock-photo-group-of-scientist-analysing-genetic_479.webp">
+                      <source media="(max-width: 479px)"
+                        srcset="images/stock-photo-group-of-scientist-analysing-genetic_479.jpg">
+                      <source type="image/webp" srcset="images/stock-photo-group-of-scientist-analysing-genetic.webp">
+                      <img alt="photo" class="main__img"
+                        src="images/stock-photo-group-of-scientist-analysing-genetic.jpg">
+                    </picture>
+                    <p><b>¡Un grupo de científicos europeos y estadounidenses creó la fórmula de la juventud!</b></p>
+
+                    <p>En <span class="date-1" data-format="year"></span>, un grupo de científicos del Instituto de
+                      Investigación de Scripps (Estados Unidos), el
+                      Instituto de Procesos Bioquímicos de Ginebra (Suiza) y el Instituto de Dermatología y Cosmetología
+                      de París iniciaron una investigación <a class="anchor" href="#one-note">(1)</a> sobre el
+                      rejuvenecimiento de la piel. El objetivo de la
+                      investigación era <b>inventar un producto capaz de desencadenar procesos regenerativos en el
+                        organismo.</b> Para lograr su objetivo, los científicos trabajaron con ingredientes que
+                      demostraron ser los más eficaces:</p>
+                    <ul>
+                      <li>colágeno</li>
+                      <li>biotina</li>
+                      <li>vitaminas A, C, E</li>
+                      <li>antioxidantes</li>
+                      <li>ácidos grasos</li>
+                    </ul>
+
+                    <p>Los especialistas combinaron los diferentes componentes y estudiaron su interacción con las
+                      células dérmicas debilitadas. Estas son algunas de las conclusiones que los científicos extrajeron
+                      del estudio:</p>
+                    <p>La combinación de colágeno, biotina y extracto de semilla de uva mostró una eficacia del
+                      <b>58%.</b> Los científicos decidieron perfeccionar la fórmula enriqueciéndola con ácidos grasos.
+                    </p>
+
+                    <p>La combinación de colágeno, biotina, aceite de almendras y extracto de semilla de uva demostró
+                      una eficacia del 76%. Sin embargo, <b>el aceite de almendras es un alérgeno bastante fuerte</b>,
+                      lo que hace imposible su uso para el 60% de las personas que sufren reacciones alérgicas a este
+                      componente.</p>
+                    <p>El aceite de almendras fue sustituido por el aceite de oliva. La fórmula que contiene aceite de
+                      oliva también fue suficientemente eficaz (79%). Sin embargo, este <b>ingrediente no es de
+                        aplicación universal</b>. No se recomienda para personas con pieles grasas, aunque ayuda a
+                      eliminar los cambios relacionados con la edad y proporciona un efecto hidratante.</p>
+                    <p>Al examinar una serie de opciones, los científicos inventaron <b>una fórmula de juventud</b>
+                      capaz de revertir el envejecimiento. Cuatro ingredientes fueron la base de la fórmula
+                      rejuvenecedora. Son estos 4 ingredientes los que trabajan juntos de forma tan sinérgica que son
+                      capaces de iniciar el proceso de rejuvenecimiento desde el interior del cuerpo en el menor tiempo
+                      posible. Al mismo tiempo, <b>el efecto "rejuvenecedor" dura mucho tiempo</b> y se mantiene, lo que
+                      ninguna otra empresa de cosméticos consiguió jamás.</p>
+                    <p><b>Péptidos de colágeno</b></p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp" srcset="images/colagen_479.webp">
+                      <source media="(max-width: 479px)" srcset="images/colagen_479.jpg">
+                      <source type="image/webp" srcset="images/colagen.webp">
+                      <img alt="photo" class="main__img" src="images/colagen.jpg">
+                    </picture>
+
+                    <p>Las sustancias biológicamente activas que pueden influir en la actividad celular. Pueden
+                      estimular los fibroblastos para que produzcan más ácido hialurónico, contribuir a la reparación de
+                      los tejidos dañados y al soporte estructural de la piel. Los péptidos de colágeno se absorben
+                      rápida y fácilmente por el organismo. Estas sustancias no solo ayudan a erradicar las arrugas,
+                      sino que también ayudan a prevenir la aparición de nuevos cambios relacionados con la edad.</p>
+                    <p><b>Biotina</b></p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp" srcset="images/biotin_479.webp">
+                      <source media="(max-width: 479px)" srcset="images/biotin_479.jpg">
+                      <source type="image/webp" srcset="images/biotin.webp">
+                      <img alt="photo" class="main__img" src="images/biotin.jpg">
+                    </picture>
+
+                    <p>La vitamina B-7 es responsable del metabolismo de las proteínas, las grasas y los hidratos de
+                      carbono. Al normalizar los procesos metabólicos, desencadena una reacción en cadena de
+                      regeneración de la epidermis desde la base hasta el estrato córneo. La biotina es capaz de
+                      suavizar la piel y eliminar los cambios relacionados con la edad. También es apreciada por su
+                      capacidad de absorber la radiación ultravioleta, que es una protección contra el
+                      fotoenvejecimiento.</p>
+                    <p><b>Vitamina E</b></p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp"
+                        srcset="images/vitamin-e-v-produktah_479.webp">
+                      <source media="(max-width: 479px)" srcset="images/vitamin-e-v-produktah_479.jpg">
+                      <source type="image/webp" srcset="images/vitamin-e-v-produktah.webp">
+                      <img alt="photo" class="main__img" src="images/vitamin-e-v-produktah.jpg">
+                    </picture>
+
+                    <p>Un potente antioxidante que puede ralentizar el proceso de envejecimiento de la epidermis. Esta
+                      sustancia contribuye a restaurar la elasticidad de la piel, desencadena la regeneración natural de
+                      las células y ayuda al cutis. Activa la producción de colágeno y elastina naturales, lo que ayuda
+                      a suavizar las arrugas y a prevenir la aparición de nuevos signos de envejecimiento. La vitamina E
+                      es responsable del equilibrio óptimo del agua, ayuda a eliminar la piel escamosa, seca o demasiado
+                      grasa normalizando la función del sebo.</p>
+
+                    <p><b>Extracto de rosa mosqueta</b></p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp"
+                        srcset="images/rose-hips-apnes-natural_479.webp">
+                      <source media="(max-width: 479px)" srcset="images/rose-hips-apnes-natural_479.jpg">
+                      <source type="image/webp" srcset="images/rose-hips-apnes-natural.webp">
+                      <img alt="photo" class="main__img" src="images/rose-hips-apnes-natural.jpg">
+                    </picture>
+
+                    <p>Es un verdadero avance. Su composición química única lo convierte en el análogo más eficaz de
+                      otros "ingredientes de belleza". El extracto de rosa mosqueta contiene vitamina C, que estimula la
+                      formación de colágeno natural, vitamina A, que restaura la elasticidad de la piel, así como ácidos
+                      grasos que favorecen la rápida cicatrización de la piel y la regeneración de los tejidos. A
+                      diferencia de los aceites con un efecto idéntico, este extracto no perturba las glándulas
+                      sebáceas. </p>
+                    <p>El producto de rejuvenecimiento <b><span class="productName"></span></b> se desarrolló sobre la
+                      base de estos componentes.
+                      Se trata de las cápsulas que penetran desde el interior hasta todas las capas de la epidermis, a
+                      diferencia de las cremas y otros tipos de productos cosméticos. <b><span
+                          class="productName"></span> desencadena la
+                        renovación</b> de los tejidos del cuerpo a <b>nivel celular</b>. Es capaz de estimular los
+                      procesos de renovación de la matriz intercelular, activando la división celular de la capa basal y
+                      proporcionando un efecto rejuvenecedor duradero. </p>
+                    <p>Miles de mujeres ya han apreciado las propiedades rejuvenecedoras de <span
+                        class="productName"></span>. El producto ha
+                      mejorado el estado de su piel y ha ayudado a eliminar el 97% de los signos de envejecimiento. Los
+                      resultados de los diagnósticos antes y después de utilizar <span class="productName"></span> lo
+                      confirman.</p>
+
+                    <p><strong><i>Sara Vergara, 57 años
+                          <br>Tipo de piel: mixta
+                        </i></strong>
+                    </p>
+
+                    <div class="table">
+                      <div class="table__row">
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Datos del análisis antes del curso</h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel — 41 U
+                              </li>
+                              <li>
+                                La profundidad de las arrugas — más de 200 mk
+                              </li>
+                              <li>
+                                Las propiedades mecánicas (firmeza/ elasticidad) — 33%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/2-1.webp">
+                              <img class="table__img" src="images/2-1.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Después de 1 mes de uso de <span class="productName"></span></h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel aumentó un 22%
+                              </li>
+                              <li>
+                                La profundidad de las arrugas se redujo en un 40%
+                              </li>
+                              <li>
+                                Las propiedades mecánicas aumentaron hasta un 46%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/2-2.webp">
+                              <img class="table__img" src="images/2-2.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Después de 3 meses de uso de <span class="productName"></span></h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel aumentó un 45%
+                              </li>
+                              <li>
+                                La profundidad de las arrugas se redujo en un 73%
+                              </li>
+                              <li>
+                                Las propiedades mecánicas aumentaron hasta un 69%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/2-3.webp">
+                              <img class="table__img" src="images/2-3.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="table__row table__row--photo">
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/2-1.webp">
+                              <img class="table__img" src="images/2-1.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/2-2.webp">
+                              <img class="table__img" src="images/2-2.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/2-3.webp">
+                              <img class="table__img" src="images/2-3.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <p><strong><i>María García, 50 años
+                          <br>Tipo de piel: seca
+                        </i></strong></p>
+                    <div class="table">
+                      <div class="table__row">
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Datos del análisis antes del curso</h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel — 32 U
+                              </li>
+                              <li>
+                                La profundidad de las arrugas — 180 mk
+                              </li>
+                              <li>
+                                Las propiedades mecánicas (firmeza/ elasticidad) — 27%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/1-1.webp">
+                              <img class="table__img" src="images/1-1.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Después de 1 mes de uso de <span class="productName"></span></h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel aumentó un 27%
+                              </li>
+                              <li>
+                                La profundidad de las arrugas se redujo en un 36%
+                              </li>
+                              <li>
+                                Las propiedades mecánicas aumentaron hasta un 36%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/1-2.webp">
+                              <img class="table__img" src="images/1-2.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Después de 3 meses de uso de <span class="productName"></span></h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel aumentó un 46%
+                              </li>
+                              <li>
+                                La profundidad de las arrugas se redujo en un 63%
+                              </li>
+                              <li>
+                                Las propiedades mecánicas aumentaron hasta un 72%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/1-3.webp">
+                              <img class="table__img" src="images/1-3.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="table__row table__row--photo">
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/1-1.webp">
+                              <img class="table__img" src="images/1-1.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/1-2.webp">
+                              <img class="table__img" src="images/1-2.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/1-3.webp">
+                              <img class="table__img" src="images/2-3.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <p><strong><i>Josefa Garrifo, 60 años
+                          <br>Tipo de piel: grasa
+                        </i></strong></p>
+                    <div class="table">
+                      <div class="table__row">
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Datos del análisis antes del curso</h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel — 37 U
+                              </li>
+                              <li>
+                                La profundidad de las arrugas — más de 200 mk
+                              </li>
+                              <li>
+                                Las propiedades mecánicas (firmeza/ elasticidad) — 36%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/3-1.webp">
+                              <img class="table__img" src="images/3-1.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Después de 1 mes de uso de <span class="productName"></span></h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel aumentó un 33%
+                              </li>
+                              <li>
+                                La profundidad de las arrugas se redujo en un 41%
+                              </li>
+                              <li>
+                                Las propiedades mecánicas aumentaron hasta un 42%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/3-2.webp">
+                              <img class="table__img" src="images/3-2.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <h2 class="table__title">Después de 3 meses de uso de <span class="productName"></span></h2>
+                            <ul class="table__list">
+                              <li>
+                                La humedad de la piel aumentó un 71%
+                              </li>
+                              <li>
+                                La profundidad de las arrugas se redujo en un 82%
+                              </li>
+                              <li>
+                                Las propiedades mecánicas aumentaron hasta un 85%
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="table__cell--mob">
+                            <picture>
+                              <source type="image/webp" srcset="images/3-3.webp">
+                              <img class="table__img" src="images/3-3.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="table__row table__row--photo">
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/3-1.webp">
+                              <img class="table__img" src="images/3-1.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/3-2.webp">
+                              <img class="table__img" src="images/3-2.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                        <div class="table__col">
+                          <div class="table__cell">
+                            <picture>
+                              <source type="image/webp" srcset="images/3-3.webp">
+                              <img class="table__img" src="images/3-3.png" alt="img">
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p>
+                      <b>7.500 mujeres de más de 45 años</b> han utilizado las cápsulas <span
+                        class="productName"></span> para el
+                      rejuvenecimiento de la piel del rostro durante un curso de más de 30 días. El 98% ha mejorado el
+                      estado de su piel, con signos de envejecimiento menos visibles o que han desaparecido por
+                      completo. Expertos en dermatología y cosmetología de instituciones científicas han recopilado
+                      estadísticas <a class="anchor" href="#two-note">(2)</a> basadas en encuestas:
+                    </p>
+                    <ul>
+                      <li>El <b>94%</b> de las mujeres eliminó las arrugas relacionadas con la edad y las líneas de
+                        expresión;</li>
+                      <li>El <b>97%</b> de las mujeres declaró haber mejorado la hidratación de la piel y la pérdida de
+                        sequedad/brillo graso;</li>
+                      <li>El <b>95%</b> informó de un aumento de la firmeza de la piel;</li>
+                      <li>El <b>88%</b> declaró haber mejorado el color y eliminado las manchas de la edad;</li>
+                      <li>El <b>91%</b> de las mujeres declaró un contorno facial más claro.</li>
+                    </ul>
+                    <p><span class="productName"></span> no ha pasado por alto a los expertos en cosmetología y
+                      dermatología. Muchos de ellos han
+                      empezado a temer que este avance pueda privarles de sus ingresos, y también a las empresas
+                      especializadas en la producción de inyecciones para el rejuvenecimiento. ¡Sin embargo, <b>los
+                        expertos en cosmetología consideran que <span class="productName"></span> es una innovación en
+                        el rejuvenecimiento de la
+                        piel!</b></p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp"
+                        srcset="images/gettyimages-1308903268-612x612_479.webp">
+                      <source media="(max-width: 479px)" srcset="images/gettyimages-1308903268-612x612_479.jpg">
+                      <source type="image/webp" srcset="images/gettyimages-1308903268-612x612.webp">
+                      <img alt="photo" class="main__img" src="images/gettyimages-1308903268-612x612.jpg">
+                    </picture>
+
+
+                    <p><strong>Sara Olivares, experta en cosmetología y dermatología y especialista en procesos
+                        fisiológicos:</strong></p>
+                    <p><i>"<span class="productName"></span> mejora la nutrición y desencadena la regeneración de las
+                        células de la piel. Gracias
+                        a su composición, rica en vitaminas y aminoácidos, favorece la regeneración completa de las
+                        fibras de colágeno y elastina. Qué obtenemos: <b>la epidermis se rejuvenece</b> y no solo la
+                        capa superior. <b>Las arrugas se alisan desde el interior</b>, en lugar de rellenarlas con
+                        agentes bioactivos como ocurre con las inyecciones".</i></p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp"
+                        srcset="images/gettyimages-518261415-612x612_479.webp">
+                      <source media="(max-width: 479px)" srcset="images/gettyimages-518261415-612x612_479.jpg">
+                      <source type="image/webp" srcset="images/gettyimages-518261415-612x612.webp">
+                      <img alt="photo" class="main__img" src="images/gettyimages-518261415-612x612.jpg">
+                    </picture>
+
+                    <p><strong>Franklin Robinson, especialista en cosmetología estética y experto en
+                        dermatología:</strong></p>
+                    <p><i>"En mi consulta he recomendado varios métodos para rejuvenecer y eliminar los signos del
+                        envejecimiento. <b><span class="productName"></span> es un método no traumático, pero
+                          eficaz</b>. Creo que en el futuro
+                        superará en popularidad a las inyecciones de belleza. ¿Por qué? Porque casi no tiene
+                        contraindicaciones y no tiene ninguno de los efectos secundarios que pueden causar las
+                        inyecciones. ¡Es una innovación! ¡Esta es una nueva palabra en el mundo de la juventud y la
+                        belleza!"</i></p>
+
+                    <picture>
+                      <source media="(max-width: 479px)" type="image/webp"
+                        srcset="images/gettyimages-178937999-612x612_479.webp">
+                      <source media="(max-width: 479px)" srcset="images/gettyimages-178937999-612x612_479.jpg">
+                      <source type="image/webp" srcset="images/gettyimages-178937999-612x612.webp">
+                      <img alt="photo" class="main__img" src="images/gettyimages-178937999-612x612.jpg">
+                    </picture>
+
+                    <p><strong>Paulina Roquefort, experta en dermatología y cosmetología quirúrgica:</strong></p>
+                    <p><i> "A decir verdad, era difícil creer que las cápsulas pudieran competir con los métodos
+                        quirúrgicos de rejuvenecimiento. Pero en esta época de innovación, es posible. Las mujeres
+                        modernas pueden por fin conseguir <b>la eterna juventud</b> sin necesidad de un bisturí. ¡Creo
+                        que este descubrimiento es un invento increíble!"</i></p>
+                    <p>Un grupo de científicos europeos y estadounidenses hizo un verdadero descubrimiento en el mundo
+                      de la belleza. ¡Preparamos una oferta única solo para nuestros lectores!</p>
+                    <p class="attention">¡Hasta el <b><span class="date-0"></span> (inclusive)</b> puede pedir <span
+                        class="productName"></span>
+                      con un <b>50% de descuento!</b>
+                      El programa solo es
+                      válido para los lectores de Chile. El número de paquetes de oferta es limitado. ¡Dese prisa y
+                      empiece ya su programa de rejuvenecimiento! ¡Puede revertir el proceso de envejecimiento con el
+                      nuevo e innovador <span class="productName"></span>!</p>
+                      <div class="features-wrapper"></div>
+                    <p>¿Tiene alguna pregunta? Pregunte a nuestro experto. Mientras el programa de descuentos de
+                      <span class="productName"></span> está en marcha, puede preguntar a nuestros expertos cualquier
+                      duda que tenga</p>
+                  </div>
+                </div>
+                <div class="grid__item small--hide sidebar">
+                  <div class="article-categories">
+                    <h2 class="article-categories__title">Categorías</h2>
+                    <a href="" class="article-categories__cta article-categories__cta--Nutrition">Alimentación</a>
+                    <a href="" class="article-categories__cta article-categories__cta--Skin">Piel</a>
+                    <a href="" class="article-categories__cta article-categories__cta--SPF">SPF</a>
+                    <a href="" class="article-categories__cta article-categories__cta--Top-Tips">Mejores consejos</a>
+                    <a href="" class="article-categories__cta article-categories__cta--Redness">Enrojecimiento</a>
+                    <a href="" class="article-categories__cta article-categories__cta--General">General</a>
+                  </div>
+                  <div class="side__cont">
+                    <picture>
+                      <img class="prod--side" src="prod.png" alt="img">
+                    </picture>
+                    <a class="order__button order__button--side" href="">
+                      Ordenar <span class="productName"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <ul class="social-sharing">
+                <li>
+                  <a href="" class="btn btn--small btn--share share-facebook">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-facebook"
+                      viewbox="0 0 20 20">
+                      <path fill="#444"
+                        d="M18.05.811q.439 0 .744.305t.305.744v16.637q0 .439-.305.744t-.744.305h-4.732v-7.221h2.415l.342-2.854h-2.757v-1.83q0-.659.293-1t1.073-.342h1.488V3.762q-.976-.098-2.171-.098-1.634 0-2.635.964t-1 2.72V9.47H7.951v2.854h2.415v7.221H1.413q-.439 0-.744-.305t-.305-.744V1.859q0-.439.305-.744T1.413.81H18.05z" />
+
+                    </svg>
+                    <span class="share-title" aria-hidden="true">Share</span>
+                    <span class="visually-hidden">Share on Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="btn btn--small btn--share share-twitter">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-twitter"
+                      viewbox="0 0 20 20">
+                      <path fill="#444"
+                        d="M19.551 4.208q-.815 1.202-1.956 2.038 0 .082.02.255t.02.255q0 1.589-.469 3.179t-1.426 3.036-2.272 2.567-3.158 1.793-3.963.672q-3.301 0-6.031-1.773.571.041.937.041 2.751 0 4.911-1.671-1.284-.02-2.292-.784T2.456 11.85q.346.082.754.082.55 0 1.039-.163-1.365-.285-2.262-1.365T1.09 7.918v-.041q.774.408 1.773.448-.795-.53-1.263-1.396t-.469-1.864q0-1.019.509-1.997 1.487 1.854 3.596 2.924T9.81 7.184q-.143-.509-.143-.897 0-1.63 1.161-2.781t2.832-1.151q.815 0 1.569.326t1.284.917q1.345-.265 2.506-.958-.428 1.386-1.732 2.18 1.243-.163 2.262-.611z" />
+
+                    </svg>
+                    <span class="share-title" aria-hidden="true">Tweet</span>
+                    <span class="visually-hidden">Tweet on Twitter</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="btn btn--small btn--share share-pinterest">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pinterest"
+                      viewbox="0 0 20 20">
+                      <path fill="#444"
+                        d="M9.958.811q1.903 0 3.635.744t2.988 2 2 2.988.744 3.635q0 2.537-1.256 4.696t-3.415 3.415-4.696 1.256q-1.39 0-2.659-.366.707-1.147.951-2.025l.659-2.561q.244.463.903.817t1.39.354q1.464 0 2.622-.842t1.793-2.305.634-3.293q0-2.171-1.671-3.769t-4.257-1.598q-1.586 0-2.903.537T5.298 5.897 4.066 7.775t-.427 2.037q0 1.268.476 2.22t1.427 1.342q.171.073.293.012t.171-.232q.171-.61.195-.756.098-.268-.122-.512-.634-.707-.634-1.83 0-1.854 1.281-3.183t3.354-1.329q1.83 0 2.854 1t1.025 2.61q0 1.342-.366 2.476t-1.049 1.817-1.561.683q-.732 0-1.195-.537t-.293-1.269q.098-.342.256-.878t.268-.915.207-.817.098-.732q0-.61-.317-1t-.927-.39q-.756 0-1.269.695t-.512 1.744q0 .39.061.756t.134.537l.073.171q-1 4.342-1.22 5.098-.195.927-.146 2.171-2.513-1.122-4.062-3.44T.59 10.177q0-3.879 2.744-6.623T9.957.81z" />
+
+                    </svg>
+                    <span class="share-title" aria-hidden="true">Pin it</span>
+                    <span class="visually-hidden">Pin on Pinterest</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sources">
+              <h4>Notas al pie:</h4>
+              <ol class="sources__list">
+                <li>
+                  <a id="one-note" href="https://onlinelibrary.wiley.com/doi/10.1111/acel.13028" class="sources__link"
+                    target="_blank">"Reversal of epigenetic aging and immunosenescent trends in humans", obert T.
+                    Brooke, James P. Watson, Zinaida Good, Shreyas S. Vasanawala, 2019</a>
+                </li>
+                <li>
+                  <a id="two-note"
+                    href="https://www.bio-itworld.com/news/2021/01/13/reversing-the-aging-clock-with-epigenetic-reprogramming"
+                    class="sources__link" target="_blank">"Reversing The Aging Clock With Epigenetic Reprogramming",
+                    N.A. Damaschke, B. Yang, S. Bhusari, J.P. Svaren, D.F. Jarrard</a>
+                </li>
+              </ol>
+            </div>
+
+            <h2 class="com-head">
+              COMENTARIOS
+            </h2>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/54.webp">
+                <img class="com-ava" src="images/54.jpg" alt="img"></picture>
+              <p><b>Anais González, 54 años</b></p>
+              <p>Ya he pedido <span class="productName"></span>! Espero la entrega. Gracias por el artículo y el
+                descuento en el producto!
+                Espero
+                no tener que sufrir más dolor por las inyecciones!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/57.webp">
+                <img class="com-ava" src="images/57.jpg" alt="img"></picture>
+              <p><b>Constanza Rojas, 57 años</b></p>
+              <p>Hola, podría decirme cuánto tiempo tengo que esperar para los resultados de <span
+                  class="productName"></span>? Dudo que me
+                despierte joven a la mañana siguiente...</p>
+            </div>
+
+            <div class="com-item com-exp">
+              <picture>
+                <source type="image/webp" srcset="images/ava-exp.webp">
+                <img class="com-ava" src="images/ava-exp.jpg" alt="img"></picture>
+
+              <p><b>Respuesta de la experta
+                  Sara Olivares </b></p>
+              <p>¡Hola Constanza! La eficacia del producto depende de cada persona y del estado de su piel. Pero el
+                91%
+                de las mujeres que usaron <span class="productName"></span> y compartieron sus opiniones con nosotros
+                vieron resultados a las 2
+                semanas de uso. </p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/45.webp">
+                <img class="com-ava" src="images/45.jpg" alt="img"></picture>
+
+              <p><b>Dominica Diaz, 45 años</b></p>
+              <p>Hace poco vi las noticias sobre este descubrimiento. Pensé que sería posible comprarlo en 5 años.
+                Pero
+                <span class="productName"></span> ya está disponible! Voy a pedirlo!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/51.webp">
+                <img class="com-ava" src="images/51.jpg" alt="img"></picture>
+
+              <p><b>Matilda Sotto, 51 años</b></p>
+              <p>La cantidad de productos disponibles no es buena( No es suficiente para todos...</p>
+            </div>
+
+            <div class="com-item com-exp">
+              <picture>
+                <source type="image/webp" srcset="images/ava-exp.webp">
+                <img class="com-ava" src="images/ava-exp.jpg" alt="img"></picture>
+
+              <p><b>Respuesta de la experta
+                  Sara Olivares </b></p>
+              <p>Hola Matilda. Por desgracia, no hemos podido conseguir más para Chile. La mayor parte de la
+                producción
+                se vende en países europeos.</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/47.webp">
+                <img class="com-ava" src="images/47.jpg" alt="img"></picture>
+
+              <p><b>Nicole Araya, 47 años</b></p>
+              <p>He recibido mi paquete! Gracias!!!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/471.webp">
+                <img class="com-ava" src="images/471.jpg" alt="img"></picture>
+
+              <p><b>Natalia Vargas, 47 años</b></p>
+              <p>Hola! Pregunta para el experto! Puedo tomar más de 3 cápsulas al día? Quiero obtener resultados más
+                rápido.</p>
+            </div>
+
+            <div class="com-item com-exp">
+              <picture>
+                <source type="image/webp" srcset="images/ava-exp.webp">
+                <img class="com-ava" src="images/ava-exp.jpg" alt="img"></picture>
+
+              <p><b>Respuesta de la experta
+                  Sara Olivares</b></p>
+              <p>Hola, Natalia. Tome como se indica en las instrucciones. No hay que superar el número de cápsulas
+                permitido. Los principios activos necesitan tiempo para iniciar los procesos de regeneración. ¡Solo
+                tiene que esperar y podrá ver el resultado!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/61.webp">
+                <img class="com-ava" src="images/61.jpg" alt="img"></picture>
+
+              <p><b>Valentina Neruda, 61 años</b></p>
+              <p>Pedí <span class="productName"></span>, dijeron que la entrega sería en los próximos 3-4 días.</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/49.webp">
+                <img class="com-ava" src="images/49.jpg" alt="img"></picture>
+
+              <p><b>Emilia Rivera, 49 años</b></p>
+              <p>Las primeras impresiones de <span class="productName"></span> son estupendas! Ya en la segunda semana,
+                la piel se volvió
+                hidratada, sin descamación. Todavía no sé de las arrugas, seguiré tomándolo y luego compartiré los
+                resultados!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/541.webp">
+                <img class="com-ava" src="images/541.jpg" alt="img"></picture>
+
+              <p><b>Tiara Molina, 54 años</b></p>
+              <p>No entiendo cómo las cápsulas pueden competir con las inyecciones de belleza. Una inyección y ya
+                está,
+                sin arrugas. Y aquí hay que tomar sin parar.</p>
+            </div>
+
+            <div class="com-item com-exp">
+              <picture>
+                <source type="image/webp" srcset="images/ava-exp.webp">
+                <img class="com-ava" src="images/ava-exp.jpg" alt="img"></picture>
+
+              <p><b>Respuesta de la experta
+                  Sara Olivares</b></p>
+              <p>Buenos días, Tiara. La acción de <span class="productName"></span> está dirigida a la recuperación de
+                los tejidos y a la
+                regeneración celular desde el interior. Cuando se inyecta, solo se elimina la apariencia de la arruga,
+                por así decirlo, rellenando el pliegue con el ingrediente activo. Por supuesto, las inyecciones serán
+                más rápidas, pero también deprimen la función de las células y su capacidad de autorregeneración. Esto
+                significa que tendrá que realizar estos procedimientos cada vez con más frecuencia.<span
+                  class="productName"></span> tiene una
+                acción diferente. Se trata de la normalización de los procesos metabólicos y de otro tipo en la piel,
+                y
+                de la eliminación directa de las causas que provocan el envejecimiento de la piel.</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/491.webp">
+                <img class="com-ava" src="images/491.jpg" alt="img"></picture>
+
+              <p><b>Isidora Gallardo, 45 años</b></p>
+              <p>He recibido un paquete con <span class="productName"></span>! Fue muy rápido! Solo tardó unos días en
+                llegar. No le he dicho a
+                mi marido lo que es. Que se sorprenda de mi aparición más tarde!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/50.webp">
+                <img class="com-ava" src="images/50.jpg" alt="img"></picture>
+
+              <p><b>Arelia Parras, 50 años</b></p>
+              <p>Estoy encantada con <span class="productName"></span>! Mira cómo he cambiado, es un milagro! Ni
+                siquiera he terminado el curso
+                y
+                ya tengo grandes resultados!!!</p>
+
+              <picture>
+                <source type="image/webp" srcset="images/live2.webp">
+                <img class="live-foto" src="images/live2.jpg" alt="" loading="lazy">
+              </picture>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/55.webp">
+                <img class="com-ava" src="images/55.jpg" alt="img"></picture>
+
+              <p><b>Lizi Gustos, 55 años</b></p>
+              <p>Mi hija me regaló <span class="productName"></span>, lo trajo de Alemania. Había oído hablar de ello.
+                Pero me dio pena gastar
+                tanto dinero, allí costó unos 300 euros... El remedio es fantástico! Me alisó las arrugas, me quitó la
+                sequedad, incluso me levantó las comisuras de los ojos. Me siento como si tuviera 25 años otra vez!
+                Todos mis amigos y conocidos están sorprendidos y no pueden creer que no me haya operado y que solo
+                haya
+                tomado <span class="productName"></span>!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/571.webp">
+                <img class="com-ava" src="images/571.jpg" alt="img"></picture>
+
+              <p><b>Martina Donosso, 57 años</b></p>
+              <p>Por qué dice que hay 0 paquetes disponibles? No tuve tiempo de hacer un pedido? El programa ya no es
+                válido?</p>
+            </div>
+
+            <div class="com-item com-exp">
+              <picture>
+                <source type="image/webp" srcset="images/ava-exp.webp">
+                <img class="com-ava" src="images/ava-exp.jpg" alt="img"></picture>
+
+              <p><b>Respuesta de la experta
+                  Sara Olivares </b></p>
+              <p>Hola Martina. Por desgracia, el lote de <span class="productName"></span> se ha agotado. Ahora estamos
+                planeando comprar otros
+                270 paquetes para Chile. Por desgracia, esto será lo último que el fabricante pueda darnos. Esté
+                atenta
+                a más información en el sitio web. </p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/59.webp">
+                <img class="com-ava" src="images/59.jpg" alt="img"></picture>
+
+              <p><b>Diodora Venegas, 59 años</b></p>
+              <p>Lo logré! Acaban de aparecer 270 paquetes y ya dice que quedan 93! Han agotado en segundos!</p>
+            </div>
+
+            <div class="com-item">
+              <picture>
+                <source type="image/webp" srcset="images/60.webp">
+                <img class="com-ava" src="images/60.jpg" alt="img"></picture>
+
+              <p><b>Gabriela Ponce, 60 años</b></p>
+              <p>Estoy encantada con <span class="productName"></span>! Me hizo retroceder unos 30 años! Incluso alisó
+                las arrugas profundas!!
+                No
+                creía que fuera posible! Nadie adivinará nunca la edad que tengo ahora!
+              </p>
+
+              <picture>
+                <source type="image/webp" srcset="images/live1.webp">
+                <img class="live-foto" src="images/live1.jpg" alt="" loading="lazy">
+              </picture>
+
+            </div>
+
+            <div class="com-item ev-answer ev-answer--hidden">
+              <img class="ev-answer__avatar com-ava" src="images/user_no_foto.jpg" alt="img">
+              <p><b><span class="ev-answer__name">Gabriela Ponce</span>
+                  <!-- <span class="ev-answer__age">60</span> -->
+                </b></p>
+              <p class="ev-answer__comment">Estoy encantada con <span class="productName"></span>! Me hizo retroceder
+                unos 30 años! Incluso
+                alisó las arrugas profundas!!
+                No
+                creía que fuera posible! Nadie adivinará nunca la edad que tengo ahora!
+              </p>
+              <img class="ev-answer__img live-foto" src="images/user_no_foto.jpg" alt="img">
+            </div>
+          </div>
+          <button class="show-comm">
+            Deje su reseña
+          </button>
+          <!--Comment form-->
+          <form action="/" class="ev-feedback">
+            <h2 class="ev-feedback__title">Deje su reseña</h2>
+            <div class="ev-feedback__section ev-feedback__section--data">
+              <!--Name input-->
+              <label class="ev-feedback__profile">
+                <svg class="ev-feedback__svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  viewbox="0 0 170.1 170.1" xml:space="preserve">
+                  <path class="st0"
+                    d="M85,68.5c18.9,0,34.2-15.3,34.2-34.2C119.3,15.3,103.9,0,85,0C66.1,0,50.8,15.3,50.8,34.2l0,0C50.8,53.1,66.1,68.4,85,68.5z M85,14.2c11,0,20,8.9,20,20c0,11-8.9,20-20,20c-11,0-20-8.9-20-20l0,0C65.1,23.2,74,14.3,85,14.2L85,14.2z" />
+
+                  <path class="st0"
+                    d="M36.9,136.1c0-26.5,21.6-48.1,48.1-48.1c26.5,0,48.1,21.6,48.1,48.1h14.2c0-34.4-27.9-62.4-62.4-62.4c-16.5,0-32.4,6.6-44.1,18.3c-11.7,11.7-18.3,27.5-18.3,44.1H36.9z" />
+
+                </svg>
+                <input class="ev-feedback__field ev-feedback__field--name" name="name" type="text" placeholder="Nombre"
+                  required>
+                <span class="ev-input-error ev-input-error--hidden">El campo no debe estar vacío</span>
+              </label>
+              <!--End name input-->
+              <!--Age input-->
+              <label class="ev-feedback__profile">
+                <svg class="ev-feedback__svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  viewbox="10 -5 160.1 160.1" xml:space="preserve">
+                  <g>
+                    <path class="st0"
+                      d="M134.7,14.3h-18V12c0-2.7-2.2-5-5-5c-2.9,0-4.9,2.3-4.9,5v2.3H63.3V12c0-2.7-2.2-5-5-5c-2.9,0-5,2.2-5,5v2.3H35.4c-8.2,0-15,6.7-15,15v84.9c0,8.2,6.7,15,15,15h99.5c8.2,0,15-6.7,15-15V29.3C149.7,21.1,143,14.3,134.7,14.3z M35.4,24.4h18v2.3c0,2.7,2.2,5,5,5c2.9,0,5-2.2,5-5v-2.3h43.5v2.3c0,2.7,2.2,5,5,5c2.9,0,5-2.2,5-5v-2.3h18c2.7,0,5,2.2,5,5v10.1H30.3V29.4C30.3,26.5,32.5,24.4,35.4,24.4z M134.7,119.1H35.4c-2.7,0-5-2.2-5-5V49.3h109.4v64.9C139.7,116.9,137.6,119.1,134.7,119.1z" />
+
+                    <path class="st0"
+                      d="M58.6,59.3H45.6c-2.7,0-5,2.2-5,5c0,2.7,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C63.7,61.5,61.5,59.3,58.6,59.3z" />
+
+                    <path class="st0"
+                      d="M91.6,59.3H78.4c-2.7,0-5,2.2-5,5c0,2.7,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C96.6,61.5,94.4,59.3,91.6,59.3z" />
+
+                    <path class="st0"
+                      d="M124.5,59.3h-13.2c-2.7,0-5,2.2-5,5c0,2.7,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C129.5,61.5,127.4,59.3,124.5,59.3z" />
+
+                    <path class="st0"
+                      d="M58.6,79.2H45.6c-2.7,0-5,2.2-5,5c0,2.7,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C63.7,81.5,61.5,79.2,58.6,79.2z" />
+
+                    <path class="st0"
+                      d="M91.6,79.2H78.4c-2.7,0-5,2.2-5,5c0,2.7,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C96.6,81.5,94.4,79.2,91.6,79.2z" />
+
+                    <path class="st0"
+                      d="M124.5,79.2h-13.2c-2.7,0-5,2.2-5,5c0,2.7,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C129.5,81.5,127.4,79.2,124.5,79.2z" />
+
+                    <path class="st0"
+                      d="M58.6,99.2H45.6c-2.7,0-5,2.2-5,5c0,2.9,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C63.8,101.4,61.5,99.2,58.6,99.2z" />
+
+                    <path class="st0"
+                      d="M91.6,99.2H78.4c-2.7,0-5,2.2-5,5c0,2.9,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C96.6,101.4,94.4,99.2,91.6,99.2z" />
+
+                    <path class="st0"
+                      d="M124.5,99.2h-13.2c-2.7,0-5,2.2-5,5c0,2.9,2.2,5,5,5h13.2c2.7,0,5-2.2,5-5C129.5,101.4,127.4,99.2,124.5,99.2z" />
+
+                  </g>
+                </svg>
+                <input class="ev-feedback__field ev-feedback__field--age" name="age" type="text" placeholder="Edad"
+                  required>
+                <span class="ev-input-error ev-input-error--hidden">Indique una edad de 18 a 120 años</span>
+              </label>
+              <!--End age input-->
+
+            </div>
+            <label class="ev-feedback__comment">
+              <svg class="ev-feedback__svg ev-feedback__svg--comment" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                viewbox="20 0 130.1 130.1" xml:space="preserve">
+                <g transform="translate(0,-952.36218)">
+                  <path class="st0"
+                    d="M132.7,967.3c6.7,0,12.2,5.5,12.2,12.2v54.4c0,6.7-5.5,12.2-12.2,12.2h-7.7l2.3,22.7c0.2,2.2-1.4,4.2-3.6,4.5c-1.2,0.1-2.4-0.3-3.3-1.2l-26.1-26H83.7v2.8c0,5.2-4.3,9.4-9.5,9.4H54.3l-14,13.8c-1.6,1.6-4.2,1.6-5.8,0c-0.9-0.9-1.3-2.3-1.1-3.6l1.8-10.2h-0.5c-5.2,0-9.5-4.3-9.5-9.4v-26c0-5.2,4.3-9.4,9.5-9.4h6.8v-34c0-6.7,5.5-12.2,12.2-12.2H132.7z M132.7,975.5H53.7c-2.3,0-4.1,1.8-4.1,4.1v54.4c0,2.3,1.7,4.1,4.1,4.1h42.2c1.1,0,2.1,0.4,2.9,1.2l19.2,19.1l-1.6-15.8c-0.2-2.2,1.4-4.2,3.7-4.4c0.1,0,0.2,0,0.4,0h12.2c2.3,0,4.1-1.8,4.1-4.1v-54.4C136.7,977.2,135,975.5,132.7,975.5z M120.4,1000c3.8,0,6.8,3,6.8,6.8s-3,6.8-6.8,6.8c-3.8,0-6.8-3-6.8-6.8S116.7,1000,120.4,1000z M93.2,1000c3.8,0,6.8,3,6.8,6.8s-3,6.8-6.8,6.8c-3.8,0-6.8-3-6.8-6.8S89.4,1000,93.2,1000z M66,1000c3.8,0,6.8,3,6.8,6.8s-3,6.8-6.8,6.8c-3.8,0-6.8-3-6.8-6.8S62.2,1000,66,1000z M41.5,1021.8h-6.8c-0.8,0-1.3,0.5-1.3,1.3v26c0,0.7,0.5,1.3,1.3,1.3h5.4c2.3,0,4.1,1.8,4.1,4.1c0,0.2,0,0.5-0.1,0.7l-0.4,2.4l6.1-6c0.8-0.7,1.8-1.2,2.8-1.1h21.6c0.8,0,1.3-0.5,1.3-1.3v-2.8H53.7c-6.7,0-12.2-5.5-12.2-12.2V1021.8L41.5,1021.8z" />
+
+                </g>
+              </svg>
+              <textarea class="ev-feedback__field ev-feedback__field--comment" name="comment" placeholder="Mensaje"
+                required></textarea>
+              <span class="ev-input-error ev-input-error--comment ev-input-error--hidden">El comentario debe tener
+                al
+                menos cinco caracteres</span>
+            </label>
+            <div class="ev-feedback__section ev-feedback__section--files">
+              <!--Avatar input file-->
+              <label class="ev-feedback__file">
+                <svg class="ev-feedback__svg ev-feedback__svg--file" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  viewbox="15 5 150.1 150.1" xml:space="preserve">
+                  <g>
+                    <path class="st0"
+                      d="M90,45.4c12.5,0,22.7,10.2,22.7,22.7S102.6,90.7,90,90.7S67.4,80.6,67.4,68S77.5,45.4,90,45.4z" />
+
+                    <path class="st0"
+                      d="M112.7,96.4H67.4c-8.4,0-15.7,4.7-19.6,11.5c9.2,13.6,24.7,22.5,42.3,22.5c17.6,0,33.1-8.9,42.3-22.5C128.4,101,121.2,96.4,112.7,96.4z" />
+
+                    <path class="st0"
+                      d="M90,11.3c-37.6,0-68,30.5-68,68c0,37.6,30.5,68,68,68c37.6,0,68-30.5,68-68C158.1,41.8,127.6,11.3,90,11.3z M90,136.1c-31.3,0-56.7-25.4-56.7-56.7c0-31.3,25.4-56.7,56.7-56.7s56.7,25.4,56.7,56.7C146.7,110.6,121.3,136.1,90,136.1z" />
+
+                  </g>
+                </svg>
+                <span class="ev-feedback__label ev-feedback__label--avatar">Subir un avatar<span
+                    class="ev-feedback__file-info"></span></span>
+                <input class="ev-feedback__chooser ev-feedback__chooser--avatar" name="avatar" type="file">
+              </label>
+              <!--End avatar input file-->
+              <!--Image input file-->
+              <label class="ev-feedback__file">
+                <svg class="ev-feedback__svg ev-feedback__svg--file" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  viewbox="0 -10 170.1 170.1" xml:space="preserve">
+                  <g>
+                    <g>
+                      <path class="st0" d="M162.8,136.1H7.3V0h155.6V136.1z M16,127.3h138.1V8.7H16V127.3z" />
+                      <polygon class="st0"
+                        points="13.8,133.8 7.6,127.7 76.2,59.1 86.9,69.8 155.4,1.3 161.5,7.4 86.9,82.2 76.2,71.4 		" />
+
+                      <circle class="st0" cx="44.8" cy="38" r="18.5" />
+                      <polygon class="st0" points="12.5,131.1 158.5,130.2 157.6,7 85.9,73.4 75.4,65.1 		" />
+                    </g>
+                  </g>
+                </svg>
+                <span class="ev-feedback__label ev-feedback__label--image">Subir una foto<span
+                    class="ev-feedback__file-info"></span></span>
+                <input class="ev-feedback__chooser ev-feedback__chooser--image" name="image" type="file">
+              </label>
+              <!--End image input file-->
+            </div>
+            <button class="ev-feedback__btn" name="sendBtn" type="button">Enviar</button>
+          </form>
+          <!--End comment form-->
+          <div class="center">
+            <picture>
+              <img class="prod--bottom" src="prod.png" alt="img">
+            </picture>
+            <a class="order__button order__button--side" href="">
+              Ordenar <span class="productName"></span>
+            </a>
+          </div>
+          
+        </div>
+      </article>
+    </main>
+
+    <div id="shopify-section-footer" class="shopify-section">
+      <footer class="site-footer ">
+        <span class="date-0" data-format="year">
+        </span> ©
+
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="js/main.js"></script>
+  <script>
+    const offer_params = {
+        priceMain : '34900',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '$',
+        productName : 'Biorecin',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+
+
+<script>
+var usr = '{t2}';
+var sabss = '{clickid}';
+initFeatures({
+    priceMain : offer_params.priceMain,
+    currencyMain : offer_params.currencyMain,
+    lang : 'cl', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+    product : offer_params.productName, // название продукта
+    genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+    form : {
+        isNeeded : 1, // 1-включить форму, 0-выключить
+        img: 'prod.png', // путь до картинки продукта
+        price: true, // плашка с ценой
+        priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+        showSelect: false, // показывать или скрывать поле select
+        untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+    },
+
+
+
+
+    autoComments: {
+        isNeeded: 0, // 1-включить автокомы, 0-выключить
+        bgColor: '#d7f2d8' // цвет фона блока комчиков
+    },
+
+
+
+
+    popups: {
+        isNeeded: 0, // 1-включить попы, 0-выключить
+        bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+        textColor: '#fff', // цвет основного текста сообщения
+        emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+        blackIcons: false // черные или белые иконки, значения true или false
+    },
+
+
+
+
+    wheel: {
+        isNeeded: 1, // 1-включить колесо, 0-выключить
+        customWheel: false // ссылка на свое колесо, либо false
+    }
+});
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+
+.block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0px 5px;
+  gap: 10px;
+}
+
+.block__text {
+  width: 50%;
+}
+
+#form {
+  max-width: 550px;
+  width: 100%;
+  font-size: 17px;
+  padding: 20px 16px 0;
+  margin: 0 auto;
+  border-radius: 7px;
+  background-image: linear-gradient(90deg, #3580ed 50%, transparent 50%), linear-gradient(90deg, #3580ed 50%, transparent 50%), linear-gradient(0, #3580ed 50%, transparent 50%), linear-gradient(0, #3580ed 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 10px 2px, 10px 2px, 2px 10px, 2px 10px;
+  animation: marching-ants 400ms infinite linear;
+}
+
+#form .form__top {
+  margin: 0 0 -88px 0;
+}
+
+#form .form__image {
+  margin: 15px auto;
+  max-width: 190px;
+  position: relative;
+}
+
+#form .form__image img {
+  width: 100%
+}
+
+#form .form__image:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 106px;
+  background: url(../img/bg-sale2.png);
+  width: 124px;
+  height: 72px;
+  background-size: 158px;
+  box-shadow: 15px 12px 14px 0 #00000054;
+  background-position: -8px -8px;
+  display: block;
+}
+
+#form p {
+  font-size: 18px;
+  text-align: center;
+  line-height: 20px;
+}
+
+@keyframes marching-ants {
+  0% {
+    background-position: 0 0, 10px 100%, 0 10px, 100% 0;
+  }
+  100% {
+    background-position: 10px 0, 0 100%, 0 0, 100% 10px;
+  }
+}
+
+.attention {
+  background-color: #a7cbff;
+  padding: 15px;
+  border: 2px dashed #3580ed;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  max-width: 550px;
+  margin: 0 auto 15px;
+}
+
+.red {
+  color: red;
+}
+
+#form .form__wrap {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 89px 0px 16px;
+}
+#form .form__wrap form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#form .form__wrap label {
+  display: block;
+  margin-top: 13px;
+}
+
+#form .termin {
+  margin-bottom: 10px;
+}
+
+#form .hours {
+  display: flex;
+  color: #80808069;
+  max-width: 180px;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 15px;
+  padding-left: 32px;
+}
+
+#form .hours__text {
+  text-align: center;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+#form .price {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 36px;
+  color: #000;
+}
+
+#form .price .price_new {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#form .price .price_old {
+  font-size: 20px;
+  text-decoration: line-through;
+}
+
+#form input {
+  display: block;
+  border: 1px solid #3578e563;
+  height: 31px;
+  padding-left: 10px;
+  width: 100%;
+  max-width: 238px;
+  margin: 0 auto;
+}
+
+#form .inp_name {
+  margin: 13px auto 0;
+}
+
+#form .inp_phone {
+  margin: 13px auto 0;
+}
+
+#form .btnn {
+  height: 59px;
+  background: #3580ed;
+  margin: 10px 0;
+  border: 1px solid #3580ed;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+#form .form__step {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+#form .form__step img {
+  width: 50px;
+  height: 50px;
+}
+
+#form .form__step:before {
+  left: 21%;
+  top: 25px;
+  width: 16%;
+  height: 2px;
+  position: absolute;
+  background: url(../img/dash.svg) no-repeat center center/cover;
+  content: '';
+}
+
+#form .form__step:after {
+  left: 62%;
+  top: 25px;
+  width: 16%;
+  height: 2px;
+  position: absolute;
+  background: url(../img/dash.svg) no-repeat center center/cover;
+  content: '';
+}
+
+#form .form__bottom {
+  margin-bottom: 2px;
+  font-size: 10px;
+  line-height: 14px;
+  color: #707070;
+}
+
+@media screen and (max-width: 767px) {
+  .block {
+      flex-direction: column;
+  }
+  .block__text {
+      width: 100%;
+  }
+  #form {
+      width: 100%;
+      margin: 0 auto;
+  }
+  #form p {
+      font-size: 16px;
+      line-height: 18px;
+  }
+  .attention {
+      width: 100%;
+      margin: 0 auto 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #form .form__image:after {
+      background-repeat: no-repeat;
+      width: 92px;
+      height: 54px;
+      background-size: 120px;
+  }
+  #form .hours {
+    gap: 3px;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #form .form__step:before {
+    left: 25%;
+    width: 12%;
+  }
+  #form .form__step:after {
+    left: 63%;
+    width: 12%;
+  }
+}

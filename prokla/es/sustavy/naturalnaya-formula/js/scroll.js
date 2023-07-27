@@ -1,0 +1,1 @@
+$(document).ready(function(){$('a[href="#"], .block-1__social').click(function(){$("html, body").animate({scrollTop:$("#form1").offset().top-300},800);return false})});

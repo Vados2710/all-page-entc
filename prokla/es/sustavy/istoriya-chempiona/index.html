@@ -1,0 +1,563 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+    
+<meta content="initial-scale=1, maximum-scale=1, width=device-width" name="viewport">
+<title>TVE Noticias</title>
+<link href="i_files/normalize.css" rel="stylesheet">
+<link href="i_files/default.css" rel="stylesheet">
+<link href="i_files/style.css" rel="stylesheet">
+<link href="i_files/css" rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+<script type="text/javascript" src="i_files/dtime.js"></script>   
+</head>
+<body>
+<header class="header">
+<div class="header_top">
+<div class="center_wrapper clearfix">
+<div class="header_top-left_block clearfix">
+<a class="header_top-logo" href=""></a>
+<a class="header_top-login" href="">Acceder</a>
+</div>
+<div class="header_top-right_block">
+<div class="search-wrapper">
+<form action="">
+<input class="search-input" placeholder="Buscar" type="text">
+<button class="search-button" type="submit"></button>
+</form>
+</div>
+</div>
+<button class="header_top_menu-mobile js-htmenu-mobile" type="button">Menu</button>
+<nav class="header_top_menu">
+<ul class="header_top_menu-list js-htmenu-list clearfix">
+<li class="header_top_menu-list_item">
+<a class="header_top_menu-list_link" href="">Noticias</a>
+</li>
+<li class="header_top_menu-list_item">
+<a class="header_top_menu-list_link" href="">Deporte</a>
+</li>
+<li class="header_top_menu-list_item">
+<a class="header_top_menu-list_link" href="">El tiempo</a>
+</li>
+<li class="header_top_menu-list_item">
+<a class="header_top_menu-list_link" href="">Tienda</a>
+</li>
+<li class="header_top_menu-list_item">
+<a class="header_top_menu-list_link" href="">Tierra</a>
+</li>
+<li class="header_top_menu-list_item">
+<a class="header_top_menu-list_link" href="">Viajar</a>
+</li>
+<li class="header_top_menu-list_item">
+<a class="header_top_menu-list_link header_top_menu-list_link--last_link" href="">Más</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="header_middle">
+<div class="center_wrapper clearfix">
+<a class="category_name" href=""><span class="category_name-invert">ÚLTIMAS</span> NOTICIAS</a>
+<button class="header_bottom_menu-mobile js-hbmenu-mobile" type="button">Sections</button>
+</div>
+</div>
+<div class="header_bottom">
+<div class="center_wrapper">
+<nav class="header_bottom_menu">
+<ul class="header_bottom_menu-list js-hbmenu-list clearfix">
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link header_bottom_menu-list_link--active" href="">Home</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Video</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Mundo</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">España</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Negocios</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Tecnología</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Ciencia</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Revista</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Ocio y Arte</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">Salud</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link" href="">TV Noticias mundiales</a>
+</li>
+<li class="header_bottom_menu-list_item">
+<a class="header_bottom_menu-list_link header_bottom_menu-list_link--last_link" href="">Más</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+<div class="main_wrapper center_wrapper clearfix">
+<aside class="sidebar">
+<div class="sidebar_widget">
+<p class="sidebar_widget-heading">Historias relevantes</p>
+<ul class="top_stories-list">
+<li class="top_stories-list_item">
+<a class="top_stories-list_link" href="">
+<p>¿Cómo funciona <span class="productName"></span>?</p>
+<p class="date"><script>dtime_nums(-3,true)</script></p>
+</a>
+</li>
+<li class="top_stories-list_item">
+<a class="top_stories-list_link" href="">
+<p>¿Por qué me duelen las articulaciones?</p>
+<p class="date"><script>dtime_nums(-5,true)</script></p>
+</a>
+</li>
+</ul>
+</div>
+<div class="sidebar_widget">
+<p class="sidebar_widget-heading">Características y análisis</p>
+<a href=""><img alt="" class="sidebar-img" src="i_files/sidebar-img-01.jpg"></a>
+</div>
+<div class="sidebar_widget">
+<p class="sidebar_widget-heading">Más populares</p>
+<ul class="most_popular-list">
+<li class="most_popular-list_item">
+<a class="most_popular-list_link" href="">
+              ¿Qué productos contienen más calcio?
+              <span class="most_popular-list_number">1</span>
+</a>
+</li>
+<li class="most_popular-list_item">
+<a class="most_popular-list_link" href="">
+              Recuperación tras traumatismos
+              <span class="most_popular-list_number">2</span>
+</a>
+</li>
+<li class="most_popular-list_item">
+<a class="most_popular-list_link" href="">
+              Tratamiento de las articulaciones
+              <span class="most_popular-list_number">3</span>
+</a>
+</li>
+<li class="most_popular-list_item">
+<a class="most_popular-list_link" href="">
+              ¿Cómo permanecer joven?
+              <span class="most_popular-list_number">4</span>
+</a>
+</li>
+<li class="most_popular-list_item">
+<a class="most_popular-list_link" href="">
+              Ser un campeón a cualquier edad
+              <span class="most_popular-list_number">5</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+<div class="content_wrapper">
+<div class="content">
+<div class="post">
+<p class="heading">
+            Historias de campeones: articulaciones sanas a cualquier edad
+          </p>
+<div class="date_panel clearfix">
+<div class="date_panel-left_block">
+<div class="date"><script>dtime_nums(-2,true)</script></div>
+</div>
+<div class="date_panel-right_block">
+<a class="btn share_btn" href="">
+<svg aria-hidden="true" class="share_btn-icon" viewBox="0 0 29.266 32"><path d="M5.473 22.153c1.586 0 3.01-.684 4.012-1.762l9 4.845c-.102.412-.16.85-.16 1.297 0 3.02 2.452 5.468 5.472 5.468 3.017 0 5.47-2.446 5.47-5.468 0-3.023-2.453-5.47-5.47-5.47-1.587 0-3.02.68-4.015 1.757l-9.457-5.175-.074-2.792 9.74-5.456c.99.953 2.327 1.543 3.807 1.543 3.017 0 5.47-2.45 5.47-5.474 0-3.022-2.453-5.467-5.47-5.467-3.02 0-5.473 2.444-5.473 5.466 0 .554.08 1.09.243 1.597L9.27 12.75c-.988-.95-2.326-1.537-3.797-1.537C2.447 11.213 0 13.657 0 16.68c0 3.03 2.447 5.473 5.473 5.473"></path></svg>
+<span class="share_btn-text">Compartir</span>
+</a>
+</div>
+</div>
+<p>
+            Hoy nos reunimos con la campeona de atletismo María Vasco, de 76 años. Cada año lleva ventaja sobre las atletas jóvenes y todavía gana competiciones internacionales, al mismo tiempo que se mantiene fuerte y sana. María sabe, mejor que nadie, que puedes practicar deporte profesionalmente a cualquier edad.
+          </p>
+<img alt="" class="content_img" src="i_files/content-img-01.jpg">
+<div class="question-answer">
+<p class="question">
+              María, por favor, ¿nos podrías contar cómo entraste en el mundo del deporte profesional?
+            </p>
+<p class="answer">
+              Sabes, soñaba con ser una campeona desde que era niña. El estereotipo era que debes empezar a entrenarte desde muy pequeña, para estirar y calentar bien. Este sueño permaneció en mí muchos años. Y tan sólo cuando fui más adulta, decidí finalmente intentarlo.
+            </p>
+</div>
+<div class="question-answer">
+<p class="question">
+              ¿Y cómo lo lograste?
+            </p>
+<p class="answer">
+              Bueno, siempre había controlado lo que comía y bebía. Nunca he fumado ni consumido alcohol. Solía caminar mucho. A pesar de ello, cuando tenía unos 66 años empecé a tener problemas de articulaciones. Sin embargo, decidí seguirme preparando para competiciones. Mi marido me apoyó y me ayudó a estar preparada para grandes deportes, no solamente algunas maratones para aficionados.
+            </p>
+<img alt="" class="content_img" src="i_files/content-img-02.jpg">
+<p>
+              Cinco años después, decidí participar en competiciones y gané mis primeras medallas. Y me gustó mucho. A pesar del hecho de que podía saltar y correr como una mujer joven, mi cuerpo me seguía diciendo “María, que te estás haciendo mayor”.
+            </p>
+<p>
+              Mis rodillas empezaron a agrietarse y crujir cuando movía las piernas y hacía los ejercicios. No podía subir las escaleras sin pararme a descansar un poco.
+            </p>
+</div>
+<div class="question-answer">
+<p class="question">
+              Pero no dejaste el deporte y seguiste ganando, ¿verdad?
+            </p>
+<p class="answer">
+              No, no lo dejé. Sabes que el deporte implica traumas. Un verdadero ganador hace lo que sea, superando el dolor y acostumbrándose a él. Es la otra cara de la moneda de la victoria.
+            </p>
+<p>
+              Constantemente estaba intentando encontrar algo que pudiera ayudarme. Por supuesto, intenté tomar más calcio y vitaminas, pero no era suficiente para aliviar el dolor. Creo que sabes lo dañinos que son todos esos analgésicos para el estómago. Empecé a utilizar <span class="productName"></span>, pidiéndolo en la <b><a href="">tienda oficial</a></b>.
+            </p>
+</div>
+<img alt="" class="content_img" src="i_files/content-img-03.jpg">
+<div class="question-answer">
+<p class="question">
+              ¿Qué es? ¿Un medicamento potente?
+            </p>
+<p class="answer">
+              No, no lo es. Intento no dañarme a mí misma. Es una crema completamente natural. Antes de empezar a utilizarla, examiné cuidadosamente su contenido. Contiene alcanfor, castaño, eucalipto, menta y aceite de abeto. Conocemos todos estos componentes desde que éramos unos niños. ¡Pero no te creerás lo efectivos que son cuando los mezclas! Eliminan el dolor agudo, la inflamación y la hinchazón. Incluso ayudan a recuperar las articulaciones dañadas.
+            </p>
+</div>
+<div class="question-answer">
+<p class="question">
+              Es difícil de creer que un medicamento a base de vegetales sea capaz de proporcionar tal efecto.
+            </p>
+<p class="answer">
+              Bueno, yo me lo creí al instante. Lo único que realmente necesita nuestro cuerpo ya está presente en la naturaleza, ¡sólo tenemos que usarlo!
+            </p>
+</div>
+<div class="question-answer">
+<p class="question">
+              Por cierto, ¿cómo lo utilizas?
+            </p>
+<p class="answer">
+              Me aplico la crema dos veces al día. Se absorbe rápidamente y no se pega en la ropa. Mantengo mi cuerpo seco durante aproximadamente una hora tras su uso.
+            </p>
+</div>
+<div class="question-answer">
+<p class="question">
+              ¿Tienes otros secretos acerca de cómo mantener tu cuerpo joven?
+            </p>
+<p class="answer">
+              Intenta moverte más. No importa lo que hagas, deporte profesional o ejercicio desde casa. Sigue sonriendo, come alimentos sanos ¡y utiliza <b><a href=""><span class="productName"></span></a></b> cuando tengas dolor en las articulaciones!
+            </p>
+
+    <div class="features-wrapper"></div>
+</div>
+</div>
+<div class="share_block">
+<p class="share_block-heading">Compartir esta historia</p>
+<ul class="share_block-list">
+<li class="share_block-list_item">
+<a class="share_block-list_link share_block-list_link--email" href=""></a>
+</li>
+<li class="share_block-list_item">
+<a class="share_block-list_link share_block-list_link--facebook" href=""></a>
+</li>
+<li class="share_block-list_item">
+<a class="share_block-list_link share_block-list_link--twitter" href=""></a>
+</li>
+<li class="share_block-list_item">
+<a class="share_block-list_link share_block-list_link--pinterest" href=""></a>
+</li>
+<li class="share_block-list_item">
+<a class="share_block-list_link share_block-list_link--linkedin" href=""></a>
+</li>
+</ul>
+</div>
+<div class="promo_widget clearfix">
+<div class="promo_block">
+<a class="promo_block-category" href="">TVE</a>
+<a href="">
+<div class="promo_block-image_wrapper">
+<img alt="" class="promo_block-image" src="i_files/promo-image-01.jpg">
+</div>
+<p class="promo_block-title">
+                ¿Por qué tantos deportistas olímpicos están cubiertos por círculos rojos?
+              </p>
+</a>
+</div>
+<div class="promo_block">
+<a class="promo_block-category" href="">TVE Cultura</a>
+<a href="">
+<div class="promo_block-image_wrapper">
+<img alt="" class="promo_block-image" src="i_files/promo-image-02.jpg">
+</div>
+<p class="promo_block-title">
+                Reseña de cine: ¿realmente es tan mala Escuadrón Suicida?
+              </p>
+</a>
+</div>
+<div class="promo_block">
+<a class="promo_block-category" href="">TVE Noticias</a>
+<a href="">
+<div class="promo_block-image_wrapper">
+<img alt="" class="promo_block-image" src="i_files/promo-image-03.jpg">
+</div>
+<p class="promo_block-title">
+                El aislamiento de los problemas globales no es posible, afirma Julia Gillard
+              </p>
+</a>
+</div>
+<div class="promo_block">
+<a class="promo_block-category" href="">TVE Cultura</a>
+<a href="">
+<div class="promo_block-image_wrapper">
+<img alt="" class="promo_block-image" src="i_files/promo-image-04.jpg">
+</div>
+<p class="promo_block-title">
+                Significados ocultos de El Jardín de las Delicias
+              </p>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer">
+<div class="footer_top">
+<div class="center_wrapper">
+<p class="footer_top-heading">TVE Servicios Informativos</p>
+<nav class="footer_top_menu">
+<ul class="footer_top_menu-list clearfix">
+<li class="footer_top_menu-list_item">
+<a class="footer_top_menu-list_link footer_top_menu-list_link--mobile" href="">En tu móvil</a>
+</li>
+<li class="footer_top_menu-list_item">
+<a class="footer_top_menu-list_link footer_top_menu-list_link--pc" href="">En tu TV cable</a>
+</li>
+<li class="footer_top_menu-list_item">
+<a class="footer_top_menu-list_link footer_top_menu-list_link--news" href="">Recibir alertas de noticias</a>
+</li>
+<li class="footer_top_menu-list_item">
+<a class="footer_top_menu-list_link footer_top_menu-list_link--letter" href="">Contactar con TVE Noticias</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="footer_bottom">
+<div class="center_wrapper">
+<p class="footer_bottom-heading">Explorar TVE</p>
+<nav class="footer_bottom_menu">
+<ul class="footer_bottom_menu-list clearfix">
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Noticias</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Deporte</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">El Tiempo</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Tienda</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Tierra</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Viajar</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Capital</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Cultura</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Automóviles</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Futuro</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">TV</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Radio</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">TVE 2</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">TVE2</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Alimentación</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">iWonder</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Pequeños bocados</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Música</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Arte</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Hazlo digital</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Catador</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Naturaleza</a>
+</li>
+<li class="footer_bottom_menu-list_item">
+<a class="footer_bottom_menu-list_link" href="">Local</a>
+</li>
+</ul>
+</nav>
+<p class="footer_bottom-links">
+<a class="footer_bottom-links_link" href="">Términos de uso</a>
+<a class="footer_bottom-links_link" href="">Sobre TVE</a>
+<a class="footer_bottom-links_link" href="">Política de privacidad</a>
+<a class="footer_bottom-links_link" href="">Cookies</a>
+<a class="footer_bottom-links_link" href="">Ayuda Accesibilidad</a>
+<a class="footer_bottom-links_link" href="">Orientación para padres</a>
+<a class="footer_bottom-links_link" href="">Contactar con TVE</a>
+<a class="footer_bottom-links_link" href="">Publicidad en TVE</a>
+<a class="footer_bottom-links_link" href="">Gestión de los anuncios</a>
+</p>
+</div>
+</div>
+</footer>
+<div class="breaking_popup js-breaking_popup">
+<div class="breaking_popup-header">
+<div class="center_wrapper breaking_popup-inner_wrapper">
+<p class="breaking_popup-header_text">ÚLTIMAS NOTICIAS</p>
+<button class="breaking_popup-close js-breaking_popup-close"></button>
+</div>
+</div>
+<div class="center_wrapper">
+<p class="breaking_popup-text">
+<a class="breaking_popup-link" href="">Pedir ahora</a>
+</p>
+</div>
+</div>
+
+<style>
+    .price_main{
+        line-height: 1;
+    }
+</style>
+
+<script>
+    const offer_params = {
+        priceMain: '49',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName: 'Hondrostrong',
+    };
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+    if (offer_params.customPriceOld) {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    } else {
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+
+<script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain: offer_params.priceMain,
+        currencyMain: offer_params.currencyMain,
+        lang: 'es', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product: offer_params.productName, // название продукта
+        genderTargetting: 'all', // пол целевой аудитории - all, male, female
+        form: {
+            isNeeded: 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body></html>

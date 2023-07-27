@@ -1,0 +1,1 @@
+function showPopup(){document.querySelector(".popup").classList.add("popup-active")}window.addEventListener("load",(()=>{setTimeout((()=>{showPopup()}),12e3)}));

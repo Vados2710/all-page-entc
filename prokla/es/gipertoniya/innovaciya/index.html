@@ -1,0 +1,435 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Health Today</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params = (new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value, key) {
+              block = block + key + '=' + value + '&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+  <style>a,article,b,body,div,footer,h1,h2,h3,header,html,img,li,nav,p,section,span,ul{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,footer,header,nav,section{display:block}body{line-height:1}ul{list-style:none}@font-face{font-family:OpenSans-Light;font-weight:300;font-style:normal;font-display:fallback;src:url(fonts/OpenSans-Light.woff2) format("woff2"),url(fonts/OpenSans-Light.woff) format("woff")}@font-face{font-family:OpenSans-Regular;font-weight:400;font-style:normal;font-display:fallback;src:url(fonts/OpenSans-Regular.woff2) format("woff2"),url(fonts/OpenSans-Regular.woff) format("woff")}@font-face{font-family:OpenSans-Bold;font-weight:700;font-style:normal;font-display:fallback;src:url(fonts/OpenSans-Bold.woff2) format("woff2"),url(fonts/OpenSans-Bold.woff) format("woff")}@font-face{font-family:Montserrat-Regular;font-weight:400;font-style:normal;font-display:fallback;src:url(fonts/Montserrat-Regular.woff2) format("woff2"),url(fonts/Montserrat-Regular.woff) format("woff")}@font-face{font-family:Montserrat-ExtraBold;font-weight:800;font-style:normal;font-display:fallback;src:url(fonts/Montserrat-ExtraBold.woff2) format("woff2"),url(fonts/Montserrat-ExtraBold.woff) format("woff")}@font-face{font-family:Montserrat-Bold;font-weight:700;font-style:normal;font-display:fallback;src:url(fonts/Montserrat-Bold.woff2) format("woff2"),url(fonts/Montserrat-Bold.woff) format("woff")}@font-face{font-family:Montserrat-SemiBold;font-weight:600;font-style:normal;font-display:fallback;src:url(fonts/Montserrat-SemiBold.woff2) format("woff2"),url(fonts/Montserrat-SemiBold.woff) format("woff")}@font-face{font-family:Montserrat-Black;font-weight:900;font-style:normal;font-display:fallback;src:url(fonts/Montserrat-Black.woff2) format("woff2"),url(fonts/Montserrat-Black.woff) format("woff")}.owl-carousel{display:none;width:100%;-webkit-tap-highlight-color:transparent;position:relative;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{position:relative;min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-loaded{display:block}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mfp-hide{display:none!important}button::-moz-focus-inner{padding:0;border:0}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:100%}*,::after,::before{-webkit-box-sizing:inherit;box-sizing:inherit}body{margin:0;font-size:1rem;line-height:1.24;overflow-x:hidden;font-family:OpenSans-Regular,sans-serif;color:#333;letter-spacing:.02rem;background-color:#fff;position:relative}.flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-flow:row wrap;-ms-flex-flow:row wrap;flex-flow:row wrap}.flex-ai-c{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.flex-jc-sb{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.flex-jc-fe{-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end}.flex-jc-c{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.flex-fd-c{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.container{width:100%;margin:0 auto;padding:0 .9375rem;position:relative}@media (max-width:75){.container{max-width:48rem;padding:0 1.87rem}}.container--sm{max-width:50rem}.container--md{max-width:75rem}@media (max-width:75rem){.container--md,.container--sm{max-width:48rem;padding:0 1.87rem}}@media (max-width:25.875rem){.container--md,.container--sm{padding:0 1.25rem}}a{text-decoration:none;color:inherit}p{line-height:1.37rem;letter-spacing:.03125rem}img{max-width:100%;vertical-align:middle}.button{max-width:23.12rem;width:100%;font-family:Montserrat-Bold,sans-serif;text-transform:uppercase;color:#fff;display:block;line-height:1.25rem;padding:1.25rem 0;text-transform:uppercase;text-align:center}.button--blue{border-radius:100px;background-color:#1579d7}.button--orange{background-color:#f90}.button--w-344{max-width:21.5rem}.button--brs-5{border-radius:5px}.title{font-family:Montserrat-ExtraBold,sans-serif;margin-bottom:1.25rem}.title--h1{font-size:2.25rem;margin-bottom:0;letter-spacing:.045rem}@media (max-width:75rem){.title--h1{font-size:1.5rem}.title--h1 br{display:none}}@media (max-width:25.875rem){.title--h1{font-size:1.12rem}}.title--h2{font-size:1.5rem;letter-spacing:.01125rem}@media (max-width:75rem){.title--h2{font-size:1.12rem}}.title--h3{font-size:1.12rem}.title--background{background-color:#d9edff;padding:.625rem}.mobile-menu{background-color:#fff;position:absolute;top:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:100%;z-index:9998;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.25);box-shadow:0 5px 20px rgba(0,0,0,.25);display:none}.mobile-menu__header{padding:.625rem 1.87rem 1.18rem;position:relative}.mobile-menu__header::before{content:'';position:absolute;bottom:0;left:0;background-image:-webkit-gradient(linear,left top,right top,from(#0079f4),to(#1e5084));background-image:-o-linear-gradient(left,#0079f4 0,#1e5084 100%);background-image:linear-gradient(90deg,#0079f4 0,#1e5084 100%);width:100%;height:.25rem}@media (max-width:25.875rem){.mobile-menu__header{padding-left:1.25rem;padding-right:1.25rem}}.mobile-menu__inner{width:100%;margin:0 auto}@media (max-width:75rem){.mobile-menu__inner{max-width:48rem}}.mobile-menu__list{text-align:center}.mobile-menu__link{line-height:1.37rem;padding:1.18rem 0;display:block;border-bottom:2px solid #efefef}@media (max-width:25.875rem){.mobile-menu__link{padding:.9375rem 0}}@media (max-width:20rem){.mobile-menu__link{padding:.625rem 0}}.mobile-menu__footer{padding:2.5rem 0}@media (max-width:25.875rem){.mobile-menu__footer{padding:2.5rem 1.25rem}}.mobile-menu__button{margin:0 auto}@media (max-width:25.875rem){.mobile-menu__button{max-width:100%!important}}.header{position:relative}.header__container::before{content:'';position:absolute;bottom:0;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:calc(100% - 1.87rem);height:4px;background-image:-webkit-gradient(linear,left top,right top,from(#0079f4),to(#1e5084));background-image:-o-linear-gradient(left,#0079f4 0,#1e5084 100%);background-image:linear-gradient(90deg,#0079f4 0,#1e5084 100%)}@media (max-width:75rem){.header__container::before{width:calc(100% - 3.75rem)}}@media (max-width:25.875rem){.header__container::before{width:calc(100% - 2.5rem)}}.header__main{padding:1.43rem 0 1.81rem}@media (max-width:75rem){.header__main{padding:.625rem 0 1.37rem}}.header__menu{margin-right:4.37rem}@media (max-width:75rem){.header__menu{display:none}}.header__bottom{padding-bottom:.6875rem}.header__auth-link{font-size:.75rem;line-height:.9375rem}.header__auth-link:last-child{margin-left:.625rem}.header__mobile-btn{display:none;width:1.37rem;height:1.37rem;background-image:url("data:image/svg+xml,<svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2.75 16.5H19.25' stroke='#1E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M2.75 11H19.25' stroke='#1E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M2.75 5.5H19.25' stroke='#1E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat:no-repeat;background-position:center;z-index:9999}@media (max-width:75rem){.header__mobile-btn{display:block}}.header__search{width:1.37rem;height:1.37rem;background-repeat:no-repeat;background-size:contain;background-position:center;background-image:url("data:image/svg+xml,<svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M10.08 17.41C14.13 17.41 17.41 14.13 17.41 10.08C17.41 6.03 14.13 2.75 10.08 2.75C6.03 2.75 2.75 6.03 2.75 10.08C2.75 14.13 6.03 17.41 10.08 17.41Z' stroke='#1E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M19.25 19.25L15.26 15.26' stroke='#1E5084' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")}@media (max-width:75rem){.header__search{-webkit-box-ordinal-group:0;-webkit-order:-1;-ms-flex-order:-1;order:-1}}.logo{font-size:.875rem;color:#000;font-family:Montserrat-ExtraBold,sans-serif;padding-left:2.62rem;position:relative;line-height:1.06rem}.logo::before{content:'';position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);width:2rem;height:2rem;border-radius:100%;background-image:-webkit-gradient(linear,left top,left bottom,from(#2791ff),to(#003771));background-image:-o-linear-gradient(top,#2791ff 0,#003771 100%);background-image:linear-gradient(180deg,#2791ff 0,#003771 100%)}.logo--footer{padding-left:2.12rem;line-height:.6875rem;font-size:.625rem}.logo--footer::before{width:1.5rem;height:1.5rem}.menu__link{font-size:.875rem;padding:0 .7125rem}.main{padding-top:1.25rem}.article__blue-block{margin-bottom:1.25rem}@media (max-width:23.4375rem){.article__blue-block{margin:0 -1.25rem 1.25rem;padding-left:1.25rem!important;padding-right:1.25rem!important}}.article__title{margin-top:1.25rem}.article__image{margin-bottom:1.25rem}.article__text{padding-bottom:1.25rem}.article__text--mb{margin-bottom:1.25rem;padding-bottom:0}.article__text--pn{padding:0}.article__list{padding-bottom:1.25rem}.article__list-item{padding-left:1.25rem;position:relative}.article__list-item::before{content:'';position:absolute;top:50%;left:0;width:.625rem;height:.625rem;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%);background-color:#1e5084;border-radius:100%}.article__list-item--icon{padding-left:1.75rem}.article__list-item--icon::before{border-radius:0;width:1.12rem;height:1.12rem;background-color:transparent;background-image:url("img/thumbsup.svg")}.article__label{font-size:.625rem;line-height:.75rem;text-transform:uppercase;padding-bottom:.3125rem;border-bottom:2px solid #1e5084;display:inline-block;font-family:Montserrat-Regular,sans-serif;vertical-align:middle;letter-spacing:.01125rem}.article__info{font-family:Montserrat-Regular,sans-serif;font-size:.75rem;color:#8b8b8b;margin:.625rem 0 1.25rem;letter-spacing:.01125rem}.article__info-author,.article__info-date{padding-left:1.25rem;line-height:.9375rem;position:relative}.article__info-author::before,.article__info-date::before{content:'';position:absolute;top:0;left:0;width:.9375rem;height:.9375rem;background-position:center;background-size:contain;background-repeat:no-repeat}.article__info-date::before{background-image:url("img/calendar.svg")}.article__info-author{margin-top:.625rem}.article__info-author::before{background-image:url("img/person.svg")}.article__slider{background-color:#efefef;padding:1.25rem 0;overflow:hidden}.article__bottom-approved-icon{background-repeat:no-repeat;background-position:center;background-image:url("img/approved.svg");width:3.75rem;height:3.75rem}.article__bottom-approved{margin-top:1.25rem;margin-bottom:.625rem}.article__bottom-approved-text{font-size:.75rem;margin-left:.625rem;font-family:Montserrat-Regular,sans-serif}.article__bottom-rating-text{font-size:.75rem;font-family:Montserrat-Regular,sans-serif}.article__bottom-rating{margin-bottom:1.25rem}.article__bottom-rating-stars{margin-right:.625rem}.article__bottom-rating-star{width:1.06rem;height:1.06rem;background-repeat:no-repeat;background-position:center;background-image:url("img/star.svg")}.blue-block{padding:1.25rem .625rem;background-color:#d9edff}.blue-block__title{font-size:1.12rem;font-family:OpenSans-Bold,sans-serif;line-height:1.56rem;margin-bottom:.625rem;letter-spacing:.01125rem}.slider__top{padding-left:1.87rem;margin-bottom:1.25rem}@media (max-width:75rem){.slider__top{padding-left:0}}.slider__subtitle{margin-top:1.25rem}.slider__logo-pt1{width:3.12rem;height:3.12rem;background-color:#fff;border-radius:14px;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.25);box-shadow:0 5px 20px rgba(0,0,0,.25);margin-right:.9375rem}.slider__subtitle{font-size:.75rem;font-family:Montserrat-Regular,sans-serif}.slider__bottom{margin-top:3.12rem;text-align:center}.slider__text{color:#000}@media (max-width:75rem){.slider__text{text-align:left}}.slider__text{font-family:OpenSans-Bold,sans-serif;font-size:.875rem;line-height:1.18rem;margin-bottom:1.25rem}@media (max-width:75rem){.slider__text{margin-bottom:3.12rem}}@media (max-width:23.4375rem){.slider__text{margin-bottom:1.87rem}}.slider__button{margin:0 auto}@media (max-width:75rem){.slider__button{max-width:21.75rem}}@media (max-width:25.875rem){.slider__button{max-width:100%}}.owl-carousel::after,.owl-carousel::before{content:'';position:absolute;top:0;width:4.37rem;height:100%;z-index:1}@media (max-width:75rem){.owl-carousel::after,.owl-carousel::before{display:none}}.owl-carousel::before{background-image:-webkit-gradient(linear,left top,right top,from(#efefef),to(rgba(239,239,239,0)));background-image:-o-linear-gradient(left,#efefef 0,rgba(239,239,239,0) 100%);background-image:linear-gradient(90deg,#efefef 0,rgba(239,239,239,0) 100%);left:0}.owl-carousel::after{right:0;background-image:-webkit-gradient(linear,left top,right top,from(rgba(239,239,239,0)),to(#efefef));background-image:-o-linear-gradient(left,rgba(239,239,239,0) 0,#efefef 100%);background-image:linear-gradient(90deg,rgba(239,239,239,0) 0,#efefef 100%)}.owl-stage{margin-left:-1.25rem}@media (max-width:75rem){.owl-stage{padding:0!important;margin-left:0}}@media (max-width:75rem){.owl-stage-outer{overflow:visible!important}}.owl-nav{position:absolute;top:48%;width:100%}.owl-nav>button{width:2.25rem;height:2.25rem;border-radius:100%!important;background-color:#fff!important;background-repeat:no-repeat!important;background-position:center!important;position:absolute;z-index:2}.owl-nav>button span{display:none}.owl-dots{display:none}.owl-prev{left:1.87rem;background-image:url("data:image/svg+xml,<svg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M8.33 1.66L2.28 8.32C1.93 8.70 1.93 9.29 2.28 9.67L8.33 16.33' stroke='#FF9900' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>")!important}@media (max-width:75rem){.owl-prev{left:0}}@media (max-width:25.875rem){.owl-prev{left:.625rem}}.owl-next{right:1.87rem;background-image:url("data:image/svg+xml,<svg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1.67 16.33L7.72 9.67C8.07 9.29 8.07 8.70 7.72 8.32L1.67 1.66' stroke='url(#paint0_linear)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/><defs><linearGradient id='paint0_linear' x1='5.00' y1='16.33' x2='5.00' y2='1.66' gradientUnits='userSpaceOnUse'><stop stop-color='#FF9900'/><stop offset='1' stop-color='#FF3D00'/></linearGradient></defs></svg>")!important}@media (max-width:75rem){.owl-next{right:0}}@media (max-width:25.875rem){.owl-next{right:.625rem}}.popup-comeback,.popup-order,.section-order{position:relative;padding-bottom:1.25rem}.popup-order__label,.section-order__label{position:absolute;top:0;left:.9375rem;font-family:Montserrat-Regular,sans-serif;font-size:.875rem;text-transform:uppercase;background-color:#1579d7;color:#fff;border-radius:3px;padding:0 .9375rem;line-height:1.68rem}@media (max-width:75rem){.popup-order__label,.section-order__label{left:1.87rem}}@media (max-width:25.875rem){.popup-order__label,.section-order__label{left:1.25rem}}.popup-comeback__left,.popup-order__left,.section-order__left{-webkit-box-flex:0;-webkit-flex:0 0 46.10%;-ms-flex:0 0 46.10%;flex:0 0 46.10%;max-width:46.10%;text-align:center;margin-left:.5625rem}@media (max-width:75rem){.popup-comeback__left,.popup-order__left,.section-order__left{-webkit-box-flex:0;-webkit-flex:0 0 50.14%;-ms-flex:0 0 50.14%;flex:0 0 50.14%;max-width:50.14%}}@media (max-width:25.875rem){.popup-comeback__left,.popup-order__left,.section-order__left{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;margin-left:0}}.popup-comeback__right,.popup-order__right,.section-order__right{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;max-width:100%;margin-top:3.12rem;padding-left:2.25rem}@media (max-width:75rem){.popup-comeback__right,.popup-order__right,.section-order__right{padding-left:0;margin-top:.625rem}}.popup-comeback__title,.popup-order__title,.section-order__title{font-size:1.5rem;font-family:Montserrat-ExtraBold,sans-serif;margin-bottom:.625rem;letter-spacing:.01em}.popup-comeback__subtitle,.popup-order__subtitle,.section-order__subtitle{font-size:1.12rem;margin-bottom:1.25rem;font-family:OpenSans-Light,sans-serif}.popup-comeback__product,.popup-order__product,.section-order__product{position:relative}@media (max-width:23.4375rem){.popup-comeback__product,.popup-order__product,.section-order__product{margin-top:.8125rem}}.popup-order__product-discount,.section-order__product-discount{position:absolute;width:5.43rem;height:5.43rem;bottom:2.68rem;right:1.25rem;font-family:Montserrat-ExtraBold,sans-serif;font-size:1.5rem;color:#fff;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml,<svg width='87' height='87' viewBox='0 0 87 87' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M87 43.5C87 67.52 67.52 87 43.5 87C19.47 87 0 67.52 0 43.5C0 19.47 19.47 0 43.5 0C53.70 0 87 0 87 0C87 0 87 29.67 87 43.5Z' fill='url(#paint0_linear)'/><defs><linearGradient id='paint0_linear' x1='43.5' y1='0' x2='43.5' y2='87' gradientUnits='userSpaceOnUse'><stop stop-color='#FF9900'/><stop offset='1' stop-color='#FF3D00'/></linearGradient></defs></svg>")}@media (max-width:25.875rem){.popup-order__product-discount,.section-order__product-discount{right:0}}@media (max-width:23.4375rem){.popup-order__product-discount,.section-order__product-discount{bottom:1.56rem}}@media (max-width:23.4375rem){.popup-comeback__product-image,.popup-order__product-image,.section-order__product-image{width:8.43rem}}.section-order__price{margin-bottom:1.25rem}@media (max-width:75rem){.section-order__price{margin-bottom:.625rem}}@media (max-width:25.875rem){.section-order__price{margin-bottom:1.25rem}}.section-order__new-price,.section-order__old-price{line-height:3.31rem;font-family:Montserrat-SemiBold,sans-serif}.section-order__new-price{font-size:3rem;color:#ff0f00;margin-right:1.25rem}.section-order__old-price{position:relative;color:#e0e0e0;font-size:2.25rem}.section-order__old-price::before{content:'';position:absolute;top:50%;transform:translateY(-50%);left:0;width:100%;height:0.12rem;background-color:#ff0f00;}.section-order__timer{margin:0 auto 1.25rem}@media (max-width:75rem){.section-order__timer{margin:0 0 .625rem 0}}@media (max-width:25.875rem){.section-order__timer{margin:0 auto 1.25rem}}@media (max-width:25.875rem){.section-order__container{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}.fake-link{height:3.43rem;line-height:3.43rem;display:block;border-radius:5px}.fake-link--btn{text-align:center;font-family:Montserrat-Bold,sans-serif;text-transform:uppercase;color:#fff;background-color:#f90}.fake-link--mt{margin-top:1.25rem}@media (max-width:23.4375rem){.fake-link--mt{margin-top:.9375rem}}.fake-link--h-60{height:3.75rem;line-height:3.75rem}@media (max-width:23.4375rem){.fake-link--h-60{height:2.81rem;line-height:2.81rem}}.timer{max-width:9.87rem;width:100%;text-align:center}.timer__item{width:100%;max-width:3.87rem;height:3.25rem;border:1px solid #efefef}.timer__value{font-size:1.5rem;font-family:OpenSans-Bold,sans-serif}.timer__text{font-family:Montserrat-Regular,sans-serif;font-size:.75rem}.timer__separator{font-size:1.87rem;line-height:1.68rem;font-family:OpenSans-Light,sans-serif}.section-news{padding-top:2.5rem;padding-bottom:1.25rem}@media (max-width:25.875rem){.section-news{padding-top:1.25rem}}@media (max-width:75rem){.section-news__item:first-child,.section-news__item:nth-child(2){margin-bottom:1.25rem}}@media (max-width:25.875rem){.section-news__item:nth-child(3){margin-bottom:1.25rem}}.section-news__item{-webkit-box-flex:0;-webkit-flex:0 0 23.07%;-ms-flex:0 0 23.07%;flex:0 0 23.07%;max-width:23.07%;background-color:#333;color:#d2d2d2}@media (max-width:75rem){.section-news__item{-webkit-box-flex:0;-webkit-flex:0 0 48.58%;-ms-flex:0 0 48.58%;flex:0 0 48.58%;max-width:48.58%}}@media (max-width:25.875rem){.section-news__item{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.section-news__item-inner{border-top:5px solid #1e5084;padding:.71875rem .625rem;-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}.section-news__item-title{font-family:Montserrat-ExtraBold,sans-serif;font-size:.875rem;margin-bottom:.3125rem}.section-news__item-link{font-size:.625rem;text-decoration:underline;line-height:.875rem}@media (max-width:75rem){.section-news__title{font-size:1.5rem}}@media (max-width:25.875rem){.section-news__title{font-size:1.12rem}}.footer__navigation{padding:1.25rem 0}.footer__footer-menu{-webkit-box-flex:0;-webkit-flex:0 0 50%;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.footer__bottom{position:relative;padding:1.25rem 0}.footer__bottom::before{content:'';position:absolute;top:0;left:0;background-image:-webkit-gradient(linear,left top,right top,from(#0079f4),to(#1e5084));background-image:-o-linear-gradient(left,#0079f4 0,#1e5084 100%);background-image:linear-gradient(90deg,#0079f4 0,#1e5084 100%);width:100%;height:.125rem}.footer__copy{font-size:.60625rem;font-family:Montserrat-Regular,sans-serif}@media (max-width:75rem){.footer__copy{text-align:center}}@media (max-width:75rem){.footer__bottom-inner{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}@media (max-width:75rem){.footer__logo{margin-bottom:.625rem}}.footer-menu{text-transform:uppercase}.footer-menu__list{display:inline-block}.footer-menu__title{font-size:.625rem;margin-bottom:.625rem;font-family:Montserrat-Black,sans-serif}.footer-menu__link{font-size:.625rem;font-family:Montserrat-Regular,sans-serif}.footer-menu__item{margin-bottom:.3125rem;line-height:.75rem}.footer-menu__item:last-child{margin-bottom:0}.footer-menu__link{line-height:.75rem;display:block}.footer-menu--pl-18{padding-left:.9375rem}.footer-menu--pl-200{padding-left:13.12rem}@media (max-width:75rem){.footer-menu--pl-200{padding-left:0}}.popup-comeback,.popup-order{position:relative;max-width:48.12rem;width:100%;background-color:#d9edff;margin:0 auto;-webkit-box-shadow:0 5px 20px rgba(0,0,0,.25);box-shadow:0 5px 20px rgba(0,0,0,.25)}@media (max-width:75rem){.popup-comeback,.popup-order{max-width:32.87rem;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}}@media (max-width:25.875rem){.popup-comeback,.popup-order{max-width:23.37rem}}@media (max-width:23.4375rem){.popup-comeback,.popup-order{max-width:17.5rem}}.popup-order{padding:3.93rem 4.31rem 3.25rem 2.18rem}@media (max-width:75rem){.popup-order{padding:3.87rem 4.43rem 3.68rem}}@media (max-width:25.875rem){.popup-order{padding:3.87rem 1.25rem 3.06rem}}@media (max-width:23.4375rem){.popup-order{padding:2.87rem .9375rem 2.31rem}}.popup-order::before{content:'';position:absolute;top:0;left:0;width:16.75rem;height:100%;background-color:#1e5084}@media (max-width:75rem){.popup-order::before{width:100%;height:8.37rem}}@media (max-width:23.4375rem){.popup-order__product-image{width:auto}}.popup-order__left{position:relative;margin-left:0;-webkit-box-flex:0;-webkit-flex:0 0 44.89%;-ms-flex:0 0 44.89%;flex:0 0 44.89%;max-width:44.89%}@media (max-width:75rem){.popup-order__left{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.popup-order__right{margin-top:7.5rem}@media (max-width:75rem){.popup-order__right{margin-top:1.87rem}}@media (max-width:25.875rem){.popup-order__right{margin-top:1.25rem}}@media (max-width:23.4375rem){.popup-order__right{margin-top:.9375rem}}.popup-order__label{left:0;top:1.25rem}@media (max-width:75rem){.popup-order__label{top:4.5rem}}@media (max-width:23.4375rem){.popup-order__label{top:5.93rem}}.popup-order__product-discount{font-size:1.87rem;width:7.12rem;height:7.12rem;background-size:contain;bottom:1.25rem;right:1.25rem}@media (max-width:23.4375rem){.popup-order__product-discount{right:.9375rem;bottom:.9375rem;width:5.31rem;height:5.31rem;font-size:1.40rem}}@media (max-width:23.4375rem){.popup-order__title{font-size:1.12rem;margin-bottom:.46875rem}}@media (max-width:23.4375rem){.popup-order__subtitle{margin-bottom:0;font-size:.875rem}}.popup-order__fake-link{font-size:.875rem}.popup-comeback{padding:.875rem 4.31rem .875rem 3rem}.popup-comeback::before{content:'';position:absolute;top:0;left:0;width:12.75rem;height:100%;background-color:#1e5084;background-size:contain;background-position:center;background-repeat:no-repeat;background-image:url("data:image/svg+xml,<svg width='72' height='455' viewBox='0 0 72 455' fill='none' xmlns='http://www.w3.org/2000/svg'><g opacity='0.2'><path d='M48.09 420.51H51.88C60.71 420.51 72 422.12 72 438.09C72 449.89 65.73 455 52.83 455H18.59C6.45 455 0 448.95 0 437.80C0 423.06 9.67 420.70 18.87 420.70H23.24L23.24 434.21H17.26C13.37 434.21 11.47 435.06 11.47 437.80C11.47 440.54 13.28 441.49 17.26 441.49H54.26C57.96 441.49 60.52 440.83 60.52 437.80C60.52 434.87 58.33 434.02 53.97 434.02H48.18V420.51H48.09Z' fill='white'/><path d='M54.47 399.39L71.07 401.09V414.78L1.16 404.96L1.16 385.03L71.07 374.92V388.81L54.47 390.69V399.39ZM42.61 391.92C33.69 392.87 20.03 394.28 13.39 394.95V395.51C18.23 395.80 33.98 397.40 42.61 398.35V391.92Z' fill='white'/><path d='M40.71 355.76H71.07V369.08H1.16L1.16 351.70C1.16 340.08 6.28 334.22 18.52 334.22H20.98C30.94 334.22 33.88 338.19 35.31 341.22C37.39 336.87 40.62 334.89 50.39 334.89C57.12 334.89 67.37 334.98 70.97 334.41V347.36C67.84 348.21 58.74 348.11 49.82 348.11C41.95 348.11 40.62 348.96 40.62 354.06V355.76H40.71ZM30.09 355.67V353.97C30.09 349.53 28.67 347.64 22.12 347.64H18.71C14.06 347.64 11.69 348.58 11.69 353.50L11.69 355.57H30.09V355.67Z' fill='white'/><path d='M1.16 328.21L1.16 311.77C1.16 297.41 7.70 292.50 22.22 292.50H48.49C60.54 292.50 71.07 295.05 71.07 310.92V328.30H1.16V328.21ZM60.26 314.79V312.15C60.26 306.86 56.84 306.01 51.34 306.01H20.03C14.91 306.01 12.07 307.14 12.07 312.24L12.07 314.79H60.26Z' fill='white'/><path d='M1.16 273.23L1.16 286.65H71.07V273.23H1.16Z' fill='white'/><path d='M19.73 231.09H52.17C66.02 231.09 72 237.61 72 249.79C72 261.32 65.92 267.27 52.36 267.27H19.35C5.88 267.27 0 259.90 0 249.13C0 238.36 5.78 231.09 19.73 231.09ZM18.21 253.67H53.97C58.33 253.67 60.52 252.16 60.52 249.23C60.52 246.11 58.43 244.69 53.88 244.69H18.11C13.75 244.69 11.47 245.92 11.47 249.23C11.57 252.16 13.56 253.67 18.21 253.67Z' fill='white'/><path d='M0.87 224.66L0.87 214.08C0.87 204.16 6.65 200.47 15.57 200.47H19.08C28.85 200.47 31.98 203.12 33.31 206.9C34.45 202.64 38.34 198.96 47.35 198.96H52.47C64.90 198.96 70.87 202.64 70.87 214.36V224.75H0.87V224.66ZM31.22 213.79C31.22 207.37 28.19 205.48 19.27 205.48H15.85C9.12 205.48 5.42 208.03 5.42 214.55L5.42 219.65H31.22V213.79ZM66.32 219.65V214.55C66.32 206.14 62.15 204.06 52.38 204.06H47.44C39.29 204.06 35.78 207.37 35.78 213.98V219.65H66.32Z' fill='white'/><path d='M46.02 183.58L70.78 187.45V192.64L0.87 181.02L0.87 173.66L70.87 161.56V166.95L46.02 171.11V183.58ZM41.28 171.86C23.44 174.88 11.11 176.77 5.42 177.34V177.62C10.54 177.81 26.86 180.65 41.28 182.82V171.86Z' fill='white'/><path d='M0.87 155.33L0.87 150.14H66.13V132.66L70.78 133.42V155.33H0.87Z' fill='white'/><path d='M46.02 117.34L70.87 121.31V126.41L0.87 114.88L0.87 107.51L70.87 95.42V100.81L46.02 104.96V117.34ZM41.28 105.62C23.44 108.65 11.11 110.54 5.42 111.10V111.39C10.54 111.58 26.86 114.41 41.28 116.58V105.62Z' fill='white'/><path d='M70.78 89.09H0.87L0.87 82.76C15.95 78.32 54.08 67.65 61.20 66.23V66.04C51.24 66.42 41.37 66.61 30.08 66.61H0.87L0.87 61.60H70.87V67.84C54.46 72.56 15.85 83.05 8.46 84.84V84.94C16.90 84.46 29.23 84.18 41.85 84.18H70.87V89.09H70.78Z' fill='white'/><path d='M51.50 29.18H53.59C63.08 29.18 71.81 30.97 71.81 42.12C71.81 53.65 62.89 55.25 52.83 55.25H16.98C5.50 55.25 0 50.53 0 42.12C0 31.35 8.06 29.56 16.88 29.56H19.35V34.85H16.79C10.62 34.85 4.64 35.60 4.64 42.31C4.64 48.64 9.86 50.06 17.07 50.06H52.93C61.66 50.06 66.97 48.07 66.97 42.03C66.97 35.51 61.09 34.56 53.59 34.56H51.32V29.18H51.50Z' fill='white'/><path d='M35.59 1.88V17.76L66.13 17.76V-0.00L70.78 0.75V22.86L0.87 22.86L0.87 1.03H5.61L5.61 17.76H30.94V1.88H35.59Z' fill='white'/></g></svg>")}@media (max-width:75rem){.popup-comeback::before{height:12.75rem;width:100%;background-image:url("data:image/svg+xml,<svg width='526' height='83' viewBox='0 0 526 83' fill='none' xmlns='http://www.w3.org/2000/svg'><g opacity='0.2'><path d='M39.86 55.44V59.81C39.86 69.98 38.00 83 19.54 83C5.89 83 0 75.78 0 60.91V21.43C0 7.43 6.98 0 19.87 0C36.91 0 39.64 11.15 39.64 21.76V26.79H24.02V19.90C24.02 15.41 23.04 13.23 19.87 13.23C16.70 13.23 15.61 15.30 15.61 19.90V62.55C15.61 66.81 16.38 69.76 19.87 69.76C23.26 69.76 24.24 67.25 24.24 62.22V55.55H39.86V55.44Z' fill='white'/><path d='M64.28 62.79L62.32 81.93H46.48L57.84 1.33H80.88L92.57 81.93H76.51L74.33 62.79H64.28ZM72.91 49.12C71.82 38.84 70.18 23.10 69.42 15.44H68.76C68.43 21.02 66.58 39.17 65.48 49.12H72.91Z' fill='white'/><path d='M114.71 46.93V81.93H99.31V1.33H119.41C132.84 1.33 139.61 7.24 139.61 21.35V24.19C139.61 35.67 135.02 39.06 131.53 40.70C136.55 43.11 138.85 46.83 138.85 58.09C138.85 65.85 138.74 77.66 139.39 81.82H124.43C123.45 78.21 123.56 67.71 123.56 57.43C123.56 48.36 122.57 46.83 116.68 46.83H114.71V46.93ZM114.82 34.69H116.79C121.92 34.69 124.10 33.05 124.10 25.50V21.56C124.10 16.21 123.01 13.47 117.33 13.47H114.93V34.69H114.82Z' fill='white'/><path d='M146.57 1.33H165.57C182.17 1.33 187.85 8.88 187.85 25.61V55.90C187.85 69.79 184.90 81.93 166.56 81.93H146.46V1.33H146.57ZM162.08 69.46H165.14C171.25 69.46 172.23 65.52 172.23 59.18V23.10C172.23 17.19 170.92 13.91 165.03 13.91H162.08V69.46Z' fill='white'/><path d='M210.12 1.33H194.61V81.93H210.12V1.33Z' fill='white'/><path d='M258.84 22.74V60.14C258.84 76.11 251.31 83 237.22 83C223.89 83 217.01 76.00 217.01 60.36V22.30C217.01 6.77 225.53 0 237.98 0C250.43 0 258.84 6.67 258.84 22.74ZM232.74 20.99V62.22C232.74 67.25 234.49 69.76 237.87 69.76C241.48 69.76 243.12 67.36 243.12 62.11V20.88C243.12 15.85 241.7 13.23 237.87 13.23C234.49 13.34 232.74 15.63 232.74 20.99Z' fill='white'/><path d='M266.28 1.00H278.51C289.98 1.00 294.24 7.67 294.24 17.95V22.00C294.24 33.26 291.18 36.87 286.81 38.40C291.72 39.71 295.98 44.19 295.98 54.58V60.49C295.98 74.81 291.72 81.70 278.18 81.70H266.17V1.00H266.28ZM278.84 35.99C286.26 35.99 288.45 32.49 288.45 22.21V18.28C288.45 10.51 285.50 6.25 277.96 6.25H272.07V35.99H278.84ZM272.07 76.45H277.96C287.68 76.45 290.09 71.64 290.09 60.38V54.69C290.09 45.29 286.26 41.24 278.62 41.24H272.07V76.45Z' fill='white'/><path d='M313.77 53.05L309.29 81.59H303.29L316.72 1.00H325.24L339.22 81.70H332.99L328.19 53.05H313.77ZM327.31 47.58C323.82 27.03 321.63 12.81 320.98 6.25H320.65C320.43 12.15 317.16 30.96 314.64 47.58H327.31Z' fill='white'/><path d='M346.42 1.00H352.43V76.24H372.63L371.76 81.59H346.42V1.00Z' fill='white'/><path d='M390.34 53.05L385.76 81.70H379.86L393.18 1.00H401.70L415.68 81.70H409.46L404.65 53.05H390.34ZM403.89 47.58C400.39 27.03 398.21 12.81 397.55 6.25H397.22C397.00 12.15 393.73 30.96 391.22 47.58H403.89Z' fill='white'/><path d='M422.99 81.59V1.00H430.31C435.44 18.39 447.78 62.35 449.42 70.55H449.64C449.20 59.07 448.99 47.69 448.99 34.68V1.00H454.77V81.70H447.57C442.11 62.78 429.98 18.28 427.91 9.75H427.80C428.34 19.48 428.67 33.70 428.67 48.24V81.70H422.99V81.59Z' fill='white'/><path d='M492.26 59.37V61.78C492.26 72.72 490.18 82.78 477.3 82.78C463.97 82.78 462.12 72.50 462.12 60.91V19.57C462.12 6.34 467.58 0 477.3 0C489.75 0 491.82 9.29 491.82 19.46V22.30H485.70V19.35C485.70 12.24 484.83 5.35 477.08 5.35C469.76 5.35 468.12 11.37 468.12 19.68V61.01C468.12 71.08 470.42 77.20 477.40 77.20C484.94 77.20 486.03 70.42 486.03 61.78V59.16H492.26V59.37Z' fill='white'/><path d='M523.81 41.02H505.46V76.24H526L525.12 81.59H499.57V1.00H524.79V6.47H505.46V35.66H523.81V41.02Z' fill='white'/></g></svg>
+");background-position:center bottom}}@media (max-width:23.4375rem){.popup-comeback::before{height:9.5rem}}@media (max-width:75rem){.popup-comeback{padding:0 4.43rem 4.43rem}}@media (max-width:25.875rem){.popup-comeback{padding:0 1.25rem 1.5rem}}@media (max-width:75rem){.popup-comeback__product-image{margin-top:-1.12rem}}@media (max-width:48rem){.popup-comeback__product-image{width:14.37rem}}@media (max-width:23.4375rem){.popup-comeback__product{margin-top:0}}.popup-comeback__left{margin-left:0;-webkit-box-flex:0;-webkit-flex:0 0 43.79%;-ms-flex:0 0 43.79%;flex:0 0 43.79%;max-width:43.79%}@media (max-width:75rem){.popup-comeback__left{-webkit-box-flex:0;-webkit-flex:0 0 100%;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.popup-comeback__right{margin-top:7.93rem}@media (max-width:75rem){.popup-comeback__right{margin-top:.8125rem}}@media (max-width:25.875rem){.popup-comeback__right{margin-top:-1.12rem}}@media (max-width:23.4375rem){.popup-comeback__title{font-size:1.12rem;margin-bottom:.46875rem}}@media (max-width:23.4375rem){.popup-comeback__subtitle{font-size:.875rem;margin-bottom:.9375rem}}@media (max-width:23.4375rem){.popup-comeback__fake-link{font-size:.875rem}}</style>
+</head>
+<body>  
+    <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <div class="mobile-menu__inner flex">
+        <a href="#" class="mobile-menu__logo logo">health <br> today</a>
+      </div>
+    </div>
+    <ul class="mobile-menu__list">
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Suscribirse a</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Leer</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Aprender</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Desarrollar</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Descubrir nuevo</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">10 artículos principales</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="#" class="mobile-menu__link">Contáctenos</a>
+      </li>
+    </ul>
+    <div class="mobile-menu__footer">
+      <a href="#" class="mobile-menu__button button button--orange button--w-344 button--brs-5">Buy</a>
+    </div>
+  </div>  <header class="header">
+    <div class="header__container container container--md">
+      <div class="header__main flex flex-ai-c flex-jc-sb">
+        <a href="#" class="header__logo logo">health <br> today</a>
+        <nav class="header__menu menu">
+          <ul class="menu__list flex">
+            <li class="menu__item">
+              <a href="#" class="menu__link">Suscribirse a</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Leer</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Aprender</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Desarrollar</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Descubrir nuevo</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">10 artículos principales</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Contáctenos</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#" class="header__search"></a>
+        <div class="header__mobile-btn"></div>
+      </div>
+      <div class="header__bottom">
+        <div class="header__auth flex flex-jc-fe">
+          <a href="#" class="header__auth-link">Registro de inicio</a>
+          <a href="#" class="header__auth-link">de sesión</a>
+        </div>
+      </div>
+    </div>
+  </header>  <main class="main">
+    <article class="article">
+      <div class="container container--sm">        <div class="article__label">MEDICAMENTO</div>
+        <h1 class="article__title title title--h1">Innovación en control de presión y <br> No solo</h1>
+        <div class="article__info">
+          <div class="article__info-date">Publicado el <script type="text/javascript">
+              d = new Date();
+              p = new Date(d.getTime() - 7 * 86400000);
+              monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+              var w = p.getDate();
+              document.write(p.getDate() + '.' + monthA[p.getMonth()] + '.' + p.getFullYear());
+          </script>
+          </div>
+          <div class="article__info-author">Liliana Bermont</div>
+        </div>
+        <div class="article__content">
+          <picture>
+            <source media="(max-width: 320px)" srcset="img/article-image-320.jpg">
+            <source media="(max-width: 414px)" srcset="img/article-image-414.jpg">
+            <source media="(max-width: 768px)" srcset="img/article-image-768.jpg">
+            <a href="#"><img src="img/article-image.jpg" alt="image" class="article__image"></a>
+          </source></source></source></picture>
+          <p class="article__text">¿Qué sabes de Suiza? Hay altas montañas, hermosos prados, delicioso chocolate con leche y no las personas más pobres del mundo. Suiza también tiene reglas muy estrictas para la producción de medicamentos, nutrientes y cosméticos.</p>
+          <p class="article__text">Esta es la razón por la que los productos médicos suizos son reconocidos por su calidad superior y una eficacia significativa con efectos clínicamente probados.</p>
+          <p class="article__text">Hoy me encontré con una herramienta interesante para realizar pruebas: <span class="productName"></span>. Está formulado para ayudar a controlar la presión arterial, normalizar la frecuencia cardíaca y mejorar la salud general del cuerpo.</p>
+          <h2 class="article__title title title--h2">Visión general</h2>
+          <p class="article__text">Tradicionalmente, las revisiones comienzan con la apariencia del producto. Sin embargo, decidí saltarme esta etapa; solo puedo decir que el empaque es bastante estricto, costoso y, para mi gusto, hermoso. Pero sobre todo me gustaría hablar de los principios activos de <span class="productName"></span>, ya que son de gran interés.</p>
+          <p class="article__text">Hay muchos ingredientes naturales en <span class="productName"></span>, que clasificaría como de farmacia.</p>
+          <h3 class="article__title title title--h3 title--background">Extractos y coenzimas:</h3>
+          <ul class="article__list">
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">La baya de Aronia es un poderoso antioxidante</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extracto de hoja de flor de espino: esencial para reducir los niveles de colesterol y triglicéridos en sangre</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extracto de fruta de grosella negra: ayuda a eliminar el edema en el cuerpo y las piernas</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extracto de fruta de arándano: alivia la inflamación aguda y crónica</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Polvo de flor de hibisco: normaliza la presión arterial sistólica y diastólica</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extracto de hoja de olivo: ayuda a prevenir la obesidad y el síndrome metabólico asociado.</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Extracto de semilla de uva: reduce la cantidad de colesterol "malo" en la sangre, previniendo la aterosclerosis de los vasos cardíacos.</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--pn">Coenzima Q10: también llamada ubiquinona; necesario para la prevención de complicaciones cardíacas</p>
+            </li>
+          </ul>
+          <h3 class="article__title title title--h3 title--background">Vitaminas y minerales:</h3>
+          <ul class="article__list">
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Ácido fólico: ayuda a mejorar el trabajo de los músculos del corazón.</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Vitamina B6: previene la aparición de microtrombos en los capilares.</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--mb">Magnesio: normaliza el pulso y la actividad cardíaca.</p>
+            </li>
+            <li class="article__list-item">
+              <p class="article__text article__text--pn">L-arginina: mejora la eficacia de otros componentes de control de la presión</p>
+            </li>
+          </ul>
+          <h3 class="article__title title title--h3 title--background">Prebiótico:</h3>
+          <ul class="article__list">
+            <li class="article__list-item">
+              <p class="article__text article__text--pn">La inulina es un ingrediente prebiótico con amplios beneficios para la salud.</p>
+            </li>
+          </ul>
+          <h2 class="article__title title title--h2">Análisis de acciones</h2>
+          <p class="article__text">Después de analizar la acción de <span class="productName"></span>, llegué a la conclusión de que esta herramienta puede ser muy útil en diversas situaciones.</p>
+            <picture>
+              <source media="(max-width: 320px)" srcset="img/article-image2-320.jpg">
+              <source media="(max-width: 414px)" srcset="img/article-image2-414.jpg">
+              <source media="(max-width: 768px)" srcset="img/article-image2-768.jpg">
+              <a href="#"><img src="img/article-image2.jpg" alt="image" class="article__image"></a>
+            </source></source></source></picture>
+          <div class="article__blue-block blue-block">
+            <div class="blue-block__title">Prevención</div>
+            <p class="blue-block__text">Si no tiene problemas cardíacos, pero existe el riesgo de que ocurran (enfermedad cardíaca en los familiares, sobrepeso, dieta alta en carbohidratos y grasas, etc.), <span class="productName"></span> es perfecto para usted. Este agente reduce significativamente el riesgo de complicaciones cardíacas, mejora el metabolismo y reduce la cantidad de lipoproteínas de baja densidad en la sangre, lo que se conoce como colesterol "malo".</p>
+          </div>
+          <div class="article__blue-block blue-block">
+            <div class="blue-block__title">Control de estrés</div>
+            <p class="blue-block__text">Se ha descubierto que la ingesta regular de <span class="productName"></span> reduce los niveles de estrés al "alimentar" el sistema nervioso con valiosos nutrientes. Esto tiene un efecto positivo en muchos aspectos de la vida, incluida la presión arterial.</p>
+          </div>
+          <div class="article__blue-block blue-block">
+            <div class="blue-block__title">Tratamiento</div>
+            <p class="blue-block__text"><span class="productName"></span> se puede tomar como monoterapia o como parte de la prescripción de su proveedor de atención médica. Esta herramienta está diseñada para controlar la presión arterial y la frecuencia cardíaca, pero también puede ser útil en otros casos.</p>
+          </div>
+        </div>      </div>
+      <div class="container container--sm">
+        <h3 class="article__title title title--h3">Mis recomendaciones</h3>
+        <p class="article__text"><span class="productName"></span> no es una droga, que es tanto un positivo como un negativo. Una de las ventajas es la posibilidad de una compra rápida sin receta y una cómoda recepción según las instrucciones. Contras: <span class="productName"></span> no reemplaza la terapia con medicamentos, si está disponible. Pero esta tampoco es su tarea.</p>
+        <h3 class="article__title title title--h3 title--background">Recomiendo considerar tomar <span class="productName"></span> en las siguientes situaciones:</h3>
+        <ul class="article__list">
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Prevención de crisis hipertensivas</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Prevención de ataques cardíacos y accidentes cerebrovasculares.</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Reducir el estrés en el corazón.</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Personas meteodependientes y meteosensibles</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Bebedores habituales, fumadores</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">En presencia de estrés agudo o crónico</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Con un estilo de vida sedentario</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Exceso de peso</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--mb">Para mejorar el funcionamiento del sistema nervioso, normalizar el sueño.</p>
+          </li>
+          <li class="article__list-item article__list-item--icon">
+            <p class="article__text article__text--pn">Para mejorar el metabolismo</p>
+          </li>
+        </ul>
+        <div class="article__bottom">
+          <div class="article__bottom-approved flex flex-ai-c">
+            <div class="article__bottom-approved-icon"></div>
+            <div class="article__bottom-approved-text">Liliana Bermont</div>
+          </div>
+          <div class="article__bottom-rating flex flex-ai-c">
+            <div class="article__bottom-rating-stars flex">
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+              <div class="article__bottom-rating-star"></div>
+            </div>
+            <div class="article__bottom-rating-text">Calificación de equilibrio cardiovascular - 97%</div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <section class="section-order">
+      <div class="section-order__container container container--sm ">
+
+        <div class="features-wrapper"></div>
+      </div>
+    </section>
+    <section class="section-news">
+      <div class="container container--md">
+        <h2 class="section-news__title title title--h2">Noticias relacionadas</h2>
+        <div class="section-news__items flex flex-jc-sb">
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img1.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">La enfermedad cardíaca sigue siendo una de las principales causas de muerte en el mundo</div>
+              <a href="#" class="section-news__item-link">Leer mas</a>
+            </div>
+          </div>
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img2.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">¿Cómo deshacerse del dolor de pecho rápidamente?</div>
+              <a href="#" class="section-news__item-link">Leer mas</a>
+            </div>
+          </div>
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img3.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">Huir de un infarto: ¿mito o realidad?</div>
+              <a href="#" class="section-news__item-link">Leer mas</a>
+            </div>
+          </div>
+          <div class="section-news__item flex flex-fd-c">
+            <a href="#"><img src="img/news-img4.jpg" alt="" class="section-news__item-image"></a>
+            <div class="section-news__item-inner flex flex-fd-c flex-jc-sb">
+              <div class="section-news__item-title">Ayudar al corazón sin drogas: elegir personas inteligentes</div>
+              <a href="#" class="section-news__item-link">Leer mas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>  
+  <footer class="footer">
+    <div class="container container--md">
+      <div class="footer__navigation flex">
+        <nav class="footer__footer-menu footer-menu footer-menu--pl-200">
+          <div class="footer-menu__title">PARA LECTORES</div>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">SUSCRIBIR</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">LEER</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">APRENDER</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">DESARROLLAR</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer__footer-menu footer-menu footer-menu--pl-18">
+          <div class="footer-menu__title">PARA SOCIOS</div>
+          <ul class="footer-menu__list">
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">CONTÁCTENOS</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">COOPERACIÓN</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">POSIBILIDADES</a>
+            </li>
+            <li class="footer-menu__item">
+              <a href="#" class="footer-menu__link">EDITORIAL</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container container--md">
+        <div class="footer__bottom-inner flex flex-ai-c flex-jc-sb">
+          <a href="#" class="footer__logo logo logo--footer">health <br> today</a>
+          <div class="footer__copy">Health.today © <span class="footer__year"></span> Todos los derechos reservados. La reimpresión de materiales es posible con el permiso por escrito del editor.</div>
+        </div>
+      </div>
+    </div>
+  </footer>  
+    
+
+
+
+    <script>
+        const offer_params = {
+            priceMain: '39',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: '€',
+            productName: 'Cardio Balance',
+        };
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+        if (offer_params.customPriceOld) {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        } else {
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain: offer_params.priceMain,
+            currencyMain: offer_params.currencyMain,
+            lang: 'es', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product: offer_params.productName, // название продукта
+            genderTargetting: 'all', // пол целевой аудитории - all, male, female
+            form: {
+                isNeeded: 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+</body>
+</html>
