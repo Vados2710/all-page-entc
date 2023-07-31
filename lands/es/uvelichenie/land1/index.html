@@ -1,0 +1,450 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript">
+    </script>
+    <style>
+        .ac_footer {
+            position: relative;
+            top: 10px;
+            height: 0;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #A12000;
+        }
+
+        .ac_footer a {
+            color: #A12000;
+        }
+
+        .ac_footer p {
+            text-align: center;
+        }
+
+        img[height="1"], img[width="1"] {
+            display: none !important;
+        }
+    </style><!--retarget--><!--retarget-->
+    <script src="js/9_10_11_12.min.js" type="text/javascript">
+    </script>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>SEX UP</title>
+    <link as="style" href="css/style.min.css" rel="preload">
+    <link href="css/style.min.css" rel="stylesheet">
+    <script>
+        var lazy = [];
+
+        registerListener('load', setLazy);
+        registerListener('load', lazyLoad);
+        registerListener('scroll', lazyLoad);
+        registerListener('resize', lazyLoad);
+
+        function setLazy() {
+
+            document.getElementById('wrapper').removeAttribute('class');
+
+            lazy = document.getElementsByClassName('lazy');
+            console.log('Found ' + lazy.length + ' lazy images');
+        }
+
+        function lazyLoad() {
+            for (var i = 0; i < lazy.length; i++) {
+                if (isInViewport(lazy[i])) {
+                    if (lazy[i].getAttribute('data-src')) {
+                        lazy[i].src = lazy[i].getAttribute('data-src');
+                        lazy[i].removeAttribute('data-src');
+                    }
+                }
+            }
+
+            cleanLazy();
+        }
+
+        function cleanLazy() {
+            lazy = Array.prototype.filter.call(lazy, function (l) {
+                return l.getAttribute('data-src');
+            });
+        }
+
+        function isInViewport(el) {
+            var rect = el.getBoundingClientRect();
+
+            return (
+                rect.bottom >= 0 &&
+                rect.right >= 0 &&
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function registerListener(event, func) {
+            if (window.addEventListener) {
+                window.addEventListener(event, func)
+            } else {
+                window.attachEvent('on' + event, func)
+            }
+        }
+    </script>
+</head>
+<body id="wrapper"><!--retarget--><!--retarget-->
+<div class="order_overlay"></div>
+<header class="page-header">
+    <div class="page-header__topmenu"><img alt="logo" class="page-header__logo" height="30" src="img/logo1.png"
+                                           width="122">
+        <p class="page-header__clients"> 1.000.000 CLIENTES SATISFECHOS </p>
+        <h2 class="page-header__attention"> ¡ATENCION! Debido a la alta demanda, la oferta de descuento del 50% es
+            limitada </h2>
+        <nav class="page-header__navigation">
+            <ul class="navigation__list">
+                <li class="navigation__item navigation__item--first"> Sexo más duradero</li>
+                <li class="navigation__item navigation__item--second"> Erección más potente</li>
+                <li class="navigation__item navigation__item--last"> Tamaño grande</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main class="main">
+    <section class="maximum-sexual">
+        <div class="maximum-sexual__wrapper">
+            <div class="maximum-sexual__title"><h2> ¡OBTÉN LA SUPREMACÍA SEXUAL MÁXIMA! </h2><img alt="№1"
+                                                                                                  class="maximum-sexual__number-one"
+                                                                                                  height="96"
+                                                                                                  src="img/budg.png"
+                                                                                                  width="128"></div>
+            <ul class="maximum-sexual__list">
+                <li class="maximum-sexual__item"> Erección potente y prolongada</li>
+                <li class="maximum-sexual__item"> Estimulación del crecimiento del pene</li>
+                <li class="maximum-sexual__item maximum-sexual__item--last"> Sin efectos secundarios</li>
+            </ul>
+            <div class="maximum-sexual__image">
+                <picture>
+                    <source media="(min-width: 1005px)" srcset="img/prod.png">
+                    <img alt="casanova" src="img/prod.png" style="max-width: 230px;"></picture>
+                <div class="maximum-sexual__price"><p class="old-price oldPriceForLandingInfoApi"> <span class="priceOld"></span> </p>
+                    <p class="currency labelForLandingInfoApi"> <span class="priceMain"></span> </p>
+                    <p class="new-price priceForLandingInfoApi"> <span class="currencyMain"></span> </p></div>
+                <picture>
+                    <source media="(min-width: 1005px)" srcset="img/made-in-europe-desktop.png">
+                    <img alt="made-in-europe" class="maximum-sexual__made lazy"
+                         data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/made-in-europe.png" src="img/loader.gif">
+                </picture>
+            </div>
+        </div>
+    </section>
+    <div class="order-container">
+        <section class="order"><h2 class="visually-hidden"> Order form </h2>
+            <div class="order__wrapper">
+                <form action="getform.php" class="order-form" method="post">
+                    <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                    <input type="hidden" name="utm_campaign" value="{domonetka}">
+                    <div class="order-form__fieldset"><input class="order-form__input" id="name" name="name"
+                                                             placeholder="Tu Nombre" required type="text"></div>
+                    <div class="order-form__fieldset"><input class="order-form__input only_phone" id="phone"
+                                                             name="phone" placeholder="Numero de telefono" required
+                                                             type="tel"></div>
+                    <p class="order-form__price order-form__price--old-price"> Precio original: <span
+                            class="oldPriceAndLabelForLandingInfoApi"> <span class="priceOld"></span><span class="currencyMain"></span> </span></p>
+                    <p class="order-form__price order-form__price--new-price"> Precio con descuento: <span
+                            class="priceAndLabelForLandingInfoApi"> <span class="priceMain"></span><span class="currencyMain"></span> </span></p>
+                    <button class="btn order-form__btn " name="button" type="submit"> ORDENAR</button>
+                </form>
+            </div>
+        </section>
+        <section class="test-product"><h2 class="visually-hidden"> Tests </h2>
+            <div class="test-product__wrapper"><p class="test-product__text"> Producto clinicamente probado en el
+                laboriatorios de DESCHANGILLE SA, Suiza. </p>
+                <svg class="test-product__icon" height="43" viewbox="0 0 46 43" width="46"
+                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <image height="43" width="46"
+                           xlink:href="data:img/png;base64,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"/>
+                </svg>
+                <picture>
+                    <source media="(min-width: 1005px)" srcset="img/shutterstock_101779723-desktop.png">
+                    <img alt="doctor" class="test-product__image lazy"
+                         data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/shutterstock_101779723.png"
+                         src="img/loader.gif"></picture>
+            </div>
+        </section>
+    </div>
+    <section class="experts-says">
+        <div class="experts-says__wrapper"><h2 class="experts-says__title"> OPINIONES DE EXPERTOS </h2>
+            <p class="experts-says__text"> SEX UP es un poderoso remedio para mejorar la fuerza sexual masculina, eso te
+                permite llevar una vida sexual mas intensa y vibrante. </p>
+            <div class="experts-says__images">
+                <picture>
+                    <source media="(min-width: 1005px)" srcset="img/Group1-desktop.png">
+                    <img alt="penises" class="lazy" data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/Group1.png"
+                         src="img/loader.gif"></picture>
+            </div>
+            <p class="experts-says__text experts-says__text--last"> Con la ayuda de el tabletas, aumentará notablemente
+                el tamaño del pene, y esto afectará directamente su vida sexual: experimentará mucho más placer en el
+                sexo con mujeres y les dará orgasmos múltiples potentes. </p></div>
+    </section>
+    <article class="review"><h2 class="visually-hidden"> Doctor's reviews </h2>
+        <div class="review__wrapper">
+            <div class="review__author">
+                <picture>
+                    <source media="(min-width: 1005px)" srcset="img/shutterstock_91260272-desktop.png">
+                    <img alt="doctor2" class="review__image lazy"
+                         data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/doctor2.png" src="img/loader.gif">
+                </picture>
+                <span class="review__author review__author--who"> Antony Salvor, director medico de la clinica Lazarus, Atlanta </span>
+            </div>
+            <p class="review__text"> La fórmula de SEX UP no solo proporciona un aumento instantáneo de fuerza sexual y
+                el deseo, pero también previene la disfunción eréctil asegurando la satisfacción de su pareja y los
+                repetidos actos sexuales durante la noche! </p></div>
+    </article>
+    <section class="funziona">
+        <div class="funziona__wrapper"><h2 class="funziona__title"> COMO FUNCIONA SEX UP </h2><img alt="1"
+                                                                                                   class="funziona__img funziona__img1 lazy"
+                                                                                                   data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/how_work.png"
+                                                                                                   height="160"
+                                                                                                   src="img/loader.gif"
+                                                                                                   width="250">
+            <p class="funziona__text funziona__text--first"> SEX UP contiene potentes estimulantes naturales de la
+                actividad sexual: cafeína, extractos de guaraná, ginkgo biloba, té verde y arginina. El complejo con
+                estos componentes aumenta la producción de óxido nítrico en los tejidos del pene, lo que proporciona una
+                erección fuerte y persistente, aumenta la resistencia y potencia la libido. </p>
+            <div class="funziona__image-container"><img alt="DOWN" class="funziona__image lazy"
+                                                        data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/pol6.png"
+                                                        height="154" src="img/loader.gif" width="135"><img alt="UP"
+                                                                                                           class="funziona__image funziona__image--second lazy"
+                                                                                                           data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/penisUP.png"
+                                                                                                           height="136"
+                                                                                                           src="img/loader.gif"
+                                                                                                           width="136">
+            </div>
+            <p class="funziona__text funziona__text--second"> SEX UP se absorbe rápidamente en la sangre y estimula la
+                producción de óxido nítrico que, a su vez, aumenta el flujo de sangre hacia los cuerpos cavernosos del
+                pene, lo que ayuda a disfrutar de erecciones potentes y prolongadas. El aumento constante del flujo
+                sanguíneo en los cuerpos cavernosos ayudará a agregar unos pocos centímetros más al tamaño de su pene,
+                tanto en longitud como en grosor. </p></div>
+    </section>
+    <section class="advantages">
+        <div class="advantages__wrapper"><h2 class="advantages__title"> LAS VENTAJAS DE SEX UP </h2>
+            <ul class="advantages__list">
+                <li class="advantages__item advantages__item--first"><p class="advantages__item-title"> ERECCIONES
+                    PODEROSAS Y PROLONGADAS </p>
+                    <p class="advantages__item-text"> SEX UP proporciona una erección instantánea, lo que le permite a
+                        usted y su pareja disfrutar del sexo desenfrenado en cualquier momento. </p></li>
+                <li class="advantages__item advantages__item--second"><p
+                        class="advantages__item-title advantages__item-title--second"> AUMENTO DE LA RESISTENCIA </p>
+                    <p class="advantages__item-text advantages__item-text--second"> SEX UP llena tu pene de sangre que
+                        te permite tener relaciones sexuales 5 veces más a menudo que de costumbre. </p></li>
+                <li class="advantages__item advantages__item--third"><p class="advantages__item-title"> AUMENTO DE LA
+                    LIBIDO </p>
+                    <p class="advantages__item-text"> Prepárese para experimentar el deseo sexual y la pasión junto con
+                        SEX UP que lo ayuda a llevar una vida sexual como nunca antes. </p></li>
+                <li class="advantages__item advantages__item--fourth"><p
+                        class="advantages__item-title advantages__item-title--fourth"> SEGURIDAD EN LA CAMA </p>
+                    <p class="advantages__item-text advantages__item-text--fourth"> Al aumentar tu fuerza y ​​tu energía
+                        sexual, ganarás seguridad en la cama y nunca decepcionarás a ninguna mujer! </p></li>
+            </ul>
+            <img alt="foto" class="advantages__image lazy"
+                 data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/foto-advantages.png" src="img/loader.gif"></div>
+    </section>
+    <section class="corso">
+        <div class="corso__wrapper"><h2 class="corso__title"> CURSO DE 1 MES </h2>
+            <div class="corso__container"><img alt="casanova" class="corso__image lazy"
+                                               data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/prod.png"
+                                               src="img/loader.gif">
+                <p class="corso__text"> PLACER PARA TODA LA VIDA </p></div>
+            <a href="index.html#forma">
+                <button class="pre_toform btn corso__btn" name="button" type="button"> ORDENAR</button>
+            </a></div>
+    </section>
+    <section class="results">
+        <div class="results__wrapper"><h2 class="results__title"> CUANDO ESPERAR LOS RESULTADOS? </h2>
+            <p class="results__text results__text--first"> La erección se hará más larga y más consistente y la
+                sensibilidad del miembro sexual aumentará 2 veces. La longitud y el grosor del pene aumentarán hasta 1,5
+                cm más. </p>
+            <p class="results__text results__text--second"> Su miembro será visiblemente MÁS GRANDE, la forma se volverá
+                anatómicamente correcta. ¡La duración del acto sexual aumentará en un 70%! </p>
+            <p class="results__text results__text--third"> Podra satisfacer a su pareja de 5 a 7 veces seguidas durante
+                una noche! ¡El miembro se estirará 4-5 cm! </p>
+            <div class="results__image-container"><p class="results__settimane settimane1"> semanas </p>
+                <p class="results__settimane settimane2"> semanas </p>
+                <p class="results__settimane settimane3"> semanas </p>
+                <picture>
+                    <source media="(min-width: 1005px)" srcset="img/penises-desktop.png">
+                    <img alt="up" class="results__image lazy"
+                         data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/penises.png" src="img/loader.gif">
+                </picture>
+            </div>
+        </div>
+    </section>
+    <section class="comments">
+        <div class="comments__wrapper"><h2 class="comments__title"> Hombres reales, resultados reales </h2>
+            <ul class="comments__list">
+                <li class="comments__item">
+                    <div class="comment-author-container">
+                        <picture>
+                            <source media="(min-width: 1005px)" srcset="img/Ezio-desktop.png">
+                            <img alt="Ezio" class="comment-image lazy"
+                                 data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/Ezio.png" src="img/loader.gif">
+                        </picture>
+                        <p class="comment-author"> Jose Luis, 56 años </p></div>
+                    <p class="comment__text"> El declive de la actividad sexual y la aparición de la disfunción eréctil
+                        se han convertido en una angustia para mí a la edad madura. Probé y probé todas las soluciones
+                        posibles para resolver este problema, y ​​fue solo aquí, en un blog muy popular sobre salud
+                        masculina. Encontré el tabletas de SEX UP y decidí probarlas. Esta fue y siempre será la mejor
+                        decisión que tomé en mi vida. Mi erección ha vuelto, es como en mi juventud, me maravillo con mi
+                        resistencia sexual gracias a este tabletas! </p>
+                    <div class="comment-like"><img alt="like" class="lazy"
+                                                   data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/like.png"
+                                                   src="img/loader.gif"><span> 5608 </span></div>
+                </li>
+                <li class="comments__item">
+                    <div class="comment-author-container">
+                        <picture>
+                            <source media="(min-width: 1005px)" srcset="img/Orazio-desktop.png">
+                            <img alt="Ezio" class="comment-image lazy"
+                                 data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/Orazio.png" src="img/loader.gif">
+                        </picture>
+                        <p class="comment-author"> Alberto, 45 años </p></div>
+                    <p class="comment__text"> Me parece fantástico que mi remedio favorito para los hombres ya esté
+                        disponible en el mercado y sin una receta. He estado usando SEX UP durante dos meses y mi vida
+                        sexual realmente ha cambiado mucho para mejor. Una erección más fuerte, un deseo incontrolable
+                        de tener relaciones sexuales. En cualquier momento del día o de la noche, mucha más resistencia,
+                        es todo lo que causa el consumo de SEX UP, ¡ahora tengo mejores relaciones sexuales que cuando
+                        tenía 30 años! </p>
+                    <div class="comment-like"><img alt="like" class="lazy"
+                                                   data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/like.png"
+                                                   src="img/loader.gif"><span> 3116 </span></div>
+                </li>
+                <li class="comments__item">
+                    <div class="comment-author-container">
+                        <picture>
+                            <source media="(min-width: 1005px)" srcset="img/Fedro-desktop.png">
+                            <img alt="Ezio" class="comment-image lazy"
+                                 data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/Fedro.png" src="img/loader.gif">
+                        </picture>
+                        <p class="comment-author"> Manuel, 37 años </p></div>
+                    <p class="comment__text"> Con la edad comenzaron a aparecer problemas con la erección y ningún
+                        remedio ayudó hasta que mi mejor amigo me recomendo SEX UP, decidí intentarlo y ahora estoy muy
+                        feliz de haberlo hecho. Este tabletas me han ayudado a aumentar el mi resistencia sexual, la
+                        erección y también alargan el tamaño del pene. Y te digo un secreto, mi esposa es una verdadera
+                        fanática de SEX UP. </p>
+                    <div class="comment-like"><img alt="like" class="lazy"
+                                                   data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/like.png"
+                                                   src="img/loader.gif"><span> 7395 </span></div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="action">
+        <div class="action__wrapper"><h2 class="action__title"> ¡OBTÉN LA SUPREMACÍA SEXUAL MÁXIMA! </h2>
+            <p class="action__text action__text--red"> Debido a la alta demanda, la oferta de descuento del 50% es
+                limitada. </p>
+            <div class="action__price">
+                <picture>
+                    <source media="(min-width: 1005px)" srcset="img/prod.png">
+                    <img alt="casanova" class="action__image lazy"
+                         data-src="//tigrfeba.com/content/6R8banGNkXy3SgB/img/prod.png" src="img/loader.gif"></picture>
+                <p class="price-text"> SOLO POR HOY </p>
+                <div class="price-container"><p class="old-price"> Precio original: <br><span
+                        class="old oldPriceAndLabelForLandingInfoApi"> <span class="priceOld"></span><span class="currencyMain"></span> </span></p>
+                    <p class="new-price"> Precio con descuento: <br><span class="new priceAndLabelForLandingInfoApi"> <span class="priceMain"></span><span class="currencyMain"></span> </span>
+                    </p></div>
+            </div>
+            <form action="getform.php" class="action-form" id="forma" method="post">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <p class="action-form__description"> ¡Aprovecha la oferta exclusiva! 50% de descuento! </p>
+                <div class="share"><p class="share__text"> El 50% de descuento termina en: </p>
+                    <div class="timetillde">
+                        <div class="timer" id="timer"><span class="hour"><span class="num hour0"> 0 </span><span
+                                class="num hour1"> 0 </span></span><span class="dot"> : </span><span
+                                class="minute"><span class="num min0"> 0 </span><span class="num min1"> 0 </span></span><span
+                                class="dot"> : </span><span class="second"><span class="num sec0"
+                                                                                 id="sec0"> 0 </span><span
+                                class="num sec1" id="sec1"> 0 </span></span></div>
+                    </div>
+                </div>
+
+                <div class="action-form__fieldset"><input class="action-form__input" id="name2" name="name"
+                                                          placeholder="Tu Nombre" required type="text"></div>
+                <div class="action-form__fieldset"><input class="action-form__input only_phone" id="phone2" name="phone"
+                                                          placeholder="Numero de telefono" required type="tel"></div>
+                <button class="btn action-form__btn button__text " name="button" type="submit"> ORDENAR
+                </button>
+                <p class="action-form__text"> Garantizamos 100% de confidencialidad. </p>
+                <p class="action-form__text action-form__text--desktop"> Pago solo en la entrega </p></form>
+        </div>
+    </section>
+</main>
+<footer class="page-footer">
+    <div class="page-footer__wrapper"><p class="page-footer__text"> Producto certificado, composición, método y
+        descripción de uso indicados en el paquete. </p></div>
+</footer>
+<script src="js/timer.js">
+</script>
+<script src="js/common.js">
+</script>
+
+<div class="ac_footer"><span> © 2023 Copyright. All rights reserved. </span>
+    <!--<br><a
+        href="//tigrfeba.com/content/shared/html/policy_en.html" target="_blank"> Privacy policy </a> | <a
+        href="http://ac-feedback.com/report_form/"> Report </a>
+    <p></p>
+    <script>
+        typeof adc_clearFooter !== 'undefined' && adc_clearFooter();
+    </script>-->
+</div>
+<script>
+    const offer_params = {
+        priceMain : '12990',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '$',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+</html>

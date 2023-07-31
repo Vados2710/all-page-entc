@@ -1,0 +1,98 @@
+
+.job__wrap-title {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.job__title {
+    display: inline-block;
+}
+
+.job__body {
+    display: flex;
+    justify-content: center;
+}
+
+.job__item {
+    position: relative;
+    width: 209px;
+
+    & span {
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        z-index: 2;
+        font-family: "Baskerville", serif;
+        font-size: 96px;
+        font-weight: 700;
+        color: #B6D1D4;
+    }
+
+    & p {
+        margin-top: 24px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    & + & {
+        margin-left: 140px;
+    }
+
+    &:last-child {
+        .job__media {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.job__media {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        right: -85px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 36px;
+        content: '';
+        background-image: url('../media/job/arrow.png');
+    }
+}
+
+@media (max-width: 1054px) {
+    .job__item {
+        & + & {
+            margin-left: 85px;
+        }
+    }
+
+    .job__media {
+        &::before {
+            right: -60px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .job__body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .job__item {
+        & + & {
+            margin-top: 30px;
+            margin-left: 0;
+        }
+    }
+
+    .job__media {
+        &::before {
+            display: none;
+        }
+    }
+}
