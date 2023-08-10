@@ -1,0 +1,186 @@
+!(function (t, e) {
+  "object" == typeof exports && "undefined" != typeof module
+    ? (module.exports = e())
+    : "function" == typeof define && define.amd
+    ? define(e)
+    : ((t = "undefined" != typeof globalThis ? globalThis : t || self).uuidv4 =
+        e());
+})(this, function () {
+  "use strict";
+  var t,
+    e = new Uint8Array(16);
+  function o() {
+    if (
+      !t &&
+      !(t =
+        ("undefined" != typeof crypto &&
+          crypto.getRandomValues &&
+          crypto.getRandomValues.bind(crypto)) ||
+        ("undefined" != typeof msCrypto &&
+          "function" == typeof msCrypto.getRandomValues &&
+          msCrypto.getRandomValues.bind(msCrypto)))
+    )
+      throw new Error(
+        "crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported"
+      );
+    return t(e);
+  }
+  var n =
+    /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i;
+  function r(t) {
+    return "string" == typeof t && n.test(t);
+  }
+  for (var i = [], u = 0; u < 256; ++u)
+    i.push((u + 256).toString(16).substr(1));
+  return function (t, e, n) {
+    var u = (t = t || {}).random || (t.rng || o)();
+    if (((u[6] = (15 & u[6]) | 64), (u[8] = (63 & u[8]) | 128), e)) {
+      n = n || 0;
+      for (var f = 0; f < 16; ++f) e[n + f] = u[f];
+      return e;
+    }
+    return (function (t) {
+      var e =
+          arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0,
+        o = (
+          i[t[e + 0]] +
+          i[t[e + 1]] +
+          i[t[e + 2]] +
+          i[t[e + 3]] +
+          "-" +
+          i[t[e + 4]] +
+          i[t[e + 5]] +
+          "-" +
+          i[t[e + 6]] +
+          i[t[e + 7]] +
+          "-" +
+          i[t[e + 8]] +
+          i[t[e + 9]] +
+          "-" +
+          i[t[e + 10]] +
+          i[t[e + 11]] +
+          i[t[e + 12]] +
+          i[t[e + 13]] +
+          i[t[e + 14]] +
+          i[t[e + 15]]
+        ).toLowerCase();
+      if (!r(o)) throw TypeError("Stringified UUID is invalid");
+      return o;
+    })(u);
+  };
+});
+(function () {
+  const query = window.location.search;
+  const href = window.location.href;
+  const lang = document.documentElement.lang;
+
+  sessionId(query);
+  sourceUrl(query, href);
+  saveParams(query);
+  sendHit(query);
+
+  if (document.getElementById("prelanding")) {
+    const links = document.getElementsByClassName("landing-url");
+    updateLinks(links);
+  }
+
+  function sourceUrl(query, href) {
+    const params = new URLSearchParams(query);
+    if (params.has("source-url")) {
+      localStorage.setItem("source-url", params.get("source-url"));
+    }
+    if (localStorage.getItem("source-url") === null) {
+      localStorage.setItem("source-url", encodeURIComponent(href));
+    }
+  }
+
+  function sessionId(query) {
+    const params = new URLSearchParams(query);
+    const current_ts = Math.floor(Date.now() / 1000);
+
+    if (
+      params.has("session-uuid") &&
+      params.has("expiry-ts") &&
+      current_ts < parseInt(params.get("expiry-ts"), 10)
+    ) {
+      localStorage.setItem("session-uuid", params.get("session-uuid"));
+      localStorage.setItem("expiry-ts", current_ts + 2629746);
+    }
+
+    if (
+      localStorage.getItem("session-uuid") === null ||
+      localStorage.getItem("expiry-ts") === null ||
+      current_ts > parseInt(localStorage.getItem("expiry-ts"), 10)
+    ) {
+      let session_id = uuidv4();
+      localStorage.setItem("session-uuid", session_id);
+    }
+    localStorage.setItem("expiry-ts", current_ts + 2629746);
+  }
+
+  function saveParams(query) {
+    const params = new URLSearchParams(query);
+    sessionStorage.setItem("params", params.toString());
+  }
+
+  function updateLinks(links) {
+    for (let i = 0; i < links.length; i++) {
+      const href =
+        links[i].href +
+        "?" +
+        sessionStorage.getItem("params") +
+        "&session-uuid=" +
+        localStorage.getItem("session-uuid") +
+        "&expiry-ts=" +
+        localStorage.getItem("expiry-ts") +
+        "&source-url=" +
+        localStorage.getItem("source-url");
+      links[i].href = href;
+    }
+  }
+
+  function translateOfferCode(lang) {
+    if (lang === "de-AT" || lang === "at") {
+      return "AT";
+    }
+    if (lang === "cs" || lang === "cz") {
+      return "CZ";
+    }
+    if (lang === "et" || lang === "ee") {
+      return "EE";
+    }
+    if (lang === "sl" || lang === "si") {
+      return "SI";
+    }
+    if (lang === "nl-BE" || lang === "fr-BE" || lang === "be") {
+      return "BE";
+    }
+    return lang.toUpperCase();
+  }
+
+  function sendHit(query) {
+    const searchParams = new URLSearchParams(query);
+    const params = {
+      analytics_hit: {
+        session_uuid: localStorage.getItem("session-uuid"),
+        source_url: decodeURIComponent(window.location.href),
+        market_code: translateOfferCode(lang),
+        user_agent: window.navigator.userAgent,
+      },
+    };
+    if (searchParams.has("hit") == false && searchParams.toString() !== "") {
+      fetch("https://api.nsbox.pl/api/v3/analytics_hits", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(params),
+      }).catch((error) => console.log("Error:", error));
+      searchParams.append("hit", "1");
+      let newRelativePathQuery =
+        window.location.pathname + "?" + searchParams.toString();
+      history.pushState(null, "", newRelativePathQuery);
+    }
+  }
+})();

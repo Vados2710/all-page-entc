@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-width: 360px;
+  font-size: 18px;
+}
+
+.text-accent {
+  @apply font-bold text-pink-400;
+  text-shadow: 0 0 1px currentColor;
+}
+
+.text-secondary {
+  @apply font-bold text-fuchsia-600;
+  text-shadow: 0 0 1px currentColor;
+}
+
+.content > p {
+  @apply mb-6;
+}
+
+.ingr {
+  @apply flex flex-wrap gap-6 justify-center items-baseline text-pink-100;
+}
+
+.ingr > li {
+  @apply p-4 border-2 border-dashed border-current text-center rounded-full flex-grow shadow-md shadow-current text-sitetheme;
+}
+.ingr > li:nth-child(5n + 1) {
+  @apply border-solid text-pink-600;
+}
+
+.ingr > li:nth-child(even) {
+  @apply border-double border-4 text-fuchsia-600;
+}
+
+.comments {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.comment {
+  display: block;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 15px;
+  width: 100%;
+  min-height: 50px;
+}
+
+.comment:last-child {
+  border-bottom: none;
+}
+
+.comment.ans {
+  margin-top: 20px;
+  margin-bottom: 0;
+  border-bottom: none;
+  padding: 0;
+  padding-left: 35px;
+}
+
+.comment .ava {
+  float: left;
+  border-radius: 50%;
+  width: 100%;
+  max-width: 50px;
+}
+
+.comment p {
+  margin-left: 60px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.comment p b {
+  @apply text-3xl;
+}
+
+.comment p:last-child {
+  margin-bottom: 0;
+}
+
+.comment p.comm-date {
+  margin-bottom: 10px;
+  color: #a8abae;
+}
+
+.comment .comm-img {
+  @apply block mt-4 max-h-[340px] mr-auto object-contain text-left w-auto rounded-md shadow-md;
+}
+
+@media screen and (max-width: 500px) {
+  .comment .ava {
+    margin-right: 10px;
+  }
+
+  .comment p {
+    margin-left: auto;
+  }
+}
+
+#order .order {
+  position: relative;
+}
+
+#order .order__sticker-special {
+  position: absolute;
+  right: -15px;
+  top: -35px;
+  width: 70px;
+  height: 70px;
+}
+
+.last-order-btn {
+  @apply bg-gradient-to-br from-pink-300 to-fuchsia-600 rounded-lg text-white transition-colors font-bold shadow-md;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid transparent !important;
+}
+
+.last-order-btn:hover,
+.last-order-btn:focus {
+  background: transparent;
+  border-color: currentColor !important;
+  color: #c026d3;
+}

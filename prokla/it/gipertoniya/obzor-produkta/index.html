@@ -1,0 +1,687 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html lang="it-IT" class=" " data-skin="light">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Recensione ed Opinioni</title>  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+  <style>
+      @font-face{font-family:tiefonticon;src:url(tielabs-fonticon.eot);src:url(tielabs-fonticon.eot#iefix) format("embedded-opentype"),url(img/tielabs-fonticon.woff) format("woff"),url(tielabs-fonticon.ttf) format("truetype"),url(tielabs-fonticon.svg) format("svg");font-weight:400;font-style:normal;font-display:swap}.tie-icon-tiktok:before{content:"\e90b"}.tie-icon-line:before{content:"\e906"}.tie-icon-messenger:before{content:"\f39f"}.tie-icon-facebook:before{content:"\f09a"}.tie-icon-basecloud-2:before{content:"\f105"}.tie-icon-cloud-2:before{content:"\e904"}.tie-icon-cloud-solid:before{content:"\e905"}.tie-icon-gps:before{content:"\e90a"}.tie-icon-check:before{content:"\e116"}.tie-icon-cross:before{content:"\e117"}.tie-icon-search:before{content:"\f002"}.tie-icon-heart:before{content:"\f004"}.tie-icon-star-s:before{content:"\f005"}.tie-icon-star-o:before{content:"\f006"}.tie-icon-author:before{content:"\f007"}.tie-icon-plus:before{content:"\f067"}.tie-icon-minus:before{content:"\f068"}.tie-icon-search:before{content:"\f002"}.tie-icon-heart:before{content:"\f004"}.tie-icon-star-s:before{content:"\f005"}.tie-icon-star-o:before{content:"\f006"}.tie-icon-check1:before{content:"\f00c"}.tie-icon-remove:before{content:"\f00d"}.tie-icon-search-plus:before{content:"\f00e"}.tie-icon-cog:before{content:"\f013"}.tie-icon-home:before{content:"\f015"}.tie-icon-clock:before{content:"\f017"}.tie-icon-download:before{content:"\f019"}.tie-icon-refresh:before{content:"\f021"}.tie-icon-lock:before{content:"\f023"}.tie-icon-headphones:before{content:"\f025"}.tie-icon-volume-up:before{content:"\f028"}.tie-icon-tags:before{content:"\f02c"}.tie-icon-bookmark:before{content:"\f02e"}.tie-icon-print:before{content:"\f02f"}.tie-icon-camera:before{content:"\f030"}.tie-icon-list:before{content:"\f03a"}.tie-icon-video-camera:before{content:"\f03d"}.tie-icon-pencil:before{content:"\f040"}.tie-icon-play:before{content:"\f04b"}.tie-icon-pause:before{content:"\f04c"}.tie-icon-ban:before{content:"\f05e"}.tie-icon-gift:before{content:"\f06b"}.tie-icon-eye:before{content:"\f06e"}.tie-icon-exclamation-triangle:before{content:"\f071"}.tie-icon-warning:before{content:"\f071"}.tie-icon-random:before{content:"\f074"}.tie-icon-chevron-down:before{content:"\f079"}.tie-icon-shopping-cart:before{content:"\f07a"}.tie-icon-folder:before{content:"\f07b"}.tie-icon-bar-chart:before{content:"\f080"}.tie-icon-comments:before{content:"\f086"}.tie-icon-sign-out:before{content:"\f08b"}.tie-icon-thumb-tack:before{content:"\f08d"}.tie-icon-external-link:before{content:"\f08e"}.tie-icon-phone:before{content:"\f095"}.tie-icon-twitter:before{content:"\f099"}.tie-icon-github:before{content:"\f09b"}.tie-icon-credit-card:before{content:"\f09d"}.tie-icon-feed:before{content:"\f09e"}.tie-icon-bullhorn:before{content:"\f0a1"}.tie-icon-globe:before{content:"\f0ac"}.tie-icon-filter:before{content:"\f0b0"}.tie-icon-group:before{content:"\f0c0"}.tie-icon-link:before{content:"\f0c1"}.tie-icon-navicon:before{content:"\f0c9"}.tie-icon-truck:before{content:"\f0d1"}.tie-icon-pinterest:before{content:"\f0d2"}.tie-icon-envelope:before{content:"\f0e0"}.tie-icon-linkedin:before{content:"\f0e1"}.tie-icon-dashboard:before{content:"\f0e4"}.tie-icon-tachometer:before{content:"\f0e4"}.tie-icon-bolt:before{content:"\f0e7"}.tie-icon-lightbulb:before{content:"\f0eb"}.tie-icon-bell:before{content:"\f0f3"}.tie-icon-file-text:before{content:"\f0f6"}.tie-icon-angle-left:before{content:"\f104"}.tie-icon-angle-right:before{content:"\f106"}.tie-icon-angle-up:before{content:"\f107"}.tie-icon-angle-down:before{content:"\f109"}.tie-icon-circle-o:before{content:"\f10c"}.tie-icon-quote-left:before{content:"\f10e"}.tie-icon-quote-right:before{content:"\f10f"}.tie-icon-spinner:before{content:"\f110"}.tie-icon-info:before{content:"\f129"}.tie-icon-thumbs-up:before{content:"\f164"}.tie-icon-thumbs-down:before{content:"\f165"}.tie-icon-xing:before{content:"\f168"}.tie-icon-youtube:before{content:"\f16a"}.tie-icon-instagram:before{content:"\f16d"}.tie-icon-flickr:before{content:"\f16e"}.tie-icon-bitbucket:before{content:"\f171"}.tie-icon-tumblr:before{content:"\f173"}.tie-icon-long-arrow-right:before{content:"\f178"}.tie-icon-apple:before{content:"\f179"}.tie-icon-dribbble:before{content:"\f17d"}.tie-icon-skype:before{content:"\f17e"}.tie-icon-foursquare:before{content:"\f180"}.tie-icon-archive:before{content:"\f187"}.tie-icon-vk:before{content:"\f189"}.tie-icon-dot-circle-o:before{content:"\f192"}.tie-icon-wordpress:before{content:"\f19a"}.tie-icon-reddit:before{content:"\f1a1"}.tie-icon-behance:before{content:"\f1b4"}.tie-icon-steam:before{content:"\f1b6"}.tie-icon-spotify:before{content:"\f1bc"}.tie-icon-deviantart:before{content:"\f1bd"}.tie-icon-soundcloud:before{content:"\f1be"}.tie-icon-paper-plane:before{content:"\f1d8"}.tie-icon-share:before{content:"\f1e0"}.tie-icon-twitch:before{content:"\f1e8"}.tie-icon-yelp:before{content:"\f1e9"}.tie-icon-wifi:before{content:"\f1eb"}.tie-icon-paypal:before{content:"\f1ed"}.tie-icon-lastfm:before{content:"\f202"}.tie-icon-cart-plus:before{content:"\f217"}.tie-icon-whatsapp:before{content:"\f232"}.tie-icon-medium:before{content:"\f23a"}.tie-icon-tripadvisor:before{content:"\f262"}.tie-icon-odnoklassniki:before{content:"\f263"}.tie-icon-get-pocket:before{content:"\f265"}.tie-icon-500px:before{content:"\f26e"}.tie-icon-vimeo:before{content:"\f27d"}.tie-icon-mixcloud:before{content:"\f289"}.tie-icon-shopping-bag:before{content:"\f290"}.tie-icon-shopping-basket:before{content:"\f291"}.tie-icon-viadeo:before{content:"\f2a9"}.tie-icon-snapchat:before{content:"\f2ac"}.tie-icon-grid-4:before{content:"\e908"}.tie-icon-grid-9:before{content:"\e909"}.tie-icon-wind:before{content:"\e902"}.tie-icon-thermometer-half:before{content:"\e901"}.tie-icon-dots-three-vertical:before{content:"\e907"}.tie-icon-dots-three-horizontal:before{content:"\e903"}.tie-icon-facebook:before{content:"\f09a"}.tie-icon-basecloud-2:before{content:"\f105"}.tie-icon-fire:before{content:"\e900"}.tie-icon-map:before{content:"\e6ab"}.tie-icon-goto:before{content:"\e64a"}.tie-icon-star:before{content:"\e66b"}.tie-icon-plaine:before{content:"\e671"}.tie-icon-house:before{content:"\e67d"}.tie-icon-users:before{content:"\e69b"}.tie-icon-user:before{content:"\e69c"}.tie-icon-typing:before{content:"\e69e"}.tie-icon-settings:before{content:"\e6a3"}.tie-icon-ringer:before{content:"\e6a7"}.tie-icon-messageright:before{content:"\e6b3"}.tie-icon-list1:before{content:"\e6b8"}.tie-icon-inbox:before{content:"\e6bb"}.tie-icon-edit:before{content:"\e6bd"}.tie-icon-raindrop:before{content:"\f078"}.tie-icon-text:before{content:"\e685"}.tie-icon-audio:before{content:"\e6a2"}.tie-icon-picture:before{content:"\e6ac"}.tie-icon-video:before{content:"\e6b6"}.tie-icon-windysnow:before{content:"\f103"}.tie-icon-mist:before{content:"\f108"}.tie-icon-moon:before{content:"\f10d"}.tie-icon-sun:before{content:"\f113"}.tie-icon-thunder:before{content:"\f114"}</style>
+  <style>:root{--wp-admin-theme-color: #007cba;--wp-admin-theme-color-darker-10: #006ba1;--wp-admin-theme-color-darker-20: #005a87}@supports(-webkit-overflow-scrolling:touch){}@supports(position:sticky){}@supports(position:sticky){}@supports(position:sticky){}@supports(position:sticky){}.wp-block-image{margin-bottom: 1em}.wp-block-image img{max-width: 100%}.wp-block-image .aligncenter{display: table}.wp-block-image .aligncenter{margin-left: auto;margin-right: auto}@supports((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){}.has-drop-cap:not(:focus):first-letter{float: left;font-size: 8.4em;line-height: .68;font-weight: 100;margin: .05em .1em 0 0;text-transform: uppercase;font-style: normal}@supports(position:sticky){}.aligncenter{clear: both}:root{--wp-admin-theme-color: #007cba;--wp-admin-theme-color-darker-10: #006ba1;--wp-admin-theme-color-darker-20: #005a87}.components-button:focus:not(:disabled){box-shadow: 0 0 0 1.5px #007cba;box-shadow: 0 0 0 1.5px var(--wp-admin-theme-color);outline: 1px solid transparent}.components-button.is-primary:hover:not(:disabled){background: #006ba1;background: var(--wp-admin-theme-color-darker-10);color: #fff}.components-button.is-primary:active:not(:disabled){background: #005a87;background: var(--wp-admin-theme-color-darker-20);border-color: #005a87;border-color: var(--wp-admin-theme-color-darker-20);color: #fff}.components-button.is-primary:focus:not(:disabled){box-shadow: inset 0 0 0 1px #fff,0 0 0 1.5px #007cba;box-shadow: inset 0 0 0 1px #fff,0 0 0 1.5px var(--wp-admin-theme-color);outline: 1px solid transparent}.components-button.is-secondary:active:not(:disabled),.components-button.is-tertiary:active:not(:disabled){background: #ddd;color: #006ba1;color: var(--wp-admin-theme-color-darker-10);box-shadow: none}.components-button.is-secondary:hover:not(:disabled),.components-button.is-tertiary:hover:not(:disabled){color: #006ba1;color: var(--wp-admin-theme-color-darker-10);box-shadow: inset 0 0 0 1px #006ba1;box-shadow: inset 0 0 0 1px var(--wp-admin-theme-color-darker-10)}.components-button.is-destructive:hover:not(:disabled){color: #710d0d;box-shadow: inset 0 0 0 1px #710d0d}.components-button.is-destructive:focus:not(:disabled){color: #007cba;color: var(--wp-admin-theme-color)}.components-button.is-destructive:active:not(:disabled){background: #ccc}.components-button.is-link:active:not(:disabled),.components-button.is-link:hover:not(:disabled){color: #00a0d2;box-shadow: none}.components-button.is-link.is-destructive:active:not(:disabled),.components-button.is-link.is-destructive:hover:not(:disabled){color: #710d0d;background: 0 0}.components-button.is-link.is-destructive:focus:not(:disabled){color: #007cba;color: var(--wp-admin-theme-color)}.components-button.is-pressed:focus:not(:disabled){box-shadow: inset 0 0 0 1px #fff,0 0 0 1.5px #007cba;box-shadow: inset 0 0 0 1px #fff,0 0 0 1.5px var(--wp-admin-theme-color);outline: 2px solid transparent}.components-button.is-pressed:hover:not(:disabled){color: #fff;background: #1e1e1e}.components-button.components-color-picker__saturation-pointer:focus:not(:disabled){box-shadow: 0 0 0 2px #fff,inset 0 0 0 1px #000,0 0 0 3px #000}.components-custom-select-control__button:focus:not(:disabled){border-color: #007cba;border-color: var(--wp-admin-theme-color);box-shadow: 0 0 0 .5px #007cba;box-shadow: 0 0 0 .5px var(--wp-admin-theme-color)}@supports(outline-offset:1px){}@supports(-ms-ime-align:auto){}@supports(-ms-ime-align:auto){}.components-notice__dismiss:not(:disabled):not([aria-disabled=true]):focus,.components-notice__dismiss:not(:disabled):not([aria-disabled=true]):not(.is-secondary):active,.components-notice__dismiss:not(:disabled):not([aria-disabled=true]):not(.is-secondary):hover{color: #1e1e1e;background-color: transparent}.components-notice__dismiss:not(:disabled):not([aria-disabled=true]):not(.is-secondary):hover{box-shadow: none}@supports(position:sticky){}@media not all and (min-resolution:0.001dpcm){@supports(-webkit-appearance: none){}}.components-snackbar__action.components-button:not(:disabled):not([aria-disabled=true]):not(.is-secondary){text-decoration: underline;background-color: transparent}.components-snackbar__action.components-button:not(:disabled):not([aria-disabled=true]):not(.is-secondary):focus{color: #fff;box-shadow: none;outline: 1px dotted #fff}.components-snackbar__action.components-button:not(:disabled):not([aria-disabled=true]):not(.is-secondary):hover{color: #007cba;color: var(--wp-admin-theme-color)}.components-tab-panel__tabs-item:focus:not(:disabled){box-shadow: inset 0 1.5px #007cba;box-shadow: inset 0 1.5px var(--wp-admin-theme-color)}.components-toolbar__control.components-button:not(:disabled).is-pressed[data-subscript]:after{color: #fff}@supports(position:sticky){}:root{--wp-admin-theme-color: #007cba;--wp-admin-theme-color-darker-10: #006ba1;--wp-admin-theme-color-darker-20: #005a87}.block-editor-block-breadcrumb__button.components-button:hover:not(:disabled){text-decoration: underline;box-shadow: none}.block-editor-link-control__search-item:focus:not(:disabled){box-shadow: inset 0 0 0 1.5px #007cba;box-shadow: 0 0 0 1.5px var(--wp-admin-theme-color) inset}.components-button.block-editor-block-types-list__item:not(:disabled):hover{border-color: #007cba;border-color: var(--wp-admin-theme-color);color: #007cba!important;color: var(--wp-admin-theme-color)!important}.components-button.block-editor-block-types-list__item:not(:disabled).is-active{color: #fff;background: #1e1e1e;outline: 2px solid transparent;outline-offset: -2px}.block-editor-url-popover__additional-controls>div[role=menu] .components-button:not(:disabled):not([aria-disabled=true]):not(.is-secondary)>svg{box-shadow: none}.block-editor-url-popover .components-button.has-icon:not(:disabled):focus{box-shadow: none}.block-editor-url-popover .components-button.has-icon:not(:disabled):focus>svg{box-shadow: inset 0 0 0 1.5px #007cba,inset 0 0 0 4px #fff;box-shadow: inset 0 0 0 1.5px var(--wp-admin-theme-color),inset 0 0 0 4px #fff;outline: 2px solid transparent}@supports(position:sticky){}.block-editor-inserter__quick-inserter-expand.components-button:focus:not(:disabled){box-shadow: inset 0 0 0 1.5px #007cba,inset 0 0 0 3px #fff;box-shadow: inset 0 0 0 1.5px var(--wp-admin-theme-color),inset 0 0 0 3px #fff}:root{--wp-admin-theme-color: #007cba;--wp-admin-theme-color-darker-10: #006ba1;--wp-admin-theme-color-darker-20: #005a87}.editor-post-featured-image__preview:not(:disabled):not([aria-disabled=true]):focus{box-shadow: 0 0 0 4px #007cba;box-shadow: 0 0 0 4px var(--wp-admin-theme-color)}html{-ms-touch-action: manipulation;touch-action: manipulation;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%}article,aside,figure,footer,header,nav{display: block}a{background-color: transparent}a:active,a:hover{outline-width: 0}strong{font-weight: inherit}strong{font-weight: 600}small{font-size: 80%}img{border-style: none}figure{margin: 1em 0}input{font: inherit}input{overflow: visible}input{margin: 0}[type=submit]{cursor: pointer}[type=submit]{-webkit-appearance: button}input::-moz-focus-inner{border: 0;padding: 0}input:-moz-focusring{outline: 1px dotted ButtonText}[type=search]{-webkit-appearance: textfield}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance: none}*{padding: 0;margin: 0;list-style: none;border: 0;outline: none;box-sizing: border-box}*:before,*:after{box-sizing: border-box}body{background: #f7f7f7;color: #2c2f34;font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Oxygen-Sans,Ubuntu,Cantarell,helvetica neue,open sans,Arial,sans-serif;font-size: 13px;line-height: 21px}h1,h2,h3,h4,.the-subtitle{line-height: 1.4;font-weight: 600}h1{font-size: 41px;font-weight: 700}h2{font-size: 27px}h3{font-size: 23px}h4,.the-subtitle{font-size: 17px}a{color: #333;text-decoration: none;transition: .15s}a:hover{color: #08f}img{max-width: 100%;height: auto}p{line-height: 21px}.screen-reader-text{clip: rect(1px,1px,1px,1px);position: absolute!important;height: 1px;width: 1px;overflow: hidden}.header-layout-3.no-stream-item .logo-container{width: 100%;float: none}.tie-icon:before,[class^=tie-icon-],[class*=" tie-icon-"]{font-family: tiefonticon!important;speak: never;font-style: normal;font-weight: 400;font-variant: normal;text-transform: none;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;display: inline-block}.container{margin-right: auto;margin-left: auto;padding-left: 15px;padding-right: 15px}.container:after{content: "";display: table;clear: both}@media(min-width:768px){.container{width: 100%}}@media(min-width:1200px){.container{max-width: 1200px}}.tie-row{margin-left: -15px;margin-right: -15px}.tie-row:after{content: "";display: table;clear: both}.tie-col-md-4,.tie-col-md-8,.tie-col-xs-12,.tie-col-md-12{position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px}.tie-col-xs-12{float: left}.tie-col-xs-12{width: 100%}@media(min-width:992px){.tie-col-md-4,.tie-col-md-8,.tie-col-md-12{float: left}.tie-col-md-4{width: 33.33333%}.tie-col-md-8{width: 66.66667%}.tie-col-md-12{width: 100%}}.tie-alignleft{float: left}.aligncenter{clear: both;display: block;margin: 0 auto 1.75em;text-align: center;margin-left: auto;margin-right: auto;margin-top: 6px;margin-bottom: 6px}.clearfix:before,.clearfix:after{content: "\0020";display: block;height: 0;overflow: hidden}.clearfix:after{clear: both}.tie-container,#tie-wrapper{height: 100%;min-height: 650px}.tie-container{position: relative;overflow: hidden}#tie-wrapper{background: #fff;position: relative;z-index: 108;height: 100%;margin: 0 auto}.container-wrapper{background: #fff;border: 1px solid rgba(0,0,0,.1);border-radius: 2px;padding: 30px}#content{margin-top: 30px}@media(max-width:991px){#content{margin-top: 15px}}.site-content{-ms-word-wrap: break-word;word-wrap: break-word}.boxed-layout #tie-wrapper{max-width: 1230px}.boxed-layout.wrapper-has-shadow #tie-wrapper{box-shadow: 0 1px 7px rgba(171,171,171,.5)}@media(min-width:992px){.boxed-layout #tie-wrapper{width: 95%}}.theme-header{background: #fff;position: relative;z-index: 999}.theme-header:after{content: "";display: table;clear: both}.theme-header.has-shadow{box-shadow: 0 0 10px 5px rgba(0,0,0,.1)}.logo-row{position: relative}#logo{margin-top: 40px;margin-bottom: 40px;display: block;float: left}#logo img{vertical-align: middle}@-moz-document url-prefix(){}#logo a{display: inline-block}@media(max-width:991px){#theme-header.has-normal-width-logo #logo{margin: 14px 0!important;text-align: left;line-height: 1}#theme-header.has-normal-width-logo #logo img{width: auto;height: auto;max-width: 190px}}@media(max-width:479px){#theme-header.has-normal-width-logo #logo img{max-width: 160px;max-height: 60px!important}}@media(max-width:991px){#theme-header.mobile-header-default:not(.header-layout-1) #logo{-webkit-flex-grow: 10;-ms-flex-positive: 10;flex-grow: 10}}.components{float: right}.components>li{position: relative;float: right;list-style: none}.components>li>a{display: block;position: relative;width: 30px;text-align: center;line-height: inherit;font-size: 16px}.components>li>a:hover,.components>li:hover>a{z-index: 2}@media(max-width:991px){.logo-container{border-width: 0;display: -webkit-flex;display: -ms-flexbox;display: flex;-webkit-flex-flow: row nowrap;-ms-flex-flow: row nowrap;flex-flow: row nowrap;-webkit-align-items: center;-ms-flex-align: center;align-items: center;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between}}.mobile-header-components{display: none;z-index: 10;height: 30px;line-height: 30px;-webkit-flex-wrap: nowrap;-ms-flex-wrap: nowrap;flex-wrap: nowrap;-webkit-flex: 1 1 0%;-ms-flex: 1 1 0%;flex: 1 1 0%}.mobile-header-components .components{float: none;display: -webkit-flex!important;display: -ms-flexbox!important;display: flex!important;-webkit-justify-content: stretch;-ms-flex-pack: stretch;justify-content: stretch}.mobile-header-components .components li.custom-menu-link{display: inline-block;float: none}.mobile-header-components .components li.custom-menu-link>a{width: 20px;padding-bottom: 15px}.dark-skin .mobile-header-components .components a.button.guest-btn:not(:hover){background: #23262a;border-color: #23262a;color: #fff}.mobile-header-components .tie-mobile-menu-icon{font-size: 20px}.mobile-header-components .nav-icon{display: inline-block;width: 20px;height: 2px;background-color: #2c2f34;position: relative;top: -4px;transition: background .4s ease}.mobile-header-components .nav-icon:before,.mobile-header-components .nav-icon:after{position: absolute;right: 0;background-color: #2c2f34;content: '';display: block;width: 100%;height: 100%;transition: background .4s,right .2s ease,-webkit-transform .4s;transition: transform .4s,background .4s,right .2s ease;transition: transform .4s,background .4s,right .2s ease,-webkit-transform .4s;-webkit-transform: translateZ(0);transform: translateZ(0);-webkit-backface-visibility: hidden;backface-visibility: hidden}.mobile-header-components .nav-icon:before{-webkit-transform: translateY(-7px);-ms-transform: translateY(-7px);transform: translateY(-7px)}.mobile-header-components .nav-icon:after{-webkit-transform: translateY(7px);-ms-transform: translateY(7px);transform: translateY(7px)}#mobile-header-components-area_2 .components{-webkit-flex-direction: row-reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse}#mobile-header-components-area_2 .components li.custom-menu-link>a{margin-left: 15px}#mobile-menu-icon:hover .nav-icon,#mobile-menu-icon:hover .nav-icon:before,#mobile-menu-icon:hover .nav-icon:after{background-color: #08f}@media(max-width:991px){.logo-container:before,.logo-container:after{height: 1px}#tie-body #mobile-container,.mobile-header-components{display: block}}.top-nav a:not(.button):not(:hover){color: #2c2f34}.top-nav-dark .top-nav .components>li.social-icons-item .social-link:not(:hover) span{color: #ccc}@media(max-width:991px){.theme-header .components{display: none}}.main-nav-wrapper{position: relative;z-index: 4}.main-nav{position: relative;border: 1px solid rgba(0,0,0,.1);border-width: 1px 0}.main-menu-wrapper{border: 0 solid rgba(0,0,0,.1);position: relative}@media(min-width:992px){.header-menu{float: left}.header-menu .menu li{display: block;float: left}.header-menu .menu a{display: block;position: relative}.header-menu .menu a:hover,.header-menu .menu li:hover>a{z-index: 2}#main-nav{z-index: 9;line-height: 60px}.main-menu .menu a{transition: .15s}.main-menu .menu>li>a{padding: 0 14px;font-size: 13px;font-weight: 600}nav.main-nav .menu>li:hover>a{background-color: #08f;color: #fff}.main-nav-dark .main-nav{background: #1f2024;border-width: 0}.main-nav-dark .main-nav .components>li.social-icons-item .social-link:not(:hover) span{color: #fff}.main-nav-dark .main-menu .menu>li a{color: #fff}.main-nav-light .mega-menu .post-meta a:not(:hover){color: rgba(0,0,0,.5)}}@media(min-width:992px){.menu-item-has-children>a:before{content: '';position: absolute;right: 12px;margin-top: 2px;top: 50%;bottom: auto;-webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);width: 0;height: 0;border: 4px solid transparent;border-top: 4px solid #fff;transition: border .15s}.menu>.menu-item-has-children:not(.is-icon-only)>a{padding-right: 25px}.main-menu .menu>li:hover>a:before{border-top-color: #fff}}@media only screen and (min-width:992px) and (max-width:1100px){.main-nav .menu>li:not(.is-icon-only)>a{padding-left: 7px;padding-right: 7px}.main-nav .menu>li:not(.is-icon-only)>a:before{display: none}}@media(max-width:991px){#tie-wrapper header#theme-header{box-shadow: none;background: 0 0!important}.logo-container{border-width: 0;box-shadow: 0 3px 7px 0 rgba(0,0,0,.1)}.logo-container{background-color: #fff}.header-layout-3 .main-nav-wrapper{display: none}.main-menu-wrapper .tie-alignleft{width: 100%}}.main-nav-dark .main-nav .comp-sub-menu a:not(:hover),.top-nav-dark .top-nav .comp-sub-menu a:not(:hover){color: #fff}.main-nav-dark .main-nav .comp-sub-menu a.checkout-button:not(:hover),.top-nav-dark .top-nav .comp-sub-menu a.checkout-button:not(:hover){color: #fff}.top-nav-dark .top-nav .comp-sub-menu .button.guest-btn:not(:hover){background: #1f2024;border-color: #1f2024}@media(min-width:992px){.main-menu .mega-menu .post-meta a:not(:hover){color: #777}}@media(min-width:992px){.theme-header .logo-row>div{height: auto!important}}@media(max-width:767px){.magazine1:not(.has-builder):not(.error404) .main-content,.magazine1:not(.has-builder):not(.error404) .sidebar{padding-left: 0;padding-right: 0}}input{border: 1px solid rgba(0,0,0,.1);color: #2c2f34;font-size: 13px;outline: none;padding: 5px;line-height: 23px;border-radius: 2px;transition: background .3s,border .3s;max-width: 100%;background-color: transparent}input:hover{background-color: rgba(0,0,0,.03)}input:not([type=checkbox]):not([type=radio]){-webkit-appearance: none;-moz-appearance: none;appearance: none;outline: none}@media(max-width:767px){input:not([type=submit]){font-size: 16px!important}}[type=submit]{width: auto;position: relative;background-color: #08f;color: #fff;padding: 7px 15px;margin: 0;font-weight: 400;font-size: 13px;display: inline-block;text-align: center;line-height: 21px;border: none;cursor: pointer;text-decoration: none;vertical-align: middle;transition: .3s;border-radius: 2px;-webkit-appearance: none;-moz-appearance: none;appearance: none}[type=submit]:hover{background-color: #006dcc;text-decoration: none;color: #fff}.button.guest-btn:not(:hover){color: #2c2f34;background: #fff}::-moz-selection{background: #08f;color: #fff;text-shadow: none}::selection{background: #08f;color: #fff;text-shadow: none}.background-overlay{background-attachment: fixed}.sidebar-right .main-content{float: left}.sidebar-right .sidebar{float: right}@media(min-width:992px){.sidebar-right.magazine1 .main-content{padding-right: 3px}}.post-meta a:not(:hover){color: #767676}.dark-skin .tie-slider-nav li span:not(:hover){color: #ccc;border-color: rgba(0,0,0,.1)}.pages-numbers a:not(:hover){color: #2c2f34}#breadcrumb{margin: 50px 0 0}#breadcrumb,#breadcrumb a:not(:hover){color: #999}#breadcrumb .delimiter{margin: 0 3px;font-style: normal}.entry-header-outer #breadcrumb{margin: 0 0 20px;padding: 0}@media(max-width:767px){.single-post #breadcrumb .current,.single-post #breadcrumb em:last-of-type{display: none}}.about-author li.social-icons-item a:not(:hover) span{color: #2c2f34}.top-nav .components>li.social-icons-item .social-link:not(:hover) span,.main-nav .components>li.social-icons-item .social-link:not(:hover) span{color: #2c2f34}ul:not(.solid-social-icons) .social-icons-item a:not(:hover){background-color: transparent!important}.entry-header{padding: 30px 30px 0;margin-bottom: 20px}@media(max-width:991px){.entry-header{padding: 20px 20px 0}}#tie-body a.remove:hover{text-decoration: none!important}#is-scroller-outer{visibility: hidden;width: 100px;height: 0;overflow: scroll}#is-scroller{width: 100%}blockquote{background: #2c2f34;padding: 30px 50px;margin: 20px 0;display: block;color: #fff}blockquote::before{display: block;content: "\f10e";font-family: tiefonticon;font-size: 26px;color: #08f;margin-bottom: 20px}blockquote p{margin-bottom: 1.474em;font-size: 19px;line-height: 30px;font-style: italic}blockquote cite{font-size: 16px;display: block;text-align: right;color: #08f;margin-top: 10px}blockquote>:last-child{margin-bottom: 0}@media(max-width:767px){blockquote{float: none!important;width: auto!important;margin: 20px 0!important}}.entry ol,.entry ul{margin-bottom: 20px;padding-left: 15px;margin-left: 20px}.entry ol li{list-style: decimal}.entry ul li{list-style: disc;list-style-image: none}.entry li{margin: 0 0 5px}.entry{line-height: 26px;font-size: 15px}.entry p{margin-bottom: 25px;line-height: 26px}@media(max-width:767px){.container-wrapper,.entry-content{padding: 20px 15px}}#mobile-container{display: none;padding: 10px 30px 30px}#mobile-menu{margin-bottom: 20px;position: relative;padding-top: 15px}#mobile-social-icons{margin-bottom: 15px}#mobile-social-icons ul{text-align: center;overflow: hidden}.light-skin #mobile-social-icons .social-link:not(:hover) span{color: #777!important}#mobile-search .search-form{overflow: hidden}#mobile-search .search-form:after{position: absolute;content: "\f002";font-family: tiefonticon;top: 4px;right: 10px;line-height: 30px;width: 30px;font-size: 16px;border-radius: 50%;text-align: center;color: #fff}#mobile-search .search-field{background-color: rgba(0,0,0,.05);border-color: rgba(255,255,255,.1);color: #fff;width: 100%;border-radius: 50px;padding: 7px 45px 7px 20px}#mobile-search .search-submit{background: 0 0;font-size: 0;width: 35px;height: 38px;position: absolute;top: 0;right: 5px;z-index: 1}#mobile-search input::-webkit-input-placeholder{color: rgba(255,255,255,.6)}#mobile-search input::-moz-placeholder{color: rgba(255,255,255,.6)}#mobile-search input:-moz-placeholder{color: rgba(255,255,255,.6)}#mobile-search input:-ms-input-placeholder{color: rgba(255,255,255,.6)}.block-head-1 .the-global-title{position: relative;font-size: 17px;padding: 0 0 15px;border-bottom: 2px solid rgba(0,0,0,.1);margin-bottom: 20px}.block-head-1 .the-global-title:after{content: "";background: #2c2f34;width: 40px;height: 2px;position: absolute;bottom: -2px;left: 0}.block-head-1 .the-global-title:before{content: "";width: 0;height: 0;position: absolute;bottom: -5px;left: 0;border-left: 0;border-right: 5px solid transparent;border-top: 5px solid #2c2f34}.block-head-4#tie-body .widget-title a:not(:hover){color: #fff}.block-head-4 .widget-title a:not(:hover){color: #fff}.block-head-7 .mag-box-filter-links .flexMenu-popup a:not(:hover):not(.active){color: #2c2f34}.dark-skin .block-head-7 .mag-box-filter-links .flexMenu-popup a:not(:hover):not(.active),.block-head-7 .dark-skin .mag-box-filter-links .flexMenu-popup a:not(:hover):not(.active){color: #ccc}.first-post-gradient .posts-items li:first-child a:not(:hover){color: #fff}.dark-skin .mag-box .mag-box-filter-links a:not(:hover),.box-dark-skin .mag-box-filter-links a:not(:hover){color: #ccc}.tabs a:not(:hover){color: #2c2f34}.dark-skin .tabs a:not(:hover){color: #ccc}.main-slider .thumb-meta a:not(:hover),.main-slider .thumb-meta .post-meta a:not(:hover){color: #fff}.main-slider .thumb-meta a:not(:hover):hover,.main-slider .thumb-meta .post-meta a:not(:hover):hover{opacity: .8}#tie-wrapper:after{position: absolute;z-index: 1000;top: -10%;left: -50%;width: 0;height: 0;background: rgba(0,0,0,.2);content: '';opacity: 0;cursor: pointer;transition: opacity .5s,width .1s .5s,height .1s .5s}.side-aside{position: fixed;top: 0;z-index: 111;visibility: hidden;width: 350px;max-width: 100%;height: 100%;background: #161619;background-repeat: no-repeat;background-position: center top;background-size: cover;transition: .5s cubic-bezier(.55,0,.1,1) 0s;overflow-y: auto}@media(min-width:992px){.side-aside{right: 0;-webkit-transform: translate(350px,0);-ms-transform: translate(350px,0);transform: translate(350px,0)}.side-aside:not(.slide-sidebar-desktop){display: none}}@media(max-width:991px){.side-aside.appear-from-right{right: 0;-webkit-transform: translate(100%,0);-ms-transform: translate(100%,0);transform: translate(100%,0)}.side-aside.is-fullwidth{width: 100%}}.is-desktop .side-aside .has-custom-scroll{padding: 50px 0 0}.side-aside:after{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,.2);content: '';opacity: 1;transition: opacity .5s}.site-footer{margin-top: 50px;padding: 0}@media(max-width:991px){.site-footer{margin-top: 30px}}html.dark-skin #instagram-link.is-expanded a:not(:hover){color: #fff}#instagram-link.is-expanded a:not(:hover){color: #000}html.dark-skin #instagram-link.is-expanded .follow-button:not(:hover){border-color: #fff}.site-info{background: #161619;padding: 20px 0;line-height: 32px;text-align: center}.copyright-text{font-size: 13px}.site-info .social-icons{text-align: center}@media(min-width:768px){.site-info-layout-2 .copyright-text-first{float: left}.site-info-layout-2 ul.social-icons{float: right;margin: 0;margin-left: 10px}}a.go-to-top-button{width: 35px;height: 35px;line-height: 35px;background: #08f;text-align: center;display: block;position: fixed;bottom: -100px;right: 15px;z-index: 3;color: #fff;transition: .3s}a.go-to-top-button:hover{opacity: .85}@media(max-width:767px){a.go-to-top-button{right: 5px}}.dark-skin{background-color: #1f2024;color: #fff}.dark-skin input:not([type=submit]){color: #ccc}.dark-skin a:not(:hover),.dark-skin .single-big-img .post-meta a:not(:hover),.dark-skin .pages-nav .pages-numbers a:not(:hover){color: #fff}.dark-skin .post-meta a:not(:hover),.dark-skin .multiple-post-pages a:not(:hover),.dark-skin .login-widget .forget-text:not(:hover),.dark-skin .mobile-header-components:not(:hover) .menu-text,.dark-skin .about-author .social-icons li.social-icons-item a:not(:hover) span{color: #ccc!important}.dark-skin input:not([type=submit]),.dark-skin .latest-tweets-slider-widget .latest-tweets-slider .tie-slider-nav li a:not(:hover){border-color: rgba(255,255,255,.1)}.dark-skin .boxed-slider-three-slides-wrapper li:not(.slick-active) button:not(:hover),.dark-skin .boxed-four-taller-slider li:not(.slick-active) button:not(:hover),.dark-skin .boxed-five-slides-slider li:not(.slick-active) button:not(:hover){background-color: rgba(255,255,255,.1)}.dark-skin .widget a:not(:hover),.dark-skin .widget-title a:not(:hover){color: #fff}.sidebar .container-wrapper{margin-bottom: 30px}@media(max-width:991px){.sidebar .container-wrapper{margin-bottom: 15px}}body:not(.has-builder) .sidebar .container-wrapper:last-child{margin-bottom: 0}@media(max-width:991px){.has-sidebar .sidebar{margin-top: 15px}}.widget-title{position: relative}.widget-title .the-subtitle{font-size: 15px;min-height: 15px}.widget-title-icon{position: absolute;right: 0;top: 1px;color: #b9bec3;font-size: 15px}.widget-title-icon:before{content: "\f08d"}form.search-form{overflow: auto;position: relative;width: 100%;margin-top: 10px}.search-field{float: left;width: 73%;padding: 8px 15px}.search-submit[type=submit]{float: right;padding: 10px 5px;margin-left: 2%;width: 25%}.login-widget .forget-text:not(:hover){color: #2c2f34}@supports(-ms-accelerator:true){}.widget_product_tag_cloud a:not(:hover),.widget_tag_cloud a:not(:hover),.post-tags a:not(:hover),.widget_layered_nav_filters a:not(:hover){color: #2c2f34}.tie-weather-user-location .tie-icon-gps:not(:hover){opacity: .5}.dark-skin .latest-tweets-widget .slider-links .tie-slider-nav li span:not(:hover){background-color: transparent}.social-icons-widget ul{margin: 0 -3px}a.remove{position: absolute;top: 0;right: 0;display: block;speak: never;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;width: 20px;height: 20px;display: block;line-height: 20px;text-align: center;font-size: 15px}a.remove:before{content: "\e117";font-family: tiefonticon;color: #e74c3c;transition: color .15s}a.remove:hover:before{color: #bf2718}a.remove.big-btn{width: 25px;height: 25px;line-height: 25px;font-size: 22px}a.remove.light-btn:not(:hover):before{color: #fff}.side-aside a.remove{z-index: 1;top: 15px;left: 50%;right: auto;-webkit-transform: translateX(-50%);-ms-transform: translateX(-50%);transform: translateX(-50%)}.theiaStickySidebar:after{content: "";display: table;clear: both}.side-aside,.has-custom-scroll{overflow-x: hidden;scrollbar-width: thin}.side-aside::-webkit-scrollbar,.has-custom-scroll::-webkit-scrollbar{width: 5px}.side-aside::-webkit-scrollbar-track,.has-custom-scroll::-webkit-scrollbar-track{background: 0 0}.side-aside::-webkit-scrollbar-thumb,.has-custom-scroll::-webkit-scrollbar-thumb{border-radius: 20px;background: rgba(0,0,0,.2)}.dark-skin .has-custom-scroll::-webkit-scrollbar-thumb{background: #000}.live-search-dark .post-title a:not(:hover),.live-search-popup .post-title a:not(:hover){color: #fff}.tie-icon-facebook:before{content: "\f09a"}.tie-icon-home:before{content: "\f015"}.tie-icon-print:before{content: "\f02f"}.tie-icon-twitter:before{content: "\f099"}.tie-icon-pinterest:before{content: "\f0d2"}.tie-icon-envelope:before{content: "\f0e0"}.tie-icon-angle-up:before{content: "\f107"}.tie-icon-whatsapp:before{content: "\f232"}.tie-icon-facebook:before{content: "\f09a"}.post-content-slideshow .tie-slider-nav li span:not(:hover){background-color: transparent}.post-content.container-wrapper{padding: 0}.entry-header{font-size: 45px;line-height: 1.2}@media(max-width:767px){.entry-header{font-size: 28px}}.entry-header .entry-title{margin-bottom: 15px}@media(max-width:767px){.entry-header .entry-title{font-size: 28px}}.entry-header .post-meta a:not(:hover){color: #333}.dark-skin .entry-header .post-meta a:not(:hover){color: #aaa}.single-big-img .post-meta a:not(:hover){color: #fff}.post-layout-1 div.entry-content{padding-top: 0}.post-layout-1 .entry-header-outer{padding: 30px 30px 20px}@media(max-width:767px){.post-layout-1 .entry-header-outer{padding: 20px}}.post-layout-1 .entry-header{padding: 0;margin: 0}.featured-area{position: relative;margin-bottom: 30px;line-height: 1}@media(max-width:767px){.featured-area{margin-bottom: 20px}}.featured-area img{width: 100%}.single-featured-image{position: relative;margin: 0;line-height: 0}.entry-content{padding: 0 30px 30px}@media(max-width:767px){.entry-content{padding-right: 15px;padding-left: 15px}}.entry a{color: #08f}.entry a:hover{color: #006dcc}.entry h2,.entry h3{margin: 0 0 .5em}@media(max-width:767px){.single .entry-content{padding-top: 15px}}.post-bottom-meta a:not(:hover){color: #2c2f34}.dark-skin .post-bottom-meta a:not(:hover){color: #ccc}.share-buttons{padding: 18px 28px;line-height: 0}@media(max-width:767px){.share-buttons{padding: 15px}}.magazine1 .share-buttons-bottom{background: #fafafa;border-top: 1px solid rgba(0,0,0,.1)}.share-links a{color: #fff}.share-links{overflow: hidden;position: relative}.share-links .share-btn-icon{font-size: 15px}.share-links a{display: inline-block;margin: 2px;height: 40px;overflow: hidden;position: relative;transition: .3s;border-radius: 2px;width: 40px}.share-links a,.share-links a:before{background-color: #444}.share-links a.large-share-button{width: auto}.share-links a .share-btn-icon{width: 40px;height: 40px;float: left;display: block;text-align: center;line-height: 40px}.share-links a .social-text{border: 0 solid rgba(255,255,255,.3);border-left-width: 1px;padding-left: 15px;height: 20px;float: left;margin-top: 10px;padding-right: 25px;font-size: 12px;line-height: 20px;font-family: open sans,sans-serif}.share-links a:hover{opacity: .8;color: #fff}.share-links a.facebook-share-btn,.share-links a.facebook-share-btn:before{background: #4080ff}.share-links a.twitter-share-btn,.share-links a.twitter-share-btn:before{background: #40bff5}.share-links a.pinterest-share-btn,.share-links a.pinterest-share-btn:before{background: #e13138}.share-links a.whatsapp-share-btn,.share-links a.whatsapp-share-btn:before{background: #43d854}.share-links a.email-share-btn,.share-links a.email-share-btn:before{background: #333}@media(max-width:767px){.social-text{display: none}}@media(min-width:768px){a.whatsapp-share-btn{display: none!important}}#reading-position-indicator{display: block;height: 4px;position: fixed;bottom: 0;left: 0;background: #08f;box-shadow: 0 0 10px rgba(0,136,255,.7);width: 0;z-index: 9999;max-width: 100%}.multiple-post-pages a:not(:hover){color: #2c2f34}#inline-related-post ul li a:not(:hover){color: #333}.dark-skin #inline-related-post ul li a:not(:hover){color: #eee}#post-extra-info{display: none}.entry .wp-block-quote{background: 0 0;color: #2c2f34;font-size: 13px}.entry .wp-block-quote cite{display: inline}.entry .wp-block-quote:before{display: none}.entry .wp-block-quote{padding: 0 1em}.su-u-clearfix::after{content: '';display: table;clear: both}.su-u-trim>:first-child{margin-top: 0}.su-u-trim>:last-child{margin-bottom: 0}.su-button{display: inline-block!important;text-align: center;text-decoration: none!important;box-sizing: content-box!important;-webkit-transition: all .2s;transition: all .2s}.su-button-wide{display: block!important;margin: 1em 0}.su-button-center{text-align: center}.su-button span{display: block!important;text-decoration: none!important;box-sizing: content-box!important;-webkit-transition: all .2s;transition: all .2s}.su-button i{display: inline-block;width: 1em;height: 1em;margin: 0 .5em 0 0!important;text-align: center;line-height: 1em}.su-button small{display: block;margin: -.2em 0 0;color: inherit;text-align: center;font-style: normal;font-size: .8em;line-height: 1;opacity: .7}.su-button-style-soft span{background: 0 -20px url() repeat-x}.su-button-style-soft:hover span{background: 0 0 url() repeat-x}.su-note{margin: 0 0 1.5em;border-width: 1px;border-style: solid}.su-note-inner{padding: 1em;border-width: 1px;border-style: solid}@media screen and (max-width:768px){.su-button span{padding-top: .25em!important;padding-bottom: .25em!important;line-height: 1.2!important}.su-button small{margin-top: .2em!important}}.sui{display: inline-block;font: normal normal normal 14px/1 ShortcodesUltimateIcons;font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale}.sui-shopping-cart:before{}:root{--wp-admin-theme-color: #007cba;--wp-admin-theme-color-darker-10: #006ba1;--wp-admin-theme-color-darker-20: #005a87}.wp-block-quote{border-left: .25em solid #000;margin: 0 0 1.75em;padding-left: 1em}.wp-block-quote cite{color: #555;font-size: .8125em;margin-top: 1em;position: relative;font-style: normal}:root{--wp-admin-theme-color: #007cba;--wp-admin-theme-color-darker-10: #006ba1;--wp-admin-theme-color-darker-20: #005a87}@media print{html,body{background-color: #fff;color: #000;margin: 0;padding: 0}img{max-width: 100%;display: block}ul,ol,li{page-break-inside: avoid}h1,h2,h3,h4{page-break-after: avoid}.single-post.sidebar-right .main-content{width: 100%}.single-post .tie-row{border: 0}.single-post .main-content{border: 0;max-width: 75%!important;margin: 0 auto!important;float: none!important}.single-post #theme-header,.single-post .sidebar,.single-post #footer,.single-post .mobile-header-components,.single-post .share-buttons,.single-post #breadcrumb,.single-post #go-to-top,.single-post #reading-position-indicator{display: none!important}.single-big-img .entry-header .post-meta a:not(:hover){color: #000;text-shadow: unset}}a,body .entry a{color: #0089fe}.cta{border-style: solid!important;border-width: 1px!important;border-color: #9D7E31!important}small{padding-top: 4px!important;padding-bottom: 5px!important;font-size: 17px!important;opacity: 0.7!important}#box_offerta{margin-top: -17px;margin-right: -17px;float: right;font-size: 12px;text-align: center;color: #FFFFFF;top: 0;right: 0;width: 80px;line-height: 20px;height: 20px;background: #27AE60}</style>
+  <link rel="shortcut icon" href="img/favicon.png">
+
+
+</head>
+<body id="tie-body" class="post-template-default single single-post postid-7634 single-format-standard aawp-custom boxed-layout wrapper-has-shadow block-head-1 magazine1 is-thumb-overlay-disabled is-desktop is-header-layout-3 sidebar-right has-sidebar post-layout-1 narrow-title-narrow-media is-standard-format hide_banner_top cookies-not-set">
+  <div class="background-overlay" style="height: auto !important;">
+    <div id="tie-container" class="site tie-container" style="height: auto !important; min-height: 0px !important;">
+      <div id="tie-wrapper" style="height: auto !important; min-height: 0px !important;">
+        <header id="theme-header" class="theme-header header-layout-3 main-nav-dark main-nav-default-dark main-nav-below no-stream-item has-shadow has-normal-width-logo mobile-header-default">
+          <div class="container header-container">
+            <div class="tie-row logo-row">
+              <div class="logo-wrapper">
+                <div class="tie-col-md-4 logo-container clearfix">
+                  <div id="logo" class="image-logo">
+                    <a href="#" target="_blank" title="Salute Segreta">
+                      <picture class="tie-logo-default tie-logo-picture">
+                        <source class="tie-logo-source-default tie-logo-source">
+                        <img class="tie-logo-img-default tie-logo-img lazyloaded" src="img/Salute-Segreta.jpg" alt="Salute Segreta" width="414" height="65" style="max-height:65px; width: auto;" data-ll-status="loaded">
+                      </source></picture>
+                    </a>
+                  </div>
+                  <div id="mobile-header-components-area_2" class="mobile-header-components">
+                    <ul class="components">
+                      <li class="mobile-component_menu custom-menu-link"><a href="#" target="_blank" id="mobile-menu-icon" class=""><span class="tie-mobile-menu-icon nav-icon is-layout-1"></span><span class="screen-reader-text">Menu</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-nav-wrapper" style="height: 60px;">
+            <nav id="main-nav" class="main-nav header-nav default-behavior-mode fixed fixed-top fixed-not-bottom" aria-label="Primary Navigation">
+              <div class="container">
+                <div class="main-menu-wrapper">
+                  <div id="menu-components-wrap">
+                    <div class="main-menu main-menu-wrap tie-alignleft">
+                      <div id="main-nav-menu" class="main-menu header-menu">
+                        <ul id="menu-default" class="menu" role="menubar">
+                          <li id="menu-item-8116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8116">
+                            <a href="#" target="_blank">Dimagrimento</a>
+                          </li>
+                          <li id="menu-item-8125" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-8125">
+                            <a href="#" target="_blank">Salute</a>
+                          </li>
+                          <li id="menu-item-8110" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8110">
+                            <a href="#" target="_blank">Bellezza</a>
+                          </li>
+                          <li id="menu-item-8115" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8115"><a href="#" target="_blank">Casa e Cucina</a></li>
+                          <li id="menu-item-8121" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-8121">
+                            <a href="#" target="_blank">Fitness</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <div id="content" class="site-content container" style="height: auto !important;">
+          <div id="main-content-row" class="tie-row main-content-row" style="height: auto !important;">
+            <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
+              <article id="the-post" class="container-wrapper post-content tie-standard">
+                <header class="entry-header-outer">
+                  <nav id="breadcrumb"><a href="#" target="_blank"><span class="tie-icon-home" aria-hidden="true"></span> Home</a><em class="delimiter">/</em><a href="#" target="_blank">Salute</a><em class="delimiter">/</em><a href="#" target="_blank">Salute Cardiovascolare</a><em class="delimiter">/</em><span class="current"><span class="productName"></span> integratore contro l’ipertensione,
+                      funziona? Recensione ed Opinioni</span></nav>
+                  <div class="entry-header">
+                    <h1 class="post-title entry-title"><span class="productName"></span> integratore contro l’ipertensione, funziona?
+                      Recensione ed Opinioni</h1>
+                  </div>
+                </header>
+                <!--<div class="featured-area">-->
+                  <!--<div class="featured-area-inner">-->
+                    <!--<figure class="single-featured-image">-->
+                      <!--<picture class="attachment-jannah-image-post size-jannah-image-post wp-post-image" is_main_img="1">-->
+                        <!--<source type="image/webp">-->
+                        <!--<a href="#"><img width="780" height="470" src="img/cardioactive-recensione-780x470.jpg" alt="cardioactive recensione" is_main_img="1" class="lazyloaded" data-ll-status="loaded"></a>-->
+                      <!--</source></picture>-->
+                    <!--</figure>-->
+                  <!--</div>-->
+                <!--</div>-->
+                <div class="entry-content entry clearfix">
+                  <p>L’ipertensione è una delle patologie più diffuse della nostra epoca. Accomuna uomini e donne di
+                    tutte le età, ed è pericolosa: <strong><em>un’ipertensione non trattata rischia di portare
+                        all’infarto</em></strong>.</p>
+                  <p>Per fortuna, scienziati e ricercatori si sono impegnati concretamente nella ricerca di un
+                    <strong>prodotto contro l’ipertensione che fosse efficace, naturale e senza
+                      controindicazioni.</strong></p>
+                  <p>E il risultato di questi studi è <strong><span class="productName"></span></strong>: l’integratore naturale in gocce
+                    in grado di combattere la pressione alta. <em>Continua a leggere per scoprire di più.</em></p>
+                  <div class="su-note" id="" style="border-color:#d4d4d4;">
+                    <div class="su-note-inner su-u-clearfix su-u-trim" style="background-color:#eeeeee;border-color:#ffffff;color:#333333;">
+                      <div id="box_offerta">OFFERTA</div>
+                      <div class="wp-block-image">
+                        <figure class="aligncenter size-large">
+                          <picture class="wp-image-7639">
+                            <source type="image/webp" sizes="(max-width: 333px) 100vw, 333px">
+                            <a href="#"><img width="333" height="425" src="prod.png" alt="cardio active" sizes="(max-width: 333px) 100vw, 333px" class="lazyloaded" data-ll-status="loaded"></a>
+                          </source></picture>
+                        </figure>
+                      </div>
+                      <div class="su-button-center"><a href="#" target="_blank" class="su-button su-button-style-soft cta su-button-wide" style="color:#000000;background-color:#F0C24C;border-color:#c09c3d;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px" rel="nofollow"><span style="color:#000000;padding:9px 30px;font-size:22px;line-height:33px;border-color:#f5d582;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow:0px 0px 0px #000000;-moz-text-shadow:0px 0px 0px #000000;-webkit-text-shadow:0px 0px 0px #000000"><i class="sui sui-shopping-cart" style="font-size:22px;color:#000000"></i> Acquista in
+                            Offerta sul Sito Ufficiale!<small style="padding-bottom:9px;color:#000000">50% di Sconto per
+                              i nostri lettori</small></span></a></div>
+                    </div>
+                  </div>
+                  <h2><span id="Cose_lipertensione">Cos’è l’ipertensione</span></h2>
+                  <figure class="wp-block-image size-large">
+                    <picture class="wp-image-7642">
+                      <a href="#"><img src="img/misuratore-di-pressione-1024x682.jpg" alt=""></a>
+                    </picture>
+                  </figure>
+                  <p>L’ipertensione consiste nell’<strong>aumento</strong> <strong>del valore della pressione del sangue
+                      all’interno delle arterie</strong>.</p>
+                  <p>Questa condizione colpisce gran parte della popolazione italiana: secondo una stima, <strong>più
+                      del 50% degli uomini e più del 40% delle donne sono ipertesi. <em>Di questi, la metà non sa di
+                        essere iperteso</em>.</strong></p>
+                  <p>Le Linee Guida Europee ESC – ESH <?php echo date('Y')-1 ?> stabiliscono che
+                    <strong>i valori della pressione considerabili normali sono:</strong></p>
+                  <ul>
+                    <li><strong>fino a 84 mmHg per la minima;</strong></li>
+                    <li><strong>fino a 129 mmHg per la massima.</strong></li>
+                  </ul>
+                  <p><strong>Con un innalzamento fino a 10 mmHg rispetto ai valori normali parliamo di pressione
+                      alta</strong>: una condizione chiamata pre-ipertensione e che può sfociare facilmente
+                    nell’ipertensione vera e propria.</p>
+                  <p>Parliamo di ipertensione <strong>quando i valori minimi sono superiori ai 90 mmHg, e quelli massimi
+                      sono superiori a 140 mmHg</strong>. <strong>Più i parametri salgono, più l’ipertensione è grave e
+                      pericolosa.</strong></p>
+                  <h3><span id="Perche_lipertensione_e_pericolosa">Perché l’ipertensione è pericolosa</span></h3>
+                  <p>L’ipertensione è pericolosa perché <strong>rappresenta un fattore di rischio
+                      cardiovascolare</strong>. Tra le gravi patologie causate dall’ipertensione infatti ci sono
+                    l<strong>a cardiopatia, la fibrillazione arteriale, l’infarto e l’aneurisma</strong>.</p>
+                  <h3><span id="I_fattori_di_rischio">I fattori di rischio</span></h3>
+                  <figure class="wp-block-image size-large">
+                    <picture class="wp-image-7644">
+                      <a href="#"><img src="img/ipertensione-1024x682.jpg" alt=""></a>
+                    </picture>
+                  </figure>
+                  <p>L’ipertensione può essere causata da vari <strong>fattori di rischio:</strong></p>
+                  <ul>
+                    <li>la genetica;</li>
+                    <li>l’avanzare dell’età;</li>
+                    <li>sovrappeso e obesità;</li>
+                    <li>un’alimentazione scorretta ricca di grassi;</li>
+                    <li>l’eccesso di sale;</li>
+                    <li>una vita sedentaria;</li>
+                    <li>il fumo;</li>
+                    <li>l’alcool;</li>
+                    <li>lo stress.</li>
+                  </ul>
+                  <h3>
+<span id="Quali_sono_i_sintomi_dellipertensione">Quali sono i sintomi dell’ipertensione</span>
+                  </h3>
+                  <p>L’ipertensione si manifesta con diversi sintomi:</p>
+                  <ul>
+                    <li>
+<strong>mal di testa</strong>, principalmente dietro la nuca o sulla cima della testa;</li>
+                    <li>
+<strong>capogiri</strong>;</li>
+                    <li>
+<strong>vista offuscata</strong> o con presenza di macchie nere;</li>
+                    <li>sensazione di <strong>affaticamento</strong> costante;</li>
+                    <li>
+<strong>sudorazione</strong>;</li>
+                    <li>
+<strong>viso gonfio e arrossato</strong>;</li>
+                    <li>
+<strong>tachicardia o aritmia</strong> cardiaca;</li>
+                    <li>
+<strong>perdita di sangue dal naso</strong>;</li>
+                    <li>
+<strong>ansia e nervosismo</strong>.</li>
+                  </ul>
+                  <p>Se questi sintomi, dovresti sottoporti ad un controllo: recati dal medico o in farmacia e chiedi
+                    una misurazione della pressione, o utilizza un misuratore casalingo.</p>
+                  <p>Ricorda però che <strong>in buona parte dei casi l’ipertensione è asintomatica</strong>, quindi non
+                    provoca disturbi come quelli elencati: <strong>ecco perché la metà delle persone che soffrono di
+                      ipertensione non sa di avere questo problem</strong>a.</p>
+                  <p>Per questo <strong>è opportuno misurare regolarmente la pressione per tenerla sotto
+                      controllo</strong> .</p>
+                  <h2><span id="CardioActive_cose"><span class="productName"></span>: cos’è</span></h2>
+                  <div class="su-note" id="" style="border-color:#d4d4d4;">
+                    <div class="su-note-inner su-u-clearfix su-u-trim" style="background-color:#eeeeee;border-color:#ffffff;color:#333333;">
+                      <div id="box_offerta">OFFERTA</div>
+                      <div class="wp-block-image">
+                        <figure class="aligncenter size-large">
+                          <picture class="wp-image-7639">
+                            <a href="#"><img src="prod.png" alt=""></a>
+                          </picture>
+                        </figure>
+                      </div>
+                      <div class="su-button-center"><a href="#" target="_blank" class="su-button su-button-style-soft cta su-button-wide" style="color:#000000;background-color:#F0C24C;border-color:#c09c3d;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px" rel="nofollow"><span style="color:#000000;padding:9px 30px;font-size:22px;line-height:33px;border-color:#f5d582;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow:0px 0px 0px #000000;-moz-text-shadow:0px 0px 0px #000000;-webkit-text-shadow:0px 0px 0px #000000"><i class="sui sui-shopping-cart" style="font-size:22px;color:#000000"></i> Acquista in
+                            Offerta sul Sito Ufficiale!<small style="padding-bottom:9px;color:#000000">50% di Sconto per
+                              i nostri lettori</small></span></a></div>
+                    </div>
+                  </div>
+                  <p><strong>Se hai la pressione alta o soffri di ipertensione, devi assolutamente cercare di abbassarla
+                    </strong>per evitare patologie molto gravi come quelle descritte qualche paragrafo fa.</p>
+                  <p><strong><span class="productName"></span></strong> è un integratore naturale in gocce che fa proprio
+                    questo: <strong>normalizza la pressione sanguigna sin dalla prima assunzione</strong>, utilizzando
+                    <strong>una formula creata solo con estratti vegetali e quindi priva di controindicazioni</strong>.
+                  </p>
+                  <p>Oltre a normalizzare la pressione, <strong><span class="productName"></span> ti aiuta a tenere sotto controllo anche i
+                      livelli di colesterolo</strong>, un altro fattore di rischio per le malattie cardiache, ed a
+                    <strong>mantenere elastici e tonici i vasi sanguigni</strong>.</p>
+                  <h3><span id="Per_chi_e_indicato_Cardio_Active">Per chi è indicato <span class="productName"></span>?</span></h3>
+                  <p><strong><span class="productName"></span> è indicato per uomini e donne di tutte le età che soffrono di pressione
+                      alta, di ipertensione e di colesterolo alto.</strong></p>
+                  <p>Il produttore assicura che l’integratore è efficace <strong>in tutte le fasi
+                      dell’ipertensione</strong>.</p>
+                  <h2><span id="Gli_ingredienti_di_Cardio_Active">Gli ingredienti di <span class="productName"></span></span></h2>
+                  <figure class="wp-block-image size-large">
+                    <picture class="wp-image-7649">
+                     <a href="#"><img src="img/biancospino-1024x682.jpg" alt=""></a>
+                    </picture>
+                  </figure>
+                  <p><span class="productName"></span> è formulato solo con <strong>ingredienti 100% naturali</strong> ed efficaci per
+                    combattere la pressione alta e il colesterolo. Ecco quali sono nel dettaglio:</p>
+                  <ul>
+                    <li>
+                      <strong>Estratto di Biancospino</strong>, una pianta ricca di flavonoidi conosciuta come la
+                      pianta del cuore. L’efficacia del biancospino nel trattamento dell’ipertensione è stata dimostrata
+                      da diversi studi. Il biancospino infatti svolge <strong>un’azione
+                        cardioprotettiva</strong> che induce la dilatazione delle arterie, migliorando così l’afflusso
+                      del sangue e permettendo una <strong>riduzione della pressione</strong>. In più il biancospino è
+                      utile per <strong>combattere il colesterolo</strong> e ha <strong>un’azione cardiotonica</strong>,
+                      cioè che gli permette di <strong>ridurre tachicardia e aritmie</strong>.
+                    </li>
+                    <li>
+                      <strong>Estratto di Motherwort</strong> (<em>Leonurus Cardiaca</em>), una pianta dalle proprietà
+                      <strong>cardiosedative</strong>. Grazie a questa sua caratteristica la cardiaca riesce a
+                      <strong>calmare il ritmo cardiaco e a dilatare i vasi sanguigni, riducendo in questo modo la
+                        pressione sanguigna</strong>. In più la cardiaca ha un <strong>effetto calmante che combatte
+                        l’innalzamento della pressione dovuto a stress, nervosismo e ansia </strong>, e <strong>allevia il mal di testa</strong>
+                      causato dall’ipertensione.
+                    </li>
+                    <li>
+                      <strong>Estratto di aglio</strong>, riduce la tensione dalle pareti dei vasi sanguigni, ha un effetto positivo durante il combattimento, con aterosclerosi e infarto.
+                      </li>
+                    <li>
+                      <strong>Estratto di melissa</strong>, allevia gli spasmi e il dolore, riduce al minimo il rischio di un attacco di tachicardia,
+                      ha un effetto benefico sull'attività cerebrale.
+                    </li>
+                    <li>
+                      <strong>Vitamina B6</strong>, aiuta a mantenere la normale produzione di globuli rossi.</li>
+                  </ul>
+                  <h2><span id="I_benefici_di_Cardio_Active">I benefici di <span class="productName"></span></span></h2>
+                  <figure class="wp-block-image size-large">
+                    <picture class="wp-image-7651">
+                      <a href="#"><img src="img/globuli-rossi-1024x614.jpg" alt=""></a>
+                    </picture>
+                  </figure>
+                  <p>Grazie a questo mix di ingredienti, <span class="productName"></span>:</p>
+                  <ul>
+                    <li>
+<strong>regolarizza la pressione sanguigna</strong>, facendo scendere i valori;</li>
+                    <li>
+<strong>regolarizza i livelli di colesterolo</strong> nel sangue;</li>
+                    <li>
+<strong>normalizza il ritmo cardiaco</strong>;</li>
+                    <li>favorisce <strong>la salute di cuore e vasi sanguigni</strong>;</li>
+                    <li>
+<strong>allevia il mal</strong> di testa causato dall’ipertensione;</li>
+                    <li>
+<strong>agisce sulle cause psicologiche dell’ipertensione</strong>, come l’agitazione e lo
+                      stress.</li>
+                  </ul>
+                  <p>Gli effetti sono stati testati: <strong>nel <?php echo date('Y') ?> è stato condotto uno studio clinico su un gruppo
+                      di volontari</strong> che soffrivano di ipertensione.</p>
+                  <p>Per 30 giorni, metà dei soggetti ha assunto <span class="productName"></span>, l’altra metà ha assunto un placebo. Ai
+                    volontari sono stati misurati i parametri relativi dalla pressione arteriosa, all’aritmia e alla
+                    fluidità del sangue a inizio e a fine test.</p>
+                  <p><strong>I risultati sono stati grandiosi</strong>: mentre i parametri del gruppo placebo sono
+                    rimasti più o meno invariati, <strong>tutti i componenti del gruppo che ha assunto <span class="productName"></span> ha
+                      confermato che la stabilizzazione della pressione, l’eliminazione dell’aritmia e la fluidità del
+                      sangue erano nettamente migliorate.</strong></p>
+                  <h2><span id="Come_assumere_Cardio_Active">Come assumere <span class="productName"></span></span></h2>
+                  <div class="su-note" id="" style="border-color:#d4d4d4;">
+                    <div class="su-note-inner su-u-clearfix su-u-trim" style="background-color:#eeeeee;border-color:#ffffff;color:#333333;">
+                      <div id="box_offerta">OFFERTA</div>
+                      <div class="wp-block-image">
+                        <figure class="aligncenter size-large">
+                          <picture class="wp-image-7639">
+                           <a href="#"><img src="prod.png" alt=""></a>
+                          </picture>
+                        </figure>
+                      </div>
+                      <div class="su-button-center"><a href="#" target="_blank" class="su-button su-button-style-soft cta su-button-wide" style="color:#000000;background-color:#F0C24C;border-color:#c09c3d;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px" rel="nofollow"><span style="color:#000000;padding:9px 30px;font-size:22px;line-height:33px;border-color:#f5d582;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow:0px 0px 0px #000000;-moz-text-shadow:0px 0px 0px #000000;-webkit-text-shadow:0px 0px 0px #000000"><i class="sui sui-shopping-cart" style="font-size:22px;color:#000000"></i> Acquista in
+                            Offerta sul Sito Ufficiale!<small style="padding-bottom:9px;color:#000000">50% di Sconto per
+                              i nostri lettori</small></span></a></div>
+                    </div>
+                  </div>
+                  <h3><span id="Posologia_quando_e_quanto_assumere_Cardio_Active">Posologia: quando e quanto assumere
+                      <span class="productName"></span></span></h3>
+                  <p><strong><span class="productName"></span> va assunto due volte al giorno, mezz’ora prima dei pasti
+                      principali</strong>, in questo modo:</p>
+                  <ol type="1">
+                    <li>riempi un bicchiere con 50ml di acqua;</li>
+                    <li>agita bene il flacone di <span class="productName"></span>;</li>
+                    <li>diluisci <strong>15-20 gocce di <span class="productName"></span></strong> nell’acqua;</li>
+                    <li>mescola bene;</li>
+                    <li>bevi il preparato <strong>mezz’ora prima di pranzo e mezz’ora prima di cena</strong>.</li>
+                  </ol>
+                  <p>Ti raccomandiamo di attenerti sempre alle dosi e alle modalità raccomandate dal produttore.</p>
+                  <h3><span id="Per_quanto_tempo_bisogna_assumere_Cardio_Active">Per quanto tempo bisogna assumere
+                      <span class="productName"></span></span></h3>
+                  <p>Per ottenere risultati concreti e duraturi, <strong><span class="productName"></span> va assunto per un ciclo completo
+                      della durata minima di almeno 30 giorn</strong>i.</p>
+                  <p>Dopo ogni ciclo di trattamento, il produttore consiglia di <strong>fare una pausa di due settimane
+                      prima di iniziarne un altro</strong>.</p>
+                  <h3><span id="Dopo_quanto_tempo_Cardio_Active_fa_effetto">Dopo quanto tempo <span class="productName"></span> fa
+                      effetto</span></h3>
+                  <figure class="wp-block-image size-large">
+                    <a href="#"><img src="img/studi-clinici-1024x682.jpg" alt=""></a>
+                      </figure>
+                  <p><strong>Essendo un prodotto naturale e ad alto assorbimento, <span class="productName"></span> è efficace fin da
+                      subito.</strong></p>
+                  <p><strong>Noterai un miglioramento sui livelli di pressione arteriosa, sul battito cardiaco e sulla
+                      sensazione di stress e nervosismo già dalle prime assunzioni.</strong></p>
+                  <p>Per ottenere risultati stabili e duraturi, effettua un ciclo completo di almeno 30 giorni.</p>
+                  <h3><span id="Cardio_Active_ha_controindicazioni"><span class="productName"></span> ha controindicazioni?</span></h3>
+                  <p><span class="productName"></span> è prodotto solo con estratti vegetali di prima qualità: <strong>è un prodotto
+                      naturale e sicuro che, a differenza dei medicinali o degli integratori chimici, non presenta
+                      effetti collaterali né controindicazioni di nessun tipo.</strong></p>
+                  <p>Evita di assumere <span class="productName"></span> se sai di essere allergico a uno degli ingredienti presenti
+                    nell’integratore, e chiedi consiglio al tuo medico in caso tu ti stia sottoponendo a un trattamento
+                    farmacologico particolare.</p>
+                  <h2><span id="Come_acquistare_Cardio_Active">Come acquistare <span class="productName"></span></span></h2>
+                  <div class="su-note" id="" style="border-color:#d4d4d4;">
+                    <div class="su-note-inner su-u-clearfix su-u-trim" style="background-color:#eeeeee;border-color:#ffffff;color:#333333;">
+                      <div id="box_offerta">OFFERTA</div>
+                      <div class="wp-block-image">
+                        <figure class="aligncenter size-large">
+                          <picture class="wp-image-7639">
+                            <a href="#"><img src="prod.png" alt=""></a>
+                          </picture>
+                        </figure>
+                      </div>
+                      <div class="su-button-center"><a href="#" target="_blank" class="su-button su-button-style-soft cta su-button-wide" style="color:#000000;background-color:#F0C24C;border-color:#c09c3d;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px" rel="nofollow"><span style="color:#000000;padding:9px 30px;font-size:22px;line-height:33px;border-color:#f5d582;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow:0px 0px 0px #000000;-moz-text-shadow:0px 0px 0px #000000;-webkit-text-shadow:0px 0px 0px #000000"><i class="sui sui-shopping-cart" style="font-size:22px;color:#000000"></i> Acquista in
+                            Offerta sul Sito Ufficiale!<small style="padding-bottom:9px;color:#000000">50% di Sconto per
+                              i nostri lettori</small></span></a></div>
+                    </div>
+                  </div>
+                  <h3><span id="Dove_acquistare_Cardio_Active">Dove acquistare <span class="productName"></span></span></h3>
+                  <p><strong>Puoi acquistare <span class="productName"></span> in tutta sicurezza soltanto online, sul </strong><a href="#" target="_blank" rel="noreferrer noopener sponsored nofollow"><strong>sito ufficiale del
+                        produttore</strong></a><strong>.</strong></p>
+                  <p><span class="productName"></span> non si trova in farmacia, erboristeria o sugli e-commerce: questo per tutelare i
+                    consumatori, che acquistando direttamente dal produttore potranno essere sicuri di acquistare
+                    l’originale <span class="productName"></span> <em>(e non un’imitazione poco sicura) </em>a un prezzo equo, privo di
+                    ricarichi applicati dai singoli venditori.</p>
+                  <h3><span id="Quanto_costa_Cardio_Active">Quanto costa <span class="productName"></span></span></h3>
+                  <p><span class="productName"></span> solitamente ha un prezzo di <span class="priceOld"></span><span class="currencyMain"></span>. Il produttore però ha deciso di riservare ai nostri
+                    lettori <strong>uno sconto speciale del 50%: un’offerta limitata valida fino a esaurimento
+                      scorte</strong>.</p>
+                  <p>Acquistando subito, quindi, <strong>pagheresti <span class="productName"></span> soli <span class="priceMain"></span><span class="currencyMain"></span>:</strong> un prezzo speciale
+                    ed irripetibile per un prodotto così efficace.</p>
+                  <h3><span id="Come_acquistare_Cardio_Active-2">Come acquistare <span class="productName"></span></span></h3>
+                  <p>Per acquistare <span class="productName"></span>:</p>
+                  <ul>
+                    <li>
+<a href="#" target="_blank" rel="noreferrer noopener sponsored nofollow">clicca qui</a>: verrai reindirizzato sul sito
+                      ufficiale;</li>
+                    <li>compila il modulo inserendo il tuo nome e cognome e un numero di telefono;</li>
+                    <li>dopo qualche minuto, un operatore ti contatterà telefonicamente per confermare l’ordine: dovrai
+                      fornirgli i tuoi dati di spedizione;</li>
+                    <li>dopo qualche giorno riceverai <span class="productName"></span> direttamente a casa tua.</li>
+                  </ul>
+                  <h2><span id="Perche_scegliere_Cardio_Active">Perché scegliere <span class="productName"></span></span></h2>
+                  <p>Ti consigliamo <span class="productName"></span> rispetto agli altri integratori perché:</p>
+                  <ul>
+                    <li>è un prodotto <strong>naturale e senza controindicazioni</strong>;</li>
+                    <li>
+<strong>agisce immediatamente</strong> perché è facilmente assorbibile;</li>
+                    <li>è una <strong>cura completa</strong> per il cuore;</li>
+                    <li>è <strong>testato</strong> clinicamente;</li>
+                    <li>è <strong>adatto a tutti</strong>;</li>
+                    <li>ha <strong>il prezzo migliore</strong> sul mercato.</li>
+                  </ul>
+                  <h2><span id="Recensioni_su_Cardio_Active">Recensioni su <span class="productName"></span></span></h2>
+                  <blockquote class="wp-block-quote">
+                    <p><em>Mia sorella soffriva di ipertensione e, quando ha avuto un’ischemia, i medici le hanno
+                        salvato la vita con i medicinali. Gli sono grata, ma purtroppo mia sorella non è più tornata
+                        come prima. Quando anche io ho iniziato a soffrire di pressione quindi ho deciso di cercare una
+                        cura naturale. <strong>Il mio dottore mi ha consigliato <span class="productName"></span>. Le sono molto grata.
+                          Sono 4 anni che non mi sento più come una malata d’ipertensione. </strong>Sono una persona
+                        completamente in salute e non ho paura di infarti e ictus. Auguro tanta salute a tutti!</em></p>
+                    <cite>Filomena Mori, 61 anni</cite>
+                  </blockquote>
+                  <blockquote class="wp-block-quote">
+                    <p><em>Qualche anno fa mi sono curata in una struttura specializzata. Stavano per l’appunto testando
+                        un preparato contro l’ipertensione. Io ovviamente ero impaurita. Ma che fare? Nessun medicinale
+                        mi aiutava, così mi sono decisa. Fortunatamente sono capitata nel gruppo a cui hanno dato <span class="productName"></span>, e non il “placebo”. <strong>In due ore la pressione già era nella norma. E col passare
+                          del tempo ho iniziato a sentirmi sempre meglio!</strong> Sono molto contenta di aver
+                        partecipato ai test. Ora la mia salute è sempre nella norma.</em></p>
+<cite>Olivia Antonucci, 45
+                      anni</cite>
+                  </blockquote>
+                  <blockquote class="wp-block-quote">
+                    <p><em>3 anni fa al policlinico mi hanno diagnosticato l’ipertensione, fischietti al cuore e così
+                        via. Ho sofferto ma non ho fatto nulla. Poi sei mesi fa ho avuto un microictus. Ed allora ho
+                        iniziato ad avere paura. Non volevo prendere le pillole, perché i prodotti chimici spesso fanno
+                        male e hanno effetti collaterali. Tuttavia non sapevo cosa fare. <strong>Fortunatamente un amico
+                          mi ha fatto fare la conoscenza di <span class="productName"></span>. Ora non ho nulla. La pressione è nella
+                          norma, sono in salute come un toro!</strong></em></p>
+<cite>Federico Lillo, 63 anni</cite>
+                  </blockquote>
+                  <h2>
+<span id="Consigli_per_combattere_lipertensione">Consigli per combattere l’ipertensione</span>
+                  </h2>
+                  <figure class="wp-block-image size-large">
+                    <picture class="wp-image-7594">
+                     <a href="#"><img src="img/donna-adulta-1024x713.jpg" alt=""></a>
+                    </picture>
+                  </figure>
+                  <p>Per combattere pressione alta e ipertensione, oltre ad assumere <strong><span class="productName"></span></strong>, ti
+                    consigliamo di seguire queste <strong>8 regole d’oro:</strong></p>
+                  <ol type="1">
+                    <li>
+<strong>Perdi i chili di troppo</strong>: sovrappeso e obesità favoriscono l’ipertensione e le
+                      malattie cardiovascolari (<em>scopri le migliori diete</em>).</li>
+                    <li>
+<strong>Fai attività fisica</strong>: bastano 20 minuti di camminata al giorno.</li>
+                    <li>
+<strong>Taglia i grassi:</strong> evita alimenti come il burro, la panna, la carne molto grassa,
+                      le fritture, il cibo spazzatura, gli insaccati e i formaggi, e <strong>segui una dieta
+                        sana</strong> e ricca di frutta, verdura e cereali integrali.</li>
+                    <li>
+<strong>Riduci il sale</strong> negli alimenti che cucini, e stai attento ai cibi
+                      preconfezionati: molti contengono molto sale nascosto.</li>
+                    <li>Smetti di fumare.</li>
+                    <li>
+<strong>Riduci la caffeina</strong>: opta per un decaffeinato o riduci il numero di caffè che
+                      prendi.</li>
+                    <li>
+<strong>Limita l’alcool</strong>: un bicchiere di vino al giorno è più che sufficiente.</li>
+                    <li>
+<strong>Elimina i fattori di stress e di ansia</strong> e, se non è possibile eliminarli del
+                      tutto, <strong>trova dei metodi per rilassarti e scaricare il nervosismo:</strong> ad esempio puoi
+                      provare a fare yoga o passare una giornata al centro benessere.</li>
+                  </ol>
+
+                    <div class="features-wrapper"></div>
+                </div>
+                <div id="post-extra-info">
+                  <div class="theiaStickySidebar">
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                <div id="share-buttons-bottom" class="share-buttons share-buttons-bottom">
+                  <div class="share-links ">
+                    <a href="#" target="_blank" rel="external noopener nofollow" title="Facebook" class="facebook-share-btn  large-share-button">
+                      <span class="share-btn-icon tie-icon-facebook"></span> <span class="social-text">Facebook</span>
+                    </a>
+                    <a href="#" target="_blank" rel="external noopener nofollow" title="Twitter" class="twitter-share-btn  large-share-button">
+                      <span class="share-btn-icon tie-icon-twitter"></span> <span class="social-text">Twitter</span>
+                    </a>
+                    <a href="#" target="_blank" rel="external noopener nofollow" title="Pinterest" class="pinterest-share-btn ">
+                      <span class="share-btn-icon tie-icon-pinterest"></span> <span class="screen-reader-text">Pinterest</span>
+                    </a>
+                    <a href="#" target="_blank" rel="external noopener nofollow" title="WhatsApp" class="whatsapp-share-btn ">
+                      <span class="share-btn-icon tie-icon-whatsapp"></span> <span class="screen-reader-text">WhatsApp</span>
+                    </a>
+                    <a href="#" target="_blank" rel="external noopener nofollow" title="Condividi per Email" class="email-share-btn ">
+                      <span class="share-btn-icon tie-icon-envelope"></span> <span class="screen-reader-text">Condividi
+                        per Email</span>
+                    </a>
+                    <a href="#" target="_blank" rel="external noopener nofollow" title="Stampa" class="print-share-btn ">
+                      <span class="share-btn-icon tie-icon-print"></span> <span class="screen-reader-text">Stampa</span>
+                    </a> </div>
+                </div>
+              </article>
+            </div>
+            <aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side" aria-label="Primary Sidebar" style="height: auto !important; min-height: 0px !important;">
+              <div class="theiaStickySidebar" style="height: auto !important;">
+                <div id="search-3" class="container-wrapper widget widget_search">
+
+                  <div class="clearfix"></div>
+                </div>
+                <div id="shortcodes-ultimate-2" class="container-wrapper widget shortcodes-ultimate">
+                  <div class="widget-title the-global-title">
+                    <div class="the-subtitle">Acquista in Offerta sul Sito Ufficiale!<span class="widget-title-icon tie-icon"></span>
+</div>
+                  </div>
+                  <div class="textwidget">
+                    <div class="su-note" id="" style="border-color:#e5e5e5;">
+                      <div class="su-note-inner su-u-clearfix su-u-trim" style="background-color:#ffffff;border-color:#ffffff;color:#333333;">
+                        <div id="box_offerta">OFFERTA</div>
+                        <a href="#" target="_blank" rel="nofollow"><img width="278" height="188" src="prod.png" alt="programma di allenamento da casa" class="lazyloaded" data-ll-status="loaded"></a>
+                        <div class="su-button-center"><a href="#" target="_blank" class="su-button su-button-style-soft cta su-button-wide" style="color:#000000;background-color:#F0C24C;border-color:#c09c3d;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px" rel="nofollow"><span style="color:#000000;padding:7px 22px;font-size:17px;line-height:26px;border-color:#f5d582;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;text-shadow:0px 0px 0px #000000;-moz-text-shadow:0px 0px 0px #000000;-webkit-text-shadow:0px 0px 0px #000000"><i class="sui sui-shopping-cart" style="font-size:17px;color:#000000"></i> Acquista in
+                              Offerta!<small style="padding-bottom:7px;color:#000000">50% di Sconto per i nostri
+                                lettori</small></span></a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+        <footer id="footer" class="site-footer dark-skin dark-widgetized-area">
+          <div id="footer-widgets-container">
+            <div class="container">
+            </div>
+          </div>
+          <div id="site-info" class="site-info site-info-layout-2">
+            <div class="container">
+              <div class="tie-row">
+                <div class="tie-col-md-12">
+                  <div class="copyright-text copyright-text-first">© Copyright 2021 - Tutti i diritti riservati - Salute
+                    Segreta - <a href="#" target="_blank" rel="nofollow"> Chi
+                      siamo e Contatti</a> - <a href="#" target="_blank" rel="nofollow">Lavora con noi</a> - <a href="#" target="_blank" title="Privacy Policy " rel="nofollow">Privacy Policy</a> - <a href="#" target="_blank" title="Cookie Policy " rel="nofollow">Cookie Policy</a>
+</div>
+                  <ul class="social-icons"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <a href="#" target="_blank" id="go-to-top" class="go-to-top-button">
+          <span class="tie-icon-angle-up"></span>
+          <span class="screen-reader-text">Back to top button</span>
+        </a>
+      </div>
+      <aside class=" side-aside normal-side dark-skin dark-widgetized-area is-fullwidth appear-from-right" aria-label="Secondary Sidebar" style="visibility: hidden;">
+        <div data-height="100%" class="side-aside-wrapper has-custom-scroll">
+          <a href="#" target="_blank" class="close-side-aside remove big-btn light-btn">
+            <span class="screen-reader-text">Close</span>
+          </a>
+          <div id="mobile-container">
+            <div id="mobile-menu" class="hide-menu-icons">
+            </div>
+            <div id="mobile-social-icons" class="social-icons-widget solid-social-icons">
+              <ul></ul>
+            </div>
+            <div id="mobile-search">
+
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <div id="reading-position-indicator"></div>
+  <div id="is-scroller-outer">
+    <div id="is-scroller"></div>
+  </div>
+  <div id="fb-root"></div>
+
+  <script>
+      const offer_params = {
+          priceMain : '39',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: '€',
+          productName : 'Cardialica',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain : offer_params.priceMain,
+          currencyMain : offer_params.currencyMain,
+          lang : 'it', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product : offer_params.productName, // название продукта
+          genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+          form : {
+              isNeeded : 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+
+
+
+
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+
+
+
+
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+
+
+
+
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+</body>
+</html>

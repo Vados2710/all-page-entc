@@ -1,0 +1,245 @@
+/* Push Notifications - Front end */
+
+.av-push-notifications ul {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style-type: none;
+    border: 0;
+}
+
+.av-push-notifications ul li {
+    margin: 5px 0;
+    padding: 0;
+    border: 0;
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 50px;
+}
+
+.av-push-notifications ul input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.av-push-notifications ul label {
+    font-weight: 400;
+}
+
+.av-push-notifications p {
+    text-align: left;
+}
+
+.av-push-notifications.fixed p,
+.av-push-notifications.top_custom_popup p,
+.av-push-notifications.browser_popup p,
+.av-push-notifications.top_custom_scroll_popup p {
+    margin: 0;
+}
+
+.spinner {
+    background: url('../wp-admin/images/spinner.gif') no-repeat;
+    background-size: 16px 16px;
+    display: none;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    width: 16px;
+    height: 16px;
+    margin: 5px 5px 0;
+}
+
+.av-push-notifications.fixed,
+.av-push-notifications.top_custom_popup,
+.av-push-notifications.browser_popup,
+.av-push-notifications.top_custom_scroll_popup {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10002;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 10px 12px -6px rgba(0,0,0,.08), 0 8px 40px 7px rgba(0,0,0,.07);
+    border-radius: 2px;
+    border: 0;
+    width: calc(100vw - 20px);
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+.av-push-notifications.top_custom_scroll_popup {
+    display: none;
+}
+
+.av-push-notifications.before_all img,
+.av-push-notifications.half_inside_post img { display: none; }
+
+.av-push-notifications.fixed.half_inside_post img,
+.av-push-notifications.fixed.inside_post img {
+    display: block;
+}
+
+.av-push-notifications img {
+    width: 50px;
+    float: left;
+    padding: 0 10px 10px 0;
+}
+
+.av-push-notifications .av-push-notifications-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #222;
+}
+
+.av-push-notifications .av-push-notifications-close {
+    display: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: .0125em;
+}
+
+.av-push-notifications.fixed .av-push-notifications-close,
+.av-push-notifications.top_custom_popup .av-push-notifications-close,
+.av-push-notifications.browser_popup .av-push-notifications-close,
+.av-push-notifications.top_custom_scroll_popup .av-push-notifications-close {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.av-push-notifications .av-push-notifications-close,
+.av-push-notifications .enable-push {
+    display: inline-block;
+    cursor: pointer;
+    padding: 4px 12px;
+    margin: 10px 0;
+    min-width: 64px;
+    min-height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.av-push-notifications .enable-push {
+    color: #fff;
+    background-color: #2196f3;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+
+.av-push-notifications .enable-push:hover {
+    color: #fff;
+    background-color: #1976d2;
+    text-decoration: none;
+}
+
+.av-push-notifications .av-push-notifications-close {
+    background-color: transparent;
+    color: #999;
+}
+
+.av-push-notifications .av-push-notifications-close:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    color: #222;
+    text-decoration: none;
+}
+
+.av-push-notifications button.disable-push {
+    background-color: #ddd;
+    border-color: #ddd;
+    color: #555;
+}
+
+.av-push-notifications button.disable-push:hover {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #555;
+}
+
+/* Popup Animations */
+
+.av-push-notifications.fixed.animated,
+.av-push-notifications.top_custom_popup.animated,
+.av-push-notifications.browser_popup.animated,
+.av-push-notifications.top_custom_scroll_popup.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay: 2s;
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.av-push-notifications.fixed.fadeInRight,
+.av-push-notifications.top_custom_popup.fadeInRight,
+.av-push-notifications.browser_popup.fadeInRight,
+.av-push-notifications.top_custom_scroll_popup.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+@media screen and (min-width: 480px) {
+    .av-push-notifications.fixed,
+    .av-push-notifications.top_custom_popup,
+    .av-push-notifications.browser_popup,
+    .av-push-notifications.top_custom_scroll_popup {
+        max-width: 320px;
+    }
+    .av-push-notifications .av-push-notifications-close,
+    .av-push-notifications .enable-push {
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 568px) {
+    .iziToast {
+        border: none;
+        width: 500px;
+    }
+}
+
+.iziToast>.iziToast-body .iziToast-message {
+    text-align: center;
+    width: 100%;
+    font-size: 14px
+}
+.iziToast>.iziToast-body .iziToast-texts {
+    float: none;
+    width: 100%;
+}
+.iziToast>.iziToast-body .iziToast-title {
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 15px;
+}

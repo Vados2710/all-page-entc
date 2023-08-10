@@ -1,0 +1,1 @@
+"use strict";let showPhoto=document.querySelectorAll(".spoil");console.dir(showPhoto),showPhoto.forEach((function(o){o.addEventListener("click",(()=>{console.dir(showPhoto),(o.nextElementSibling.style.display="none")&&(o.nextElementSibling.style.display="block")}))}));

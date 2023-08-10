@@ -1,0 +1,1085 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <title>
+    Consulenza medica di fiducia
+    dell'Accademia americana dei medici di famiglia.
+
+  </title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, user-scalable=1" name="viewport">
+  <link rel="icon" href="prod.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/index.css" media="all" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params = (new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value, key) {
+              block = block + key + '=' + value + '&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+
+  <script data-polyfil="webp">
+    !(function (e, n, A) {
+      function o(e, n) {
+        return typeof e === n;
+      }
+
+      function t() {
+        var e, n, A, t, a, i, l;
+        for (var f in r)
+          if (r.hasOwnProperty(f)) {
+            if (
+              ((e = []),
+                (n = r[f]),
+                n.name &&
+                (e.push(n.name.toLowerCase()),
+                  n.options && n.options.aliases && n.options.aliases.length))
+            )
+              for (A = 0; A < n.options.aliases.length; A++)
+                e.push(n.options.aliases[A].toLowerCase());
+            for (
+              t = o(n.fn, 'function') ? n.fn() : n.fn, a = 0; a < e.length; a++
+            )
+              (i = e[a]),
+              (l = i.split('.')),
+              1 === l.length ?
+              (Modernizr[l[0]] = t) :
+              (!Modernizr[l[0]] ||
+                Modernizr[l[0]] instanceof Boolean ||
+                (Modernizr[l[0]] = new Boolean(Modernizr[l[0]])),
+                (Modernizr[l[0]][l[1]] = t)),
+              s.push((t ? '' : 'no-') + l.join('-'));
+          }
+      }
+
+      function a(e) {
+        var n = u.className,
+          A = Modernizr._config.classPrefix || '';
+        if ((c && (n = n.baseVal), Modernizr._config.enableJSClass)) {
+          var o = new RegExp('(^|\s)' + A + 'no-js(\s|$)');
+          n = n.replace(o, '$1' + A + 'js$2');
+        }
+        Modernizr._config.enableClasses &&
+          ((n += ' ' + A + e.join(' ' + A)),
+            c ? (u.className.baseVal = n) : (u.className = n));
+      }
+
+      function i(e, n) {
+        if ('object' == typeof e)
+          for (var A in e) f(e, A) && i(A, e[A]);
+        else {
+          e = e.toLowerCase();
+          var o = e.split('.'),
+            t = Modernizr[o[0]];
+          if ((2 == o.length && (t = t[o[1]]), 'undefined' != typeof t))
+            return Modernizr;
+          (n = 'function' == typeof n ? n() : n),
+          1 == o.length ?
+            (Modernizr[o[0]] = n) :
+            (!Modernizr[o[0]] ||
+              Modernizr[o[0]] instanceof Boolean ||
+              (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])),
+              (Modernizr[o[0]][o[1]] = n)),
+            a([(n && 0 != n ? '' : 'no-') + o.join('-')]),
+            Modernizr._trigger(e, n);
+        }
+        return Modernizr;
+      }
+      var s = [],
+        r = [],
+        l = {
+          _version: '3.6.0',
+          _config: {
+            classPrefix: '',
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0,
+          },
+          _q: [],
+          on: function (e, n) {
+            var A = this;
+            setTimeout(function () {
+              n(A[e]);
+            }, 0);
+          },
+          addTest: function (e, n, A) {
+            r.push({
+              name: e,
+              fn: n,
+              options: A
+            });
+          },
+          addAsyncTest: function (e) {
+            r.push({
+              name: null,
+              fn: e
+            });
+          },
+        },
+        Modernizr = function () {};
+      (Modernizr.prototype = l), (Modernizr = new Modernizr());
+      var f,
+        u = n.documentElement,
+        c = 'svg' === u.nodeName.toLowerCase();
+      !(function () {
+        var e = {}.hasOwnProperty;
+        f =
+          o(e, 'undefined') || o(e.call, 'undefined') ?
+          function (e, n) {
+            return n in e && o(e.constructor.prototype[n], 'undefined');
+          } :
+          function (n, A) {
+            return e.call(n, A);
+          };
+      })(),
+      (l._l = {}),
+      (l.on = function (e, n) {
+        this._l[e] || (this._l[e] = []),
+          this._l[e].push(n),
+          Modernizr.hasOwnProperty(e) &&
+          setTimeout(function () {
+            Modernizr._trigger(e, Modernizr[e]);
+          }, 0);
+      }),
+      (l._trigger = function (e, n) {
+        if (this._l[e]) {
+          var A = this._l[e];
+          setTimeout(function () {
+              var e, o;
+              for (e = 0; e < A.length; e++)(o = A[e])(n);
+            }, 0),
+            delete this._l[e];
+        }
+      }),
+      Modernizr._q.push(function () {
+          l.addTest = i;
+        }),
+        Modernizr.addAsyncTest(function () {
+          function e(e, n, A) {
+            function o(n) {
+              var o = n && 'load' === n.type ? 1 == t.width : !1,
+                a = 'webp' === e;
+              i(e, a && o ? new Boolean(o) : o), A && A(n);
+            }
+            var t = new Image();
+            (t.onerror = o), (t.onload = o), (t.src = n);
+          }
+          var n = [{
+                uri: 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=',
+                name: 'webp',
+              },
+              {
+                uri: 'data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==',
+                name: 'webp.alpha',
+              },
+              {
+                uri: 'data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA',
+                name: 'webp.animation',
+              },
+              {
+                uri: 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=',
+                name: 'webp.lossless',
+              },
+            ],
+            A = n.shift();
+          e(A.name, A.uri, function (A) {
+            if (A && 'load' === A.type)
+              for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri);
+          });
+        }),
+        t(),
+        a(s),
+        delete l.addTest,
+        delete l.addAsyncTest;
+      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+      e.Modernizr = Modernizr;
+    })(window, document);
+  </script>
+</head>
+
+<body class="ev-date post-template-default single single-post postid-60253 single-format-standard minimal-design header-10 mobile-header-left-logo mhs-tablet-land mh-slideout responsive-fluid product-shadows layout-fullwidth disable-mobile-animations language-en slideout-right swift-framework-v2.5.53 familydoctor.org-child-theme-v2017" data-invalid-name-text="Indicate your correct name, please!" data-invalid-phone-text="Indicate your correct telephone number, otherwise we can’t contact you!" data-use-external-comebacker="1">
+  <div id="container" class="clearfix">
+    <div id="language-toggle" class="hidden-sm hidden-xs">
+      <div class="container">
+        <div class="row">
+          <div id="polylang-2" class="widget widget_polylang clearfix">
+            <ul>
+              <li class="lang-item lang-item-2 lang-item-es lang-item-first">
+                <a lang="es-ES" hreflang="es-ES" href="">Italiano</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header id="mobile-header" class="mobile-left-logo clearfix">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="mobile-logo" class="logo-left has-img clearfix">
+            <a href="" title="Vai alla pagina iniziale di familydoctor.org." rel="home">
+              <picture>
+                <source type="image/webp" srcset="images/logo-2.webp">
+                <img src="images/logo-2.png" alt="familydoctor.org" height="54" width="220" loading="lazy"></picture>
+            </a>
+          </div>
+          <div class="mobile-header-opts">
+            <a href="" class="mobile-menu-link menu-bars-link"><span><span class="menu-bars"></span></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="logo-tagline">
+        Consulenza medica di fiducia <br>dell'Accademia americana dei medici
+        di famiglia.
+      </div>
+    </header>
+
+    <div class="header-wrap full-header-stick page-header-standard">
+      <div id="header-section" class="header-10 clearfix">
+        <header id="header" class="clearfix">
+          <div class="container">
+            <div class="row">
+              <div id="logo" class="col-sm-6 logo-left has-img clearfix">
+                <a href="" title="Vai alla pagina iniziale di familydoctor.org." rel="home">
+                  <picture>
+                    <source type="image/webp" srcset="images/logo-2.webp">
+                    <img src="images/logo-2.png" alt="familydoctor.org" height="54" width="220" loading="lazy">
+                  </picture>
+                </a>
+                <div class="logo-tagline">
+                  Consulenza medica di fiducia <br>dell'Accademia americana
+                  dei medici di famiglia.
+                </div>
+              </div>
+              <div class="header-right col-sm-6">
+                <nav id="social-icons-navigation" class="social-icons standard clearfix" aria-label="social channels main menu">
+                  <ul itemscope="">
+                    <li class="website">
+                      <link itemprop="url" href="">
+                    </li>
+                    <li class="twitter">
+                      <a itemprop="sameAs" href="" title="Vai al canale Twittter di familydoctor.org."><span class="accessibility-text">Canale Twitter</span><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="facebook">
+                      <a itemprop="sameAs" href="" title="Vai al profilo Facebook di familydoctor.org."><span class="accessibility-text">Profilo Facebook</span><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="pinterest">
+                      <a itemprop="sameAs" href="" title="Vai al profilo Pinterest di familydoctor.org."><span class="accessibility-text">Profilo Pinterest</span><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div id="overlay-menu">
+        <nav></nav>
+      </div>
+    </div>
+
+    <div id="main-container" class="hentry clearfix" itemscope="">
+      <div class="clearfix single-post-standard post-60253 post type-post status-publish format-standard has-post-thumbnail category-crisis-situations category-family-health category-immunization-schedule category-prevention-and-wellness category-seniors category-staying-healthy tag-coronavirus tag-covid-19" id="60253">
+        <div class="page-content container">
+          <div class="row">
+            <div class="content-wrap col-md-12 clearfix">
+              <meta itemprop="mainEntityOfPage" content="https://familydoctor.org/pneumococcal-vaccines-for-seniors/">
+              <div class="featured-image" style="text-align: center">
+                <picture>
+                  <source type="image/webp" srcset="images/doctor.webp" style="width: 400px">
+                  <img src="images/doctor.png" alt="Sunrise Image" style="width: 400px" loading="lazy">
+                </picture>
+              </div>
+
+              <div class="row pb-row">
+                <div class="body-text entry-content" itemprop="articleBody">
+                  <div class="pf-content">
+                    <div data-header-style="" class="row fw-row">
+                      <div class="spb-row-container spb-row-full-width-contained col-sm-12 text-" data-v-center="false" data-top-style="" data-bottom-style="" style="margin-top: 0px; margin-bottom: 0px">
+                        <div class="spb_content_element clearfix">
+                          <div class="container">
+                            <div class="row">
+                              <div class="spb_content_element col-sm-12 spb_text_column">
+                                <div class="spb-asset-content" style="
+                                      margin-top: 0px;
+                                      margin-bottom: 20px;
+                                      padding: 15px;
+                                      background-color: rgba(255, 255, 0, 0.2);
+                                    ">
+                                  <p style="
+                                        margin-bottom: 0;
+                                        font-style: italic;
+                                      ">
+                                    <span class="bold">"Mi piace Italia</span>, ma il suo livello di medicina è
+                                    semplicemente scioccante e i prodotti per
+                                    l'ipertensione sono rimasti indietro nello
+                                    sviluppo per quasi 20 anni. C'è solo un
+                                    modo per proteggersi da ictus, ma i medici
+                                    locali lo ignorano"
+                                    <span class="bold">— Joseph Lang, cardiologo di fama
+                                      mondiale, membro onorario
+                                      dell'Associazione dei cardiologi
+                                      americani, Usa.</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-header-style="" class="row fw-row">
+                      <div class="spb-row-container spb-row-full-width-contained col-sm-12 text-" data-v-center="false" data-top-style="" data-bottom-style="" style="margin-top: 0px; margin-bottom: 0px">
+                        <div class="spb_content_element clearfix">
+                          <section class="container">
+                            <div class="row">
+                              <div class="spb_content_element col-sm-12 spb_text_column">
+                                <div class="spb-asset-content" style="margin-top: 0px; margin-bottom: 0px">
+                                  <h3>Improvviso aumento della pressione</h3>
+                                  <p style="font-weight: bold">
+                                    Le cause di un improvviso aumento della
+                                    pressione possono essere diverse:
+                                  </p>
+                                  <p>
+                                    <span class="bold">Alcol.</span> Se la
+                                    persona consuma l'alcol, il suo cuore non
+                                    riesce più a far fronte al carico: la
+                                    pressione aumenta, si sviluppano
+                                    l'ipertensione e l'ateroscelorisi. Anche
+                                    300 ml di alcol sono sufficienti per
+                                    raddoppiare il carico sul muscolo
+                                    cardiaco. L'abuso regolare porta a tali
+                                    conseguenze:
+                                  </p>
+                                  <div style="text-align: center">
+                                    <div class="dspoiler">
+                                      <picture>
+                                        <img src="images/alcohol.jpg" alt="Sunrise Image" class="spoiler" loading="lazy">
+                                      </picture>
+                                    </div>
+                                  </div>
+                                  <p style="
+                                        font-style: italic;
+                                        text-align: center;
+                                        font-size: 14px;
+                                        text-decoration: underline;
+                                      ">
+                                    A sinistra — un cuore dopo l'assunzione
+                                    regolare di alcol. A desta — un organo
+                                    sano
+                                  </p>
+                                  <p>
+                                    <span class="bold">Fumo</span>. La
+                                    nicotina e il monossido di carbonio sono i
+                                    veleni vascolari più forti. Non solo
+                                    favoriscono gli attacchi di angina, ma
+                                    anche aumentano drasticamente la pressione
+                                    sanguigna persino nelle persone con il
+                                    cuore sano. Il fumo regolare porta alla
+                                    comparsa di ipertensione causata da
+                                    nicotina, all'ingrossamento dei tessuti e
+                                    all'insufficienza cardiaca.
+                                  </p>
+                                  <div style="
+                                        text-align: center;
+                                        margin-bottom: 15px;
+                                      ">
+                                    <div class="dspoiler">
+                                      <picture>
+                                        <img src="images/smoke.jpg" alt="Sunrise Image" class="spoiler" loading="lazy">
+                                      </picture>
+                                    </div>
+                                  </div>
+                                  <p style="
+                                        font-style: italic;
+                                        text-align: center;
+                                        font-size: 14px;
+                                        text-decoration: underline;
+                                      ">
+                                    Cuore di un fumatore
+                                  </p>
+                                  <p>
+                                    <span class="bold">Stress.</span>
+                                    Stanchezza, nervosismo e esaurimento
+                                    morale spesso causano lo sviluppo di
+                                    aterosclerosi, che può portare a ictus e
+                                    ischemia miocardica. Un forte shock
+                                    emotivo è una causa comune di infarto,
+                                    specialmente tra i pazienti ipertesi, e lo
+                                    stress cronico può portare anche alla
+                                    necrosi tissutale.
+                                  </p>
+                                  <div style="
+                                        text-align: center;
+                                        margin-bottom: 15px;
+                                      ">
+                                    <div class="dspoiler">
+                                      <picture>
+                                        <img src="images/stress.jpg" alt="Sunrise Image" data-id="3" class="spoiler" loading="lazy">
+                                      </picture>
+                                    </div>
+                                  </div>
+                                  <p style="
+                                        font-style: italic;
+                                        text-align: center;
+                                        font-size: 14px;
+                                        text-decoration: underline;
+                                      ">
+                                    Infarto miocardico a causa di grave stress
+                                  </p>
+                                  <h3>Legato al trauma</h3>
+                                  <p style="margin-bottom: 30px">
+                                    Ci sono i casi, in cui a causa di una
+                                    lesione congenita o acquisita al collo o
+                                    alla base del cranio, il corpo invia al
+                                    cuore una quantità eccessiva di impulsi.
+                                    Dunque, è costretto a contrarsi più spesso
+                                    e più forte, ciò porta all'aumento della
+                                    pressione sanguigna. Ma ogni caso è
+                                    diverso, quindi l'impatto delle lesioni
+                                    cervicali sul sistema cardiovascolare è
+                                    inferiore al 7%.
+                                  </p>
+                                  <h3>
+                                    Adesso si può tornare la pressione alla
+                                    normalità in modo più veloce e sicuro che
+                                    mai
+                                  </h3>
+                                  <p>
+                                    La medicina moderna ha fatto un enorme
+                                    passo avanti in cardiologia. Se 5 anni fa
+                                    l'ipertensione è stata trattata per anni,
+                                    ora sono già creati i prodotti innovativi
+                                    che sono in grado di normalizzare
+                                    istantaneamente la pressione sanguigna
+                                    anche in caso di reazioni acute. <br>
+                                    <a href=""><span class="productName"></span></a> è un
+                                    rimedio naturale che è adatto sia per la
+                                    prevenzione dell'ipertensione che per la
+                                    terapia urgente. Il rimedio innovativo è
+                                    prodotto in Portogallo e ha la
+                                    certificazione europea. Inoltre, costa
+                                    meno di una cena in trattoria.
+                                  </p>
+                                  <div class="sostav">
+                                    <h3>Composizione creata dalla natura</h3>
+                                    <p>
+                                      <a href=""><span class="productName"></span></a> è un
+                                      rimedio rivoluzionario contro
+                                      l'ipertensione con una composizione
+                                      naturale al 100%:
+                                    </p>
+                                    <ul>
+                                      <li>
+                                        <span style="font-weight: bold">Vitamina C</span>
+                                          Migliora la resistenza dei vasi sanguigni, 
+                                          normalizza il metabolismo del colesterolo, 
+                                          ha un effetto positivo sul sistema 
+                                          endocrino e nervoso.
+                                      </li>
+                                      <li>
+                                        <span style="font-weight: bold">Estratto di foglie d'ulivo</span>
+                                        Normalizza il livello di colesterolo 
+                                        nel sangue, previene lo sviluppo 
+                                        dell'aterosclerosi. Aiuta a prevenire 
+                                        la formazione di placca arteriosa e riduce 
+                                        il rischio di infarto e ictus.
+                                      </li>
+                                      <li>
+                                        <span style="font-weight: bold">Estratto di Gymnema Sylvester</span>
+                                        Riduce la pressione sanguigna, allevia irritabilità 
+                                        e affaticamento, protegge dalle aritmie.
+                                      </li>
+                                      <li>
+                                        <span style="font-weight: bold">Cromo</span>
+                                        Oltre a garantire una sana condizione dei 
+                                        tessuti del corpo, aiuta a mantenere i livelli 
+                                        di zucchero nel sangue entro limiti normali.
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <p>
+                                    Questi rimedi naturali si sono dimostrati
+                                    efficaci per scopi medici già da tempo.
+                                    Tuttavia, solo
+                                    <span style="font-weight: bold">di recente i cardiologi hanno fatto una
+                                      svolta scientifica</span>
+                                    e hanno scoperto che in una certa
+                                    proporzione tali componenti sono in grado
+                                    di migliorare l'effetto l'uno dell'altro
+                                    lavorando in sinergia. Grazie a questo, è
+                                    stato possibile ottenere il più forte
+                                    effetto preventivo e terapeutico che non è
+                                    in grado fornire nessun altro prodotto.
+                                  </p>
+                                  <div class="work">
+                                    <h3>
+                                      Come funziona <span class="productName"></span>: principio di
+                                      funzionamento e risultati di ricerca
+                                    </h3>
+                                    <p>
+                                      Durante
+                                      <span class="bold">il ciclo di assunzione di <span class="productName"></span> di
+                                        10 giorni</span>, il corpo passa
+                                      <span class="bold">5 stadi di guarigione</span>:
+                                    </p>
+                                    <ol>
+                                      <li>
+                                        Normalizzazione della pressione
+                                        sanguigna.
+                                      </li>
+                                      <li>Riduzione del carico sul cuore.</li>
+                                      <li>
+                                        Rafforzamento delle pareti dei vasi
+                                        sanguigni e miglioramento della loro
+                                        elasticità.
+                                      </li>
+                                      <li>
+                                        Aumento delle difese immunitarie in
+                                        generale.
+                                      </li>
+                                      <li>
+                                        Miglioramento del funzionamento del
+                                        sistema nervoso.
+                                      </li>
+                                    </ol>
+                                  </div>
+                                  <p>
+                                    <span class="bold">L'Istituto di salute "Alto"
+                                      (Portogallo)</span>
+                                    ha condotto uno studio su larga scala su
+                                    <span class="productName"></span>. Il progetto ha coinvolto 1282
+                                    volontari con diversi stadi di
+                                    ipertensione e di età compresa tra i 22 e
+                                    i 74 anni:
+                                  </p>
+                                  <ul>
+                                    <li>
+                                      <span class="bold">1179</span> persone
+                                      hanno notato un significativo
+                                      miglioramento della salute.
+                                    </li>
+                                    <li>
+                                      Solo il <span class="bold">2%</span> dei
+                                      soggetti non ha notato dei cambiamenti.
+                                    </li>
+                                    <li>
+                                      <span class="bold">1053 dei 1282</span>
+                                      partecipanti si sono completamente
+                                      liberati della pressione alta.
+                                    </li>
+                                    <li>
+                                      Nei
+                                      <span class="bold">126</span> soggetti
+                                      il funzionamento del sistema
+                                      cardiovascolare è migliorato, ma senza
+                                      recupero completo.
+                                    </li>
+                                    <li>
+                                      Il <span class="bold">100%</span> dei
+                                      partecipanti non ha avuto gli effetti
+                                      collaterali.
+                                    </li>
+                                  </ul>
+                                  <div class="graphs" style="margin-bottom: 20px">
+                                    <div class="graphs__item">
+                                      <h4>Età dei partecipanti</h4>
+                                      <picture>
+                                        <source type="image/webp" srcset="images/chart1.webp">
+                                        <img src="images/chart1.png" alt="img" loading="lazy"></picture>
+                                    </div>
+                                    <div class="graphs__item">
+                                      <h4>Sesso dei partecipanti</h4>
+                                      <picture>
+                                        <source type="image/webp" srcset="images/chart2.webp">
+                                        <img src="images/chart2.png" alt="img" loading="lazy"></picture>
+                                    </div>
+                                    <div class="graphs__item">
+                                      <h4>Valutazione dei risultati</h4>
+                                      <picture>
+                                        <source type="image/webp" srcset="images/chart3.webp">
+                                        <img src="images/chart3.png" alt="img" loading="lazy"></picture>
+                                    </div>
+                                    <div class="graphs__item">
+                                      <h4>Effetto dopo l'assunzione</h4>
+                                      <picture>
+                                        <source type="image/webp" srcset="images/chart4.webp">
+                                        <img src="images/chart4.png" alt="img" loading="lazy"></picture>
+                                    </div>
+                                  </div>
+                                  <p class="fact" style="font-weight: bold">
+                                    Interessante! Gli scienziati dell'Istituto
+                                    di salute "Alto" hanno dimostrato che
+                                    <span class="date-0" data-format="month"></span>
+                                    è il momento migliore per iniziare un
+                                    ciclo preventivo o terapeutico di
+                                    assunzione di <span class="productName"></span> grazie
+                                    all'adattamento naturale del corpo al
+                                    cambiamento delle condizioni
+                                    meteorologiche.
+                                  </p>
+                                  <h2 style="text-align: center">
+                                    Attenzione! I casi di contraffazione delle
+                                    capsule <span class="productName"></span> sono diventati più
+                                    frequenti
+                                  </h2>
+                                  <div class="poddelka">
+                                    <p>
+                                      A causa dell'enorme numero di falsi, il
+                                      fornitore è stato costretto a ritirare
+                                      l'intero lotto del rimedio <span class="productName"></span>
+                                      dalle catene di farmacie. Adesso il
+                                      prodotto si può
+                                      <a href="">ordinare solo sul sito ufficiale del
+                                        produttore</a>
+                                      – NON ESISTONO altri negozi che vendono
+                                      questo rimedio!
+                                    </p>
+                                    <p>
+                                      L'offerta speciale per i nostri lettori:
+                                      il produttore di <span class="productName"></span> ha un'offerta
+                                      promozionale che permette di vincere uno
+                                      sconto fino al
+                                      <span class="bold">50% sul tuo primo ordine.</span>
+                                      Ma affrettati — il tempo della sua
+                                      azione è limitato.
+                                    </p>
+                                  </div>
+
+                                  <div class="features-wrapper"></div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="link-pages"></div>
+              <div class="col-xs-12" style="margin: 20px 0">
+                <div class="comment-main" style="margin-bottom: 30px">
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/4.webp">
+                          <img alt="avatar" src="images/4.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Giovanna</div>
+
+                        <div class="comment-date__time date-2 time" data-format="dd month yyyy">
+                          5 settembre 2020 08:05
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Per la prima volta ho sentito parlare di <span class="productName"></span> da una
+                      mia amica, ma non riuscivo a trovare questo rimedio in
+                      vendita. L'ho ordinato sul
+                      <a href="">sito ufficiale</a> e ho ricevuto il
+                      pacco tra 4 giorni. E' l'unico rimedio che non mi causa
+                      allergie perché e' completamente naturale.
+                    </div>
+                  </div>
+
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/14.webp">
+                          <img alt="avatar" src="images/14.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Maria</div>
+
+                        <div class="comment-date__time date-2 time" data-format="dd month yyyy">
+                          5 settembre 2020 11:27
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Il prodotto migliore e anche quello più sicuro!
+                      Credetemi, nella mia vita ho provato del tutto, ma poi
+                      sono completamente passata a <span class="productName"></span>. All'inizio lo
+                      prendevo solo quando avevo gli sbalzi, ma dopo aver
+                      visto il suo effetto, ho iniziato a prenderlo
+                      costantemente. Faccio tutto come scritto nel foglietto
+                      illustrativo: 2 capsule al giorno e non è rimasta
+                      nemmeno la traccia della pressione alta.
+                    </div>
+                  </div>
+
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/10.webp">
+                          <img alt="avatar" src="images/10.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Daniela</div>
+
+                        <div class="comment-date__time date-4 time" data-format="dd month yyyy">
+                          3 settembre 2020 03:09
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Ho provato questo rimedio la scorsa estate.
+                      L'ipertensione non mi rovina più la vita, la pressione è
+                      alla norma. Ordinerò altre 5 confezioni per la
+                      prevenzione.
+                    </div>
+                  </div>
+
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/11.webp">
+                          <img alt="avatar" src="images/11.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Francesca</div>
+
+                        <div class="comment-date__time date-5 time" data-format="dd month yyyy">
+                          2 settembre 2020 03:39
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Per quelli che hanno ancora dei dubbi — ecco la mia
+                      storia. Quattro anni fa le mie condizioni erano
+                      terribili. I medici hanno detto che senza un intervento
+                      chirurgico sarei morta in pochi mesi a causa di
+                      insufficienza cardiaca acuta. Ma non mi sono rassegnata
+                      — ho provato questo integratore e sono ancora viva! I
+                      medici sono rimasti a bocca aperta per il fatto che sono
+                      riuscita a ripristinare il normale funzionamento del
+                      cuore senza chirurgia. Provatelo anche voi!
+                    </div>
+                  </div>
+
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/16.webp">
+                          <img alt="avatar" src="images/16.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Benedetta</div>
+
+                        <div class="comment-date__time date-5 time" data-format="dd month yyyy">
+                          2 settembre 2020 05:54
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      È bene che il produttore abbia iniziato a venderlo
+                      direttamente. In farmacia c'era una margine 5 volte più
+                      alta! Inoltre, a volte vendevano dei falsi, quindi
+                      ordinate solo dal fornitore ufficiale.
+                    </div>
+                  </div>
+
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/19_00100.webp">
+                          <img alt="avatar" src="images/19_00100.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Roberta</div>
+
+                        <div class="comment-date__time date-6 time" data-format="dd month yyyy">
+                          1 settembre 2020 18:13
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Sono riuscita a vincere uno sconto del 50%, quindi ho
+                      subito ordinato 10 confezioni!!
+                    </div>
+                  </div>
+
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/21.webp">
+                          <img alt="avatar" src="images/21.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Carla</div>
+
+                        <div class="comment-date__time date-6 time" data-format="dd month yyyy">
+                          1 settembre 2020 18:13
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Si, è vero, costa poco, ma aiuta davvero!
+                    </div>
+                  </div>
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/25.webp">
+                          <img alt="avatar" src="images/25.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Bianca</div>
+
+                        <div class="comment-date__time date-6 time" data-format="dd month yyyy">
+                          1 settembre 2020 18:13
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Mio padre accusava spesso la pressione alta e ora corre
+                      ogni mattina, pur avendo 70 anni. Anche lui ha preso
+                      <span class="productName"></span>, non gli piacciono i medicinali per
+                      ipertensione che si vendono in farmacia.
+                    </div>
+                  </div>
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/av50.webp">
+                          <img alt="avatar" src="images/av50.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Valentina</div>
+
+                        <div class="comment-date__time date-6 time" data-format="dd month yyyy">
+                          1 settembre 2020 18:13
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Seguo regolarmente il ciclo di <span class="productName"></span> per la
+                      prevenzione. Una volta all'anno per 20 giorni, proprio
+                      come mi è stato consigliato. Mi sento benissimo! Ho il
+                      cuore forte come un giovane toro!
+                    </div>
+                  </div>
+                  <div class="comment-box">
+                    <div class="comment-date">
+                      <div class="comment-date__avarar">
+                        <picture>
+                          <source type="image/webp" srcset="images/av1.webp">
+                          <img alt="avatar" src="images/av1.jpg" loading="lazy"></picture>
+                      </div>
+
+                      <div class="comment-date-box">
+                        <div class="comment-date__name">Silvia</div>
+
+                        <div class="comment-date__time date-6 time" data-format="dd month yyyy">
+                          1 settembre 2020 18:13
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="comment-text">
+                      Negli ultimi anni ho sempre avuto la pressione 140/90.
+                      Pensavo che a mia età fosse normale. Ma poi si è
+                      sviluppata un'aritmia grave e sono finita in ospedale, i
+                      medici sospettavano un ictus. Un mio amico mi ha
+                      consigliato <span class="productName"></span> ed è stato un vero dono dal cielo!
+                      Ora ho i valori come 110-120/70 e il mio cuore funziona
+                      come un orologio svizzero.
+                    </div>
+                  </div>
+                </div>
+
+                <a href="" class="btn-to-lend">Ricevi al prezzo speciale</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer-wrap">
+    <div id="footer">
+      <div class="container">
+        <div id="footer-widgets" class="row clearfix">
+          <div class="col-sm-12">
+            <div id="text-2" class="widget widget_text clearfix">
+              <div class="textwidget">
+                <p>familydoctor.org è supportato da</p>
+                <p>
+                  <a href="" rel="noopener noreferrer">
+                    <picture>
+                      <source type="image/webp" srcset="images/aafp-e1520870301332.webp">
+                      <img src="images/aafp-e1520870301332.png" height="110" width="275" alt="Logo di Accademia americana dei medici di famiglia" loading="lazy"></picture>
+                  </a><a href="" rel="noopener noreferrer">
+                    <picture>
+                      <source type="image/webp" srcset="images/aafp-foundation-e1520869366904.webp">
+                      <img src="images/aafp-foundation-e1520869366904.png" class="footer__logo" height="110" width="101" alt="Logo della Fondazione dell'Accademia americana dei medici di famiglia" loading="lazy">
+                    </picture>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="copyright">
+      © 2020 Accademia americana dei medici di famiglia
+    </footer>
+  </div>
+
+  <script src="js/index.js"></script>
+
+  <script>
+      const offer_params = {
+          priceMain : '39',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: '€',
+          productName : 'Tonerin',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain : offer_params.priceMain,
+          currencyMain : offer_params.currencyMain,
+          lang : 'it', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product : offer_params.productName, // название продукта
+          genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+          form : {
+              isNeeded : 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+
+
+
+
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+
+
+
+
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+
+
+
+
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+
+</body>
+
+</html>

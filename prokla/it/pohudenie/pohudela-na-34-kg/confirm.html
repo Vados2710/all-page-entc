@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <title>
+        Grazie! Il tuo ordine è stato accettato!
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=320" />
+    <meta name="MobileOptimized" content="width=320" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link media="all" rel="stylesheet" type="text/css" href="confirm/order-style.css" />
+</head>
+
+<body>
+    <script>
+        function $_GET(key) {
+            var s = window.location.search;
+            s = s.match(new RegExp(key + '=([^&=]+)'));
+            return s ? s[1] : '';
+        }
+
+        var site = $_GET('version')
+
+        if (site.replace(/(v\d{1,3}\w{0,2})$/, '') === 'it39') {
+            document.write('<scr' + 'ipt src="39/counter.js"></scr' + 'ipt>');
+        }
+        if (site.replace(/(v\d{1,3}\w{0,2})$/, '') === 'it39prelp') {
+            document.write('<scr' + 'ipt src="39/prelp/counter.js"></scr' + 'ipt>');
+        }
+    </script>
+    <div id="wrapper">
+        <div class="container">
+            <span class="decoration">
+        </span>
+            <div class="order-block">
+                <div class="text-holder">
+                    <h2>Grazie per l'ordine!</h2>
+                    <p> Al più presto vi arriverà una chiamata da un numero anonimo. Controllate di non avere programmi attivi contro questo tipo di chiamate!</p>
+                </div>
+                <div class="text-box">
+                    <h2>
+                        Prendere parte <span>all`azione</span>
+                    </h2>
+                    <p>
+                        Per poterti iscrivere e monitorare lo stato del tuo ordine, inserisci il tuo indirizzo email e clicca su "Salva"!
+                    </p>
+                    <form class="order-form" id="email_form" action="#">
+                        <fieldset>
+                            <div class="text">
+                                <input type="email" id="email" placeholder="Inserisci il tuo indirizzo email..." name="email">
+                            </div>
+                            <input data-error="Inserisci il tuo indirizzo email" data-success="Grazie per l`iscrizione! La tua email è stata salvata!" class="btn-save" type="submit" value="Salva">
+                        </fieldset>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-url-parser/2.3.1/purl.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+    <script src="https://click.lucky.online/js/leadprofit.js"></script>
+    <script>
+        $(function() {
+
+            $(document).leadprofitConfirm();
+
+            $('input').on('change', function(e) {
+                $('#' + e.target.name).attr('data-comment', e.target.value);
+                $('.btn-save-adress').unbind('click');
+                $('[data-comment]').leadprofitAddComment();
+            });
+
+        }());
+    </script>
+</body>
+
+</html>
