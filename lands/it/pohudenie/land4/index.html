@@ -1,0 +1,535 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uslim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="cdn/js/jquery.js"></script>
+</head>
+
+<body>
+  <header class="header animate__fadeIn animate__ wow  animated" data-wow-delay=".2s"
+    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+    <div class="container">
+      <img alt="" class="logo animate__fadeInDown animate__ wow" data-wow-delay="0s" src="img/logo.svg"
+        style="visibility: visible; animation-delay: 0s; animation-name: fadeInDown;">
+      <div class="header__wrap">
+        <div class="header__bullets">
+          <div class="bullet animate__fadeInUp animate__ wow" data-wow-delay=".2s"
+            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <img alt="+" src="img/header/plus.svg">
+            <h4 class="title lt0">Dimagrimento garantito<br>tutti i giorni</h4>
+          </div>
+          <div class="bullet animate__fadeInUp animate__ wow" data-wow-delay=".4s"
+            style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+            <img alt="+" src="img/header/plus.svg">
+            <h4 class="title lt1">Il peso va via<br>e non torna</h4>
+          </div>
+          <div class="bullet animate__fadeInUp animate__ wow" data-wow-delay=".6s"
+            style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+            <img alt="+" src="img/header/plus.svg">
+            <h4 class="title lt2">Disintossicazione di tutto il corpo</h4>
+          </div>
+          <div class="bullet animate__fadeInUp animate__ wow" data-wow-delay=".8s"
+            style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
+            <img alt="+" src="img/header/plus.svg">
+            <h4 class="title lt3">Unghie sane,<br>pelle e capelli</h4>
+          </div>
+        </div>
+        <form action="getform.php" method="post" class="form animate__fadeIn animate__ wow order_form" data-wow-delay="1s"
+          style="visibility: visible; animation-delay: 1s; animation-name: fadeIn;">
+          <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+          <input type="hidden" name="utm_campaign" value="{domonetka}">
+          <h2 class="form__title"><span class="price_old"><span class="priceMain"></span> <span class="currencyMain"></span></span><span class="price_main"
+              style="float: right; color: #e02712; margin-left: 80px;font-size: 40px"><span class="priceOld"></span> <span class="currencyMain"></span></span></h2>
+          <div class="form__fields">
+            <label class="form__label"> <span class="label__title lt78">Il tuo nome</span><input class="form__input"
+                placeholder="Inserisci il tuo nome" type="text" name="name" required></label>
+            <label class="form__label"> <span class="label__title lt79">Numero di telefono</span><input
+                class="form__input" placeholder="+39 0123456789" type="tel" name="phone" required></label>
+            <label class="form__label">
+              <button type="submit" class="lt80">Ordine</button>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="page">
+    <div class="animate__row animate__fadeIn animate__animated wow" data-wow-delay=".5s"
+      style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+      <div class="animate__row-item"></div>
+    </div>
+    <div class="favor">
+      <div class="container">
+        <div class="favor__item-content">
+          <h3 class="favor__title title animate__fadeInUp animate__animated wow lt12" data-wow-delay=".3s"
+            style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">Aceto di mele</h3>
+          <p class="favor__descr favor__item-text animate__fadeInUp animate__animated wow lt13" data-wow-delay=".8s"
+            style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">È noto da tempo per le sue
+            proprietà curative. Un'antica ricetta dai tempi della regina Cleopatra, che la utilizzava come mezzo per
+            preservare la giovinezza e la bellezza, è giunta ai nostri giorni. Curavano le malattie e rafforzavano il
+            corpo in Mesopotamia, nell'antica Grecia e in Europa nel Medioevo.</p>
+          <p class="favor__message favor__item-text animate__fadeInUp animate__animated wow lt14" data-wow-delay="1s"
+            style="visibility: hidden; animation-delay: 1s; animation-name: none;">Tuttavia, la scienza moderna ha
+            svelato nuove proprietà di questo meraviglioso rimedio.<b>L'aceto di mele attiva il metabolismo, accelerando
+              a volte il dimagrimento!</b></p>
+        </div>
+        <div class="favor__item-img animate__fadeIn animate__animated wow animated" data-wow-delay="1s"
+          style="visibility: hidden; animation-delay: 1s; animation-name: none;"><img alt="" src="img/favor/1.png">
+        </div>
+      </div>
+    </div>
+    <div class="favor section animate__fadeIn animate__animated wow" data-wow-delay=".3s" id="favor2"
+      style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+      <div class="container">
+        <div class=""></div>
+        <div class="favor__item-content">
+          <p class="favor__item-text animate__fadeInUp animate__animated wow lt15" data-wow-delay=".6s"
+            style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">Test di laboratorio confermano
+            <b>l'aceto di mele garantisce una rapida perdita di peso</b>.<br><br>Migliora il metabolismo e aiuta
+            l'organismo a distribuire efficacemente le calorie in ingresso. Inoltre, stimola la disgregazione del corpo
+            grasso.</p>
+          <p class=" favor__item-text animate__fadeInUp animate__animated wow" data-wow-delay=".9s"
+            style="visibility: hidden; animation-delay: 0.9s; animation-name: none;"><b class="lt16">Ulteriori ricerche
+              hanno permesso di trarre il massimo beneficio dall'antica ricetta.<br>Gli scienziati hanno sublimato
+              l'aceto e creato un potente concentrato: 5 mg di questa sostanza corrispondevano a 1 litro di aceto di
+              mele in formato liquido.Combinato con piante medicinali, vitamine e micronutrienti, la sua efficacia è
+              aumentata di 150 volte. Ecco come <span style="color:var(--red);">Uslim</span>.</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="about section">
+      <img alt="" class="about__bg animate__fadeIn animate__animated wow animated" data-wow-delay=".2s"
+        src="img/about/line.svg" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"><img alt=""
+        class="about__img" src="img/about/apple.png">
+      <div class="container">
+        <h3 class="about__title title animate__fadeInUp animate__animated wow lt17" data-wow-delay=".2s"
+          style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"> <span
+            style="color: var(--red);">Uslim</span> is:</h3>
+        <div class="about__wrap">
+          <div class="about__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <div class="about__item-icon"><img alt="" src="img/about/1.svg"></div>
+            <h4 class="about__item-title title lt18">Slim</h4>
+            <p class="about__item-descr lt19">Così in fretta<br>non hai ancora perso peso</p>
+          </div>
+          <div class="about__item animate__fadeInUp animate__animated wow" data-wow-delay=".8s"
+            style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+            <div class="about__item-icon"><img alt="" src="img/about/2.svg"></div>
+            <h4 class="about__item-title title lt20">Disintossicazione</h4>
+            <p class="about__item-descr lt21">Sentirsi alla grande<br></p>
+          </div>
+          <div class="about__item animate__fadeInUp animate__animated wow" data-wow-delay="1.2s"
+            style="visibility: hidden; animation-delay: 1.2s; animation-name: none;">
+            <div class="about__item-icon"><img alt="" src="img/about/3.svg"></div>
+            <h4 class="about__item-title title lt22">Ringiovanimento</h4>
+            <p class="about__item-descr lt23">A sostegno della tua<br>bellezza</p>
+          </div>
+          <div class="about__item animate__fadeInUp animate__animated wow" data-wow-delay="1.6s"
+            style="visibility: hidden; animation-delay: 1.6s; animation-name: none;">
+            <div class="about__item-icon"><img alt="" src="img/about/4.svg"></div>
+            <h4 class="about__item-title title lt24">Diminuito<br>appetito</h4>
+            <p class="about__item-descr lt25">In modo che il peso<br>non venga restituito</p>
+          </div>
+          <div class="about__item animate__fadeInUp animate__animated wow" data-wow-delay="2s"
+            style="visibility: hidden; animation-delay: 2s; animation-name: none;">
+            <div class="about__item-icon"><img alt="" src="img/about/5.svg"></div>
+            <h4 class="about__item-title title lt26">Tono</h4>
+            <p class="about__item-descr lt27">Sei pieno di energia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="features section">
+      <div class="container">
+        <h3 class="features__title title animate__fadeInUp animate__animated wow lt28" data-wow-delay=".2s"
+          style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Cosa migliora l'effetto di<br> <span
+            style="color: var(--red);">aceto di mele</span></h3>
+        <div class="features__wrap">
+          <div class="features__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <img alt="" class="features__item-icon" src="img/features/1.png">
+            <div class="features__item-content">
+              <h4 class="features__item-title lt29">Ginseng</h4>
+              <p class="lt30">Ha un effetto tonico e aumenta l'efficienza. Accelera il metabolismo e rafforza il sistema
+                immunitario.</p>
+            </div>
+          </div>
+          <div class="features__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <img alt="" class="features__item-icon" src="img/features/2.png">
+            <div class="features__item-content">
+              <h4 class="features__item-title lt31">Sinefrina</h4>
+              <p class="lt32">È un bruciagrassi naturale, facilita la combustione dei grassi nelle aree problematiche,
+                aumenta il tasso metabolico e la produzione di energia.</p>
+            </div>
+          </div>
+          <div class="features__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <img alt="" class="features__item-icon" src="img/features/3.png">
+            <div class="features__item-content">
+              <h4 class="features__item-title lt33">Vitamina B12</h4>
+              <p class="lt34">Questa è la tua resistenza e il tuo atteggiamento positivo. Responsabile della memoria e
+                della concentrazione. Rimuove i rifiuti e le tossine dal corpo.</p>
+            </div>
+          </div>
+          <div class="features__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <img alt="" class="features__item-icon" src="img/features/4.png">
+            <div class="features__item-content">
+              <h4 class="features__item-title lt35">Acido folico</h4>
+              <p class="lt36">Rafforza il sistema nervoso e partecipa alla sintesi degli aminoacidi. Sostiene il tuo
+                corpo nei momenti di stress e fatica.</p>
+            </div>
+          </div>
+          <div class="features__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <img alt="" class="features__item-icon" src="img/features/5.png">
+            <div class="features__item-content">
+              <h4 class="features__item-title lt37">Cromo</h4>
+              <p class="lt38">Stabilizza la regolazione ormonale, bloccando i risultati. Un elemento essenziale per il
+                metabolismo dei lipidi e la combustione dei grassi.</p>
+            </div>
+          </div>
+          <div class="features__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <img alt="" class="features__item-icon" src="img/features/6.png">
+            <div class="features__item-content">
+              <h4 class="features__item-title lt39">Zinco</h4>
+              <p class="lt40">Regola i processi digestivi, l'assorbimento e la scomposizione delle sostanze. Senza di
+                esso, gli elementi utili non vengono assorbiti dall'organismo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why section">
+      <div class="container">
+        <h3 class="why__title title animate__fadeInUp animate__animated wow lt41" data-wow-delay=".4s"
+          style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">Perché esattamente<br> <span
+            style="color:var(--red);">Uslim</span></h3>
+        <div class="why__wrap">
+          <div class="why__item animate__fadeInUp animate__animated wow" data-wow-delay=".6s"
+            style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+            <img alt="" class="why__icon" src="img/why/1.svg">
+            <h4 class="why__item-title lt42">Innovazione</h4>
+            <p class="why__item-descr lt43">Uslim è lo sviluppo di un team di scienziati dei migliori laboratori del
+              mondo. La combinazione di una ricetta antica con una produzione high-tech rende Uslim uno strumento
+              dimagrante davvero efficace.</p>
+          </div>
+          <div class="why__item animate__fadeInUp animate__animated wow" data-wow-delay=".8s"
+            style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+            <img alt="" class="why__icon" src="img/why/2.svg">
+            <h4 class="why__item-title lt44">Qualità</h4>
+            <p class="why__item-descr lt45">Non ti consigliamo di crederci sulla parola. I nostri prodotti soddisfano
+              tutti gli standard di qualità, come confermato da certificati internazionali</p>
+          </div>
+          <div class="why__item animate__fadeInUp animate__animated wow" data-wow-delay="1s"
+            style="visibility: hidden; animation-delay: 1s; animation-name: none;">
+            <img alt="" class="why__icon" src="img/why/3.svg">
+            <h4 class="why__item-title lt46">Responsabilità</h4>
+            <p class="why__item-descr lt47">Tutti i nostri prodotti sono sottoposti a numerosi test clinici. Il processo
+              di produzione è monitorato 24 ore su 24. Tutto in modo che i clienti ricevano solo prodotti di comprovata
+              sicurezza</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="opinion animate__fadeIn animate__animated wow" data-wow-delay=".1s"
+      style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+      <div class="container">
+        <img alt="" class="mob__bg" src="img/opinion/mob.jpg">
+        <h3 class="opinion__title title animate__fadeInUp animate__animated wow lt48" data-wow-delay=".4s"
+          style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">Opinione <span
+            style="color:var(--red) ;">esperto</span></h3>
+        <div class="opinion__content">
+          <p class="opinion__content-descr animate__fadeInUp animate__animated wow lt49" data-wow-delay=".8s"
+            style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">Ho promosso per tutta la vita
+            l'idea che la perdita di peso richiede un approccio scientifico completo. Tuttavia, ora le persone comuni
+            non hanno bisogno di comprendere la biologia e la chimica per perdere peso senza danni alla salute. Lo
+            sviluppo di Uslim ha fatto perdita di peso conveniente!<br></p>
+          <p class="opinion__content-autor animate__fadeInUp animate__animated wow" data-wow-delay="1.2s"
+            style="visibility: hidden; animation-delay: 1.2s; animation-name: none;"><i class="lt50"><b>Nutrizionista e
+                Nutrizionista,</b><br>Vanessa Capoli</i></p>
+        </div>
+      </div>
+    </div>
+    <div class="research section">
+      <div class="container">
+        <div class="research__content">
+          <h3 class="research__title title animate__fadeInUp animate__animated wow lt51" data-wow-delay=".2s"
+            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Laboratorio<br>ricerca</h3>
+          <div class="research__content-wrap animate__fadeIn animate__animated wow" data-wow-delay=".5s"
+            style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+            <p class="lt52">Le osservazioni sono state effettuate per 36 settimane, di cui 2 mesi i soggetti hanno
+              assunto Uslim, e un mese dopo, gli esperti hanno verificato la stabilità dei risultati.<br><br>I test
+              hanno mostrato l'efficacia senza precedenti di Uslim per il peso La sua caratteristica fondamentale è che
+              non solo riduce il peso di una persona a causa della rimozione dei liquidi in eccesso, ma brucia davvero
+              il grasso corporeo.<br><br><b>Diamo le cifre medie per tutti i gruppi di soggetti :</b></p>
+            <div class="research__table">
+              <div class="research__item">
+                <p class="lt53">Perdita di peso nel tempo</p> <span class="lt54" style="color: var(--red);">- 31
+                  kg</span> <span class="lt55">- 4 kg</span>
+              </div>
+              <div class="research__item">
+                <p class="lt56">Diminuzione dell'indice di massa</p> <span class="lt57" style="color: var(--red);">-
+                  15.2</span> <span class="lt58">- 1.4</span>
+              </div>
+              <div class="research__item">
+                <p class="lt59">Riduzione del grasso viscerale</p> <span class="lt60" style="color: var(--red);">-
+                  37%</span> <span class="lt61">- 5%</span>
+              </div>
+              <div class="research__item">
+                <p class="lt62">Caduta nei trigliceridi nel sangue</p> <span class="lt63" style="color: var(--red);">-
+                  3,1 mmol/l</span> <span class="lt64">- 0,2 mmol/l</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notice section">
+      <div class="container">
+        <div class="notice__wrap">
+          <h3 class="notice__title title animate__fadeInUp animate__animated wow lt65" data-wow-delay=".2s"
+            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Cosa dicono<br> <span
+              style="color: var(--red);">Informazioni su Uslim</span></h3>
+          <div class="notice__slider">
+            <!-- Swiper -->
+            <div
+              class="swiper mmSwiper animate__fadeInUp animate__animated wow swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden"
+              data-wow-delay=".8s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+              <div class="swiper-wrapper" id="swiper-wrapper-693a89a690d97f92" aria-live="polite"
+                style="transform: translate3d(0px, 0px, 0px);">
+                <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3"
+                  style="width: 856px; margin-right: 30px;">
+                  <img alt="" class="slider__img" src="img/notice/1.jpg">
+                  <p class="slider__descr lt66">Faccio sport da sempre. E l'allenamento della forza richiede una
+                    corretta alimentazione, fino a 5000 kcal al giorno. Quando mi sono infortunato, ho dovuto smettere
+                    di allenarmi per un po', ma il mio appetito non è andato via. Dopo un paio di mesi ho scoperto di
+                    aver messo su più di 15 kg.<br><br>Avevo bisogno di perdere peso e dovevo farlo con urgenza.Ho
+                    chiesto consiglio a un amico nutrizionista , ha suggerito di provare <span
+                      style="color: var(--red);">Uslim</span>.<br><br><b>Non mi sono nemmeno accorto di come ho perso 10
+                      kg di corpo grasso.</b></p>
+                </div>
+                <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3"
+                  style="width: 856px; margin-right: 30px;">
+                  <img alt="" class="slider__img" src="img/notice/2.jpg">
+                  <p class="slider__descr lt67">Perdere peso era quasi un'abitudine per me. Avevo già dimenticato
+                    com'era vivere senza restrizioni.<br><br>Ma un giorno sono andato a fare shopping con un'amica e ho
+                    visto che aveva perso molto di peso. Ci è voluto solo il suo mese, sono rimasto
+                    sbalordito.<br><br>Così ho scoperto Uslim.Ho deciso di provarlo anch'io.Il risultato non si è fatto
+                    attendere.<br><br><b>Meno 2 taglie e non ho più paura di ingrassare in un colpo solo per le
+                      torte.</b></p>
+                </div>
+                <div class="swiper-slide" role="group" aria-label="3 / 3" style="width: 856px; margin-right: 30px;">
+                  <img alt="" class="slider__img" src="img/notice/3.jpg">
+                  <p class="slider__descr lt68">Sono molti anni che non riesco a dimagrire. Il mio peso oscilla tra
+                    48-79 kg dai tempi del liceo. Non ho visto differenze nello specchio, solo i numeri sulla bilancia e
+                    il la taglia dei miei vestiti è cambiata. Ma anche quando ho raggiunto il mio obiettivo, il grasso è
+                    sempre tornato.<br><br>Una volta su un forum di perdita di peso ho scoperto Uslim. L'ho ordinato la
+                    sera stessa, poi ero al mio peso massimo.E mi ha aiutato!<br><br><b>Con lui ho perso quasi 30
+                      kg.</b>È passato un anno e mezzo e sono ancora perfetto.</p>
+                </div>
+              </div>
+              <div class="notice__slider-nav animate__fadeInUp animate__animated wow" data-wow-delay=".2s"
+                style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                <div class="swiper__btn swiper__prev swiper-button-disabled" tabindex="-1" role="button"
+                  aria-label="Previous slide" aria-controls="swiper-wrapper-693a89a690d97f92" aria-disabled="true"><img
+                    alt="" src="img/notice/prev.svg"></div>
+                <div class="swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal"> <span
+                    class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">3</span></div>
+                <div class="swiper__btn swiper__next" tabindex="0" role="button" aria-label="Next slide"
+                  aria-controls="swiper-wrapper-693a89a690d97f92" aria-disabled="false"><img alt=""
+                    src="img/notice/next.svg"></div>
+              </div>
+              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span> <span
+                class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header" id="down__form" style="background-image: url(img/header/bg2.jpg);">
+      <div class="container">
+        <div class="header__wrap">
+          <div class="header__bullets">
+            <div class="bullet animate__fadeInUp animate__animated wow" data-wow-delay=".2s"
+              style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+              <img alt="+" src="img/header/plus.svg">
+              <h4 class="title lt69">Dimagrimento garantito<br>ogni giorno</h4>
+            </div>
+            <div class="bullet animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+              style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+              <img alt="+" src="img/header/plus.svg">
+              <h4 class="title lt70">Il peso va via<br>e non torna</h4>
+            </div>
+            <div class="bullet animate__fadeInUp animate__animated wow" data-wow-delay=".6s"
+              style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+              <img alt="+" src="img/header/plus.svg">
+              <h4 class="title lt71">Disintossicazione di tutto il corpo</h4>
+            </div>
+            <div class="bullet animate__fadeInUp animate__animated wow" data-wow-delay=".8s"
+              style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+              <img alt="+" src="img/header/plus.svg">
+              <h4 class="title lt72">Unghie,<br>pelle e capelli sani</h4>
+            </div>
+          </div>
+          <form action="getform.php" method="post" class="form animate__fadeIn animate__ wow order_form"
+            data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeIn;">
+            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+            <input type="hidden" name="utm_campaign" value="{domonetka}">
+            <h2 class="form__title"><span class="price_old"><span class="priceMain"></span> <span class="currencyMain"></span></span><span class="price_main"
+                style="float: right; color: #e02712; margin-left: 80px;font-size: 40px"><span class="priceOld"></span> <span class="currencyMain"></span></span></h2>
+            <div class="form__fields">
+              <label class="form__label"> <span class="label__title lt78">Il tuo nome</span><input class="form__input"
+                  placeholder="Inserisci il tuo nome" type="text" name="name" required></label>
+              <label class="form__label"> <span class="label__title lt79">Numero di telefono</span><input
+                  class="form__input" placeholder="+39 0123456789" type="tel" name="phone" required></label>
+              <label class="form__label">
+                <button type="submit" class="lt80">Ordine</button>
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="how section">
+      <div class="container">
+        <h3 class="title how__title animate__fadeInUp animate__animated wow lt81" data-wow-delay=".2s"
+          style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">Come lavoriamo</h3>
+        <div class="how__wrap">
+          <div class="how__item animate__fadeInUp animate__animated wow" data-wow-delay=".4s"
+            style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+            <img alt="" class="how__icon" src="img/how/1.svg">
+            <p class="title lt82">Compila il modulo d'ordine sul sito</p>
+          </div><img alt="" class="how__arrow animate__fadeInUp animate__animated wow" data-wow-delay=".8s"
+            src="img/how/arrow.svg" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+          <div class="how__item animate__fadeInUp animate__animated wow" data-wow-delay=".5s"
+            style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+            <img alt="" class="how__icon" src="img/how/3.svg">
+            <p class="title lt83">Attendere la chiamata dell'operatore per essere d'accordo</p>
+          </div><img alt="" class="how__arrow animate__fadeInUp animate__animated wow" data-wow-delay=".8s"
+            src="img/how/arrow.svg" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+          <div class="how__item animate__fadeInUp animate__animated wow" data-wow-delay=".6s"
+            style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+            <img alt="" class="how__icon" src="img/how/3.svg">
+            <p class="title lt84">Paga il pacco al ricevimento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="footer">
+    <img alt="" class="footer__icon animate__fadeIn animate__animated wow" data-wow-delay=".1s" src="img/footer/1.jpg"
+      style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+    <div class="footer__wrap">
+      <div class="container">
+        <p class="footer__item animate__fadeInUp animate__animated wow lt85" data-wow-delay=".3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">Copyright All Rights Reserved ©
+          <script type="text/javascript">
+            var d = new Date();
+            document.write(d.getFullYear());
+          </script> | USLIM</p>
+        <div class="footer__item animate__fadeInUp animate__animated wow" data-wow-delay=".6s"
+          style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+          <a class="footer__link" href="#"><img alt="" src="img/footer/icons/1.svg"></a><a class="footer__link"
+            href="#"><img alt="" src="img/footer/icons/2.svg"></a><a class="footer__link" href="#"><img alt=""
+              src="img/footer/icons/3.svg"></a><a class="footer__link" href="#"><img alt=""
+              src="img/footer/icons/4.svg"></a><a class="footer__link" href="#"><img alt=""
+              src="img/footer/icons/5.svg"></a><a class="footer__link" href="#"><img alt=""
+              src="img/footer/icons/6.svg"></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '39',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

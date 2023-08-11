@@ -1,0 +1,857 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!doctype html>
+<html lang="it">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Insulinex</title>
+
+  <link rel="shortcut icon" href="images/product.png">
+  <link href="css/style.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="css/slick.css">
+  <style>
+    .hide,
+    .flag-dropdown {
+      display: none;
+    }
+
+    .error-box {
+      color: #fff;
+      background-color: #DE5042 !important;
+      border-radius: 5px;
+      text-align: center;
+      width: 240px;
+      font-size: 13px;
+      line-height: 20px;
+      margin: 5px auto !important;
+      z-index: 100;
+    }
+
+    input:invalid {
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="order">
+      <div class="pulsating-circle"></div>
+      <div class="order__container container">
+        <div class="order__left">
+          <a href="#order_form" class="order__logo lt0">Insulinex</a>
+          <h1 class="order__title title lt1">TORNA AD UNA VITA NORMALE SENZA DIABETE</h1>
+          <div class="order__list">
+            <div class="order__list-item">
+              <img alt="icon" class="order__list-img" src="images/orderList1-9992a.png">
+              <p class="order__list-text lt2"> <span class="order__list-text_bold">
+                  <b>
+                    AIUTA A RIDURRE IL GLUCOSIO NEL SANGUE
+                  </b>
+                </span></p>
+            </div>
+            <div class="order__list-item">
+              <img alt="icon" class="order__list-img" src="images/orderList2-68585.png">
+              <p class="order__list-text lt3"><span class="order__list-text_bold">
+                  <b>
+                    AIUTA AD AUMENTARE LA SENSIBILITÀ DEL CORPO ALL'INSULINA
+                  </b>
+                </span></p>
+            </div>
+            <div class="order__list-item">
+              <img alt="icon" class="order__list-img" src="images/orderList3-9943c.png">
+              <p class="order__list-text lt4"><span class="order__list-text_bold">AIUTA A RIDURRE IL PESO</span></p>
+            </div>
+          </div>
+          <div class="order__product product"><img alt="product" class="order__product-img product__img"
+              src="images/product.png"></div>
+        </div>
+        <div class="order__right">
+          <div class="form-top">
+            <p>
+              <span style="font-weight: 700;"> Attenzione:</span> si applica la proposta speciale del produttore. Non
+              perdere l'opportunità di provare INSULINEX con uno sconto del 50%!
+            </p>
+          </div>
+          <form action="getform.php" method="post" class="form order_form">
+            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+            <input type="hidden" name="utm_campaign" value="{domonetka}">
+            <h2 class="form__title lt5">ORDINA Insulinex<strong>ADESSO</strong></h2>
+
+            <div class="price">
+              <span class="price__old price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+              <span class="price__new price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+            </div>
+            <label class="form__label lt9">Il suo nome:<input class="form__input" type="text" required
+                placeholder="nome" name="name"></label>
+            <label class="form__label lt10">Il suo numero di telefono:<input required type="tel" class="form__input"
+                name="phone" placeholder="+39 312 345 6789" defaultValue="+39"></label>
+            <div class="counter">
+              <p class="counter__title lt11">Fino al termine della promozione rimane:</p>
+              <div class="counter__time timer">
+                <div class="counter__item">
+                  <div class="counter__square">
+                    <span class="hour">
+                      <span class="num hour0">-</span>
+                      <span class="num hour1">-</span>
+                    </span>
+                  </div><span class="counter__text lt12">ore</span>
+                </div>
+                <div class="counter__item">
+                  <div class="counter__square counter__minutes">
+                    <span class="minute">
+                      <span class="num min0">-</span>
+                      <span class="num min1">-</span>
+                    </span>
+                  </div><span class="counter__text lt13">minuti</span>
+                </div>
+                <div class="counter__item">
+                  <div class="counter__square counter__seconds">
+                    <span class="second">
+                      <span class="num sec0">-</span>
+                      <span class="num sec1">-</span>
+                    </span>
+                  </div><span class="counter__text lt14">secondi</span>
+                </div>
+              </div>
+            </div><button class="form__button lt15" type="submit">ORDINARE ADESSO</button>
+            <span style="font-size: 14px; display: block; margin: 20px 0px 0px; text-align: center;">* Questo sconto su
+              una confezione è valido quando si ordina il trattamento completo</span>
+          </form>
+          <div class="form-bottom">
+            <p>
+              <b>Affrettarsi!</b> Le confezioni in offerta finiranno presto.
+            </p>
+            <p>
+              <b>Aggiornamento:</b> rimasti solo <b style="color: #c94e76;"><span class="form-instock">41</span> pezzi.
+              </b> il
+              <b><span style="color: #c94e76;" class="js-current-date"></span></b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="sugar">
+      <div class="sugar__container container">
+        <div class="sugar__right">
+          <h2 class="sugar__title title lt16">IL DIABETE</h2>
+          <p class="sugar__text what__text_big lt17">È una malattia cronica che, nel suo sviluppo, danneggia gli organi
+            e i sistemi del corpo. <br>
+            I normali livelli di zucchero nel sangue sono una condizione fondamentale per il funzionamento dell'uomo
+            come un essere biologico. Quando questo indicatore cambia in una direzione o nell'altra, il corpo umano
+            inizia ad evere gravi difficoltà.
+          </p>
+          <div class="sugar__footer">
+            <div class="sugar__footer-img"><img alt="img" src="images/sugar__img-cc036.png"></div>
+            <p class="sugar__footer-text lt18">Ci sono molte persone che soffrono di diabete in Italia e ogni anno il
+              loro numero continua ad aumentare. Questa può essere definita una vera e propria epidemia di diabete.</p>
+          </div>
+        </div>
+        <div class="sugar__background"></div>
+      </div>
+    </section>
+    <section class="danger">
+      <div class="danger__container container">
+        <h2 class="danger__title title title_center lt19">SEI PERICOLOSI EFFETTI DEL DIABETE CHE POCHE PERSONE
+          CONOSCONO:</h2>
+        <div class="danger__list">
+          <div class="danger__item">
+            <div class="danger__img-block"><img alt="image" class="danger__img" src="images/danger1-e43d4.jpg"></div>
+            <div class="danger__info">
+              <h3 class="danger__item-title lt20">LA CHETOACITOSI</h3>
+              <p class="danger__text lt21">Si tratta di un cambiamento dei meccanismi di regolazione metabolica,
+                caratterizzato da un aumento del livello di glucosio nel sangue e l'aumento dei corpi chetonici. I
+                sintomi più comuni: sete, minzione rapida, pelle secca, odore di acetone proveniente dalla bocca, dolore
+                addominale, mal di testa, irritabilità, sonnolenza.</p>
+            </div>
+          </div>
+          <div class="danger__item">
+            <div class="danger__info">
+              <h3 class="danger__item-title lt22">L'IPOGLICEMIA</h3>
+              <p class="danger__text lt23">Si tratta di una condizione fisiolocica causata da bassi livelli di zucchero
+                nel sangue, che è spesso associata a un trattamento improprio del diabete. I sintomi principali sono:
+                disagio generale, debolezza, pelle pallida, sudorazione eccessiva.</p>
+            </div>
+            <div class="danger__img-block"><img alt="image" class="danger__img" src="images/danger2-6ce69.jpg"></div>
+          </div>
+          <div class="danger__item">
+            <div class="danger__img-block"><img alt="image" class="danger__img" src="images/danger3-920a7.jpg"></div>
+            <div class="danger__info">
+              <h3 class="danger__item-title lt24">IL COMA</h3>
+              <p class="danger__text lt25">Può verificarsi a causa dei picchi di glucosio nel sangue. Sintomi: aumento
+                della debolezza, dolori muscolari e cardiaci, aumento della minzione, sonnolenza, convulsioni,
+                linguaggio sconnesso.</p>
+            </div>
+          </div>
+          <div class="danger__item">
+            <div class="danger__info">
+              <h3 class="danger__item-title lt26">I PROBLEMI CON LA VISTA</h3>
+              <p class="danger__text lt27">Un'alta concentrazione di zucchero nel sangue aumenta la probabilità di
+                sviluppare malattie degli occhi. Ciò è dovuto dai danni ai piccoli vasi sanguigni oculari e viene
+                chiamato microangiopatia. Tale patologia porta alla cecità irreversibile.</p>
+            </div>
+            <div class="danger__img-block"><img alt="image" class="danger__img" src="images/danger4-b49b7.jpg"></div>
+          </div>
+          <div class="danger__item">
+            <div class="danger__img-block"><img alt="image" class="danger__img" src="images/danger5-61c58.jpg"></div>
+            <div class="danger__info">
+              <h3 class="danger__item-title lt28">IL PIEDE DIABETICO</h3>
+              <p class="danger__text lt29">Sindrome del piede diabetico: irritazioni cutanee, collasso dei vasi
+                sanguigni grandi e piccoli, dei nervi, delle ossa e dei muscoli del piede. La causa è l'effetto tossico
+                dell'aumento dei livelli di zucchero nel sangue sui vasi sanguigni, sul sistema nervoso e quello
+                muscoloscheletrico. In una fase avanzata, compaiono ulcere, lesioni infettive, fino ad arrivare alla
+                cancrena.</p>
+            </div>
+          </div>
+          <div class="danger__item">
+            <div class="danger__info">
+              <h3 class="danger__item-title lt30">MALATTIE DELLA PELLE</h3>
+              <p class="danger__text lt31">Le persone con il diabete spesso sperimentano molteplici lesioni della pelle,
+                la maggior parte dei quali sono infezioni batteriche e fungine. Di conseguenza, sulla pelle compaiono
+                ferite, crepe e ulcere non cicatrizzanti.</p>
+            </div>
+            <div class="danger__img-block"><img alt="image" class="danger__img" src="images/danger6-9b2ff.jpg"></div>
+          </div>
+        </div>
+        <div class="warning">
+          <div class="warning__item">
+            <p class="warning__text lt32"> <span class="warning__text-color">Ogni 6 secondi nel mondo, qualcuno muore
+                per il diabete e le complicazioni</span> che esso causa.</p>
+          </div>
+          <div class="warning__item warning__item_big">
+            <img alt="image" class="warning__img" src="images/warning__img-6296a.png">
+            <p class="warning__text warning__text_big lt33"><span class="warning__text-color">Inizia il
+                trattamento</span> il prima possibile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="therapy">
+      <div class="therapy__container container">
+        <div class="therapy__left">
+          <h2 class="therapy__title title lt34">
+            <b>
+              INSULINEX
+            </b>
+            - UN RIMEDIO PER LA LOTTA EFFICACE E LA PREVENZIONE DEL DIABETE
+          </h2>
+          <p class="therapy__text use__text_big lt35">
+            <a href="#order_form">Insulinex</a> aiuta a combattere le principali cause del diabete: cellule adipose in
+            eccesso nella cavità addominale, ipertensione e patologie endocrine.
+          </p>
+          <div class="therapy__list">
+            <div class="therapy__item">
+              <img alt="image" class="therapy__img" src="images/orderList1-9992.png">
+              <p class="therapy__item-text lt36">
+                Aiuta a ripristinare il metabolismo e l'equilibrio ormonale, aiuta a pulire i vasi sanguigni e
+                migliorare la composizione del sangue.
+              </p>
+            </div>
+            <div class="therapy__item">
+              <img alt="image" class="therapy__img" src="images/therapy__img2.png">
+              <p class="therapy__item-text lt37">
+                Il risultato dell'assunzione di Insulinex può essere una remissione a lungo termine.
+              </p>
+            </div>
+          </div>
+          <div class="therapy__footer">
+
+            <a href="#order_form" class="therapy__btn btn__toOrder lt38">ORDINA ORA</a>
+          </div>
+        </div>
+        <div class="therapy__background">
+          <div class="therapy__product product"><img alt="product" class="therapy__product-img"
+              src="images/product.png"></div>
+        </div>
+      </div>
+    </section>
+    <section class="consist">
+      <div class="consist__container container">
+        <h2 class="consist__title title title_center lt39">COMPOSIZIONE DI Insulinex</h2>
+        <div class="consist__product product"><img alt="product" class="consist__product-img product__img"
+            src="images/product.png"></div>
+        <div class="consist__list">
+          <div class="consist__row">
+            <div class="consist__item">
+              <div class="consist__info consist__info_left">
+                <h3 class="consist__item-title lt40">
+                  Glucomannano
+                </h3>
+                <p class="consist__item-text lt41">
+                  Aiuta a regolare i livelli di zucchero, partecipa alla sintesi del glucosio. Stimola la produzione di
+                  emoglobina
+                </p>
+              </div>
+              <div class="consist__img-block">
+                <img alt="consist" class="consist__line consist__line_1" src="images/consist__line1-84a1d.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%91_%C3%91_%C3%91_%C3%91_%C3%90%C2%B0%C3%90%C2%B3%C3%90%C2%BE%C3%90%C2%BD.png">
+              </div>
+            </div>
+            <div class="consist__item">
+              <div class="consist__img-block consist__img-block_right">
+                <img alt="consist" class="consist__line consist__line_2" src="images/consist__line2-f7c31.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%91_%C3%90%C2%B2%C3%90%C2%BA%C3%90%C2%B0%C3%90%C2%BB%C3%90%C2%B8%C3%90%C2%BF%C3%91_.png">
+              </div>
+              <div class="consist__info">
+                <h3 class="consist__item-title lt42">
+                  Vitamine del gruppo B
+                </h3>
+                <p class="consist__item-text lt43">
+                  Aiuta ad abbassare i livelli di zucchero nel sangue e aiuta ad alleviare il diabete stesso
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="consist__row">
+            <div class="consist__item">
+              <div class="consist__info consist__info_left">
+                <h3 class="consist__item-title lt44">
+                  Beta-glucani dei funghi
+                </h3>
+                <p class="consist__item-text lt45">
+                  Aiutano a ridurre la resistenza all'insulina e possono aiutare a controllare i livelli di zucchero nel
+                  sangue, colesterolo e acido urico. Grazie al loro ricco contenuto di fibre, i beta-glucani aiutano a
+                  normalizzare il funzionamento del tratto digestivo e aiutano il corpo a eliminare le tossine più
+                  rapidamente.
+                </p>
+              </div>
+              <div class="consist__img-block">
+                <img alt="consist" class="consist__line consist__line_3" src="images/consist__line3-a0320.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%91_%C3%90%C2%BE%C3%90%C2%B7%C3%90%C2%BC%C3%90%C2%B0%C3%91_%C3%90%C2%B8%C3%90%C2%BD.png">
+              </div>
+            </div>
+            <div class="consist__item">
+              <div class="consist__img-block consist__img-block_right">
+                <img alt="consist" class="consist__line consist__line_4" src="images/consist__line4-baa1d.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%91_%C3%90%C2%BE%C3%90%C2%BC%C3%90%C2%B0%C3%91_%C3%90%C2%BA%C3%90%C2%B0.png"></div>
+              <div class="consist__info">
+                <h3 class="consist__item-title lt46">
+                  Zinco
+                </h3>
+                <p class="consist__item-text lt47">
+                  Ha proprietà ipoglicemizzanti, aiuta a normalizzare i livelli di glucosio nel sangue. Promuove il
+                  ripristino di cellule e tessuti, aiuta ad eliminare il rischio di sviluppare beri-beri a causa di
+                  restrizioni dietetiche o malattie.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="consist__row">
+            <div class="consist__item">
+              <div class="consist__info consist__info_left">
+                <h3 class="consist__item-title lt48">
+                  Estratto di foglie di tè verde
+                </h3>
+                <p class="consist__item-text lt49">
+                  Contiene composti inibitori degli enzimi dei carboidrati noti come alfa-amilasi e alfa-glucosidasi.
+                  Questi enzimi agiscono sul corpo dei diabetici allo stesso modo dei farmaci per il diabete.
+                </p>
+              </div>
+              <div class="consist__img-block">
+                <img alt="consist" class="consist__line consist__line_5" src="images/consist__line5-66745.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%90%C2%B3%C3%90%C2%B8%C3%90%C2%BC%C3%90%C2%BD%C3%90%C2%B5%C3%90%C2%BC%C3%90%C2%B0.png">
+              </div>
+            </div>
+            <div class="consist__item">
+              <div class="consist__img-block consist__img-block_right">
+                <img alt="consist" class="consist__line consist__line_6" src="images/consist__line6-07342.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%90%C2%B3%C3%90%C2%BE%C3%91_%C3%91_%C3%90%C2%BA%C3%90%C2%B0%C3%91_%20%C3%90%C2%B4%C3%91_%C3%90%C2%BD%C3%91_.png">
+              </div>
+              <div class="consist__info">
+                <h3 class="consist__item-title lt50">
+                  ESTRATTO DI CORTECCIA DI CRESPINO
+                </h3>
+                <p class="consist__item-text lt51">
+                  Aiuta a regolare i livelli di zucchero ed è coinvolto nella sintesi del glucosio. Il crespino aiuta a
+                  stimolare la produzione di emoglobina e aiuta a trasportare l'ossigeno ai tessuti del corpo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="consist__row">
+            <div class="consist__item consist__item_big">
+              <div class="consist__info consist__info_left">
+                <h3 class="consist__item-title lt52">
+                  Cromo
+                </h3>
+                <p class="consist__item-text lt53">
+                  Aiuta a mantenere i livelli di glucosio nel sangue regolando la produzione di insulina da parte del
+                  pancreas. Con una mancanza di cromo, il pancreas viene interrotto e viene prodotta troppa insulina.
+                </p>
+              </div>
+              <div class="consist__img-block">
+                <img alt="consist" class="consist__line consist__line_7" src="images/consist__line7-94286.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%90%C2%BF%C3%90%C2%B8%C3%90%C2%BA%C3%90%C2%BE%C3%90%C2%BB%C3%90%C2%B8%C3%90%C2%BD%C3%90%C2%B0%C3%91_%20%C3%91_%C3%91_%C3%90%C2%BE%C3%90%C2%BC%C3%90%C2%B0.png">
+              </div>
+            </div>
+            <div class="consist__item consist__item_big">
+              <div class="consist__img-block consist__img-block_right">
+                <img alt="consist" class="consist__line consist__line_8" src="images/consist__line8-aa3b9.png">
+                <img alt="consist" class="consist__img"
+                  src="images/%C3%90%C2%BA%C3%90%C2%BE%C3%91_%C3%90%C2%B8%C3%91_%C3%90%C2%B0.png">
+              </div>
+              <div class="consist__info">
+                <h3 class="consist__item-title lt54">
+                  Cannella
+                </h3>
+                <p class="consist__item-text lt55">
+                  Ha un effetto curativo sul corpo, simile all'azione dell'insulina. Il prodotto aiuta a normalizzare i
+                  livelli di glucosio nel sangue senza l'uso di componenti chimici. Aiuta ad aumentare la sensibilità
+                  del corpo all'insulina e migliorarne l'assorbimento.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="effects">
+      <div class="effects__container container">
+        <h2 class="effects__title title title_center lt56">EFFETTI Insulinex</h2>
+        <div class="effects__list">
+          <div class="effects__item">
+            <div class="effects__img-block"><img alt="type" class="effects__img" src="images/effects1-89f79.jpg"></div>
+            <p class="effects__item-title lt57">
+              Aiuta ad abbassare i livelli di zucchero nel sangue
+            </p>
+          </div>
+          <div class="effects__item">
+            <div class="effects__img-block"><img alt="type" class="effects__img" src="images/effects2-f7990.jpg"></div>
+            <p class="effects__item-title lt58">
+              Aiuta a purificare il sangue dal colesterolo cattivo
+            </p>
+          </div>
+          <div class="effects__item">
+            <div class="effects__img-block"><img alt="type" class="effects__img" src="images/effects3-42d15.jpg"></div>
+            <p class="effects__item-title lt59">
+              Aiuta a rimuovere il glucosio in eccesso dal corpo
+            </p>
+          </div>
+          <div class="effects__item">
+            <div class="effects__img-block"><img alt="type" class="effects__img" src="images/effects4-0bce5.jpg"></div>
+            <p class="effects__item-title lt60">
+              Aiuta a normalizzare il metabolismo e la pressione sanguigna
+            </p>
+          </div>
+          <div class="effects__item">
+            <div class="effects__img-block"><img alt="type" class="effects__img" src="images/effects5-b7257.jpg"></div>
+            <p class="effects__item-title lt61">
+              Aiuta a migliorare il sistema immunitario
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="proof">
+      <div class="container">
+        <h2 class="proof__title title title_center lt62">EFFICACIA COMPROVATA</h2>
+        <p class="proof__text lt63">Gli studi clinici di <a href="#order_form">Insulinex</a> sono stati condotti presso
+          l'Istituto di ricerca di Endocrinologia nel 2021. L'esperimento ha coinvolto 2.649 volontari, che soffrono di
+          diabete di tipo 2. Di conseguenza, sono stati ottenuti i seguenti dati:</p>
+        <div class="proof__list">
+          <div class="proof__item">
+            <div class="proof__percents-block">
+              <h3 class="proof__percents lt64">100%</h3>
+            </div>
+            <p class="proof__percents-text lt66">dei volontari sono riusciti a normalizzare il livello lo zucchero nel
+              sangue</p>
+          </div>
+          <div class="proof__item">
+            <div class="proof__percents-block">
+              <h3 class="proof__percents lt67">96%</h3>
+            </div>
+            <p class="proof__percents-text lt69">dei volontari sono riusciti a ripristinare le funzioni del pancreas</p>
+          </div>
+          <div class="proof__item">
+            <div class="proof__percents-block">
+              <h3 class="proof__percents lt70">90%</h3>
+            </div>
+            <p class="proof__percents-text lt72">dei volontari si è liberato dal diabete ed è in una fase di remissione
+              da oltre 6 mesi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="expert">
+      <div class="expert__container container">
+        <div class="expert__left">
+          <div class="expert__header">
+            <h2 class="expert__title title lt73">OPINIONE DELL'ESPERTO SU Insulinex</h2><img alt="expert"
+              class="expert__img" src="images/expert.png">
+          </div>
+          <p class="expert__text expert__text_big lt74">Il diabete di tipo 2 si sviluppa con una magiore frequenza nei
+            pazienti anziani. Questo si verifica perché le cellule diventano meno sensibili all'insulina. Pertanto, si
+            verifica una diminuzione dell'assorbimento del glucosio.</p>
+          <p class="expert__text lt75"> <a href="#order_form">Insulinex</a> aiuta a stimolare la produzione di insulina,
+            aiuta ad aumentare la suscettibilità del corpo a questo ormone, aiuta a ripristinare le cellule
+            pancreatiche, ha un effetto positivo su tutto il corpo nel suo insieme: aiuta a normalizzare la pressione
+            sanguigna, aiuta a pulire i vasi sanguigni dal colesterolo placche, aiuta a guarire il fegato, aiuta a
+            fornire nutrimento al sistema nervoso.</p>
+          <p class="expert__text lt76"><a href="#order_form">Insulinex</a> aiuta anche a sbarazzarsi del peso in
+            eccesso, che è un catalizzatore per il diabete di secondo tipo. <a href="#order_form">Insulinex</a> è uno
+            dei rimedi più efficaci per il diabete oggi disponibili sul mercato.</p>
+          <div class="expert__footer">
+            <div class="expert__info">
+              <p class="expert__name lt77">Agostino Mecozzi</p>
+              <div class="expert__prof lt78">Endocrinologo, esperienza professionale - 24 anni</div>
+            </div><img alt="sign" class="sign" src="images/sign-40793.png">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="comments">
+      <div class="container">
+        <h2 class="comments__title title title_center lt79">RECENSIONI DEI CLIENTI</h2>
+        <div class="comments__pano">
+          <div class="comments__list">
+            <div class="comments__item">
+              <div class="comments__header">
+                <div class="comments__img-block"><img alt="avatar" class="comments__img" src="images/ava1.png"></div>
+                <h3 class="comments__info lt80"> <span class="comments__name">Anna Berillo,</span> 57 anni</h3>
+              </div>
+              <p class="comments__text lt81">Ho combattuto il diabete per dieci anni. Ho provato l'intera gamma di
+                farmaci, ho speso sacco di soldi ... Dopo molti tentativi ed errori, ho trovato il rimedio più efficace:
+                <a href="#order_form">Insulinex</a>. Con esso, il mio livello di zucchero non supera i 4,5. Mi sento più
+                forte e ho molta più energia. Finalmente mi sento una persona sana!</p><img alt="stars" class="stars"
+                src="images/stars-9c3b7.png">
+            </div>
+            <div class="comments__item">
+              <div class="comments__header">
+                <div class="comments__img-block"><img alt="avatar" class="comments__img" src="images/ava2.png"></div>
+                <h3 class="comments__info lt82"> <span class="comments__name">Giuseppe Cracco,</span> 45 anni</h3>
+              </div>
+              <p class="comments__text lt83">Sei anni fa ho avuto a che fare anche io con il diabete. I medici mi hanno
+                prescritto un sacco di medicine e una dieta rigorosa, ho dovuto misurare costantemente il livello di
+                zucchero nel sangue. Le rinuncie non mi hanno aiutato molto, il livello di zucchero nel sangue stava
+                aumentando costantemente. Sono stato salvato da <a href="#order_form">Insulinex</a>. Il desiderio di
+                mangiare i dolci è sparito, il livello di zucchero si è stabilizzato. E, soprattutto, sono anche
+                riuscito a perdere 20 chili!</p><img alt="stars" class="stars" src="images/stars-9c3b7.png">
+            </div>
+            <div class="comments__item">
+              <div class="comments__header">
+                <div class="comments__img-block"><img alt="avatar" class="comments__img" src="images/ava3.png"></div>
+                <h3 class="comments__info lt84"> <span class="comments__name">Emma Iannetti,</span> 65 anni</h3>
+              </div>
+              <p class="comments__text lt85">Prima di scoprire <a href="#order_form">Insulinex</a>, la mia vita
+                consisteva in costanti misurazioni del livello di glucosio, autocontrollo e visite infinite dal dottore.
+                Qualsiasi malattia, anche la più innoqua, diventava un disastro per me. <a
+                  href="#order_form">Insulinex</a> ha migliorato le mie condizioni, normalizzato lo zucchero e la
+                pressione. Questo è un ottimo rimedio.</p><img alt="stars" class="stars" src="images/stars-9c3b7.png">
+            </div>
+          </div>
+        </div>
+        <section class="alarm">
+          <div class="alarm__container">
+            <div class="alarm__left">
+              <h3 class="alarm__title lt86">PREGO, <span class="alarm__title_color">PRESTATE ATTENZIONE!</span> </h3>
+            </div>
+            <div class="alarm__right">
+              <p class="alarm__text lt87">Il numero di confezioni di <a href="#order_form">Insulinex</a> necessarie per
+                raggiungere l'obbiettivo desiderato viene <b>determinato individualmente e può aumentare nei singoli
+                  casi.</b></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <header class="order order_footer">
+      <div class="pulsating-circle"></div>
+      <div class="order__container container">
+        <div class="order__left">
+          <a href="#order_form" class="order__logo lt0">Insulinex</a>
+          <h1 class="order__title title lt1">RITROVA UNA VITA NORMALE SENZA DIABETE</h1>
+          <div class="order__list">
+            <div class="order__list-item">
+              <img alt="icon" class="order__list-img" src="images/orderList1-9992a.png">
+              <p class="order__list-text lt2"> <span class="order__list-text_bold">RIDUCE I LIVELLI DI GLUCOSIO NEL
+                  SANGUE</span></p>
+            </div>
+            <div class="order__list-item">
+              <img alt="icon" class="order__list-img" src="images/orderList2-68585.png">
+              <p class="order__list-text lt3"><span class="order__list-text_bold">AUMENTA LA SENSIBILITÀ DEL CORPO
+                  ALL'INSULINA</span></p>
+            </div>
+            <div class="order__list-item">
+              <img alt="icon" class="order__list-img" src="images/orderList3-9943c.png">
+              <p class="order__list-text lt4"><span class="order__list-text_bold">AIUTA A RIDURRE IL PESO</span></p>
+            </div>
+          </div>
+          <div class="order__product product"><img alt="product" class="order__product-img product__img"
+              src="images/product.png"></div>
+        </div>
+        <div class="order__right" id="order_form">
+          <div class="form-top">
+            <p>
+              <span style="font-weight: 700;"> Attenzione:</span> si applica la proposta speciale del produttore. Non
+              perdere l'opportunità di provare INSULINEX con uno sconto del 50%!
+            </p>
+          </div>
+          <form action="getform.php" method="post" class="form order_form">
+            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+            <input type="hidden" name="utm_campaign" value="{domonetka}">
+            <h2 class="form__title lt5">ORDINA <a href="#order_form">Insulinex</a><strong>ADESSO</strong></h2>
+            <div class="price">
+              <span class="price__old price_old oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+              <span class="price__new price_main priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+            </div>
+            <label class="form__label lt9">Il suo nome:<input type="text" placeholder="nome" required
+                class="form__input" name="name"></label>
+            <label class="form__label lt10">Il suo numero di telefono:<input required type="tel" placeholder="telefono"
+                class="form__input" name="phone"></label>
+            <div class="counter">
+              <p class="counter__title lt11">Fino al termine della promozione rimane:</p>
+              <div class="counter__time timer">
+                <div class="counter__item">
+                  <div class="counter__square">
+                    <span class="hour">
+                      <span class="num hour0">-</span>
+                      <span class="num hour1">-</span>
+                    </span>
+                  </div><span class="counter__text lt12">ore</span>
+                </div>
+                <div class="counter__item">
+                  <div class="counter__square counter__minutes">
+                    <span class="minute">
+                      <span class="num min0">-</span>
+                      <span class="num min1">-</span>
+                    </span>
+                  </div><span class="counter__text lt13">minuti</span>
+                </div>
+                <div class="counter__item">
+                  <div class="counter__square counter__seconds">
+                    <span class="second">
+                      <span class="num sec0">-</span>
+                      <span class="num sec1">-</span>
+                    </span>
+                  </div><span class="counter__text lt14">secondi</span>
+                </div>
+              </div>
+            </div><button class="form__button lt15" type="submit">ORDINARE ADESSO</button>
+            <span style="font-size: 14px; display: block; margin: 20px 0px 0px; text-align: center;">* Questo sconto su
+              una confezione è valido quando si ordina il trattamento completo</span>
+          </form>
+          <div class="form-bottom">
+            <p>
+              <b>Affrettarsi!</b> Le confezioni in offerta finiranno presto.
+            </p>
+            <p>
+              <b>Aggiornamento:</b> rimasti solo <b style="color: #c94e76;"><span class="form-instock">41</span> pezzi.
+              </b> il
+              <b><span style="color: #c94e76;" class="js-current-date"></span></b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <footer class="footer">
+
+      <p>Global Partners LTD</p>
+
+      <a href="//privacy.lr-land.com/privacy.html">Privacy Policy</a>
+    </footer>
+  </main>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/moment-with-locales.min.js"></script>
+  <script src="js/script.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.comments__list').slick({
+        // "dots": true,
+        // variableWidth: true,
+
+        "infinite": true,
+        "slidesToShow": 3,
+        "adaptiveHeight": true,
+        "responsive": [{
+            breakpoint: 992,
+            settings: {
+              "dots": true,
+              "slidesToScroll": 1,
+              "slidesToShow": 2
+            }
+          },
+          {
+            breakpoint: 766,
+            settings: {
+              "dots": true,
+              "slidesToScroll": 1,
+              "slidesToShow": 1
+            }
+          }
+        ]
+      });
+    });
+
+    x = document.querySelectorAll('.form__input');
+    x.forEach(i => i.addEventListener('click', (e) => console.log(e.target.type)))
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let formInstockValue;
+      let countDownFlag = true
+
+      // Функция уменьшения количества упаковок
+      function countdown(el) {
+        if (formInstockValue > 6) {
+          formInstockValue -= randomIntFromInterval(1, 3)
+          changeCounter(formInstockValue, el)
+
+        } else if (formInstockValue > 3) {
+          formInstockValue -= 1
+          changeCounter(formInstockValue, el)
+        }
+      }
+
+      function changeCounter(num, el) {
+        localStorage.setItem('inStock', num)
+        el.style.opacity = 0
+        setTimeout(function () {
+          el.style.opacity = 1
+          el.textContent = num
+        }, 300)
+      }
+
+      // Функция для генерации случайного числа в заданном диапазоне
+      function randomIntFromInterval(min, max) {
+        // min and max included
+        return Math.floor(Math.random() * (max - min + 1) + min)
+      }
+
+      // Здесь указываем класс элементов, в котором(ых) находится счётчик упаковок
+      const element = document.querySelectorAll('.form-bottom');
+
+      let Visible = function (targets) {
+        // Проходимся по всем блокам со счётчиком, если их несколько
+        targets.forEach(target => {
+          let formInStockEl = target.querySelector('.form-instock')
+          // Проверяем наличие записи в localStorage о количестве упаковок
+          if (localStorage.hasOwnProperty('inStock')) {
+            formInStockEl.textContent = localStorage.getItem('inStock')
+            formInstockValue = formInStockEl.textContent;
+          } else {
+            formInstockValue = formInStockEl.textContent;
+            localStorage.setItem('inStock', formInstockValue)
+          }
+          // Все позиции элемента
+          let targetPosition = {
+              top: window.pageYOffset + target.getBoundingClientRect().top,
+              left: window.pageXOffset + target.getBoundingClientRect().left,
+              right: window.pageXOffset + target.getBoundingClientRect().right,
+              bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+            },
+            // Получаем позиции окна
+            windowPosition = {
+              top: window.pageYOffset,
+              left: window.pageXOffset,
+              right: window.pageXOffset + document.documentElement.clientWidth,
+              bottom: window.pageYOffset + document.documentElement.clientHeight
+            };
+
+          if (targetPosition.bottom > windowPosition.top &&
+            // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+            targetPosition.top < windowPosition.bottom &&
+            // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+            targetPosition.right > windowPosition.left &&
+            // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+            targetPosition.left < windowPosition.right
+            ) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+            // Если элемент полностью видно, то запускаем следующий код
+            if (countDownFlag) {
+              startCountDown(formInStockEl)
+              countDownFlag = false
+            }
+          } else {
+            // Если элемент не видно, то запускаем этот код
+
+          };
+        })
+      };
+
+
+      // Запускаем функцию при прокрутке страницы
+      window.addEventListener('scroll', function () {
+        Visible(element)
+      });
+
+      // А также запустим функцию сразу. А то вдруг, элемент изначально видно
+      Visible(element)
+
+      function startCountDown(el) {
+        let countInterval = setInterval(function () {
+          countdown(el)
+        }, randomIntFromInterval(10, 15) * 1000)
+        // В функцию передаём количество секунд от 5 до 8. Умножаем на 1000 для получения миллисекунд(для работы интервала). В данном случае получаем случайное число в диапазоне от 5 до 8 включительно.
+      }
+    })
+  </script>
+<script>
+  const offer_params = {
+      priceMain : '39',
+      customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+      currencyMain: '€',
+      productName : '',
+  };
+
+
+  var productName = document.getElementsByClassName("productName");
+  var priceMain = document.getElementsByClassName("priceMain");
+  var priceOld = document.getElementsByClassName("priceOld");
+  var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+  for (var i = 0; i < productName.length; i++) {
+      productName[i].innerHTML = offer_params.productName;
+  }
+  for (var i = 0; i < priceMain.length; i++) {
+      priceMain[i].innerHTML = offer_params.priceMain;
+  }
+
+
+  if(offer_params.customPriceOld){
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.customPriceOld;
+      }
+  }else{
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.priceMain * 2;
+      }
+  }
+
+
+  for (var i = 0; i < currencyMain.length; i++) {
+      currencyMain[i].innerHTML = offer_params.currencyMain;
+  }
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+  var val = $(this).val();
+  $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+  var val = $(this).val();
+  $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

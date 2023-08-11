@@ -1,0 +1,754 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="IT">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Insulinex</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="robots" content="noindex">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+
+	<!-- CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/flipclock.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.hide,
+		.flag-dropdown {
+			display: none;
+		}
+
+		.error-box {
+			color: #fff;
+			background-color: #DE5042;
+			border-radius: 5px;
+			text-align: center;
+			width: 240px;
+			font-size: 13px;
+			line-height: 20px;
+			margin: 5px auto !important;
+			z-index: 100;
+		}
+
+		input:invalid {
+			box-shadow: none;
+			outline: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="popup__wrapper">
+			<div class="popup__block">
+				<div class="form-block__wrap">
+					<div class="form-block">
+						<div class="popup__product">
+							<img src="images/product.png" alt>
+						</div>
+						<div class="form-block__one">
+							100% NATURALE<br> COMPLESSO BIOATTIVO
+						</div>
+						<div class="timer-block">
+							<p class="timer__title"><span>Presto,</span>il resto della scorta è rimasto:</p>
+							<div class="timer"></div>
+						</div>
+						<div class="price-block">
+							<div class="price-block__left">
+								<div class="vmesto">invece di</div>
+								<span class="price-block__oldPrice displayPrevPriceNoCyr js_old_price">
+									<span class="price_land_s2 oldPriceAndLabelForLandingInfoApi">
+										<span class="priceOld"></span> <span class="currencyMain"></span>
+									</span>
+								</span>
+							</div>
+							<div class="price-block__right">
+								<span class="price-block__price displayCurrentPriceNoCyr js_new_price">
+									<span class="price_land_s1 priceAndLabelForLandingInfoApi">
+										<span class="priceMain"></span> <span class="currencyMain"></span>
+									</span>
+								</span>
+							</div>
+						</div>
+						<form action="getform.php" method="POST" class="orderformcdn form orderFormWrapper">
+							<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+							<input type="hidden" name="utm_campaign" value="{domonetka}">
+							<input type="text" name="name" placeholder="Maria Vicchio" required>
+							<input type="tel" name="phone" class="only_number" required placeholder="+39 339 451 45 31">
+							<button type="submit" class="js_submit btn form-btn">ORDINARE INSULINEX</button>
+							<p class="mt"
+								style="text-align: center;font-size: 12px; margin-top: 30px; padding-bottom: 10px;">
+								*Questo sconto su una confezione è valido quando si ordina il trattamento completo</p>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="top-line">
+			<div class="inner">
+				<div class="mob-button">
+					<div class="mob-button__line"></div>
+					<div class="mob-button__line"></div>
+					<div class="mob-button__line"></div>
+				</div>
+				<nav class="nav">
+					<a href="#why">Perché il Insulinex?</a>
+					<a href="#sostav">Composizione</a>
+					<a href="#reviews">Recensioni dei clienti</a>
+					<a href="#zakaz">Acquistare Insulinex</a>
+				</nav>
+				<div class="top-line__call" data-click="true" data-target=".popup__wrapper">
+					<img src="images/phone.png" alt="Позвонить сейчас!">
+					<span>Сomprare ora!</span>
+				</div>
+			</div>
+		</div>
+		<section class="main-block">
+			<div class="inner">
+				<div class="main-block__flexArea">
+					<div class="main-block__left">
+						<img class="mobHide main-logo-img" src="fonts/main-block-logo.svg" alt>
+						<img class="main-product-img" src="images/product.png" alt>
+					</div>
+					<div class="form-block__wrap">
+						<div class="form-block__up">100% NATURALE
+							COMPLESSO BIOATTIVO</div>
+						<div class="form-block">
+							<img class="insHide" src="images/main-block-logo.png" alt>
+							<div class="form-block__one">
+								UNA VITA PIENA
+								CON DIABETE MELLITO
+							</div>
+							<div class="timer-block">
+								<p class="timer__title">Presto, il resto della scorta è rimasto:
+								</p>
+								<div class="timer"></div>
+							</div>
+							<div class="price-block">
+								<div class="price-block__left">
+									<div class="vmesto">invece di</div>
+									<span class="price-block__oldPrice displayPrevPriceNoCyr js_old_price">
+										<span class="price_land_s2 oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+									</span>
+								</div>
+								<div class="price-block__right">
+									<span class="price-block__price displayCurrentPriceNoCyr js_new_price">
+										<span class="price_land_s1 priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+									</span>
+								</div>
+							</div>
+							<form action="getform.php" method="POST" class="orderformcdn form orderFormWrapper">
+								<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+								<input type="hidden" name="utm_campaign" value="{domonetka}">
+								<input type="text" name="name" placeholder="Maria Vicchio" required>
+								<input type="tel" name="phone" class="only_number" placeholder="+39 339 451 45 31" required>
+								<button type="submit" class="js_submit btn form-btn">ORDINARE INSULINEX</button>
+								<p class="mt"
+									style="text-align: center;font-size: 12px; margin-top: 30px; padding-bottom: 10px;">
+									*Questo sconto su una confezione è valido quando si ordina il trattamento completo
+								</p> <input type="hidden" name="address" value>
+							</form>
+						</div>
+						<div class="stock-block form-bottom">
+							<p class="form-bottom__title">
+								<b>Affrettarsi!</b> Le confezioni in offerta finiranno presto.
+							</p>
+							<p>
+								<b><span class="form-color--accent">Aggiornamento</span>:</b> rimasti solo <b
+									class="form-color--accent"><span class="form-instock">47</span> pezzi.</b> il
+								<b><span class="js-current-date"></span></b>.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="doing">
+			<div class="inner">
+				<div class="doing__item">
+					<p class="doing__item-title">AIUTA<br>A STIMOLARE</p>
+					<p class="doing__item-text">produzione<br> insulina</p>
+				</div>
+				<div class="doing__item">
+					<p class="doing__item-title">AIUTA<br>A STABILIZZARE</p>
+					<p class="doing__item-text">glicemia
+					</p>
+				</div>
+				<div class="doing__item">
+					<p class="doing__item-title">AIUTA <br>AD AVVERTIRE</p>
+					<p class="doing__item-text">occorrenza<br>ipoglicemia</p>
+				</div>
+				<div class="doing__item">
+					<p class="doing__item-title">AIUTA <br>A NORMALIZZARE</p>
+					<p class="doing__item-text">processo di scambio <br>sostanze</p>
+				</div>
+				<div class="doing__item">
+					<p class="doing__item-title">AIUTA <br> A RICARICARE</p>
+					<p class="doing__item-text">organi danneggiati<br> e cellule
+					</p>
+				</div>
+				<div class="doing__item">
+					<p class="doing__item-title">AIUTA <br>AD AUMENTARE</p>
+					<p class="doing__item-text">resistenza<br>del corpo</p>
+				</div>
+			</div>
+		</section>
+		<section class="simptoms">
+			<div class="inner">
+				<div id="why" class="title simptoms__title">Principali sintomi del diabete
+
+				</div>
+				<div class="simptoms__items">
+					<div class="simptoms__item">
+						<p>Fatica
+							<br> cronica
+						</p>
+						<p>Frequente necessità
+							<br> di urinare</p>
+						<p>Perdita di peso
+							<br>inspiegabile</p>
+						<p>Formicolio alle
+							<br> estremità</p>
+						<p>Infezioni
+							<br> vaginali</p>
+					</div>
+					<div class="simptoms__item"></div>
+					<div class="simptoms__item">
+						<p>Lunga guarigione
+							<br> delle ferite</p>
+						<p>Senso di fame
+							<br> permanente</p>
+						<p>Sete inestinguibile
+						</p>
+						<p>Visione offuscata
+
+						</p>
+						<p>Ridotta <br>libido</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="simptoms2">
+			<div class="inner">
+				<div class="simptoms__items">
+					<div class="simptoms__item">
+					</div>
+					<div class="simptoms__item"></div>
+					<div class="simptoms__item">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="danger">
+			<div class="inner">
+				<div class="title danger__title"><span>Perché il diabete è pericoloso</span> <span>se non viene
+						curato?</span></div>
+				<div class="danger__items">
+					<div class="BB">
+					</div>
+					<div class="danger__item active">
+						<div>
+							<p class="danger__item-title">COMA DIABETICO</p>
+						</div>
+						<div>
+							<p class="danger__item-title">IPOGLICEMICA</p>
+						</div>
+						<div>
+							<p class="danger__item-title">coma da acido lattico</p>
+						</div>
+						<div>
+							<p class="danger__item-title">CHETOACIDOSI</p>
+						</div>
+					</div>
+					<div class="danger__item">
+						<div>
+							<p class="danger__item-title">RETINOPATIA</p>
+						</div>
+						<div>
+							<p class="danger__item-title">NEFROPATIA</p>
+						</div>
+						<div>
+							<p class="danger__item-title">ENCEFALOPATIA</p>
+						</div>
+						<div>
+							<p class="danger__item-title">IPERGLICEMIA CRONICA</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="splitArea">
+			<div class="inner">
+				<div class="splitArea__items">
+					<div class="splitArea__item">
+						<div class="timer-block">
+							<p class="timer__title">Presto, il resto della scorta è rimasto:</p>
+							<div class="timer"></div>
+						</div>
+					</div>
+					<div class="splitArea__item">
+						<img src="images/splitArea-img.png" alt="diabexin">
+					</div>
+					<div class="splitArea__item">
+						<div class="price-block">
+							<div class="price-block__left">
+								<div class="vmesto">invece di
+								</div>
+								<span class="price-block__oldPrice displayPrevPriceNoCyr js_old_price">
+									<span class="price_land_s2 oldPriceAndLabelForLandingInfoApi">
+										<span class="priceOld"></span> <span class="currencyMain"></span>
+									</span>
+								</span>
+							</div>
+							<div class="price-block__right">
+								<span class="price-block__price displayCurrentPriceNoCyr js_new_price">
+									<span class="price_land_s1"><span class="priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span></span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="splitArea__item">
+						<a href="#zakaz" class="btn">ORDINARE INSULINEX
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="tripple">
+			<div class="inner">
+				<div class="title tripple__title">Triplo vantaggio del INSULINEX
+				</div>
+				<div class="tripple__items owl-carousel">
+					<div class="tripple__item">
+						<div class="tripple__item-number">1</div>
+						<div class="tripple__item-title">EFFICIENZA</div>
+						<div class="tripple__item-text">L'uso del corso contribuisce ad una significativa diminuzione
+							dei livelli di zucchero nel sangue e migliora il benessere.
+						</div>
+					</div>
+					<div class="tripple__item">
+						<div class="tripple__item-number">2</div>
+						<div class="tripple__item-title">EFFETTO RAPIDO
+						</div>
+						<div class="tripple__item-text">L'effetto delle gocce diventa immediatamente visibile e si
+							solidifica entro un mese dall'assunzione di Insulinex.
+						</div>
+					</div>
+					<div class="tripple__item">
+						<div class="tripple__item-number">3</div>
+						<div class="tripple__item-title">REMISSIONE PROLUNGATA
+						</div>
+						<div class="tripple__item-text">L'effetto ottenuto non scompare dopo aver smesso di prenderlo e
+							dura a lungo.</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sostav" id="sostav">
+			<div class="inner">
+				<div class="title sostav__title">Ingredienti essenziali</div>
+				<div class="sostav__desc">Il complesso bioattivo Insulinex contiene ingredienti naturali al 100%:
+					glucomannano, beta-glucani di funghi, estratto di foglie di tè verde, estratto di corteccia di
+					crespino comune, estratto di cannella, ecc</div>
+				<div class="sostav__slider owl-carousel">
+					<div class="sostav__slide">
+						<div class="sostav__slide-title">Glucomannano</div>
+						<div class="sostav__slide-text">
+							Aiuta a migliorare la produzione di insulina mantenendo i normali livelli di glucosio nel
+							sangue. Il glucomannano aiuta a regolare i livelli di colesterolo e gli antiossidanti
+							aiutano a rimuovere le tossine e i rifiuti, mantenendo così l'integrità delle cellule e dei
+							tessuti. Aiuta a normalizzare il metabolismo, aiuta a rafforzare l'immunità e alleviare lo
+							stress
+						</div>
+					</div>
+					<div class="sostav__slide">
+						<div class="sostav__slide-title">Beta-glucani dei funghi</div>
+						<div class="sostav__slide-text">
+							Viene secreto un enzima che rilascia glucosio dal fegato. Questo aiuta a indurre effetti
+							ipoglicemici, abbassando i livelli di zucchero nel sangue e normalizzando l'uso di insulina.
+						</div>
+					</div>
+					<div class="sostav__slide">
+						<div class="sostav__slide-title">Estratto di foglie di tè verde</div>
+						<div class="sostav__slide-text">
+							Aiuta a migliorare il metabolismo, aiuta a rigenerare le cellule pancreatiche, aiuta a
+							ripristinare la digestione. Aiuta a ridurre la resistenza all'insulina delle cellule e aiuta
+							a migliorare l'assorbimento dell'insulina - così il corpo riceve la nutrizione e l'energia
+							necessarie. Aiuta ad aumentare l'elasticità dei vasi sanguigni, aiuta a migliorare la
+							microcircolazione sanguigna. Aiuta a ridurre la malattia del fegato grasso.
+						</div>
+					</div>
+					<div class="sostav__slide">
+						<div class="sostav__slide-title">Estratto di corteccia di crespino</div>
+						<div class="sostav__slide-text">
+							"Distruttore di zucchero" naturale. Il crespino aiuta a regolare l'equilibrio dei
+							carboidrati, aiuta a ridurre il flusso di glucosio dall'intestino al sangue, contribuendo
+							così a normalizzare il livello di zucchero nel corpo. Aiuta ad aumentare la produzione di
+							insulina e ad accelerare il metabolismo del glucosio.
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="splitArea">
+			<div class="inner">
+				<div class="splitArea__items">
+					<div class="splitArea__item">
+						<div class="timer-block">
+							<p class="timer__title">Presto, il resto della scorta è rimasto:</p>
+							<div class="timer"></div>
+						</div>
+					</div>
+					<div class="splitArea__item">
+						<img src="images/splitArea-img.png" alt="diabexin">
+					</div>
+					<div class="splitArea__item">
+						<div class="price-block">
+							<div class="price-block__left">
+								<div class="vmesto">invece di
+								</div>
+								<span class="price-block__oldPrice displayPrevPriceNoCyr js_old_price"><span
+										class="price_land_s2"><span class="oldPriceAndLabelForLandingInfoApi"><span class="priceOld"></span> <span class="currencyMain"></span></span></span></span>
+								<span class="price-block__oldPriceCurrency displayCurrentCurrency js_curs"></span>
+							</div>
+							<div class="price-block__right">
+								<span class="price-block__price displayCurrentPriceNoCyr js_new_price">
+									<span class="price_land_s1"><span class="priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span></span>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="splitArea__item">
+						<a href="#zakaz" class="btn">ORDINARE INSULINEX</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sposob">
+			<div class="inner">
+				<div class="title sposob__title">Facile da usare
+
+				</div>
+				<div class="sposob__items">
+					<div class="sposob__item">
+						<img src="images/application.png" alt>
+					</div>
+				</div>
+				<div class="sposob__desc"><span>Il risultato migliore è che naturalmente</span> l'applicazione da 30
+					giorni e più.</div>
+			</div>
+		</section>
+		<section class="reviews" id="reviews">
+			<div class="inner">
+				<div class="title reviews__title">Recensioni su Insulinex</div>
+				<div class="reviews__slider owl-carousel">
+					<div class="reviews__slide">
+						<div class="reviews__slide-top">
+							<img src="images/r1.jpg" alt>
+							<div class="reviews__slide-top-text">
+								<div class="reviews__slide-name">Mino Rizzo</div>
+								<div class="reviews__slide-city">terapista</div>
+							</div>
+						</div>
+						<div class="reviews__slide-bottom">Come medico raccomando fortemente Insulinex ai miei pazienti
+							con diabete. Sono stati tutti in grado di normalizzare lo zucchero nel sangue e migliorare
+							la funzione cardiovascolare. I pazienti hanno diminuito la loro mancanza di respiro, il peso
+							normale, colesterolo ridotto. È un grande risultato!</div>
+					</div>
+					<div class="reviews__slide">
+						<div class="reviews__slide-top">
+							<img src="images/r2.jpg" alt>
+							<div class="reviews__slide-top-text">
+								<div class="reviews__slide-name">Sara Specchio</div>
+							</div>
+						</div>
+						<div class="reviews__slide-bottom">Insulinex ho comprato per la mia nonna. Molto apprezzata che
+							il prodotto è naturale. La nonna bevve un corso di Insulinex, e immediatamente ha notato che
+							si sentiva meglio: l'attrazione per i dolci era scomparso e gli esami hanno detto che il
+							livello di zucchero nel sangue era nela norma. Inoltre, la pressione sanguigna non rimbalza
+							più, il cuore non si piega, la testa smette di girare. Finalmente non sono più preoccupata
+							per la sua salute!</div>
+					</div>
+					<div class="reviews__slide">
+						<div class="reviews__slide-top">
+							<img src="images/r3.jpg" alt>
+							<div class="reviews__slide-top-text">
+								<div class="reviews__slide-name">Dina Monelli
+								</div>
+								<div class="reviews__slide-city">endocrinologo</div>
+							</div>
+						</div>
+						<div class="reviews__slide-bottom">Sono un endocrinologo. Molti dei miei pazienti credono
+							erroneamente che se il diabete non è insulino-dipendente, è sufficiente sedersi su una certa
+							dieta. Però la stimolazione pancreatica è necessaria per chiunque diagnosticato con il
+							diabete. Durante l'assunzione di Insulinex, i pazienti non hanno notato gli effetti
+							collaterali, ma hanno notato l'alta efficienza e la facilità d'uso del prodotto.</div>
+					</div>
+					<div class="reviews__slide">
+						<div class="reviews__slide-top">
+							<img src="images/r4.jpg" alt>
+							<div class="reviews__slide-top-text">
+								<div class="reviews__slide-name">Giuseppe Balconi
+								</div>
+							</div>
+						</div>
+						<div class="reviews__slide-bottom">Ha contratto il diabete a causa della scarsa ereditarietà. Ho
+							iniziato a prendere Insulinex per sostenere il mio corpo. Studiò attentamente la
+							composizione prima dell'acquisto e sono rimasto soddisfatto. Solo componenti naturali che
+							aiutano davvero a normalizzare la glicemia. Ho visto miglioramenti dal primo giorno!</div>
+					</div>
+					<div class="reviews__slide">
+						<div class="reviews__slide-top">
+							<img src="images/r5.jpg" alt>
+							<div class="reviews__slide-top-text">
+								<div class="reviews__slide-name">Mena Vaccaro
+								</div>
+							</div>
+						</div>
+						<div class="reviews__slide-bottom">Insulinex è la mia salvezza! Grazie a lui a volte posso
+							permettermi anche un pezzo di torta. Il sonno è migliorato, le mani hanno smesso di tremare.
+							Per un tale prezzo e un tale risultato non è un peccato. Grazie!</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="main-block" id="zakaz">
+			<div class="inner">
+				<div class="main-block__flexArea">
+					<div class="main-block__left">
+						<img class="mobHide main-logo-img" src="fonts/main-block-logo.svg" alt>
+						<img class="main-product-img" src="images/product.png" alt>
+					</div>
+					<div class="form-block__wrap">
+						<div class="form-block__up">100% NATURALE<br> COMPLESSO BIOATTIVO</div>
+						<div class="form-block">
+							<img class="insHide main-logo-img" src="images/main-block-logo.png" alt>
+							<div class="form-block__one">
+								UNA VITA PIENA
+								<br> CON DIABETE MELLITO
+							</div>
+							<div class="timer-block" id="mob-zakaz">
+								<p class="timer__title"><span>Presto, </span> il resto della scorta è rimasto:</p>
+								<div class="timer"></div>
+							</div>
+							<div class="price-block">
+								<div class="price-block__left">
+									<div class="vmesto">invece di
+									</div>
+									<span class="price-block__oldPrice displayPrevPriceNoCyr js_old_price">
+										<span class="price_land_s2 oldPriceAndLabelForLandingInfoApi">
+											<span class="priceOld"></span> <span class="currencyMain"></span>
+										</span>
+									</span>
+								</div>
+								<div class="price-block__right">
+									<span class="price-block__price displayCurrentPriceNoCyr js_new_price">
+										<span class="price_land_s1">
+											<span class="priceAndLabelForLandingInfoApi"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+										</span>
+									</span>
+								</div>
+							</div>
+							<form action="getform.php" method="POST" class="orderformcdn form orderFormWrapper">
+								<input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+								<input type="hidden" name="utm_campaign" value="{domonetka}">
+								<input type="text" name="name" placeholder="Maria Vicchio" required>
+								<input type="tel" name="phone" class="only_number" placeholder="+39 339 451 45 31" required>
+								<button type="submit" class="js_submit btn form-btn">ORDINARE INSULINEX
+								</button>
+								<p class="mt"
+									style="text-align: center;font-size: 12px; margin-top: 30px; padding-bottom: 10px;">
+									*Questo sconto su una confezione è valido quando si ordina il trattamento completo
+								</p>
+
+							</form>
+						</div>
+						<div class="stock-block form-bottom">
+							<p class="form-bottom__title">
+								<b>Affrettarsi!</b> Le confezioni in offerta finiranno presto.
+							</p>
+							<p>
+								<b><span class="form-color--accent">Aggiornamento</span>:</b> rimasti solo <b
+									class="form-color--accent"><span class="form-instock">47</span> pezzi.</b> il
+								<b><span class="js-current-date"></span></b>.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="inner copyright">
+				<p><a class="privacy" href="//privacy.lr-land.com/privacy.html" target="_blank">Politica sulla
+						riservatezza</a></p>
+			</div>
+		</footer>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/moment-with-locales.min.js"></script>
+	<script src="js/script_1.js"></script>
+	<script src="js/flipclock.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/owl.carousel.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="js/script.js"></script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			let formInstockValue;
+			let countDownFlag = true
+
+			// Функция уменьшения количества упаковок
+			function countdown(el) {
+				if (formInstockValue > 10) {
+					formInstockValue -= randomIntFromInterval(1, 3)
+					changeCounter(formInstockValue, el)
+
+				} else if (formInstockValue > 7) {
+					formInstockValue -= 1
+					changeCounter(formInstockValue, el)
+				}
+			}
+
+			function changeCounter(num, el) {
+				localStorage.setItem('inStock', num)
+				el.style.opacity = 0
+				setTimeout(function () {
+					el.style.opacity = 1
+					el.textContent = num
+				}, 300)
+			}
+
+			// Функция для генерации случайного числа в заданном диапазоне
+			function randomIntFromInterval(min, max) {
+				// min and max included
+				return Math.floor(Math.random() * (max - min + 1) + min)
+			}
+
+			// Здесь указываем класс элементов, в котором(ых) находится счётчик упаковок
+			const element = document.querySelectorAll('.form-bottom');
+
+			let Visible = function (targets) {
+				// Проходимся по всем блокам со счётчиком, если их несколько
+				targets.forEach(target => {
+					let formInStockEl = target.querySelector('.form-instock')
+					// Проверяем наличие записи в localStorage о количестве упаковок
+					if (localStorage.hasOwnProperty('inStock')) {
+						formInStockEl.textContent = localStorage.getItem('inStock')
+						formInstockValue = formInStockEl.textContent;
+					} else {
+						formInstockValue = formInStockEl.textContent;
+						localStorage.setItem('inStock', formInstockValue)
+					}
+					// Все позиции элемента
+					let targetPosition = {
+							top: window.pageYOffset + target.getBoundingClientRect().top,
+							left: window.pageXOffset + target.getBoundingClientRect().left,
+							right: window.pageXOffset + target.getBoundingClientRect().right,
+							bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+						},
+						// Получаем позиции окна
+						windowPosition = {
+							top: window.pageYOffset,
+							left: window.pageXOffset,
+							right: window.pageXOffset + document.documentElement.clientWidth,
+							bottom: window.pageYOffset + document.documentElement.clientHeight
+						};
+
+					if (targetPosition.bottom > windowPosition.top &&
+						// Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+						targetPosition.top < windowPosition.bottom &&
+						// Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+						targetPosition.right > windowPosition.left &&
+						// Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+						targetPosition.left < windowPosition.right
+						) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+						// Если элемент полностью видно, то запускаем следующий код
+						if (countDownFlag) {
+							startCountDown(formInStockEl)
+							countDownFlag = false
+						}
+					} else {
+						// Если элемент не видно, то запускаем этот код
+
+					};
+				})
+			};
+
+
+			// Запускаем функцию при прокрутке страницы
+			window.addEventListener('scroll', function () {
+				Visible(element)
+			});
+
+			// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+			Visible(element)
+
+			function startCountDown(el) {
+				let countInterval = setInterval(function () {
+					countdown(el)
+				}, randomIntFromInterval(10, 15) * 1000)
+				// В функцию передаём количество секунд от 5 до 8. Умножаем на 1000 для получения миллисекунд(для работы интервала). В данном случае получаем случайное число в диапазоне от 5 до 8 включительно.
+			}
+		})
+	</script>
+<script>
+	const offer_params = {
+		priceMain : '39',
+		customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+		currencyMain: '€',
+		productName : '',
+	};
+
+
+	var productName = document.getElementsByClassName("productName");
+	var priceMain = document.getElementsByClassName("priceMain");
+	var priceOld = document.getElementsByClassName("priceOld");
+	var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+	for (var i = 0; i < productName.length; i++) {
+		productName[i].innerHTML = offer_params.productName;
+	}
+	for (var i = 0; i < priceMain.length; i++) {
+		priceMain[i].innerHTML = offer_params.priceMain;
+	}
+
+
+	if(offer_params.customPriceOld){
+		for (var i = 0; i < priceOld.length; i++) {
+			priceOld[i].innerHTML = offer_params.customPriceOld;
+		}
+	}else{
+		for (var i = 0; i < priceOld.length; i++) {
+			priceOld[i].innerHTML = offer_params.priceMain * 2;
+		}
+	}
+
+
+	for (var i = 0; i < currencyMain.length; i++) {
+		currencyMain[i].innerHTML = offer_params.currencyMain;
+	}
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+	var val = $(this).val();
+	$(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+	var val = $(this).val();
+	$(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

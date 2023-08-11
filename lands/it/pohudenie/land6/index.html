@@ -1,0 +1,982 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<html dir="ltr">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="shortcut icon" href="fonts/newspaper.svg" type="image/x-icon">
+
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+
+  <link type="text/css" href="css/order_me.min.css" rel="stylesheet" media="all">
+
+
+
+  <link type="text/css" href="css/secondPage.css" rel="stylesheet" media="all">
+
+  <style>
+    .ac_footer {
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      padding: 50px 0;
+      color: #A12000;
+    }
+
+    .ac_footer a {
+      color: #A12000;
+    }
+
+    .ac_footer p {
+      text-align: center;
+    }
+
+    img[height="1"],
+    img[width="1"] {
+      display: none !important;
+    }
+  </style>
+
+
+
+
+  <title> USlim </title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
+
+  <link href="css_1" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/slick.css" rel="stylesheet" type="text/css">
+  <link href="css/slick-theme.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body data-lang="IT">
+  <!-- begin delivery-block -->
+  <style>
+    .delivery-wrapper {
+      position: fixed;
+      display: flex;
+      z-index: 10000;
+      justify-content: center;
+      top: 0;
+      left: 0;
+      font-family: sans-serif !important;
+    }
+
+    .delivery-info {
+      display: flex;
+      position: relative;
+      background-color: #ffffffde;
+      align-items: center;
+      text-align: center;
+      border: 1px solid black;
+      border-top: 0px !important;
+      border-radius: 0px 0px 10px 10px;
+      width: 80%;
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .delivery-info {
+        width: 100%;
+        font-size: 12px;
+      }
+
+      .delivery-info>svg {
+        width: 200px;
+        height: 150px;
+      }
+    }
+
+    .delivery_close_btn {
+      position: absolute;
+      color: red;
+      top: -10px;
+      right: 0;
+      margin: 5px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+
+  <div class="delivery-wrapper">
+    <div class="delivery-info" style="margin: 0; padding: 0;">
+      <span class="delivery_close_btn">&#215;</span>
+      <svg xmlns="http://www.w3.org/2000/svg" style="padding-left: 10px;" id="Capa_1"
+        enable-background="new 0 0 484.559 484.559" height="70" viewBox="0 0 484.559 484.559" width="100">
+        <g>
+          <g id="XMLID_107_">
+            <g>
+              <path
+                d="m484.426 222.033c1.77 22.9-14.34 43.23-35.97 45.4-16.56 1.66-31.54-7.81-38.46-22.6l-19.63 1.73-14.82 7.15c-3.39 1.63-5.67 4.87-6.19 8.59-1.4 10.03-3.94 19.69-7.47 28.87-1.2 3.11-.99 6.58.64 9.48l5.28 9.44 14.68 9.85c7.74-2.96 16.75-2.25 24.16 2.72 12.56 8.43 15.57 25.78 6.23 37.99-8.04 10.52-22.99 13.41-34.37 6.65-7.25-4.3-11.63-11.44-12.7-19.07l-16.27-10.91-10.24-1.25c-3.52-.43-7.02.78-9.58 3.23-8.64 8.23-18.4 15.3-29.01 20.96-3.57 1.9-5.86 5.55-6.11 9.58l-1.3 20.74 6.44 25.55c10.96 3.06 20.02 11.75 23 23.57 4.5 17.87-6.6 36-24.7 40.03-16.33 3.64-33.08-5.88-38.27-21.79-4.04-12.42-.33-25.26 8.21-33.65l-6.47-25.7-9.99-16.06c-2.68-4.31-7.42-6.86-12.5-6.85-.03 0-.05 0-.08 0-8.75 0-17.31-.87-25.59-2.5-4.93-.98-10.02.58-13.48 4.23l-13.2 13.93-14.78 30.66c3.46 7.03 3.77 15.52.11 23.13-6.58 13.64-23.36 19.06-36.77 11.52-11.48-6.47-16.45-20.75-11.45-32.95 3.41-8.32 10.48-13.88 18.48-15.74l14.87-30.86 2.92-20.71c.53-3.82-.93-7.67-3.93-10.09-11.83-9.6-21.97-21.19-29.9-34.27-1.97-3.25-5.51-5.22-9.31-5.25l-20.68-.2-22.64 7.12c-1.59 14.08-11.23 26.59-25.61 31.11-19.32 6.08-39.9-4.54-46.17-23.74-6.27-19.19 4.32-40.18 23.49-46.52 13.42-4.44 27.52-.75 37.06 8.32l24.03-7.56 17.55-12.51c2.61-1.85 4-4.95 3.74-8.13-.29-3.53-.44-7.09-.44-10.69 0-19.56 4.3-38.13 11.98-54.83 1.12-2.45 1.09-5.27-.09-7.69l-5.2-10.63-14.11-10.65c-7.9 2.53-16.85 1.32-23.97-4.05-12.08-9.12-14.12-26.61-4.12-38.28 8.61-10.05 23.7-12.11 34.69-4.73 7 4.7 10.98 12.06 11.62 19.74l15.64 11.8 15.76 2.81c11.47-10.65 24.84-19.28 39.53-25.33l3.7-22.48-4.67-23.22c-13.82-3.56-25.04-14.15-28.06-28.27-4.26-19.95 9.45-39.38 30.63-43.39 21.17-4.01 41.79 8.9 46.05 28.85 3.19 14.93-3.68 29.56-16.22 37.66l4.41 21.9 10.83 17.28c.71 1.13 1.95 1.81 3.28 1.81h.02c24.8 0 48.02 6.9 67.85 18.88 1.09.65 2.43.74 3.58.2l16.96-7.86 19.8-21.42c-1.19-7.68 1-15.82 6.69-21.97 10.28-11.11 27.88-11.39 38.5-.28 9.31 9.75 9.67 25.3.83 35.48-5.72 6.59-13.93 9.63-21.95 9.03l-19.8 21.42-6.43 17.3c-.45 1.2-.25 2.54.5 3.58 7.81 10.72 14.04 22.66 18.34 35.48 1.19 3.52 3.99 6.26 7.57 7.27l16.1 4.51 20.92-1.85c5.13-14.79 17.94-25.98 33.67-27.56 21.63-2.17 40.6 14.64 42.36 37.54z"
+                fill="#eb5569" />
+            </g>
+          </g>
+          <g id="XMLID_8_">
+            <g>
+              <circle cx="238.936" cy="243.983" fill="#f58a97" r="97.52" />
+            </g>
+          </g>
+          <path
+            d="m171.14 243.983c0-48.807 35.852-89.238 82.658-96.395-4.846-.741-9.809-1.125-14.862-1.125-53.86 0-97.52 43.66-97.52 97.52s43.66 97.52 97.52 97.52c5.053 0 10.016-.384 14.862-1.125-46.805-7.158-82.658-47.589-82.658-96.395z"
+            fill="#f07281" />
+          <g fill="#eb5569">
+            <circle cx="74.853" cy="38.921" r="27.771" />
+            <circle cx="67.262" cy="404.986" r="18.343" />
+            <circle cx="404.051" cy="435.118" r="27.018" />
+            <circle cx="209.002" cy="217.089" r="25.189" />
+            <circle cx="229.222" cy="295.328" r="17.145" />
+            <circle cx="283.058" cy="243.983" r="14.397" />
+          </g>
+        </g>
+      </svg>
+      <p style="text-align: initial; margin: 0; padding-left: 20px; padding-right: 20px; font-size: 15px;"
+        class="delivery-text">
+        <b style="color: red;">COVID-19 : </b>
+        Gentili clienti, non preoccupatevi! Abbiamo preso tutte le precauzioni
+        possibili per garantire la vostra sicurezza: i nostri corrieri
+        utilizzano guanti e maschere monouso, mantengono una distanza di
+        sicurezza durante la consegna del pacco, per minimizzare i tempi di
+        contatto con i clienti. Tutti i nostri pacchetti sono trattati con
+        disinfettanti.
+      </p>
+    </div>
+    <script>
+      "use strict";
+      const deliveryBlock = document.querySelector(".delivery-wrapper");
+      const btn_close = document.querySelector(".delivery_close_btn");
+      btn_close.addEventListener("click", () => {
+        deliveryBlock.remove();
+      });
+
+      deliveryBlock.addEventListener('click', () => {
+        deliveryBlock.remove();
+      });
+
+      setTimeout(() => deliveryBlock.remove(), 5000);
+    </script>
+  </div>
+  <!-- end -->
+  <div class="main-wrapper s__main">
+    <!-- BLOCK_1 -->
+    <div class="block_1">
+      <div class="container-fluid">
+        <div class="logo"></div>
+        <div class="sublogo_text"> Nuovo in Italia </div>
+        <div class="block_1-title"> IL METODO DIMAGRANTE <span> CHE NON HAI MAI PROVATO </span></div>
+        <div class="block_1-subtitle"> Non c'è bisogno di morire di fame! </div>
+        <img alt class="mouse_scroll" src="images/mouse_scroll.png">
+      </div>
+      <div class="background_video">
+        <video autoplay class="avid" data-url="/81/videos/1551740400/ketoDiet" id="video" loop muted playsinline poster
+          controlslist="nodownload">
+          <source src="media/1.mp4">
+          <source src="media/2.webm"></video>
+      </div>
+    </div>
+    <!-- BLOCK_1-END -->
+    <!-- BLOCK_2 -->
+    <div class="block_2">
+      <div class="container-fluid">
+        <div class="block_2-top">
+          <h3 class="block_2-top-title"> la tua dieta <span> keto </span></h3>
+          <div class="block_2-list cnt-dib row">
+            <div class="col-md-3 col-xs-12 block_2-list-item dib wow fadeInUp animated" data-wow-delay="0.2s"
+              style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+              <img alt class="block_2-list-img" src="images/block_2-list1.png">
+              <div class="block_2-list-text"><span> 75% </span> dell'assunzione giornaliera di alimenti <div> GRASSI
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12 block_2-list-item dib wow fadeInUp animated" data-wow-delay="0.4s"
+              style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+              <img alt class="block_2-list-img" src="images/block_2-list2.png">
+              <div class="block_2-list-text"><span> 20% </span> dell'assunzione giornaliera di alimenti <div> PROTEINE
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12 block_2-list-item dib wow fadeInUp animated" data-wow-delay="0.6s"
+              style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+              <img alt class="block_2-list-img" src="images/block_2-list3.png">
+              <div class="block_2-list-text"><span> 20% </span> dell'assunzione giornaliera di alimenti <div>
+                  CARBOIDRATI </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-12 block_2-list-item dib wow fadeInUp prod_item animated" data-wow-delay="0.8s"
+              style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
+              <img alt class="block_2-list-img" src="images/block_2-list4.png">
+              <div class="block_2-list-text"><span> + USlim </span> Componente essenziale <img alt
+                  src="images/attention.png"> per la perdita di peso </div>
+            </div>
+          </div>
+        </div>
+        <div class="block_2-main cnt-dib row">
+          <div class="block_2-left col-md-6 col-xs-12 dib">
+            <div class="block_2-paint"><span> LA CHETOSI </span> ROMPE CON GLI STEREOTIPI DELLA DIETA </div>
+          </div>
+          <div class="block_2-right col-md-6 col-xs-12 dib">
+            <div class="block_2-text-title title"> Il dimagrimento come conseguenza della <span class="pink"> naturale
+              </span> combustione dei grassi </div>
+            <p class="text"><b> Quando il corpo smette di ricevere energia dai carboidrati, entra nello stato di
+                chetosi dopo 7-10 giorni. </b> La carenza di carboidrati fa sì che il grasso sottocutaneo si trasformi
+              in energia. </p>
+            <p class="text"> I corpi chetonici che si formano nel fegato sono <b> la principale fonte di energia </b>
+              per il cervello durante la chetosi. Essi alimentano il tessuto muscolare e prevengono la deposizione di
+              grassi. </p>
+            <p class="text"> Di conseguenza, <b> i depositi di grasso stagnante scompaiono </b> e la massa corporea
+              diminuisce. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BLOCK_2-END -->
+    <!-- BLOCK_3 -->
+    <div class="block_3">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <h2 class="block_3-title wow fadeInLeft" style="visibility: hidden; animation-name: none;"> USlim </h2>
+            <div class="block_3-subtitle wow fadeInLeft" data-wow-delay="0.2s"
+              style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"> Aumenta il numero di <span
+                class="pink"> chetoni </span> nel corpo e avvia la combustione dei grassi </div>
+          </div>
+          <div class="col-md-3 col-md-offset-6 col-xs-12">
+            <ul class="block_3-list">
+              <li class="wow fadeInRight" style="visibility: hidden; animation-name: none;"> Minimizza l'assunzione di
+                carboidrati </li>
+              <li class="wow fadeInRight" data-wow-delay="0.2s"
+                style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"> Riduce i livelli di glucosio
+                nel sangue </li>
+              <li class="wow fadeInRight" data-wow-delay="0.4s"
+                style="visibility: hidden; animation-delay: 0.4s; animation-name: none;"> Non c'è bisogno di produrre
+                insulina </li>
+              <li class="wow fadeInRight" data-wow-delay="0.6s"
+                style="visibility: hidden; animation-delay: 0.6s; animation-name: none;"> Niente insulina, <span>
+                  nessun senso di fame </span></li>
+            </ul>
+          </div>
+          <img alt class="block_3-pack" src="images/pack.png">
+          <img alt class="block_3-girl" src="images/block_3-girl.png">
+        </div>
+        <img alt class="block_3-moleculs rellax" data-rellax-percentage="0.5" data-rellax-speed="1"
+          src="images/block_3-moleculs.png" style="transform: translate3d(0px, 147px, 0px);">
+        <img alt class="block_3-leafs rellax" data-rellax-percentage="0.5" data-rellax-speed="2"
+          src="images/block_3-leafs.png" style="transform: translate3d(0px, 289px, 0px);">
+      </div>
+    </div>
+    <!-- BLOCK_3-END -->
+    <!-- BLOCK_4 -->
+    <div class="block_4">
+      <div class="container-fluid">
+        <div class="row cnt-dib">
+          <div class="col-md-7 col-xs-12 dib block_4-left">
+            <h2 class="title"> COME FUNZIONA <span class="pink"> USlim </span></h2>
+            <div class="block_4-right mobile">
+              <img alt class="block_4-round" src="images/block_4-skin.png">
+              <img alt class="block_4-glass wow fadeInRight animated" src="images/block_4-glass.png"
+                style="visibility: visible; animation-name: fadeInRight;">
+            </div>
+            <div class="block_4-left-text">
+              <p class="text"> Per raggiungere la chetosi, al tuo corpo servono <b> da 7 a 10 giorni. </b></p>
+              <p class="text"> Soltanto <b> 1 capsula di USlim </b> riduce questo arco di tempo a <b> 40-50 minuti </b>
+                , durante i quali il corpo produce una quantità sufficiente di <b> corpi chetonici </b> e inizia a
+                trasformare le cellule adipose e i depositi accumulati in energia. </p>
+              <p class="text pink"> Assumere 1 capsula 2 volte al giorno.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5 col-xs-12 dib block_4-right web">
+            <img alt class="block_4-round" src="images/block_4-skin.png">
+            <img alt class="block_4-glass wow fadeInRight" src="images/block_4-glass.png"
+              style="visibility: hidden; animation-name: none;">
+          </div>
+          <a class="btn pre_toform mobile" href="#abc"> Ordina </a>
+        </div>
+      </div>
+    </div>
+    <!-- BLOCK_4-END -->
+    <!-- BLOCK_6 -->
+    <div class="block_6">
+      <div class="container-fluid">
+        <div class="block_6-title">
+          <h2><img alt src="images/block_6-title-icon.png"> Importante: </h2>
+          <div class="block_6-title-text"><b> USlim </b> <span> È PRIVO DI </span> sostanze sintetiche, psicotrope e
+            ormonali </div>
+          <img alt class="moleculs" src="images/moleculs.png">
+        </div>
+        <h2 class="block_6-content-title"><span class="green"> COSA DICONO GLI ESPERTI </span> SU USlim: </h2>
+        <div class="block_6-content-subtitle"><span class="green"> Paola Verdi, </span> nutrizionista, Centro Medico di
+          Alimentazione, Salute e Bellezza </div>
+        <div class="row cnt-dib block_6-content">
+          <div class="col-md-5 col-xs-12 dib block_6-left">
+            <img alt class="block_6-doc" src="images/doc_ellipse.png">
+            <img alt class="block_6-stamp" src="images/block_6-stamp.png">
+          </div>
+          <div class="col-md-7 col-xs-12 dib block_6-right">
+            <p> Durante il processo della chetosi, i grassi sono scomposti in acidi grassi e glicerina, trasformandosi
+              successivamente in corpi chetonici. <span class="pink"> Tuttavia, la chetosi inizia solo quando il fegato
+                e i tessuti muscolari esauriscono il glicogeno, </span> cosa che normalmente si verifica nel giro di
+              7-10 giorni. </p>
+            <p> Per accelerare questo processo, e quindi il processo di combustione dei grassi, consiglio alle mie
+              pazienti di usare <span class="pink"> un supplemento chiamato USlim. </span> Questo prodotto sostiene il
+              corpo quando si segue una dieta chetogenica, fornendo vitamine, sopprimendo la fame ed eliminando la
+              fatica e l'ansia. Ma il vantaggio principale di <span class="pink"> USlim </span> è quello di bloccare
+              l'assorbimento dei carboidrati, che normalmente si scompongono in glucosio (zuccheri) e vengono assorbiti
+              nel flusso sanguigno portando a un aumento di peso. </p>
+            <div class="block_6-right-bottom"> Con USlim, il dimagrimento avviene in modo rapido e coerente, senza
+              arrecare danni alla salute. </div>
+          </div>
+        </div>
+        <div class="block_6-bottom-title"> Ecco la storia <span> di una delle mie pazienti </span></div>
+        <div class="block_6-bottom-subtitle"> Lisa, età: 37 anni, altezza: 169 cm </div>
+        <div class="result_wrap row">
+          <div class="col-md-6 col-xs-12 result_left cnt-dib wow fadeInLeft"
+            style="visibility: hidden; animation-name: none;">
+            <div class="result_left-text dib">
+              <p class="result_main-text">
+                <b> PRIMA: </b>
+                Livello criticamente basso di chetoni:
+                <b class="pink"> 0,8 mol </b>
+              </p>
+              <div class="result_review"> Peso: <span class="pink"> 97 kg </span></div>
+              <img alt class="check_1" src="images/check1.png">
+            </div>
+            <div class="result_photo dib">
+              <img alt src="images/before.jpg">
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12 result_right cnt-dib wow fadeInRight" data-wow-delay="0.2s"
+            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+            <div class="result_photo dib">
+              <img alt src="images/after.jpg">
+            </div>
+            <div class="result_right-text dib">
+              <p class="result_main-text">
+                <b> Il risultato dopo un ciclo di <span class="pink"> USlim: </span></b>
+                <span> Chetoni: <span class="pink"> 13 mol </span></span>
+              </p>
+              <div class="result_review"> Peso: <b class="pink"> 63 kg </b> <span class="pink"> (-34 kg) </span></div>
+              <img alt class="check_2" src="images/check2.png">
+            </div>
+          </div>
+        </div>
+        <p class="block_6-bottom-text"> La paziente è venuta da me quando pesava 97 kg (il suo massimo). Prima di
+          allora, aveva provato molte diete e il digiuno, che le avevano dato risultati a breve termine e alla fine le
+          avevano fatto prendere il doppio del suo peso normale. Le ho chiesto di sottoporsi a uno screening sanitario:
+          come è risultato, aveva <b> un livello criticamente basso di chetoni. </b> Ecco perché continuava a
+          ingrassare in fretta. Così, le ho subito prescritto un ciclo di USlim. </p>
+        <div class="block_6-bottom-subtext">
+          <p> Il tuo peso dipende dalla quantità di chetoni presenti nel tuo corpo. Più chetoni hai, minore sarà il
+            peso in eccesso. </p>
+        </div>
+      </div>
+      <img alt class="block_6-polygons rellax" data-rellax-percentage="0.5" data-rellax-speed="2"
+        src="images/white_polygons.png" style="transform: translate3d(0px, 1049px, 0px);">
+    </div>
+    <!-- BLOCK_6-END -->
+    <!-- BLOCK_7 -->
+    <div class="block_7">
+      <div class="container-fluid">
+        <h2 class="block_7-title">
+          <div class="pink"> È ORA </div>
+          DI SBARAZZARSI DELLE INSICUREZZE
+        </h2>
+        <h3 class="block_7-subtitle"><span class="pink"> OTTIENI UN CORPO SNELLO: </span> LE TUE AMICHE SARANNO GELOSE:
+          DIVENTERAI UNA CALAMITA PER GLI UOMINI... </h3>
+        <div class="chat_wrap">
+          <div class="message message_left wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/1.png">
+            <div class="message_text">
+              <span> Sei la persona che ho sempre cercato </span>
+              <img alt class="emoji" src="images/heart.png">
+            </div>
+          </div>
+          <div class="message message_right wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/2.png">
+            <div class="message_text">
+              <span> Sei incredibilmente bella </span>
+              <img alt class="emoji" src="images/flower.png">
+              <img alt class="emoji" src="images/flower.png">
+              <img alt class="emoji" src="images/flower.png">
+            </div>
+          </div>
+          <div class="message message_left wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/3.png">
+            <div class="message_text">
+              <span> Accidenti come fai a mangiare così tanto e a continuare a dimagrire??? </span>
+              <img alt class="emoji" src="images/wow.png">
+            </div>
+          </div>
+          <div class="message message_right wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/4.png">
+            <div class="message_text">
+              <span> Ciao! Bellissime foto :) ti va di sentirci? </span>
+              <img alt class="emoji" src="images/love.png">
+            </div>
+          </div>
+          <div class="message message_right web wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/5.png">
+            <div class="message_text">
+              <span> Qual è il tuo segreto? </span>
+            </div>
+          </div>
+          <div class="message message_left web wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/6.png">
+            <div class="message_text">
+              <span> Wow, hai un corpo fantastico! Mi dai il tuo numero? </span>
+            </div>
+          </div>
+          <div class="message message_right web wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/7.png">
+            <div class="message_text">
+              <span> Hai perso veramente un sacco di peso, bel lavoro! Io non riesco a dimagrire qualunque cosa faccia
+              </span>
+              <img alt class="emoji" src="images/sad.png">
+              <img alt class="emoji" src="images/cry.png">
+            </div>
+          </div>
+          <div class="message message_left web wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/8.png">
+            <div class="message_text">
+              <span> Sei una dea. Mi sono appena innamorato di te </span>
+              <img alt class="emoji" src="images/love.png">
+              <img alt class="emoji" src="images/kiss.png">
+              <img alt class="emoji" src="images/heart.png">
+            </div>
+          </div>
+          <div class="message message_right web wow fadeInUp" data-wow-delay="0"
+            style="visibility: hidden; animation-name: none;">
+            <img alt class="message_ava" src="images/9.png">
+            <div class="message_text">
+              <span> Come vorrei avere un corpo come il tuo! </span>
+              <img alt class="emoji" src="images/wow.png">
+            </div>
+          </div>
+        </div>
+        <img alt class="block_7-peoples" src="images/block_7-peoples.png">
+        <img alt class="block_7-leafs rellax" data-rellax-percentage="0.5" data-rellax-speed="2"
+          src="images/block_7-leafs.png" style="transform: translate3d(0px, 1306px, 0px);">
+      </div>
+    </div>
+    <!-- BLOCK_7-END -->
+    <!-- BLOCK_8 -->
+    <div class="block_8">
+      <div class="container-fluid">
+        <h2 class="block_8-title">
+          <div> USlim </div>
+          accelera i risultati
+        </h2>
+        <a class="btn pre_toform" href="#abc"> Ordina </a>
+        <img alt class="block_8-pack" src="images/pack2.png">
+        <img alt class="block_8-line" src="images/metric_line.png">
+      </div>
+      <img alt class="block_8-fish rellax" data-rellax-percentage="0.5" data-rellax-speed="2" src="images/fish.png"
+        style="transform: translate3d(0px, 1329px, 0px);">
+    </div>
+    <!-- BLOCK_8-END -->
+    <!-- BLOCK_9 -->
+    <div class="block_9">
+      <div class="container-fluid">
+        <h2 class="title"> Lavoriamo per te <span class="pink"> 24 ore al giorno, 7 giorni a settimana </span></h2>
+        <div class="block_9-items-wrap cnt-dib slider_3">
+          <div class="block_9-item dib wow fadeInUp">
+            <div class="block_9-item-icon"></div>
+            <div class="block_9-item-title"> Effettua un ordine </div>
+            <div class="block_9-item-text"> Il nostro manager ti richiamerà subito per confermare le tue preferenze di
+              consegna <b> e altri dettagli </b></div>
+          </div>
+          <div class="block_9-item dib wow fadeInUp" data-wow-delay="0.4s">
+            <div class="block_9-item-icon"></div>
+            <div class="block_9-item-title"> Spedizione </div>
+            <div class="block_9-item-text"> I tempi di spedizione dipendono dalla tua città, ma non superano i 14
+              giorni. <b> Non preoccuparti per il tuo ordine! </b></div>
+          </div>
+          <div class="block_9-item dib wow fadeInUp" data-wow-delay="0.6s">
+            <div class="block_9-item-icon"></div>
+            <div class="block_9-item-title"> Pagamento </div>
+            <div class="block_9-item-text"><b> Nessun pagamento anticipato richiesto! </b> Il pagamento avviene <b> al
+                momento del ricevimento </b> dell'ordine </div>
+          </div>
+          <div class="block_9-item dib wow fadeInUp" data-wow-delay="0.8s">
+            <div class="block_9-item-icon"></div>
+            <div class="block_9-item-title"> Garanzia </div>
+            <div class="block_9-item-text"> Quando effettui un acquisto nel nostro negozio online, puoi essere <b>
+                certa dell'alta qualità </b> del prodotto </div>
+          </div>
+        </div>
+        <div class="question_block row">
+          <h2 class="question_title">
+            <div class="green"> HAI ANCORA DOMANDE? </div> Lavoriamo per te
+          </h2>
+          <div class="question_subtitle"> Il supporto online è disponibile 24 ore al giorno, 7 giorni a settimana. Puoi
+            fare una domanda usando il metodo più conveniente per te: </div>
+          <div class="question_wrap col-md-8 col-xs-12">
+            <div class="question_item wow fadeInUp opened" style="visibility: hidden; animation-name: none;">
+              <div class="question_item-inner">
+                <div class="question_text">
+                  <p> Questa preparazione va bene anche per i vegetariani? </p>
+                  <a class="question_button" href> Nascondi risposta </a>
+                </div>
+              </div>
+              <div class="answer_item" style="display: block;"> USlim non è testato sugli animali, non contiene
+                componenti di origine animale e non contravviene alle norme vegane e vegetariane. </div>
+            </div>
+            <div class="question_item wow fadeInUp" data-wow-delay="0.2s"
+              style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+              <div class="question_item-inner">
+                <div class="question_text">
+                  <p> Molte pillole dimagranti influiscono sull’equilibro ormonale. È così anche nel caso di USlim?
+                  </p>
+                  <a class="question_button" href> Nascondi risposta </a>
+                </div>
+              </div>
+              <div class="answer_item"> USlim non contiene sostanze che causano disturbi ormonali. </div>
+            </div>
+            <div class="question_item web wow fadeInUp" data-wow-delay="0.4s"
+              style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+              <div class="question_item-inner">
+                <div class="question_text">
+                  <p> Per quanto tempo si può seguire la dieta keto ed assumere USlim? </p>
+                  <a class="question_button" href> Nascondi risposta </a>
+                </div>
+              </div>
+              <div class="answer_item"> La durata raccomandata del regime dimagrante è di 30 giorni. Se necessario, è
+                possibile ripetere il ciclo dopo una settimana di pausa. </div>
+            </div>
+            <div class="question_item web wow fadeInUp" data-wow-delay="0.5s"
+              style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
+              <div class="question_item-inner">
+                <div class="question_text">
+                  <p> Per dimagrire, è necessario seguire rigidamente le regole della dieta keto o basta prendere
+                    l’integratore?
+                  </p>
+                  <a class="question_button" href> Nascondi risposta </a>
+                </div>
+              </div>
+              <div class="answer_item"> Questa preparazione è stata studiata specificamente per accelerare la
+                trasformazione del grasso in energia da parte dei corpi chetonici o, in parole povere, per la
+                combustione dei grassi. Se la quantità di carboidrati supera quella dei grassi assunti, l’effetto sarà
+                meno pronunciato.
+              </div>
+            </div>
+          </div>
+          <div class="form_wrap col-md-4 col-xs-12">
+            <img alt class="form_prod wow fadeIn" data-wow-delay="0" src="images/pack.png"
+              style="visibility: hidden; animation-name: none;">
+            <h2 class="form-title"> EFFETTUA UN ORDINE </h2>
+            <!-- AD_Form -->
+            <form action="getform.php" method="POST" class="order_form">
+              <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+              <input type="hidden" name="utm_campaign" value="{domonetka}">
+              <input class="inp" name="name" placeholder="Nome" type="text" required>
+              <input class="inp only_number" name="phone" placeholder="Numero di telefono" type="text" required>
+              <div class="prices old_price price_old">
+                <span> Vecchio prezzo: </span>
+                <span> <span class="priceOld"></span> <span class="currencyMain"></span> </span>
+              </div>
+              <div class="prices new_price price_main">
+                <span> Nuovo prezzo: </span>
+                <span> <span class="priceMain"></span> <span class="currencyMain"></span> </span>
+              </div>
+              <button class="btn js_pre_toform button__text"> Ordina </button>
+
+            </form>
+            <!-- AD_Form-end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BLOCK_9-END -->
+    <!-- BLOCK_10 -->
+    <div class="block_10">
+      <div class="container-fluid">
+        <h2 class="block_10-title"> LE TESTIMONIANZE DELLE DONNE <div class="green"> CHE HANNO GIÀ SPERIMENTATO
+            L'EFFETTO DI USlim: </div>
+        </h2>
+        <div class="review_slider">
+          <div class="slide_wrap wow fadeInUp">
+            <div class="slide">
+              <div class="review_photo">
+                <img alt src="images/review1.jpg">
+                <div class="before">
+                  <div> prima </div> 95 kg
+                </div>
+                <div class="after">
+                  <div> dopo </div> 64 kg
+                </div>
+              </div>
+              <div class="review_name"> Erica </div>
+              <div class="review_text"> La dieta chetogenica è decisamente la soluzione adatta a me. Ne sono venuta a
+                conoscenza solo di recente. <b> In pratica si possono mangiare tutti i cibi preferiti e perdere peso.
+                </b> Il mio problema è che consumavo troppi carboidrati e grassi, il che mi ha fatto ingrassare. <b> A
+                  29 anni pesavo 95 kg. </b> Una volta ridotta la quantità di carboidrati, il mio peso è cominciato a
+                diminuire, sebbene continuassi a mangiare patatine fritte. Poi sono venuta a conoscenza di <b> USlim.
+                </b> Quando ho iniziato a usare questo supplemento, <b> il processo è stato ancora più veloce. </b> In
+                totale ho perso 30 kg in 4 mesi. E non ho mai smesso di mangiare patatine fritte! </div>
+            </div>
+          </div>
+          <div class="slide_wrap wow fadeInUp" data-wow-delay="0.2s">
+            <div class="slide">
+              <div class="review_photo">
+                <img alt src="images/review2.jpg">
+                <div class="before">
+                  <div> prima </div> 89 kg
+                </div>
+                <div class="after">
+                  <div> dopo </div> 57 kg
+                </div>
+              </div>
+              <div class="review_name"> Vittoria </div>
+              <div class="review_text"> Da che ho memoria, <b> sono sempre stata a dieta. </b> Il digiuno, i disturbi
+                del sonno e i problemi cutanei erano compagni che non mi abbandonavano mai. A volte dimagrivo, ma poi
+                ricominciavo ad abbuffarmi <b> e ingrassavo ancora di più. Era un circolo vizioso. </b> Ho sentito
+                parlare di <b> USlim </b> per la prima volta dal mio nutrizionista. Inizialmente i miei livelli di
+                chetoni erano pari solo a 0,9 mol, ma dopo un ciclo di USlim sono aumentati a <b> quasi 10 mol. </b>
+                Ho ridotto l'assunzione di carboidrati e visto i risultati quasi immediatamente. <b> Ogni settimana il
+                  mio peso diminuiva di 4-5 kg. </b> Era pura magia. Stavo alla grande, non sentivo la fame e dormivo 7
+                ore ogni notte. </div>
+            </div>
+          </div>
+          <div class="slide_wrap wow fadeInUp" data-wow-delay="0.4s">
+            <div class="slide">
+              <div class="review_photo">
+                <img alt src="images/review3.jpg">
+                <div class="before">
+                  <div> prima </div> 73 kg
+                </div>
+                <div class="after">
+                  <div> dopo </div> 48 kg
+                </div>
+              </div>
+              <div class="review_name"> Laura </div>
+              <div class="review_text"> Sappiamo davvero poco del nostro corpo. Ero all'oscuro dei <b> processi
+                  complessi </b> che si svolgono all'interno del mio organismo finché non ho visitato un nutrizionista
+                e non ho sentito parlare di chetosi. <b> Sono pigra. </b> Quando non avevo voglia di andare in
+                palestra, smettevo semplicemente di mangiare. E se spendevo tanti soldi in cibo, il giorno dopo non
+                mangiavo nulla. Il mio peso fluttuava, +/- 3 kg. Cosa posso dire di <b> USlim </b> ? È un must! Usando
+                questo integratore e seguendo la dieta keto, sono riuscita a perdere un record di 15 kg e a ottenere un
+                <b> corpo in perfetta forma senza recidive. </b> I miei esami delle urine hanno mostrato un aumento sei
+                volte maggiore di chetoni, che non è poi così tanto, ma sono comunque più che soddisfatta dei
+                risultati. </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- BLOCK_10-END -->
+    <!-- BLOCK_11 -->
+    <div class="block_11">
+      <div class="container-fluid">
+        <h2 class="block_11-title wow fadeInLeft" style="visibility: hidden; animation-name: none;"> Rilassati! </h2>
+        <h3 class="block_11-subtitle wow fadeInLeft" data-wow-delay="0.2s"
+          style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"><span class="green"> USlim </span>
+          SI PRENDERÀ CURA DELLA TUA SILHOUETTE MENTRE TU <span class="green"> TI GODI LA VITA! </span></h3>
+        <div class="form_wrap wow fadeInLeft" data-wow-delay="0.4s"
+          style="visibility: hidden; animation-delay: 0.4s; animation-name: none;">
+          <h2 class="form-title" id="abc"> EFFETTUA UN ORDINE </h2>
+          <!-- AD_Form -->
+          <form action="getform.php" class="main_form order_form" id="order_form" method="POST">
+            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+            <input type="hidden" name="utm_campaign" value="{domonetka}">
+            <input class="inp" name="name" placeholder="Nome" type="text" required>
+            <input class="inp only_number" name="phone" placeholder="Numero di telefono" type="text" required>
+            <div class="prices_wrap">
+              <div class="prices old_price price_old">
+                <span> <span class="priceOld"></span> <span class="currencyMain"></span> </span>
+              </div>
+              <div class="prices new_price price_main">
+                <span> <span class="priceMain"></span> <span class="currencyMain"></span> </span>
+              </div>
+            </div>
+            <button class="btn js_pre_toform button__text"> Ordina </button>
+            <div class="toform"></div>
+
+          </form>
+          <!-- AD_Form-end -->
+        </div>
+        <img alt class="block_11-prod" src="images/pack2.png">
+        <img alt class="block_11-metric-line" src="images/metric_line2.png">
+        <img alt class="block_11-girl" src="images/block_11-girl.png">
+        <img alt class="block_11-leaf" src="images/block_11-leaf.png">
+      </div>
+    </div>
+    <!-- BLOCK_11-END -->
+  </div>
+  <script>
+    $(document).ready(function (e) {
+      var tabs = function () {
+        var itemEl = '.question_item',
+          tabEl = '.question_button',
+          tailEl = '.answer_item',
+          openedClass = 'opened';
+
+        $(tabEl).on('click', function (event) {
+          event.preventDefault();
+          $(this).closest(itemEl).toggleClass(openedClass).find(tailEl).slideToggle(500)
+        });
+
+        $(itemEl).eq(0).addClass(openedClass).find(tailEl).slideToggle(500)
+      }
+
+      tabs();
+    });
+  </script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/rellax.min.js"></script>
+  <script src="js/main.js"></script>
+  <link href="css%281%29" rel="stylesheet">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css%282%29" rel="stylesheet">
+
+
+
+
+
+  <style>
+    /* cyrillic-ext */
+
+
+    .cc_widget {
+      position: fixed;
+      top: 0;
+      right: -500px;
+      display: none;
+      width: 0;
+      z-index: 10000;
+      -moz-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      -webkit-transition: all 0.5s ease-out;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .cc_widget .clearfix:after,
+    .cc_widget .clearfix:before {
+      display: table;
+      content: '';
+    }
+
+    .cc_widget .clearfix:after {
+      clear: both;
+    }
+
+    .cc_widget * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .cc_widget__shipment,
+    .cc_widget__pl,
+    .cc_widget__customer {
+      max-width: 500px;
+      min-width: 350px;
+      font-weight: 500;
+      float: right;
+    }
+
+    .cc_widget b b {
+      font-weight: 900;
+    }
+
+    .cc_widget .cc_dtable {
+      display: table;
+    }
+
+    .cc_widget .cc_dtc {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .cc_widget .cc_dtc.vtop {
+      vertical-align: top;
+    }
+
+    .cc_widget .cc_dtc.bot {
+      vertical-align: bottom;
+    }
+
+    .cc_widget__customer.another {
+      background: #2b8dc4;
+      border-color: #2b6f8d;
+    }
+
+    .cc_widget__customer {
+      display: table;
+      background: #5fba4d;
+      border: 2px solid #518d46;
+      margin-top: 30px;
+      min-width: 300px;
+      border-radius: 10px 0px 0px 10px;
+      -moz-border-radius: 10px 0px 0px 10px;
+      -webkit-border-radius: 10px 0px 0px 10px;
+    }
+
+    .cc_widget__customer .cc_dtc {
+      padding: 10px;
+      color: #fff;
+      font-size: 17px;
+    }
+
+    .cc_widget__customer .cc_dtc:first-child {
+      width: 60px;
+      padding-right: 0;
+    }
+
+    .cc_widget__customer .cc_dtc:first-child img {
+      max-width: 100%;
+    }
+
+    .cc_widget__customer .cc_dtc b {
+      font-size: 15px;
+    }
+
+    .cc_widget__customer .cc_dtc text {
+      display: block;
+    }
+
+    .cc_widget__customer .cc_dtc span {
+      color: #1eff00;
+    }
+
+    .cc_widget__customer {
+      display: table;
+      background: #5fba4d;
+      border: 2px solid #518d46;
+      margin-top: 30px;
+      min-width: 300px;
+      border-radius: 10px 0px 0px 10px;
+      -moz-border-radius: 10px 0px 0px 10px;
+      -webkit-border-radius: 10px 0px 0px 10px;
+    }
+
+    .cc_widget__customer .cc_dtc {
+      padding: 10px;
+      color: #fff;
+      font-size: 17px;
+    }
+
+    .cc_widget__customer .cc_dtc:first-child {
+      width: 60px;
+      padding-right: 0;
+    }
+
+    .cc_widget__customer .cc_dtc:first-child img {
+      max-width: 100%;
+    }
+
+    .cc_widget__customer .cc_dtc b {
+      font-size: 15px;
+    }
+
+    .cc_widget__customer .cc_dtc text {
+      display: block;
+    }
+
+    .cc_widget__customer .cc_dtc span {
+      color: #1eff00;
+    }
+
+
+
+    @media screen and (max-width:991px) {
+
+      .cc_widget__shipment,
+      .cc_widget__customer.another,
+      .cc_widget__pl,
+      .cc_dtc,
+      .cc_widget__customer.make_offer,
+      .cc_widget__call.c-alarm__button,
+      .cc_widget.cc_wrapper {
+        display: none !important;
+      }
+    }
+  </style>
+  <div class="cc_widget" style="display: block; right: 0px;"></div>
+
+
+
+  <div class="ac_footer">Global Partners LTD, <br> <a href="privacyEU.html" target="_blank">Privacy
+      Policy</a> </div>
+
+  <script type="text/javascript">
+    $(function () {
+      $("a[href^='#']").click(function () {
+        var _href = $(this).attr("href");
+        $("html, body").animate({
+          scrollTop: $(_href).offset().top + "px"
+        });
+        return false;
+      });
+    });
+  </script>
+<script>
+  const offer_params = {
+      priceMain : '39',
+      customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+      currencyMain: '€',
+      productName : '',
+  };
+
+
+  var productName = document.getElementsByClassName("productName");
+  var priceMain = document.getElementsByClassName("priceMain");
+  var priceOld = document.getElementsByClassName("priceOld");
+  var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+  for (var i = 0; i < productName.length; i++) {
+      productName[i].innerHTML = offer_params.productName;
+  }
+  for (var i = 0; i < priceMain.length; i++) {
+      priceMain[i].innerHTML = offer_params.priceMain;
+  }
+
+
+  if(offer_params.customPriceOld){
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.customPriceOld;
+      }
+  }else{
+      for (var i = 0; i < priceOld.length; i++) {
+          priceOld[i].innerHTML = offer_params.priceMain * 2;
+      }
+  }
+
+
+  for (var i = 0; i < currencyMain.length; i++) {
+      currencyMain[i].innerHTML = offer_params.currencyMain;
+  }
+</script>
+<script>
+$('[name="name"]').on('input change', function () {
+  var val = $(this).val();
+  $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+  var val = $(this).val();
+  $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

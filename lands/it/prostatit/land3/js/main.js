@@ -1,0 +1,1 @@
+$('a[href ^= "#"]').on("click",function(o){var t=$(this).attr("href"),e=$(t).offset();e?(o.preventDefault(),$("body,html").animate({scrollTop:e.top},1e3)):console.log("якорь "+t+" не найден, необходимо проставить ID для якорей")});

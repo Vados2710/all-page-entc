@@ -1,0 +1,579 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Intenskin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Карточка для соцсетей -->
+  <meta itemprop="image" content="media/share/image.jpg">
+  <meta property="og:image" content="media/share/image.jpg">
+  <meta property="og:image:url" content="media/share/image.jpg">
+  <meta property="og:image:secure_url" content="media/share/image.jpg">
+  <meta name="twitter:image" content="media/share/image.jpg">
+
+  <!-- Краткое описание страницы  -->
+  <meta name="description" content="Intenskin">
+  <meta property="og:description" content="Intenskin">
+  <meta name="twitter:description" content="Intenskin">
+
+  <!-- Заголовок страницы, который будет выводится в записи социальной сети -->
+  <meta property="og:title" content="Intenskin">
+  <meta name="twitter:title" content="Intenskin">
+
+  <!-- Ключевые слова страницы  -->
+  <meta name="keywords" content="Intenskin">
+
+  <!-- Отключает формирование ссылки у номера телефона на iOS -->
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Тип карты, по умолчанию используется summary -->
+  <meta name="twitter:card" content="summary">
+
+  <!-- Название сайта -->
+  <meta property="og:site_name" content="Intenskin">
+
+  <!-- Favicon -->
+  <link sizes="16x16" rel="shortcut icon" type="image/png" href="media/favicon/favicon-16x16.png">
+  <link sizes="32x32" rel="icon" type="image/png" href="media/favicon/favicon-32x32.png">
+  <link sizes="192x192" rel="icon" type="image/png" href="media/favicon/android-chrome-192x192.png">
+  <link sizes="180x180" rel="apple-touch-icon" href="media/favicon/apple-touch-icon-180x180.png">
+
+  <!-- Кто принимал участие над разработкой данного сайта -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+  <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="cdn/js/jquery.js"></script>
+</head>
+
+<body>
+  <section class="section section_face">
+    <div class="container">
+      <div class="face">
+        <div class="face__box">
+          <div class="face__logo lt0">
+            intenskin
+          </div>
+          <div class="face__subtitle">
+            <span class="lt1"> <mark>Neocollagenesi</mark> negli strati profondi del derma.</span>
+          </div>
+          <div class="face__product">
+            <img alt="" src="media/product.png">
+            <div class="face__product-circle">
+              <div class="face__product-list"></div>
+            </div>
+            <div class="face__product-bg"></div>
+          </div>
+        </div>
+        <div class="face__box">
+          <form action="getform.php" method="post" class="form order_form" data-aos="fade-left">
+            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+            <input type="hidden" name="utm_campaign" value="{domonetka}">
+            <div class="form__body">
+              <div class="form__head">
+                <p class="lt2"> <span>Sconto</span> sul primo ordine:</p>
+                <div class="form__discont" id="abc">
+                  <span class="lt3">-50%</span>
+                </div>
+              </div>
+              <div class="form__price">
+                <div class="form__price-new">
+                  <b class="lt4">prezzo scontato:</b> <span class="price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+                </div>
+                <div class="form__price-old">
+                  <b class="lt5">vecchio prezzo:</b> <span class="price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+                </div>
+              </div>
+              <label class="form__label"><input class="form__field" type="text" name="name" required><span
+                  class="lt7">Nome</span></label><label class="form__label"><input class="form__field" type="text"
+                  name="phone" required><span class="lt8">Telefono</span></label><button class="form__btn lt9"
+                type="submit">Ordine</button>
+            </div>
+            <div class="form__time">
+              <div class="form__time-title lt10">fino alla fine della promozione:</div>
+              <div class="form__time-box">
+                <div class="form__time-count">
+                  <span>00</span><span class="lt11">ore</span>
+                </div><span class="lt12">:</span>
+                <div class="form__time-count">
+                  <span>21</span><span class="lt13">minuti</span>
+                </div><span class="lt14">:</span>
+                <div class="form__time-count">
+                  <span>45</span><span class="lt15">secondi</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section_time">
+    <div class="container">
+      <div class="time">
+        <img alt="" class="list time__list time__list_1 ui-draggable ui-draggable-handle"
+          src="media/time/list-1.png"><img alt="" class="list time__list time__list_2 ui-draggable ui-draggable-handle"
+          src="media/time/list-2.png"><img alt="" class="list time__list time__list_3 ui-draggable ui-draggable-handle"
+          src="media/time/list-3.png">
+        <div class="twentytwenty-wrapper twentytwenty-horizontal">
+          <div class="time__media twentytwenty-container" style="height: 400px;">
+            <img alt="" class="twentytwenty-before" src="media/time/face-1.jpg"
+              style="clip: rect(0px, 200px, 400px, 0px);"><img alt="" class="twentytwenty-after"
+              src="media/time/face-2.jpg" style="clip: rect(0px, 400px, 400px, 200px);">
+            <div class="twentytwenty-handle" style="left: 200px;">
+              <span class="twentytwenty-left-arrow"></span><span class="twentytwenty-right-arrow"></span>
+            </div>
+          </div>
+        </div>
+        <div class="time__body">
+          <h2 class="section__title time__title lt16">Il tempo passa inosservato, <span>ma inevitabilmente lascia tracce
+              sul nostro aspetto.</span></h2>
+          <p><span class="lt17">Carriera, figli, vita quotidiana - nel quotidiano<br>le donne spesso si dimenticano di
+              se stesse e<br>negano di prendersi cura di sé.</span><span class="lt18">E così, alzandosi una
+              mattina,<br><b>vedi nel riflesso dello specchio una<br>non familiare, stanca vecchia...</b></span><span><b
+                class="lt19">Pensi che la chirurgia plastica ti salverà?</b></span><span><mark class="lt20">Vi
+                sbagliate! E siamo pronti a dimostrarlo</mark> </span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section_indicators">
+    <div class="container">
+      <div class="indicators">
+        <h2
+          class="section__title section__title_black section__title_eclipse-right section__title_left indicators__title lt21">
+          Il viso e il collo sono i principali indicatori di età</h2>
+        <div class="indicators__list">
+          <div class="indicators__item">
+            <div class="indicators__media"></div>
+            <div class="indicators__description lt22">È in queste zone che la pelle è soggetta all'invecchiamento più
+              rapido, alla perdita di elasticità, alla formazione di rughe e all'iperpigmentazione</div>
+          </div>
+          <div class="indicators__item">
+            <div class="indicators__media"></div>
+            <div class="indicators__description lt23">Con l'età, l'ovale perde definizione, i tessuti si afflosciano
+              sotto l'influenza della gravità e appare un'espressione facciale stanca</div>
+          </div>
+          <div class="indicators__item">
+            <div class="indicators__media"></div>
+            <div class="indicators__description lt24">È sbagliato credere che l'unico modo per sbarazzarsi della pelle
+              stanca, delle rughe, delle borse e dei cedimenti sia la chirurgia. È possibile fermare l'invecchiamento e
+              far tornare indietro il tempo con gli ultimi prodotti cosmetici</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section_problem">
+    <div class="container">
+      <div class="problem">
+        <h2 class="section__title section__title_black problem__title lt25">È tutta una questione di collagene</h2>
+        <div class="problem__subtitle lt26">Questa proteina rappresenta una delle importanti strutture di sostegno della
+          nostra pelle. <span>Aiuta a mantenere la fermezza, l'elasticità e la densità della pelle</span></div>
+        <div class="problem__media"><img alt="" src="media/problem/kol.png"></div>
+        <div class="problem__body">
+          <div class="list problem__list problem__list_1 ui-draggable ui-draggable-handle"><img alt=""
+              src="media/problem/list-1.png"></div>
+          <div class="list problem__list problem__list_2 ui-draggable ui-draggable-handle"><img alt=""
+              src="media/problem/list-2.png"></div>
+          <div class="problem__body-title lt27">Come posso fermare l'invecchiamento della mia pelle?</div>
+          <div class="problem__important">
+            <span><img alt="" src="media/problem/!.png"></span>
+            <p class="lt28">La neocollagenesi è il processo con cui il corpo forma molecole di una proteina fibrillare,
+              il collagene, che aumenta la forza e l'elasticità della pelle</p>
+          </div>
+          <p class="lt29">Le cellule della pelle che invecchiano producono basse quantità di collagene e alte quantità
+            di enzimi che impoveriscono il collagene, questo squilibrio rende il processo di invecchiamento
+            irreversibile</p>
+          <p class="lt30">È stato clinicamente provato che <mark>applicando prodotti contenenti acido glicirrizico alla
+              superficie della pelle</mark> si stimola la produzione di nuovo collagene intatto.</p>
+          <p class="lt31">Legare le cellule al nuovo collagene aumenta l'elasticità, che a sua volta <mark>migliora
+              l'equilibrio della produzione e della degradazione del collagene, rallentando il processo di
+              invecchiamento.</mark></p>
+          <div class="problem__box">
+            <div class="problem__head">
+              <span class="lt32">Prima</span><span class="lt33">Dopo</span>
+            </div>
+            <div class="problem__footer">
+              <div class="problem__item"><img alt="" src="media/problem/item-1.png"></div>
+              <div class="problem__item"><img alt="" src="media/problem/item-2.png"></div>
+              <div class="problem__item"><img alt="" src="media/problem/item-3.png"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section_role">
+    <div class="container">
+      <div class="role">
+        <div class="role__box">
+          <div class="role__logo lt34">
+            intenskin
+          </div>
+          <h2 class="section__title role__title lt35">cancella l'età dal viso</h2>
+          <div class="role__info lt36">Un prodotto che soddisfa i più alti standard di sicurezza e offre risultati di
+            lunga durata. <span> <mark>INTENSKIN utilizza la risposta naturale del corpo per formare il proprio
+                collagene.</mark> </span>Con ciò formando una struttura di fibre di collagene per ripristinare e
+            mantenere un chiaro contorno del viso</div>
+          <a href="#abc">
+            <div class="role__btn lt37">ordine</div>
+          </a>
+        </div>
+        <div class="role__box face">
+          <div class="face__product">
+            <img alt="" src="media/product.png">
+            <div class="face__product-circle">
+              <div class="face__product-list"></div>
+            </div>
+            <div class="face__product-bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section_extract">
+    <div class="list section__list-extract section__list-extract-1 ui-draggable ui-draggable-handle"><img alt=""
+        src="media/extract/list-1.png"></div>
+    <div class="list section__list-extract section__list-extract-2 ui-draggable ui-draggable-handle"><img alt=""
+        src="media/extract/list-2.png"></div>
+    <div class="container">
+      <div class="extract">
+        <div class="extract__head">
+          <h2
+            class="section__title section__title_black section__title_eclipse-right section__title_left extract__title lt38">
+            Estratto di radice di liquirizia</h2>
+          <div class="extract__subtitle lt39">Il principio attivo esclusivo è <mark>l'acido glicirrizico, che è il
+              principale componente chimico dell'estratto di radice di liquirizia.</mark> Si trova in forma pura
+            all'interno di microsfere e ha un intenso effetto rassodante, dando volume a tutti gli strati della pelle.
+          </div>
+        </div>
+        <div class="extract__body">
+          <div class="extract__list">
+            <div class="extract__item">
+              <div class="extract__count lt40">
+                – 1.
+              </div>
+              <div class="extract__description lt41">aiuta la pelle a ricostituire e mantenere i livelli ottimali di
+                umidità all'interno delle cellule</div>
+            </div>
+            <div class="extract__item">
+              <div class="extract__count lt42">
+                – 2.
+              </div>
+              <div class="extract__description lt43">stimola la sintesi dell'acido ialuronico</div>
+            </div>
+            <div class="extract__item">
+              <div class="extract__count lt44">
+                – 3.
+              </div>
+              <div class="extract__description lt45">sostiene e rafforza il sistema di autoprotezione delle cellule
+                della pelle</div>
+            </div>
+            <div class="extract__item">
+              <div class="extract__count lt46">
+                – 4.
+              </div>
+              <div class="extract__description lt47">fornisce una carnagione uniforme, rende la pelle liscia e luminosa
+              </div>
+            </div>
+          </div>
+          <div class="extract__product"><img alt="" src="media/product.png"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section_age">
+    <div class="list section__list-age ui-draggable ui-draggable-handle"><img alt="" src="media/age/list.png"></div>
+    <div class="container">
+      <div class="age">
+        <h2
+          class="section__title section__title_black section__title_eclipse-right section__title_left age__title lt48">
+          quali difetti della pelle legati all'età affronta</h2>
+        <div class="age__logo lt49">
+          intenskin
+        </div>
+        <div class="age__list">
+          <div class="age__item lt50">rughe intorno alla bocca, agli occhi, alla fronte, angoli della bocca e degli
+            occhi cadenti</div>
+          <div class="age__item lt51">borse sotto gli occhi, gonfiore, palpebra superiore cadente, occhiaie</div>
+          <div class="age__item lt52">pieghe nasolabiali, colorito spento, indistinzione dell'ovale</div>
+        </div>
+        <a href="#abc">
+          <div class="age__btn lt53">ordine</div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section section_top">
+    <div class="container container__fluid">
+      <div class="top">
+        <div class="top__media"><img alt="" src="media/top/bg.jpg"></div>
+        <div class="top__info">
+          <h2 class="section__title section__title_black top__title lt54">intenskin</h2>
+          <div class="top__subtitle lt55">scelta dei migliori cosmetologi</div>
+          <div class="top__description">
+            <p class="lt56">Conservare la giovinezza e ripristinare l'antica elasticità della pelle è il sogno di molte
+              donne. Ma pochi sanno come affrontare correttamente questo compito. Sto costantemente testando vari
+              prodotti cosmetici su me stesso e sui miei pazienti. Ahimè, pochi soddisfano tutte le caratteristiche
+              dichiarate.<b>INTENSKIN, tuttavia, ha superato tutte le mie aspettative.</b></p>
+            <p class="lt57">Non è solo una cura quotidiana di base. L'effetto dell'uso di INTENSKIN è paragonabile alle
+              procedure cosmetiche più efficaci. E per certi versi li supera</p>
+            <p class="lt58">Giovanna Antoniucci cosmetologa, capo del dipartimento di dermatologia e cosmetologia</p>
+          </div>
+          <div class="top__id"><img alt="" src="media/top/id.png"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section section_commits">
+    <div class="container">
+      <div class="commits">
+        <div class="commits__head">
+          <h2
+            class="section__title section__title_black section__title_eclipse-right section__title_left commits__title lt59">
+            Pazienti reali. Risultati reali</h2>
+        </div>
+        <div class="commits__body">
+          <div class="commits__slider owl-carousel js-commits__slider">
+            <div class="commits__item">
+              <div class="commits__media">
+                <img src="media/commits/img-2.jpg" alt="">
+                <div class="commits__name lt80">Ludovica 49 anni</div>
+              </div>
+              <div class="commits__info">
+                <div class="lt81">Dopo due mesi di utilizzo della crema INTENSKIN sembravo più giovane di 8-10 anni! Non
+                  avevo idea che la crema fosse così efficace</div>
+                <div><span class="lt82">Segni di invecchiamento:</span>
+                  <ul>
+                    <li class="lt83">- Rughe poco profonde</li>
+                    <li class="lt84">- cedimento dei tessuti</li>
+                    <li class="lt85">- carnagione spenta</li>
+                  </ul>
+                </div>
+                <div><span><b class="lt86">Dopo tre mesi di applicazione di INTENSKIN:</b></span>
+                  <ul>
+                    <li class="lt87">+ levigatura delle rughe superficiali</li>
+                    <li class="lt88">+ carnagione rubiconda</li>
+                    <li class="lt89">+ eliminazione delle pieghe nasolabiali</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="commits__item">
+              <div class="commits__media">
+                <img src="media/commits/img-3.jpg" alt="">
+                <div class="commits__name lt90">Maria, 51 anni</div>
+              </div>
+              <div class="commits__info">
+                <div class="lt91">In appena un mese e mezzo di utilizzo della crema ho ottenuto un effetto wow: il mio
+                  viso era luminoso, le rughe si sono quasi tutte attenuate e il gonfiore è diminuito. INTENSKIN è il
+                  migliore che ho provato!</div>
+                <div><span class="lt92">Segni di invecchiamento:</span>
+                  <ul>
+                    <li class="lt93">- ovale facciale gonfio</li>
+                    <li class="lt94">- ptosi</li>
+                    <li class="lt95">- turgore indebolito</li>
+                  </ul>
+                </div>
+                <div><span><b class="lt96">Dopo tre mesi di applicazione di INTENSKIN:</b></span>
+                  <ul>
+                    <li class="lt97">+ ovale facciale stretto</li>
+                    <li class="lt98">+ aumento del turgore della pelle</li>
+                    <li class="lt99">+ gonfiore andato</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="commits__item">
+              <div class="commits__media">
+                <img src="media/commits/img-1.jpg" alt="">
+                <div class="commits__name lt100">Olga, 56 anni</div>
+              </div>
+              <div class="commits__info">
+                <div class="lt101">Non pensavo nemmeno che in soli 3 mesi di utilizzo della crema si potesse ottenere un
+                  tale effetto. Grazie, INTENSKIN!</div>
+                <div><span class="lt102">Segni di invecchiamento:</span>
+                  <ul>
+                    <li class="lt103">- tessuti facciali cadenti</li>
+                    <li class="lt104">- rughe profonde</li>
+                    <li class="lt105">- Contorno inespresso della linea mandibolare</li>
+                  </ul>
+                </div>
+                <div><span><b class="lt106">Dopo tre mesi di applicazione di INTENSKIN:</b></span>
+                  <ul>
+                    <li class="lt107">+ levigatura delle pieghe nasolabiali</li>
+                    <li class="lt108">+ linea mandibolare chiaramente delineata</li>
+                    <li class="lt109">+ ripristino del volume su guance e tempie</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="commits__nextPrev">
+            <span class="lt130">recensione precedente</span>
+            <span class="lt131">Prossima recensione &gt;&gt;&gt;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="section section_face">
+    <div class="container">
+      <div class="face">
+        <div class="face__box">
+          <div class="face__logo lt134">
+            intenskin
+          </div>
+          <div class="face__subtitle">
+            <span class="lt1"> <mark>Neocollagenesi</mark> negli strati profondi del derma.</span>
+          </div>
+          <div class="face__product">
+            <img alt="" src="media/product.png">
+            <div class="face__product-circle">
+              <div class="face__product-list"></div>
+            </div>
+            <div class="face__product-bg"></div>
+          </div>
+        </div>
+        <div class="face__box">
+          <form action="getform.php" method="post" class="form order_form" data-aos="fade-left">
+            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+            <input type="hidden" name="utm_campaign" value="{domonetka}">
+            <div class="form__body">
+              <div class="form__head">
+                <p class="lt2"> <span>Sconto</span> sul primo ordine:</p>
+                <div class="form__discont">
+                  <span class="lt137">-50%</span>
+                </div>
+              </div>
+              <div class="form__price">
+                <div class="form__price-new">
+                  <b class="lt4">prezzo scontato:</b> <span class="price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+                </div>
+                <div class="form__price-old">
+                  <b class="lt5">vecchio prezzo:</b> <span class="price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span>
+                </div>
+              </div>
+              <label class="form__label"><input class="form__field" type="text" name="name" required><span
+                  class="lt7">Nome</span></label><label class="form__label"><input class="form__field" type="text"
+                  name="phone" required><span class="lt8">Telefono</span></label><button class="form__btn lt9"
+                type="submit">Ordine</button>
+            </div>
+            <div class="form__time">
+              <div class="form__time-title lt10">fino alla fine della promozione:</div>
+              <div class="form__time-box">
+                <div class="form__time-count">
+                  <span>00</span><span class="lt11">ore</span>
+                </div><span class="lt146">:</span>
+                <div class="form__time-count">
+                  <span>21</span><span class="lt13">minuti</span>
+                </div><span class="lt148">:</span>
+                <div class="form__time-count">
+                  <span>45</span><span class="lt15">secondi</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section_footer">
+    <div class="container">
+      <div class="footer lt150">
+        Global Partners LTD
+      </div>
+    </div>
+  </section>
+  <script src="js/jquery.js">
+  </script>
+  <script src="js/plugin.js">
+  </script>
+  <script src="js/index.js">
+  </script>
+
+
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '39',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>
