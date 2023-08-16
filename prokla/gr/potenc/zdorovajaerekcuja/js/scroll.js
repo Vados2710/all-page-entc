@@ -1,0 +1,1 @@
+$("a[href='#order']").on("click",function(a){$([document.documentElement,document.body]).animate({scrollTop:$(".toscroll").offset().top},500)});

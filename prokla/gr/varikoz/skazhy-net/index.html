@@ -1,0 +1,924 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Φροντίστε τα πόδια σας και πείτε όχι στους κιρσούς</title>
+  <link href="prod.png" rel="icon" type="image/x-icon">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params=(new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value,key){
+              block = block + key+'='+value+'&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {
+          }
+      })();
+  </script>
+
+  <script>
+    ! function (e, n, A) {
+      function o(e, n) {
+        return typeof e === n
+      }
+
+      function t() {
+        var e, n, A, t, a, i, l;
+        for (var f in r)
+          if (r.hasOwnProperty(f)) {
+            if (e = [], n = r[f], n.name && (e.push(n.name.toLowerCase()), n.options && n.options.aliases && n.options
+                .aliases.length))
+              for (A = 0; A < n.options.aliases.length; A++) e.push(n.options.aliases[A].toLowerCase());
+            for (t = o(n.fn, "function") ? n.fn() : n.fn, a = 0; a < e.length; a++) i = e[a], l = i.split("."), 1 === l
+              .length ? Modernizr[l[0]] = t : (!Modernizr[l[0]] || Modernizr[l[0]] instanceof Boolean || (Modernizr[l[
+                0]] = new Boolean(Modernizr[l[0]])), Modernizr[l[0]][l[1]] = t), s.push((t ? "" : "no-") + l.join("-"))
+          }
+      }
+
+      function a(e) {
+        var n = u.className,
+          A = Modernizr._config.classPrefix || "";
+        if (c && (n = n.baseVal), Modernizr._config.enableJSClass) {
+          var o = new RegExp("(^|\\s)" + A + "no-js(\\s|$)");
+          n = n.replace(o, "$1" + A + "js$2")
+        }
+        Modernizr._config.enableClasses && (n += " " + A + e.join(" " + A), c ? u.className.baseVal = n : u.className =
+          n)
+      }
+
+      function i(e, n) {
+        if ("object" == typeof e)
+          for (var A in e) f(e, A) && i(A, e[A]);
+        else {
+          e = e.toLowerCase();
+          var o = e.split("."),
+            t = Modernizr[o[0]];
+          if (2 == o.length && (t = t[o[1]]), "undefined" != typeof t) return Modernizr;
+          n = "function" == typeof n ? n() : n, 1 == o.length ? Modernizr[o[0]] = n : (!Modernizr[o[0]] || Modernizr[o[
+            0]] instanceof Boolean || (Modernizr[o[0]] = new Boolean(Modernizr[o[0]])), Modernizr[o[0]][o[1]] = n), a(
+            [(n && 0 != n ? "" : "no-") + o.join("-")]), Modernizr._trigger(e, n)
+        }
+        return Modernizr
+      }
+      var s = [],
+        r = [],
+        l = {
+          _version: "3.6.0",
+          _config: {
+            classPrefix: "",
+            enableClasses: !0,
+            enableJSClass: !0,
+            usePrefixes: !0
+          },
+          _q: [],
+          on: function (e, n) {
+            var A = this;
+            setTimeout(function () {
+              n(A[e])
+            }, 0)
+          },
+          addTest: function (e, n, A) {
+            r.push({
+              name: e,
+              fn: n,
+              options: A
+            })
+          },
+          addAsyncTest: function (e) {
+            r.push({
+              name: null,
+              fn: e
+            })
+          }
+        },
+        Modernizr = function () {};
+      Modernizr.prototype = l, Modernizr = new Modernizr;
+      var f, u = n.documentElement,
+        c = "svg" === u.nodeName.toLowerCase();
+      ! function () {
+        var e = {}.hasOwnProperty;
+        f = o(e, "undefined") || o(e.call, "undefined") ? function (e, n) {
+          return n in e && o(e.constructor.prototype[n], "undefined")
+        } : function (n, A) {
+          return e.call(n, A)
+        }
+      }(), l._l = {}, l.on = function (e, n) {
+        this._l[e] || (this._l[e] = []), this._l[e].push(n), Modernizr.hasOwnProperty(e) && setTimeout(function () {
+          Modernizr._trigger(e, Modernizr[e])
+        }, 0)
+      }, l._trigger = function (e, n) {
+        if (this._l[e]) {
+          var A = this._l[e];
+          setTimeout(function () {
+            var e, o;
+            for (e = 0; e < A.length; e++)(o = A[e])(n)
+          }, 0), delete this._l[e]
+        }
+      }, Modernizr._q.push(function () {
+        l.addTest = i
+      }), Modernizr.addAsyncTest(function () {
+        function e(e, n, A) {
+          function o(n) {
+            var o = n && "load" === n.type ? 1 == t.width : !1,
+              a = "webp" === e;
+            i(e, a && o ? new Boolean(o) : o), A && A(n)
+          }
+          var t = new Image;
+          t.onerror = o, t.onload = o, t.src = n
+        }
+        var n = [{
+            uri: "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+            name: "webp"
+          }, {
+            uri: "data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA==",
+            name: "webp.alpha"
+          }, {
+            uri: "data:image/webp;base64,UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+            name: "webp.animation"
+          }, {
+            uri: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=",
+            name: "webp.lossless"
+          }],
+          A = n.shift();
+        e(A.name, A.uri, function (A) {
+          if (A && "load" === A.type)
+            for (var o = 0; o < n.length; o++) e(n[o].name, n[o].uri)
+        })
+      }), t(), a(s), delete l.addTest, delete l.addAsyncTest;
+      for (var p = 0; p < Modernizr._q.length; p++) Modernizr._q[p]();
+      e.Modernizr = Modernizr
+    }(window, document);
+  </script>
+</head>
+
+<body class="fouc ev-date" id="top" style="display: none;">
+  <div class="ng-menu-adaptive ng-menu-action ng-menu-right" id="action_menu_adaptive">
+    <div class="logo"></div>
+    <div class="menu-search">
+      <form action="action" method="get">
+        <div class="input-group"> <input class="form-control" name="q" placeholder="Όποιος ψάχνει βρίσκει..." type="text"> <span class="input-group-append"><button class="btn btn-light bg-white" type="button"><span class="input-group-append"><span class="input-group-append"><span class="input-group-append"><span class="input-group-append"><i aria-hidden="true" class="fal fa-search"></i></span></span></span></span></button></span> </div>
+      </form>
+    </div>
+    <div class="nav nav-pills nav-justified mb-3 mt-3"> <a class="btn btn-light-yellow nav-item menu-btn-feed lt0" href="#order_form">Cinta</a> <a class="btn btn-light-yellow nav-item menu-btn-feed ml-2 mr-2 lt1" href="#order_form">Últimos</a> <a class="btn btn-light-yellow nav-item menu-btn-feed lt2" href="#order_form">Lo
+        mejor</a> </div>
+    <div class="btn btn-red menu-btn-create mb-3 lt3"> <a href="#order_form">Escribir un post</a> </div>
+    <div class="menu-chapter-container"> <a class="menu-chapter-item lt4" href="#order_form">Publicar</a> </div>
+    <div class="menu-chapter-header lt5"> Cómo convertirse en autor <i aria-hidden="true" class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+    <div class="menu-chapter-container menu-chapter-one"> <a class="menu-chapter-item lt6" href="#order_form">Cómo
+        convertirse en autor</a> <a class="menu-chapter-item lt7" href="#order_form">Formación</a> <a class="menu-chapter-item lt8" href="href">Cómo escribir la primera publicación</a> <a class="menu-chapter-item lt9" href="#order_form">Cómo obtener bonos</a> <a class="menu-chapter-item lt10" href="#order_form">Editor de publicaciones</a> </div>
+    <div class="menu-chapter-header lt11"> Comunidades <i aria-hidden="true" class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+    <div class="menu-chapter-container"> <a class="menu-chapter-item lt12" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Ειδήσεις">Noticias</a> <a class="menu-chapter-item lt13" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Προϊόντα περιποίησης">Cosméticos de cuidado</a> <a class="menu-chapter-item lt14" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Καλλυντικά">Cosméticos decorativos</a> <a class="menu-chapter-item lt15" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Βερνίκι-μάνια">Maniaco de esmaltes</a> <a class="menu-chapter-item lt16" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Περιποίηση νυχιών">Diseño de uñas</a> <a class="menu-chapter-item lt17" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Ομορφα μαλλιά">Cabello hermoso</a> <a class="menu-chapter-item lt18" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Αρώματα">Perfumes y fragancias</a> <a class="menu-chapter-item lt19" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Νέες συλλογές και περιορισμένες εκδόσεις">Nuevas colecciones</a> <a class="menu-chapter-item lt20" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Χρώμα και στυλ">Tipo de color y estilo</a> <a class="menu-chapter-item lt21" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Βιβλιοθήκη ομορφιάς">Biblioteca de belleza</a> <a class="menu-chapter-item lt22" data-action="BlockCommunityLink" data-catch="1" data-category="InnerClicks" href="#order_form" title="Προσφορές, ειδήσεις, γεγονότα">Promociones, noticias, eventos</a> <a class="menu-chapter-item lt23" href="#order_form" title="Διαγωνισμοί">Concursos</a> </div>
+    <div class="menu-chapter-header lt24"> Secciones del sitio<i aria-hidden="true" class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+    <div class="menu-chapter-container"> <a class="menu-chapter-item lt25 link__header" href="#order_form">Marcas</a> <a class="menu-chapter-item lt26 link__header" href="#order_form">Ratings</a> <a class="menu-chapter-item lt27 link__header" href="#order_form">Chillout</a> <a class="menu-chapter-item lt28 link__header" href="#order_form">Foro</a> <a class="menu-chapter-item lt29 link__header" href="#order_form">Mercado de belleza</a> <a class="menu-chapter-item lt30 link__header" href="#order_form">Podcasts</a> </div>
+    <div class="menu-chapter-header lt31"> Centro de ayuda <i aria-hidden="true" class="menu-chapter-arrow fal fa-chevron-down"></i> </div>
+    <div class="menu-chapter-container"> <a class="menu-chapter-item lt32" href="#order_form">Formación</a> <a class="menu-chapter-item lt33" href="#order_form">Información</a> <a class="menu-chapter-item lt34" href="#order_form">Reglas</a> <a class="menu-chapter-item lt35" href="#order_form">Acuerdo de usuario</a> </div>
+    <div class="menu-footer"> <a class="lt36" href="#order_form">Comunicación con la administración</a> </div><a class="menu-close" href="#order_form"><i aria-hidden="true" class="fal fa-times"></i></a>
+  </div>
+  <div class="pt-0 pb-0 flex-start navbar-lvl-1-container">
+    <div class="scrollbox navbar-lvl-1">
+      <div class="arrow arrow-left rounded-circle bg-white shadow-sm"> <i aria-hidden="true" class="fas fa-chevron-left"></i> </div><span class="btn btn-link item item-first lt37 link__header" data-action="Brands" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΜΑΡΚΕΣ</a></span> <span class="btn btn-link item lt38 link__header" data-action="Rating" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΑΞΙΟΛΟΓΗΣΗ</a></span> <span class="btn btn-link item lt39 link__header" data-action="Blogs" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΚΟΙΝΟΤΗΤΕΣ</a></span> <span class="btn btn-link item lt40 link__header dn430" data-action="Beautybazar" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΑΓΟΡΑ ΟΜΟΡΦΙΑΣ</a></span><span class="btn btn-link item lt41 link__header" data-action="Chillout" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΨΥΧΟΛΟΓΙΑ</a></span> <span class="btn btn-link item lt42 link__header dn600" data-action="Sandbox" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΦΟΡΟΥΜ </a></span><span class="btn btn-link item lt43 link__header dn600" data-action="Podcasts" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">PODCAST</a></span> <span class="btn btn-link item lt44 link__header dn600" data-action="Help" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΥΠΟΣΤΗΡΙΞΗ</a></span> <span class="btn btn-link item lt45 link__header dn767" data-action="Help Bonus Program" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΣΠΟΡ</a></span> <span class="btn btn-link item lt46 link__header dn767" data-action="Manuals" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΔΙΑΤΡΟΦΗ</a></span><span class="btn btn-link item lt47 link__header dn767" data-action="Rules" data-catch="1" data-category="Navbar-lvl-1"><a href="#order_form">ΓΝΩΡΙΣΤΕ ΜΑΣ</a></span>
+      <div class="arrow arrow-right rounded-circle bg-white shadow-sm"> <i aria-hidden="true" class="fas fa-chevron-right"></i> </div>
+    </div>
+  </div>
+  <div class="shadow-sm navbars">
+    <div class="d-flex justify-content-between align-items-center navbar-lvl-2">
+      <div class="logo"> <a href="#order_form" title="Αισθητικός - σχόλια για καλλυντικά"><img alt="Αισθητικός - σχόλια για καλλυντικά" src="fonts/logo-red-circle.svg"></a> </div>
+      <div class="feed-menu scrollbox mr-auto" style="display: flex;"> <span class="btn btn-link item lt48 dn430" data-action="Fresh" data-catch="1" data-category="Navbar-lvl-2"><a href="#order_form">ΤΕΛΕΥΤΑΙΑ ΑΡΘΡΑ
+          </a></span> <span class="btn btn-link item lt49" data-action="Top" data-catch="1" data-category="Navbar-lvl-2"><a href="#order_form">ΤΑ ΚΑΛΥΤΕΡΑ</a></span> <span class="btn btn-link item menu-btn-create lt50 s__link" data-action="Create" data-catch="1" data-category="Navbar-lvl-2"><a href="#order_form">ΑΠΟΣΤΟΛΗ ΜΗΝΥΜΑΤΟΣ</a></span> <span class="btn btn-link item menu-btn-award lt51 s__link"><a href="#order_form">ΘΕΜΑ ΤΗΣ ΕΒΔΟΜΑΔΑΣ</a></span>
+      </div>
+      <div class="d-flex position-relative">
+        <div class="class"> <span class="btn btn-link p-fal pl-0" data-toggle="dropdown"><a href="#order_form">
+              <span><img class="b-user" src="images/b-user.PNG" alt=""></span> </a></span>
+          <div class="dropdown-menu dropdown-menu-right" id="user_menu_dropdown"> <a class="dropdown-item lt52" href="#order_form">Entrar</a> <a class="dropdown-item lt53" href="#order_form">Regístrate</a> </div>
+        </div>
+        <div class="d-flex">
+          <div class="position-relative"> <a class="btn btn-link p-fal pl-0 bars" href="#order_form"><span><img class="burger" src="images/burger.PNG" alt=""></span></a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ng-search-overlay">
+    <div class="ng-search-container"> <input class="form-control ng-search-input shadow-sm" placeholder="Τι ψάχνουμε;" type="text"> <a class="btn btn-search-close"><i aria-hidden="true" class="fal fa-times"></i></a> </div>
+    <div class="ng-search-result-scroller">
+      <div class="ng-search-result-container"></div>
+    </div>
+  </div>
+  <div class="container-fluid ng-layout">
+    <div class="d-flex flex-nowrap d-flex-centered">
+      <div class="ng-content pl-global pr-global">
+        <div>
+          <div class="topic topic-page ql-postview" id="topic_div" itemscope="itemscope">
+            <div itemprop="author" itemscope="itemscope" style="display:none">
+              <meta content="wonderwall" itemprop="name">
+            </div>
+            <div itemprop="publisher" itemscope="itemscope" style="display: none;"> </div>
+            <div class="post-title">
+              <div class="d-flex align-items-top post-author-details">
+                <div class="post-author-avatar mr-2"><img alt="#" class="img-avatar" src="images/avatar.jpg"></div>
+                <div class="text-truncate d-inline-block post-author-name"> <a class="text-dark lt54" href="#order_form" rel="nofollow" title="wonderwall">Βασιλική Ακρίδα</a>
+                  <p class="text-lgray p-0 m-0 rating"><i aria-hidden="true" class="fal fa-gem mr-1"></i><span class="main__count"><img src="images/dia.PNG" alt=""><span>516</span></span>.<span class="main__count"><img src="images/users.PNG" alt=""><span>39</span></span></p>
+                </div>
+                <div class="btn-sub"> <span class="btn btn-light btn-sm ml-3 kf-friend-a lt55 sb" data-action="PostAuthorSubscribe" data-catch="1" data-category="InternalClicksDesktop" id="profile_user_updates_subscribe_button"><a href="#order_form">Εγγραφείτε</a></span> <a class="btn btn-light btn-sm ml-3 kf-friend-a-remove lt56" data-action="PostAuthorUnsubscribe" data-catch="1" data-category="InternalClicksDesktop" href="#order_form" id="profile_user_updates_unsubscribe_button" style="display:none;">Darse de baja</a> </div>
+              </div>
+              <div class="d-flex post-details">
+                <div class="d-flex"></div>
+                <div class="mr-3 text-sm post-community-desktop"> <a class="text-lgray community lt57" href="#order_form" title="Προϊόντα περιποίησης">Προϊόντα περιποίησης ποδιών</a> </div>
+                <div class="mr-3 text-lgray text-truncate d-inline-block text-sm text-nowrap lt58"> <span class="date-3"></span> </div>
+                <div class="mr-3 text-lgray text-sm text-nowrap"> <a href="#order_form">
+                    <div class="block-wrap">
+                      <div class="eyes"><img src="images/eyes.PNG" alt=""> <span>1150</span></div>
+                    </div>
+                  </a> </div>
+                <div class="text-lgray text-sm text-nowrap cursor-pointer"> <a href="#order_form">
+                    <div class="message"><img src="images/messege.PNG" alt="">
+                      <div>10</div>
+                    </div>
+                  </a> </div>
+              </div>
+              <div class="mb-1 text-sm post-community-mobile"> <a class="text-lgray community lt60" title="Προϊόντα περιποίησης">Προϊόντα περιποίησης ποδιών</a> </div>
+              <div class="mb-2">
+                <h1 class="kf-post-title lt61" itemprop="headline">Φροντίστε τα πόδια σας και πείτε όχι στους κιρσούς
+                </h1>
+              </div>
+            </div>
+            <div class="markers-topic"> <span rel="nofollow"></span>
+              <div class="btn marker-topic marker-test" title="Στάλθηκε για δοκιμή"> <span rel="nofollow"><span class="che"><img src="images/che.PNG" alt=""></span></span> </div><span rel="nofollow"><span class="text-test lt62">ΑΝΕΞΑΡΤΗΤΕΣ ΔΟΚΙΜΕΣ</span></span><br>
+            </div>
+            <div class="content">
+              <div class="article-text-container">
+                <p class="lt63">Γεια σε όλους! Κορίτσια, έχετε λυπηθεί ποτέ τις γυναίκες άνω των 40 που με το ζόρι
+                  περπατούν στο πεζοδρόμιο και τρομάζουν τους πάντες με τα μπλε πόδια τους; Εγώ τους λυπάμαι ιδιαίτερα,
+                  αφού γνωρίζω προσωπικά πόσο δύσκολο είναι να ζεις με τους κιρσούς! Γι' αυτό θα ήθελα να σας πω πώς
+                  μπορείτε να θεραπεύσετε τους κιρσούς μια για πάντα.</p>
+                <figure>
+                  <div class="zoom" itemprop="image" itemscope="itemscope">
+                    <picture>
+                      <!-- <source media="(max-width:479px)" type="image/webp" srcset="images/img1.webp"> -->
+                      <source type="image/webp" srcset="images/img1.webp"> <img width="550" height="357" alt="Darphin Ideal Resource Smoothing Retexturizing Radiance Cream&Darphin Ideal Resource Restorative Bright Eye Cream" class="pic" src="images/img1.jpg" style="width: 100%;"> </picture>
+                  </div>
+                </figure>
+                <p class="lt64 mb0">
+                  </p><p class="lt65">Πρώτον, τα άσχημα νέα: οι κιρσοί είναι συνήθως κληρονομικοί και αν κάποιος στην
+                    οικογένεια τους έχει, τότε κινδυνεύετε. Τώρα τα καλά νέα: υπάρχει τρόπος να τους ξεφορτώσετε.</p>
+                  <figure>
+                    <div class="zoom" data-hyb-ssp-in-image-overlay="5da9697a4d506ef4d812c205" itemprop="image" itemscope="itemscope">
+                      <picture>
+                        <!-- <source media="(max-width:479px)" type="image/webp" srcset="images/img1.webp"> -->
+                        <source type="image/webp" srcset="images/img2.webp"> <img width="550" height="357" alt="Darphin Ideal Resource Smoothing Retexturizing Radiance Cream&Darphin Ideal Resource Restorative Bright Eye Cream" class="pic" src="images/img2.jpg" style="width: 100%;"> </picture>
+                    </div>
+                  </figure>
+                  <p class="lt66">Έτσι ήταν τα πόδια μου όταν ήμουν 14. Ναι, όταν ήμουν έφηβη, άρχισα να παρατηρώ ότι τα
+                    πόδια μου πήρανε "μπλε" χρώμα. Πόσο φρικτές είναι οι φλέβες αράχνης και οι μπλε καμπύλες των
+                    διεσταλμένων φλεβών. Ντρεπόμουν τα λεπτά, αθλητικά πόδια μου και τα έκρυβα μέσα στο τζιν. Η μαμά μου
+                    είπε ότι έφταιγαν οι ορμόνες και θα περάσει σύντομα. Όμως κάθε χρόνο οι φλέβες αράχνης φαινόταν όλο
+                    και περισσότερο μέχρι που κάλυψαν τους γοφούς.</p>
+                  <figure>
+                    <div class="zoom" itemprop="image" itemscope="itemscope">
+                      <picture>
+                        <!-- <source media="(max-width:479px)" type="image/webp" srcset="images/img1.webp"> -->
+                        <source type="image/webp" srcset="images/img3.webp"> <img width="550" height="357" alt="Darphin Ideal Resource Smoothing Retexturizing Radiance Cream&Darphin Ideal Resource Restorative Bright Eye Cream" class="pic" src="images/img3.jpg" style="width: 100%;"> </picture>
+                    </div>
+                  </figure><!-- 1 block -->
+                  <div class="block2">
+                    <div class="cell block2__rightcell">
+                      <div class="block2__info"> Πολλοί άνθρωποι πιστεύουν ότι οι κιρσοί είναι μόνο ένα αισθητικό
+                        πρόβλημα και επομένως δεν κάνουν τίποτα για να σταματήσουν την εξέλιξη της νόσου, αντίθετα
+                        κρύβουν τις πληγείσες περιοχές του σώματος κάτω από τα ρούχα. </div>
+                      <ul class="block2__list">
+                        <li class="block2__list__li"><span class="block2__img"></span> <span class="redText">Θρόμβωση</span><br> Τα αιμοφόρα αγγεία είναι διεσταλμένα και φαίνονται κάτω
+                          από το δέρμα</li>
+                        <li class="block2__list__li"><span class="block2__img block2__img--2"></span> Η βλάβη στην
+                          επιφάνεια του δέρματος <span class="redText">προκαλεί δυνατή αιμορραγία</span></li>
+                        <li class="block2__list__li"><span class="block2__img block2__img--3"></span> <span class="redText">Τροφικό έλκος μπορεί να εμφανιστεί λόγω προβλημάτων</span> με την κυκλοφορία
+                          του αίματος και διαταραχής θρέψης των ιστών.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="lt67">Υπάρχουν όμως και άλλα προβλήματα! Το βράδυ πονούσαν τα πόδια μου, γινόταν
+                    μουδιασμένα, πρησμένα και ζεστά. Και έτσι κάθε μέρα... Προσπάθησα να διορθώση την κατάσταση όσο
+                    καλύτερα μπορούσα. Καθημερινά έκανα ποδόλουτρα, έπαιρνα τονωτικά για τις φλέβες, χρησιμοποιούσα
+                    ειδικά τζελ και φορούσα κάλτσες συμπίεσης. Τίποτα δεν βοήθησε. Απέφευγα να κοιτάζω τα πόδια μου. Οι
+                    φλέβες μου μεγάλωναν κάθε μέρα.</p>
+                  <p class="lt68">Μετά από πολλές άτυχες προσπάθειες να αντιμετωπίσω τους κιρσούς, έχασα κάθε ελπίδα. Η
+                    λύση όμως ήρθε από εκεί που δεν περίμενα.</p><!-- block2 -->
+                  <div class="block5">
+                    <div class="centering">
+                      <div class="table">
+                        <div class="cell cell--50 cell--middle m-hide">
+                          <div class="prod block5__prod">
+                            <picture>
+                              
+                              <img alt="" class="prod" src="prod.png"> </picture>
+                          </div>
+                        </div>
+                        <div class="cell cell--50 cell--middle">
+                          <h2 class="block5__cap ttu"><span class="greenText "><a class="link__prod" href="#order_form"><span class="productName"></span></a></span>: Η ΣΥΓΧΡΟΝΗ ΛΥΣΗ</h2>
+                          <p>Τα περισσότερα προϊόντα σήμερα απλά εξαφανίζουν τα συμπτώματα των κιρσών, μειώνουν το
+                            οίδημα και ανακουφίζουν τον πόνο.</p>
+                          <div class="ttu m-centText"> <span class="greenText bold"><strong>ΣΕ ΑΝΤΙΘΕΣΗ ΜΕ
+                                ΑΥΤΑ,</strong></span> ΤΟ <strong><span class="productName"></span></strong> <span class="greenText bold"><b>ΕΧΕΙ
+                                ΠΟΛΛΑΠΛΕΣ ΔΡΑΣΕΙΣ</b></span> </div>
+                          <div class="block5__set"> <span class="numb numb5">1.</span> Βοηθά στην ανακούφιση της
+                            φλεγμονής των αγγείων και στην εξάλειψη των σχετικών συμπτωμάτων. </div>
+                          <div class="block5__set"> <span class="numb numb5">2.</span> Ενισχύει την κυκλοφορία του
+                            αίματος και τα τοιχώματα των αιμοφόρων αγγείων. </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="lt69">Είχα άδεια και ζήτησα μια νέα λειτουργό να μού φέρει μια έκθεση στο σπίτι μου. Κατά
+                    λάθος παρατήρησε τα πόδια μου κάτω από τη ρόμπα και είπε ότι πριν από ένα μήνα αγόρασε για τη μητέρα
+                    της το <a class="link__prod" href="#order_form"><span class="productName"></span></a> τζελ για κιρσούς, το οποίο τη βοήθησε
+                    μέσα σε μόλις 2 εβδομάδες. Αποφάσισα και εγώ να δοκιμάσω αυτό το τζελ και το παρήγγειλα μέσω
+                    Διαδικτύου. Η παραγγελία ήρθε αρκετά γρήγορα, σε 2 ημέρες.</p>
+                  <picture>
+                    <!-- <source media="(max-width: 767px)" type="image/webp" srcset="images/tov__mob.webp"> <source type="image/webp" srcset="images/prod.webp"> -->
+                    <img alt="" class="prod" src="prod.png"> </picture>
+                  <p class="lt70">Λόγω της μορφής του, αυτό το τζελ είναι πολύ απαλό και έχει ευχάριστο άρωμα. Είναι
+                    αρκετά ελαφρύ και απλώνεται καλά στο δέρμα. Το τζελ απορροφάται εντελώς σε 5 λεπτά, δεν αφήνει
+                    κολλώδη σημάδια και δεν συσφίγγει την επιδερμίδα.</p>
+                 <!-- <figure class="flexBox main-box">
+                    <picture>
+                      <source type="image/webp" srcset="images/img.webp"> <img alt="" class="main__img pic" src="images/img.jpg"> </picture>
+                  </figure>-->
+                  <p class="lt71">Έβαζα το <a class="link__prod" href="#order_form"><span class="productName"></span></a> πρωί και βράδυ. Είναι
+                    πολύ οικονομικό στη χρήση, αρκεί μια λεπτή στρώση για να έχει αποτέλεσμα.</p>
+                  <p class="lt72">Και όντος το αποτέλεσμα υπάρχει. Πρώτα απ' όλα, η κούραση και το βάρος στα πόδια
+                    εξαφανίζονται σχεδόν αμέσως, αυτό το αποτέλεσμα υπάρχει χάρη στο εκχύλισμα της σεντέλας της Ασίας.
+                    Το οίδημα φεύγει μπροστά στα μάτια σας. Θα έχετε μια αίσθηση φρεσκάδας, τα πόδια γίνονται πιο
+                    ανάλαφρα λόγω του αγριοκάστανου που περιέχει το τζελ.</p>
+                 <!-- <figure>
+                    <div class="zoom" itemprop="image" itemscope="itemscope">
+                      <picture>
+                        <source type="image/webp" srcset="images/img7.webp"> <img class="pic" src="images/img7.jpg" alt=""> </picture>
+                    </div>
+                  </figure>-->
+                  <p class="lt73">Δεν θα με πιστέψετε, αλλά την επόμενη μέρα ένιωσα μια ευχάριστη ελαφρότητα, τα πόδια
+                    μου δεν πρηζόταν μέχρι το βράδυ. Πρίν, στη δουλειά, οι αστραγάλοι πρήζονταν αμέσως, ομώς τώρα μέχρι
+                    και οι φλέβες δεν είναι τόσο πρησμένες. Συνέχισα να χρησιμοποιώ το τζελ κάθε μέρα. Και τι συνέβηκε;
+                    Μετά από μερικές εβδομάδες, ξέχασα τον πόνο στα πόδια μου και οι φλέβες αράχνης άρχισαν να φεύγουν.
+                    Ένα μήνα μετά, τα πόδια μου άλλαξαν εντελώς. Οι πρησμένες φλέβες σχεδόν εξαφανίστηκαν. Και τα
+                    κόκκινα και μπλε σημάδια στους γοφούς σαν να μην υπήρχαν ποτέ. Δεν περίμενα το αποτέλεσμα να είναι
+                    τόσο καλό. Το<a class="link__prod" href="#order_form"><span class="productName"></span></a> αποδείχθηκε να είναι μια
+                    πραγματικά καλή, και? το πιο σημαντικό, μια φθηνή λύση.</p><!-- block6 -->
+                  <div class="block6">
+                    <div class="centering">
+                      <h2 class="block6__cap ttu"><span class="greenText">ΠΡΑΓΜΑΤΙΚΟ ΑΠΟΤΕΛΕΣΜΑ</span> ΤΟΥ <span class="productName"></span></h2>
+                      <div class="block6__content">
+                        <ul class="block6__list">
+                          <li class="block6__list__li"> <span class="numb">1.</span> <span class="m-ttu"><span class="greenText">Βοηθά τη βελτίωση της κατάστασης των αιμοφόρων αγγείων</span> και της
+                              ροής του αίματος.</span> <a class="link__prod" href="#order_form"><span class="productName"></span></a> υποστηρίζει
+                            τη μικροκυκλοφορία στο σώμα, βοηθά την ενίσχυση των τριχοειδών αγγείων και τη μείωση της
+                            διαπερατότητάς τους. </li>
+                          <li class="block6__list__li"><span class="numb">2.</span> <span class="m-ttu"><span class="greenText">Βοηθά στην ανακούφιση της φλεγμονής τοιχωμάτων των αιμοφόρων
+                                αγγείων,</span> τα αγγεία γίνονται λιγότερο φανερά κάτω από το δέρμα.</span> Ωστόσο, η
+                            κυκλοφορία του αίματος αποκαθίσταται και, έτσι, διεγείρεται η λειτουργια της καρδιάς, του
+                            εγκεφάλου και των εντέρων.</li>
+                          <li class="block6__list__li expert">
+                            <picture>
+                              <source type="image/webp" srcset="images/block6__doc--s.webp"> <img alt="" class="pic" src="images/block6__doc--s.jpg"> </picture>
+                            <div class="expert__desc"> <span class="before">Πριν</span> <span class="after">Μετα</span>
+                            </div>
+                          </li>
+                        </ul>
+                        <!-- <div class="block6__doc"> <span class="before"> Până </span> <span class="after"> După </span> </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <figure></figure>
+                  <p class="lt74">Τα φυσικά εκχυλίσματα στη σύνθεση του τζελ ενισχύουν την κυκλοφορία του αίματος. Έτσι,
+                    το τζελ βοηθά την εξάλειψη των μπλε φλεβών και την πρόληψη αυτού του προβλήματος στο μέλλον. Μέσα σε
+                    ένα μήνα χρήσης του τζελ, απαλλάχτηκα από όλα τα σημάδια κιρσών. Δεν έχω λόγια να πω πόσο χαρούμενη
+                    είμαι που κοιτάω τα λεπτά και όμορφα μου πόδια. Είναι ένα υπέροχο συναίσθημα! Κοιτάξτε τη διαφορά:
+                  </p>
+                  <figure>
+                    <div class="zoom" itemprop="image" itemscope="itemscope">
+                      <picture>
+                        <source type="image/webp" srcset="images/img11.webp"> <img class="pic" src="images/img11.jpg" alt=""> </picture>
+                    </div>
+                  </figure>
+                  <p class="lt75">Τελικά σταμάτησα να κρύβω τα πόδια μου κάτω από μακριές φούστες και παντελόνια και
+                    φοράω τα μίνι. Αν γνωρίζετε τι σημαίνουν η αίσθηση του βάρους στα πόδια, το πρήξιμο, οι τρομερές
+                    διογκωμένες φλέβες και ψάχνετε για λύση, δοκιμάστε το <a class="link__prod" href="#order_form"><span class="productName"></span></a>. Είναι σαν τις κάλτσες συμπίεσης, μόνο καλύτερα. Φροντίστε καλά τα
+                    πόδια σας και σίγουρα θα το "εκτιμήσουν".</p><!-- block10 -->
+                  <div class="block10">
+                    <h5 class="block10__cap ttu"><span class="redText">ΑΠΟΤΕΛΕΣΜΑ ΧΡΗΣΗΣ του <span class="productName"></span>,</span><br> ΒΗΜΑ
+                      ΒΗΜΑ:</h5>
+                    <ul class="block10-list">
+                      <!-- 1 -->
+                      <li class="block10-item">
+                        <div class="block10-text">
+                          <div class="block10__smallcap"> <span class="greenText"><span class="block10__numb">1.</span>
+                              ΒΕΛΤΙΩΜΕΝΗ ΚΥΚΛΟΦΟΡΙΑ ΑΙΜΑΤΟΣ</span> </div>
+                          <p class="block10-item__desc">Η ανάπτυξη κιρσών προκαλεί διαταραχή κυκλοφορίας του αίματος,
+                            οδηγόντας στο σχηματισμό θρόμβων αίματος. Βασικά, η κυκλοφορία του αίματος γίνεται από κάτω
+                            προς τα πάνω, από τα πόδια προς το στήθος. Η στασιμότητα σημαίνει ότι το μεγαλύτερο ποσό του
+                            αίματος παραμένει στα κάτω άκρα. Το <span class="productName"></span> βοηθά την ομαλοποίηση της κυκλοφορίας του
+                            αίματος, την πρόληψη των θρόμβων αίματος και τη θρέψη των αγγείων.</p><i class="block10-item__note"></i>
+                        </div>
+                        <div class="block10__img">
+                          <picture>
+                            <source type="image/webp" srcset="images/b10_1.webp"> <img alt="" src="images/b10_1.jpg">
+                          </picture>
+                        </div>
+                      </li><!-- 2 -->
+                      <li class="block10-item">
+                        <div class="block10-text middle">
+                          <div class="block10__smallcap"> <span class="block10__numb">2.</span> <span class="greenText">ΕΝΙΣΧΥΣΗ ΤΗΣ ΔΟΜΗΣ ΤΩΝ ΤΟΙΧΩΜΑΤΩΝ ΤΩΝ ΦΛΕΒΩΝ</span> </div>
+                          <p class="block10-item__desc">Οι παθήσεις των αγγείων προκαλούν τα κύτταρα του εσωτερικού
+                            στρώματος των αγγείων να εξασθενούν, και τα τοιχώματα τους γίνονται πιο λεπτά.</p><i class="block10-item__note">Τα συστατικά του τζελ βοηθούν την ενίσχυση της στιβάδα
+                            ενδοθηλιακών κυττάρων και κάνουν τα αγγεία να είναι πιο σταθερά και ελαστικά. Το τζελ έχει
+                            θετική επίδραση στα τοιχώματα των φλεβών.</i>
+                        </div>
+                        <div class="block10__img">
+                          <picture>
+                            <source type="image/webp" srcset="images/b10_2.webp"> <img alt="" src="images/b10_2.jpg">
+                          </picture>
+                        </div>
+                      </li><!-- 3 -->
+                      <li class="block10-item">
+                        <div class="block10-text">
+                          <div class="block10__smallcap"> <span class="greenText"><span class="block10__numb">3.</span>
+                              ΕΞΑΛΕΙΨΗ ΤΟΥ ΠΟΝΟΥ ΚΑΙ ΤΗΣ ΔΥΣΦΟΡΙΑΣ</span> </div>
+                          <p class="block10-item__desc">Το οίδημα και η φλεγμονή των φλεβών στα οποία μαζεύονται αίμα
+                            και θρόμβοι, προκαλούν δυσφορία και διαταράσσουν τη καθημερινή ζωή. </p><i class="block10-item__note">Το τζελ στοχεύει την αιτία του πόνου, έχει θετική μακροπρόθεσμη
+                            επίδραση, και φέρνει ανακούφιση λόγω της περιεκτικότητας των εκχυλισμάτων κάστανου, σεντέλας
+                            και λαγομηλιάς.</i>
+                        </div>
+                        <div class="block10__img">
+                          <picture>
+                            <source type="image/webp" srcset="images/b10_3.webp"> <img alt="" src="images/b10_3.jpg">
+                          </picture>
+                        </div>
+                      </li>
+                    </ul>
+                  </div><!-- block 11 -->
+
+                <div class="features-wrapper"></div>
+
+                <style>
+                  .wheel img {
+                    max-width: 100%;
+                    margin: 0;
+                  }
+                </style>
+
+              </div>
+            </div>
+          </div>
+        </div> <a id="comments"></a> <!-- Comments -->
+        <div class="comments ml-4">
+          <!-- Comments Header -->
+          <h4 class="mb-3 lt120">Σχόλια <span class="text-secondary" id="count-comments">10</span></h4>
+          <div class="script-loader" data-payload="3247628" data-scriptaction="setidcommentlast" id="last_comment_id" style="display:none;"></div>
+          <div class="comment-wrap">
+            <div class="bio"> <img alt="" class="comment__avatar" src="images/img13.jpg">
+              <div class="comment__name"> Στυλιανή </div>
+              <div class="comment__date date-3"></div>
+            </div>
+            <div class="comment__text"> Εντυπωσιακό αποτέλεσμα! Δεν θα πίστευα ποτέ ότι ένα τζελ μόνο του μπορεί να
+              μεταμορφώσει τα πόδια μου. 😊 </div>
+          </div>
+          <div class="comment-wrap">
+            <div class="bio">
+              <picture>
+                <source type="image/webp" srcset="images/img14.webp"> <img alt="" class="comment__avatar" src="images/img14.png"> </picture>
+              <div class="comment__name"> Ελισάβετ </div>
+              <div class="comment__date date-3"></div>
+            </div>
+            <div class="comment__text"> Έχω και εγώ μεγάλους κιρσούς, θα παραγγείλω αυτό το τζελ, ελπίζω πως θα
+              βοηθήσει! </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio">
+              <picture>
+                <source type="image/webp" srcset="images/img15.webp"> <img alt="" class="comment__avatar" src="images/img15.jpg"> </picture>
+              <div class="comment__name"> Άννα </div>
+              <div class="comment__date date-3"></div>
+            </div>
+            <div class="comment__text"> Δουλεύω σερβιτόρα σε μια καφετέρια. Δεν κάθομαι ούτε λεπτό, αλλιώς μου βάζουν
+              πρόστιμο. Μετά τη βάρδια τα πόδια πρήζονται και πονάνε. Και ύστερα βγαίνουν κόμποι... Στην αρχή, όπως
+              όλοι, αγόραζα από το φαρμακείο διάφορα τζελ, χάπια και βότανα για ποδόλουτρο. Τίποτα όμως δεν βοήθησε. Μία
+              στιγμή έμαθα για το <a class="link__prod" href="#order_form"><span class="productName"></span></a>. Είναι σε καλή τιμή και πολύ πιο
+              αποτελεσματικό από οτιδήποτε έχω δοκιμάσει. Δεν νομίζω ότι θα μπορούσα να αντέξω πολύ σε αυτή τη δουλειά
+              αν δεν υπήρχε αυτό το τζελ. Πριν, τα πόδια μου ήταν βαριά σαν το σίδερο, αλλά τώρα δεν κουράζομαι καθόλου.
+              Η διαφορά είναι μεγάλη! </div>
+            <div class="comment__rev">
+              <!--<picture>
+                <source type="image/webp" srcset="images/img16.webp"> <img alt="" src="images/img16.jpg"> </picture>-->
+            </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio">
+              <picture>
+                <source type="image/webp" srcset="images/img17.webp"> <img alt="" class="comment__avatar" src="images/img17.jpg"> </picture>
+              <div class="comment__name"> Χριστίνα </div>
+              <div class="comment__date date-2"></div>
+            </div>
+            <div class="comment__text"> Αλήθεια, είναι τόσο αποτελεσματικό αυτό το τζελ; Δεν μπορώ καν να το πιστέψω...
+            </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio"> <img alt="" class="comment__avatar" src="images/img18.jpg">
+              <div class="comment__name"> Αριστέα </div>
+              <div class="comment__date date-2"></div>
+            </div>
+            <div class="comment__text"> Ούτε εγώ το πίστευα μέχρι που το δοκίμασα. Πριν από 3 χρόνια είχα προβλήματα με
+              τα πόδια μου: οιδήματα, πρησμένες φλέβες, κάψιμο και αίσθημα βάρους. Δοκίμαζα διαφορετικές θεραπείες,
+              σκεφτόμουν πως δεν υπάρχει σωτηρία. Όμως πρόσφατα ο γιατρός μου συνέστησε ένα νέο προϊόν, είπε μπορεί να
+              βοηθήσει. Με το <a class="link__prod" href="#order_form"><span class="productName"></span></a> λύθηκαν όλα τα προβλήματά μου μέσα
+              σε ένα μήνα. Βάρος, οίδημα και οι μπλε φλέβες εξαφανίστηκαν. Το συστήνω! </div>
+            <div class="comment__rev">
+             <!-- <picture>
+                <source type="image/webp" srcset="images/img19.webp"> <img alt="" src="images/img19.jpg"> </picture>-->
+            </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio"> <img alt="" class="comment__avatar" src="images/img20.jpg">
+              <div class="comment__name"> Βικτόρια </div>
+              <div class="comment__date date-2"></div>
+            </div>
+            <div class="comment__text"> Τι αποτέλεσμα! πρέπει επίσης να δοκιμάσω </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio"> <img alt="" class="comment__avatar" src="images/img21.jpg">
+              <div class="comment__name"> Σταυρούλα </div>
+              <div class="comment__date date-2"></div>
+            </div>
+            <div class="comment__text"> Έμαθα για αυτό το τζελ από μια φίλη, όμως δεν τη βοήθησε. Το παρήγγειλε από ένα
+              κατάστημα στο Διαδίκτυο. </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio"> <img alt="" class="comment__avatar" src="images/img22.jpg">
+              <div class="comment__name"> Παρασκευή </div>
+              <div class="comment__date date-1"></div>
+            </div>
+            <div class="comment__text"> Ξέρεις τι, μάλλον παρήγγειλε μια απομίμηση. Εγώ ο ίδιος υποφέρω από κιρσούς για
+              μεγάλο χρονικό διάστημα και σοβαρά, με κόμβους και πρησμένες φλέβες, και όταν άρχισα να υποφέρω από οίδημα
+              στα πόδια, δοκίμασα αυτό το τζελ! Από το έχω πάντα μαζί μου. Στο δρόμο και στο σπίτι. Πραγματικά, βοηθάει
+              γρήγορα. Το συνιστώ λοιπόν, το γνήσιο <a class="link__prod" href="#order_form"><span class="productName"></span></a> είναι έτσι.
+            </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio"> <img alt="" class="comment__avatar" src="images/img24.jpg">
+              <div class="comment__name"> Παρασκευή </div>
+              <div class="comment__date date-1"></div>
+            </div>
+            <div class="comment__text"> Ευχαριστώ πολύ για τα σχόλιά. Οι φλέβες με ταλαιπωρούν πολλά χρόνια, σίγουρα θα
+              δοκιμάσω αυτό το τζελ. </div>
+          </div><!-- =============== -->
+          <div class="comment-wrap">
+            <div class="bio"> <img alt="" class="comment__avatar" src="images/img25.jpg">
+              <div class="comment__name"> Στεφανία </div>
+              <div class="comment__date date-0"> 20/12/2022 </div>
+            </div>
+            <div class="comment__text"> Χρησιμοποιώ το <a class="link__prod" href="#order_form"><span class="productName"></span></a> μόνο για
+              μία εβδομάδα και τα πόδια μου πρήζονται λιγότερο κατά τη διάρκεια της ημέρας, δεν πονάνε πλέον όταν
+              περπατάω. Ακόμη και οι φλέβες της αράχνης δεν φαίνονται τόσο πολύ. Ελπίζω σύντομα, επίσης, να ξεχάσω τους
+              κιρσούς, σαν ένα κακό όνειρο. </div>
+          </div>
+          <div class="block14" id="order">
+            <div class="centering">
+              <h1 class="block14__cap ttu">ΟΜΟΡΦΑ ΠΟΔΙΑ ΕΙΝΑΙ ΤΩΡΑ ΠΡΑΓΜΑΤΙΚΟΤΗΤΑ</h1>
+              <div class="block14-content">
+                <div class="block14__prod">
+                  <picture>
+                    <!-- <source media="(max-width: 767px)" type="image/webp" srcset="images/tov__mob.webp"> <source type="image/webp" srcset="images/prod.webp"> -->
+                    <img alt="" class="prod" src="prod.png"> </picture>
+                  <div class="prod-sale"> <span class="text">Έκπτωση</span>
+                    <div class="sale__numb"> 50% </div>
+                  </div>
+                </div>
+                <form action="getform.php" class="oldform al-form order_form x_order_form" id="order_form" method="post" name="order_form">
+                  <input type="hidden" name="utm_source" value="{clickid}">
+                  <input type="hidden" name="utm_campaign" value="{t2}">
+                  <div class="form__cap"> Παραγγελία </div>
+                  <div class="oldPricesText"> Παλιά τιμή: <span class="js_old_price_curs al-cost-promo price_old"><span class="price_main_value x_price_previous"><span class="priceOld"></span></span> <span class="price_main_currency x_currency"><span class="currencyMain"></span></span></span> </div>
+                  <div class="js_new_price_curs"> Νέα τιμή: <span class="al-cost price_main"><span class="price_main_value x_price_current"><span class="priceMain"></span></span> <span class="price_main_currency x_currency"><span class="currencyMain"></span></span></span> </div>
+                  <div class="terms">
+                    <!-- <p class="terms__text">Έναρξη προσφοράς <span class="date-7">20/12/2022</span></p> -->
+                    <p class="terms__text">Η προσφορά λήγει στις <span class="date-0">21/12/2022</span></p>
+                  </div><input class="inpu" name="name" placeholder="Ονοματεπώνυμο" required type="text"> <input class="inpu only_number" name="phone" placeholder="Αριθμός τηλεφώνου" required type="text">
+                  <!-- --> <button class="button js_pre_toform" type="submit"><span class="button__text">Παραγγελία</span></button>
+                  <div class="toform"></div>
+               </form>
+              </div>
+            </div>
+          </div> <span id="children-0"></span> <a id="t-r"></a>
+          <div class="re-t" id="new_comment_add" style="display:none;"> <button class="btn btn-light lt151">Añadir un
+              comentario</button> </div>
+          <!-- <div class="reply_3 reply" data-replyid="0" id="reply_0" style="display: block;"> <div class=" comment-new mb-4"> <div class="content"> <div class="text kf-comment-preview-holder" id="comment_preview_0" style="display: none;"></div> </div> </div> <div class="re-f" id="full_comment_form_div"> <div id="response_topic_title_div mb-2"></div> <div class="alert alert-success lt152" style="margin-bottom: 10px;">En los comentarios no discutimos la apariencia del autor y no publicamos enlaces a recursos de terceros.</div> <div class="d-flex panel"> <a class="btn btn-light btn-sm mr-1" href title="жирный"><i aria-hidden="true" class="fal fa-bold"></i></a><a class="btn btn-light btn-sm mr-1" href title="курсив"><i aria-hidden="true" class="fal fa-italic"></i></a><a class="btn btn-light btn-sm mr-1" href title="зачеркнутый"><i aria-hidden="true" class="fal fa-strikethrough"></i></a><a class="btn btn-light btn-sm mr-1" href><i aria-hidden="true" class="fal fa-image"></i></a><a class="btn btn-light btn-sm mr-1" href title="видео"><i aria-hidden="true" class="fal fa-film"></i></a><a class="btn btn-light btn-sm mr-1" href><i aria-hidden="true" class="fal fa-smile"></i></a><a class="btn btn-light btn-sm mr-1" href title="Упомянуть пользователя"><i aria-hidden="true" class="fal fa-user"></i></a> </div> <form action enctype="multipart/form-data" id="form_comment" method="post" name="form_comment" onsubmit="return false;"> <textarea class="form-control mt-2 mb-2" id="js-textarea" name="comment_text" placeholder rows="5" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 134px;"></textarea> <div class="d-flex mb-5"> <button class="btn btn-light mr-2 lt153" id="js-buttonGood" name="submit_comment" type="submit">Enviar</button> <div class="lt154" id="js-commentsGood">Tu comentario se envía a la moderación</div> <style class="lt155"> #js-commentsGood {display: none;color: #155724;background-color: #d4edda;border-color: #c3e6cb;border-radius: .25rem;padding: .75rem 1.25rem;}.commentsGood_active {display: block !important;color: #155724;background-color: #d4edda;border-color: #c3e6cb;border-radius: .25rem;padding: .75rem 1.25rem;} </style> </div> <script> function handleClick() {var $area = document.getElementById('js-textarea');if (!$area.value == ' ') {$txt.classList.add('commentsGood_active');$area.value = ' ';$btn.removeEventListener("click", handleClick);}};var $txt = document.getElementById('js-commentsGood');var $btn = document.getElementById('js-buttonGood');$btn.addEventListener("click", handleClick); </script><input id="form_comment_reply" name="reply" type="hidden" value><input id="form_comment_action" type="hidden" value><input name="cmt_target_id" type="hidden" value="105250"><input id="cmt_topic_id" name="cmt_topic_id" type="hidden" value="105250"> </form> </div> </div> -->
+        </div>
+        <div class="b-under-comment-header">
+          <!-- [m] 336x280 comments inarticle -->
+          <div style="margin: 0 15px;">
+            <div class="__lxG__multi __lxG__multi_lx_644232" data-cnt="1" id="lx_644232"></div>
+          </div>
+        </div>
+        <div class="modal fade bs-modal modal-upload" id="bs_modal_load_img" role="dialog" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title lt156">Añadir imagen</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true" class="lt157">×</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group"> <span class="button fileinput-button"><span class="lt158">Selecciona el
+                      archivo</span><input id="modal_load_img_file_input" multiple="multiple" name="img_file" style="display:inline-block;" type="file"></span> </div>
+                <div class="form-group lt161" id="modal_img_load_loader_div" style="display:none;"> Cargando... </div>
+              </div>
+              <div class="modal-footer"> <button class="btn btn-light border lt162" data-dismiss="modal" type="button">Cancelar</button> </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade bs-modal" id="bs_modal_add_smile" role="dialog" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title lt163">Emoticonos</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true" class="lt164">×</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group" id="modal_smile_warning" style="display:none;"></div>
+                <div class="form-group smiles"> <a href="#order_form"><i class="sm sm-smile"> </i></a> <a href="#order_form"><i class="sm sm-wink"> </i></a> <a href="#order_form"><i class="sm sm-rofl">
+                    </i></a> <a href="#order_form"><i class="sm sm-tongue"> </i></a> <a href="#order_form"><i class="sm sm-grin"> </i></a> <a href="#order_form"><i class="sm sm-kiss"> </i></a> <a href="#order_form"><i class="sm sm-blush"> </i></a> <a href="#order_form"><i class="sm sm-inlove">
+                    </i></a> <a href="#order_form"><i class="sm sm-angel"> </i></a> <a href="#order_form"><i class="sm sm-crazy"> </i></a> <a href="#order_form"><i class="sm sm-sad"> </i></a> <a href="#order_form"><i class="sm sm-frown"> </i></a> <a href="#order_form"><i class="sm sm-crying">
+                    </i></a> <a href="#order_form"><i class="sm sm-ambivalent"> </i></a> <a href="#order_form"><i class="sm sm-regret"> </i></a> <a href="#order_form"><i class="sm sm-devil"> </i></a> <a href="#order_form"><i class="sm sm-sarcastic"> </i></a> <a href="#order_form"><i class="sm sm-shocked"> </i></a> <a href="#order_form"><i class="sm sm-yum"> </i></a> <a href="#order_form"><i class="sm sm-spy"> </i></a> <a href="#order_form"><i class="sm sm-clever">
+                    </i></a> <a href="#order_form"><i class="sm sm-silent"> </i></a> <a href="#order_form"><i class="sm sm-inhypnose"> </i></a> <a href="#order_form"><i class="sm sm-attention"> </i></a> <a href="#order_form"><i class="sm sm-pirate"> </i></a> <a href="#order_form"><i class="sm sm-scream">
+                    </i></a> <a href="#order_form"><i class="sm sm-thumb-up"> </i></a> <a href="#order_form"><i class="sm sm-thumb-down"> </i></a> <a href="#order_form"><i class="sm sm-angry"> </i></a> <a href="#order_form"><i class="sm sm-veryangry"> </i></a> <a href="#order_form"><i class="sm sm-money"> </i></a> <a href="#order_form"><i class="sm sm-sick"> </i></a> </div>
+              </div>
+              <div class="modal-footer"> <button class="btn btn-light border lt165" data-dismiss="modal" type="button">Cancelar</button> </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade bs-modal" id="bs_modal_add_friend" role="dialog" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title lt166">Solicitud de amistad</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true" class="lt167">×</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <div class="form-group"> <label class="lt168">Dile al autor de wonderwall por qué quieres hacer
+                      amigos:</label> <textarea class="form-control" id="friend_message" rows="7"></textarea> </div>
+                </div>
+              </div>
+              <div class="modal-footer"> <button class="btn btn-primary lt169" name="submit_send" type="submit">Enviar</button> <button class="btn btn-light border lt170" data-dismiss="modal" type="button">Cerrar</button> </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade bs-modal modal-oauth" id="bs_modal_unauth_comment" role="dialog" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title lt171">Enviar un comentario</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true" class="lt172">×</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group lt173"> Inicia sesión con <div class="oauth" style="margin-left: 2em">
+                    <ul class="oauth" style="display:inline-block;">
+                      <li> <a class="contact" href="#order_form" title="Iniciar sesión a través de Vkontakte"></a> </li>
+                      <li> <a class="licokniga" href="#order_form" title="Iniciar sesión a través de Facebook"></a>
+                      </li>
+                      <li> <a class="blogger" href="#order_form" title="Iniciar sesión a través de Google Blogger"></a>
+                      </li>
+                      <li> <a class="ok" href="#order_form" title="Iniciar sesión a través de Odnoklassniki"></a> </li>
+                      <li> <a class="mail" href="#order_form" title="Iniciar sesión a través de Mail.ru"></a> </li>
+                      <li> <a class="yandex" href="#order_form" title="Iniciar sesión a través de Yandex"></a> </li>
+                    </ul>
+                  </div>o<a href="#order_form">registrarse</a> </div>
+              </div>
+              <div class="modal-footer"> <button class="btn btn-light border lt174" data-dismiss="modal" type="button">Cancelar</button> </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade bs-modal" id="bs_modal_comment_premod" role="dialog" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title lt175">Premoderación de comentarios</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true" class="lt176">×</span></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group lt177"> ¡Hola!<br> Todavía estamos muy poco familiarizados, por lo que antes de
+                  que todos vean tu comentario, debes pasar la verificación. Por lo general, no toma más de un par de
+                  horas. Después de la aprobación de 50 comentarios, serás capaz de publicarlos sin premoderación. Tu
+                  progreso se mostrará sobre el formulario para agregar comentarios. </div>
+              </div>
+              <div class="modal-footer"> <button class="btn btn-light border lt178" data-dismiss="modal" type="button">Cerrar</button> </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- /Comments -->
+      </div>
+      <div class="ng-sidebar sidebar d-none ng-right-sidebar" style="backface-visibility:hidden !important;">
+        <div class="block block-list p-0 block-list_mt">
+          <div class="block-title lt179"> Συζητηση </div>
+          <div class="data-loader" data-class="blockloader" data-loader="1" data-type="js-loader" data-varname="lsBlockStream" style="display:none;"></div><a class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments" data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt180">Τι σας βοηθά με τους κιρσούς;</span>
+            <span class="block-stream-details mr-1 nowrap"><span class="s-message"><img src="images/s-message.PNG" alt="">40</span></span><span class="block-stream-user lt181">Νεκτάρια</span></a> <a class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments" data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt182">Τα πόδια μου είναι πρησμένα, τι να
+              κάνω;</span> <span class="block-stream-details mr-1 nowrap"><span class="s-message"><img src="images/s-message.PNG" alt=""></span>18</span><span class="block-stream-user lt183">Μαργαρίτα19732</span></a> <a class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments" data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt184">Κορυφαία προϊόντα που δυναμώνουν τα
+              αιμοφόρα αγγεία</span> <span class="block-stream-details mr-1 nowrap"><span class="s-message"><img src="images/s-message.PNG" alt=""></span>18</span><span class="block-stream-user lt185">Κυριακή
+              Παπανδρέου</span></a> <a class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments" data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt186">Πώς να κρύψω τις φλέβες αράχνης στα πόδια;</span> <span class="block-stream-details mr-1 nowrap"><span class="s-message"><img src="images/s-message.PNG" alt=""></span>2</span><span class="block-stream-user lt187">Όμορφη _λιβελλούλη</span></a><a class="btn btn-link pl-0 pr-0 text-left no-hover text-muted" data-action="StreamComments" data-catch="1" data-category="Sidebar" href="#order_form"><span class="mr-1 lt188"> Αν η μαμά έχει κιρσούς, θα τους έχω κι
+              εγώ; Θέλω τη γνώμη σας</span><span class="block-stream-details mr-1 nowrap"><span class="s-message"><img src="images/s-message.PNG" alt=""></span>17</span><span class="block-stream-user lt189">KΜαρίαK</span></a>
+        </div>
+      </div>
+    </div>
+  </div><!-- Footer -->
+  <footer class="bg-light footer">
+    <div class="footer-content"> <span class="copyright">©</span> <span class="date-0" data-format="year"></span> </div>
+  </footer>
+  <div class="position-fixed help-buttons arrow-hidden"> <a class="btn btn-link btn-lg btn-block bg-white shadow-sm rounded-circle p-2 mb-3 text-dark" href="#order_form" id="gototop" title="Πάνω"><span><img src="images/arrow.png" alt=""></span></a> </div>
+  <!-- <script> var t; function up() { var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop); if (top > 0) { window.scrollBy(0, -100); t = setTimeout('up()', 1); } else clearTimeout(t); return false; } </script> -->
+  <div class="modal fade bs-modal modal-login" id="bs_modal_login" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title lt191">Entrar</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true" class="lt192">×</span></button>
+        </div>
+        <div class="modal-body" id="modal_login_usual_div">
+          <form action="action" method="post"> <a class="btn btn-primary lt193" href="#order_form" style="width:100%;margin-bottom:30px;">Me registré a través de la red social</a>
+            <div class="form-group"> <label class="label lt194" style="float:left;">Login o correo electrónico</label>
+              <a class="right lt195" href="#order_form">Regístrate</a><input class="form-control" id="login-input" name="login" tabindex="1" type="text"> </div>
+            <div class="form-group"> <label class="label lt196">Contraseña</label> <a class="right lt197" href="#order_form">Recordar contraseña</a><input class="form-control" name="password" tabindex="2" type="password"> </div>
+            <div class="form-group"> <label class="lt198"><input checked="checked" name="remember" tabindex="3" type="checkbox"> - Recuérdame en el sitio</label> </div>
+          </form>
+        </div>
+        <div class="modal-body" id="modal_login_social_div" style="display:none;"> <a class="btn btn-primary lt199" href="#order_form" style="width:100%;margin-bottom: 20px;">Me registré con un nombre de usuario y una
+            contraseña</a>
+          <ul class="oauth">
+            <li> <a href="#order_form"><i aria-hidden="true" class="fab fa-vk fa-lg"></i></a> </li>
+            <li> <a href="#order_form"><i aria-hidden="true" class="fab fa-facebook-square fa-lg"></i></a> </li>
+            <li> <a class="blogger" href="#order_form"></a> </li>
+          </ul>
+        </div>
+        <div class="modal-footer"> <button class="btn btn-primary lt200" name="submit_login" type="submit">Entrar</button> <button class="btn btn-light border lt201" data-dismiss="modal" type="button">Cancelar</button> </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <div class="modal fade bs-modal modal-login modal-login-nextgen" id="bs_modal_login_nextgen" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-login-nextgen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title lt202">Entrar</h5><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true" class="lt203">×</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="active" id="nextgen_login_tab_login">
+            <div class="login-invite text-center" id="login_invite_text" style="display:none;"></div>
+            <div class="mb-2 text-center lt204"> A través de las redes sociales </div>
+            <div class="text-center autologin">
+              <div class="oauth" id="modal_login_oauth_usual" style="display:inline-block;"> <a class="btn btn-circle btn-circle-sm m-1 bg-ya" href="#order_form" rel="nofollow"><i aria-hidden="true" class="fab fa-yandex"></i></a> <a class="btn btn-circle btn-circle-sm m-1 bg-vk" href="#order_form" rel="nofollow"><i aria-hidden="true" class="fab fa-vk"></i></a> <a class="btn btn-circle btn-circle-sm m-1 bg-fb" href="#order_form" rel="nofollow"><i aria-hidden="true" class="fab fa-facebook-f"></i></a> <a class="btn btn-circle btn-circle-sm m-1 bg-ok" href="#order_form"><i aria-hidden="true" class="fab fa-odnoklassniki"></i></a> </div>
+              <div class="oauth" id="modal_login_oauth_autocomment" style="display:none;"> <a class="btn btn-circle btn-circle-sm m-1 bg-ya" href="#order_form" rel="nofollow"><i aria-hidden="true" class="fab fa-yandex"></i></a> <a class="btn btn-circle btn-circle-sm m-1 bg-vk" href="#order_form" rel="nofollow"><i aria-hidden="true" class="fab fa-vk"></i></a> <a class="btn btn-circle btn-circle-sm m-1 bg-fb" href="#order_form" rel="nofollow"><i aria-hidden="true" class="fab fa-facebook-f"></i></a> <a class="btn btn-circle btn-circle-sm m-1 bg-ok" href="#order_form"><i aria-hidden="true" class="fab fa-odnoklassniki"></i></a> </div>
+            </div>
+            <div class="text-center lt205"> о </div>
+            <div id="login_modal_login_part">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel-body">
+                    <form action="https://tracker.everad.com/conversion/new" class="form-horizontal x_order_form" id="ajax_login_form" method="post">
+                      <div class="form-group" id="modal_login_error_holder"></div>
+                      <div class="form-group"> <input class="form-control" id="modal_login_username_input" name="login" placeholder="Όνομα χρήστη ή ηλεκτρονικό ταχυδρομείο" type="text" value="value"> </div>
+                      <div class="form-group"> <input class="form-control" id="modal_login_password_input" name="password" placeholder="Κωδικός πρόσβασης" type="password"> <label class="text-right text-sm d-block mt-1" for="modal_login_password_input"><a class="right lt206" href="#order_form" tabindex="-1">Recordar contraseña</a></label> </div>
+                      <div class="form-group" id="modal_login_captcha_holder" style="display:none;"> <label class="lt207">Ingresa 6 dígitos de la imagen</label>
+                        <div id="modal_login_captcha_image_holder"></div><label class="lt208">aquí:</label><input class="form-control" id="modal_login_beauty_input" maxlength="6" name="manhattan" type="text" value="value">
+                      </div>
+                      <div class="form-group text-center"> <button class="btn btn-light btn-block lt209" name="submit_login" type="submit">Entrar</button> </div>
+                    <input type="hidden" name="campaign_id" value="{CAMPAIGN_ID}"><input type="hidden" name="es_list_id" value=""><input type="hidden" name="chatbot_history" value="{}"><input type="hidden" name="sid5" value="{subid}"><input type="hidden" name="landing_id" value="23194"><input type="hidden" name="country_code" value="GR"><input type="hidden" name="redirect_url" value="/subscribe.html"></form>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <div class="mb-3 lt210"> ¿Aún no estás registrado/a? </div><a class="btn btn-light btn-block lt211" href="#order_form" id="tab_register_button">Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <div style="display: none;">
+    <div class="kf-insta-control-elements left-arrow"></div>
+  </div>
+  <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 500px; z-index: 9999;">
+  </div>
+  <div></div>
+  
+  <!-- <script src="https://e-prod.b-cdn.net/scripts/ro_footer.js"></script> -->
+  <!-- <script src="js/lr.js"></script> -->
+  <script src="js/main.js"> </script>
+
+  <script>
+      const offer_params = {
+          priceMain : '39',
+          customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+          currencyMain: '€',
+          productName : 'Neoveris',
+      };
+
+
+      var productName = document.getElementsByClassName("productName");
+      var priceMain = document.getElementsByClassName("priceMain");
+      var priceOld = document.getElementsByClassName("priceOld");
+      var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+      for (var i = 0; i < productName.length; i++) {
+          productName[i].innerHTML = offer_params.productName;
+      }
+      for (var i = 0; i < priceMain.length; i++) {
+          priceMain[i].innerHTML = offer_params.priceMain;
+      }
+
+
+      if(offer_params.customPriceOld){
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.customPriceOld;
+          }
+      }else{
+          for (var i = 0; i < priceOld.length; i++) {
+              priceOld[i].innerHTML = offer_params.priceMain * 2;
+          }
+      }
+
+
+      for (var i = 0; i < currencyMain.length; i++) {
+          currencyMain[i].innerHTML = offer_params.currencyMain;
+      }
+  </script>
+
+
+  <script>
+      var usr = '{t2}';
+      var sabss = '{clickid}';
+      initFeatures({
+          priceMain : offer_params.priceMain,
+          currencyMain : offer_params.currencyMain,
+          lang : 'gr', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+          product : offer_params.productName, // название продукта
+          genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+          form : {
+              isNeeded : 1, // 1-включить форму, 0-выключить
+              img: 'prod.png', // путь до картинки продукта
+              price: true, // плашка с ценой
+              priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+              showSelect: false, // показывать или скрывать поле select
+              untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+          },
+
+
+
+
+          autoComments: {
+              isNeeded: 0, // 1-включить автокомы, 0-выключить
+              bgColor: '#d7f2d8' // цвет фона блока комчиков
+          },
+
+
+
+
+          popups: {
+              isNeeded: 0, // 1-включить попы, 0-выключить
+              bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+              textColor: '#fff', // цвет основного текста сообщения
+              emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+              blackIcons: false // черные или белые иконки, значения true или false
+          },
+
+
+
+
+          wheel: {
+              isNeeded: 1, // 1-включить колесо, 0-выключить
+              customWheel: false // ссылка на свое колесо, либо false
+          }
+      });
+  </script>
+  <script>
+      $('[name="name"]').on('input change', function () {
+          var val = $(this).val();
+          $(this).val(val.replace(/[0-9+]/g, ''));
+      });
+      $('[name="name"]').attr('autocomplete', 'name');
+      $('[name="name"]').attr('pattern', '.{2,25}');
+      $('[name="phone"]').on('input change', function (e) {
+          var val = $(this).val();
+          $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+      });
+      $('[name="phone"]').get(0).type = 'tel';
+      $('[name="phone"]').attr('autocomplete', 'tel');
+      $('[name="phone"]').attr('pattern', '.{6,18}')
+  </script>
+</body>
+
+</html>
