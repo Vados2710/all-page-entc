@@ -1,0 +1,528 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HondroLife</title>
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/red-hat.css">
+    <link href="" rel="shortcut icon" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="red-hat">
+        <div class="rh-lines rh-lines1" style="">
+            <div class="rh-line rh-line1"></div>
+            <div class="rh-line rh-line2"></div>
+            <div class="rh-line rh-line3"></div>
+        </div>
+        <img class="rh-car" src="img/svg/car.svg" alt="car-png">
+        <div class="rh__text" style="">
+
+            <p>LIVRAISON SÉCURISÉE! Ne vous inquiétez pas, la sécurité des clients est très importante pour nous!</p>
+            <p>Nos coursiers changent de masque toutes les deux heures. La livraison et le paiement se font sans contact
+                direct.</p>
+        </div>
+        <div class="rh-lines rh-lines2" style="">
+            <div class="rh-line rh-line1"></div>
+            <div class="rh-line rh-line2"></div>
+            <div class="rh-line rh-line3"></div>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="navbar-contain container">
+            <a class="navbar-logo js-link" href="#primary">
+                <i class="fico fico-logo">HondroLife</i>La rigidité des mouvements?
+            </a>
+            <ul class="navbar-menu" id="fixed-nav">
+                <li class="navbar__item js-active">
+                    <a class="js-link" href="#primary">Accueil</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="js-link" href="#sensation">Action de l'OMS</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="js-link" href="#expert">Noël Mercier</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="js-link" href="#components">Composition</a>
+                </li>
+            </ul>
+            <a class=" js-link navbar__button button-wrap button-wrap_sm js-to-form" href="#order-form2">
+                <!--#order-form2-->
+                <span class="button button_sm">COMMANDE&nbsp;&nbsp;<i class="arrow"></i></span>
+            </a>
+        </div>
+    </div>
+    <div class="out">
+        <section class="primary" id="primary">
+            <div class="primary-top">
+                <div class="bl-pieple bl-pieple_1">
+                    <i class="fico fico-sea bl-pieple_1__fico_1" data-enllax-ratio="0.5"
+                        data-enllax-type="foreground"></i>
+                    <i class="fico fico-sea bl-pieple_1__fico_2" data-enllax-ratio="0.5"
+                        data-enllax-type="foreground"></i>
+                    <i class="fico fico-sea bl-pieple_1__fico_3" data-enllax-ratio="0.5"
+                        data-enllax-type="foreground"></i>
+                    <img class="bl-pieple__img" src="img/primary-img.png">
+                </div>
+                <div class="container primary-wrap">
+                    <div class="bl-content">
+                        <h2 class="title primary__title">Des articulations en bonne santé
+                            <span>avec&nbsp;HondroLife!</span>
+                        </h2>
+                        <ul class="primary-list">
+                            <li class="primary__item">Pas de transactions à risque</li>
+                            <li class="primary__item">Pas de dépenses importantes en espèces</li>
+                            <li class="primary__item">Sans contraintes physiques</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bl-form">
+                <div class="bl-form__counter counter">
+                    <div class="container counter-wrap">
+                        <span class="counter__text">Dépêche-toi! <br> Offre limitée</span>
+                        <div class="counter-bl js-countdown">
+                            <span class="counter-bl__elem counter__elem1 js-count-digit passive">0</span>
+                            <span class="counter-bl__elem js-count-digit passive">0</span>
+                            <span class="counter-bl__elem js-count-digit">4</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bl-form__timer timer">
+                    <span class="timer__title">Jusqu'à la fin de l'action, il reste du temps</span>
+                    <div class="timer-wrap">
+                        <div class="timer__item hours">13</div>&nbsp;:&nbsp;<div class="timer__item minutes">15</div>
+                        &nbsp;:&nbsp;<div class="timer__item timer__item_color seconds">48
+                        </div>
+                    </div>
+                </div>
+                <div class="order" id="order-form1">
+                    <div class="order-head">
+                        <div class="discount"></div>
+                        <div class="price bb">
+                            <div class="price-old">
+                                <span class="old_price_val"><span class="priceOld"></span></span>&nbsp;<span class="old_price_cur"><span class="currencyMain"></span></span>
+                            </div>
+                            <div class="price-new">
+                                <span class="new_price_val"><span class="priceMain"></span></span>&nbsp;<span class="new_price_cur"><span class="currencyMain"></span></span>
+                            </div>
+                        </div>
+                        <h4 class="order__title">REMPLISSEZ LE FORMULAIRE ET NOUS VOUS CONTACTERONS</h4>
+                    </div>
+                    <form action="getform.php" class="al-form form" method="post">
+                        <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                        <input type="hidden" name="utm_campaign" value="{domonetka}">
+                        <div class="input-wrapper">
+                            <input class="form__input form__input-name ym-record-keys" autocomplete="disable" required
+                                id="name" name="name" placeholder="Prénom" type="text">
+                            <label for="name"></label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input class="form__input ym-record-keys" autocomplete="disable" id="phone" name="phone"
+                                placeholder="+33000000000" type="tel" required>
+                            <label for="phone"></label>
+                        </div>
+                        <div class="button-wrap">
+                            <button class="button form__submit js-submit js-button"
+                                type="submit">COMMANDER&nbsp;&nbsp;<i class="arrow"></i>
+                            </button>
+                        </div>
+                        <div class="icons-secure">
+                            <i class="norton"></i>
+                            <i class="mc"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="primary-bottom"></div>
+        </section>
+        <section class="pain" id="pain">
+            <div class="container">
+                <h2 class="pain__title title">Douleurs articulaires - le fléau du XXIe siècle</h2>
+                <p class="pain__text">Des processus dégénératifs et inflammatoires des articulations se produisent chez
+                    8 personnes sur 10.
+                </p>
+                <div class="pain-bl">
+                    <div class="pain-bl__left">
+                        <i class="fico fico-pain-ico"></i>
+                        <ul>
+                            <li>La rigidité des mouvements?</li>
+                            <li>Inflammation et gonflement?</li>
+                            <li>Douleurs et pulsations?</li>
+                            <li>Une panne commune?</li>
+                            <li>Frictions et craquements?</li>
+                        </ul>
+                    </div>
+                    <div class="pain-bl__right picture">
+                        <img alt="" class="picture__img" src="img/pain-man.png">
+                        <i class="fico fico-sea picture__fico_1" data-enllax-ratio="0.5"
+                            data-enllax-type="foreground"></i>
+                        <i class="fico fico-sea picture__fico_2" data-enllax-ratio="0.5"
+                            data-enllax-type="foreground"></i>
+                        <i class="fico fico-sea picture__fico_3" data-enllax-ratio="0.5"
+                            data-enllax-type="foreground"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="pain__tape">
+                <div class="container">
+                    <h2 class="title">Ne faites pas traîner les choses. Supprimez leur cause rapidement et à jamais.
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <section class="sensation" id="sensation">
+            <div class="sensation-top">
+                <div class="container sensation-wrap">
+                    <div class="sensation-bl">
+                        <img alt="" class="sensation-bl__img" src="img/logo1.png">
+                        <h2 class="sensation-bl__title title">Une sensation en orthopédie et rhumatologie!</h2>
+                        <p class="sensation-bl__text">Dans toute l'Europe, l'OMS mène une vaste campagne pour rendre les
+                            sprays pour le dos et les articulations HondroLife plus accessibles et populaires.
+                        </p>
+                        <p class="sensation-bl__text sensation-bl__text_last">
+                            <strong>La spray créée pour les athlètes olympiques améliore aujourd'hui la qualité de vie
+                                des gens ordinaires.
+                            </strong>
+                        </p>
+                    </div>
+                    <div class="sensation-prod">
+                        <img alt="product" src="img/prod1.png">
+                        <div class="sensation-prod__icons prod-list">
+                            <i class="prod-list__item prod-list__item2">Commande en ligne</i>
+                            <i class="prod-list__item prod-list__item3">Résonance médiatique</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sensation-bottom"></div>
+        </section>
+        <section class="expert" id="expert">
+            <div class="container expert-wrap_sm">
+                <h2 class="title expert__title">Dr. Noël Mercier recommande</h2>
+            </div>
+            <div class="expert-img doctor">
+                <img class="doctor__img" src="img/expert.png">
+                <i class="fico fico-sea doctor__fico_1" data-enllax-ratio="0.5" data-enllax-type="foreground"></i>
+                <i class="fico fico-sea doctor__fico_2" data-enllax-ratio="0.5" data-enllax-type="foreground"></i>
+                <i class="fico fico-sea doctor__fico_3" data-enllax-ratio="0.5" data-enllax-type="foreground"></i>
+            </div>
+            <div class="container expert-wrap">
+                <div class="expert-bl">
+                    <h2 class="title expert-bl__title">Dr. Noël Mercier recommande</h2>
+                    <p class="expert-bl__text expert-bl__text-1">La spray pour les articulations endommagées
+                        HondroLife est en partie mon invention. Je l'ai conçu pour renforcer les effets de ma
+                        kinésithérapie, et le fait est que, avec ou sans elle, la spray est efficace de toute façon !
+                    </p>
+                    <p class="expert-bl__text">La formule unique des composants de la plante élimine directement la
+                        cause de la pathologie, et pas seulement les symptômes.
+                    </p>
+                    <div class="expert-bl__name">
+                        <strong>Aujourd'hui, en collaboration avec l'OMS,</strong>
+                        <p class="expert-bl__text">nous menons un programme visant à fournir la spray HondroLife à tous
+                            ceux qui en ont besoin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="graph">
+            <div class="graph-top">
+                <div class="container">
+                    <h2 class="title">92% des participants au programme sont satisfaits du résultat</h2>
+                </div>
+            </div>
+            <div class="graph-bottom compare">
+                <div class="container compare-wrap_sm">
+                    <h2 class="title">HondroLife au lieu de la chirurgie</h2>
+                </div>
+                <div class="container compare-wrap">
+                    <div class="compare__left chart">
+                        <div class="chart-bl">
+                            <div class="chart-bl__percent">
+                                <span>80%</span>
+                                <span>60%</span>
+                                <span>40%</span>
+                                <span>20%</span>
+                                <span>0%</span>
+                            </div>
+                            <div class="chart-bl__graph">
+                                <img alt="" class="graph-img" src="img/svg/graph.svg">
+                                <span class="graph-prod">HondroLife</span>
+                                <span class="graph-operation">Action</span>
+                                <img alt="" class="graph1" src="img/graph-1.png">
+                                <img alt="" class="graph2" src="img/graph-2.png">
+                            </div>
+                        </div>
+                        <div class="chart__days">
+                            <span>7 jours</span>
+                            <span>14 jours</span>
+                            <span>21 jours</span>
+                            <span>28 jours</span>
+                        </div>
+                    </div>
+                    <div class="compare__right instead">
+                        <h2 class="title instead__title">HondroLife au lieu de la chirurgie</h2>
+                        <div class="instead__block">HondroLife aide dans 9 cas sur 10.</div>
+                        <p class="instead__text">Si les opérations sont efficaces à 40%, elles entraînent souvent des
+                            complications et toujours une période de réadaptation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="components" id="components">
+            <div class="components-top">
+                <div class="container">
+                    <h2 class="components__title title">Tous les composants sont naturels!</h2>
+                    <div class="components-bl">
+                        <div class="component component_left component_1">
+                            <div class="icon component_1__img">
+                                <img src="img/sostav1.png" alt="" />
+                            </div>
+                            <h5>Panthénol, allantoïne </h5>
+                            <p>Arrêtent le saignement, favorisent la formation d'un film protecteur sur les tissus
+                                enflammés.
+                            </p>
+                        </div>
+                        <div class="component component_right component_2">
+                            <div class="icon component_2__img">
+                                <img src="img/sostav2.png" alt="" />
+                            </div>
+                            <h5>Huiles essentielles de menthe, cannelle, eucalyptus </h5>
+                            <p>Préviennent la destruction des articulations et des ligaments, soulagent les douleurs
+                                articulaires, nourrissent le tissu conjonctif.
+                            </p>
+                        </div>
+                        <div class="component component_left component_3">
+                            <div class="icon component_3__img">
+                                <img src="img/sostav3.png" alt="" />
+                            </div>
+                            <h5>Extraits de griffe du diable, Arnica </h5>
+                            <p>Augmentent la mobilité articulaire, améliorent la circulation sanguine.
+                            </p>
+                        </div>
+                        <div class="component component_right component_4">
+                            <div class="icon component_4__img">
+                                <img src="img/sostav4.png" alt="" />
+                            </div>
+                            <h5>Glucosamine et Chondroïtine </h5>
+                            <p>Renforcent le cartilage, les tendons, les ligaments, soulagent l'inflammation et
+                                l'enflure, favorisent la régénération active du cartilage.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <img alt="product" class="components__img" src="img/prod1.png">
+            </div>
+            <div class="components-bottom"></div>
+        </section>
+        <section class="comments">
+            <div class="container comments-wrap">
+                <h2 class="comments__title title">Avis sur HondroLife</h2>
+                <div class="comments-list">
+                    <div class="comments__item comments__item_1">
+                        <img alt="ava" src="img/ava1.jpg">
+                        <h5>Valentin</h5>
+                        <p>Mon ménisque est endommagé depuis plus de cinq ans. C'est une misère vivante ! Lorsqu'elle
+                            s'est enflammée, elle ne pouvait pas se plier ni se courber ! L'anesthésie s'est effondrée,
+                            mais tout cela est temporaire. Pourquoi n'ai-je découvert votre spray que maintenant ? ! Je
+                            me serais sorti de tant de misère. Maintenant, j'utilise les cours d'HondroLife,
+                            généralement pendant les exacerbations saisonnières.
+                        </p>
+                    </div>
+                    <div class="comments__item comments__item_2">
+                        <img alt="ava" src="img/ava2.jpg">
+                        <h5>Joséphine</h5>
+                        <p>Une fois son coude déboîté, il se plaint du temps qu'il fait depuis. C'est peut-être
+                            inconfortable et tolérable, mais pourquoi le supporter quand il y a HondroLife. Ma
+                            grand-mère me l'a recommandé, elle l'utilise pour l'arthrite. J'ai commencé à le salir
+                            aussi, et maintenant tout est parfait!
+                        </p>
+                    </div>
+                    <div class="comments__item comments__item_3">
+                        <img alt="ava" src="img/ava3.jpg">
+                        <h5>Aurora</h5>
+                        <p>Mes problèmes lombaires sont chroniques. Il faut en faire trop quand on lave les sols à la
+                            maison ou dans le jardin, on se fait tirer dessus. Je vais régler le problème en deux - avec
+                            la spray HondroLife ! Je recommande à tous cette combinaison de composants naturels
+                            miraculeux: l'inflammation disparaît, la douleur est soulagée et le cartilage se régénère.
+                        </p>
+                    </div>
+                </div>
+                <i class="fico fico-sea comments__fico_1" data-enllax-ratio="0.5" data-enllax-type="foreground"></i>
+                <i class="fico fico-sea comments__fico_2" data-enllax-ratio="0.5" data-enllax-type="foreground"></i>
+                <i class="fico fico-sea comments__fico_3" data-enllax-ratio="0.5" data-enllax-type="foreground"></i>
+            </div>
+        </section>
+        <section class="primary last js-button" id="last">
+            <div class="primary-top">
+                <div class="bl-pieple bl-pieple_2">
+                    <i class="fico fico-sea bl-pieple_2__fico_1" data-enllax-ratio="0.5"
+                        data-enllax-type="foreground"></i>
+                    <i class="fico fico-sea bl-pieple_2__fico_2" data-enllax-ratio="0.5"
+                        data-enllax-type="foreground"></i>
+                    <i class="fico fico-sea bl-pieple_2__fico_3" data-enllax-ratio="0.5"
+                        data-enllax-type="foreground"></i>
+                    <img alt="" class="bl-pieple__img bl-pieple__img_2" src="img/last-img.png">
+                </div>
+                <div class="container primary-wrap">
+                    <div class="bl-content">
+                        <h2 class="title primary__title">Des articulations saines
+                            <span>avec&nbsp;HondroLife!</span>
+                        </h2>
+                        <ul class="primary-list">
+                            <li class="primary__item">Pas d'opérations hasardeuses</li>
+                            <li class="primary__item">Pas de dépenses importantes en espèces</li>
+                            <li class="primary__item">Sans contraintes physiques</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bl-form">
+                <div class="bl-form__counter counter">
+                    <div class="container counter-wrap">
+                        <span class="counter__text">Dépêche-toi! <br> Offre limitée</span>
+                        <div class="counter-bl js-countdown">
+                            <span class="counter-bl__elem counter__elem1 js-count-digit passive">0</span>
+                            <span class="counter-bl__elem js-count-digit passive">0</span>
+                            <span class="counter-bl__elem js-count-digit">4</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bl-form__timer timer">
+                    <span class="timer__title">Jusqu'à la fin de l'action, il reste du temps</span>
+                    <div class="timer-wrap">
+                        <div class="timer__item hours">13</div>&nbsp;:&nbsp;<div class="timer__item minutes">14</div>
+                        &nbsp;:&nbsp;<div class="timer__item timer__item_color seconds">49
+                        </div>
+                    </div>
+                </div>
+                <div class="order" id="order-form2">
+                    <div class="order-head">
+                        <div class="discount"></div>
+                        <div class="price bb">
+                            <div class="price-old">
+                                <span class="old_price_val"><span class="priceOld"></span></span>&nbsp;<span class="old_price_cur"><span class="currencyMain"></span></span>
+                            </div>
+                            <div class="price-new">
+                                <span class="new_price_val"><span class="priceMain"></span></span>&nbsp;<span class="new_price_cur"><span class="currencyMain"></span></span>
+                            </div>
+                        </div>
+                        <h4 class="order__title">REMPLISSEZ LE FORMULAIRE ET NOUS VOUS CONTACTERONS</h4>
+                    </div>
+                    <form class="al-form form" method="post" action="getform.php">
+                        <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                        <input type="hidden" name="utm_campaign" value="{domonetka}">
+                        <div class="input-wrapper">
+                            <input class="form__input form__input-name ym-record-keys" autocomplete="disable" required
+                                id="name2" name="name" placeholder="Prénom" type="text">
+                            <label for="name2"></label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input class="form__input ym-record-keys" autocomplete="disable" id="phone2" name="phone"
+                                placeholder="+33000000000" type="tel" required>
+                            <label for="phone2"></label>
+                        </div>
+                        <div class="button-wrap">
+                            <button class="button form__submit js-submit js-button"
+                                type="submit">COMMANDER&nbsp;&nbsp;<i class="arrow"></i>
+                            </button>
+                        </div>
+                        <div class="icons-secure">
+                            <i class="norton"></i>
+                            <i class="mc"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="primary-bottom last-bottom"></div>
+        </section>
+    </div>
+
+    <div class="footer" style="padding: 0 0 30px;">
+        <p style="text-align: center">
+            <span>
+                SUMMER ALLIANCE LTD <br> Reg. No. 195655 <br> Tenancy 10, Marina House, Eden Island, Mahe, Seychelles
+            </span>
+        </p>
+        <p style="text-align: center">
+            <span>
+                <a href="privacy.html" class="to-go" style="color: #fff">Privacy policy</a> | <a href="report.html"
+                    style="color: #fff" class="to-go">Report</a>
+            </span>
+        </p>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/jquery.enllax.min.js" type="text/javascript"></script>
+
+    <script>
+        (function ($) {
+            $("#primary").enllax();
+        })(jQuery);
+    </script>
+<script>
+    const offer_params = {
+        priceMain : '39',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

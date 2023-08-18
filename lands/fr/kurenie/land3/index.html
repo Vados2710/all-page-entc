@@ -1,0 +1,618 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nicozero</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="cdn/js/jquery.js"></script>
+</head>
+
+<body class="loaded">
+  <div class="wrap">
+    <section class="section section_face wow fadeIn" data-wow-duration="1s"
+      style="visibility: visible; animation-duration: 1s; animation-name: fadeIn;">
+      <div class="container">
+        <div class="face">
+          <div class="face__head">
+            <div class="logo"><img alt="" src="media/logo.png"></div>
+          </div>
+          <div class="face__box">
+            <h1 class="face__title lt0">Arrêter <span> de fumer</span> <span> facilement!</span> </h1>
+            <div class="advantages">
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon1.png"></div>
+                <div class="advantages__title lt1">Sans envie <span> de cigarettes</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon2.png"></div>
+                <div class="advantages__title lt2">Sans syndrome <span> de sevrage</span></div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon3.png"></div>
+                <div class="advantages__title lt3">Sans livres <span> et hypnose</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon4.png"></div>
+                <div class="advantages__title lt4">Sans médicaments <span> et patchs</span> </div>
+              </div>
+            </div>
+          </div>
+          <div class="face__box face__box_eggs">
+            <div class="order face__order">
+              <div class="order__title lt5">Commandez maintenant <span> à prix réduit</span> </div>
+              <div class="order__price">
+                <span class="lt6 price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span><span class="lt7 price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+              </div>
+              <form action="getform.php" method="post" class="order__form">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <label class="order__item"><span class="lt8">Votre nom:</span><input class="order__field" name="name"
+                    type="text" required></label>
+                <label class="order__item"><span class="lt10">Téléphone:</span><input class="order__field" name="phone"
+                    type="text" required></label>
+                <div class="order__item order__item_btn">
+                  <button class="order__btn lt11">Commander</button>
+                </div>
+              </form>
+            </div>
+            <!--
+          <div class="eggs">
+            <div class="eggs__item"><img alt="" src="media/eggs/img1.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img2.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img3.png"></div>
+          </div>
+-->
+          </div>
+          <div class="face__product">
+            <div class="face__arrow"><img alt="" src="media/face/arrow.png"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_effects wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="effects">
+          <div class="effects__box">
+            <div class="effects__title lt12">Quand avez-vous fumé <span> votre <span> première cigarette,</span></span>
+            </div>
+            <div class="effects__subtitle lt13">vous exactement vouliez rester fumeur</div>
+            <div class="effects__description lt14">pour tout la vie?</div>
+            <div class="effects__events wow shake lt15" data-wow-duration="10s" data-wow-iteration="infinite"
+              style="visibility: hidden; animation-duration: 10s; animation-iteration-count: infinite; animation-name: none;">
+              survolez la photo<img alt="" src="media/effects/arrow-right.png"></div>
+          </div>
+          <div class="effects__media">
+            <div class="effects__hover js-effects__hover"></div>
+            <div class="effects__fadeLine"><img alt="" src="media/effects/fadeLine.png"></div>
+            <div class="effects__face effects__face_before"></div>
+            <div class="effects__face effects__face_after"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section_warning wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="facts">
+          <div class="facts__item">
+            <div class="facts__content">
+              <div class="facts__subTitle lt16">
+                <div class="facts__nomber">1.</div>La nicotine est une substance qui crée une dépendance dès la première
+                dose. <span> En termes de force d'impact sur le corps, il dépasse même l'héroïne, car il provoque une
+                  dépendance dès la première bouffée.</span>
+              </div>
+            </div>
+            <div class="facts__media"><img alt="" src="media/facts/img1.jpg"></div>
+          </div>
+          <div class="facts__item facts__item_right">
+            <div class="facts__media"><img alt="" src="media/facts/img2.jpg"></div>
+            <div class="facts__content">
+              <div class="facts__subTitle lt17">
+                <div class="facts__nomber">2.</div>Avant de fumer pour la première fois, vous étiez sûr: <span> Je
+                  pourrais arrêter à tout moment! En réalité, c'est beaucoup plus compliqué qu'il n'y paraît.</span>
+              </div>
+            </div>
+          </div>
+          <div class="facts__item">
+            <div class="facts__content">
+              <div class="facts__subTitle lt18">
+                <div class="facts__nomber">3.</div>Peut-être que vous éprouvez de la honte ou de l'aversion pour
+                vous-même parce que vous ne pouvez pas arrêter de fumer vous-même. <span> Vous entendez constamment
+                  parler des dangers du tabagisme et vous êtes déjà immunisé contre les histoires terrifiantes des
+                  fumeurs.</span>
+              </div>
+            </div>
+            <div class="facts__media"><img alt="" src="media/facts/img3.jpg"></div>
+          </div>
+        </div>
+        <div class="warning section__warning">
+          <div class="wraning__title lt19"> <span> L'odeur des cigarettes</span>vous hante <span> partout,</span> </div>
+          <div class="wraning__subTitle lt20">aucun chewing-gum ni parfum <span> ne le sauve.</span> </div>
+        </div>
+      </div>
+    </section>
+    <div class="section section_cause wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="cause">
+          <div class="cause__title lt21">Cependant, vous <span> êtes</span> <span> un</span>fumeur.</div>
+          <div class="cause__subTitle lt22">Alors pourquoi voulez-vous <span> vraiment</span>fumer?</div>
+          <div class="cause__description lt23"> <span> Avec le tabagisme constant dans le cerveau, le nombre de
+              récepteurs de l'acétylcholine augmente considérablement (ils fournissent une libération brutale d'hormones
+              de joie) et leur sensibilité diminue.</span>Ces récepteurs sont normalement activés par un composé
+            organique spécial, l'acétylcholine, très similaire dans la structure de la nicotine. Lorsque le nombre de
+            récepteurs augmente, l'acétylcholine cesse de manquer. Et pour se sentir heureux, une personne doit
+            constamment augmenter la dose de nicotine — c'est ainsi que la dépendance physiologique se forme.</div>
+          <div class="cause__info lt24">Lorsque vous ingérez de la nicotine pour la première fois, vous devenez
+            immédiatement accro à cette substance toxique. <span> Le désir de fumer contrôle votre cerveau, modifie vos
+              plans, votre comportement et même votre style de communication</span> </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_memories wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="memories">
+          <div class="memories_subTitle lt25">Rappelez-vous quand vous</div>
+          <div class="memories_title lt26">le plus envie de fumer?</div>
+          <div class="memories__box">
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img1.png"></div>
+              <div class="memories__name lt27">Immédiatement après le réveil</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img2.png"></div>
+              <div class="memories__name lt28">Dans l'avion</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img3.png"></div>
+              <div class="memories__name lt29">Les clients non-fumeurs</div>
+            </div>
+            <div class="memories__item">
+              <div class="memories__media"><img alt="" src="media/memories/img4.png"></div>
+              <div class="memories__name lt30">Après l'alcool pris</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_question wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="question">
+          <div class="question__head">
+            <div class="question__title lt31"> <span> Répondez à</span>une question:</div>
+            <div class="question__description lt32">vous voulez vraiment vous libérer de la dépendance, arrêter de
+              dépenser beaucoup d'argent pour la fumée, profiter de la vie sans avoir à vous attarder et gérer le stress
+              plus facilement?</div>
+          </div>
+          <div class="question__subTitle lt33">Si c'est le cas, <span> NicoZero vous aidera.</span> </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_step wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="step">
+          <div class="step__title lt34">Seulement 4 semaines –</div>
+          <div class="gradient">
+            <div class="step__subTitle lt35">et vous ne voudrez plus jamais fumer</div>
+          </div>
+          <div class="step__box">
+            <div class="step__item">
+              <div class="step__count">
+                1
+              </div>
+              <div class="step__name lt36">Première semaine</div>
+              <div class="step__line"></div>
+              <div class="step__description lt37">Les substances qui composent NicoZero augmentent la sensibilité des
+                récepteurs de l'acétylcholine (ceux qui sont responsables du plaisir).</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                2
+              </div>
+              <div class="step__name lt38">Deuxième semaine</div>
+              <div class="step__line"></div>
+              <div class="step__description lt39">Vous profitez de la nourriture délicieuse, de regarder votre série
+                préférée et de vos vacances habituelles. Les niveaux d'hormones de stress diminuent régulièrement. La
+                tension nerveuse disparaît et vous n'avez plus besoin "se détendre" avec une aide de cigarette.</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                3
+              </div>
+              <div class="step__name lt40">Troisième semaine</div>
+              <div class="step__line"></div>
+              <div class="step__description lt41">Le cerveau bloque l'irritation des récepteurs de l'acétylcholine lors
+                de la prise de nicotine – vous arrêtez de vous amuser avec les cigarettes, mais vous pouvez toujours
+                continuer à fumer. À ce moment-là, le corps est complètement reconstruit pour recevoir l'hormone de joie
+                naturellement.</div>
+            </div>
+            <div class="step__item">
+              <div class="step__count">
+                4
+              </div>
+              <div class="step__name lt42">Quatrième semaine</div>
+              <div class="step__line"></div>
+              <div class="step__description lt43">Vous commencez à remarquer à quel point vous appréciez à nouveau ce
+                qui vous procure réellement du plaisir. Le besoin physique et psychologique de fumer disparaît!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_product wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="product">
+          <div class="gradient">
+            <div class="product__title lt44">
+              Nicozero
+            </div>
+          </div>
+          <div class="product__subTitle lt45">Spray pour se débarrasser <span> de la dépendance à la nicotine</span>
+          </div>
+          <div class="product__box">
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img1.jpg"></div>
+              <div class="product__name lt46">Extrait <span> de grains d'avoine </span> </div>
+              <div class="product__description lt47">Renforce le système nerveux, les vaisseaux sanguins et le muscle
+                cardiaque, agit favorablement sur la composition du sang</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img2.jpg"></div>
+              <div class="product__name lt48">Herbe de millepertuis</div>
+              <div class="product__description lt49">Provoque une aversion progressive et soutenue pour l'odeur du
+                tabac, nettoie les voies respiratoires des dépôts nocifs.</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img3.jpg"></div>
+              <div class="product__name lt50">Gingembre</div>
+              <div class="product__description lt51">Dilue le sang, réduit l'adhérence des plaquettes et la formation de
+                caillots sanguins, nettoie le corps des toxines.</div>
+            </div>
+            <div class="product__item">
+              <div class="product__media"><img alt="" src="media/product/img4.jpg"></div>
+              <div class="product__name lt52">Aubépine</div>
+              <div class="product__description lt53">Élimine les substances du corps formées après la désintégration de
+                la nicotine, nettoie les poumons</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_professional wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="professional">
+          <div class="professional__box professional__box_doc">
+            <div class="professional__title lt54">Avis d'un spécialiste</div>
+            <div class="professional__subTitle lt55">La dépendance à la nicotine est le fléau des temps modernes. S'en
+              débarrasser est vraiment difficile, souvent pour moi-même, en tant que médecin, il semblait trop
+              difficile.</div>
+            <div class="professional__description lt56">Maintenant que NicoZero est entré sur le marché, il ne fait
+              aucun doute que tout le monde peut arrêter de fumer une fois pour toutes, quelle que soit son ancienneté.
+              <span> Au cœur de NicoZero approche fondamentalement nouvelle. Le médicament affecte les récepteurs
+                responsables de l'envie de fumer. Pour la première fois, le cerveau est trompé en croyant qu'il reçoit
+                une dose de nicotine, car NicoZero répond aux besoins réels du corps résultant du tabagisme. Peu à peu,
+                l'habitude d'allumer une cigarette disparaît. Au moment de la fin du cours avec NicoZero, vous
+                développez une aversion persistante pour les cigarettes, et vous vous débarrassez facilement, et
+                surtout, pour toujours, de la dépendance à la nicotine la plus forte.</span> </div>
+            <div class="professional__footer">
+              <!--<div class="professional__identifier"><img src="media/professional/identifier.png" alt=""></div>-->
+              <div class="professional__footer-box">
+                <div class="professional__name lt57">Gilles Mercier,</div>
+                <div class="professional__position lt58">médecin de catégorie supérieure, narcologiste</div>
+              </div>
+            </div>
+          </div>
+          <div class="professional__box professional__box_human">
+            <div class="professional__media"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_reviews">
+      <div class="container">
+        <div class="reviews">
+          <div class="gradient">
+            <div class="reviews__title lt59">Avis <span> о NicoZero</span> </div>
+          </div>
+          <div class="reviews__box">
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face1.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt60">Serge</div>
+                  <div class="reviews__age lt61">39 ans</div>
+                </div>
+              </div>
+              <div class="reviews__description lt62">Je fume depuis l'âge de 14 ans. Maintenant, j'ai 39 ans et il y a
+                seulement un an, j'ai pu me débarrasser de la dépendance à la nicotine avec NicoZero. <span> Pendant 24
+                  ans de vie consciente, je fumais et je ne pouvais pas imaginer à quel point la vie était belle sans
+                  cette horrible odeur de tabac, ces dents jaunes, cette toux éternelle et les regards en colère des
+                  non-fumeurs. J'ai essayé de quitter plusieurs fois par moi-même, en vain. Maintenant, grâce à
+                  NicoZero, la seule pensée de la cigarette me dégoûte.</span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face2.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt63">Claudine</div>
+                  <div class="reviews__age lt64">42 ans</div>
+                </div>
+              </div>
+              <div class="reviews__description lt65">J'ai essayé différentes façons d'essayer d'arrêter de fumer: sinon
+                tous, alors beaucoup. Ils se terminaient tous de la même manière: au plus tard un mois plus tard, je
+                revenais à la cigarette. <span> Elle était pour moi un ami, un soutien, un soutien, un moyen de se
+                  divertir. Maintenant, je comprends à quel point j'étais stupide, parce que je me trompais moi-même,
+                  parce que je ne pouvais tout simplement pas arrêter de fumer. Et toutes les méthodes que j'ai essayées
+                  ne sont pas plus qu'un mouvement de marketing. J'écris un avis sur NicoZero, parce que c'est lui qui
+                  m'a aidé à arrêter de fumer pour TOUJOURS. Grâce à ce remède merveilleux, je ne fume pas depuis 8 mois
+                  et je sais avec certitude que je ne reviendrai plus jamais à cette habitude pernicieuse.</span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+            <div class="reviews__item wow bounceInUp" data-wow-duration="2s"
+              style="visibility: hidden; animation-duration: 2s; animation-name: none;">
+              <div class="reviews__head">
+                <div class="reviews__media"><img src="media/order/face3.jpg" alt=""></div>
+                <div class="reviews__head-info">
+                  <div class="reviews__name lt66">Daniel</div>
+                  <div class="reviews__age lt67">33 ans</div>
+                </div>
+              </div>
+              <div class="reviews__description lt68">Parmi toutes les façons de dire au revoir au tabagisme, NicoZero
+                est peut-être le seul efficace. <span> C'est ce que j'ai vu de ma propre expérience. Il m'a suffi de
+                  trois semaines pour éteindre ma dernière cigarette de ma vie et décider de ne plus jamais recommencer
+                  à fumer. Merci aux fabricants pour cet outil!</span> </div>
+              <div class="reviews__footer">
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+                <div class="reviews__stars"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_fake wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="fake">
+          <div class="fake__box">
+            <div class="fake__title lt69">Méfiez-vous des faux!</div>
+            <div class="fake__description lt70">En raison de l'énorme popularité du NicoZero, des échantillons falsifiés
+              ont commencé à apparaître. Le produit original NicoZero ne peut être acheté que sur ce site.</div>
+          </div>
+          <div class="fake__media"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section section_support wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="support">
+          <div class="gradient">
+            <div class="support__title lt71">Souvent questions</div>
+          </div>
+          <div class="support__box">
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span> </span> <span> </span>
+                </div><span class="lt72">Vais-je prendre du poids après avoir arrêté de fumer avec NicoZero?</span>
+              </div>
+              <div class="support__description lt73">Pas. Le gain de poids lors du refus de la nicotine par la méthode
+                volontaire est associé à des tentatives de calmer le système nerveux, de supprimer la soif de nicotine
+                avec de la nourriture. Avec NicoZero cela ne se produira pas, car cette méthode calme d'abord le système
+                nerveux et seulement alors vous arrêtez complètement de fumer pour toujours.</div>
+            </div>
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span> </span> <span> </span>
+                </div><span class="lt74">J'ai arrêté de fumer plusieurs fois par divers moyens, mais je suis toujours
+                  retourné à la cigarette. En quoi NicoZero est différent des autres façons, pourquoi avec lui je vais
+                  certainement arrêter de fumer pour toujours?</span>
+              </div>
+              <div class="support__description lt75">NicoZero contient des substances qui sont absorbées dans le sang et
+                éliminent progressivement la nicotine du corps. Il y a un processus de désintoxication: les organes
+                empoisonnés améliorent le travail. Pendant la période de désintoxication, le corps privilégie le
+                renouvellement des organes plutôt que la réception d'une nouvelle dose de nicotine. Vous vous sentirez
+                une amélioration du bien-être et la pensée de la cigarette elle-même sera reléguée au second plan.</div>
+            </div>
+            <div class="support__item">
+              <div class="support__name">
+                <div class="support__indikator">
+                  <span> </span> <span> </span>
+                </div><span class="lt76">Est-ce que je me sentirais mal si je fumais pendant la réception
+                  NicoZero?</span>
+              </div>
+              <div class="support__description lt77">Pas. Contrairement à d'autres médicaments, NicoZero ne contient pas
+                de substances toxiques pouvant provoquer une réaction négative du corps.</div>
+            </div>
+          </div>
+          <div class="support__callback">
+            <div class="support__subTitle lt78">D'autres questions?</div>
+            <div class="support__info lt79">Demandez-les à notre spécialiste, vous serez rappelé et conseillé.</div>
+            <div class="support__btn lt80">Poser une question</div>
+          </div>
+          <div class="support__media"></div>
+        </div>
+      </div>
+    </div>
+    <section class="section section_footer-face section_face wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="face">
+          <div class="face__head">
+            <div class="logo"><img alt="" src="media/logo.png"></div>
+          </div>
+          <div class="face__box">
+            <h1 class="face__title lt81">Arrêter <span> de fumer</span> <span> facilement!</span> </h1>
+            <div class="advantages">
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon1.png"></div>
+                <div class="advantages__title lt82">Sans envie de cigarettes </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon2.png"></div>
+                <div class="advantages__title lt83">Sans syndrome <span> de sevrage</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon3.png"></div>
+                <div class="advantages__title lt84">Sans livres <span> et hypnose</span> </div>
+              </div>
+              <div class="advantages__item">
+                <div class="advantages__media"><img alt="" src="media/advantages/icon4.png"></div>
+                <div class="advantages__title lt85">Sans médicaments <span> et patchs</span> </div>
+              </div>
+            </div>
+          </div>
+          <div class="face__box face__box_eggs face__box_scroll">
+            <div class="order face__order">
+              <div class="order__title lt86">Commandez maintenant <span> à prix réduit</span> </div>
+              <div class="order__price">
+                <span class="lt87 price_old"><span class="priceOld"></span> <span class="currencyMain"></span></span><span class="lt88 price_main"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+              </div>
+              <form action="getform.php" method="post" class="order__form">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <label class="order__item"><span class="lt8">Votre nom:</span><input class="order__field" name="name"
+                    type="text" required></label>
+                <label class="order__item"><span class="lt10">Téléphone:</span><input class="order__field" name="phone"
+                    type="text" required></label>
+                <div class="order__item order__item_btn">
+                  <button class="order__btn lt11">Commander</button>
+                </div>
+              </form>
+            </div>
+            <!--
+          <div class="eggs">
+            <div class="eggs__item"><img alt="" src="media/eggs/img1.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img2.png"></div>
+            <div class="eggs__item"><img alt="" src="media/eggs/img3.png"></div>
+          </div>
+-->
+          </div>
+          <div class="face__product"></div>
+        </div>
+      </div>
+    </section>
+    <footer class="section section_footer wow fadeIn" data-wow-duration="1s"
+      style="visibility: hidden; animation-duration: 1s; animation-name: none;">
+      <div class="container">
+        <div class="footer">
+          <p class="footer_leadbit lt93">Global Partners LTD, <br>
+            <a href="#" target="_blank">Privacy Policy</a></p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <script src="js/jquery.js">
+  </script>
+  <script src="js/plugin.js">
+  </script>
+  <script src="js/index.js">
+  </script>
+
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '49',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

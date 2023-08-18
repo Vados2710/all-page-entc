@@ -1,0 +1,769 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+  <script src="js/jquery-1.12.4.min.js" type="text/javascript">
+  </script>
+  <style>
+    .ac_footer {
+      position: relative;
+      top: 10px;
+      height: 0;
+      text-align: center;
+      margin-bottom: 70px;
+      color: #A12000;
+    }
+
+    .ac_footer a {
+      color: #A12000;
+    }
+
+    .ac_footer p {
+      text-align: center;
+    }
+
+    img[height="1"],
+    img[width="1"] {
+      display: none !important;
+    }
+  </style>
+  <!--retarget-->
+  <!--retarget-->
+  <script src="js/9_11_12.min.js" type="text/javascript">
+  </script>
+  <meta charset="utf-8">
+  <title>Keto Guru</title>
+  <meta content="initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link href="css/main.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,    600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+    rel="stylesheet">
+  <link href="css/slick-theme.css" rel="stylesheet">
+  <link href="css/slick.css" rel="stylesheet">
+  <style type="text/css">
+    /* for ATTENTION text */
+    .attention {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 30px;
+      line-height: 1.3;
+      color: #fff;
+      background: green;
+      z-index: 10000;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .attention p {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    .close {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 5;
+      right: 0;
+      top: 0;
+      margin: 3px;
+    }
+
+    .close:hover:before,
+    .close:hover:after {
+      -webkit-box-shadow: 0 0 10px 1px #fff;
+      -moz-box-shadow: 0 0 10px 1px #fff;
+      box-shadow: 0 0 10px 1px #fff;
+    }
+
+    .close:before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: #fff;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -2px 0 0 -15px;
+    }
+
+    .close:after {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: #fff;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -2px 0 0 -15px;
+    }
+  </style>
+</head>
+
+<body data-lang="FR">
+  <!--retarget-->
+  <!--retarget-->
+  <!-----------------------------ATTENTION--------------------------------->
+  <script type="text/javascript">
+    function attentionHide() {
+      $('.attention').slideUp();
+    }
+  </script>
+  <div class="attention">
+    <div class="close" onclick="attentionHide()"></div>
+    <p class="attention__text"> Nous vous prions de bien vouloir payer la commande en ligne afin de profiter d'une
+      livraison plus rapide et de ne pas entrer en contact avec d'autres personnes. </p>
+  </div>
+  <!-----------------------------ATTENTION--------------------------------->
+  <div class="container s__main">
+    <div class="block1 block">
+      <div class="bg_cont">
+        <div class="top">
+          <div class="limit">
+            <ul class="list">
+              <li> Ingrédients naturels </li>
+              <li> Une large gamme de bienfaits pour la santé </li>
+              <li> Résultats garantis </li>
+            </ul>
+          </div>
+        </div>
+        <div class="limit">
+          <div class="middle">
+            <div class="left">
+              <h1> Keto Guru </h1>
+              <h2> POUR LES GOURMANDS QUI RÊVENT DE MINCIR </h2>
+              <ul class="list">
+                <li> Absorbe la graisse, tout en la transformant en énergie </li>
+                <li> Élimine les toxines </li>
+                <li> Réduit l'appétit et donne de l'énergie </li>
+                <li> Élimine l'œdème </li>
+                <li> Produit de la dopamine (hormone du bonheur) </li>
+              </ul>
+              <div class="sect"><span> Le résultat est garanti </span> à tout âge </div>
+            </div><img alt class="prod" src="img/prod3.png">
+            <div class="right"><img alt class="symbol" src="img/simbol.png">
+              <h2> IMPORTÉ DES ÉTATS-UNIS </h2>
+              <p class="sale"> Remise : <span class="js_percent_sign"> 50% </span></p>
+              <div class="price"><span class="old js_old_price_curs"> <span class="priceOld"></span> <span class="currencyMain"></span> </span><span class="new js_new_price_curs">
+                  <span class="priceMain"></span> <span class="currencyMain"></span>* </span></div>
+              <form action="getform.php" method="post">
+                <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                <input type="hidden" name="utm_campaign" value="{domonetka}">
+                <input name="name" placeholder="Prénom" type="text" required><input class="only_number" name="phone"
+                  placeholder="Numéro de téléphone" type="tel" required>
+                <div class="nds"> * Faites attention que les TVA locaux peuvent varier, cela dépend du pays où vous
+                  commandez nos produits. Notre Service Clientèle vous en consulteront avec plaisir </div><button
+                  class="btn button__text pulse js_submit" type="submit"> COMMANDER </button>
+                <div class="verification"><img src="img/verified.png"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="limit">
+          <p class="pack"> IL NE RESTE QUE <span class="pack_value"> 30 </span> PAQUETS AU PRIX SPÉCIAL </p>
+        </div>
+      </div>
+    </div>
+    <div class="block6 block">
+      <div class="limit">
+        <h1> KETO GURU EST LE PUISSANT PRODUIT SECRET QUI DONNE DE L'ÉNERGIE AUX CÉLÉBRITÉS. </h1>
+        <div class="sect">
+          <div class="text">
+            <p class="label"><b> C'est le produit minceur le plus populaire parmi les plus grandes stars du monde ! </b>
+            </p>
+            <p><span> Sophie, spécialiste en nutrition saine, <b> qui consulte Charlize Theron et Sandra Bullock </b> ,
+                recommande de prendre Keto Guru pour une perte de poids rapide au lieu d'un repas ou de collations.
+              </span>
+              <!--<img src="preview/img/cup.png" alt="" class="cup">--><span> Ce produit stimule le métabolisme, donne
+                de l'énergie et est bon pour votre corps. Prenez-le au lieu de vos repas pendant un mois au maximum.
+                Cette période sera suffisante pour obtenir des résultats impressionnants. </span></p>
+          </div>
+          <div class="prod"><img alt class="prod" src="img/prod3.png"></div>
+        </div>
+        <!--<img src="preview/img/cup2.png" alt="" class="cup2">--><img alt class="photo" src="img/block6_item.png">
+      </div><img alt class="meter" src="img/block6_item1.png">
+    </div>
+    <div class="block2 block">
+      <div class="limit">
+        <div class="top">
+          <ul class="slider" id="slider1">
+            <li class="item">
+              <div class="left">
+                <div class="img_cont">
+                  <div class="inst_head"><img alt src="img/ava4.jpg"><span><b> christine1989 </b></span></div><img alt
+                    src="img/slide_4.jpg">
+                  <div class="inst_foot"><b> 2399 </b><span class="inst_date">
+                      <script>
+                        dtime_nums(-2, true)
+                      </script>
+                    </span></div>
+                </div>
+              </div>
+              <div class="right">
+                <p class="comm"> Je pensais que je resterais grosse pour toujours ! Mais Keto Guru m'a donné une
+                  nouvelle vie avec un corps mince ! </p>
+                <p class="line"></p>
+                <p class="name"> Christine, 28 ans </p>
+                <p class="info work"> Directrice des Ressources Humaines </p>
+                <p class="info"> Utilise Keto Guru pendant : <span> 29 jours </span></p>
+                <p class="info"> Résultat : <span> -14,7 kg </span></p>
+              </div>
+            </li>
+            <li class="item">
+              <div class="left">
+                <div class="img_cont">
+                  <div class="inst_head"><img alt src="img/ava2.jpg"><span><b> sandrine_parisienne </b></span></div><img
+                    alt src="img/slide_2.jpg">
+                  <div class="inst_foot"><b> 3122 </b><span class="inst_date">
+                      <script>
+                        dtime_nums(-4, true)
+                      </script>
+                    </span></div>
+                </div>
+              </div>
+              <div class="right">
+                <p class="comm"> J'ai toujours opté pour des vêtements larges pour cacher mon corps sans forme. Je tiens
+                  à exprimer ma gratitude à Keto Guru. Actuellement, je ne porte que des mini-jupes et j'ai beaucoup
+                  d'admirateurs ! </p>
+                <p class="line"></p>
+                <p class="name"> Sandrine, 39 ans </p>
+                <p class="info work"> Comptable </p>
+                <p class="info"> Utilise Keto Guru pendant : <span> 37 jours </span></p>
+                <p class="info"> Résultat : <span> -12 kg </span></p>
+              </div>
+            </li>
+            <li class="item">
+              <div class="left">
+                <div class="img_cont">
+                  <div class="inst_head"><img alt src="img/ava3.jpg"><span><b> Milène2451 </b></span></div><img alt
+                    src="img/slide_3.jpg">
+                  <div class="inst_foot"><b> 2752 </b><span class="inst_date">
+                      <script>
+                        dtime_nums(-3, true)
+                      </script>
+                    </span></div>
+                </div>
+              </div>
+              <div class="right">
+                <p class="comm"> Avec Keto Guru, j'ai eu un ventre plat en seulement un mois ! C'est un miracle. Sans
+                  régime ! </p>
+                <p class="line"></p>
+                <p class="name"> Milène, 24 ans </p>
+                <p class="info work"> Directrice </p>
+                <p class="info"> Utilise Keto Guru pendant : <span> 31 jours </span></p>
+                <p class="info"> Résultat : <span> -17 kg </span></p>
+              </div>
+            </li>
+            <li class="item">
+              <div class="left">
+                <div class="img_cont">
+                  <div class="inst_head"><img alt src="img/ava1.jpg"><span><b> fananas579 </b></span></div><img alt
+                    src="img/slide_1.jpg">
+                  <div class="inst_foot"><b> 3480 </b><span class="inst_date">
+                      <script>
+                        dtime_nums(-5, true)
+                      </script>
+                    </span></div>
+                </div>
+              </div>
+              <div class="right">
+                <p class="comm"> Je suis devenue une grosse vache après la grossesse ... Keto Guru m'a aidée à me
+                  débarrasser de ma graisse corporelle. Ma fille a une maman mince maintenant ! </p>
+                <p class="line"></p>
+                <p class="name"> Fabienne, 33 ans </p>
+                <p class="info work"> Avocat </p>
+                <p class="info"> Utilise Keto Guru pendant : <span> 92 jours </span></p>
+                <p class="info"> Résultat : <span> -28 kg </span></p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="bottom">
+          <h1> DES RÉSULTATS VISIBLES <span> DÈS LE 1ER JOUR </span></h1>
+          <p> Des scientifiques américains ont fini par trouver une méthode simple pour mincir en toute sécurité sans
+            changer de mode de vie. <b> Ils ont développé une formule pour Keto Guru. </b> Le goût du produit ne se
+            diffère pas de celui de vos boissons préférées, sauf que <b> ses susbtances actives absorbent activement
+            </b> et décomposent la graisse corporelle, tout en éliminant les toxines. <b> Keto Guru stimule le
+              métabolisme et réduit l'appétit. </b> Ceci conduit à une perte de poids lente, semaine après semaine, sans
+            activité physique supplémentaire. </p>
+          <div class="al_right"><img alt class="prod" src="img/prod2.png">
+            <div class="symbol"><img alt src="img/simbol.png">
+              <h3> IMPORTÉ DES ÉTATS-UNIS </h3>
+            </div>
+            <!--<img src="preview/img/cup.png" alt="" class="cup">-->
+          </div>
+        </div><img alt class="girl" src="img/woman.png">
+      </div>
+    </div>
+    <div class="block3 block">
+      <div class="limit">
+        <h1> Des ingrédients de haute qualité qui vous aident à perdre du poids rapidement et en toute sécurité ! </h1>
+        <ul class="list">
+          <li>
+            <div class="section">
+              <div class="img_cont"><img alt src="img/block3_item.jpg">
+                <p class="label"><span> Vitamine B6 (pyridoxine) et </span> Vitamine B3 (Niacine) </p>
+              </div>
+              <p> Empêchent l'absorption et le stockage des 80% de la graisse. Aident à décomposer les dépôts de graisse
+                corporelle existants en toute sécurité et à les éliminer. </p>
+            </div>
+          </li>
+          <li>
+            <div class="section">
+              <div class="img_cont"><img alt src="img/block3_item2.jpg">
+                <p class="label"> Potassium et Glutamine </p>
+              </div>
+              <p> Activent le métabolisme. Démarrent le processus d'auto-nettoyage du corps dans lequel il brûle
+                activement l'excès de graisse dans le ventre et les côtés. </p>
+            </div>
+          </li>
+          <li>
+            <div class="section">
+              <div class="img_cont"><img alt src="img/block3_item3.jpg">
+                <p class="label"> Magnésium </p>
+              </div>
+              <p> Décompose l'excès de graisse hypodermique, lutte contre le relâchement cutané et la cellulite et aide
+                le corps à se restaurer après une perte de poids excessive. </p>
+            </div>
+          </li>
+          <li>
+            <div class="section">
+              <div class="img_cont"><img alt src="img/block3_item4.jpg">
+                <p class="label"> Complexe Kito </p>
+              </div>
+              <p> Augmente le taux de leptine qui est une hormone responsable de la destruction des graisses
+                corporelles. Le complexe contient des antioxydants que le corps ne peut pas produire tout seul et qu'il
+                ne peut obtenir que depuis des sources extérieures. </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block4 block">
+      <div class="limit">
+        <div class="left">
+          <h1><span> Comment utiliser </span> Keto Guru? </h1>
+          <div class="text">
+            <ul class="list">
+              <li>
+                <div class="img_cont"><img alt src="img/block4_item1.png"></div>
+                <p> Mettez 1 comprimé effervescent dans un verre (250 ml) d’eau tiède et laissez-le dissoudre
+                  complètement. </p>
+              </li>
+              <li>
+                <div class="img_cont"><img alt src="img/block4_item2.png"></div>
+                <p> Utilisez une fois par jour. Pour une meilleure absorption du produit, il est recommandé de le
+                  prendre avec le petit déjeuner. </p>
+              </li>
+              <li>
+                <div class="img_cont"><img alt src="img/block4_item3.png"></div>
+                <p> Durée d'utilisation recommandée : 1 mois </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--<img src="preview/img/cup.png" alt="" class="cup">--><img alt class="prod" src="img/prod2.png">
+      </div>
+    </div>
+    <div class="block5 block">
+      <div class="limit">
+        <div class="right">
+          <h1> AVEC KETO GURU, VOUS NE PERDEZ PAS SEULEMENT DU POIDS, MAIS VOUS REVITALISEZ AUSSI VOTRE CORPS TOUT
+            ENTIER ! </h1>
+          <ul class="list">
+            <li> Absorbe la graisse et la transforme en énergie </li>
+            <li> Supprime l'appétit et donne de l'énergie </li>
+            <li> Stimule le métabolisme </li>
+            <li> Élimine les toxines du corps et libère l'œdème </li>
+            <li> Produit de la dopamine (hormone du bonheur) </li>
+          </ul>
+        </div><img alt class="prod" src="img/prod2.png">
+      </div>
+    </div>
+    <div class="block7 block">
+      <div class="limit">
+        <h1><span> COMMENT VOTRE CORPS CHANGERA-T-IL, </span> QUAND VOUS COMMENCEREZ À UTILISER KETO GURU ? </h1>
+        <ul class="list">
+          <li>
+            <div class="days"> Jour 1 </div>
+            <p> Vous remarquerez que vous vous sentez plus frais et reposé le matin. </p>
+          </li>
+          <li>
+            <div class="days"> Jour 2 </div>
+            <p> Votre corps commence à fonctionner en mode minceur, vous commencez à perdre de la graisse </p>
+          </li>
+          <li>
+            <div class="days"> Jour 10 </div>
+            <p> Vous êtes plus gai, vous avez déjà un peu minci. Vous commencez à porter des vêtements 1 taille plus
+              petits. </p>
+          </li>
+          <li>
+            <div class="days"> Jour 21 </div>
+            <p> Votre corps devient plus jeune, il occupe moins de place, votre ancien surpoids a disparu. </p>
+          </li>
+          <li>
+            <div class="days"> Jour 28 </div>
+            <p> Vous avez perdu beaucoup de kilos en trop ! Vous commencez à porter des tenues de plus d'une taille plus
+              petites et plus sexy. Les gens vous admirent ! </p>
+          </li><img alt class="arrow" src="img/arrow.png"><img alt class="weight" src="img/weight.png">
+        </ul>
+      </div>
+    </div>
+    <div class="block8 block">
+      <div class="limit">
+        <h1> L’EFFICACITÉ DE KETO GURU A ÉTÉ PROUVÉE LORS DES ESSAIS CLINIQUES RÉALISÉS AUX ÉTATS-UNIS, AU ROYAUME-UNI
+          ET EN ISRAËL. </h1>
+        <ul class="list">
+          <li><img alt src="img/block8_item1.jpg">
+            <p> États-Unis </p>
+          </li>
+          <li><img alt src="img/block8_item2.jpg">
+            <p> Israël </p>
+          </li>
+          <li><img alt src="img/block8_item3.jpg">
+            <p> Royaume-Uni </p>
+          </li>
+          <li><img alt src="img/block8_item4.jpg">
+            <p> Académie nationale des sciences, Nutrisiın Issues, Conseil de coordination interdisciplinaire </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block9 block">
+      <div class="limit">
+        <h1> 900 personnes ayant un surpoids allant de 10 à 40 kg ont participé à la recherche </h1>
+        <ul class="list">
+          <li>
+            <p> Diminution du tour de taille de 11 à 16 cm </p><span> 91% </span>
+          </li>
+          <li>
+            <p> Perte de poids de 8 à 16 kg </p><span> 99% </span>
+          </li>
+          <li>
+            <p> Traitement des brûlures et des lourdeurs d'estomac </p><span> 100% </span>
+          </li>
+          <li>
+            <p> Amélioration de la qualité du sommeil et des performances au travail </p><span> 97% </span>
+          </li>
+          <li>
+            <p> Diminution des symptômes de l'œdème et de la cellulite </p><span> 94% </span>
+          </li>
+        </ul>
+      </div><img alt class="meter" src="img/block9_item1.png">
+    </div>
+    <div class="block10 block">
+      <div class="limit">
+        <div class="mark">
+          <div class="left">
+            <p> Organisation mondiale de la santé </p>
+            <div class="img_cont"><img alt src="img/mark.jpg"></div>
+          </div>
+          <div class="right">
+            <p> Toutes les étapes de l'essai ont été approuvées par les spécialistes de l'institution suivante : </p>
+            <p class="color"> Organisation mondiale de la santé </p>
+          </div>
+        </div>
+        <h1> AVEC KETO GURU, VOUS ÊTES À DEUX PAS DU RÉSULTAT QUE VOUS SOUHAITEZ ! Voici les histoires de quelques-uns
+          de nos 2350 clients </h1>
+        <ul class="slider" id="slider2">
+          <li class="item">
+            <div class="top">
+              <div class="left"><img alt src="img/block10_slide1.1.jpg"></div>
+              <div class="right">
+                <p class="label"> J'ai complètement refait ma garde-robe et, ce qui est encore plus important, je me
+                  suis trouvé un nouveau petit ami ! </p>
+                <p class="name"><span> Agnès France </span> 30 ans, Nice </p>
+                <p class="line"></p>
+                <p class="text"> Je n'ai que 30 ans, mais je pesais 80 kilos il y a juste un moment. De plus, j'avais
+                  beaucoup de problèmes d'estomac. Donc, aucun régime ne me convenait. Il est trop compliqué de trouver
+                  des produits diététiques dans ma ville. IL faut dire que je n'ai jamais été une passionnée de sport.
+                  Je n'aime pas faire de l'exercice. Mais quand j'ai découvert Keto Guru, tout a changé. Il a un goût
+                  pareil à celui de ma boisson préférée. On prend un comprimé par jour. Le fabricant conseille aussi de
+                  boire 1,5 litre d'eau tous les jours. J'ai suivi toutes ces instructions pendant un mois et mes
+                  attentes ont été plus que satisfaites ! C'est juste incroyable. Pendant cette période, j'ai refait ma
+                  garde-robe mais, ce qui est encore plus important, je me suis trouvé un nouveau petit ami ! Des
+                  fleurs, rendez-vous, promenades à la plage ! Je pensais que je ne l'aurais jamais de toute ma vie ! Je
+                  pense à répéter la cure. Puis je le veux pour maintenir mon poids actuel et le garder pour toujours.
+                </p>
+              </div>
+            </div>
+            <div class="bottom">
+              <ul class="list">
+                <li><img alt src="img/block10_slide1.2.jpg"></li>
+                <li><img alt src="img/block10_slide1.3.jpg"></li>
+                <li><img alt src="img/block10_slide1.4.jpg"></li>
+              </ul>
+            </div>
+          </li>
+          <li class="item">
+            <div class="top">
+              <div class="left"><img alt src="img/block10_slide2.4.jpg"></div>
+              <div class="right">
+                <p class="label"> Je pouvais mettre le jean que j'avais porté avant ma première grossesse ! </p>
+                <p class="name"><span> Lucile </span> 30 ans, Paris </p>
+                <p class="line"></p>
+                <p class="text"> Après la naissance de mon troisième enfant, je n'arrivais plus à retrouver ma forme
+                  précédente. J'avais un ventre affaissé et des cuisses grasses. Une seule pensée à ma silhouette me
+                  faisait trop mal, mais je n'y pouvais rien. Le problème était que, étant maman de trois enfants, je
+                  n'avais pas une minute à moi ... Ce n'était pas facile de suivre un régime, comme je suis allergique à
+                  presque tout ! Et j'allaite toujours. Bref, ce n'est pas si facile de choisir un système de nutrition
+                  qui me convienne. Une voisine m'a dit qu'elle avait perdu du poids après la naissance de son enfant
+                  grâce à Keto Guru. A en croire l'instruction, l'excès de graisse disparaît en un mois. Je ne pouvais
+                  pas y croire. Comment ça peut être possible ? On ne fait que de prendre un comprimé par jour, on ne
+                  fait rien mais on perd du poids ... Quoi qu'il en soit, j'en ai examiné les ingrédients et ai vu que
+                  tout était naturel. J'ai lu les commentaires de ceux qui l'avaient déjà utilisé et je me suis dit que
+                  je ne perdrais rien si je l'utilisais. J'ai donc commencé à le prendre. Huit jours après, j'ai
+                  ressenti les premièrs résultats. J'avais plus d'énergie, je dormais mieux. Bien sûr, c'était peut-être
+                  une coïncidence. Finalement, c'est à ce moment-là que le temps était meilleur et que mon plus petit
+                  fils a fini par déménager dans la chambre des enfants. Pourtant, au bout de quinze jours, je ne
+                  pouvais pas en croire mes yeux ! J'avais perdu quelques kilos ! Cela ne faisait pourtant même pas un
+                  mois que je l'utilisais. Je pouvais mettre le jean que j'avais porté avant ma première grossesse ! Mon
+                  mari est devenu beaucoup plus actif au lit. Il se peut que je retombe très vite enceinte :))
+                  Maintenant, je sais comment me remettre en forme après l'accouchement. Je n'en ai plus peur. </p>
+              </div>
+            </div>
+            <div class="bottom">
+              <ul class="list">
+                <li><img alt src="img/block10_slide2.2.jpg"></li>
+                <li><img alt src="img/block10_slide2.3.jpg"></li>
+                <li><img alt src="img/block10_slide2.1.jpg"></li>
+              </ul>
+            </div>
+          </li>
+          <li class="item">
+            <div class="top">
+              <div class="left"><img alt src="img/block10_slide4.1.jpg"></div>
+              <div class="right">
+                <p class="label"> On ne peut pas tromper la balance : j'ai perdu 8 kilos ! </p>
+                <p class="name"><span> Catherine </span> 34 ans, Grenoble </p>
+                <p class="line"></p>
+                <p class="text"> J'avais fait très attention à mon corps jusqu'à l'âge de 27 ans. J'étais en bonne forme
+                  et j'avais l'air bien. Mais des années passaient et les changements hormonaux se sont fait connaître.
+                  Je n'avais ni force ni volonté pour faire de l'exercice ni suivre un régime. J'ai été obligée de
+                  refaire ma garde-robe pour acheter des vêtements plus grands. Et puis j'ai basculé vers une taille
+                  plus grande ... Cela aurait pu continuer et j'aurais pu en grossir encore plus mais une amie m'a parlé
+                  des comprimés Keto Guru et m'a dit de les prendre tous les jours. De plus, elle m'a conseillé de boire
+                  plus d'eau. J'avoue que je n'étais pas trop confiante au résultat suggéré par le fabricant. Imaginez
+                  ma surprise quand j'ai pu mettre mes vieux vêtements au bout d'un mois ! De plus, je me sens plus
+                  forte et pleine d’énergie ! Ma peau paraît beaucoup plus jeune. Je ne sais pas si c'est à cause de
+                  Keto Guru ou c'est le hasard, mais on ne peut pas tromper la balance ! Je pense que je suis devenue
+                  dix ans plus jeune ! </p>
+              </div>
+            </div>
+            <div class="bottom">
+              <ul class="list">
+                <li><img alt src="img/block10_slide4.2.jpg"></li>
+                <li><img alt src="img/block10_slide4.3.jpg"></li>
+                <li><img alt src="img/block10_slide4.4.jpg"></li>
+              </ul>
+            </div>
+          </li>
+          <li class="item">
+            <div class="top">
+              <div class="left"><img alt src="img/block10_slide5.1.jpg"></div>
+              <div class="right">
+                <p class="label"> En un mois, j'ai retrouvé ma forme d'avant grossesse. </p>
+                <p class="name"><span> Henriette </span> 26 ans, Toulouse </p>
+                <p class="line"></p>
+                <p class="text"> Je suis en surpoids et j'ai des rides après la grossesse. La maternité m'avait en plus
+                  offert des varices. Donc la gym n'était pas une option pour moi. Mais comment puis-je perdre du poids
+                  sans faire du sport ? Je me préparais des repas sains mais cela n'a pas aidé. J'ai presque laissé
+                  aller mon physique lorsque j'ai entendu deux mamans qui se promenaient dans un parc parler d'un
+                  produit qui avait le goût d'un jus de fruit. Ils disaient qu'on ne pourrait jamais croire que l'on
+                  pouvait se débarrasser des kilos en trop grâce à un remède qu'on prenait une fois par jour, sans rien
+                  faire d’autre. Bref, j'ai décidé d'essayer. Je ne l'ai pas regretté une seconde ! Au bout d'un mois,
+                  j'ai retrouvé ma forme d'avant grossesse. Je viens de commander un autre paquet. Je vais continuer à
+                  améliorer mon résultat. Ces mamans du parc sont toujours méfiantes tout en suivant ma transformation.
+                  Elles ne croient pas que c'était Keto Guru qui a fait cela. Mais je pense qu'elles ont déjà passé
+                  leurs commandes elles aussi. </p>
+              </div>
+            </div>
+            <div class="bottom">
+              <ul class="list">
+                <li><img alt src="img/block10_slide5.2.jpg"></li>
+                <li><img alt src="img/block10_slide5.3.jpg"></li>
+                <li><img alt src="img/block10_slide5.4.jpg"></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block11 block">
+      <div class="limit">
+        <h1> COMMENT TRAVAILLONS-NOUS ? </h1>
+        <ul class="list">
+          <li><img alt src="img/block11_item1.jpg">
+            <p> Passez votre commande maintenant et profitez d'une réduction </p>
+          </li>
+          <li><img alt src="img/block11_item2.jpg">
+            <p> Attendez l'appel de notre spécialiste pour confirmer les détails </p>
+          </li>
+          <li><img alt src="img/block11_item3.jpg">
+            <p> Vous ne payez la marchandise qu'après l'avoir reçue par courrier ou à la poste </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="block12 block">
+      <div class="bg_cont">
+        <div class="limit">
+          <div class="top">
+            <h1> Il n'y a rien de meilleur que de mincir avec ce produit </h1>
+            <h2> Aidez votre corps à se débarrasser des kilos en trop ! </h2>
+            <div class="left">
+              <div class="sect"><img alt class="symbol" src="img/simbol.png">
+                <h2> IMPORTÉ DES ÉTATS-UNIS </h2>
+                <p class="sale"> Remise : <span class="js_percent_sign"> 50% </span></p>
+                <div class="price"><span class="old js_old_price_curs"> <span class="priceOld"></span> <span class="currencyMain"></span> </span><span class="new js_new_price_curs">
+                    <span class="priceMain"></span> <span class="currencyMain"></span>* </span></div>
+              </div>
+              <!--<img src="preview/img/cup.png" alt="" class="cup">--><img alt class="prod" src="img/prod3.png">
+            </div>
+            <div class="right">
+              <div class="limit">
+                <ul class="list">
+                  <li> Absorbe la graisse et la transforme en énergie </li>
+                  <li> Élimine les toxines </li>
+                  <li> Supprime l'appétit et donne de l'énergie </li>
+                  <li> Élimine l'œdème </li>
+                  <li> Produit de la dopamine (hormone du bonheur) </li>
+                </ul>
+                <form action="getform.php" method="post">
+                  <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+                  <input type="hidden" name="utm_campaign" value="{domonetka}">
+                  <input name="name" placeholder="Prénom" type="text" required><input class="only_number" name="phone"
+                    placeholder="Numéro de téléphone" type="tel" required>
+                  <div class="nds"> * Faites attention que les TVA locaux peuvent varier, cela dépend du pays où vous
+                    commandez nos produits. Notre Service Clientèle vous en consulteront avec plaisir </div><button
+                    class="btn button__text pulse js_submit" type="submit"> COMMANDER </button>
+                  <div class></div>
+                  <div class="verification"><img src="img/verified.png"></div>
+                </form>
+              </div><img alt class="girl" src="img/woman2.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="limit">
+          <div class="left">
+            <ul class="list">
+              <li> INGRÉDIENTS <br> NATURELS </li>
+              <li> Une large gamme de bienfaits pour la santé </li>
+            </ul>
+          </div>
+          <div class="right">
+            <div class="limit">
+              <p class="pack"> IL NE RESTE QUE <span class="pack_value"> 30 </span> PAQUETS AU PRIX SPÉCIAL </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/slick.js">
+  </script>
+  <script src="js/slick.min.js">
+  </script>
+  <script src="js/slider.js">
+  </script>
+  <script src="js/main.js" type="text/javascript">
+  </script>
+  <div class="payment_timeout" style="display:none !important"> 0 </div>
+  <script>
+    $(document).ready(function () {
+      try {
+        moment.locale("");
+        $('.day-before').text(moment().subtract(1, 'day').format('D.MM.YYYY'));
+        $('.day-after').text(moment().add(1, 'day').format('D.MM.YYYY'));
+      } catch (e) {
+        console.log('moment problems!');
+      }
+    });
+  </script>
+  <!--retarget-->
+  <!--retarget-->
+  <div class="ac_footer"><span> © 2023 Copyright. All rights reserved. </span><br><a
+      href="//tigrfeba.com/content/shared/html/policy_en.html" target="_blank"> Privacy policy </a> | <a
+      href="http://ac-feedback.com/report_form/"> Report </a>
+    <p></p>
+    <script>
+      typeof adc_clearFooter !== 'undefined' && adc_clearFooter();
+    </script>
+  </div>
+  <script>
+    const offer_params = {
+        priceMain : '39',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>

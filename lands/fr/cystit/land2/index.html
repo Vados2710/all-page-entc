@@ -1,0 +1,827 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Dès les premiers jours épargnera</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="ie=edge" http-equiv="x-ua-compatible">
+  <link href="css/css.css" subset="cyrillic" rel="stylesheet">
+  <link href="img/favicon.ico.png" rel="icon">
+  <link rel="stylesheet" href="css/app.css">
+
+  <script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="cdn/js/jquery.js"></script>
+
+
+
+  <style>
+    .-build {
+      position: fixed;
+      opacity: 0;
+      z-index: -1;
+      top: 0;
+      left: -9999px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <img class="header__woman" src="img/header__woman.png">
+      <nav class="header__nav">
+        <ul class="header__links">
+          <li class="header__link header__link-1 wow fadeInDown"
+            style="visibility: visible; animation-name: fadeInDown;">
+            <a href="#doc"><span class="header__dashed lt0">№1 parmi les recommandations</span><span
+                class="header__dashed lt1">urologues pour l'année <script>
+                  d = new Date();
+                  p = new Date(d.getTime() - 5 * 86400000);
+                  monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(d.getFullYear());
+                </script></span></a>
+          </li>
+          <li class="header__link header__link-2 wow fadeInDown" data-wow-delay="0.1s"
+            style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+            <a href="#days"><span class="header__dashed lt2">Efficacité confirmée</span><span
+                class="header__dashed lt3">les meilleurs spécialistes</span></a>
+          </li>
+          <li class="header__link header__link-3 wow fadeInDown" data-wow-delay="0.2s"
+            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+            <a href="#reviews"><span class="header__dashed lt4">Avis pour l'année <script>
+                  d = new Date();
+                  p = new Date(d.getTime() - 5 * 86400000);
+                  monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(d.getFullYear());
+                </script></span></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__flex">
+        <div class="header__about wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+          <b class="header__name-prod blue lt5">Cystonette</b>
+          <h1 class="header__title lt6">Oubliez <span class="ib"> a propos de la miction involontaire</span> pour
+            toujours</h1>
+          <p class="header__subtitle lt7">Dès les premiers jours épargnera <span class="ib">des problèmes</span> <span
+              class="ib"> avec une vessie urinaire</span> quelle que soit leur cause</p>
+          <ul class="header__list">
+            <li class="header__feature wow fadeInDown lt8" data-wow-delay="0.1s"
+              style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;"><b>Soulage l'inconfort et
+                la douleur</b> <span class="ib">dans la région </span>de l'abdomen</li>
+            <li class="header__feature wow fadeInDown lt9" data-wow-delay="0.2s"
+              style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;"><b>Apporte un soulagement
+                complet </b> <span class="ib"> lors des visites </span> des toilettes</li>
+            <li class="header__feature wow fadeInDown" data-wow-delay="0.3s"
+              style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;"><b class="lt10">Protège
+                <span class="ib"> de la rechute </span> </b><span class="ib lt11"> plus d'un an</span></li>
+          </ul>
+        </div>
+        <div class="header__img wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;"><img class="header__prod"
+            src="img/prod.png"></div>
+        <div class="form wow fadeInDown" data-wow-delay="0.2s" id="cloneMobileThis"
+          style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+          <div class="form__head">
+            <span class="lt12">Avoir le temps d'acheter</span><span class="ib"></span><span class="form__date">jusqu'au
+              <script type="text/javascript">
+                var appendNull = function (num) {
+                  return num < 10 ? 0 + num.toString() : num;
+                };
+                d = new Date();
+                p = new Date(d.getTime() + 0 * 86400000);
+                monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+              </script></span>
+          </div>
+          <div class="price">
+            <div class="price__new">
+              <span class="price__title lt13">Nouveau prix</span>
+              <div class="price__value">
+                <span class="price__number price_main lt14"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+              </div>
+            </div>
+          </div>
+          <div class="form__lastpack lt15">Il reste <span class="form__count pack_count">48</span> de emballages <span
+              class="ib"> au rabais </span> </div>
+          <form action="getform.php" method="post" class="order_form">
+            <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+            <input type="hidden" name="utm_campaign" value="{domonetka}">
+            <label class="form__label-name form__label"><input class="form__input" name="name" placeholder="Nom"
+                required type="text"></label>
+            <label class="form__label-tel form__label"><input class="form__input" name="phone" placeholder="Téléphone"
+                required type="text"></label>
+            <button class="btn" type="submit"><span class="lt16">Commander <small class="btn__small">au
+                  rabais</small></span></button>
+          </form>
+          <p class="form__secure lt18">Vos données sont protégées!</p>
+          <div class="form__pay-after wow fadeInDown" data-delay="0.1s"
+            style="visibility: visible; animation-name: fadeInDown;">
+            <p class="lt19">Paiement après réception des marchandises</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="problem">
+    <div class="container">
+      <h2 class="title wow fadeInDown lt20" style="visibility: visible; animation-name: fadeInDown;">Vous connaissez la
+        sensation, <span class="ib">que la vie </span> passe <span class="ib">dans les toilettes?</span> </h2>
+      <div class="problem__list">
+        <div class="problem__item wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+          <div class="problem__img">
+            <img src="img/problem__img-1.jpg">
+            <div class="problem__circle"></div>
+          </div>
+          <div class="problem__desc">
+            <span class="problem__count"><span class="problem__number">1</span></span>
+            <p class="problem__text lt21">Inconfort constant <span class="ib">и боль</span> dans bas-ventre <span
+                class="ib"> en urinant </span> </p>
+          </div>
+        </div>
+        <div class="problem__item wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+          <div class="problem__img">
+            <img src="img/problem__img-2.jpg">
+            <div class="problem__circle"></div>
+          </div>
+          <div class="problem__desc">
+            <span class="problem__count"><span class="problem__number">2</span></span>
+            <p class="problem__text lt22">Les connaissances et les employés pensent que vous êtes malade, <span
+                class="ib"> et vous échapper</span> </p>
+          </div>
+        </div>
+        <div class="problem__item wow fadeInDown" data-wow-delay="0.2s"
+          style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+          <div class="problem__img">
+            <img src="img/problem__img-3.jpg">
+            <div class="problem__circle"></div>
+          </div>
+          <div class="problem__desc">
+            <span class="problem__count"><span class="problem__number">3</span></span>
+            <p class="problem__text lt23">Vos randonnées constantes <span class="ib">aux toilettes</span> irritent <span
+                class="ib">vous et vos proches </span> </p>
+          </div>
+        </div>
+        <div class="problem__item wow fadeInDown" data-wow-delay="0.3s"
+          style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
+          <div class="problem__img">
+            <img src="img/problem__img-4.jpg">
+            <div class="problem__circle"></div>
+          </div>
+          <div class="problem__desc">
+            <span class="problem__count"><span class="problem__number">4</span></span>
+            <p class="problem__text lt24">Peur de partir <span class="ib"> à la promenade,</span> éternuer, rire,
+              soulever le lourd – et ne pas résister</p>
+          </div>
+        </div>
+      </div>
+      <div class="problem__bottom wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+        <p class="lt25">La miction involontaire gâte <span class="ib"> vous la vie?</span> <span class="ib">Il y a une
+            solution!</span> </p>
+      </div>
+    </div>
+  </section>
+  <!-- <section class="components" id="components">
+    <div class="container">
+      <h2 class="title wow fadeInDown lt26" style="visibility: visible; animation-name: fadeInDown;"> <span
+          class="blue"> Cystonette </span> efficace <span class="ib"> avec involontaire </span> miction<small
+          class="components__subtitle wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">En raison des propriétés
+          médicinales des plantes les plus médicinales</small></h2>
+      <div class="components__desc wow fadeInDown" data-wow-delay="0.3s"
+        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
+        <h3 class="lt27">Teinture de prêle des champs pendant des siècles <span class="ib"> utilisé en Europe.</span>
+        </h3>
+        <p class="lt28"><b>Extrait de makua</b> sur 89% renforcer les propriétés antimicrobiennes <b>Equisétum
+            arvénse,</b> <span class="ib"> et sur 92%</span> accélérer la restauration du système génito-urinaire <span
+            class="ib">des infections.</span> </p>
+      </div>
+      <div class="components__list-1">
+        <div class="components__item wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+          <div class="components__img-block"><img class="components__img-1" src="img/components__img-1.png"></div>
+          <p class="components__caption lt29">Extrait<br> de clou de girofle</p>
+        </div>
+        <div class="components__item wow fadeInDown" data-wow-delay="0.3s"
+          style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
+          <div class="components__img-block"><img class="components__img-2" src="img/components__img-2.png"></div>
+          <p class="components__caption lt30">Extrait <br> de graines de citrouille</p>
+        </div>
+        <div class="components__item wow fadeInDown" data-wow-delay="0.4s"
+          style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInDown;">
+          <div class="components__img-block"><img class="components__img-3" src="img/components__img-3.png"></div>
+          <p class="components__caption lt31">Extrait <br> de feuille d'aloès </p>
+        </div>
+      </div>
+      <h4 class="components__title-list wow fadeInDown lt32" style="visibility: visible; animation-name: fadeInDown;">ET
+        D'AUTRES</h4>
+      <h3 class="components__title-list wow fadeInDown lt33" style="visibility: visible; animation-name: fadeInDown;">
+        Composants supplémentaires <span class="ib">pour le gain</span> de formule <span class="blue"> Cystonette :</span>
+      </h3>
+      <div class="components__list-2">
+        <div class="components__item components__item-1 wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+          <div class="components__what-do lt34"><b> agit sur les maladies du système génito-urinaire </b>Tue les
+            bactéries nocives, augmente la résistance du corps aux microbes </div>
+        </div>
+        <div class="components__item components__item-2 wow fadeInDown" data-wow-delay="0.2s"
+          style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+          <div class="components__what-do lt35"><b>agit sur les reins</b>Normalise le travail des reins, a des
+            propriétés diurétiques et solubles dans la pierre</div>
+        </div>
+        <div class="components__item components__item-3 wow fadeInDown" data-wow-delay="0.3s"
+          style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
+          <div class="components__what-do lt36"><b>agit sur les maladies du système génito-urinaire</b>Nettoie et guérit
+            les voies urinaires, prévient la cystite et l'urétrite</div>
+        </div>
+      </div>
+      <div class="components__conclusion wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+        <p class="lt37">C'est grâce à la combinaison de composants naturels <span class="blue"> Cystonette </span> aide
+          rapidement <span class="ib">de probleme </span> miction involontaire, quelles que soient ses causes.</p>
+      </div>
+    </div>
+  </section> -->
+  <section class="days" id="days">
+    <div class="container">
+      <h2 class="title wow fadeInDown lt38" style="visibility: visible; animation-name: fadeInDown;"> <span
+          class="blue"> Cystonette </span> dès les premiers jours épargnera <span class="ib"> vous d'uriner
+          involontairement </span> <small class="days__subtitle wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;"> L'effet du médicament
+          augmente <span class="ib"> chaque jour </span> <span class="ib">de la réception</span> </small></h2>
+      <div class="days__list">
+        <div class="days__item days__item-1 wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+          <div class="days__img-block"><img class="days__img" src="img/days__img-1.png"></div>
+          <div class="days__duration lt39">1-er jour</div>
+          <div class="days__desc">
+            <h3 class="lt40">Le sentiment d'inconfort dans le bas-ventre disparaît</h3>
+            <p class="lt41">La première visite aux toilettes vous apporte un soulagement et une vidange complète de
+              votre vessie. Manque d'envie fréquente d'aller <span class="ib"> aux toilettes.</span> </p>
+          </div>
+        </div>
+        <div class="days__item days__item-2 wow fadeInDown" data-wow-delay="0.2s"
+          style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+          <div class="days__img-block"><img class="days__img" src="img/days__img-2.png"></div>
+          <div class="days__duration lt42">14-ème jour</div>
+          <div class="days__desc">
+            <h3 class="lt43">Envies dans <br> la norme</h3>
+            <p class="lt44">Il n'y a plus de désir soudain d'aller aux toilettes, même si <span class="ib"> vous sortez
+              </span> de la pièce chaude à la rue froide, buvez beaucoup de liquide ou soyez nerveux.</p>
+          </div>
+        </div>
+        <div class="days__item days__item-3 wow fadeInDown" data-wow-delay="0.3s"
+          style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
+          <div class="days__img-block"><img class="days__img" src="img/days__img-3.png"></div>
+          <div class="days__duration lt45">30-er jour</div>
+          <div class="days__desc">
+            <h3 class="lt46">Le problème de la miction involontaire a disparu</h3>
+            <p class="lt47">Vous vivez la vie d'une personne en bonne santé sachant que le problème est resté dans le
+              passé pour toujours.</p>
+          </div>
+        </div>
+      </div>
+      <div class="days__conclusion wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+        <p class="lt48">Juste 1 cours – et vous oublierez pour toujours <span class="ib"> sur la dépendance </span>
+          <span class="ib">aux toillettes!</span> </p>
+      </div>
+    </div>
+  </section>
+  <section class="newlife block">
+    <div class="container">
+      <div class="title wow fadeInDown lt49" style="visibility: visible; animation-name: fadeInDown;">Comment votre vie
+        va changer <br> après avoir éliminé les problèmes de miction</div>
+      <div class="newlife-content">
+        <div class="newlife-content-box wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+          <div class="newlife-content-box__img"><img src="img/life1.png"></div>
+          <div class="newlife-content-box__text lt50">Vous dormez paisiblement la nuit,<br>plutôt que de vous lever
+            plusieurs fois<br> pour aller aux toilettes</div>
+        </div>
+        <div class="newlife-content-box wow fadeInDown" data-wow-delay="0.2s"
+          style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+          <div class="newlife-content-box__img newlife-content-box__img2"><img src="img/life2.png"></div>
+          <div class="newlife-content-box__text lt51">Vous ne courez plus plusieurs <br> fois dans les toilettes lorsque
+            vous êtes inquiet</div>
+        </div>
+        <div class="newlife-content-box wow fadeInDown" data-wow-delay="0.3s"
+          style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
+          <div class="newlife-content-box__img newlife-content-box__img3"><img src="img/life3.png"></div>
+          <div class="newlife-content-box__text lt52">Vous pouvez boire beaucoup de liquides<br> et ne vous inquiétez de
+            rien</div>
+        </div>
+        <div class="newlife-content-box wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+          <div class="newlife-content-box__img newlife-content-box__img4"><img src="img/life4.png"></div>
+          <div class="newlife-content-box__text lt53">Vous vivez tranquillement en sachant que votre <br> vessie ne vous
+            laissera pas tomber &lt; br &gt; au moment crucial</div>
+        </div>
+        <div class="newlife-content-box wow fadeInDown" data-wow-delay="0.2s"
+          style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">
+          <div class="newlife-content-box__img newlife-content-box__img5"><img src="img/life5.png"></div>
+          <div class="newlife-content-box__text lt54">Vous pouvez vous asseoir en toute sécurité au cinéma, au théâtre
+            et à d'autres événements, sans vous inquiéter,<br>que vous devrez aller aux toilettes plusieurs fois</div>
+        </div>
+        <div class="newlife-content-box wow fadeInDown" data-wow-delay="0.3s"
+          style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInDown;">
+          <div class="newlife-content-box__img newlife-content-box__img6"><img src="img/life6.png"></div>
+          <div class="newlife-content-box__text lt55">Vous ne vous sentez plus comme une personne malade-vous pouvez
+            planifier<br> et réaliser votre vie</div>
+        </div>
+      </div>
+      <div class="newlife-btitle wow fadeInDown lt56" style="visibility: visible; animation-name: fadeInDown;">En
+        <script>
+          d = new Date();
+          p = new Date(d.getTime() - 5 * 86400000);
+          monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+          document.write(d.getFullYear());
+        </script>,
+        15436 femmes se sont déjà débarrassées de la miction involontaire.</div>
+      <div class="newlife-bsubtitle wow fadeInDown lt57" data-wow-delay="0.1s"
+        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;"> <span class="blue"> Cystonette
+        </span> vous aidera aussi!</div>
+      <div class="newlife-form wow fadeInDown" data-wow-delay="0.1s"
+        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+        <div class="snoska">
+          <a href="#order_form"><button class="btn" type="submit"><span class="lt58">Se débarrasser <small
+                  class="btn__small"> des problèmes </small></span></button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="doc block" id="doc">
+    <div class="container">
+      <h2 class="title wow fadeInDown lt59" style="visibility: visible; animation-name: fadeInDown;">Médecin émérite,
+        Charles Durand <br> recommande <span class="blue"> Cystonette </span> </h2>
+      <div class="doc-content wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+        <div class="doc-content__title lt60"> <span class="blue"> Cystonette </span> — un remède universel que je
+          recommande à tout le monde avec<br> une miction fréquente.</div>
+        <p class="doc-content__subtitle lt61">J'ai déjà perdu le nombre de mes patients guéris avec le médicament
+          Cystonette . La facture va à des centaines, c'est sûr.</p>
+        <p class="doc-content__subtitle lt62">Pourquoi je le recommande? Ce remède est <b>universel</b>, il aide malgré
+          la raison de l'envie fréquente de vider la vessie. Il est sûr, se compose uniquement de composants naturels et
+          donc il n'a pas de contre-indications,<br>il ne provoque pas de réactions allergiques, n'a pas d'effets
+          secondaires. C'est un outil <b>efficace </b>. Après la première application, une personne perd de l'inconfort
+          dans la vessie et la visite aux toilettes apporte un soulagement complet.</p>
+        <p class="doc-content__subtitle mnone lt63"> <span class="doc-content__subtitle-name">Charles
+            Durand,</span>médecin émérite, auteur d'articles scientifiques, expert en urologie </p><img
+          class="doc-content__signature" src="img/signature.png">
+      </div>
+      <div class="doc__img">
+        <img src="img/doctor.png">
+        <div class="doc__img-name lt64">Charles <br>Durand</div>
+      </div>
+    </div>
+  </section>
+  <section class="reviews block" id="reviews">
+    <div class="container">
+      <h2 class="title wow fadeInDown lt65" style="visibility: visible; animation-name: fadeInDown;">Commentaires des
+        acheteurs</h2>
+
+
+      <div class="reviews-content wow fadeInDown" data-wow-delay="0.1s">
+        <div class="reviews-content-box wow fadeInDown" data-wow-delay="0.1s">
+          <div class="reviews-content-box__img">
+            <img src="img/ava1.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt76">Anne Robert</div>
+          <div class="reviews-content-box__thesis lt77">Aidé dès le premier jour!</div>
+          <div class="reviews-content__body">
+            <div class="reviews-content-box__text lt78">Il n'y a jamais eu de problème à aller aux toilettes sur un
+              petit. Et puis elle a attrapé un rhume et a commencé... J'aurais pu rire-et par hasard, excusez-moi, un
+              pantalon mouillé pour trouver.
+              <br> l'hôpital a conseillé Cystonette .
+              <br> je ne fais pas très confiance aux médecins et j'ai décidé de vérifier cet outil auprès d'un
+              pharmacien familier. Eh bien, elle a dit que le remède est bon et sûr. Quand je l'ai pris du courrier, mon
+              hôpital était déjà à court
+              <br> et il était effrayant de revenir au travail. Ce n'est pas un travail quand tu cours constamment aux
+              toilettes. Mais tout allait bien, grâce à Cystonette . Il s'est avéré que la première application aide.
+              Des
+              sensations douloureuses dans le bas-ventre sont passées et je vais normalement aux toilettes. J'ai passé
+              tout le cours et je me sens bien.
+            </div>
+          </div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box wow fadeInDown" data-wow-delay="0.2s">
+          <div class="reviews-content-box__img">
+            <img src="img/ava2.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt79">Yvette Simon</div>
+          <div class="reviews-content-box__thesis lt80">J'ai retrouvé une vie confortable
+            <br> et tranquille</div>
+          <div class="reviews-content-box__text lt81">À un moment donné, j'ai remarqué que je commençais à courir
+            souvent aux toilettes. Cela m'a beaucoup gêné au travail et à la maison. Je suis allée voir un médecin. Là,
+            pendant longtemps, ils ne pouvaient pas diagnostiquer mon problème, ils ont finalement déclaré un syndrome
+            de la vessie faible. Ça ne m'a pas rendu plus facile. Cystonette j'ai acheté juste pour la publicité, et je
+            suis très heureux de ma décision. Il m'a aidé à reprendre le contrôle de la vessie! Et encore plus, depuis
+            que j'ai bu 2 mois, et je n'ai même pas eu de rhume! Il m'a levé l'immunité.
+          </div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box wow fadeInDown" data-wow-delay="0.3s">
+          <div class="reviews-content-box__img">
+            <img src="img/ava3.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt82">Alice Vincent</div>
+          <div class="reviews-content-box__thesis lt83">Tout simplement ravie!
+            <br>Se sentir mieux qu'avant!</div>
+          <div class="reviews-content-box__text lt84">Quand j'ai commencé à avoir des crises de dépendance aux toilettes
+            après l'accouchement, je me suis immédiatement acheté tout un tas de médicaments. Ils ont minimisé l'aide.
+            Je courais moins souvent aux toilettes. Mais bientôt il est devenu pire, j'ai commencé à montrer des effets
+            secondaires de ces médicaments. J'ai eu peur et j'ai cessé de les prendre et j'ai recommencé à courir
+            souvent aux toilettes. Un ami d'enfance est venu visiter et nous avons passé toute la soirée dans la cuisine
+            pour une conversation agréable. Elle a regardé que je courais souvent les toilettes et m'a conseillé
+            Cystonette
+            . Elle a dit qu'il n'avait aucun effet secondaire et qu'il n'avait rien à craindre. Et c'est fait.
+            Cystonette
+            moi pour le cours ramené à la vie normale et aucun effet secondaire.
+          </div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box">
+          <div class="reviews-content-box__img">
+            <img src="img/ava4.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt85">Marie Thomas</div>
+          <div class="reviews-content-box__thesis lt86">Aide rapidement
+            <br> et très longtemps!</div>
+          <div class="reviews-content-box__text lt87">Je conduis un tram, donc je vais souvent aux toilettes non pas ce
+            qui n'est pas souhaitable, mais simplement irréaliste. Quand j'ai remarqué que pendant longtemps je ne
+            pouvais pas m'asseoir sans toilettes, j'ai couru chez le médecin. Elle a fait un examen et a dit que c'était
+            juste pour le temps, donc, n'a rien trouvé de sérieux. J'ai demandé à mon fils de me trouver quelque chose
+            pour ne pas penser aux toilettes par temps humide. Il est Cystonette et a trouvé. Il est très bon que ce
+            médicament fonctionne immédiatement. Le matin, j'ai bu, je suis allé aux toilettes, ma vessie a été soulagée
+            et tout va bien. Pas de course, pas de douleur dans le ventre. Vous travaillez tranquillement et vivez comme
+            toutes les personnes en bonne santé.</div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box">
+          <div class="reviews-content-box__img">
+            <img src="img/ava5.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt88">Colette Morel</div>
+          <div class="reviews-content-box__thesis lt89">Plus peur de longues
+            <br> promenades</div>
+          <div class="reviews-content-box__text lt90">Auparavant, il était souvent que j'ai eu recours aux toilettes,
+            quelques gouttes d'urine et tout. Et vingt minutes plus tard, encore la même chose. J'ai essayé une variété
+            de médicaments, même les méthodes de grand-mère, mais tout a été gaspillé. J'ai gaspillé de l'argent et des
+            nerfs. A propos de Cystonette appris de la consultation en ligne du médecin. Cela a coûté à peu de frais.
+            Voici
+            Cystonette m'a aidé. Cette sensation constante de douleur dans le bas-ventre et de courir dans les toilettes
+            de
+            la ville et des bureaux a pris fin dès les premiers jours d'application. Je ne m'attendais même pas à un tel
+            effet! Je le conseille très à tous les toilettes.</div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box">
+          <div class="reviews-content-box__img">
+            <img src="img/ava6.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt91">Jeanne Leroy</div>
+          <div class="reviews-content-box__thesis lt92">Problème résolu
+            <br> pour un mois!</div>
+          <div class="reviews-content-box__text lt93">Les femmes ont certaines maladies, à propos desquelles il est
+            honteux de dire, pas que le médecin aille. C'était comme ça que j'urinais. Je courais à la maison aux
+            toilettes, au travail, sur le chemin du travail ou à la maison. C'est juste une situation exaspérante. Je
+            voulais vraiment comprendre sans médecins. Ils sont seuls à la clinique, que savent-ils? Je peux encore
+            faire confiance à ma sœur et j'ai appelé, elle vit et travaille loin. Elle m'a parlé du Cystonette et m'a
+            parlé. L'outil s'est avéré être la classe supérieure! En un mois, j'ai eu ces problèmes. Même si je suis
+            nerveux, je ne cours pas aux toilettes aussi souvent qu'avant.</div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box">
+          <div class="reviews-content-box__img">
+            <img src="img/ava7.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt67">Pauline Roux</div>
+          <div class="reviews-content-box__thesis lt68">Plus de distraction
+            <br> et tranquillement faire des affaires</div>
+          <div class="reviews-content-box__text lt69">Je travaille comme designer. Tout allait bien, jusqu'au moment où,
+            pour une raison quelconque, elle a commencé à courir souvent aux toilettes. Et ça m'énervait terriblement.
+            Je ne pouvais pas me concentrer sur mon travail. Seulement il y aura une idée, ou je vais entrer dans le
+            sujet, comment vous devez vous absenter. Tu retournes sur place et tu ne te souviens plus de ce à quoi tu
+            pensais! La clinique n'a pas trouvé de pathologie, ils m'ont dit que j'étais nerveux. Ils ont conseillé
+            Cystonette , ils ont dit que c'était juste pour de tels cas. Je l'ai essayé et pour la journée, celui-ci a
+            couru dans le besoin seulement 5 fois! Et avant c'était 14 fois! Maintenant, je travaille sans problèmes et
+            je ne suis pas distrait par des bêtises.</div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box">
+          <div class="reviews-content-box__img">
+            <img src="img/ava8.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt70">Diane Petit</div>
+          <div class="reviews-content-box__thesis lt71">Tranquillement obtenir
+            <br> et au travail</div>
+          <div class="reviews-content-box__text lt72">Je vais travailler deux heures. Habituellement, c'est normal, mais
+            si vous voulez aller aux toilettes, alors c'est vraiment un problème. Le matin avec mon café commence, sans
+            elle ne pouvait pas se réveiller. Mais c'est un diurétique, cette boisson. Donc, quand je vais au travail
+            les dernières minutes juste presque courir au bureau et immédiatement aux toilettes. Humeur, donc commencer
+            la journée de travail n'est pas spécial. Sans café, je ne peux pas, mais je ne veux pas non plus aller au
+            siège du besoin de pisser. Le problème a été résolu Cystonette . Le matin, je bois aussi du café, mais aussi
+            du
+            Cystonette , puis je travaille sans anxiété, pas d'envie trop fréquente!</div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+        <div class="reviews-content-box">
+          <div class="reviews-content-box__img">
+            <img src="img/ava9.png" alt="avatar">
+          </div>
+          <div class="reviews-content-box__name lt73">Angelique Dubois</div>
+          <div class="reviews-content-box__thesis lt74">Le mari ne grogne plus!</div>
+          <div class="reviews-content-box__text lt75">Depuis l'enfance, j'ai souvent couru aux toilettes. Je ne faisais
+            pas attention à cela, je me suis habitué en quelque sorte. Mais ma belle-mère est une autre occasion de me
+            blesser. Elle m'a même surnommé offensivement, elle est gentille. Et le mari a commencé à l'écouter en
+            quelque sorte, que sa femme ne va pas bien. Eh bien, j'ai décidé de trouver un moyen de ne pas courir
+            souvent aux toilettes. Et il a trouvé. C'est Cystonette . Maintenant, pendant des heures sur les toilettes
+            et
+            ne pense pas.</div>
+          <div class="reviews-content-box__btn">
+            <div class="reviews-content-box__cbtn">
+              <img src="img/review-arrow.svg" alt="arrow">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+  <section class="orus block">
+    <div class="container">
+      <h2 class="title wow fadeInDown lt131" style="visibility: hidden; animation-name: none;">Comment appliquer <span
+          class="blue"> Cystonette </span> </h2>
+      <div class="orus-top">
+        <div class="orus-top-boximg wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: hidden; animation-delay: 0.1s; animation-name: none;"><img alt="use"
+            class="orus-top-boximg__use" src="img/use.png"><img alt="prod" class="orus-top-boximg__prod"
+            src="img/prod.png"></div>
+        <div class="orus-top-instruction wow fadeInDown" data-wow-delay="0.2s"
+          style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+          <div class="orus-top-instruction__small lt132">Appliquer <span class="blue"> Cystonette </span>2 fois par jour
+            pendant 30 minutes avant les repas.<br> Boire un verre d'eau.</div>
+          <div class="orus-top-instruction__big lt133">La durée du cours est sélectionnée individuellement.<br> Dans les
+            formes chroniques et compliquées, il est recommandé <span class="blue"> 3 cours en 10 jours </span> </div>
+        </div>
+      </div>
+      <div class="orus-line"></div>
+      <h2 class="title wow fadeInDown lt134" style="visibility: hidden; animation-name: none;">Comment commander</h2>
+      <div class="orus-bottom">
+        <div class="orus-bottom-box orus-bottom-box1 wow fadeInDown" data-wow-delay="0.1s"
+          style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+          <div class="orus-bottom-box1__img orus-bottom-box__img"><img alt="order" src="img/order1.png"></div>
+          <div class="orus-bottom-box__text lt135">Laissez la demande <br> sur le bon de commande</div>
+        </div>
+        <div class="orus-bottom-box orus-bottom-box2 wow fadeInDown" data-wow-delay="0.2s"
+          style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+          <div class="orus-bottom-box2__img orus-bottom-box__img"><img alt="order" src="img/order2.png"></div>
+          <div class="orus-bottom-box__text lt136">Notre opérateur rappellera<br> pour clarifier tous les détails</div>
+        </div>
+        <div class="orus-bottom-box orus-bottom-box3 wow fadeInDown" data-wow-delay="0.3s"
+          style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+          <div class="orus-bottom-box3__img orus-bottom-box__img">
+            <img alt="order" src="img/order3.png">
+            <!--<div class="prod-name">Cystonette</div>-->
+          </div>
+          <div class="orus-bottom-box__text lt137">Paiement des marchandises seulement <br> après réception</div>
+        </div>
+      </div>
+      <div class="orus-lock wow fadeInDown lt138" data-wow-delay="0.1s"
+        style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">La livraison est effectuée anonymement
+        dans un emballage opaque</div>
+    </div>
+  </section>
+  <section class="header-bottom">
+    <header class="header">
+      <div class="container">
+        <img class="header__woman" src="img/header__woman.png">
+        <nav class="header__nav">
+          <ul class="header__links">
+            <li class="header__link header__link-1 wow fadeInDown" style="visibility: hidden; animation-name: none;">
+              <a href="#doc"><span class="header__dashed lt139">№1 parmi les recommandations</span><span
+                  class="header__dashed lt140">urologues pour l'année <script>
+                    d = new Date();
+                    p = new Date(d.getTime() - 5 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    document.write(d.getFullYear());
+                  </script></span></a>
+            </li>
+            <li class="header__link header__link-2 wow fadeInDown" data-wow-delay="0.1s"
+              style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+              <a href="#days"><span class="header__dashed lt141">Efficacité confirmée</span><span
+                  class="header__dashed lt142">les meilleurs spécialistes</span></a>
+            </li>
+            <li class="header__link header__link-3 wow fadeInDown" data-wow-delay="0.2s"
+              style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+              <a href="#reviews"><span class="header__dashed lt143">Avis pour l'année <script>
+                    d = new Date();
+                    p = new Date(d.getTime() - 5 * 86400000);
+                    monthA = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                    document.write(d.getFullYear());
+                  </script></span></a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__flex">
+          <div class="header__about wow fadeInDown" style="visibility: hidden; animation-name: none;">
+            <b class="header__name-prod blue lt144">Cystonette</b>
+            <h1 class="header__title lt145">Oubliez <span class="ib">sur involontaire</span> uriner pour toujours</h1>
+            <p class="header__subtitle lt146">Dès les premiers jours épargnera <span class="ib"> des problèmes</span>
+              <span class="ib"> avec une vessie urinaire</span> quelle que soit leur cause</p>
+            <ul class="header__list">
+              <li class="header__feature wow fadeInDown lt147" data-wow-delay="0.1s"
+                style="visibility: hidden; animation-delay: 0.1s; animation-name: none;"><b>Soulage l'inconfort et la
+                  douleur </b> <span class="ib"> dans la région </span> de l'abdomen</li>
+              <li class="header__feature wow fadeInDown lt148" data-wow-delay="0.2s"
+                style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"><b>Apporte un soulagement
+                  complet</b> <span class="ib"> lors des visites </span> des toilettes</li>
+              <li class="header__feature wow fadeInDown" data-wow-delay="0.3s"
+                style="visibility: hidden; animation-delay: 0.3s; animation-name: none;"><b class="lt149">Protège <span
+                    class="ib">de la rechute </span> </b><span class="ib lt150"> plus d'un an</span></li>
+            </ul>
+          </div>
+          <div class="header__img wow fadeInDown" data-wow-delay="0.1s"
+            style="visibility: hidden; animation-delay: 0.1s; animation-name: none;"><img class="header__prod"
+              src="img/prod.png"></div>
+          <div class="form wow fadeInDown" data-wow-delay="0.2s" id="cloneMobileThis"
+            style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+            <div class="form__head">
+              <span class="lt12">Avoir le temps d'acheter</span><span class="ib"></span><span
+                class="form__date">jusqu'au
+                <script type="text/javascript">
+                  var appendNull = function (num) {
+                    return num < 10 ? 0 + num.toString() : num;
+                  };
+                  d = new Date();
+                  p = new Date(d.getTime() + 0 * 86400000);
+                  monthb = '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
+                  document.write(appendNull(p.getDate()) + '.' + monthb[p.getMonth()] + '.' + p.getFullYear());
+                </script></span>
+            </div>
+            <div class="price">
+              <div class="price__new">
+                <span class="price__title lt152">Nouveau prix</span>
+                <div class="price__value">
+                  <span class="price__number price_main lt153"><span class="priceMain"></span> <span class="currencyMain"></span></span>
+                </div>
+              </div>
+            </div>
+            <div class="form__lastpack lt154">Il reste <span class="form__count pack_count">48</span> de emballages
+              <span class="ib">au rabais</span> </div>
+            <form action="getform.php" method="post" class="order_form" id="order_form" name="order_form">
+              <input type="hidden" name="utm_source" value="<?=$_GET["cid"]?>">
+              <input type="hidden" name="utm_campaign" value="{domonetka}">
+              <label class="form__label-name form__label"><input class="form__input" name="name"
+                  placeholder="Nom" required type="text"></label><label class="form__label-tel form__label"><input
+                  class="form__input" name="phone" placeholder="Téléphone" required type="text"></label>
+              <button class="btn" type="submit"><span class="lt155">Commander <small class="btn__small">au rabais
+                  </small></span></button>
+            </form>
+            <p class="form__secure lt157">Vos données sont protégées!</p>
+            <div class="form__pay-after">
+              <p class="lt158">Paiement après réception des marchandises</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <div class="ac_footer">Global Partners LTD, <br><a href="#" target="_blank"
+      style="color: inherit; cursor: pointer;">Privacy Policy</a></div>
+
+  <script type="text/javascript">
+    $(function () {
+      $("a[href^='#']").click(function () {
+        var _href = $(this).attr("href");
+        $("html, body").animate({
+          scrollTop: $(_href).offset().top + "px"
+        });
+        return false;
+      });
+    });
+  </script>
+  <script>
+    //обратный счетчик товара 
+    $(function () {
+      var timerIdPackCountNumber = 49;
+      $('.pack_count').html(timerIdPackCountNumber);
+
+      var timerIdPackCount = setTimeout(function tick() {
+        timerIdPackCountNumber--;
+        $('.pack_count').html(timerIdPackCountNumber);
+        if (timerIdPackCountNumber > 5) {
+          timerIdPackCount = setTimeout(tick, 60000);
+        }
+      }, 0);
+
+    })
+  </script>
+  <script src="js/index.js">
+  </script>
+
+  <footer>
+    <center>
+      <span style="text-decoration: underline; cursor: pointer;"
+        onclick="openInNewTab('cdn/disclaimer.html');">Disclaimer</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/terms.html');">Terms &
+        Conditions</span> |
+      <span style="text-decoration: underline; cursor: pointer;" onclick="openInNewTab('cdn/priv.html');">Privacy
+        policy</span> <br>
+    </center>
+    <script>
+      function openInNewTab(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+      }
+    </script>
+  </footer>
+  <script>
+    const offer_params = {
+        priceMain : '49',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : '',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+ </script>
+<script>
+$('[name="name"]').on('input change', function () {
+    var val = $(this).val();
+    $(this).val(val.replace(/[0-9+]/g, ''));
+});
+$('[name="name"]').attr('autocomplete', 'name');
+$('[name="name"]').attr('pattern', '.{2,25}');
+$('[name="phone"]').on('input change', function (e) {
+    var val = $(this).val();
+    $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+});
+$('[name="phone"]').get(0).type = 'tel';
+$('[name="phone"]').attr('autocomplete', 'tel');
+$('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+
+</html>
