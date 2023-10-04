@@ -1,0 +1,524 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Jardineiro</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="prod.png" type="image/x-icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+	<script src="drewlex_main.js"></script>
+	<script>
+        (function () {
+            let params=(new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value,key){
+                block = block + key+'='+value+'&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+	</script>
+
+
+</head>
+
+<body class="ev-date" id="prelanding">
+	<header class="site-header">
+		<div class="site-header__logo-wrapper d-none d-lg-block">
+			<div class="container d-flex align-items-center">
+				<img class="site-header__logo img-fluid" src="images/logo.png" alt="logo">
+				<p class="lh-1 ms-3 mb-0 pt-3"> <span class="site-header__title">Nossos jardins</span> <span class="d-block text-white">E não é só isso...</span> </p>
+			</div>
+		</div>
+		<nav class="main-nav navbar navbar-expand-lg">
+			<div class="container">
+				<div class="d-flex flex-row flex-nowrap">
+					<button class="col-2 hamburger hamburger--squeeze collapsed d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Menu">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+					<div class="col-10 site-header__logo-wrapper d-flex align-items-center navbar-brand d-lg-none">
+						<img class="site-header__logo img-fluid" src="images/logo.png" alt="logo">
+						<p class="lh-1 ms-3 mb-0 pt-3"> <span class="site-header__title">Nossos jardins</span> <span class="mt-2 mt-md-0 d-block text-white">E não é só isso...</span> </p>
+					</div>
+				</div>
+				<div id="navbar-collapse" class="navbar-collapse collapse">
+					<ul class="navbar-nav justify-content-center flex-wrap">
+						<li class="nav-item current-box"> <a class="landing-url current nav-link" href="#toform">Jardins de casa</a>
+						</li>
+						<li class="nav-item"> <a class="landing-url nav-link" href="#toform">Fotos de seus jardins</a> </li>
+						<li class="nav-item"> <a class="landing-url nav-link" href="#toform">Nossos assuntos</a>
+						</li>
+						<li class="nav-item"> <a class="landing-url nav-link" href="#toform">Vamos trocar de plantas</a> </li>
+						<li class="nav-item">
+							<a class="landing-url nav-link nav-link--last" href="#toform">
+								<svg width="66" height="28" viewbox="0 0 66 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_56_37)">
+										<path d="M14 0C6.26864 0 0 6.3009 0 14.072C0 21.1272 5.16992 26.9519 11.9078 27.9696V17.8017H8.44368V14.1024H11.9078V11.6415C11.9078 7.56626 13.8835 5.77742 17.2525 5.77742C18.8664 5.77742 19.7198 5.89788 20.1242 5.95304V9.18173H17.8259C16.3957 9.18173 15.8962 10.545 15.8962 12.0817V14.1036H20.0883L19.5194 17.8028H15.8962V28.0011C22.7293 27.069 28.0011 21.197 28.0011 14.0732C28 6.3009 21.7314 0 14 0Z" fill="#3B5998"/>
+									</g>
+									<g clip-path="url(#clip1_56_37)">
+										<path d="M55.2816 7.3248H48.7296C46.8592 7.3248 45.3472 8.8368 45.3472 10.7072V17.2592C45.3472 19.1296 46.8592 20.6416 48.7296 20.6416H55.2816C57.152 20.6416 58.664 19.1296 58.664 17.2592V10.7072C58.664 8.8368 57.152 7.3248 55.2816 7.3248ZM56.1104 13.9888C56.1104 16.2176 54.296 18.032 52.056 18.0208C49.8272 18.0208 48.0128 16.2064 48.024 13.9664C48.024 11.7376 49.8384 9.9232 52.0784 9.9344C54.3072 9.9456 56.1104 11.76 56.1104 13.9888ZM57.3088 9.6656C57.3088 10.2032 56.872 10.6288 56.3456 10.6288C55.808 10.6288 55.3824 10.192 55.3824 9.6656C55.3824 9.128 55.8192 8.7024 56.3456 8.7024H56.3568C56.8832 8.7024 57.3088 9.1392 57.3088 9.6656ZM52.056 11.3792C50.6224 11.3792 49.4576 12.5552 49.4688 13.9776C49.4688 15.4112 50.6448 16.576 52.0672 16.5648C53.5008 16.5648 54.6544 15.4 54.6544 13.9776V13.9664C54.6544 12.5328 53.4896 11.3792 52.056 11.3792Z" fill="url(#paint0_linear_56_37)"/>
+										<path d="M52 0C44.272 0 38 6.272 38 14C38 21.728 44.272 28 52 28C59.728 28 66 21.728 66 14C66 6.272 59.728 0 52 0ZM60.2096 17.2592C60.1872 19.9696 57.992 22.1536 55.2816 22.1536H48.7184C45.9968 22.1536 43.7904 19.9472 43.7904 17.2256V10.7072C43.7904 7.9856 45.9968 5.7792 48.7184 5.768H55.2704C57.992 5.768 60.1984 7.9856 60.1984 10.7072V17.2592H60.2096Z" fill="url(#paint1_linear_56_37)"/>
+									</g>
+									<defs>
+										<lineargradient id="paint0_linear_56_37" x1="41" y1="28" x2="70" y2="1.61252e-07" gradientunits="userSpaceOnUse">
+											<stop offset="0" stop-color="#FEDA77"/>
+											<stop offset="0.244792" stop-color="#F58529"/>
+											<stop offset="0.489583" stop-color="#DD2A7B"/>
+											<stop offset="0.744792" stop-color="#8134AF"/>
+											<stop offset="1" stop-color="#515BD4"/>
+										</lineargradient>
+										<lineargradient id="paint1_linear_56_37" x1="41" y1="28" x2="70" y2="1.61252e-07" gradientunits="userSpaceOnUse">
+											<stop offset="0" stop-color="#FEDA77"/>
+											<stop offset="0.244792" stop-color="#F58529"/>
+											<stop offset="0.489583" stop-color="#DD2A7B"/>
+											<stop offset="0.744792" stop-color="#8134AF"/>
+											<stop offset="1" stop-color="#515BD4"/>
+										</lineargradient>
+										<clippath id="clip0_56_37">
+											<rect width="28" height="28" fill="white"/>
+										</clippath>
+										<clippath id="clip1_56_37">
+											<rect width="28" height="28" fill="white" transform="translate(38)"/>
+										</clippath>
+									</defs>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container section-main">
+			<div class="row">
+				<article class="col-lg-8 main-article">
+					<h1 class="mb-3">A dor nas articulações acorrentou-o à cadeira. Não conseguia mexer-se. Agora ele anda de bicicleta e corre meia maratona-suficiente <span class="text-green">1 DIA DE PROCEDIMENTO...</span></h1>
+					<h2 class="bg-yellow text-center mb-3">Uma invenção inovadora, criada não em uma rica corporação farmacêutica, mas em um jardim comum!</h2>
+					<picture>
+						<source srcset="images/img__img-1.webp" type="image/webp">
+						<img class="img-fluid mb-3" src="images/img__img-1.jpg" alt="hotrifen">
+					</picture>
+					<p class="text-big">Doem-lhe as articulações? Ou alguém próximo a você está sofrendo por causa disso? Você tem problemas com a coluna? Reumatismo ou artrite estão incomodando sua vida? Você já tentou dezenas de procedimentos, mas não houve melhora ou houve pouca? Perdeu a esperança.…</p>
+					<p class="text-big">Agora você tem <span class="text-green">100% DE GARANTIA DE SUCESSO!</span> Esta engenhosa invenção em sua simplicidade irá transformá-lo de uma ruína imóvel e gemendo em um super-herói. E a melhor parte é que sua carteira não vai sofrer, porque custa tanto quanto rolos.</p>
+					<p class="text-big">Você aprenderá como o produto funciona e como obtê-lo lendo uma entrevista com o inventor desta fórmula inovadora.</p>
+					<div class="d-flex justify-content-between mb-3 mb-lg-5">
+						<div class="bg-blue d-lg-flex align-items-center"> <svg width="13" height="16" viewbox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8 0C8.53125 0 9 0.46875 9 1C9 1.5625 8.53125 2 8 2H7.5V3.09375C8.65625 3.28125 9.71875 3.75 10.5938 4.46875L11.2812 3.8125C11.6562 3.40625 12.3125 3.40625 12.6875 3.8125C13.0938 4.1875 13.0938 4.84375 12.6875 5.21875L11.9375 5.96875C12.5938 7 13 8.21875 13 9.5C13 13.0938 10.0625 16 6.5 16C2.90625 16 0 13.0938 0 9.5C0 6.25 2.375 3.5625 5.5 3.09375V2H5C4.4375 2 4 1.5625 4 1C4 0.46875 4.4375 0 5 0H8ZM7.25 6C7.25 5.59375 6.90625 5.25 6.5 5.25C6.0625 5.25 5.75 5.59375 5.75 6V10C5.75 10.4375 6.0625 10.75 6.5 10.75C6.90625 10.75 7.25 10.4375 7.25 10V6Z" fill="#ffffff"/>
+							</svg> Leia este artigo em 3 minutos </div>
+					</div>
+					<div class="d-flex align-items-center mb-3 author-box">
+						<div class="author-box__img">
+							<img alt="img-fluid mr-3" src="images/IMG_autor.png">
+						</div>
+						<span> editor <strong>Sandra Jorge</strong></span>
+					</div>
+					<p>Hoje falamos com o Sr. Lucas Kelvin, professor aposentado de bioquímica. E um jardineiro apaixonado. Mas, acima de tudo, <strong>inventor do inovador procedimento biorregenerativo das articulações</strong> que efetivamente resolve todos os problemas articulares, incluindo reumatismo e artrite.</p>
+					<p><strong>- Olá, professor. Hoje não falaremos sobre jardins, mas sobre sua invenção para regeneração ultra-rápida de articulações. </strong></p>
+					<p>- Haverá uma pequena conversa sobre o jardim, porque a ideia nasceu no meu jardim (o professor sinceramente ri). Foi a magia do momento.</p>
+					<p><strong>- Bem, diga-me, como você inventou esse procedimento que elimina a dor e regenera as articulações em 1 dia?</strong></p>
+					<p> Meu vizinho estava fazendo algo em seu jardim. Um homem forte e grande que luta contra a artrite há anos. No entanto, ele nunca poderia negar a si mesmo o prazer de trabalhar no jardim. Naquele dia, ele estava cavando um grande toco de uma árvore caída. Na verdade, é um trabalho para três, e ele estava fazendo isso sozinho, embora ele definitivamente não deveria ter feito isso. Em algum momento, ele ficou sem forças. Mesmo que "estamos sem energia" seja uma descrição muito suave.</p>
+					<p>Um homem alto e forte literalmente caiu no chão de dor nos joelhos e quadris. A dor era tão terrível que ele caiu amplamente e por muito tempo, e em angústia gritou por ajuda.</p>
+					<p>Corri para salvá-lo. Infelizmente, não pude chamar uma ambulância porque meu telefone ficou sem bateria e não consegui encontrá-lo.</p>
+					<p><strong> Então, usou analgésicos para aliviar a dor do seu vizinho?</strong></p>
+					<p>- Não é nada disso. Eu não tenho essas coisas, meu vizinho também não.</p>
+					<p>Felizmente, somos professores de bioquímica, embora eu não esteja mais ativo, mas o conhecimento não se aposenta, ele permanece na cabeça. Então eu rapidamente olhei ao redor do jardim de ervas. Comecei a arrancar plantas que eu sabia que afetavam as articulações. Eu sabia que tinha que agir rápido, porque havia um homem sofrendo e ele implorou... morte!</p>
+					<p>Quando penso nisso agora, deve ter parecido estranho-um homem deitado e contorcendo-se de dor e eu colhendo flores e folhas. Mas tudo fazia sentido, porque eu sabia exatamente o que estava fazendo.</p>
+					<p>Joguei as ervas colhidas em um almofariz, derramei água fervente sobre elas e rapidamente moí até formar uma pasta. Eu coloquei a compressa resultante no meu vizinho, que ainda estava gritando de dor no quadril e nos dois joelhos. Passaram-se cerca de 5 minutos e ele disse-me que a dor tinha desaparecido, como se fosse um sinal de varinha. Eu finalmente consegui fazer contato normal com ele e ver se ele tinha um telefone com ele para ligar para o 911.</p>
+					<p>Só posso dizer que quando a ambulância chegou e contamos aos especialistas sobre o que aconteceu, eles não podiam acreditar que o vizinho estava realmente com tanta dor e que o adesivo verde nos nós dos dedos entorpeceu a dor.</p>
+					<p><strong>- Então, todos podem preparar um antídoto para articulações doentes em seu jardim?</strong></p>
+					<p>- Isso seria perfeito. Mas o meu cataplasma de ervas funcionou porque sei o que estou a fazer. Mas eu tenho que admitir que eu mesmo fiquei surpreso com sua eficácia, embora eu soubesse que essas ervas eram ótimas para as articulações.</p>
+					<p>Depois de me recuperar dessa experiência desagradável, mesmo que com um bom final, comecei a pensar. Quando a natureza é tão poderosa, de que adianta enchê-la com toda essa química? No entanto, não se tratava apenas de aliviar a dor, mas também de um procedimento capaz de regenerar as articulações.</p>
+					<p>Então, para criar uma fórmula real para as articulações, realizei uma série de testes no laboratório e, o mais importante, adicionei um ingrediente que permite uma biorregeneração rápida das articulações. E isso é o mais importante, porque graças a isso, as articulações, a coluna e os músculos são atualizados. Isso significa que após alguns dias de procedimento <strong>a dor nunca vai voltar</strong>. Assim foi criado <strong>Tratamento biorregenerativo das articulações.</strong></p>
+					<p><strong>- Isso significa que o seu tratamento Biorregenerativo das articulações é caro e uma pessoa comum, um aposentado, não pode pagar?</strong></p>
+					<p>- De certeza que não. <strong>O custo diário de seu uso é igual a um máximo de dois rolos comuns.</strong> Afinal, sabemos que gastaremos a maior parte da pensão em produtos. Eu mesma tomo produtos para o coração, pressão alta, controle de açúcar, fígado. Não é suficiente. É absurdo engolir qualquer outra coisa nos nós dos dedos. Especialmente quando você entende onde está o estômago e onde estão as articulações (o professor bate levemente na testa). Além disso, o que vou levar para o meu estômago e fígado se eles desistirem? </p>
+					<p><strong> Você também faz tratamento biorregenerativo?</strong></p>
+					<p> Você acha que o professor de bioquímica não tem dor nas articulações? Claro que estou a brincar. Sim, estou a usar a fórmula. Para maior conveniência, coloquei - o como uma pomada para que você possa usá-lo sempre que necessário. E para os lugares doentes. Sem esperar que ele se dissolva no estômago e se espalhe pelo corpo.</p>
+					<p><strong>- É uma invenção inovadora. E o que aconteceu ao seu vizinho que salvou de dores nas articulações no jardim com um cataplasma de ervas?</strong></p>
+					<p>- Felizmente, ele está bem. No hospital, acabou por ser um ataque severo de dor artrítica causada por esforço excessivo. Agora o vizinho usa meu tratamento Bio-regenerativo das articulações na forma de pomada e ele mesmo diz que não tem mais dor. Ele ainda não se perdoará por trabalhar no jardim, mas tem certeza de que não ficará doente durante ou depois de tanto esforço.</p>
+					<p><strong>- Neste caso, o que é o seu tratamento Bio-regenerativo das articulações na forma de pomada?</strong>
+					</p>
+					<p>- Esta pomada funciona para todas as dores nas articulações de origem reumática e artrítica.</p>
+					<p>Além disso, é perfeito para a recuperação de contusões e fadiga muscular geral associada ao esforço físico pesado.</p>
+					<p><strong>- Ou seja, neste caso, o tratamento biorregenerativo das articulações pode ser usado até mesmo por pessoas jovens e fisicamente muito ativas?</strong></p>
+					<p>- Definitivamente sim! Por exemplo, meu neto, que faz muito ciclismo e triatlo, costuma usar minha fórmula ácida após o treino.</p>
+					<p><strong>- A farmácia tem a sua pomada inovadora para as articulações?</strong></p>
+					<p>- Não, pode ser comprado online. As farmácias ditam tais margens que a pomada sairia duas vezes mais cara.  E eu não me importo com o lucro, apenas ajudar as pessoas. Por isso decidi que seria melhor vendê-lo assim.</p>
+					<p><strong> Muito obrigado pela entrevista e desejo-lhe boa saúde.</strong></p>
+					<p><i>Prof. Lucas Kelvin deu uma entrevista a Sandra Yordanova.</i></p><p>Caros leitores do nosso portal "nosso Além", você pode obter o tratamento Biorregenerativo das articulações nas páginas a seguir. Basta clicar no link azul. <strong>O professor Kelvin tem um desconto especial para si.</strong> </p>
+					<p>Nós conseguimos isso graças a um professor que é apaixonado por jardinagem e gostaria de apoiar todos que compartilham essa paixão.</p>
+
+					<div class="features-wrapper"></div>
+
+					<div class="comments mt-3">
+						<h3 class="comments__title text-bold d-flex align-items-center">COMENTÁRIOS SOBRE O ARTIGO<span class="comments__count">(149 comentários)</span></h3>
+						<div class="comments-list mt-5">
+							<h4>Resposta</h4>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Leonela <span class="comment__date">Marcos</span></p>
+									<p class="comment__content">Eu sempre soube que toda a imposição de analgésicos era apenas para encher os bolsos dos especialistas. Muito bem professor!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Ludmila V. <span class="comment__date"></span></p>
+									<p class="comment__content">Professor, isto vai mesmo demorar? Já gastei várias das minhas pensões em pomadas, produtos e velas diferentes!</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<img src="images/icon__autor.png" alt="autor">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Justino <span class="comment__date"> Buta</span></p>
+									<p class="comment__content"><span class="comment__mentioned">@Ludmila V.</span> afinal, diz que você sente alívio em 1 dia. Eu sei disso por mim mesmo, porque eu o uso, e realmente aconteceu que, após a primeira aplicação, eu finalmente fui à loja sem dor.</p>
+								</div>
+							</div>
+							<div class="comment response-2 d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Valdinho <span class="comment__date">Lemos</span></p>
+									<p class="comment__content"><span class="comment__mentioned">@Justino</span> diz "porque"!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Martins74 <span class="comment__date"></span></p>
+									<p class="comment__content">Já estou a usá-lo. Sempre tive problemas com os joelhos. Dor de manhã à noite... mal saímos de casa. Agora, olha, vou para a floresta, apanhar cogumelos ou morangos. Nova vida do velho!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Samira  <span class="comment__date"></span></p>
+									<p class="comment__content">Eu realmente gostaria de tentar, mas não sei se posso obter ajuda financeira</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user-2.png" alt="autor">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Ana <span class="comment__date">Mabiala</span></p>
+									<p class="comment__content"><span class="comment__mentioned">@Samira</span> afinal, se você clicar no link, você vai cair sob o artigo.</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Adriana <span class="comment__date">Lopes</span></p>
+									<p class="comment__content">Tenho um grande problema porque sou alto - tenho 178 cm. É muito para uma mulher. Na velhice, as articulações falharam. Foi o que me disse o especialista. Estou a sofrer muito. Este produto é a minha salvação.</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Alexandre Daniel <span class="comment__date"></span></p>
+									<p class="comment__content">Está tudo bem, mas é assim tão simples? É uma fraude de novo.</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="autor">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Veronica <span class="comment__date"> Lima</span></p>
+									<p class="comment__content"><span class="comment__mentioned">@Alexandre Daniel</span> O que há de errado com o jardim e as ervas? Nossos ancestrais já os usavam e eram mais saudáveis do que nós. O problema é meu...</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Tania <span class="comment__date">Manuel</span></p>
+									<p class="comment__content">A minha filha comprou-o porque eu não o conseguia apanhar. Não consegui segurar o copo, cortei o pão. Eu disse a ela: “Filha, como isso pode me ajudar? Se sim, o especialista teria me dado isso há muito tempo", e ela disse: "Mãe, use-o". Então eu usei o produto, depois de 1 semana eu comecei a cortar. E agora tenho tanto poder nas minhas mãos que faço todo o tipo de milagres hackeados e ganho dinheiro com isso. Isso não é ruim para mim e eu ganho a vida. Muito obrigado ao professor pelo curso. Que Deus o Recompense!</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Berta Salvador <span class="comment__date"></span> </p>
+									<p class="comment__content">Estou à procura de uma coisa para o meu pai. Ele tem 85 anos e suas articulações estão caindo aos pedaços. Será que este medicamento vai ajudá-lo?</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="autor">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Ramiro <span class="comment__date"> Quindala</span></p>
+									<p class="comment__content"><span class="comment__mentioned">@Berta Salvador</span> ajudar. Eu também comprei para o meu pai, e ele é mais velho que o teu, tem 91 anos. Ele não saiu da cama, gritou de dor. E ele está a bater à porta. Ele está a cozinhar na cozinha. Ele serve-se a si próprio. O céu e as gaitas de foles. Recomendado para os pais!</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="autor">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Elmacia <span class="comment__date"> </span></p>
+									<p class="comment__content"><span class="comment__mentioned">@Berta Salvador</span> a minha mãe é fantástica. 39 anos. Nem os palhaços são os mesmos, a coluna caiu. Ele está usando o remédio do professor Kelvin e sinto que ele está experimentando uma segunda juventude.  Ele voltou para a aldeia de bicicleta.</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Marinela <span class="comment__date"></span></p>
+									<p class="comment__content">O envio é gratuito?</p>
+								</div>
+							</div>
+							<div class="comment response d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="autor">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Francisco <span class="comment__date"> </span></p>
+									<p class="comment__content"><span class="comment__mentioned">@Marinela</span> clique na inscrição azul, está tudo escrito.</p>
+								</div>
+							</div>
+							<div class="comment d-flex">
+								<div class="comment__img">
+									<img src="images/icon__user.png" alt="user">
+								</div>
+								<div class="comment__box">
+									<p class="comment__author">Lina <span class="comment__date"></span></p>
+									<p class="comment__content">Estou tomando agora, depois conto o resultado! </p>
+								</div>
+							</div>
+						</div>
+						<a href="#toform" class="form__btn">Compre com desconto 50% </a>
+					</div>
+				</article>
+				<aside class="col-lg-4 sidebar mb-5 mb-md-0 pb-4 pb-md-0">
+					<div class="articles">
+						<h3 class="title-with-bg mb-3">Você vai se interessar:</h3>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_1.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_1.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">CALENDÁRIO DE CRESCIMENTO DE FLORES</h4>
+						</a>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_2.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_2.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">QUAIS ARBUSTOS DECORATIVOS ESCOLHER PARA O JARDIM?</h4>
+						</a>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_3.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_3.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">É POSSÍVEL SE LIVRAR DA TOUPEIRA DO JARDIM COM REMÉDIOS NATURAIS?</h4>
+						</a>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_4.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_4.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">PRADOS FLORESCENTES OU CORTAR OU NÃO CORTAR O GRAMADO?</h4>
+						</a>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_5.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_5.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">CULTIVANDO ERVAS EM CASA E NO JARDIM</h4>
+						</a>
+						<h3 class="title-with-bg mb-3 mt-3">Artigos mais populares:</h3>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_6.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_6.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">O JARDIM DA SENHORA ADELA FOI O 1º LUGAR NO SEU VOTO </h4>
+						</a>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_7.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_7.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">UNIDOS PELA PAIXÃO PELA JARDINAGEM.</h4>
+						</a>
+						<a class="landing-url articles__item" href="#toform">
+							<picture>
+								<source srcset="images/IMG_article_8.webp" type="image/webp">
+								<img class="img-fluid" src="images/IMG_article_8.jpg" alt="článekčlánek">
+							</picture>
+							<h4 class="articles__title">ESTÃO A ATACAR! 5 MANEIRAS EFICAZES DE OBTÊ-LOS</h4>
+						</a>
+						<div class="promo-box">
+							<h2 class="promo-box__title text-uppercase text-center">PLACA ESPECIAL</h2>
+							<picture>
+								<img src="prod.png" class="img-fluid" alt="PLACA ESPECIAL">
+							</picture>
+							<div class="promo-box__btn">
+								<a class="btn btn-primary text-uppercase w-100 text-center promo-box__btn-item landing-url" href="#toform"> Saiba mais </a>
+							</div>
+						</div>
+					</div>
+				</aside>
+				<div class="disclaimer col-12 text-muted">
+					<p><strong>Isenção de responsabilidade:</strong></p>
+					<p>Os produtos  nesta página não previnem ou restauram doenças. Não utilizar em caso de hipersensibilidade a qualquer um dos componentes deste produto . A composição, o método de aplicação, as propriedades, as instruções de segurança, o método de armazenamento e a vida útil mínima podem ser encontrados na embalagem de cada produto . Não garantimos a obtenção dos mesmos resultados para cada usuário de nossos produtos, a ação descrita de produtos individuais é individual para cada pessoa e pode dar resultados diferentes dependendo da predisposição individual de cada organismo. </p>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="container text-center">
+		<div class="row footer justify-content-center">
+			<div class="col-lg-12 d-flex flex-column flex-lg-row justify-content-center"> <a href="#toform" class="my-2 my-lg-0 d-block d-md-inline mx-lg-3 link-pr-1-b footer__link">Termos e Condições</a> <a href="#toform" class="my-2 my-lg-0 d-block d-md-inline mx-lg-3 link-pr-1-b footer__link">Política de Privacidade</a> <a href="#toform" class="my-2 my-lg-0 d-block d-md-inline mx-lg-3 link-pr-1-b footer__link">Contato</a> </div>
+			<div class="col-12 mt-3">
+				<p class="footer__copy">Copyright ©<span class="date-0" data-format="year"></span>.</p>
+			</div>
+		</div>
+	</footer>
+
+	
+	<script src="js/script.js"></script>
+
+	<script>
+        const offer_params = {
+            priceMain : '39',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: '€',
+            productName : 'Steplex',
+        };
+
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+	</script>
+
+
+	<script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain : offer_params.priceMain,
+            currencyMain : offer_params.currencyMain,
+            lang : 'pt', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product : offer_params.productName, // название продукта
+            genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+            form : {
+                isNeeded : 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+
+
+
+
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+
+
+
+
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+
+
+
+
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+	</script>
+	<script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+	</script>
+</body>
+</html>

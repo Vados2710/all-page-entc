@@ -1,0 +1,758 @@
+<?php setcookie("FBpixel", $_GET["fbpixel"]); ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, maximum-scale=1, width=device-width" name="viewport">
+    <title>NOTÍCIAS ATUAIS</title>
+    <link href="css/default.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+    <script src="drewlex_main.js"></script>
+    <script>
+        (function () {
+            let params = (new URL(document.location)).searchParams;
+            let block = '';
+            params.forEach(function (value, key) {
+                block = block + key + '=' + value + '&';
+            })
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", document.location);
+                onpopstate = function (t) {
+                    t.state && location.replace("domonetka/index.php?cid={clickid}")
+                }
+            } catch (o) {
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="js/scripts.js"></script>
+    <script>
+        function dtime_nums(d, like_eu) {
+            var now = new Date();
+            now.setDate(now.getDate() + d + 1);
+
+            var dayNum = '';
+            if (now.getDate() < 10) {
+                dayNum = '0';
+            }
+            dayNum += now.getDate();
+
+            var monthNum = '';
+            if (now.getMonth() + 1 < 10) {
+                monthNum = '0';
+            }
+            monthNum += now.getMonth() + 1;
+
+            if (like_eu === true) {
+                document.write(dayNum + "." + monthNum + "." + now.getFullYear());
+            } else {
+                document.write(monthNum + "." + dayNum + "." + now.getFullYear());
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header_top">
+            <div class="center_wrapper clearfix">
+                <div class="header_top-left_block clearfix">
+                    <a class="header_top-logo" href="{url}"></a>
+                    <a class="header_top-login lt0" href="{url}">Iniciar sessão</a>
+                </div>
+                <div class="header_top-right_block">
+                    <div class="search-wrapper">
+
+                        <div action="#">
+
+                            <input class="search-input" placeholder="Suche" type="text">
+                            <a href="{url}">
+                                <button class="search-button" type="submit"></button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="header_top_menu-mobile js-htmenu-mobile lt1" type="button">Menu</button>
+                <nav class="header_top_menu">
+                    <ul class="header_top_menu-list js-htmenu-list clearfix">
+                        <li class="header_top_menu-list_item">
+                            <a class="header_top_menu-list_link lt2" href="{url}">Notícias</a>
+                        </li>
+                        <li class="header_top_menu-list_item">
+                            <a class="header_top_menu-list_link lt3" href="{url}">Desporto</a>
+                        </li>
+                        <li class="header_top_menu-list_item">
+                            <a class="header_top_menu-list_link lt4" href="{url}">Meteorologia</a>
+                        </li>
+                        <li class="header_top_menu-list_item">
+                            <a class="header_top_menu-list_link lt5" href="{url}">Loja</a>
+                        </li>
+                        <li class="header_top_menu-list_item">
+                            <a class="header_top_menu-list_link lt6" href="{url}">Terra</a>
+                        </li>
+                        <li class="header_top_menu-list_item">
+                            <a class="header_top_menu-list_link lt7" href="{url}">Viagens</a>
+                        </li>
+                        <li class="header_top_menu-list_item">
+                            <a class="header_top_menu-list_link header_top_menu-list_link--last_link lt8"
+                                href="{url}">Outros</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="header_middle">
+            <div class="center_wrapper clearfix">
+                <a class="category_name lt9" href="{url}"><span class="category_name-invert">NOTÍCIAS</span> ATUAIS</a>
+                <button class="header_bottom_menu-mobile js-hbmenu-mobile lt10" type="button">Categorias</button>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="center_wrapper">
+                <nav class="header_bottom_menu">
+                    <ul class="header_bottom_menu-list js-hbmenu-list clearfix">
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link header_bottom_menu-list_link--active lt11"
+                                href="{url}">Página principal</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt12" href="{url}">Vídeo</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt13" href="{url}">Mundo</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt14" href="{url}">Portugal</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt15" href="{url}">Economia</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt16" href="{url}">Tecnologia</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt17" href="{url}">Ciência</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt18" href="{url}">Jornal</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt19" href="{url}">Cultura e Desempenhos</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt20" href="{url}">Saúde</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link lt21" href="{url}">Notícias de TV do Mundo</a>
+                        </li>
+                        <li class="header_bottom_menu-list_item">
+                            <a class="header_bottom_menu-list_link header_bottom_menu-list_link--last_link lt22"
+                                href="{url}">Outros</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="main_wrapper center_wrapper clearfix ">
+        <div class="content_wrapper ">
+            <div class="content">
+                <div class="content__inner content__inner_wide">
+                    <div class="breadcrumbs">
+                        <h2>
+                            <a class="lt23" href="{url}">Notícias</a>
+                            <a class="lt24" href="{url}">Sociedade</a>
+                        </h2>
+                        <a class="breadcrumbs__all-link lt25" href="{url}">Todos os vídeos desta categoria</a>
+                        <!--<a class="mob" href="{url}"> ≡</a>-->
+                    </div>
+                    <div class="article">
+                        <div class="article__date">
+                            <script>
+                                dtime_nums(-3, true)
+                            </script>
+                            <span class="article__time"> 13:35 </span>
+                        </div>
+                        <h3 class="article__title text-bold lt27">"Até à data, este é o método mais eficaz para tratar
+                            articulações e doenças de coluna. É a primeira do seu género!"</h3>
+                        <div class="article__img">
+                            <img alt="" src="img/main.jpg">
+                            <div class="article__photo-author" data-author-url=""></div>
+                        </div>
+                        <div class="article__text">
+                            <div class="js-mediator-article"></div>
+                            <div class="article__text-soc-tool lt28">
+                                <p><span class="text-bold"> Instituto de Investigação de Ortopedia e
+                                        Traumatologia:</span> Boa tarde, Professor! Bem-vindo! Pode por favor dizer-nos
+                                    se é verdade que a China tem um segredo para curar doenças articulares?</p>
+                                <p class="before-paragr"><span class="text-bold"> Professor Liao:</span> Olá! O problema
+                                    é particularmente grave para as doenças articulares em Portugal: uma pessoa em cada
+                                    quatro sofre de dores de costas, pescoço ou cotovelos, tem hérnias ou artrite
+                                    em diferentes estágios. Lamento saber disso porque sei como as doenças articulares
+                                    são terríveis e quais as consequências que geram no corpo humano. Nós vencemos essas
+                                    doenças na China há muito tempo, por isso fico
+                                    muito satisfeito por poder partilhar a experiência do nosso país convosco.</p>
+                                <p class="open-content"> Clique aqui para ver as fotos 18 +</p>
+                                <div class="three-images" style="display: none;">
+                                    <div class="sep-img"><img class="three-img" src="img/1.jpg">
+                                        <p> Gonartrose </p>
+                                    </div>
+                                    <div class="sep-img"><img class="three-img" src="img/2.jpg">
+                                        <p> Coxartrose </p>
+                                    </div>
+                                    <div class="sep-img"><img class="three-img" src="img/3.jpg">
+                                        <p>Gota</p>
+                                    </div>
+                                </div>
+                                <p><span class="text-bold"> Instituto de Investigação em Ortopedia e
+                                        Traumatologia:</span> Qual o segredo da saúde e longevidade Chinesa? Alguma
+                                    dieta especial?</p>
+                                <p class="before-paragr"><span class="text-bold">Professor Liao:</span> Isso é um mito,
+                                    quase ninguém consegue comer apenas marisco, por isso é que o arroz é um prato
+                                    básico na nossa dieta. O nosso segredo é a nossa herança - a reconhecida medicina
+                                    Chinesa. C corpo humano é um instrumento frágil, nem imagina como pode ser bem
+                                    afinado!</p>
+                                <p><span class="text-bold">Instituto de Investigação de Ortopedia e
+                                        Traumatologia:</span> Em muitos países, as pessoas acreditam que uma fraca saúde
+                                    articular é um sinal natural de idade avançada?</p>
+                                <p class="before-paragr"><span class="text-bold"> Professor Liao:</span> Na China,
+                                    tornámos claro que as articulações podem ser recuperadas, que podem e devem ser
+                                    curadas. O principal problema desta doença é o desgaste. São sempre suscetíveis a
+                                    sobrecarga, por isso é que as cartilagens se vão tornando menos elásticas, mais
+                                    finas e sofrem desgaste. Daí decorrem rangidos, dores, tumores (hérnias) e
+                                    deformações ósseas (artrose). As cartilagens de muitas pessoas
+                                    atingem já 45-50% de desgaste por volta dos 60 anos de idade. Como se pode recuperar
+                                    algo que já não existe? Pode fazer uma cartilagem literalmente «crescer»? É
+                                    possível!</p>
+                                <p><span class="text-bold"> Instituto de Investigação de Ortopedia e
+                                        Traumatologia:</span> Como se pode fazer isso?</p>
+                                <p class="before-paragr"><span class="text-bold"> Professor Liao:</span> O corpo humano
+                                    tem uma capacidade única de regeneração. Veja como um corte na sua pele cicatriza
+                                    facilmente. O mesmo se aplica a qualquer tecido do corpo, mas a velocidade
+                                    e atividade deste processo é um problema: enquanto alguns órgãos recuperam por si,
+                                    outros precisam de ajuda. Use o potencial oculto do seu corpo para se sentir
+                                    saudável como nunca!</p>
+                                <p><span class="text-bold"> Instituto de Investigação de Ortopedia e
+                                        Traumatologia:</span> Gostávamos de saber mais sobre isso.</p>
+                                <p class="before-paragr"><span class="text-bold">Professor Liao:</span> Os Tibetanos já
+                                    conhecem a receita de restauro das articulações há mais de 2000 anos. É uma mistura
+                                    de ingredientes naturais que ativa a divisão e crescimento dos tecidos das
+                                    cartilagens. Primeiro, era usada como um extrato para saturar compressas aplicadas
+                                    nas zonas doloridas. Mas agora, graças a evidências científicas, uma receita
+                                    Tibetana está disponível por todo o mundo na forma de um
+                                    spray. Eu participei no desenvolvimento, por isso sei tudo sobre a sua fórmula e
+                                    efeito.</p>
+                                <p class="text-p-style"> Funciona de forma simples: a composição médica do spray é
+                                    absorvida pelos tecidos das cartilagens quase imediatamente. A dor é aliviada quase
+                                    imediatamente também, as articulações são restauradas em aproximadamente 1-2
+                                    meses. <span class="text-bold"> Ora pense nisso: agora poderá restaurar
+                                        completamente as suas articulações. É mesmo possível evitar a cirurgia!</span>
+                                </p>
+                                <p><span class="text-bold"> Instituto de Investigação de Ortopedia e
+                                        Traumatologia:</span> Pode por favor descrever o processo de recuperação?</p>
+                                <p class="before-paragr"><span class="text-bold">Professor Liao:</span> Já foi dito que
+                                    as células responsáveis pela saúde e crescimento dos tecidos das cartilagens estão
+                                    contidas nas próprias cartilagens. Os ingredientes contidos no spray não
+                                    só aliviam o inchaço, a dor e a inflamação, mas também influenciam as próprias
+                                    células e ativam a fissão celular. Por outras palavras, este spray ativa um
+                                    mecanismo de suspensão e garante uma ação rápida. Os componentes
+                                    do spray ativam a circulação sanguínea nos tecidos vizinhos, provocando a produção
+                                    de óleo nas articulações. Assim, a mobilidade das articulações é aumentada e os
+                                    tecidos das cartilagens crescem mais rapidamente. Quanto
+                                    a tumores malignos (hérnias), os mesmos são gradualmente suavizados sob a influência
+                                    do spray e são excretados no sangue e depois por via intestinal.</p>
+                                <center>
+                                    <a href="{url}"><img alt="" class="prd" src="prod.png"></a>
+                                </center>
+                                <p><span class="text-bold"> Instituto de Investigação em Ortopedia e
+                                        Traumatologia:</span> Quais são as indicações de utilização?</p>
+                                <p class="before-paragr"><span class="text-bold"> Professor Liao:</span> É indicado no
+                                    tratamento de doenças como artrite, artrose, osteocondrose, ciática, hérnia discal,
+                                    deslocação de discos vertebrais. Adicionalmente, poderá ser usado para curar
+                                    dor, dormência nos membros, rutura e perda de elasticidade muscular, inchaço, danos
+                                    e lesões. Na China, usamos este spray sobretudo como tratamento de prevenção porque
+                                    essas doenças não ocorrem. Este spray é como qualquer
+                                    outro tratamento caseiro para nós. Muitas pessoas ainda o fazem em casa, mas por
+                                    vezes não conseguem encontrar os ingredientes certos ou a dosagem, mas, claro,
+                                    quando se trata do nosso spray esses problemas já não se
+                                    colocam.
+                                </p>
+                                <p><span class="text-bold"> Instituto de Investigação de Ortopedia e
+                                        Traumatologia:</span> Onde se pode comprar este spray?</p>
+                                <p class="before-paragr"><span class="text-bold"> Professor Liao:</span> Infelizmente,
+                                    não conseguimos entrar no mercado farmacêutico Português. Fomos simplesmente recusados, então o spray <span class="productName"></span> não é vendido em lojas online, você pode comprá-los apenas através do formulário de pedido oficial neste site com um desconto de 50%. Faça uma
+                                    encomenda, e recebe-a diretamente em sua casa, sem pagamento prévio, só paga no ato da entrega.
+                                    Não encontrámos este problema em nenhum outro país
+                                    do mundo, na China pode-se encontrar este spray em qualquer farmácia. Mas percebo em
+                                    que se baseia a restrição: se toda a gente ficar saudável, como é que as
+                                    farmacêuticas vão lucrar?</p>
+                                <p><span class="text-bold"> Instituto de Investigação de Ortopedia e
+                                        Traumatologia:</span> Gostaríamos de agradecer ao professor por esta entrevista
+                                    tão interessante. Também estamos postando o formulário de pedido oficial abaixo, a pedido dos telespectadores.</p>
+                                <p><img alt="" src="prod.png"
+                                        style="display: block; max-width: 350px; margin: 0 auto;"></p>
+                                <p style="display:inline;">Até <strong>
+                                        <script>dtime_nums(-1, true)</script>
+                                    </strong> (inclusive) Juntamente com a Universidade de Medicina Chinesa de Pequim, o
+                                    nosso Instituto de Investigação proporciona uma oferta especial para todos os.
+                                    <b></b>
+                                </p>
+                                <div class="tow" style="display: inline;"><b>Portugueses</b></div><b></b>: Chama-se
+                                "Articulações saudáveis!", no âmbito do qual poderá encomendar o verdadeiro spray <a
+                                    href="{url}"><span class="productName"></span></a> com um desconto de 50% no site oficial! Antes que a oferta expire, você precisará deixar uma solicitação no formulário de pedido abaixo.</strong>
+                                <p></p>
+                                <p> Se já há muito tempo tenta livrar-se das dores articulares sem sucesso, se já
+                                    experimentou vários tratamentos, sem nenhum resultado, <a href="{url}">deixe seus contatos no formulário de pedido abaixo</a>.</p>
+
+
+                                <div class="features-wrapper"></div>
+
+                                <style>
+                                    @media (max-width: 575px) {
+                                        .before-paragr::before{
+                                            display: none;
+                                        }
+                                        .article__text{
+                                            padding-left: 0;
+                                        }
+                                    }
+                                </style>
+                                <div id="ttt"></div>
+                                <div>
+                                    <p class="vk-header">356 comentários</p>
+                                    <div class="vk-inner-wrapper">
+                                        <div class="vk-photo-box" id="vk-photo-box"></div>
+                                        <div class="vk-textarea-box"><textarea class="vk-area"
+                                                placeholder="a sua mensagem"></textarea>
+                                            <div style="padding-top: 6px;">
+                                                <div class="vk-btn-part"><span class="vk-display">Partilhar com
+                                                        amigos</span>
+                                                    <a href="{url}">
+                                                        <div class="checkbox_on"></div>
+                                                    </a><a class="vk-send-btn" href="{url}">Enviar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="k-comments">
+                                    <div class="k-comm-box">
+                                        <div class="comm-photo-part"><img src="img/vk-1.png"></div>
+                                        <div>
+                                            <p class="user-name">Amélia Silva</p>
+                                            <p> Sempre sofri de dores nos joelhos e pensava que nunca me poderia livrar
+                                                delas. É um milagre! Já estou a usar há três semanas, depois de ter lido
+                                                o vosso artigo! As dores nas costas e pernas também desapareceram!
+                                                As maiores felicidades para o vosso portal!</p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-3, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="k-comm-box">
+                                        <div class="comm-photo-part"><img src="img/vk-2.png"></div>
+                                        <div>
+                                            <p class="user-name">Alice Matos </p>
+                                            <p> Muito obrigado, o spray funcionou muito rapidamente! Encomendado com um desconto de 50% através do formulário de encomenda oficial acima! Não adiem
+                                                o tratamento das articulações, Mais vale começar a curar as doenças
+                                                cedo do que descobrir no futuro que já não se conseguirão mexer...</p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-3, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="k-comm-box">
+                                        <div class="comm-photo-part"><img src="img/vk-7.png"></div>
+                                        <div>
+                                            <p class="user-name">Sara Junqueiro</p>
+                                            <p> Concordo! Este é um tratamento muito eficaz para os problemas de
+                                                articulações! Curei a minha osteoartrite dos joelhos com a sua ajuda.
+                                            </p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-3, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="k-comm-box">
+                                        <div class="comm-photo-part"><img src="img/vk-4.png"></div>
+                                        <div>
+                                            <p class="user-name">Alexandre Mendes</p>
+                                            <p> Ouvi falar deste spray num programa de TV sobre saúde e decidi
+                                                encomendar para experimentar. A questão é que o efeito obtido com os
+                                                tratamentos comuns não persiste tanto tempo – Sempre me disseram que era
+                                                muito
+                                                difícil curar a osteocondrose. Agora vou falar-vos dos resultados. <a
+                                                    href="{url}"><span class="productName"></span></a> foi entregue com rapidez. Senti um alívio
+                                                tremendo nos primeiros 10 dias, por isso não podia deixar de falar nisso
+                                                aqui. Muito
+                                                obrigado por me permitirem viver uma vida plena!</p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-2, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="k-comm-box">
+                                        <div class="comm-photo-part"><img src="img/vk-8.png"></div>
+                                        <div>
+                                            <p class="user-name">António David</p>
+                                            <p> Li as primeiras opiniões, por isso é que decidi encomendar este spray.
+                                                Vou contar-vos os resultados depois de receber a minha encomenda.</p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-2, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="k-comm-box comm-answer">
+                                        <div class="comm-photo-part"><img src="img/vk-9.png"></div>
+                                        <div>
+                                            <p class="user-name">Rosa Faria</p>
+                                            <p> Estou tão feliz por ter tido a sorte de o encontrar! Para resumir uma
+                                                longa história, também li as opiniões e encomendei <a
+                                                    href="{url}"><span class="productName"></span></a>. Tudo porque o meu marido estava
+                                                desesperado. Ele tomava comprimidos e fazia
+                                                massagens, mas tinha problemas graves de estômago por isso tivemos de
+                                                tomar uma decisão. Então decidimos usar <a href="{url}"><span class="productName"></span></a> e
+                                                voilá! O meu marido já não tem problemas, voltou a participar nas
+                                                atividades de família,
+                                                é alegre e ativo de novo!</p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-2, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="k-comm-box">
+                                        <div class="comm-photo-part"><img src="img/vk-10.png"></div>
+                                        <div>
+                                            <p class="user-name">Artur Nunes</p>
+                                            <p> Obrigado por um tratamento tão eficaz. Toda a gente que sofre de dores
+                                                nas articulações devia conhecê-lo. E o preço da oferta especial é mesmo
+                                                acessível!</p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-1, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <div class="k-comm-box">
+                                        <div class="comm-photo-part"><img src="img/vk-11.png"></div>
+                                        <div>
+                                            <p class="user-name">Fernanda Barros</p>
+                                            <p><a href="{url}"><span class="productName"></span></a> funciona mesmo. O resultado excedeu todas as
+                                                minhas expetativas! A artrite que tinha nos dedos ficou curada em 10
+                                                dias! Também encomendei várias embalagens para os meus amigos para
+                                                aproveitar a oferta
+                                                especial de 50% DE DESCONTO. </p>
+                                            <p><span class="mesg-date">
+                                                    <script>dtime_nums(-1, true)</script>
+                                                </span> <a href="{url}" style="text-decoration:none"><span
+                                                        class="comment-text">Deixar um comentário</span></a></p>
+                                        </div>
+                                    </div>
+                                    <a href="{url}" style="text-decoration: none;">
+                                        <p class="vk-show-more">Mostrar mais...</p>
+                                    </a><br><br>
+                                    <a href="{url}">
+                                        <p class="big-href">Encomendar através do formulário oficial</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alc-news-wrapper-tablet-135"></div>
+                </div>
+            </div>
+            <div class="share_block">
+                <p class="share_block-heading lt29">Partilhar esta história</p>
+                <ul class="share_block-list">
+                    <li class="share_block-list_item">
+                        <a class="share_block-list_link share_block-list_link--email" href="{url}"></a>
+                    </li>
+                    <li class="share_block-list_item">
+                        <a class="share_block-list_link share_block-list_link--facebook" href="{url}"></a>
+                    </li>
+                    <li class="share_block-list_item">
+                        <a class="share_block-list_link share_block-list_link--twitter" href="{url}"></a>
+                    </li>
+                    <li class="share_block-list_item">
+                        <a class="share_block-list_link share_block-list_link--pinterest" href="{url}"></a>
+                    </li>
+                    <li class="share_block-list_item">
+                        <a class="share_block-list_link share_block-list_link--linkedin" href="{url}"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <div class="alc-list alc-list_inner">
+                <div class="alc alc_2" data-id="14">
+                    <a href="{url}">
+                        <img src="img/aside-pic1.jpg">
+                        <span class="label lt30">O Professor Liao é um médico de medicina Chinesa e Tibetana, professor
+                            na Universidade de Medicina Chinesa de Pequim, ortopedista premiado, autor de vários livros
+                            sobre recuperação de articulações e realização do potencial da reserva interna do corpo
+                            humano.</span>
+                    </a>
+                </div>
+                <div id="fix-pos" style="height: 1px;"></div>
+            </div>
+        </aside>
+    </div>
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="center_wrapper">
+                <p class="footer_top-heading lt31">SIC</p>
+                <nav class="footer_top_menu">
+                    <ul class="footer_top_menu-list clearfix">
+                        <li class="footer_top_menu-list_item">
+                            <a class="footer_top_menu-list_link footer_top_menu-list_link--mobile lt32" href="{url}">No
+                                seu telemóvel</a>
+                        </li>
+                        <li class="footer_top_menu-list_item">
+                            <a class="footer_top_menu-list_link footer_top_menu-list_link--pc lt33" href="{url}">Na sua
+                                TV ligada à Internet</a>
+                        </li>
+                        <li class="footer_top_menu-list_item">
+                            <a class="footer_top_menu-list_link footer_top_menu-list_link--news lt34"
+                                href="{url}">Receba notificações sobre as últimas notícias </a>
+                        </li>
+                        <li class="footer_top_menu-list_item">
+                            <a class="footer_top_menu-list_link footer_top_menu-list_link--letter lt35"
+                                href="{url}">Contacte a SIC</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="center_wrapper">
+                <p class="footer_bottom-heading lt36">Ver a SIC</p>
+                <nav class="footer_bottom_menu">
+                    <ul class="footer_bottom_menu-list clearfix">
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt37" href="{url}">Notícias</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt38" href="{url}">Desporto</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt39" href="{url}">Meteorologia</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt40" href="{url}">Loja</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt41" href="{url}">Terra</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt42" href="{url}">Viagens</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt43" href="{url}">Capital</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt44" href="{url}">Cultura</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt45" href="{url}">Auto</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt46" href="{url}">Futuro</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt47" href="{url}">TV</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt48" href="{url}">Rádio</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt49" href="{url}">SIC Mulher</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt50" href="{url}">SIC K</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt51" href="{url}">Gastronomia </a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt52" href="{url}">iWonder</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt53" href="{url}">Principais notícias</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt54" href="{url}">Música</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt55" href="{url}">SIC Radical</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt56" href="{url}">Mudar para TV digital</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt57" href="{url}"> Masterchef </a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt58" href="{url}">Natureza</a>
+                        </li>
+                        <li class="footer_bottom_menu-list_item">
+                            <a class="footer_bottom_menu-list_link lt59" href="{url}">Local</a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="footer_bottom-links">
+                    <a class="footer_bottom-links_link lt60" href="{url}">Termos e condições</a>
+                    <a class="footer_bottom-links_link lt61" href="{url}">A SIC</a>
+                    <a class="footer_bottom-links_link lt62" href="{url}">Política de privacidade</a>
+                    <a class="footer_bottom-links_link lt63" href="{url}">Cookies</a>
+                    <a class="footer_bottom-links_link lt64" href="{url}">Serviço de apoio</a>
+                    <a class="footer_bottom-links_link lt65" href="{url}">Guia para pais</a>
+                    <a class="footer_bottom-links_link lt66" href="{url}">Contacte a SIC</a>
+                    <a class="footer_bottom-links_link lt67" href="{url}">Anúncio</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <div class="breaking_popup js-breaking_popup">
+        <div class="breaking_popup-header">
+            <div class="center_wrapper breaking_popup-inner_wrapper">
+                <p class="breaking_popup-header_text lt68">ÚLTIMAS NOTÍCIAS</p>
+                <button class="breaking_popup-close js-breaking_popup-close"></button>
+            </div>
+        </div>
+        <div class="center_wrapper">
+            <p class="breaking_popup-text">
+                <a class="breaking_popup-link lt69" href="{url}">Encomende já</a>
+            </p>
+        </div>
+    </div>
+    <script>
+        $(".three-images").hide();
+        $(".open-content").on("click", function () {
+            $(".three-images").toggle(1000);
+        });
+    </script>
+
+
+    <script>
+        const offer_params = {
+            priceMain : '39',
+            customPriceOld: '',//вказуєм свою стару ціну якщо не підходить звичайна ціна *2
+            currencyMain: '€',
+            productName : 'HondroLife',
+        };
+
+
+        var productName = document.getElementsByClassName("productName");
+        var priceMain = document.getElementsByClassName("priceMain");
+        var priceOld = document.getElementsByClassName("priceOld");
+        var currencyMain = document.getElementsByClassName("currencyMain");
+
+
+        for (var i = 0; i < productName.length; i++) {
+            productName[i].innerHTML = offer_params.productName;
+        }
+        for (var i = 0; i < priceMain.length; i++) {
+            priceMain[i].innerHTML = offer_params.priceMain;
+        }
+
+
+        if(offer_params.customPriceOld){
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.customPriceOld;
+            }
+        }else{
+            for (var i = 0; i < priceOld.length; i++) {
+                priceOld[i].innerHTML = offer_params.priceMain * 2;
+            }
+        }
+
+
+        for (var i = 0; i < currencyMain.length; i++) {
+            currencyMain[i].innerHTML = offer_params.currencyMain;
+        }
+    </script>
+
+
+    <script>
+        var usr = '{t2}';
+        var sabss = '{clickid}';
+        initFeatures({
+            priceMain : offer_params.priceMain,
+            currencyMain : offer_params.currencyMain,
+            lang : 'pt', // список языков - vn, it, es, co, hr, en, de, fr, ph, cz, id, th, gr, bg, al, ro, sg, en_sg, mk, si, sk, lv, hu, pl, lt, pt
+            product : offer_params.productName, // название продукта
+            genderTargetting : 'all', // пол целевой аудитории - all, male, female
+
+
+
+
+            form : {
+                isNeeded : 1, // 1-включить форму, 0-выключить
+                img: 'prod.png', // путь до картинки продукта
+                price: true, // плашка с ценой
+                priceBrFix: true, // фиксит отображение цен в ценике (true - уберает перенос строки)
+                showSelect: false, // показывать или скрывать поле select
+                untilExpire: 600 // таймер окончания акции где 600 = 10мин. Ставим 0 если таймер не нужен.
+            },
+
+
+
+
+            autoComments: {
+                isNeeded: 0, // 1-включить автокомы, 0-выключить
+                bgColor: '#d7f2d8' // цвет фона блока комчиков
+            },
+
+
+
+
+            popups: {
+                isNeeded: 0, // 1-включить попы, 0-выключить
+                bgColor: 'rgba(87, 86, 141, 0.8)', // цвет фона сообщения
+                textColor: '#fff', // цвет основного текста сообщения
+                emphColor: 'cyan', // цвет выделений в сообщениях (например, 'со скидкой XX%', '' )
+                blackIcons: false // черные или белые иконки, значения true или false
+            },
+
+
+
+
+            wheel: {
+                isNeeded: 1, // 1-включить колесо, 0-выключить
+                customWheel: false // ссылка на свое колесо, либо false
+            }
+        });
+    </script>
+    <script>
+        $('[name="name"]').on('input change', function () {
+            var val = $(this).val();
+            $(this).val(val.replace(/[0-9+]/g, ''));
+        });
+        $('[name="name"]').attr('autocomplete', 'name');
+        $('[name="name"]').attr('pattern', '.{2,25}');
+        $('[name="phone"]').on('input change', function (e) {
+            var val = $(this).val();
+            $(this).val(val.replace(/[A-zА-яіїЁё ]/g, ''));
+        });
+        $('[name="phone"]').get(0).type = 'tel';
+        $('[name="phone"]').attr('autocomplete', 'tel');
+        $('[name="phone"]').attr('pattern', '.{6,18}')
+    </script>
+
+</body>
+
+</html>

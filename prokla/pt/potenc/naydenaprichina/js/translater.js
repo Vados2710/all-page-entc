@@ -1,0 +1,70 @@
+var new_lang = {
+
+    "lt0": "Outra causa de impotência e infertilidade foi encontrada",
+    "lt2": "Os cientistas de Stanford fizeram uma descoberta única: eles adicionaram citomegalovírus do grupo do vírus do herpes, à lista de vírus que causam impotência e infertilidade. Má notícia: quase todas as pessoas na Terra estão infectadas com isso. Boa notícia: você pode se livrar do citomegalovírus e prevenir a impotência.",
+    "lt3": "Papiloma vírus humano, herpes, citomegalovírus são semelhantes entre si. Eles passam despercebidos, mas têm consequências desastrosas para o corpo.",
+    "lt4": "O papiloma vírus humano pode evoluir para oncologia, o herpes causa danos irreparáveis ao sistema imunológico e o recentemente descoberto citomegalovírus é uma bomba em tempo real: ele gradualmente mata a função sexual, especialmente em homens. O citomegalovírus põe fim à potência: se não destruí-lo a tempo, ele destruirá você.",
+    "lt5": "A pessoa adquire o vírus quando criança, mas sua ativação é causada por fatores provocadores - gripe forte, estresse ou outra doença grave. A infecção passa despercebida, mas suas consequências podem entrar em sua vida no momento mais inoportuno.",
+    "lt6": "<b>Em 86 dos 100 casos, é o citomegalovírus que se torna a causa da disfunção erétil.</b>Na tentativa de corrigir os efeitos das funções vitais do vírus, homem toma estimulantes artificiais de potência. No entanto, o vírus se torna um fator chave na cura. Enquanto ele estiver ativo no corpo, o problema da potência permanecerá relevante.",
+    "lt7": "Os médicos descobriram o citomegalovírus já em 1956, mas seu efeito prejudicial no sistema reprodutivo masculino foi descoberto por acaso em 2019. Jennifer Maynard, MD da Universidade de Stanford, estava estudando uma nova vacina contra herpes em 1.000 voluntários. Verificou-se que todos os homens que sofrem de herpes estavam infectados com citomegalovírus e, além disso, eram todos impotentes ou inférteis, e as mulheres, por sua vez, tinham menstruações dolorosas, endometriose ou a infertilidade, igual aos homens.",
+    "lt8": "Jennifer Maynard conduziu outro estudo e foi uma das primeiras a confirmar a relação entre a impotência do citomegalovírus. O fato é que esse vírus afeta principalmente os órgãos internos, mas<br>pode ser transmitido não apenas por gotículas no ar, mas também pelo sangue e esperma</b>. Como o vírus passa despercebido e indolor, mais de 95% dos pacientes desconhecem sua doença, que só se manifestará após algum tempo, com a saúde que piorou, com mau funcionamento do sistema reprodutivo ou com oncologia.",
+    "lt9": "Cientistas da Universidade de Stanford conduziram vários estudos independentes e descobriram que o vírus pode ser afetado por uma combinação de ameixa africana, saw palmetto, zinco e vitamina E. Hormônios, antibióticos e vitaminas individualmente não têm absolutamente nenhum efeito sobre o citomegalovírus",
+    "lt10": "Após a descoberta dos componentes, começaram as pesquisas sobre a criação do primeiro medicamento para a destruição do vírus no corpo humano. Segundo a publicação STANFORD MEDICINE, «523 homens diagnosticados com citomegalovírus e impotência, participaram dos estudos desse medicamento». Durante o tratamento eles tomavam um remédio experimental Amarok, e a cada três dias um grupo de pesquisadores registrava alterações no corpo.",
+    "lt11": "<b>Primeira semana:</b>o sistema imunológico foi recuperado, o sono melhorou, a erupção cutânea em todo o corpo passou.",
+    "lt12": "<b>Segunda semana:</b>função erétil foi estabelecida. Todos os participantes observaram a recuperação do desejo sexual e aumento da libido.",
+    "lt13": "<b>Terceira semana:</b>um exame de sangue e urina mostrou níveis normais de glóbulos vermelhos, glóbulos brancos, hemoglobina e hormônios.",
+    "lt14": "<b>Quarta semana:</b>todos os pacientes se livraram completamente do citomegalovírus e da impotência.",
+    "lt15": "Baseando-se nos resultados da pesquisa, descobriram que para o tratamento do vírus é necessário ter uma média de 4 semanas. Um grupo de cientistas decidiu chamar a atenção do público para esse problema e lançou o remédio<a href=\"\">Amarok</a>no mercado. Como o objetivo da venda não é obter lucro, mas sim um efeito terapêutico, a venda acontece pela Internet a um preço acessível. ",
+    "lt16": "Amarok não entra em conflito com outros remédios e nem com o álcool, não causa efeitos colaterais, afeta positivamente não apenas a potência, mas também a próstata e a função reprodutiva. O remédio foi certificado e obteve licenças para venda. Foi decidido lançar o primeiro lote pelo preço do fabricante com 50% de desconto.",
+    "lt17": "Você pode comprar Amarok com 50% de desconto no <a href=\"#\">site do fabricante</a> até<span class =\"sale\">30/12/2019</span>.",
+    "lt18": "Obter o Amarok com desconto",
+    "lt19": "Comentários:",
+    "lt20": "Felix",
+    "lt22": "Eu fui um dos participantes da pesquisa. Este remédio realmente ajudou, eu tinha impotência e infertilidade. Depois de<a href=\"#\">Amarok</a>todos os problemas desapareceram completamente",
+    "lt23": "Lea",
+    "lt25": "Espero que os médicos criem algo para endometriose...",
+    "lt26": "Fábio",
+    "lt28": "Em Stanford tem uma boa escola de medicina, meu sobrinho estuda lá. Honestamente eles não fazem nada de errado. Eu tomei Amarok, gostei, ele tira problemas de saúde em geral e rapidamente recupera a potência",
+    "lt29": "Adriano",
+    "lt31": "Obrigado pelo artigo! Já encomendei<a href=\"#\">Amarok</a>, contarei minhas impressões!",
+    "lt32": "Martin",
+    "lt34": "No começo, eu achei que nada havia mudado e depois, na segunda ou terceira semana, me senti jovem novamente. Fiz exames, tudo estava normal, estou completamente saudável!",
+    "lt35": "Casanova",
+    "lt37": "Eu encomendei o produto e ele chegou alguns dias depois. Depois do tratamento me senti melhor! Se eu soubesse sobre Amarok antes, não teria gastado tanto dinheiro e tempo com outros 'medicamentos'",
+    "lt38": "Leia",
+    "lt40": "Obrigada pelo artigo. Realmente espero que isso ajude meu marido",
+    "lt41": "Jose Pereira",
+    "lt43": "Eu li muitos artigos diferentes sobre impotência, mas aqui está tudo bem claro da onde surge a impotência, como é tratada, por que não há sintomas. Então, eu encomendei o Amarok e o recebi alguns dias depois, fiz o tratamento e minha saúde melhorou bastante. Eu ficava constantemente doente, me sentia mal, não tinha ereção e, depois do remédio, eu me senti não apenas curado, mas também a ereção ficou pedregosa!",
+    "lt44": "Últimas notícias",
+    "lt45": "O que causa risadas descontroladas na epilepsia?",
+    "lt46": "Como se manter saudável no dia de Natal",
+    "lt47": "Para ratos, a empatia pode ser uma estratégia de sobrevivência",
+    "lt48": "Aspirina: Amigo ou inimigo após o câncer de mama?",
+    "lt49": "Remédios caseiros para a ejaculação precoce",
+    "lt50": "Notícias populares",
+    "lt51": "Artigos editoriais",
+    "lt52": "Todos os tópicos de notícias",
+    "lt53": "Centro de conhecimento",
+    "lt54": "Política de anúncios",
+    "lt55": "Boletins",
+    "lt56": "Compartilhe nosso conteúdo",
+    "lt57": "Sobre nós",
+    "lt58": "Nossa equipe editorial",
+    "lt59": "Carreiras",
+    "lt60": "Entre em contato",
+    "lt61": "Anuncie com o MNT",
+    "lt62": "Privacidade",
+    "lt63": "Não venda minhas informações",
+    "lt64": "Termos",
+    "lt65": "©<span class=\"footer-date\">2019</span>Healthline Media UK Ltd, Brighton, Reino Unido, Red Ventures Company. Todos os direitos reservados. MNT é uma marca registrada da Healthline Media. «Qualquer informação médica publicada neste site não se destina a substituir um aconselhamento médico informado e você não deve tomar nenhuma ação antes de consultar um profissional de saúde.",
+    };
+function Translater () {
+ for (class_name in new_lang) {
+ var elements = document.getElementsByClassName(class_name);
+ if (elements.length) {
+ for (key in elements) {
+ elements[key].innerHTML = new_lang[class_name];
+ }
+ }
+ }
+ };

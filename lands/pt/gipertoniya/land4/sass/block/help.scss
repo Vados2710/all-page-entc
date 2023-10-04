@@ -1,0 +1,148 @@
+
+.help {
+    position: relative;
+}
+
+.help__body {
+    max-width: 450px;
+}
+
+.help__title {
+    margin-bottom: 30px;
+}
+
+.help__item {
+    position: relative;
+    padding-left: 40px;
+    overflow: hidden;
+    border-radius: 3px 0 0 3px;
+
+    & > span {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        width: 40px;
+        height: 100%;
+        background-color: #2b2a2a;
+        background-image: url("../media/help/check.png");
+        background-position: center 10px;
+    }
+
+    & p {
+        display: inline-block;
+        padding: 8px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        background-color: #fa702a;
+
+        & + p {
+            margin-top: -8px;
+        }
+    }
+
+    & + & {
+        margin-top: 15px;
+    }
+}
+
+.help__product {
+    position: absolute;
+    top: 25%;
+    right: -135px;
+
+    &::before {
+        position: absolute;
+        right: -25px;
+        bottom: -77px;
+        width: 439px;
+        height: 239px;
+        content: '';
+        background-image: url("../media/product-before.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.help__btn {
+    display: inline-block;
+    padding: 15px 80px;
+    margin-top: 40px;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(250, 111, 42);
+    background-image: linear-gradient(180deg, rgba(250, 111, 42, 1) 0%, rgba(245, 68, 58, 1) 100%);
+    border: 0;
+    border-radius: 3px;
+}
+
+@media (max-width: 1310px) {
+    .help__body {
+        width: 50%;
+    }
+
+    .help__item {
+        padding: 8px 8px 8px 48px;
+        background-color: rgb(250, 111, 42);
+
+        & p {
+            display: inline;
+            padding: 0;
+            font-size: 18px;
+            line-height: 1.2;
+            background-color: transparent;
+
+            & + p {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .help__product {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+
+        &::before {
+            right: 35px;
+            bottom: -70px;
+            width: 230px;
+            height: 125px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .help__body {
+        width: 100%;
+    }
+
+    .help__product {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+        transform: translate(0, 0);
+    }
+
+    .help__btn {
+        display: block;
+        margin-top: 100px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .help__title {
+        padding: 10px;
+        background-color: #fff;
+    }
+}
